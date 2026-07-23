@@ -24,6 +24,7 @@ ASSUMPTIONS (see config.py for the reasoning, this file just applies them):
     immaterial in every layer checked so far, but not silently dropped).
 """
 from __future__ import annotations
+import os
 import pandas as pd
 from config import LAYER_NAME_FIXES
 
@@ -70,5 +71,6 @@ def sanity_check(full: pd.DataFrame) -> None:
 if __name__ == "__main__":
     full = load_all("data/bob_salesdata_2024.xlsx", "data/bob_salesdata_2025.xlsx")
     sanity_check(full)
+    os.makedirs("output", exist_ok=True)
     full.to_pickle("output/full.pkl")
     print("\nSaved output/full.pkl")
