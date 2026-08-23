@@ -115,7 +115,14 @@ def reorder_channel_split(layer_df: pd.DataFrame, fy_current: int = 2025, fy_pri
 
 def _base_name(article: str) -> str:
     a = str(article).strip()
-    tokens_pattern = r"\b(" + "|".join(re.escape(t) for t in (GENDER_TOKENS | VERSION_TOKENS)) + r")\b"
+    tokens = GENDER_TOKENS | VERSION_TOKENS
+    # Some source rows are missing the space before a trailing gender token
+    # (e.g. "ROC Flash Down HoodMen" instead of "... Hood Men") -- without this,
+    # such rows fail to strip the token and form their own spurious one-off
+    # "family", splitting what should be one continuing article/franchise in two.
+    for t in tokens:
+        a = re.sub(rf"(?<=[a-z])({re.escape(t)})\b", r" \1", a)
+    tokens_pattern = r"\b(" + "|".join(re.escape(t) for t in tokens) + r")\b"
     a = re.sub(tokens_pattern, "", a)
     a = re.sub(r"\s+", " ", a).strip()
     return a
