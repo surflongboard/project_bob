@@ -110,10 +110,17 @@ ACCOUNT_CONTEXT = {
               "and Soft shell while shrinking in Shell/Insulation/Legwear/Accessories. "
               "Confirm whether this is a deliberate category-level rationalization.",
     "XXL NO": "See XXL SE note — same account family, same caveat.",
-    "Zalando": "This is Zalando Lounge — an OUTLET/CLEARANCE channel, not a normal "
+    "ZALANDO": "This is Zalando Lounge — an OUTLET/CLEARANCE channel, not a normal "
                "wholesale/retail partner. Sales-up-margin-down here is expected outlet "
                "behavior, not discount-driven demand destruction. Read Zalando's *volume* "
-               "growth as an inventory/clearance signal, not its margin % as an erosion signal.",
+               "growth as an inventory/clearance signal, not its margin % as an erosion signal. "
+               "NOTE (2026-07): the raw Customer Group value is 'ZALANDO' (all caps) — a prior "
+               "version of this key was 'Zalando', which silently fails any case-sensitive match "
+               "against the raw data. Confirmed against actuals: FY25 Sales 52.6M SEK, GM 30.1%.",
+    "ZALANDO MARKETPLACE": "A separate, smaller Zalando entry (FY25: SEK 0.46M, GM 69.3%) — "
+               "different commercial mechanism (marketplace/commission model, not wholesale-in), "
+               "materially higher margin than 'ZALANDO' (Lounge/outlet). Keep these two separate "
+               "in any account-level view; don't blend them.",
     "China": "Special cost-plus commercial arrangement — structurally different economics "
              "from other accounts. Its low blended margin (~11% company-wide FY25) is by "
              "design, not a quality-of-account issue, and isn't comparable like-for-like to "
