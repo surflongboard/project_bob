@@ -1,5 +1,14 @@
 # Project Bob — Key-Article Margin Analysis (handoff package)
 
+> **Note:** this repo also holds a second, separate workstream —
+> `data/ss26_portfolio_tiering/` (8-tier SS26 DTC & Wholesale portfolio
+> analysis, its own assumptions register). Same business, different
+> question and different source pull; see that folder's
+> `ASSUMPTIONS_REGISTER.md` before assuming a number or account rule from
+> one workstream applies to the other — a few (e.g. how the special
+> accounts XXL/Zalando/China/Stadium are treated) are intentionally
+> different between the two.
+
 This is a working starting point, not a finished tool. It packages up the
 pipeline and assumptions from the first 8 layers analyzed in chat (Shell,
 Insulation, Mid layer, Legwear, Soft shell, Tops, Daypacks, Accessories) so
