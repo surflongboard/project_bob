@@ -12,6 +12,9 @@ the three raw exports in this folder (`SS26_DTC_Wholesale_w34_data_*.xlsx`).
 **Live version (filterable, shareable):**
 https://claude.ai/code/artifact/1b4cce0a-d4aa-4f87-9c8f-10926b1d28c4
 
+**Ask the data directly (no Excel/pivoting needed):**
+https://claude.ai/code/artifact/aac8af79-3113-4f05-a0a5-557231bdd958 — "Tier Bench," a chat tool over the current tiering dataset (franchise, generation-comparison, and channel-mix tables). Answers are Claude-generated from live queries against the data below, not pre-written — verify anything going into a decision deck against the source workbook.
+
 This file is a durable snapshot of that page, checked in so it survives
 independently of any one chat session. If the two ever disagree, the live
 artifact is more current — update this file to match, not the other way
