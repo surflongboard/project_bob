@@ -86,4 +86,14 @@ Three specific overlaps worth knowing about:
 
 ---
 
+## Glossary — Business Term Mappings
+
+Plain-language terms the team uses in conversation or when querying Tier Bench, mapped to the exact column/value they mean — so the term reads the same way on this sheet, in Tier Bench, and in this register.
+
+| Term | Maps to |
+|---|---|
+| "DTC expansion opportunity" | `Channel Pattern 2025` = `Wholesale-only / DTC negligible` (REG-018) — proven Wholesale demand, DTC below 50,000 SEK in both 2024 and 2025. 59 franchises (37 Workhorse+Harvest, 14 Problem Child); breakdown and top candidates on Sheet 1. |
+
+---
+
 *Seeded 4 Sep 2026 from the SS26 DTC & Wholesale portfolio review. Reconciled against `config.py` 7 Sep 2026. Clearance treatment (REG-010/011/012), tier consolidation (REG-013), Generation Detail sheet (REG-014), Core Assortment FW27 check (REG-015), FW27 Collection status (REG-016), Wholesale Share % (REG-017), and Channel Pattern 2025 (REG-018) added 8 Sep 2026. Update the live artifact first, then re-sync this file.*
