@@ -47,8 +47,8 @@ either resolve it, or walk in with a stated owner and next step.
 
 ## D. Data pipeline / reusability
 
-- [ ] **Commit reusable matching/parsing scripts to the repo**, not just their outputs. Every data drop this session was handled with one-off Python in a scratch directory — the *logic* lives in the register as prose, not as reusable code. Follow the existing `load_data.py` / `analysis.py` pattern from the Key-Article Margin Analysis workstream so a refresh is "rerun this script," not "re-derive this from scratch."
-- [ ] **Establish a file-naming/intake convention** for manual uploads (where they land, how they're dated) so a future drop doesn't depend on Claude being in the loop to catch a stale or misnamed file.
+- [x] **Commit reusable matching/parsing scripts to the repo**, not just their outputs. *Done 8 Sep 2026 — `scripts/` now holds a shared library (`ss26_lib.py`) plus one `update_*.py` per REG-010/014–019 column/sheet, following the `load_data.py`/`analysis.py` pattern. Each script was validated by running it against a scratch copy of the published workbook and diffing every touched cell against the real file — all match exactly (float-rounding noise aside). Two intentional simplifications in `update_stock.py` (top-10-only detail tables, generic callout text) are documented in `scripts/README.md`. **Known gap:** the base 8→7-tier classification itself (cols A–M) predates this session's scratch work and still has no reusable script — see `scripts/README.md`'s "Not covered" note.*
+- [x] **Establish a file-naming/intake convention** for manual uploads. *Done 8 Sep 2026 — raw source files (clearance lists, core assortment list, stock snapshot) copied from the chat upload into `inputs/<category>/`, keeping original filenames; convention documented in `scripts/README.md`.*
 
 ---
 

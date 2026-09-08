@@ -18,6 +18,12 @@ https://claude.ai/code/artifact/aac8af79-3113-4f05-a0a5-557231bdd958 — "Tier B
 **Before presenting this to the wider team:**
 `LAUNCH_READINESS_CHECKLIST.md` (same folder) — the open items, process gaps, and Tier Bench QA steps to close out first.
 
+**Reusable pipeline scripts:** `scripts/` (same folder) — every REG entry
+below whose column/sheet was added via one-off Python now has a committed,
+documented, re-runnable script (`update_*.py`) instead. Raw manual-upload
+source files live in `inputs/` alongside them. See `scripts/README.md` for
+what each script does and the intake convention for new data drops.
+
 This file is a durable snapshot of that page, checked in so it survives
 independently of any one chat session. If the two ever disagree, the live
 artifact is more current — update this file to match, not the other way
