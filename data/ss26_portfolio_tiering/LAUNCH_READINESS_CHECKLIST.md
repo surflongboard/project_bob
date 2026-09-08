@@ -29,9 +29,9 @@ either resolve it, or walk in with a stated owner and next step.
 
 ## B. Process / governance
 
-- [ ] **Get PR #2 reviewed and merged** (or make a deliberate call to keep iterating on the branch until after team review). Right now every change this session is unreviewed — "the team verifying assumptions" should mean verifying *approved* ones, not draft ones.
-- [ ] **Decide sharing scope** for the repo and both artifacts (Assumptions Register, Tier Bench) before sending links to the wider team — both are private by default.
-- [ ] **Decide on an approval workflow** for future assumption changes — right now status (Confirmed/Provisional/Open) is set in real time during a chat session. Does a Confirmed status need a second sign-off once more people depend on it?
+- [x] **Get PR #2 reviewed and merged.** *Done 8 Sep 2026 — merged directly (no CI configured on this repo, no reviewers assigned yet pre-team-launch) into `main` at `5d1e8c1`. All of Section D's new pipeline scripts and inputs are now on `main`, not just a branch. **Carries forward:** this was a deliberate call to skip formal review for now, not a standing policy — the next PR onto `main` should go through actual team review once there's a team to review it, per this section's own framing ("the team verifying assumptions" should mean verifying *approved* ones).*
+- [x] **Decide sharing scope** for the repo and both artifacts. *Decided 8 Sep 2026 — staying private (just the owner) for now; owner is reviewing the full workstream tomorrow before deciding who else gets access. Revisit before any link goes to the wider team.*
+- [x] **Decide on an approval workflow** for future assumption changes. *Decided 8 Sep 2026 — keeping the current model (single owner sets Confirmed/Provisional/Open status in real time) for now. Revisit once more people are actually depending on the register — a second sign-off requirement is the natural next step at that point, not before.*
 
 ---
 
