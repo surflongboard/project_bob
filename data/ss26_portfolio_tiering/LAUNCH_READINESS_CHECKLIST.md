@@ -54,9 +54,10 @@ either resolve it, or walk in with a stated owner and next step.
 
 ## E. Documentation / continuity
 
-- [ ] **Add a "Recent Changes" section** to the top of the Assumptions Register — last 5 updates in plain language, so a first-time reader sees the pace of iteration without reading all 19 entries.
-- [ ] **Consider a `CLAUDE.md`** summarizing conventions (matching methodology, file locations, register discipline) so a future Claude Code session — or a teammate — ramps up faster than re-reading the whole register.
-- [ ] **Confirm nothing load-bearing only exists in this chat transcript** — do a pass to make sure every material decision is written into the register, not just explained once in conversation.
+- [x] **Add a "Recent Changes" section** to the top of the Assumptions Register. *Done 8 Sep 2026 — added to both the checked-in file and the live artifact (last 5 updates, plain language).*
+- [x] **Add a `CLAUDE.md`.** *Done 8 Sep 2026 — repo root, covers the two-workstream split, where a new data drop goes, the shared matching methodology, register discipline (Confirmed/Provisional/Open), and a pointer back to this checklist.*
+- [x] **Confirm nothing load-bearing only exists in this chat transcript.** *Audited 8 Sep 2026. Found and fixed one gap: the "Wholesale expansion opportunity" glossary mapping existed only in Tier Bench's system prompt, not in the register — added to both. Code-level judgment calls (News package fallback list, stock-file column-index assumption, why scripts don't re-sort the sheet, the top-10 cap on stock detail tables) were already captured as docstrings/comments in `scripts/`, which is the right home for implementation detail rather than the register.*
+  **Found and NOT fixed — flagged instead, since it's a real build, not a doc fix:** Tier Bench's own data-refresh pipeline (the script that turns the workbook into the JSON embedded in the Tier Bench page) exists only as a one-off script in this session's scratchpad — never committed. Right now, refreshing Tier Bench's dataset after a future data drop would mean re-deriving that export logic from scratch, the exact problem Section D solved for the Excel workbook itself. Not addressed here — raised as a candidate next item if Tier Bench moves from pilot to something refreshed on a cadence.
 
 ---
 
