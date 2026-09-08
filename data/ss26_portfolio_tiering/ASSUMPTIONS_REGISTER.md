@@ -39,32 +39,33 @@ formula, prompt, or report that depends on it.
 Newest first, plain language — so a first-time reader sees the pace of
 iteration without reading all 19 register entries below.
 
-1. **8 Sep 2026 — Pipeline made reusable.** Every column/sheet below that
+1. **8 Sep 2026 — Fixed a real bug in Tier Bench, found via QA.** Its four
+   filterable query tools silently returned ZERO results whenever a
+   question needed a limit, a sort field, or a sort direction (i.e. most
+   "top N" / "sorted by" questions — a large share of real use). Found by
+   testing the tool code directly rather than through the live chat;
+   fixed and re-verified against 12 known answers pulled from the
+   workbook/register. Also added CSV export per query result.
+2. **8 Sep 2026 — Pipeline made reusable.** Every column/sheet below that
    was built from a manual data upload now has a committed, re-runnable
    script instead of one-off chat Python (`scripts/`); the raw source
    files themselves are checked in too (`inputs/`). PR #2 (everything in
    this workstream so far) merged to `main`.
-2. **8 Sep 2026 — Added a stock breakdown by tier (REG-019).** A warehouse
+3. **8 Sep 2026 — Added a stock breakdown by tier (REG-019).** A warehouse
    available-stock snapshot, matched to franchise and tier, so it's clear
    which stock is a clearance candidate (Thin/Immaterial, Exited) vs. a
    real seller with a margin problem (Problem Child) that shouldn't be
    fire-saled.
-3. **8 Sep 2026 — Added channel-mix columns (REG-017, REG-018).** Each
+4. **8 Sep 2026 — Added channel-mix columns (REG-017, REG-018).** Each
    franchise's Wholesale vs. DTC sales split, plus a year-over-year
    pattern label (e.g. "DTC growing while Wholesale shrinks"). Revised
    same day after the first cut mislabeled a third of one bucket as
    "insufficient data" when they actually had real, single-channel sales.
-4. **8 Sep 2026 — Added FW27 assortment-status columns (REG-015,
+5. **8 Sep 2026 — Added FW27 assortment-status columns (REG-015,
    REG-016).** Whether each franchise is in the Core Assortment for FW27,
    and whether it's marked Active in the separate Assortment Attribution
    Review — flagging where Hero-tier products are missing from either
    list, for a merch check.
-5. **8 Sep 2026 — Consolidated the tier scheme and split out article
-   generations (REG-013, REG-014).** Merged Hero+Near-Hero and
-   Workhorse+Harvest into two tiers instead of four (sales/margin trends
-   made the old cut lines less consistent); added a sheet comparing old
-   vs. new article versions within a franchise. Corrected a bug the same
-   day where the first version of that sheet mixed up "old generation"
    with "on the clearance list" — they're not the same thing.
 
 ---
