@@ -1,7 +1,35 @@
-import json
+import json, openpyxl
+from pathlib import Path
 
 with open("catalogue_images_b64.json") as f:
     IMAGES = json.load(f)
+
+MASTER_WORKBOOK = Path(__file__).resolve().parent.parent / "Project_Bob_Portfolio_Tiering_08092026.xlsx"
+
+SHORT_TIER = {
+    "Hero + Near-Hero": "Hero", "Workhorse + Harvest": "Workhorse",
+    "Problem Child": "Problem Child", "New / Test": "New/Test",
+    "Thin / Immaterial": "Thin", "Exited": "Exited",
+    "Clearance — Ex China/Zalando": "Clearance",
+}
+
+def load_regional_tier_lookup():
+    """(base, gender) -> {'Nordic': tier, 'Non-Nordic': tier}, read straight from Sheets
+    6 & 7's Regional Tier columns (REG-023/024) -- each franchise appears once per
+    country row within a region sheet (or a single placeholder row if it has no
+    regional presence there), so dedupe by taking the first row per (base, gender)."""
+    wb = openpyxl.load_workbook(MASTER_WORKBOOK, read_only=True, data_only=True)
+    lookup = {}
+    for sheet_name, region in [("6. Full Portfolio (Nordic)", "Nordic"),
+                                ("7. Full Portfolio (Non-Nordic)", "Non-Nordic")]:
+        ws = wb[sheet_name]
+        for row in ws.iter_rows(min_row=5, values_only=True):
+            base, gender, tier = row[0], row[1], row[3]
+            if base is None:
+                continue
+            lookup.setdefault((base, gender), {}).setdefault(region, tier)
+    wb.close()
+    return lookup
 
 # 34 Hero + Near-Hero franchises, sales-descending within tier (matches the published workbook order)
 PRODUCTS = [
@@ -106,6 +134,26 @@ for p in PRODUCTS:
     p["gp25"] = p["sales"] * p["gm25"] / 100
     p["gpYtd26"] = p["salesYtd26"] * p["gmYtd26"] / 100
 
+# merge in each franchise's region-relative tier (REG-023/024) -- these are all
+# Global Hero/Near-Hero by construction (that's why they're in this catalogue),
+# but a franchise can legitimately be Hero in one region and Workhorse+Harvest
+# (or lower) in the other -- that's the intended effect of region-relative
+# thresholds, not an error. Surfacing it here, not just in Tier Bench.
+REGIONAL_TIER = load_regional_tier_lookup()
+for p in PRODUCTS:
+    rt = REGIONAL_TIER.get((p["base"], p["gender"]), {})
+    p["nordicTier"] = rt.get("Nordic")
+    p["rowTier"] = rt.get("Non-Nordic")
+    p["isNordicHero"] = p["nordicTier"] == "Hero + Near-Hero"
+    p["isRowHero"] = p["rowTier"] == "Hero + Near-Hero"
+
+n_both_regions = sum(1 for p in PRODUCTS if p["isNordicHero"] and p["isRowHero"])
+n_nordic_only = sum(1 for p in PRODUCTS if p["isNordicHero"] and not p["isRowHero"])
+n_row_only = sum(1 for p in PRODUCTS if p["isRowHero"] and not p["isNordicHero"])
+n_neither = sum(1 for p in PRODUCTS if not p["isNordicHero"] and not p["isRowHero"])
+print(f"Regional split: {n_both_regions} Hero in both regions, {n_nordic_only} Nordic-only, "
+      f"{n_row_only} ROW-only, {n_neither} neither (Global Hero but not a regional Hero in either half)")
+
 LAYER_ORDER = ["Insulation", "Shell", "Mid layer", "Daypacks", "Legwear", "Bags", "Sleepingbags", "Soft shell"]
 
 STATUS_LABEL = {
@@ -136,9 +184,19 @@ with open("catalogue_template.html") as f:
     template = f.read()
 
 # build card markup, grouped and sorted by layer (see LAYER_ORDER)
+def region_chip(label, full_tier, is_hero):
+    cls = "region-chip is-hero" if is_hero else "region-chip"
+    short = SHORT_TIER.get(full_tier, full_tier or "—")
+    return f'<span class="{cls}" title="{full_tier or "no regional data"}">{label}: {short}</span>'
+
 def card_html(p):
     img_src = f'data:image/jpeg;base64,{IMAGES[p["img"]]}'
     tier_cls = "tier-hero" if p["tier"] == "Hero" else "tier-near"
+    global_label = f'Global {p["tier"]}'
+    region_strip = (
+        region_chip("Nordic", p["nordicTier"], p["isNordicHero"]) +
+        region_chip("ROW", p["rowTier"], p["isRowHero"])
+    )
     return f'''
     <article class="card" id="card-{p['key']}" data-key="{p['key']}">
       <div class="card-media">
@@ -146,8 +204,9 @@ def card_html(p):
       </div>
       <div class="card-body">
         <div class="card-top">
-          <span class="tier-chip {tier_cls}">{p['tier']}</span>
+          <span class="tier-chip {tier_cls}">{global_label}</span>
         </div>
+        <div class="region-strip">{region_strip}</div>
         <h3 class="card-title">{p['base']}</h3>
         <p class="card-meta">{p['gender']} &middot; {p['layer']}</p>
         <div class="fin-table">
@@ -273,6 +332,10 @@ html = html.replace("__MISSING_SECTION__", missing_section)
 html = html.replace("__PRODUCTS_JSON__", PRODUCTS_JSON)
 html = html.replace("__N_PHOTOGRAPHED__", str(n_photographed))
 html = html.replace("__N_TOTAL__", "34")
+html = html.replace("__N_BOTH_REGIONS__", str(n_both_regions))
+html = html.replace("__N_NORDIC_ONLY__", str(n_nordic_only))
+html = html.replace("__N_ROW_ONLY__", str(n_row_only))
+html = html.replace("__N_NEITHER__", str(n_neither))
 
 with open("hero_catalogue.html", "w") as f:
     f.write(html)
