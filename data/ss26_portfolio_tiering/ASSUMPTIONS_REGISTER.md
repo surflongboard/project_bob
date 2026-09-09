@@ -39,7 +39,18 @@ formula, prompt, or report that depends on it.
 Newest first, plain language — so a first-time reader sees the pace of
 iteration without reading all 20 register entries below.
 
-1. **9 Sep 2026 — Added real FY2025 Units (REG-020).** A `Units_2025`
+1. **9 Sep 2026 — Fixed a second Tier Bench data gap: YTD2026 units were
+   missing.** `Units_YTD2026` has been a published Sheet-2 column since
+   before this session's work (it's part of the original base tiering
+   build, alongside Sales_2025/Sales_YTD2026/GM%/Pace%/Growth%) — but
+   Tier Bench's franchise data was built without ever pulling that
+   column in, so `queryFranchises` could answer "FY25 units" (once
+   REG-020 landed) but not "FY26 units," even though the workbook always
+   had both. Found because someone asked Tier Bench for it directly and
+   got a (correct, not fabricated) "I don't have that field" answer
+   instead of a wrong number. Added `unitsYtd26` alongside the existing
+   `units25`; republished.
+2. **9 Sep 2026 — Added real FY2025 Units (REG-020).** A `Units_2025`
    column on Sheet 2, sourced from the same raw exports' "Units Sold"
    field — not an estimate. Flowed through to Tier Bench and the Hero
    Tier Catalogue's financial detail (previously showed "—" for FY25
