@@ -26,6 +26,7 @@ silently out of scope; see `LAUNCH_READINESS_CHECKLIST.md`.
 | `update_channel_pattern.py` | REG-018 | Sheet 2 col T | `data/bob_salesdata_2024/2025.xlsx` |
 | `update_stock.py` | REG-019 | Sheet 4 (full rebuild) | `inputs/stock/*.xlsx` |
 | `update_units_2025.py` | REG-020 | Sheet 2 col U | SS26 exports (FY25 only) |
+| `update_style_codes.py` | REG-021 | Sheet 2 col V | SS26 exports (all three) |
 
 `ss26_lib.py` is the shared library every script above imports from —
 franchise-key parsing (`base_name`/`gender`/`version_token`), the two
@@ -55,7 +56,8 @@ re-run in any order, any number of times, except:
   Tier column, and `update_clearance.py` is what updates it.
 - `update_core_assortment.py`, `update_fw27_collection.py`,
   `update_wholesale_share.py`, `update_channel_pattern.py`,
-  `update_units_2025.py` are independent of each other and of clearance.
+  `update_units_2025.py`, `update_style_codes.py` are independent of
+  each other and of clearance.
 
 Validated (Sep 2026) by running every script against a scratch copy of
 the published workbook and diffing the result cell-by-cell against the
