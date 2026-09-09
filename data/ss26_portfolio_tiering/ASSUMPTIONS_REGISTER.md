@@ -37,9 +37,27 @@ formula, prompt, or report that depends on it.
 ## Recent changes
 
 Newest first, plain language — so a first-time reader sees the pace of
-iteration without reading all 22 register entries below.
+iteration without reading all 23 register entries below.
 
-1. **9 Sep 2026 — Added a Sales-by-Country sheet + a browse-order view
+1. **9 Sep 2026 — Added region-relative tiering for Nordic and
+   Non-Nordic (REG-023), after finding the original tier rule can't be
+   reverse-engineered.** Team wanted the same Hero/Near-Hero/etc.
+   structure computed separately per region. Tried hard to recover
+   Sheet 2's actual cut rule first — tested absolute thresholds, top-N
+   by sales, top-N per product layer, and several composite scores;
+   none reproduce the real Hero+Near-Hero set (best got 41%, no better
+   than noise) — likely a business judgment call, not a formula, made
+   with more context than these columns carry. Built a NEW, explicit,
+   adjustable rule instead (same 7 tier names, for vocabulary
+   continuity only), region-relative as directed: each region ranked
+   against its own population, not a shared SEK bar. Needed FY24-by-
+   country data Sheet 5 didn't have — pulled fresh from
+   `bob_salesdata_2024/2025.xlsx`. Bonus finding: this source reconciles
+   to within 0.2% of the audited Sales_2025 total per franchise, better
+   than Sheet 5's own SS26-export basis. New Sheets 6 ("Full Portfolio
+   (Nordic)") and 7 ("Full Portfolio (Non-Nordic)"). Not yet flowed into
+   Tier Bench.
+2. **9 Sep 2026 — Added a Sales-by-Country sheet + a browse-order view
    (REG-022), then resolved the open definition question same day.**
    Team feedback: they want to see tiers by region, specifically able to
    exclude the home/legacy market from a query like "Hero products in
@@ -59,7 +77,7 @@ iteration without reading all 22 register entries below.
    grouping Sales/Units/GM% together per year for easier scanning,
    without reordering Sheet 2 itself (which all 9 pipeline scripts
    hardcode column positions against).
-2. **9 Sep 2026 — Added Style Code(s) (REG-021), same day someone asked
+3. **9 Sep 2026 — Added Style Code(s) (REG-021), same day someone asked
    Tier Bench for one.** Tier Bench correctly said it didn't have a SKU/
    style code field rather than guessing — none of the published Sheet-2
    data ever carried one. Added a `Style Code(s)` column sourced from the
@@ -68,7 +86,7 @@ iteration without reading all 22 register entries below.
    across seasons) — read as "codes seen for this franchise," not a
    single canonical code. Now in the workbook, Tier Bench, and its CSV
    exports.
-3. **9 Sep 2026 — Fixed a second Tier Bench data gap: YTD2026 units were
+4. **9 Sep 2026 — Fixed a second Tier Bench data gap: YTD2026 units were
    missing.** `Units_YTD2026` has been a published Sheet-2 column since
    before this session's work (it's part of the original base tiering
    build, alongside Sales_2025/Sales_YTD2026/GM%/Pace%/Growth%) — but
@@ -79,34 +97,34 @@ iteration without reading all 22 register entries below.
    got a (correct, not fabricated) "I don't have that field" answer
    instead of a wrong number. Added `unitsYtd26` alongside the existing
    `units25`; republished.
-4. **9 Sep 2026 — Added real FY2025 Units (REG-020).** A `Units_2025`
+5. **9 Sep 2026 — Added real FY2025 Units (REG-020).** A `Units_2025`
    column on Sheet 2, sourced from the same raw exports' "Units Sold"
    field — not an estimate. Flowed through to Tier Bench and the Hero
    Tier Catalogue's financial detail (previously showed "—" for FY25
    units since no real figure existed yet).
-5. **8 Sep 2026 — Fixed a real bug in Tier Bench, found via QA.** Its four
+6. **8 Sep 2026 — Fixed a real bug in Tier Bench, found via QA.** Its four
    filterable query tools silently returned ZERO results whenever a
    question needed a limit, a sort field, or a sort direction (i.e. most
    "top N" / "sorted by" questions — a large share of real use). Found by
    testing the tool code directly rather than through the live chat;
    fixed and re-verified against 12 known answers pulled from the
    workbook/register. Also added CSV export per query result.
-6. **8 Sep 2026 — Pipeline made reusable.** Every column/sheet below that
+7. **8 Sep 2026 — Pipeline made reusable.** Every column/sheet below that
    was built from a manual data upload now has a committed, re-runnable
    script instead of one-off chat Python (`scripts/`); the raw source
    files themselves are checked in too (`inputs/`). PR #2 (everything in
    this workstream so far) merged to `main`.
-7. **8 Sep 2026 — Added a stock breakdown by tier (REG-019).** A warehouse
+8. **8 Sep 2026 — Added a stock breakdown by tier (REG-019).** A warehouse
    available-stock snapshot, matched to franchise and tier, so it's clear
    which stock is a clearance candidate (Thin/Immaterial, Exited) vs. a
    real seller with a margin problem (Problem Child) that shouldn't be
    fire-saled.
-8. **8 Sep 2026 — Added channel-mix columns (REG-017, REG-018).** Each
+9. **8 Sep 2026 — Added channel-mix columns (REG-017, REG-018).** Each
    franchise's Wholesale vs. DTC sales split, plus a year-over-year
    pattern label (e.g. "DTC growing while Wholesale shrinks"). Revised
    same day after the first cut mislabeled a third of one bucket as
    "insufficient data" when they actually had real, single-channel sales.
-9. **8 Sep 2026 — Added FW27 assortment-status columns (REG-015,
+10. **8 Sep 2026 — Added FW27 assortment-status columns (REG-015,
    REG-016).** Whether each franchise is in the Core Assortment for FW27,
    and whether it's marked Active in the separate Assortment Attribution
    Review — flagging where Hero-tier products are missing from either
@@ -168,6 +186,7 @@ Three specific overlaps worth knowing about:
 | REG-011 | Data Hygiene | Case-sensitive duplicate franchise names | Open | Found while matching REG-010: the raw `Article` field produces at least one case/spacing-sensitive duplicate franchise pair in the published tiering file — `"Roc Sight SoftshellJacket"` (Harvest/Problem Child tiers) vs. `"ROC Sight Softshell Jacket"` (New/Test, Thin/Immaterial tiers) — apparently the same product line split into two "franchises" by a casing/spacing inconsistency upstream. Not corrected in either tiering workbook; worth a check with the data owner before assuming the full franchise list is deduplicated. Likely not an isolated case — only found because this one happened to intersect the clearance list. |
 | REG-012 | Portfolio Analysis | `Ordertype = "3-Close out order"` in Core-scope Sales_2025 | Open | Discovered attempting a SEK-level clearance carve-out (abandoned in favor of REG-010's SKU-membership rule): reconstructing a franchise's FY25 Core sales from raw rows (Sales Market ≠ XXL/China, per REG-008) does not reconcile against the published `Sales_2025` figure whenever the franchise has meaningful `Ordertype = "3-Close out order"` activity — a **standing** wholesale ordertype, not specific to the Aug-2026 lists, accounting for **13.5% of all FY25 Garp SEK Sales** (116M of 860M) across the full raw dataset. Example: "Roc Mimic Hood" (Women), published Sales_2025 = 300,637 SEK; all-Core-rows reconstruction = 467,996 SEK; excluding `3-Close out order` rows = 126,469 SEK — the published figure sits between the two, so the published Core-scope definition applies some rule to this ordertype that isn't reproducible from the raw exports alone. Likely entangled with REG-008's open sub-item (Zalando Marketplace/Stadium Outlet not distinguishable at this grain — a "close out order" row may *be* one of those accounts routed through a generic country market). Needed before any future SEK-level reconstruction from raw data is attempted against the published totals. |
 | REG-013 | Portfolio Analysis | Tier consolidation (Hero+Near-Hero, Workhorse+Harvest) | **Confirmed** (business-directed, 2026-09-08) | Hero and Near-Hero (Rising Star) merged into one tier, "Hero + Near-Hero"; Workhorse and Harvest (Cash Cow) merged into one tier, "Workhorse + Harvest" — because SS26 YTD2026 sales growth and margin trends were moving in ways that made the original size-based cut lines between each pair a less consistent decision boundary. Applied on top of the already-current (post-REG-010) row-level data: each combined tier's Sales_2025/GM%_2025/Sales_YTD2026/GM%_YTD2026/Pace% is the sales-weighted roll-up of its two source tiers, computed from row-level figures, not the rounded summary-table inputs — grand TOTAL unaffected (649.76M SEK). The pre-consolidation tier (9-tier scheme including the REG-010 Clearance move) is preserved per-franchise in a new `Original Tier (pre-consolidation)` column (Sheet 2, column P) so the original split can always be reconstructed. |
+| REG-023 | Portfolio Analysis | Region-relative tiering — Sheets 6 & 7, "Full Portfolio (Nordic)" / "(Non-Nordic)" | **NEW methodology, not a reproduction of Sheet 2's** — business-directed 9-Sep-2026; figures **Provisional** | Team wanted the same Hero/Near-Hero/Workhorse/Harvest/Problem Child tier structure recomputed separately for Nordic-only and Non-Nordic-only sales, with region-relative (not shared-absolute) thresholds, since Nordic is the home/legacy market. **Before building this, attempted to reverse-engineer Sheet 2's actual tier-cut rule from Sales_2025/GM%_2025/Growth%/Pace% — it does not reduce to any simple formula on these fields.** Tested: absolute SEK thresholds, top-N globally by Sales_2025 or Sales_YTD2026, top-N within each Layer, and composite scores (sales×growth, sales×GM%, salesYTD×GM% — best of these explained only 14/34, ~41%, of the actual Hero+Near-Hero set, no better than noise). Concrete example: "Astral GTX Jacket" Men (16.4M FY25 sales) is Workhorse while the Women's version (10.8M, 34% smaller) is Hero — Women has higher GM% (49.5% vs 43.2%) and higher Pace% (50.1% vs 39.0%), so it isn't a pure sales ranking, but no tested combination reproduces the actual split reliably either. Likely a business/merchandising judgment call made with more context (strategic importance, marketing plans) than these columns carry — consistent with `scripts/README.md`'s own note that the base tiering "predates this session's scratch-script work" with no formula ever captured. **Decision: build a NEW, explicit, adjustable rule instead of guessing at the old one** (same 7 tier names, for vocabulary continuity only — NOT claiming methodological continuity). | **The rule (v1, in `scripts/update_regional_tiering.py`, parameters clearly named and adjustable):** within each region independently — Exited/New-Test/Thin-Immaterial by the same MIN_RELIABLE (50,000 SEK) logic as elsewhere, applied to that region's own FY24→FY25 sales; Clearance carried over unchanged from Sheet 2 (SKU-list membership isn't region-specific); the remaining "Continuing" pool ranked by REGION sales and split into the SAME proportions Global's own Continuing pool uses (34/615 Hero+Near-Hero, 431/615 Workhorse+Harvest, 150/615 Problem Child — chosen only to keep tier sizes recognizable, not because it's correct), with a ±5% growth floor separating Hero from Harvest-direction and Near-Hero from Workhorse. **Growth needs FY24-by-country data, which Sheet 5 doesn't have (REG-022 only pulled FY25+YTD2026)** — pulled fresh from `bob_salesdata_2024.xlsx`/`bob_salesdata_2025.xlsx` (REG-018's precedent file family: clean native `Sales Market` field, no store-name parsing needed, Core-scope via `is_core_customer_group()`). Carries REG-009's known ~2.3% cross-workstream gap vs. the SS26 exports. **Validation finding, better than expected:** this bob_salesdata-based Nordic+Non-Nordic sum reconciles to within 0.0–0.2% of the published, audited Sales_2025 for every franchise spot-checked (vs. Sheet 5's SS26-export basis, which runs ~8% high since it isn't Core-scope filtered) — the sales figures behind this rule are unusually well-reconciled even though the tier *boundaries* are a new invention. Country breakdown per region reuses Sheet 5's already-validated rows (filtered to that region), not a second country split — avoids two different "Sales by country" numbers with different provenance in one sheet. Result: 33 Nordic Hero+Near-Hero vs. 18 Non-Nordic (region-relative — home-market franchises rank well against a smaller regional population; this is expected and does not mean Nordic performs better in absolute terms). **Not flowed into Tier Bench yet** — a real next step, not silently skipped. |
 | REG-022 | Portfolio Analysis | Sales by Country (Sheet 5) | **Confirmed** (methodology; "Nordic vs Non-Nordic" grouping **business-directed 9-Sep-2026**), figures **Provisional** per REG-012 | New Sheet 5, "5. Sales by Country," reusable script `scripts/update_country_breakdown.py`: FY25/YTD2026 Sales/Units per franchise **per country** (13,438 franchise-country rows), so a question like "Hero products in Japan and Germany, excluding Nordic countries" can be answered directly rather than only at the whole-portfolio grain. **Source problem (REG-007):** the raw exports have no clean country field — `data_3` has a mostly-clean `Sales Market`, but `data_1`/`data_2`'s `Sales Market/Store` field mixes DTC store identity into the same field (e.g. "Outlet Barkarby," "Brand Store Sthlm," "E-com Sweden"). Built a hand-verified mapping of all 50 distinct raw values across the three files to a country (e.g. "Outlet Haparanda" → Sweden, "Brand Store Chamonix" → France, "Outlet Helsinki"/"Brand Store Helsinki" → Finland — resolved from each store name's real-world location). **The "Scandinavian vs Nordic" question originally flagged Open here was resolved same day:** the standard exclusion group is `Region Group (Nordic vs Non-Nordic)` = Sweden/Norway/Denmark/Finland vs. everywhere else; the stricter `Scandinavian (SE/NO/DK)` flag (no Finland) stays available as a separate column for anyone who specifically wants that narrower cut. | **One thing still deliberately left open, not silently resolved:** 994 "Pop-Up Sales Haglöfs" + 145 "Export Other" raw transaction rows (501 of the 13,438 franchise-country rows in this sheet, 3.7%) carry no city/country in the raw label at all — mapped to an explicit `Unmapped / Other` country, and **`Region Group` gives this its own "Unmapped" value rather than folding it into "Non-Nordic"** (folding it in would quietly inflate a Non-Nordic total with a geography nobody actually confirmed). `XXL` (523 raw rows) is dropped entirely — an account, not a geography (REG-008), consistent with every other sheet. Coverage: 13,438 of 13,717 franchise-country combinations with any raw activity matched an existing Sheet-2 franchise (279 did not — prototypes/non-apparel/discontinued items outside the curated 1,860-franchise scope, the same class of gap documented in REG-019). **Figures are raw-recomputed, not the published Sheet-2 totals** — summing a franchise's country rows will run higher than its audited Sales_2025 (this sheet is NOT Core-scope filtered the way Sheet 2 is — China appears as its own country row here, on purpose, so a real geography question isn't silently missing a market). Sanity-checked: "Astral GTX Jacket" (Women) — Sweden+Finland+Denmark together are ~77% of its total reconstructed sales, a concrete illustration of exactly the home-market skew this sheet was built to let people exclude. Flowed into Tier Bench as a sixth query tool, `queryByCountry`, with `regionGroup` as the primary filter. |
 | REG-021 | Portfolio Analysis | Style Code(s) (franchise → raw Model code lookup) | **Confirmed** (methodology), **not a canonical 1:1 code** | New `Style Code(s)` column on Sheet 2 (column V), reusable script `scripts/update_style_codes.py`. Collects every distinct raw `Model` value seen for a franchise (Base+Gender) across all three SS26 exports (SS26YTD + both FY25 halves), comma-separated, sorted — added so people tracking a franchise in another system (PLM/ERP) have a code to search on; the published workbook otherwise carries no code at all, only franchise names. **Model is NOT 1:1 with franchise, or even with the exact Article text** — the same article name can carry several Model codes across seasons (a re-launch keeps the product name but gets a new internal Model number): of 1,636 franchises with any matching raw data, 1,261 (77%) have exactly one code, 375 (23%) have 2–6. Read this column as "codes seen for this franchise," not "the" style code. Coverage: 224 of 1,860 franchises have no raw data at all (no code) — consistent with the same class of small join-gap seen in REG-017/020 (raw-export franchise-key text not exactly matching the published workbook's). Cross-checked: "ROC Flash Down Hood" (Women) resolves to a single code, 607466 — matches the Model number already cited in that same franchise's existing `Clearance Detail` note (REG-010), an independent confirmation the join is correct. |
 | REG-020 | Portfolio Analysis | Units_2025 (real FY25 unit sales) | **Confirmed** (methodology), figures **Provisional** per REG-012 | New `Units_2025` column on Sheet 2 (column U), reusable script `scripts/update_units_2025.py`. Sums the raw `Units Sold` field (present in all three SS26 exports, not previously pulled) from the two FY25 exports (Jan–Aug, Sep–Dec), Core-scope only (`is_core_market`, REG-008), matched by franchise (Base+Gender) — the exact same two files and method already used for REG-017/018. **Not blanked below MIN_RELIABLE** — unlike GM%/growth/share, this is a raw count (like Sales_2025 itself), so a small-denominator rate problem doesn't apply. Coverage: 1,527 of 1,860 franchises have a nonzero value; 333 have no matching raw units at all — consistent with REG-017's 330 "no raw sales data" count (small 3-franchise difference likely reflects a franchise with reconstructed sales but net-zero/negative units from returns, or vice versa). Sanity-checked: implied per-unit price (Sales_2025 / Units_2025) for the top 10 Hero+Near-Hero franchises ranges 290–1,900 SEK, consistent with Haglöfs jacket/pant/baselayer retail pricing. **Inherits REG-012's caveat** — reconstructed from raw rows rather than an audited published total, so treat as directional/consistent-methodology rather than an audited unit count. Added to Tier Bench's franchise data and the Hero Tier Catalogue's financial detail (previously showed "—" for FY25 units). |
@@ -191,4 +210,4 @@ Plain-language terms the team uses in conversation or when querying Tier Bench, 
 
 ---
 
-*Seeded 4 Sep 2026 from the SS26 DTC & Wholesale portfolio review. Reconciled against `config.py` 7 Sep 2026. Clearance treatment (REG-010/011/012), tier consolidation (REG-013), Generation Detail sheet (REG-014), Core Assortment FW27 check (REG-015), FW27 Collection status (REG-016), Wholesale Share % (REG-017), and Channel Pattern 2025 (REG-018) added 8 Sep 2026; Core Assortment FW27 (REG-015) updated same day with the authoritative Excel list. Available Stock by Tier (REG-019, Sheet 4) added 8 Sep 2026. Units_2025 (REG-020), Style Code(s) (REG-021), and Sales by Country (REG-022, Sheet 5) added 9 Sep 2026. Update the live artifact first, then re-sync this file.*
+*Seeded 4 Sep 2026 from the SS26 DTC & Wholesale portfolio review. Reconciled against `config.py` 7 Sep 2026. Clearance treatment (REG-010/011/012), tier consolidation (REG-013), Generation Detail sheet (REG-014), Core Assortment FW27 check (REG-015), FW27 Collection status (REG-016), Wholesale Share % (REG-017), and Channel Pattern 2025 (REG-018) added 8 Sep 2026; Core Assortment FW27 (REG-015) updated same day with the authoritative Excel list. Available Stock by Tier (REG-019, Sheet 4) added 8 Sep 2026. Units_2025 (REG-020), Style Code(s) (REG-021), Sales by Country (REG-022, Sheet 5), and region-relative tiering (REG-023, Sheets 6 & 7) added 9 Sep 2026. Update the live artifact first, then re-sync this file.*

@@ -28,6 +28,7 @@ silently out of scope; see `LAUNCH_READINESS_CHECKLIST.md`.
 | `update_units_2025.py` | REG-020 | Sheet 2 col U | SS26 exports (FY25 only) |
 | `update_style_codes.py` | REG-021 | Sheet 2 col V | SS26 exports (all three) |
 | `update_country_breakdown.py` | REG-022 | Sheet 5 (full rebuild) | SS26 exports (all three) |
+| `update_regional_tiering.py` | REG-023 | Sheets 6 & 7 (full rebuild) | `bob_salesdata_2024/2025.xlsx` + Sheet 5 |
 | `build_browse_view.py` | — (no data, just a layout view) | Sheet 2b (full rebuild) | Sheet 2 (formulas only, no source file) |
 
 `ss26_lib.py` is the shared library every script above imports from —
@@ -61,6 +62,12 @@ re-run in any order, any number of times, except:
   `update_units_2025.py`, `update_style_codes.py`,
   `update_country_breakdown.py` are independent of each other and of
   clearance.
+- Run `update_country_breakdown.py` (Sheet 5) BEFORE
+  `update_regional_tiering.py` (Sheets 6 & 7) — the latter reads Sheet
+  5's country rows directly and exits with an error if it's missing.
+  Also re-run `update_clearance.py` first if the clearance lists
+  changed, since `update_regional_tiering.py` reads Sheet 2's Clearance
+  Flag column too.
 - Run `build_browse_view.py` last (or any time after) if you've
   re-run any Sheet 2 script — it just re-points formulas at Sheet 2's
   current column positions and has no data of its own.
