@@ -3,19 +3,19 @@ franchises_chunk_*.json, generation_comparison.json, channel_mix.json,
 tier_summary.json (tier_summary's own numbers are still hand-copied below,
 not recomputed -- update them if Sheet 1's summary table changes).
 
-PARTIAL, NOT SELF-CONTAINED -- see tier_bench/README.md before relying on
-this: it needs art_channel.pkl (a per-article Wholesale/Retail/E-com sales+GM
-lookup), which is NOT committed here -- its own builder script was never
-saved and is now lost, the same class of gap as REG-020's original Units_2025
-scratch build. Without a copy of that pickle on disk at the path below, this
-script raises FileNotFoundError rather than silently producing an incomplete
-channel_mix/generation_comparison. It also does NOT cover
-stock_by_franchise.json, country_breakdown.json, or regional_tiering.json --
-those three have no committed regeneration path at all (their extraction
-logic also only ever existed as one-off chat scripts). Re-run
+Needs art_channel.pkl (a per-article FY25 Wholesale/Retail/E-com sales+GM
+lookup) sitting next to this script -- run `python3 build_art_channel.py`
+first if it isn't there yet (that script rebuilds it from the raw SS26
+exports; not committed itself, same as this script's own output and
+tier_bench.html -- a regenerable build intermediate, not source). Without
+it, this script raises FileNotFoundError rather than silently producing
+an incomplete channel_mix/generation_comparison.
+
+Does NOT cover stock_by_franchise.json, country_breakdown.json, or
+regional_tiering.json -- see extract_stock.py, extract_country_breakdown.py,
+and extract_regional_tiering.py for those three instead. Re-run
 scripts/update_stock.py / update_country_breakdown.py / update_regional_tiering.py
-against a fresh workbook first, then a NEW extraction script would still be
-needed to turn those sheets into this file's JSON shape.
+against a fresh workbook first if those sheets themselves need refreshing.
 """
 import openpyxl, pickle, json
 from pathlib import Path
@@ -32,6 +32,9 @@ franchises = []
 for r in range(5, ws2.max_row + 1):
     base = ws2.cell(row=r, column=1).value
     if base is None: continue
+    units25 = ws2.cell(row=r, column=21).value
+    units_ytd26 = ws2.cell(row=r, column=9).value
+    wholesale_share = ws2.cell(row=r, column=19).value
     franchises.append({
         "base": base, "gender": ws2.cell(row=r, column=2).value,
         "layer": ws2.cell(row=r, column=3).value, "tier": ws2.cell(row=r, column=4).value,
@@ -45,6 +48,18 @@ for r in range(5, ws2.max_row + 1):
         "specialAcct": ws2.cell(row=r, column=13).value,
         "clearanceFlag": ws2.cell(row=r, column=14).value,
         "clearanceDetail": ws2.cell(row=r, column=15).value,
+        # REG-015/016/017/018/020/021 -- added to Sheet 2 after this
+        # script's first version; folded in 9-Sep-2026 so franchises_chunk
+        # stays in sync with the published sheet rather than silently
+        # trailing it (caught by diffing this script's output against the
+        # committed qa_data/*.json before trusting it -- see git history).
+        "coreAssortmentFw27": ws2.cell(row=r, column=17).value,
+        "fw27Collection": ws2.cell(row=r, column=18).value,
+        "wholesaleSharePct": round(wholesale_share, 1) if wholesale_share is not None else None,
+        "channelPattern2025": ws2.cell(row=r, column=20).value,
+        "units25": round(units25) if units25 is not None else None,
+        "unitsYtd26": round(units_ytd26) if units_ytd26 is not None else None,
+        "styleCodes": ws2.cell(row=r, column=22).value,
     })
 print("franchises:", len(franchises))
 
@@ -72,9 +87,10 @@ def rank(gen):
 art_channel_path = Path(__file__).resolve().parent / "art_channel.pkl"
 if not art_channel_path.exists():
     raise FileNotFoundError(
-        f"{art_channel_path} not found -- this pickle (per-article Wholesale/"
-        "Retail/E-com sales+GM, built from the raw SS26 exports) is not "
-        "committed; see this file's module docstring and tier_bench/README.md."
+        f"{art_channel_path} not found -- run `python3 build_art_channel.py` "
+        "first (rebuilds this per-article Wholesale/Retail/E-com sales+GM "
+        "pickle from the raw SS26 exports; not committed, a regenerable "
+        "build intermediate like this script's own output)."
     )
 with open(art_channel_path, "rb") as f:
     art_channel = pickle.load(f)
