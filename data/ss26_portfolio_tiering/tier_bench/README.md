@@ -20,12 +20,16 @@ isn't).
 | `gen_page.py` | Builds `tier_bench.html` from `qa_data/*.json`. Run from this directory: `python3 gen_page.py`. Self-contained — the full page markup, CSS, and client-side JS (tool definitions, `SYSTEM_PROMPT`, the `sample()` call, the filter/CSV-export table view) live in one big string in this file, unlike the Hero Tier Catalogue's separate `catalogue_template.html`. |
 | `qa_data/*.json` | The seven datasets the page's tools query, as a point-in-time extract from `Project_Bob_Portfolio_Tiering_08092026.xlsx` (`franchises_chunk_0..4.json` — Sheet 2, chunked to keep each JSON doc a manageable size; `generation_comparison.json` — Sheet 3, recomputed per-pair; `channel_mix.json` — per-article Wholesale/Retail/E-com split; `tier_summary.json` — Sheet 1's 7-tier roll-up; `stock_by_franchise.json` — Sheet 4; `country_breakdown.json` — Sheet 5; `regional_tiering.json` — Sheets 6/7, REG-023/024). |
 | `build_qa_data.py` | Rebuilds **4 of the 7** `qa_data/*.json` files (franchises, generation_comparison, channel_mix, tier_summary) from the master workbook. **Partial and not self-contained** — see its module docstring and "What's still not reproducible" below before relying on it. |
+| `extract_stock.py` | Rebuilds `stock_by_franchise.json` from the raw warehouse stock snapshot, reusing `scripts/update_stock.py`'s exact matching logic (REG-019). Verified 9-Sep-2026: exact match against the previously-published file, structurally and in row order. |
+| `extract_country_breakdown.py` | Rebuilds `country_breakdown.json` by reading the master workbook's Sheet 5 directly (REG-022) — doesn't re-derive the franchise↔country matching itself; re-run `scripts/update_country_breakdown.py` first if Sheet 5 needs refreshing. Verified 9-Sep-2026: exact match, all 13,438 rows. |
+| `extract_regional_tiering.py` | Rebuilds `regional_tiering.json` by reading the master workbook's Sheets 6/7 directly (REG-023/024), deduped to one row per franchise per region and joined to Sheet 2's Tier for `globalTier`. Re-run `scripts/update_regional_tiering.py` first if the regional sheets need refreshing. Verified 9-Sep-2026: exact match, all 3,720 rows. |
 
 ## What's still not reproducible
 
 Unlike the SS26 pipeline scripts (`scripts/update_*.py`, each with a
 clean, committed, rerunnable path from source file to workbook column),
-Tier Bench's own data-refresh pipeline is only partly recovered:
+Tier Bench's own data-refresh pipeline is now **mostly** recovered, with
+one real gap left:
 
 - **`build_qa_data.py` needs `art_channel.pkl`, which is not committed.**
   It's a per-article Wholesale/Retail/E-com sales+GM lookup, built from
@@ -34,22 +38,21 @@ Tier Bench's own data-refresh pipeline is only partly recovered:
   stop happening again, one level deeper. Without a copy of that pickle
   on disk next to `build_qa_data.py`, it raises `FileNotFoundError`
   rather than silently producing an incomplete `channel_mix.json`/
-  `generation_comparison.json`.
-- **`stock_by_franchise.json`, `country_breakdown.json`, and
-  `regional_tiering.json` have no committed regeneration path at all.**
-  Their extraction logic (workbook Sheet 4 / Sheet 5 / Sheets 6+7 → this
-  JSON shape) only ever existed as one-off chat scripts that are gone.
-  `scripts/update_stock.py`, `update_country_breakdown.py`, and
-  `update_regional_tiering.py` regenerate the *workbook sheets* those
-  three files are extracted from — a new script would still be needed to
-  turn a refreshed sheet into Tier Bench's JSON shape.
+  `generation_comparison.json`. This affects only 2 of the 7 `qa_data`
+  files (`channel_mix.json`, `generation_comparison.json`) — the other 5
+  (`franchises_chunk_*.json`, `tier_summary.json` via `build_qa_data.py`;
+  `stock_by_franchise.json`, `country_breakdown.json`,
+  `regional_tiering.json` via the three `extract_*.py` scripts above) now
+  have a working, verified regeneration path.
 
-**Practical effect:** after a future data drop, re-running the SS26
-pipeline scripts refreshes the workbook correctly, but bringing Tier
-Bench's dataset up to date with it currently means writing (or
-recovering) that missing extraction logic, not just re-running a
-command. Flag this before promising a same-day Tier Bench refresh
-alongside a workbook update.
+**Practical effect:** after a future data drop, re-run the SS26 pipeline
+scripts to refresh the workbook (per `scripts/README.md`'s ordering —
+`update_stock.py`/`update_country_breakdown.py`/`update_regional_tiering.py`
+before the corresponding `extract_*.py`), then `build_qa_data.py` (for
+franchises/tier_summary only, until `art_channel.pkl` is rebuilt or
+its builder rewritten) and the three `extract_*.py` scripts, then
+`gen_page.py`. `channel_mix.json`/`generation_comparison.json` are the
+one piece that still needs that missing intermediate rebuilt first.
 
 ## Running the generator
 
