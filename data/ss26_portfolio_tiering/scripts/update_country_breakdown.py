@@ -16,20 +16,27 @@ bucket), built from the raw store names' real-world locations (e.g.
 "Outlet Haparanda" -> Sweden, "Brand Store Chamonix" -> France,
 "Outlet Helsinki"/"Brand Store Helsinki" -> Finland).
 
-TWO THINGS LEFT DELIBERATELY OPEN (do not silently resolve if extending
-this):
-  1. "Scandinavian" vs "Nordic" is a real definitional choice, not a
-     fact -- Scandinavian (strict, this script's IS_SCANDINAVIAN) is
-     Sweden/Norway/Denmark; Nordic (IS_NORDIC) adds Finland. Both flags
-     are written as separate columns so a query can use either
-     definition; "exclude Scandinavian countries" in a query should be
-     confirmed against which one the asker means.
-  2. "Pop-Up Sales Haglöfs" (994 rows) and "Export Other" (145 rows)
-     carry no city/country in the label itself and are NOT guessed at --
-     mapped to the explicit bucket "Unmapped / Other", not silently
-     assigned to Sweden or dropped. XXL (523 rows) is an account, not a
-     geography (REG-008) -- dropped entirely, same as everywhere else in
-     this workbook.
+REG-022 originally flagged "Scandinavian vs Nordic" as an open
+definitional choice rather than silently picking one. RESOLVED
+9-Sep-2026, business-directed: the standard exclusion group is
+**Nordic (Sweden/Norway/Denmark/Finland)**, not the stricter
+Scandinavian-only cut. The `Region Group (Nordic vs Non-Nordic)` column
+is the one to filter/group on for normal use. The stricter
+`Scandinavian (SE/NO/DK)` and the underlying `Nordic (+FI)` Yes/No
+columns are kept alongside it (not removed) for anyone who specifically
+wants the narrower Sweden/Norway/Denmark-only cut.
+
+ONE THING STILL LEFT DELIBERATELY OPEN (do not silently resolve if
+extending this): "Pop-Up Sales Haglöfs" (994 rows) and "Export Other"
+(145 rows) carry no city/country in the label itself and are NOT
+guessed at -- mapped to the explicit bucket "Unmapped / Other," not
+silently assigned to Sweden or dropped. Region Group gives this bucket
+its own "Unmapped" value rather than folding it into "Non-Nordic" --
+lumping it in would quietly inflate a Non-Nordic total with a
+geography nobody actually confirmed (501 of 13,438 franchise-country
+rows, 3.7% -- a small share of rows, but real activity, not noise).
+XXL (523 rows) is an account, not a geography (REG-008) -- dropped
+entirely, same as everywhere else in this workbook.
 
 Sales_2025/Units_2025 come from data_2+data_3 (FY25 halves), matching
 Units_2025's own basis (REG-020). Sales_YTD2026/Units_YTD2026 come from
@@ -153,6 +160,7 @@ def main():
 
     headers = [
         "Base", "Gender", "Layer", "Tier", "Country/Market",
+        "Region Group (Nordic vs Non-Nordic)",
         "Scandinavian (SE/NO/DK)", "Nordic (+FI)",
         "Sales_2025 (SEK)", "Units_2025",
         "Sales_YTD2026 (SEK, raw)", "Units_YTD2026 (raw)",
@@ -174,8 +182,15 @@ def main():
         n_matched_franchise += 1
         f25 = fy25.get((base, gender, country), {"sales": 0, "units": 0})
         y26 = ytd26.get((base, gender, country), {"sales": 0, "units": 0})
+        if country == UNMAPPED:
+            region_group = "Unmapped"
+        elif country in NORDIC:
+            region_group = "Nordic"
+        else:
+            region_group = "Non-Nordic"
         row_vals = [
             base, gender, meta["layer"], meta["tier"], country,
+            region_group,
             "Yes" if country in SCANDINAVIAN else "No",
             "Yes" if country in NORDIC else "No",
             round(f25["sales"]) or None, round(f25["units"]) or None,
@@ -184,7 +199,7 @@ def main():
         for c, v in enumerate(row_vals, start=1):
             cell = ws.cell(row=r, column=c, value=v)
             cell.font = s["body_font"]
-            if c in (8, 10):
+            if c in (9, 11):
                 cell.number_format = s["num_fmt"]
         r += 1
 
