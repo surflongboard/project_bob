@@ -6,13 +6,16 @@ added to the published workbook after the base 1,860-row tiering existed
 now has a corresponding `update_*.py` script here, so a future data drop
 is "rerun this script," not "re-derive this from scratch."
 
-**Not covered by these scripts:** the base 8→7-tier classification itself
-(columns A–M — Tier, Sales_2025, GM%, Pace%, Growth% etc.) predates this
-session's scratch-script work and wasn't captured as a reusable script
-here. Everything below assumes that base workbook already exists and only
-adds/refreshes columns N onward, plus Sheets 3 and 4. Rebuilding the base
-tiering from raw sales data from scratch is a real gap — flagged, not
-silently out of scope; see `LAUNCH_READINESS_CHECKLIST.md`.
+**The base 8→7-tier classification itself** (columns A–M — Tier, Sales_2025,
+GM%, Pace%, Growth% etc.) predates this session's scratch-script work and
+was never captured as a reusable script here — but as of 9-Sep-2026 the
+actual rule behind it **is** documented and validated: see REG-024 in the
+register, `ss26_lib.classify_tier()`, and `verify_base_tiering.py` (a
+read-only audit — 99.8% match against the published Tier column, but it
+does NOT rewrite Sheet 2; the published tiers stay authoritative). Nothing
+here rebuilds Sheet 2's Tier column from scratch and overwrites it — that
+remains true, and is a deliberate choice (see `verify_base_tiering.py`'s
+docstring for why), not an oversight.
 
 ## What each script does
 
@@ -29,6 +32,7 @@ silently out of scope; see `LAUNCH_READINESS_CHECKLIST.md`.
 | `update_style_codes.py` | REG-021 | Sheet 2 col V | SS26 exports (all three) |
 | `update_country_breakdown.py` | REG-022 | Sheet 5 (full rebuild) | SS26 exports (all three) |
 | `update_regional_tiering.py` | REG-023 | Sheets 6 & 7 (full rebuild) | `bob_salesdata_2024/2025.xlsx` + Sheet 5 |
+| `verify_base_tiering.py` | REG-024 | Nothing — read-only audit, prints a match report | `bob_salesdata_2024/2025.xlsx` |
 | `build_browse_view.py` | — (no data, just a layout view) | Sheet 2b (full rebuild) | Sheet 2 (formulas only, no source file) |
 
 `ss26_lib.py` is the shared library every script above imports from —
@@ -71,6 +75,10 @@ re-run in any order, any number of times, except:
 - Run `build_browse_view.py` last (or any time after) if you've
   re-run any Sheet 2 script — it just re-points formulas at Sheet 2's
   current column positions and has no data of its own.
+- `verify_base_tiering.py` is read-only (no dependency, no write) — run
+  it any time to re-confirm the REG-024 rule still matches Sheet 2's
+  published tiers, e.g. after a new data drop, before trusting the rule
+  for something new.
 
 Validated (Sep 2026) by running every script against a scratch copy of
 the published workbook and diffing the result cell-by-cell against the

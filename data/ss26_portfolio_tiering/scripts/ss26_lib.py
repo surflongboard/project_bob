@@ -66,6 +66,64 @@ SS26_MARKET_FIELD = {
 
 MIN_RELIABLE = 50_000  # SEK/year -- REG-004 precedent
 
+# --------------------------------------------------------------------------
+# REG-024: the base 8-tier commercial portfolio rule. Confirmed 9-Sep-2026
+# by the business (previously undocumented anywhere in this repo -- an
+# extensive reverse-engineering attempt from Sales/GM%/Growth/Pace alone had
+# failed, best composite score only explained 41% of the real Hero+Near-Hero
+# set). Validated against Sheet 2's own "Original Tier (pre-consolidation)"
+# column: 1,808 of 1,812 non-Clearance franchises match exactly (99.8%) when
+# recomputed from bob_salesdata_2024/2025.xlsx -- the 4 mismatches are
+# article-name parsing edge cases ("*MISSING*", a glued gender suffix), not
+# rule failures. See scripts/verify_base_tiering.py for the validation run.
+# --------------------------------------------------------------------------
+MIN_UNITS_FOR_REAL_TRADING_YEAR = 100  # matches config.py's constant of the same name
+GM_HERO_FLOOR = 46.6   # core-company average GM% -- the "good" bar, not a round number
+GM_WORKHORSE_FLOOR = 40.0  # separate, lower floor -- splits Workhorse/Harvest from Problem Child
+HARVEST_GROWTH_LINE = -10.0  # Workhorse (growth > this) vs Harvest (growth <= this)
+NEAR_HERO_GROWTH_FLOOR = 15.0
+
+
+def classify_tier(*, sales, units_prior, units_current, growth, gm_pct,
+                   wholesale_sek, dtc_sek, sales_floor_hero, sales_floor_near_hero,
+                   wholesale_floor, dtc_floor):
+    """The confirmed base tier rule (REG-024), parameterized so the same
+    logic can be reused for the Global scale (pass the real 2M/1M/100K/50K
+    SEK floors) or a region-scaled scale (pass floors scaled to that
+    region's revenue share -- REG-023's region-relative approach applies
+    scaling to these SEK floors only; gm_pct/growth are already relative and
+    are never scaled). units_prior/units_current and sales/growth/gm_pct/
+    wholesale_sek/dtc_sek must all be computed on the SAME year-pair and
+    SAME scope (Global sales, or one region's sales) as each other.
+
+    Returns one of: "New / Test", "Exited", "Thin / Immaterial", "Hero",
+    "Near-Hero (Rising Star)", "Workhorse", "Harvest (Cash Cow)",
+    "Problem Child". Does NOT handle Clearance -- that's a separate,
+    SKU-list-based flag carried over from Sheet 2 regardless of scale
+    (REG-010's China JV/Zalando lists aren't a sales-rule outcome).
+    """
+    real_prior = units_prior >= MIN_UNITS_FOR_REAL_TRADING_YEAR
+    real_current = units_current >= MIN_UNITS_FOR_REAL_TRADING_YEAR
+    if real_current and not real_prior:
+        return "New / Test"
+    if real_prior and not real_current:
+        return "Exited"
+    if not real_prior or not real_current:
+        return "Thin / Immaterial"
+
+    cross_channel = wholesale_sek > wholesale_floor and dtc_sek > dtc_floor
+    if (sales >= sales_floor_hero and growth is not None and growth > 0
+            and cross_channel and gm_pct >= GM_HERO_FLOOR):
+        return "Hero"
+    if (sales >= sales_floor_near_hero and growth is not None and growth > NEAR_HERO_GROWTH_FLOOR
+            and cross_channel and gm_pct >= GM_HERO_FLOOR):
+        return "Near-Hero (Rising Star)"
+    if gm_pct < GM_WORKHORSE_FLOOR:
+        return "Problem Child"
+    if growth is not None and growth > HARVEST_GROWTH_LINE:
+        return "Workhorse"
+    return "Harvest (Cash Cow)"
+
 # Tier order, consolidated scheme (REG-013): Hero+Near-Hero merged,
 # Workhorse+Harvest merged, Clearance tier (REG-010) added.
 TIER_ORDER = [

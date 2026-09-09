@@ -1,92 +1,73 @@
 """
-REG-023: Region-relative tiering -- "6. Full Portfolio (Nordic)" and
+REG-023 (rewritten 9-Sep-2026): Region-relative tiering using the REAL,
+now-confirmed base rule (REG-024) -- "6. Full Portfolio (Nordic)" and
 "7. Full Portfolio (Non-Nordic)" sheets.
 
-CONTEXT: attempted to reverse-engineer the Global tiering's exact
-Hero/Near-Hero/Workhorse/Harvest/Problem Child cut rule from Sales_2025,
-GM%_2025, Growth%, and Pace% (the only fields available for it) so the
-same rule could be reapplied to Nordic-only and Non-Nordic-only
-populations. It does NOT reduce to any simple formula on these fields --
-tested absolute thresholds, top-N by sales, top-N per Layer, and several
-composite scores (sales x growth, sales x margin, etc.); the best of
-these only explained ~41% of the actual Hero+Near-Hero set, no better
-than noise. Likely a business/merchandising judgment call made with more
-context than these columns carry. Business-directed (9-Sep-2026): build
-a NEW, transparent, explicitly-documented rule instead of guessing at
-the old one, using the SAME 7 tier names for continuity, with
-REGION-RELATIVE thresholds (each region ranked against its own
-population, not a shared global SEK bar) -- see RULE below for the
-exact, adjustable cut points.
+HISTORY: the first version of this script (see git history) invented a
+brand-new percentile-based rule after an extensive attempt to
+reverse-engineer Sheet 2's actual tier-cut logic failed (best composite
+score only explained 41% of the real Hero+Near-Hero set). The business
+then supplied the real rule directly -- see REG-024 in the register and
+`verify_base_tiering.py`, which validates it against Sheet 2 at 99.8%
+accuracy. This version reapplies THAT REAL rule (via ss26_lib.classify_tier)
+with region-scoped inputs, not an invented one.
 
-DATA SOURCE for growth: Sheet 5 (REG-022) only has FY25 + YTD2026 by
-country -- no FY24, so no growth-by-region is possible from it alone.
-Pulled FY24 and FY25 by country fresh from bob_salesdata_2024.xlsx /
-bob_salesdata_2025.xlsx instead (REG-018's precedent: same two files,
-clean native "Sales Market" field, no store-name parsing needed, unlike
-the SS26 exports). Core-scope filtered via is_core_customer_group() --
-the correct filter for THIS file family (REG-008), not is_core_market()
-(that's for the SS26 exports). Carries REG-009's known ~2.3% cross-
-workstream total-sales gap vs the SS26 exports -- read growth as
-directional, not audited. A literal "Total" row (877.15M SEK, matching
-REG-009's cited total exactly) and a single zero-value "Restored" row
-are excluded, not real market data.
+REGION-SCALED THRESHOLDS (business-directed 9-Sep-2026): the confirmed
+rule's SEK floors (2M Hero, 1M Near-Hero, 100K/50K cross-channel) are
+GLOBAL, absolute numbers. Applying them unscaled to each region separately
+would just be "same absolute thresholds as Global" -- the option
+explicitly NOT chosen (see chat history) -- since Non-Nordic's smaller
+regional pool would rarely clear a bar calibrated to global-scale revenue.
+Instead, each region's SEK floors are scaled by that region's own share of
+total FY25 Core sales (Nordic ~68.1%, Non-Nordic ~31.9%, computed fresh
+from bob_salesdata_2025.xlsx each run -- not hardcoded). GM%/growth cuts
+are NOT scaled -- they're already relative (%), not absolute SEK, so
+scaling them would double-count the adjustment. The 100-unit "real
+trading" threshold is also NOT scaled -- it's a physical/operational
+reality check (did this genuinely sell), not a revenue-scale artifact.
 
-RULE (v1, adjustable -- these are the parameters to revisit if the
-business wants different cut points):
-  Within EACH region (Nordic, Non-Nordic) independently:
-    1. Exited: region FY25 Sales < MIN_RELIABLE, region FY24 Sales >= MIN_RELIABLE
-       (had real regional sales before, negligible now).
-    2. New/Test: region FY24 Sales < MIN_RELIABLE, region FY25 Sales >= MIN_RELIABLE
-       (negligible/no regional history before, real sales now).
-    3. Thin/Immaterial: both FY24 and FY25 region Sales < MIN_RELIABLE.
-    4. Clearance: Sheet 2's existing Clearance Flag == "Fully" carried over
-       as-is -- REG-010's China JV/Zalando SKU lists aren't region-specific,
-       so this tier isn't region-relative like the rest.
-    5. Everything else ("Continuing" pool, region-local) ranked by region
-       FY25 Sales descending, split into the SAME proportions Global uses
-       within its own Continuing pool (34/615 Hero+Near-Hero, 431/615
-       Workhorse+Harvest, 150/615 Problem Child -- chosen only to keep the
-       tier-size shape recognizable, not because it's "correct"):
-         - Top slice (Hero+Near-Hero share) AND region Growth% >= HERO_GROWTH_FLOOR
-           (-5%, i.e. roughly flat-or-better) -- else falls through to the
-           Workhorse+Harvest slice instead. Split in half by region sales:
-           top half = Hero, bottom half = Near-Hero.
-         - Next slice (Workhorse+Harvest share): Workhorse if region Growth%
-           >= WORKHORSE_GROWTH_FLOOR (-5%), else Harvest.
-         - Remaining (Problem Child share): Problem Child regardless of
-           growth sign -- Global's own Problem Child spans a huge growth
-           range too, so "smallest of the continuing performers" is this
-           rule's read of what that tier actually captures, not "declining."
+DATA SOURCE: bob_salesdata_2024.xlsx / bob_salesdata_2025.xlsx (REG-018's
+precedent file family -- clean native "Sales Market" field, Core-scope via
+is_core_customer_group()). Carries REG-009's known ~2.3% cross-workstream
+gap vs. the SS26 exports. A literal "Total" row and a single zero-value
+"Restored" row are excluded, not real market data.
 
-Country breakdown shown alongside: reuses Sheet 5's already-validated
-per-country FY25/YTD2026 rows (REG-022), filtered to the region, rather
-than re-deriving a second country split from bob_salesdata -- avoids two
-different "Sales by country" numbers with different provenance sitting
-in the same sheet.
+Country breakdown alongside the regional tier reuses Sheet 5's
+already-validated per-country FY25/YTD2026 rows (REG-022), filtered to the
+region -- avoids a second, differently-sourced country split in the same
+sheet. Franchises with a computed regional tier but NO country-level rows
+in that region (no sales there at all) still get one summary row, with
+the country column reading "— (no {region} sales)" -- the first version of
+this script silently omitted them (733 of 1,860 were missing from the
+Non-Nordic sheet), which is now fixed.
 
 Usage:
     python3 data/ss26_portfolio_tiering/scripts/update_regional_tiering.py
 """
 from __future__ import annotations
 
-from collections import defaultdict
+from collections import Counter, defaultdict
 
 import ss26_lib as lib
 import update_country_breakdown as cb  # reuse NORDIC set + Region Group logic
 
-MIN_RELIABLE = lib.MIN_RELIABLE
-HERO_GROWTH_FLOOR = -5.0
-WORKHORSE_GROWTH_FLOOR = -5.0
+# Global (unscaled) floors from the confirmed rule -- see REG-024.
+HERO_SALES_FLOOR_GLOBAL = 2_000_000
+NEAR_HERO_SALES_FLOOR_GLOBAL = 1_000_000
+WHOLESALE_FLOOR_GLOBAL = 100_000
+DTC_FLOOR_GLOBAL = 50_000
 
 BOB_SALES_FILES = {
     2024: lib.REPO_ROOT / "data" / "bob_salesdata_2024.xlsx",
     2025: lib.REPO_ROOT / "data" / "bob_salesdata_2025.xlsx",
 }
-NON_MARKET_VALUES = {"Total", "Restored"}  # grand-total / adjustment rows, not real markets
+NON_MARKET_VALUES = {"Total", "Restored"}
+NO_PRESENCE = "— (no regional sales)"
 
 
-def load_bob_sales_by_country(year):
-    """(base, gender, country) -> Garp SEK Sales, Core-scope only, for one FY."""
+def load_franchise_region_totals(year):
+    """(base, gender, region) -> {sales, units, margin, wholesale, dtc}, Core-scope only.
+    region is 'Nordic', 'Non-Nordic', or 'Unmapped' (REG-022's country->region map)."""
     import openpyxl
 
     path = BOB_SALES_FILES[year]
@@ -95,7 +76,7 @@ def load_bob_sales_by_country(year):
     rows = ws.iter_rows(values_only=True)
     header = next(rows)
     idx = {n: i for i, n in enumerate(header)}
-    out = defaultdict(float)
+    out = defaultdict(lambda: {"sales": 0.0, "units": 0.0, "margin": 0.0, "wholesale": 0.0, "dtc": 0.0})
     for row in rows:
         market = row[idx["Sales Market"]]
         if market in NON_MARKET_VALUES or market is None:
@@ -110,92 +91,79 @@ def load_bob_sales_by_country(year):
         base, gender = lib.franchise_key(a.strip())
         country = market if market != "Export Other" else cb.UNMAPPED
         region = "Nordic" if country in cb.NORDIC else ("Unmapped" if country == cb.UNMAPPED else "Non-Nordic")
-        out[(base, gender, region)] += row[idx["Garp SEK Sales"]] or 0
+        key = (base, gender, region)
+        sales = row[idx["Garp SEK Sales"]] or 0
+        out[key]["sales"] += sales
+        out[key]["units"] += row[idx["Units Sold"]] or 0
+        out[key]["margin"] += row[idx["Garp SEK Margin"]] or 0
+        if row[idx["Sales Channel"]] in ("Wholesale", "Marketplace"):  # REG-018 precedent
+            out[key]["wholesale"] += sales
+        else:
+            out[key]["dtc"] += sales
     return out
 
 
-def classify_region(pool):
-    """pool: list of dicts with base/gender/fy24/fy25/growth for ONE region's
-    Continuing-pool franchises (already excluded: Exited/New-Test/Thin/
-    Clearance). Returns {(base,gender): sub-tier} using this region's own
-    sales ranking -- every franchise in `pool` ends up in exactly one of
-    the three buckets below, no fallthrough/edge cases."""
-    n = len(pool)
-    n_hero_nh = round(n * 34 / 615)
-    n_problem_child = round(n * 150 / 615)
-    ranked = sorted(pool, key=lambda p: -p["fy25"])  # sales-ranked, region-local
-
-    # Take the top-by-sales candidates that ALSO clear the growth floor as
-    # Hero/Near-Hero; anyone in that top slice who doesn't clear it falls
-    # through to the Workhorse/Harvest pool instead (still sales-ranked).
-    hero_candidates, remaining = [], []
-    for p in ranked:
-        if len(hero_candidates) < n_hero_nh and p["growth"] is not None and p["growth"] >= HERO_GROWTH_FLOOR:
-            hero_candidates.append(p)
-        else:
-            remaining.append(p)
-
-    result = {}
-    half = len(hero_candidates) / 2
-    for i, p in enumerate(hero_candidates):
-        result[(p["base"], p["gender"])] = "Hero" if i < half else "Near-Hero"
-
-    n_workhorse_harvest = max(len(remaining) - n_problem_child, 0)
-    for i, p in enumerate(remaining):
-        key = (p["base"], p["gender"])
-        if i < n_workhorse_harvest:
-            result[key] = "Workhorse" if (p["growth"] is not None and p["growth"] >= WORKHORSE_GROWTH_FLOOR) else "Harvest"
-        else:
-            result[key] = "Problem Child"
-    return result
+def region_revenue_share(fy25, region_name):
+    region_total = sum(v["sales"] for (b, g, r), v in fy25.items() if r == region_name)
+    grand_total = sum(v["sales"] for (b, g, r), v in fy25.items() if r in ("Nordic", "Non-Nordic"))
+    return region_total / grand_total if grand_total else 0.0
 
 
 CONSOLIDATED = {
-    "Hero": "Hero + Near-Hero", "Near-Hero": "Hero + Near-Hero",
-    "Workhorse": "Workhorse + Harvest", "Harvest": "Workhorse + Harvest",
-    "Problem Child": "Problem Child",
+    "Hero": "Hero + Near-Hero", "Near-Hero (Rising Star)": "Hero + Near-Hero",
+    "Workhorse": "Workhorse + Harvest", "Harvest (Cash Cow)": "Workhorse + Harvest",
+    "Problem Child": "Problem Child", "New / Test": "New / Test",
+    "Thin / Immaterial": "Thin / Immaterial", "Exited": "Exited",
 }
 
 
-def build_region_data(fy24, fy25, franchise_universe, region_name):
-    """Returns {(base,gender): {"tier": consolidated tier, "origTier": raw sub-tier,
-    "sales24": .., "sales25": .., "growth": ..}} for every franchise in the universe."""
+def build_region_data(fy24, fy25, franchise_universe, region_name, revenue_share):
+    """Returns {(base,gender): {...}} with the region-scoped inputs AND the
+    resulting tier (REG-013 consolidated naming) for every franchise."""
+    hero_floor = HERO_SALES_FLOOR_GLOBAL * revenue_share
+    near_hero_floor = NEAR_HERO_SALES_FLOOR_GLOBAL * revenue_share
+    wholesale_floor = WHOLESALE_FLOOR_GLOBAL * revenue_share
+    dtc_floor = DTC_FLOOR_GLOBAL * revenue_share
+
     out = {}
-    continuing_pool = []
     for base, gender, clearance_flag in franchise_universe:
         key = (base, gender)
-        s24 = fy24.get((base, gender, region_name), 0.0)
-        s25 = fy25.get((base, gender, region_name), 0.0)
-        growth = round((s25 - s24) / s24 * 100, 1) if s24 >= MIN_RELIABLE else None
-        if clearance_flag == "Fully":
-            tier, orig = "Clearance — Ex China/Zalando", "Clearance — Ex China/Zalando"
-        elif s25 < MIN_RELIABLE and s24 >= MIN_RELIABLE:
-            tier, orig = "Exited", "Exited"
-        elif s24 < MIN_RELIABLE and s25 >= MIN_RELIABLE:
-            tier, orig = "New / Test", "New / Test"
-        elif s24 < MIN_RELIABLE and s25 < MIN_RELIABLE:
-            tier, orig = "Thin / Immaterial", "Thin / Immaterial"
-        else:
-            tier, orig = None, None  # resolved after ranking the Continuing pool
-            continuing_pool.append({"base": base, "gender": gender, "fy24": s24, "fy25": s25, "growth": growth})
-        out[key] = {"sales24": s24, "sales25": s25, "growth": growth, "tier": tier, "origTier": orig}
+        a24 = fy24.get((base, gender, region_name), {"sales": 0, "units": 0, "margin": 0, "wholesale": 0, "dtc": 0})
+        a25 = fy25.get((base, gender, region_name), {"sales": 0, "units": 0, "margin": 0, "wholesale": 0, "dtc": 0})
+        sales25 = a25["sales"]
+        gm25 = round(a25["margin"] / sales25 * 100, 1) if sales25 else None
+        growth = round((sales25 - a24["sales"]) / a24["sales"] * 100, 1) if a24["sales"] else None
 
-    sub_tiers = classify_region(continuing_pool)
-    for key, sub in sub_tiers.items():
-        out[key]["origTier"] = sub
-        out[key]["tier"] = CONSOLIDATED[sub]
+        if clearance_flag == "Fully":
+            sub_tier = "Clearance — Ex China/Zalando"
+        else:
+            sub_tier = lib.classify_tier(
+                sales=sales25, units_prior=a24["units"], units_current=a25["units"],
+                growth=growth, gm_pct=gm25 or 0.0, wholesale_sek=a25["wholesale"], dtc_sek=a25["dtc"],
+                sales_floor_hero=hero_floor, sales_floor_near_hero=near_hero_floor,
+                wholesale_floor=wholesale_floor, dtc_floor=dtc_floor,
+            )
+        tier = CONSOLIDATED.get(sub_tier, sub_tier)
+        out[key] = {
+            "tier": tier, "subTier": sub_tier,
+            "sales24": round(a24["sales"]) or None, "sales25": round(sales25) or None,
+            "units25": round(a25["units"]) or None, "gm25": gm25, "growth": growth,
+            "wholesale25": round(a25["wholesale"]) or None, "dtc25": round(a25["dtc"]) or None,
+        }
     return out
 
 
-def write_region_sheet(wb, sheet_name, region_group_value, region_data, country_rows, franchise_meta, s):
+def write_region_sheet(wb, sheet_name, region_name, region_data, country_rows_by_key, franchise_meta, s):
     if sheet_name in wb.sheetnames:
         del wb[sheet_name]
     ws = wb.create_sheet(sheet_name)
     headers = [
-        "Base", "Gender", "Layer", f"Regional Tier ({region_group_value}-relative)",
-        f"Sales_2024 ({region_group_value}, bob_salesdata basis)",
-        f"Sales_2025 ({region_group_value}, bob_salesdata basis)",
-        f"Growth% ({region_group_value}, FY24→FY25)",
+        "Base", "Gender", "Layer", f"Regional Tier ({region_name})",
+        f"Sales_2024 ({region_name}, bob_salesdata basis)",
+        f"Sales_2025 ({region_name}, bob_salesdata basis)",
+        f"Units_2025 ({region_name}, bob_salesdata basis)",
+        f"GM%_2025 ({region_name})", f"Growth% ({region_name}, FY24→FY25)",
+        f"Wholesale_2025 ({region_name}, SEK)", f"DTC_2025 ({region_name}, SEK)",
         "Country/Market", "Sales_2025 (SEK, country, SS26 basis)", "Units_2025 (country, SS26 basis)",
         "Sales_YTD2026 (SEK, country, SS26 basis, raw)", "Units_YTD2026 (country, SS26 basis, raw)",
     ]
@@ -207,30 +175,46 @@ def write_region_sheet(wb, sheet_name, region_group_value, region_data, country_
         ws.column_dimensions[cell.column_letter].width = max(14, len(h) + 2)
 
     r = lib.FIRST_DATA_ROW
-    n_written = 0
-    for crow in country_rows:
-        key = (crow["base"], crow["gender"])
-        rd = region_data.get(key)
-        if rd is None:
-            continue
+    n_with_country = n_no_presence = 0
+    for key, rd in region_data.items():
+        base, gender = key
         meta = franchise_meta.get(key, {})
-        row_vals = [
-            crow["base"], crow["gender"], meta.get("layer"), rd["tier"],
-            round(rd["sales24"]) or None, round(rd["sales25"]) or None, rd["growth"],
-            crow["country"], crow["sales2025"], crow["units2025"], crow["salesYtd26"], crow["unitsYtd26"],
+        franchise_cols = [
+            base, gender, meta.get("layer"), rd["tier"],
+            rd["sales24"], rd["sales25"], rd["units25"], rd["gm25"], rd["growth"],
+            rd["wholesale25"], rd["dtc25"],
         ]
-        for c, v in enumerate(row_vals, start=1):
-            cell = ws.cell(row=r, column=c, value=v)
-            cell.font = s["body_font"]
-        r += 1
-        n_written += 1
+        crows = country_rows_by_key.get(key)
+        if crows:
+            n_with_country += 1
+            for crow in crows:
+                row_vals = franchise_cols + [
+                    crow["country"], crow["sales2025"], crow["units2025"], crow["salesYtd26"], crow["unitsYtd26"],
+                ]
+                for c, v in enumerate(row_vals, start=1):
+                    ws.cell(row=r, column=c, value=v).font = s["body_font"]
+                r += 1
+        else:
+            n_no_presence += 1
+            row_vals = franchise_cols + [NO_PRESENCE, None, None, None, None]
+            for c, v in enumerate(row_vals, start=1):
+                cell = ws.cell(row=r, column=c, value=v)
+                cell.font = s["gray_font"] if c == 12 else s["body_font"]
+            r += 1
     ws.freeze_panes = ws.cell(row=lib.FIRST_DATA_ROW, column=1)
-    print(f"{sheet_name}: {n_written} country rows written")
+    print(f"{sheet_name}: {n_with_country} franchises with country rows, "
+          f"{n_no_presence} with a tier but no regional sales at all, {r - lib.FIRST_DATA_ROW} total rows")
 
 
 def main():
-    fy24 = load_bob_sales_by_country(2024)
-    fy25 = load_bob_sales_by_country(2025)
+    fy24 = load_franchise_region_totals(2024)
+    fy25 = load_franchise_region_totals(2025)
+
+    nordic_share = region_revenue_share(fy25, "Nordic")
+    non_nordic_share = region_revenue_share(fy25, "Non-Nordic")
+    print(f"FY25 Core revenue share -- Nordic: {nordic_share*100:.1f}%  Non-Nordic: {non_nordic_share*100:.1f}%")
+    print(f"Scaled Hero floor -- Nordic: {HERO_SALES_FLOOR_GLOBAL*nordic_share:,.0f} SEK  "
+          f"Non-Nordic: {HERO_SALES_FLOOR_GLOBAL*non_nordic_share:,.0f} SEK")
 
     wb, portfolio_ws = lib.load_full_portfolio()
     s = lib.styles()
@@ -245,33 +229,34 @@ def main():
         clearance_flag = portfolio_ws.cell(row=r, column=14).value
         franchise_universe.append((b.strip(), g, clearance_flag))
 
-    nordic_data = build_region_data(fy24, fy25, franchise_universe, "Nordic")
-    non_nordic_data = build_region_data(fy24, fy25, franchise_universe, "Non-Nordic")
+    nordic_data = build_region_data(fy24, fy25, franchise_universe, "Nordic", nordic_share)
+    non_nordic_data = build_region_data(fy24, fy25, franchise_universe, "Non-Nordic", non_nordic_share)
 
     for label, data in [("Nordic", nordic_data), ("Non-Nordic", non_nordic_data)]:
-        from collections import Counter
-        print(f"{label} tier distribution: {Counter(v['tier'] for v in data.values())}")
+        print(f"{label} tier distribution: {dict(Counter(v['tier'] for v in data.values()))}")
 
     if "5. Sales by Country" not in wb.sheetnames:
         raise SystemExit("Sheet 5 (REG-022) not found -- run update_country_breakdown.py first")
     country_ws = wb["5. Sales by Country"]
-    all_country_rows = []
+    nordic_country_rows = defaultdict(list)
+    non_nordic_country_rows = defaultdict(list)
     for r in range(lib.FIRST_DATA_ROW, country_ws.max_row + 1):
         b = country_ws.cell(row=r, column=1).value
         if b is None:
             continue
-        all_country_rows.append({
-            "base": b, "gender": country_ws.cell(row=r, column=2).value,
-            "region_group": country_ws.cell(row=r, column=6).value,
+        key = (b, country_ws.cell(row=r, column=2).value)
+        region_group = country_ws.cell(row=r, column=6).value
+        crow = {
             "country": country_ws.cell(row=r, column=5).value,
             "sales2025": country_ws.cell(row=r, column=9).value,
             "units2025": country_ws.cell(row=r, column=10).value,
             "salesYtd26": country_ws.cell(row=r, column=11).value,
             "unitsYtd26": country_ws.cell(row=r, column=12).value,
-        })
-
-    nordic_country_rows = [r for r in all_country_rows if r["region_group"] == "Nordic"]
-    non_nordic_country_rows = [r for r in all_country_rows if r["region_group"] == "Non-Nordic"]
+        }
+        if region_group == "Nordic":
+            nordic_country_rows[key].append(crow)
+        elif region_group == "Non-Nordic":
+            non_nordic_country_rows[key].append(crow)
 
     write_region_sheet(wb, "6. Full Portfolio (Nordic)", "Nordic", nordic_data, nordic_country_rows, franchise_meta, s)
     write_region_sheet(wb, "7. Full Portfolio (Non-Nordic)", "Non-Nordic", non_nordic_data, non_nordic_country_rows, franchise_meta, s)
