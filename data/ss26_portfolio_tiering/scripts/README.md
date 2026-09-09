@@ -33,6 +33,7 @@ docstring for why), not an oversight.
 | `update_country_breakdown.py` | REG-022 | Sheet 5 (full rebuild) | SS26 exports (all three) |
 | `update_regional_tiering.py` | REG-023 | Sheets 6 & 7 (full rebuild) | `bob_salesdata_2024/2025.xlsx` + Sheet 5 |
 | `verify_base_tiering.py` | REG-024 | Nothing — read-only audit, prints a match report | `bob_salesdata_2024/2025.xlsx` |
+| `build_distribution_workbook.py` | — (packaging, no new methodology) | A brand-new dated file, `Project_Bob_Portfolio_Tiering_<DDMMYYYY>.xlsx` — never touches the master workbook | The master workbook itself |
 | `build_browse_view.py` | — (no data, just a layout view) | Sheet 2b (full rebuild) | Sheet 2 (formulas only, no source file) |
 
 `ss26_lib.py` is the shared library every script above imports from —
@@ -117,6 +118,21 @@ constant and note the change in `ASSUMPTIONS_REGISTER.md`.
 `data/bob_salesdata_2024/2025.xlsx` are shared with the other workstream
 (Key-Article Margin Analysis) and stay at the top-level `data/` folder
 rather than moving under `inputs/` — don't relocate them.
+
+## Distribution cuts
+
+`build_distribution_workbook.py` is different from every script above —
+it doesn't add a column or sheet to the master workbook, it **produces a
+separate, dated file** (`Project_Bob_Portfolio_Tiering_<DDMMYYYY>.xlsx`)
+for sharing outside the working file: Global Full Portfolio + Global
+Generation Detail + the two regional tiering sheets, with the internal
+working-only sheets (Browse view, Stock by Tier, Sales by Country)
+dropped, and Sheet 1 rebuilt to include a sheet index (labeling each
+sheet Global vs. Regional) plus the exact Global and regional tier rule
+definitions (REG-023/024) that were never written into Sheet 1 before.
+Re-run it any time a fresh dated cut is needed — it always reads the
+current master workbook and writes a new file named for today, never
+overwriting the master or a previous cut.
 
 ## Adding a new column/script
 
