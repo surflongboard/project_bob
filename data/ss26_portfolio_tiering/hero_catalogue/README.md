@@ -8,36 +8,31 @@ Keep/Merge/Update decision control — an alternative to reviewing the same
 
 **This was a chat-only build for several iterations before being
 committed here** — flagged as a known gap in `LAUNCH_READINESS_CHECKLIST.md`
-Section E and now closed for the code/data half of it (see "What's
-intentionally NOT committed" below for the other half).
+Section E and now closed, images included (per business direction,
+9 Sep 2026: internal test use only — see the caveat below, unchanged).
 
 ## What's here
 
 | File | What it does |
 |---|---|
-| `gen_catalogue.py` | Builds `hero_catalogue.html` from the three inputs below. Run from this directory: `python3 gen_catalogue.py`. |
+| `gen_catalogue.py` | Builds `hero_catalogue.html` from the inputs below. Run from this directory: `python3 gen_catalogue.py`. |
 | `catalogue_template.html` | Static shell (CSS, header, footer, decision-tracking JS) — `gen_catalogue.py` fills in the per-layer card grid and the Known Issues table. |
 | `franchise_financials.json` | Sales_2025 / Units_2025 / GM%_2025 / Sales_YTD2026 / Units_YTD2026 / GM%_YTD2026 for the 34 franchises, extracted from `Project_Bob_Portfolio_Tiering_08092026.xlsx` (Sheet 2, keyed `"{Base}|{Gender}"`). Re-extract this if the workbook is refreshed — there's no script for that extraction yet (a good next `update_*`-style script if this catalogue becomes a recurring build rather than a one-off test). |
-| `auto_crop.py`, `final_crop.py` | The two-pass image-cropping pipeline used to turn raw full-page screenshots into uniform product-only photos (detects the studio-backdrop band via row-wise edge-brightness sampling, then a proportional bottom trim to clear sticky page overlays). Kept for reference/reuse — see "What's intentionally NOT committed" for why they have nothing to run against here.
+| `auto_crop.py`, `final_crop.py` | The two-pass image-cropping pipeline used to turn raw full-page screenshots into uniform product-only photos (detects the studio-backdrop band via row-wise edge-brightness sampling, then a proportional bottom trim to clear sticky page overlays). Kept for reference/reuse if this set is ever re-shot or extended. |
+| `catalogue_final/` | The 34 final, cropped, uniform-size (900×1100) product-only JPEGs — one per franchise, filenamed by the `img` key used in `gen_catalogue.py`'s `PRODUCTS` list. |
+| `catalogue_images_b64.json` | Same 34 images, base64-encoded (`{image_key: base64_jpeg_string}`) — what `gen_catalogue.py` actually loads and embeds as data URIs (the published artifact can't reference external image files). Regenerate from `catalogue_final/` with `python3 encode_images.py` if the photo set changes. |
 
-## What's intentionally NOT committed
+## Image provenance — internal test use only
 
-The 34 product photos themselves — at every stage (raw screenshots,
-cropped intermediates, the final base64-encoded JSON `gen_catalogue.py`
-embeds into the page) — are **not** in this folder or the repo.
-
-They're screenshots of live haglofs.com and third-party retailer product
-pages, not licensed imagery (the published catalogue's own footer says as
-much: "not something to publish externally as-is"). Putting them in git
-history is a materially different, harder-to-reverse step than putting
-them in a private, unlisted artifact — it means distributing someone
-else's product photography via the repo. That's a call worth making
-explicitly rather than defaulting into via a routine commit; ask before
-adding them here.
-
-To regenerate the page, `gen_catalogue.py` expects `catalogue_images_b64.json`
-(`{image_key: base64_jpeg_string}`, one entry per `img` key in `PRODUCTS`)
-in this directory — re-source and re-run the crop pipeline to produce it.
+The 34 photos in `catalogue_final/`/`catalogue_images_b64.json` are
+screenshots of live haglofs.com and third-party retailer product pages,
+cropped to product-only — **not licensed imagery**. Committed per
+business direction (9 Sep 2026) on the basis that this stays **internal
+test use**, not something republished or shared externally as-is. If
+this catalogue ever moves beyond internal review (e.g. shared outside
+the company, or the mechanic gets scaled to the full portfolio), source
+proper licensed/owned photography first rather than carrying these
+forward.
 
 ## Known caveats (see ASSUMPTIONS_REGISTER.md REG-020 for the Units figures)
 
