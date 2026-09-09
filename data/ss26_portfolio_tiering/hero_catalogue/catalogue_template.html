@@ -1,0 +1,331 @@
+<title>Hero Tier Catalogue</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#F1F3EF;
+  --surface:#FFFFFF;
+  --surface-2:#E7EAE2;
+  --surface-3:#DCE0D6;
+  --ink:#182420;
+  --ink-muted:#5B6960;
+  --ink-faint:#8A968D;
+  --line:#D6DACE;
+  --line-strong:#BFC5B6;
+  --accent:#2B6E5E;
+  --accent-strong:#194A3E;
+  --accent-soft:#DCEAE4;
+  --warn:#B5651D;
+  --warn-soft:#F5E4D1;
+  --warn-strong:#8A4A12;
+  --ok:#4C7A3F;
+  --ok-soft:#E3ECDD;
+  --update:#3B6EA8;
+  --update-soft:#DCE7F3;
+  --shadow: 0 1px 2px rgba(24,36,32,0.05), 0 8px 24px -10px rgba(24,36,32,0.16);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1512;
+    --surface:#171F1B;
+    --surface-2:#1E2721;
+    --surface-3:#28322B;
+    --ink:#E8ECE6;
+    --ink-muted:#9AA69E;
+    --ink-faint:#69756D;
+    --line:#2B352E;
+    --line-strong:#3A453C;
+    --accent:#5FC7AE;
+    --accent-strong:#8EDCC8;
+    --accent-soft:#1C3630;
+    --warn:#E29A54;
+    --warn-soft:#3A2A18;
+    --warn-strong:#F2B879;
+    --ok:#9CC17E;
+    --ok-soft:#243422;
+    --update:#7FB0E8;
+    --update-soft:#1C2C3A;
+    --shadow: 0 1px 2px rgba(0,0,0,0.35), 0 10px 28px -10px rgba(0,0,0,0.55);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1512;
+  --surface:#171F1B;
+  --surface-2:#1E2721;
+  --surface-3:#28322B;
+  --ink:#E8ECE6;
+  --ink-muted:#9AA69E;
+  --ink-faint:#69756D;
+  --line:#2B352E;
+  --line-strong:#3A453C;
+  --accent:#5FC7AE;
+  --accent-strong:#8EDCC8;
+  --accent-soft:#1C3630;
+  --warn:#E29A54;
+  --warn-soft:#3A2A18;
+  --warn-strong:#F2B879;
+  --ok:#9CC17E;
+  --ok-soft:#243422;
+  --update:#7FB0E8;
+  --update-soft:#1C2C3A;
+  --shadow: 0 1px 2px rgba(0,0,0,0.35), 0 10px 28px -10px rgba(0,0,0,0.55);
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:'IBM Plex Sans', -apple-system, sans-serif;
+  font-size:15px; line-height:1.55; -webkit-font-smoothing:antialiased;
+}
+.display{font-family:'Big Shoulders Display', 'Arial Narrow', sans-serif; text-transform:uppercase;}
+.mono, code, .num{font-family:'IBM Plex Mono', ui-monospace, Menlo, monospace; font-variant-numeric:tabular-nums;}
+.wrap{max-width:1180px; margin:0 auto; padding:36px 22px 72px;}
+
+header{display:flex; flex-direction:column; gap:6px; margin-bottom:8px;}
+.eyebrow{
+  font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--accent); display:flex; align-items:center; gap:8px;
+}
+.eyebrow::before{content:"";width:7px;height:7px;background:var(--accent);display:inline-block;}
+h1.display{
+  font-weight:800; font-size:clamp(34px,6vw,52px); line-height:0.92; letter-spacing:0.01em;
+  margin:2px 0 0; color:var(--ink); text-wrap:balance;
+}
+.subtitle{color:var(--ink-muted); font-size:15px; max-width:62ch; margin:10px 0 0;}
+.subtitle a{color:var(--accent-strong); font-weight:500;}
+
+.status-bar{
+  margin-top:26px; display:flex; flex-wrap:wrap; gap:14px 28px; align-items:center;
+  padding:16px 20px; background:var(--surface); border:1px solid var(--line); border-radius:3px; box-shadow:var(--shadow);
+}
+.progress-block{display:flex; align-items:center; gap:12px; flex:1; min-width:220px;}
+.progress-track{flex:1; height:8px; background:var(--surface-3); border-radius:4px; overflow:hidden; max-width:220px;}
+.progress-fill{height:100%; background:var(--accent); border-radius:4px;}
+.progress-label{font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--ink-muted); white-space:nowrap;}
+.tally{display:flex; gap:18px; flex-wrap:wrap;}
+.tally-item{display:flex; align-items:center; gap:6px; font-size:13px; color:var(--ink-muted);}
+.tally-dot{width:9px;height:9px;border-radius:50%;flex:none;}
+.tally-dot.keep{background:var(--ok);}
+.tally-dot.merge{background:var(--warn);}
+.tally-dot.update{background:var(--update);}
+.tally-dot.undecided{background:var(--ink-faint);}
+.tally-count{font-family:'IBM Plex Mono',monospace; font-weight:600; color:var(--ink);}
+
+.section-head{display:flex; align-items:baseline; gap:12px; margin:44px 0 18px;}
+.section-head h2{font-family:'Big Shoulders Display'; text-transform:uppercase; font-weight:700; font-size:22px; letter-spacing:0.02em; margin:0; color:var(--ink);}
+.section-count{font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--ink-faint);}
+
+.grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(230px, 1fr)); gap:16px;}
+.card{
+  background:var(--surface); border:1px solid var(--line); border-radius:3px; overflow:hidden;
+  box-shadow:var(--shadow); display:flex; flex-direction:column;
+  outline:2px solid transparent; transition:outline-color 0.6s ease;
+}
+.card.flash{outline-color:var(--warn-strong);}
+.card-media{position:relative; aspect-ratio:900/1100; background:var(--surface-2); overflow:hidden;}
+.card-media img{width:100%; height:100%; object-fit:cover; object-position:top center; display:block;}
+.flag{
+  position:absolute; top:8px; left:8px; font-family:'IBM Plex Mono',monospace; font-size:9.5px; font-weight:600;
+  letter-spacing:0.04em; text-transform:uppercase; padding:4px 7px; border-radius:2px; color:#fff;
+}
+.flag.flag-successor{background:var(--warn-strong);}
+.flag.flag-variant{background:var(--warn-strong);}
+.flag.flag-notify{background:var(--ink-faint);}
+.card-body{padding:12px 14px 14px; display:flex; flex-direction:column; gap:6px; flex:1;}
+.card-top{display:flex; align-items:center; justify-content:space-between; gap:8px;}
+.tier-chip{font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.04em; text-transform:uppercase; padding:2px 7px; border-radius:20px;}
+.tier-chip.tier-hero{background:var(--accent-soft); color:var(--accent-strong);}
+.tier-chip.tier-near{background:var(--surface-3); color:var(--ink-muted);}
+.card-sales{font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--ink-faint);}
+.card-title{font-family:'Big Shoulders Display'; font-weight:700; font-size:17px; margin:0; color:var(--ink); line-height:1.15; text-transform:none; letter-spacing:0;}
+.card-meta{margin:0; font-size:12.5px; color:var(--ink-muted);}
+.card-note{margin:2px 0 0; font-size:11.5px; color:var(--warn-strong); line-height:1.4; background:var(--warn-soft); padding:6px 8px; border-radius:2px;}
+
+.fin-table{margin:4px 0 2px; border-top:1px solid var(--line); padding-top:6px;}
+.fin-row{display:grid; grid-template-columns:1fr 2fr 1fr; gap:6px; font-family:'IBM Plex Mono',monospace; font-size:11px; line-height:1.7;}
+.fin-row span{white-space:nowrap; font-variant-numeric:tabular-nums;}
+.fin-row span:first-child{color:var(--ink-muted); font-weight:600;}
+.fin-row.fin-head span{color:var(--ink-faint); text-transform:uppercase; letter-spacing:0.03em; font-size:9px;}
+.fin-row:not(.fin-head) span:not(:first-child){color:var(--ink); text-align:right;}
+.fin-row.fin-head span:not(:first-child){text-align:right;}
+
+.decision{display:flex; align-items:center; gap:6px; margin-top:auto; padding-top:8px;}
+.decision-btn{
+  flex:1; font-family:'IBM Plex Mono',monospace; font-size:10.5px; font-weight:600; letter-spacing:0.01em;
+  padding:7px 0; border-radius:2px; border:1px solid var(--line-strong); background:var(--surface);
+  color:var(--ink-muted); cursor:pointer; text-transform:uppercase; text-align:center; transition:background 0.12s, color 0.12s, border-color 0.12s;
+}
+.decision-btn:hover{border-color:var(--accent);}
+.decision-btn.keep-btn.active{background:var(--ok-soft); color:var(--ok); border-color:var(--ok);}
+.decision-btn.merge-btn.active{background:var(--warn-soft); color:var(--warn-strong); border-color:var(--warn);}
+.decision-btn.update-btn.active{background:var(--update-soft); color:var(--update); border-color:var(--update);}
+.decision-link{display:block; margin-top:6px; font-size:10.5px; color:var(--ink-faint); white-space:nowrap; text-decoration:none;}
+.decision-link:hover{color:var(--accent-strong);}
+
+.missing-table-wrap{overflow-x:auto; border:1px solid var(--line); border-radius:3px; background:var(--surface); box-shadow:var(--shadow);}
+table.missing{border-collapse:collapse; width:100%; min-width:640px;}
+table.missing th{
+  text-align:left; font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase;
+  color:var(--ink-muted); background:var(--surface-2); padding:10px 14px; border-bottom:1px solid var(--line-strong); white-space:nowrap;
+}
+table.missing td{padding:10px 14px; border-bottom:1px solid var(--line); font-size:13.5px; color:var(--ink);}
+table.missing tr:last-child td{border-bottom:none;}
+table.missing td.num{font-family:'IBM Plex Mono',monospace; text-align:right; color:var(--ink-muted); white-space:nowrap;}
+table.missing a{color:var(--accent-strong); font-size:12.5px; white-space:nowrap;}
+.missing-note{margin-top:4px; font-size:11.5px; color:var(--warn-strong); line-height:1.4; max-width:44ch; white-space:normal;}
+
+.issues-panel{
+  margin-top:44px; border:1px solid var(--line); border-radius:3px; background:var(--surface); box-shadow:var(--shadow); overflow:hidden;
+}
+.issues-head{
+  padding:14px 20px; display:flex; align-items:baseline; gap:12px; flex-wrap:wrap;
+  background:var(--warn-soft); border-bottom:1px solid var(--line);
+}
+.issues-head h2{font-family:'Big Shoulders Display'; text-transform:uppercase; font-weight:700; font-size:16px; letter-spacing:0.03em; margin:0; color:var(--warn-strong);}
+.issues-head .issues-sub{font-size:12.5px; color:var(--ink-muted);}
+.issues-table-wrap{overflow-x:auto;}
+table.issues{border-collapse:collapse; width:100%; min-width:700px;}
+table.issues th{
+  text-align:left; font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase;
+  color:var(--ink-muted); background:var(--surface-2); padding:9px 14px; border-bottom:1px solid var(--line-strong); white-space:nowrap;
+}
+table.issues td{padding:10px 14px; border-bottom:1px solid var(--line); font-size:13px; color:var(--ink); vertical-align:top;}
+table.issues tr:last-child td{border-bottom:none;}
+table.issues td.issue-note{color:var(--ink-muted); font-size:12.5px; line-height:1.5; max-width:46ch;}
+table.issues a.jump-link{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--accent-strong); white-space:nowrap; text-decoration:none;}
+table.issues a.jump-link:hover{text-decoration:underline;}
+.issue-badge{
+  display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:9.5px; font-weight:600;
+  letter-spacing:0.04em; text-transform:uppercase; padding:3px 7px; border-radius:2px; color:#fff; white-space:nowrap;
+}
+.issue-badge.flag-successor, .issue-badge.flag-variant{background:var(--warn-strong);}
+.issue-badge.flag-notify{background:var(--ink-faint);}
+.complete-banner{
+  margin-top:44px; display:flex; align-items:center; gap:14px; padding:18px 20px;
+  background:var(--ok-soft); border:1px solid var(--ok); border-radius:3px;
+}
+.complete-banner .cb-mark{
+  font-family:'Big Shoulders Display'; font-weight:800; font-size:26px; color:var(--ok); flex:none;
+}
+.complete-banner p{margin:0; font-size:13.5px; color:var(--ink); line-height:1.5;}
+.complete-banner b{color:var(--ok);}
+
+.care-label{
+  margin-top:44px; border:1px dashed var(--line-strong); border-radius:3px; padding:16px 18px;
+  background:var(--surface); font-size:12px; color:var(--ink-muted); line-height:1.6;
+}
+.care-label .cl-head{
+  font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase;
+  color:var(--ink-faint); margin-bottom:8px; display:flex; align-items:center; gap:8px;
+}
+.care-label .cl-head::before{content:"⚠"; font-size:11px;}
+.care-label b{color:var(--ink);}
+.care-label a{color:var(--accent-strong);}
+.care-label .cl-row{display:flex; gap:8px; margin-bottom:4px;}
+.care-label .cl-row .sym{font-family:'IBM Plex Mono',monospace; color:var(--ink-faint); flex:none;}
+
+@media (max-width:520px){
+  .grid{grid-template-columns:repeat(auto-fill, minmax(150px,1fr));}
+}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Project Bob · SS26 Portfolio Tiering</div>
+    <h1 class="display">Hero Tier Catalogue</h1>
+    <p class="subtitle">A test run of the visual portfolio review, grouped by layer: one photo per Hero/Near-Hero franchise with FY25 and YTD2026 sales/margin, Keep, Merge, or Update per card instead of scanning a text list. Sourced from haglofs.com product pages, cropped to product-only. Methodology in the <a href="https://claude.ai/code/artifact/1b4cce0a-d4aa-4f87-9c8f-10926b1d28c4" target="_blank" rel="noopener">Assumptions Register</a>.</p>
+  </header>
+
+  <div class="status-bar">
+    <div class="progress-block">
+      <span class="progress-label"><span class="num">__N_PHOTOGRAPHED__</span> / <span class="num">__N_TOTAL__</span> photographed</span>
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    </div>
+    <div class="tally" id="tally">
+      <span class="tally-item"><span class="tally-dot keep"></span>Keep <span class="tally-count" id="countKeep">0</span></span>
+      <span class="tally-item"><span class="tally-dot merge"></span>Merge <span class="tally-count" id="countMerge">0</span></span>
+      <span class="tally-item"><span class="tally-dot update"></span>Update <span class="tally-count" id="countUpdate">0</span></span>
+      <span class="tally-item"><span class="tally-dot undecided"></span>Undecided <span class="tally-count" id="countUndecided">0</span></span>
+    </div>
+  </div>
+
+__LAYER_SECTIONS__
+
+__MISSING_SECTION__
+
+  <div class="care-label">
+    <div class="cl-head">Read before sharing this further</div>
+    <div class="cl-row"><span class="sym">§</span><span>Every photo here is a screenshot of a live haglofs.com (or third-party retailer) product page, cropped to just the garment on a neutral backdrop — no browser chrome, price, or buttons. It's still someone else's product photography, not licensed imagery, so treat it as a review-mechanic test, not something to publish externally as-is.</span></div>
+    <div class="cl-row"><span class="sym">§</span><span><b>7 of 34 photographed cards carry a caveat</b> — 6 show a "II"/successor generation rather than the exact SKU the sales figure is attributed to, 1 has an uncertain size/variant match. See the "Known issues" table at the bottom of the page for the full list with jump links back up to each card — nearly a fifth of this photographed set being a successor is a settled fact about how haglofs.com's live site works (it shows the current generation regardless of which one a sales figure belongs to), not a per-item curiosity. Decide once whether a successor photo is an acceptable stand-in before scaling this to the full portfolio.</span></div>
+    <div class="cl-row"><span class="sym">§</span><span>Keep/Merge/Update choices are saved in <b>this browser only</b> (not shared with anyone else who opens this page, and not synced anywhere) — a quick way to test the interaction, not a real review record yet.</span></div>
+    <div class="cl-row"><span class="sym">§</span><span>FY25 and YTD26 Sales/GM%/GP figures are the published, audited Sheet-2 basis — same numbers as the tiering workbook and Tier Bench. GP (Gross Profit, SEK) = Sales × GM%, not its own workbook column. <b>FY25 Units</b> (added REG-020) are real but raw-recomputed from source exports rather than an audited published total — see the register for the caveat.</span></div>
+  </div>
+
+__ISSUES_SECTION__
+</div>
+
+<script>
+const PRODUCTS = __PRODUCTS_JSON__;
+const STORE_KEY = 'hero-catalogue-decisions-v2'; // v2: Keep/Merge/Update (was Keep/Cut)
+
+function loadDecisions(){
+  try { return JSON.parse(localStorage.getItem(STORE_KEY) || '{}'); }
+  catch(e) { return {}; }
+}
+function saveDecisions(d){
+  try { localStorage.setItem(STORE_KEY, JSON.stringify(d)); } catch(e) {}
+}
+
+let decisions = loadDecisions();
+
+function applyCardState(card){
+  const key = card.dataset.key;
+  const val = decisions[key];
+  card.querySelectorAll('.decision-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.action === val);
+  });
+}
+
+function updateTally(){
+  const photographed = PRODUCTS.filter(p => p.hasImg);
+  let keep = 0, merge = 0, update = 0;
+  photographed.forEach(p => {
+    if (decisions[p.key] === 'keep') keep++;
+    else if (decisions[p.key] === 'merge') merge++;
+    else if (decisions[p.key] === 'update') update++;
+  });
+  const undecided = photographed.length - keep - merge - update;
+  document.getElementById('countKeep').textContent = keep;
+  document.getElementById('countMerge').textContent = merge;
+  document.getElementById('countUpdate').textContent = update;
+  document.getElementById('countUndecided').textContent = undecided;
+}
+
+document.querySelectorAll('.card').forEach(card => {
+  applyCardState(card);
+  card.querySelectorAll('.decision-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const key = card.dataset.key;
+      const action = btn.dataset.action;
+      decisions[key] = (decisions[key] === action) ? undefined : action;
+      if (decisions[key] === undefined) delete decisions[key];
+      saveDecisions(decisions);
+      applyCardState(card);
+      updateTally();
+    });
+  });
+});
+
+document.getElementById('progressFill').style.width =
+  (__N_PHOTOGRAPHED__ / __N_TOTAL__ * 100) + '%';
+updateTally();
+
+document.querySelectorAll('a.jump-link').forEach(a => {
+  a.addEventListener('click', (e) => {
+    e.preventDefault();
+    const card = document.querySelector(a.getAttribute('href'));
+    if (!card) return;
+    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    card.classList.add('flash');
+    setTimeout(() => card.classList.remove('flash'), 1600);
+  });
+});
+</script>
