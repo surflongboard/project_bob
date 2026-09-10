@@ -1,0 +1,46 @@
+# Inventory Analysis
+
+A third workstream (see top-level `CLAUDE.md`), analyzing warehouse
+available stock — specifically the Season-Recency ("how old is this
+stock?") view that the SS26 Portfolio Tiering workstream's own stock sheet
+(REG-019 there) doesn't cover.
+
+**Start here:** `ASSUMPTIONS_REGISTER.md` — every definition used below is
+either cited from the SS26 register or documented fresh as REG-INV-###.
+
+## What's in this folder
+
+- `ASSUMPTIONS_REGISTER.md` — the register (Confirmed/Provisional/Open
+  discipline, same as the SS26 workstream).
+- `scripts/analyze_inventory.py` — reusable, re-runnable build script.
+  Reads the warehouse stock snapshot already checked in at
+  `data/ss26_portfolio_tiering/inputs/stock/Available_stock_260825.xlsx`
+  (not duplicated here — see REG-INV-001), matches to franchise via
+  `ss26_lib.franchise_key()`, joins each franchise's current Tier from the
+  SS26 tiering workbook, and writes a dated output workbook.
+- `Project_Bob_Inventory_Analysis_<DDMMYYYY>.xlsx` — the output: Overview,
+  Stock by Season Recency x Tier, Stock by Layer, Aged Stock Detail, and
+  Unmatched Stock. Re-run the script for a fresh dated cut rather than
+  editing a workbook by hand.
+
+## Running the script
+
+From the repo root:
+
+```bash
+python3 data/inventory_analysis/scripts/analyze_inventory.py
+```
+
+Prints a summary (total/matched units, per-bucket totals) before saving —
+read it before trusting the output. Pass `--source PATH` to point at a
+future stock snapshot once one exists; land the raw file under the SS26
+workstream's own `inputs/stock/` folder first (its intake convention), then
+add a corresponding register entry here.
+
+## Relationship to the SS26 Portfolio Tiering workstream
+
+Same source file, same franchise-matching code, same tiering workbook —
+this is a genuinely separate deliverable (a different question: stock
+aging, not portfolio sizing), not a fork of REG-019's logic. See the
+register's header for exactly which SS26-register entries are reused
+as-is vs. what's new here.

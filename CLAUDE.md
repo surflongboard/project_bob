@@ -3,7 +3,7 @@
 Read this first, before `README.md` or either workstream's own docs — it
 tells you which of those to read next depending on what you're doing.
 
-## Two separate workstreams, same business
+## Three separate workstreams, same business
 
 - **Key-Article Margin Analysis** (repo root: `config.py`, `load_data.py`,
   `analysis.py`, `data/bob_salesdata_*.xlsx`, `data/bob_financialdata_*.xlsx`,
@@ -13,6 +13,11 @@ tells you which of those to read next depending on what you're doing.
   franchise DTC & Wholesale tier classification, built from a separate
   `SS26_DTC_Wholesale_w34_data_*.xlsx` export. Start at
   `data/ss26_portfolio_tiering/ASSUMPTIONS_REGISTER.md`.
+- **Inventory Analysis** (`data/inventory_analysis/`). Season-Recency
+  ("how old is this stock?") view of warehouse available stock, built
+  from the same `Available_stock_260825.xlsx` snapshot SS26 Portfolio
+  Tiering's REG-019 already uses. Start at
+  `data/inventory_analysis/ASSUMPTIONS_REGISTER.md`.
 
 They analyze the same underlying business but from different source pulls,
 and **a few rules are deliberately different between them** — most notably
