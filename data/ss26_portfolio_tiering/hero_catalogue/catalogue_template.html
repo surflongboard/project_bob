@@ -134,9 +134,11 @@ h1.display{
 .tier-chip{font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.04em; text-transform:uppercase; padding:2px 7px; border-radius:20px;}
 .tier-chip.tier-hero{background:var(--accent-soft); color:var(--accent-strong);}
 .tier-chip.tier-near{background:var(--surface-3); color:var(--ink-muted);}
-.region-strip{display:flex; gap:5px; flex-wrap:wrap;}
+.badge-strip{display:flex; gap:5px; flex-wrap:wrap;}
 .region-chip{font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:0.02em; padding:2px 6px; border-radius:20px; background:var(--surface-3); color:var(--ink-faint); border:1px solid var(--line); cursor:default;}
 .region-chip.is-hero{background:var(--accent-soft); color:var(--accent-strong); border-color:transparent;}
+.core-chip{font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:0.02em; padding:2px 6px; border-radius:20px; background:var(--surface-3); color:var(--ink-faint); border:1px solid var(--line); cursor:default;}
+.core-chip.is-core{background:var(--update-soft); color:var(--update); border-color:transparent;}
 .card-sales{font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--ink-faint);}
 .card-title{font-family:'Big Shoulders Display'; font-weight:700; font-size:17px; margin:0; color:var(--ink); line-height:1.15; text-transform:none; letter-spacing:0;}
 .card-meta{margin:0; font-size:12.5px; color:var(--ink-muted);}
@@ -236,6 +238,7 @@ table.issues a.jump-link:hover{text-decoration:underline;}
     <h1 class="display">Hero Tier Catalogue</h1>
     <p class="subtitle">A test run of the visual portfolio review, grouped by layer: one photo per Hero/Near-Hero franchise with FY25 and YTD2026 sales/margin, Keep, Merge, or Update per card instead of scanning a text list. Sourced from haglofs.com product pages, cropped to product-only. Methodology in the <a href="https://claude.ai/code/artifact/1b4cce0a-d4aa-4f87-9c8f-10926b1d28c4" target="_blank" rel="noopener">Assumptions Register</a>.</p>
     <p class="subtitle region-summary">Each card also shows whether it's a regional Hero (REG-023/024, region-relative thresholds) — of these 34 Global Heroes: __N_BOTH_REGIONS__ are Hero in both Nordic and Rest-of-World, __N_NORDIC_ONLY__ Nordic-only, __N_ROW_ONLY__ ROW-only, and __N_NEITHER__ are Global Hero but not a regional Hero in either half alone (their global scale comes from combining two mid-sized regions, not from dominating one) — not an error, the intended effect of ranking each region against its own population.</p>
+    <p class="subtitle region-summary">A third badge shows Core Assortment FW27 status (REG-015): __N_CORE__ of 34 are on the confirmed 88-style carry-over + News package list, __N_NOT_CORE__ are not — absence is a merch check worth a look, not automatic discontinuation (some successor styles haven't shipped yet and are matched by style name, not sales history).</p>
   </header>
 
   <div class="status-bar">
@@ -262,6 +265,7 @@ __MISSING_SECTION__
     <div class="cl-row"><span class="sym">§</span><span>Keep/Merge/Update choices are saved in <b>this browser only</b> (not shared with anyone else who opens this page, and not synced anywhere) — a quick way to test the interaction, not a real review record yet.</span></div>
     <div class="cl-row"><span class="sym">§</span><span>FY25 and YTD26 Sales/GM%/GP figures are the published, audited Sheet-2 basis — same numbers as the tiering workbook and Tier Bench. GP (Gross Profit, SEK) = Sales × GM%, not its own workbook column. <b>FY25 Units</b> (added REG-020) are real but raw-recomputed from source exports rather than an audited published total — see the register for the caveat.</span></div>
     <div class="cl-row"><span class="sym">§</span><span>The small badges under each tier chip (<b>Nordic</b> / <b>ROW</b> = Rest of World, i.e. Non-Nordic) show that franchise's REGION-RELATIVE tier (REG-023/024) — each region ranked against its own population, with SEK floors scaled to that region's share of FY25 sales, not Global's unscaled floors. A muted (non-highlighted) badge means this franchise is a Global Hero but is NOT a Hero within that region alone — that's the intended effect of region-relative thresholds, not a data error.</span></div>
+    <div class="cl-row"><span class="sym">§</span><span>The third badge (<b>Core FW27</b>) shows whether this franchise is on the confirmed Core Assortment FW27 list (REG-015 — the 57-style carry-over + 31-style News package, matched by article/style name, not sales history). A muted "No" is worth a merch look, not a discontinuation signal by itself — several successor styles haven't shipped yet and would wrongly show absent on a sales-based join.</span></div>
   </div>
 
 __ISSUES_SECTION__

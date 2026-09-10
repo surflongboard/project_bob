@@ -31,6 +31,22 @@ def load_regional_tier_lookup():
     wb.close()
     return lookup
 
+def load_core_assortment_lookup():
+    """(base, gender) -> 'Yes'/'No', read straight from Sheet 2's Core Assortment
+    FW27 column (REG-015) -- confirmed 88-style FW27 carry-over + News package list,
+    matched by article/style name, not by sales history (several successor styles
+    haven't shipped yet and would wrongly show absent on a sales-based join)."""
+    wb = openpyxl.load_workbook(MASTER_WORKBOOK, read_only=True, data_only=True)
+    ws = wb["2. Full Portfolio (1860)"]
+    lookup = {}
+    for row in ws.iter_rows(min_row=5, values_only=True):
+        base = row[0]
+        if base is None:
+            continue
+        lookup[(base, row[1])] = row[16]  # column Q, "Core Assortment FW27"
+    wb.close()
+    return lookup
+
 # 34 Hero + Near-Hero franchises, sales-descending within tier (matches the published workbook order)
 PRODUCTS = [
     # key, base, gender, layer, tier, orig_tier, sales25, url, image_key, status, status_note
@@ -154,6 +170,17 @@ n_neither = sum(1 for p in PRODUCTS if not p["isNordicHero"] and not p["isRowHer
 print(f"Regional split: {n_both_regions} Hero in both regions, {n_nordic_only} Nordic-only, "
       f"{n_row_only} ROW-only, {n_neither} neither (Global Hero but not a regional Hero in either half)")
 
+# merge in each franchise's Core Assortment FW27 flag (REG-015) -- absence is a
+# merch check, not automatic discontinuation (successor styles with zero sales
+# history so far are still matched by style name, not sales).
+CORE_ASSORTMENT = load_core_assortment_lookup()
+for p in PRODUCTS:
+    p["coreAssortmentFw27"] = CORE_ASSORTMENT.get((p["base"], p["gender"]), "No")
+
+n_core = sum(1 for p in PRODUCTS if p["coreAssortmentFw27"] == "Yes")
+print(f"Core Assortment FW27: {n_core} of 34 Hero+Near-Hero franchises are on the list, "
+      f"{34 - n_core} are not (a merch check, not automatic discontinuation)")
+
 LAYER_ORDER = ["Insulation", "Shell", "Mid layer", "Daypacks", "Legwear", "Bags", "Sleepingbags", "Soft shell"]
 
 STATUS_LABEL = {
@@ -189,13 +216,18 @@ def region_chip(label, full_tier, is_hero):
     short = SHORT_TIER.get(full_tier, full_tier or "—")
     return f'<span class="{cls}" title="{full_tier or "no regional data"}">{label}: {short}</span>'
 
+def core_chip(is_core):
+    cls = "core-chip is-core" if is_core else "core-chip"
+    return f'<span class="{cls}" title="Core Assortment FW27 (REG-015) -- absence is a merch check, not automatic discontinuation">Core FW27: {"Yes" if is_core else "No"}</span>'
+
 def card_html(p):
     img_src = f'data:image/jpeg;base64,{IMAGES[p["img"]]}'
     tier_cls = "tier-hero" if p["tier"] == "Hero" else "tier-near"
     global_label = f'Global {p["tier"]}'
-    region_strip = (
+    badge_strip = (
         region_chip("Nordic", p["nordicTier"], p["isNordicHero"]) +
-        region_chip("ROW", p["rowTier"], p["isRowHero"])
+        region_chip("ROW", p["rowTier"], p["isRowHero"]) +
+        core_chip(p["coreAssortmentFw27"] == "Yes")
     )
     return f'''
     <article class="card" id="card-{p['key']}" data-key="{p['key']}">
@@ -206,7 +238,7 @@ def card_html(p):
         <div class="card-top">
           <span class="tier-chip {tier_cls}">{global_label}</span>
         </div>
-        <div class="region-strip">{region_strip}</div>
+        <div class="badge-strip">{badge_strip}</div>
         <h3 class="card-title">{p['base']}</h3>
         <p class="card-meta">{p['gender']} &middot; {p['layer']}</p>
         <div class="fin-table">
@@ -336,6 +368,8 @@ html = html.replace("__N_BOTH_REGIONS__", str(n_both_regions))
 html = html.replace("__N_NORDIC_ONLY__", str(n_nordic_only))
 html = html.replace("__N_ROW_ONLY__", str(n_row_only))
 html = html.replace("__N_NEITHER__", str(n_neither))
+html = html.replace("__N_CORE__", str(n_core))
+html = html.replace("__N_NOT_CORE__", str(34 - n_core))
 
 with open("hero_catalogue.html", "w") as f:
     f.write(html)

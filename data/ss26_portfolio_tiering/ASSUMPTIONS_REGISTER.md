@@ -39,7 +39,14 @@ formula, prompt, or report that depends on it.
 Newest first, plain language — so a first-time reader sees the pace of
 iteration without reading all 24 register entries below.
 
-1. **9 Sep 2026 — Flowed regional tiering (REG-023/024) into the Hero
+1. **10 Sep 2026 — Flowed Core Assortment FW27 (REG-015) into the Hero
+   Tier Catalogue.** A third card badge, "Core FW27: Yes/No," read
+   straight from Sheet 2 — no new methodology. Same split REG-015 has
+   documented since 8-Sep: 14 of the 34 Global Hero+Near-Hero franchises
+   are on the confirmed 88-style list, 20 are not (a merch check, not a
+   discontinuation signal — matched by style name, not sales history, so
+   an unshipped successor doesn't wrongly show absent).
+2. **9 Sep 2026 — Flowed regional tiering (REG-023/024) into the Hero
    Tier Catalogue.** Each of the 34 cards now shows a Nordic and a ROW
    (Rest of World / Non-Nordic) badge alongside the existing Global tier
    chip — highlighted when that franchise is also a Hero within that
@@ -48,7 +55,7 @@ iteration without reading all 24 register entries below.
    across the 34: 4 Hero in both regions, 17 Nordic-only, 7 ROW-only, 6
    neither (Global Hero from combining two mid-sized regions, not from
    dominating one) — summarized on the page itself, not just per-card.
-2. **9 Sep 2026 — Flowed regional tiering (REG-023/024) into Tier
+3. **9 Sep 2026 — Flowed regional tiering (REG-023/024) into Tier
    Bench.** New seventh query tool, `queryRegionalTiering` — one row per
    franchise per region (Nordic/Non-Nordic, 3,720 rows), with
    `globalTier` alongside `regionalTier` for direct comparison. Verified
@@ -62,7 +69,7 @@ iteration without reading all 24 register entries below.
    underlying chat API, which silently broke every query, not just ones
    using that tool — trimmed the description and confirmed all seven
    tools work via an independent test harness before republishing.)
-3. **9 Sep 2026 — The base tiering rule is confirmed (REG-024), and the
+4. **9 Sep 2026 — The base tiering rule is confirmed (REG-024), and the
    regional sheets from earlier today were rebuilt to use it.** After
    yesterday's failed reverse-engineering attempt (below), the business
    supplied the actual rule directly: absolute SEK/GM%/growth cuts
@@ -82,7 +89,7 @@ iteration without reading all 24 register entries below.
    733 of 1,860 franchises had been silently missing from the Non-Nordic
    sheet (any franchise with zero Non-Nordic sales) — every franchise now
    gets at least one row per region.
-4. **9 Sep 2026 — Added region-relative tiering for Nordic and
+5. **9 Sep 2026 — Added region-relative tiering for Nordic and
    Non-Nordic (REG-023 — since superseded, see above), after finding the
    original tier rule can't be reverse-engineered.** Team wanted the
    same Hero/Near-Hero/etc. structure computed separately per region.
@@ -94,7 +101,7 @@ iteration without reading all 24 register entries below.
    be a real, precise formula — see above, it just wasn't derivable from
    Sheet 2's columns alone). Built a placeholder rule to keep moving;
    superseded same day once the real rule arrived.
-5. **9 Sep 2026 — Added a Sales-by-Country sheet + a browse-order view
+6. **9 Sep 2026 — Added a Sales-by-Country sheet + a browse-order view
    (REG-022), then resolved the open definition question same day.**
    Team feedback: they want to see tiers by region, specifically able to
    exclude the home/legacy market from a query like "Hero products in
@@ -114,7 +121,7 @@ iteration without reading all 24 register entries below.
    grouping Sales/Units/GM% together per year for easier scanning,
    without reordering Sheet 2 itself (which all 9 pipeline scripts
    hardcode column positions against).
-6. **9 Sep 2026 — Added Style Code(s) (REG-021), same day someone asked
+7. **9 Sep 2026 — Added Style Code(s) (REG-021), same day someone asked
    Tier Bench for one.** Tier Bench correctly said it didn't have a SKU/
    style code field rather than guessing — none of the published Sheet-2
    data ever carried one. Added a `Style Code(s)` column sourced from the
@@ -123,7 +130,7 @@ iteration without reading all 24 register entries below.
    across seasons) — read as "codes seen for this franchise," not a
    single canonical code. Now in the workbook, Tier Bench, and its CSV
    exports.
-7. **9 Sep 2026 — Fixed a second Tier Bench data gap: YTD2026 units were
+8. **9 Sep 2026 — Fixed a second Tier Bench data gap: YTD2026 units were
    missing.** `Units_YTD2026` has been a published Sheet-2 column since
    before this session's work (it's part of the original base tiering
    build, alongside Sales_2025/Sales_YTD2026/GM%/Pace%/Growth%) — but
@@ -134,34 +141,34 @@ iteration without reading all 24 register entries below.
    got a (correct, not fabricated) "I don't have that field" answer
    instead of a wrong number. Added `unitsYtd26` alongside the existing
    `units25`; republished.
-8. **9 Sep 2026 — Added real FY2025 Units (REG-020).** A `Units_2025`
+9. **9 Sep 2026 — Added real FY2025 Units (REG-020).** A `Units_2025`
    column on Sheet 2, sourced from the same raw exports' "Units Sold"
    field — not an estimate. Flowed through to Tier Bench and the Hero
    Tier Catalogue's financial detail (previously showed "—" for FY25
    units since no real figure existed yet).
-9. **8 Sep 2026 — Fixed a real bug in Tier Bench, found via QA.** Its four
+10. **8 Sep 2026 — Fixed a real bug in Tier Bench, found via QA.** Its four
    filterable query tools silently returned ZERO results whenever a
    question needed a limit, a sort field, or a sort direction (i.e. most
    "top N" / "sorted by" questions — a large share of real use). Found by
    testing the tool code directly rather than through the live chat;
    fixed and re-verified against 12 known answers pulled from the
    workbook/register. Also added CSV export per query result.
-10. **8 Sep 2026 — Pipeline made reusable.** Every column/sheet below that
+11. **8 Sep 2026 — Pipeline made reusable.** Every column/sheet below that
    was built from a manual data upload now has a committed, re-runnable
    script instead of one-off chat Python (`scripts/`); the raw source
    files themselves are checked in too (`inputs/`). PR #2 (everything in
    this workstream so far) merged to `main`.
-11. **8 Sep 2026 — Added a stock breakdown by tier (REG-019).** A warehouse
+12. **8 Sep 2026 — Added a stock breakdown by tier (REG-019).** A warehouse
    available-stock snapshot, matched to franchise and tier, so it's clear
    which stock is a clearance candidate (Thin/Immaterial, Exited) vs. a
    real seller with a margin problem (Problem Child) that shouldn't be
    fire-saled.
-12. **8 Sep 2026 — Added channel-mix columns (REG-017, REG-018).** Each
+13. **8 Sep 2026 — Added channel-mix columns (REG-017, REG-018).** Each
    franchise's Wholesale vs. DTC sales split, plus a year-over-year
    pattern label (e.g. "DTC growing while Wholesale shrinks"). Revised
    same day after the first cut mislabeled a third of one bucket as
    "insufficient data" when they actually had real, single-channel sales.
-13. **8 Sep 2026 — Added FW27 assortment-status columns (REG-015,
+14. **8 Sep 2026 — Added FW27 assortment-status columns (REG-015,
    REG-016).** Whether each franchise is in the Core Assortment for FW27,
    and whether it's marked Active in the separate Assortment Attribution
    Review — flagging where Hero-tier products are missing from either
@@ -232,7 +239,7 @@ Three specific overlaps worth knowing about:
 | REG-018 | Portfolio Analysis | Channel Pattern 2025 (DTC x Wholesale substitution classification) | **Confirmed** (business-directed taxonomy, revised same day) | New `Channel Pattern 2025` column on Sheet 2, classifying each franchise's 2024→2025 Wholesale vs. DTC (Retail+E-com) pattern. **Source: `data/bob_salesdata_2024.xlsx` + `bob_salesdata_2025.xlsx`** (Key-Article Margin Analysis workstream, full two-year annual pull) — not the SS26 w.34 exports used for REG-012/014/017 — since "that channel analysis" referred to `analysis.py`'s existing `channel_view()` function, which uses this data source. Filtered to the same Core-account exclusions as the rest of Sheet 2 (REG-008); cross-checked the excluded China total (49.6M SEK combined FY24+FY25) against `config.py`'s own documented figure — matches almost exactly. **Assumption:** the `Marketplace` Sales Channel (Sport-Scheck, About You, Zalando Marketplace, etc.) is grouped into Wholesale, not DTC — not independently confirmed. **Taxonomy, revised same day:** the first version applied the 50,000 SEK/year threshold per channel per year and lumped every failure into one "Insufficient data" bucket (1,555 franchises) — median sales for that bucket was 17,360 SEK (34 units), mostly genuinely small, but 564 of them (36%) had Sales_2025 above the threshold, revealing they were single-channel, not small. Split into: Substitution (DTC↑/Wholesale↓) — 135, the most common pattern; Substitution (Wholesale↑/DTC↓) — 26; Co-growth (both↑) — 66; Co-decline (both↓) — 70; **Wholesale-only / DTC negligible** (Wholesale reliable both years, DTC <50K in *both* years — a structural fact, not a data gap) — 59, incl. 37 Workhorse+Harvest; **DTC-only / Wholesale negligible** (the reverse) — 83, incl. 29 Workhorse+Harvest; Insufficient data (now reserved for genuinely-small-both-channels or a channel with mixed year-to-year reliability) — 1,413, incl. 4 Hero+Near-Hero; Not in FY24/25 dataset — 8. Classification is sign-based with no materiality band beyond the reliability gate. **Cross-workstream caveat (REG-009):** this dataset's totals have a known ~2.3% gap vs. the SS26 exports for the same period; franchise identity uses the same Base+Gender text matching as REG-010/014/015/017. |
 | REG-017 | Portfolio Analysis | Wholesale Share % per franchise (DTC x Wholesale channel mix) | **Confirmed** (methodology), figures **Provisional** per REG-012 | New `Wholesale Share % (FY25, raw)` column on Sheet 2: Wholesale channel's share of a franchise's FY25 Core-scope sales (vs. Retail+E-com combined, i.e. DTC), recomputed from the raw SS26 exports at franchise grain — same method/caveat as REG-014's Generation Detail sheet. Company-wide FY25 Core baseline for reference: Wholesale 40.7% GM%, Retail 48.9%, E-com 61.1% (Wholesale lowest-margin). Coverage: 866 of 1,860 franchises have a value; 664 blanked below the 50,000 SEK/year threshold (REG-004 precedent); 330 have no matching raw sales at all (mostly Thin/Immaterial or Exited). **Of the 1,530 franchises with any reconstructed sales, 366 (24%) differ from the published Sales_2025 by more than 15%** — the same unresolved "3-Close out order" ordertype gap as REG-012, which skews toward overstating Wholesale share wherever it's present (close-out activity is wholesale-channel). Read as directional (wholesale-heavy vs. DTC-heavy), not an audited percentage. One outlier: "Asp 3-in-1 GTX Parka" (Women, Exited, 203K SEK FY25) shows a small negative value from returns exceeding gross wholesale sales on a low base — left as computed. |
 | REG-016 | Portfolio Analysis | FW27 Collection status (Active/Not active/Not in review) | **Confirmed** (business-directed), field is a **known-imperfect source, kept as-is** | New `FW27 Collection` column on Sheet 2: `Active` / `Not active` / `Not in review`, sourced from the `Active` field in `data/Assortment Attribution Review(F27).xlsx` (Key-Article Margin Analysis workstream), matched by franchise via the same text parsing as REG-010/014/015. `Active` = at least one matching style row is Active=True; `Not active` = every matching row is Active=False; `Not in review` = the franchise isn't in this 392-row file at all (1,568 of 1,860 — this file only covers 292 franchises, so absence ≠ a negative signal). **This repo's own README documents a known false-negative problem** on this field (successor styles clearly still trading shown Active=False) — confirmed still live: `Zircon Slim II Pant` is Active=False in the source file, but the matching franchise `Zircon Slim Pant` (Men) has 546,751 SEK in YTD2026 sales. **Per business direction, the source value is kept as-is, not overridden** — instead, a 24-franchise exception list (`Not active` + YTD2026 sales ≥ 50,000 SEK, REG-004's reliability threshold) is on Sheet 1 for review. Several exceptions (Velum Jacket, Zodiac Jacket, Spacelite, Steep Proof 3L Jacket) show near-zero FY25 sales with substantial YTD2026 sales — likely new SS26 launches postdating the attribution snapshot, a different pattern than the Zircon-style successor-naming anomaly; not distinguished from each other since the source file carries no refresh date to tell them apart. |
-| REG-015 | Portfolio Analysis | Core Assortment FW27 inclusion check | **Confirmed** (methodology, **updated 08-Sep-2026 with the authoritative Excel list**) | New `Core Assortment FW27` (Yes/No) column on Sheet 2, matched by franchise (Base+Gender) against **`FW27_CORE_Assortment_Styles.xlsx`** (57 carry-over styles, each with an exact Style Number/Model code) **plus** the 31-style "News package" from the original send-out deck (its own Model-coded table) — 88 items combined. **Supersedes the first version**, which was transcribed from a PDF slide deck's image captions (labeled "version 1" on its own title slide, no Model codes for the carry-over section, a different and less complete ~64-style set). Matched by parsing each item's own style/article name (same gender/version-token method as REG-010/014) — deliberately **not** by looking up whether that Model code has ever appeared in the SS26 raw exports, since several 2.0/II successor styles (e.g. "Mimic Alert 2.0 Hood", "Rosson Mid II Jacket Women") haven't shipped yet and have zero sales history; a sales-history lookup would have wrongly marked their whole franchise absent. Still true from the first version: **this list is a deliberately curated subset, not the full continuing catalog** — absence isn't automatic discontinuation, but is worth a merch-team check for a Hero/Near-Hero performer. Match quality: 57 of 88 items matched an existing published franchise; the 31 unmatched are genuinely new (the News package minus "Mimic Alert," which matched; plus "Korp Softshell Hood/Pant," independently confirmed to have no FY24/25 sales history either way). **Finding: 20 of 34 Hero + Near-Hero franchises (59%) are not in the list** (down from 21) — "Long Down Parka" (Women, 6.3M SEK) dropped off the gap list because the authoritative file confirms its successor "Long Down II Parka Women" is in Core Assortment; listed on Sheet 1 for merch review. |
+| REG-015 | Portfolio Analysis | Core Assortment FW27 inclusion check | **Confirmed** (methodology, **updated 08-Sep-2026 with the authoritative Excel list**) | New `Core Assortment FW27` (Yes/No) column on Sheet 2, matched by franchise (Base+Gender) against **`FW27_CORE_Assortment_Styles.xlsx`** (57 carry-over styles, each with an exact Style Number/Model code) **plus** the 31-style "News package" from the original send-out deck (its own Model-coded table) — 88 items combined. **Supersedes the first version**, which was transcribed from a PDF slide deck's image captions (labeled "version 1" on its own title slide, no Model codes for the carry-over section, a different and less complete ~64-style set). Matched by parsing each item's own style/article name (same gender/version-token method as REG-010/014) — deliberately **not** by looking up whether that Model code has ever appeared in the SS26 raw exports, since several 2.0/II successor styles (e.g. "Mimic Alert 2.0 Hood", "Rosson Mid II Jacket Women") haven't shipped yet and have zero sales history; a sales-history lookup would have wrongly marked their whole franchise absent. Still true from the first version: **this list is a deliberately curated subset, not the full continuing catalog** — absence isn't automatic discontinuation, but is worth a merch-team check for a Hero/Near-Hero performer. Match quality: 57 of 88 items matched an existing published franchise; the 31 unmatched are genuinely new (the News package minus "Mimic Alert," which matched; plus "Korp Softshell Hood/Pant," independently confirmed to have no FY24/25 sales history either way). **Finding: 20 of 34 Hero + Near-Hero franchises (59%) are not in the list** (down from 21) — "Long Down Parka" (Women, 6.3M SEK) dropped off the gap list because the authoritative file confirms its successor "Long Down II Parka Women" is in Core Assortment; listed on Sheet 1 for merch review. **Flowed into the Hero Tier Catalogue (10-Sep-2026)** as a third card badge ("Core FW27: Yes/No") — same 14-of-34 Yes / 20-of-34 No split, read straight from Sheet 2, no new methodology. |
 | REG-014 | Portfolio Analysis | Generation Detail sheet (article-naming version split) | **Confirmed** (methodology, revised 2026-09-08), figures **Provisional** per REG-012 | New Sheet 3 in `Project_Bob_Portfolio_Tiering_08092026.xlsx`: one row per distinct Article, for the 109 franchises (of 1,860) where the raw exports show a genuine naming-based version succession (an "Original" article and a later II/III/IV/2.0-suffixed article under the same franchise). **Generation is determined purely by the article name's version token — NOT by the Aug-2026 China JV/Zalando close-out lists.** (First build conflated the two: it bucketed SKUs by close-out-list membership, which produced the same article name appearing in both an "Old-gen" and "Continuing" row whenever only some of that article's colorways were on the list — confusing and wrong, corrected same day.) Close-out-list membership is now shown only as an informational "Clearance Exposure" column, decoupled from the generation label. Franchises with only one continuously-named article aren't included (nothing to compare). Example: "Astral GTX Jacket" (Women) — Original 48.9% GM% vs. Version II 48.8% GM% (comparable); "L.I.M Fuse Pant" (Men) — Original 48.8% GM% vs. Version II 41.7% GM% (the *new* generation is lower-margin, the opposite of what you'd assume). **Caveat:** Sales/GM% recomputed directly from raw SKU-level exports (same Core-scope rule as REG-008), not the published Sheet-2 figures — an article's rows won't necessarily sum to its franchise's audited Sales_2025 (REG-012's unresolved ordertype gap). Read as relative/directional, not an audited SEK split. GM% blanked below 50,000 SEK/year per REG-004's precedent. |
 
 ---
