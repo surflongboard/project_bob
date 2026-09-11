@@ -54,6 +54,8 @@ code, prompt, or report that depends on it.
 
 | REG-INV-016 | Portfolio Analysis | Why 77 franchises still have no value estimate at all (Sheet 4) | **Confirmed** (the reason, not a resolution) | After REG-INV-015's fallback, 77 of Sheet 4's 400 franchises (26,224 units) remain unpriced by any method in this repo — investigated rather than left as an unexplained gap. Two distinct, already-legitimate reasons, both now shown directly on Sheet 4 as a `No-Price Reason` column: **57 are known franchises in the SS26 tiering workbook whose FY25 sales fall below the 50,000 SEK/year reliability floor (REG-004)** — the same rule that blanks GM%/growth/share everywhere else in this repo; computing an ASP on that small a base would be exactly the wild-number problem REG-004 exists to prevent, so this is the gate working as intended, not a gap to close. **20 aren't in the curated 1,860-franchise tiering universe at all** — mostly small accessories (shoelaces, wallets, packing cubes, key rings) by Product Area (`LO Packing cubes`, `LO Wallets`, `Haglöfs Shoe Lace 4mm/2.5mm/5mm Ridge`, `Brand Cord key ring`), consistent with the same out-of-scope class REG-019/REG-INV-007 already documented for the tiering workbook's own ~2.7% unmatched stock. **Not resolved further:** no additional data source in this repo prices these; forcing a number here (e.g. a company-wide average ASP) would manufacture false precision on exactly the SKUs REG-004's own logic says not to trust. Left unpriced is the correct, honest answer, not an oversight. |
 
+| REG-INV-017 | Portfolio Analysis | Portfolio Tier x Aging Schedule cross-tab (Sheet 7) | **Confirmed** (methodology), figures **Provisional** (inherits REG-INV-010/014/015's own status) | Maps the two independent lenses this workbook has been building all along: **rows** = each franchise's current SS26 Portfolio Tier (Hero+Near-Hero through Clearance, from the tiering workbook — a *business-health* read) x **columns** = the FW27 plan's own exit urgency (Exiting FW27 / FW27-or-SS28 / One season left / Long runway / Pending Review / Not on FW27 Plan — a *time-to-retirement* read). Two tables: Units, and Value (mixed basis — Target RRP for the FW27-matched columns, Historical ASP for "Not on FW27 Plan" per REG-INV-015 — explicitly not summed together as one currency of estimate). **Reads at a glance:** Hero+Near-Hero has **zero units exiting at FW27 or FW27-or-SS28** — no imminent generation-transition risk on the top tier right now; its 55,381 Long-runway units and 4,013 "Not on FW27 Plan" units are the only exposure, and the latter is exactly the kind of case REG-INV-013's rename-candidate finder exists to check. Thin/Immaterial carries 14,969 units at Pending Review — the tier this repo's own SS26 register already flags "clear via sale" is sitting on real stock whose exit timing isn't even decided yet, worth a look. "Not in tiering workbook" still shows real activity across every exit-urgency column (1,131 to 5,297 units each) — these are franchises in the current stock/FW27-plan world that the curated 1,860-franchise universe hasn't caught up with. Grand totals reconcile exactly against every prior entry (527,963 units; 851,082,356 SEK = REG-INV-014's 775,185,200 RRP total + REG-INV-015's 75,897,156 ASP total). |
+
 ---
 
 ## Recent changes
@@ -62,26 +64,33 @@ Newest first, plain language — mirrors the convention already used by the
 SS26 Portfolio Tiering workstream's own register, adopted here now that
 enough has accumulated across sessions to need it.
 
-1. **11 Sep 2026 — Explained, not just reported, Sheet 4's remaining
+1. **11 Sep 2026 — Mapped Portfolio Tier x Aging Schedule (REG-INV-017,
+   Sheet 7).** Cross-tabs the SS26 tiering workbook's business-health
+   tiers against the FW27 plan's exit-urgency tiers, in Units and Value.
+   Headline: Hero+Near-Hero has zero units exiting at FW27 or
+   FW27-or-SS28 — no imminent generation-transition risk on the top
+   tier right now. Thin/Immaterial has 14,969 units still at Pending
+   Review despite the tier's own "clear via sale" guidance.
+2. **11 Sep 2026 — Explained, not just reported, Sheet 4's remaining
    unpriced stock (REG-INV-016).** Of the 77 franchises left after
    REG-INV-015's fallback, 57 are known franchises below the 50,000
    SEK/year reliability floor (the gate working correctly, not a gap)
    and 20 are small accessories outside the curated franchise universe
    entirely. Both reasons now show directly on Sheet 4's own
    `No-Price Reason` column.
-2. **11 Sep 2026 — Closed most of Sheet 4's valuation gap with a
+3. **11 Sep 2026 — Closed most of Sheet 4's valuation gap with a
    historical-ASP fallback (REG-INV-015).** `Sales_2025 / Units_2025`
    per franchise from the SS26 tiering workbook, reliability-gated:
    323 of 400 franchises (100,966 of 127,190 units, 79%) now priced at
    75,897,156 SEK — a realized, blended price, kept as its own row in
    Sheet 6 rather than summed against REG-INV-014's planned-RRP total.
-3. **11 Sep 2026 — Added an inventory value estimate (REG-INV-014):**
+4. **11 Sep 2026 — Added an inventory value estimate (REG-INV-014):**
    Retail (Target RRP) / Wholesale (WP) / Est. Cost (`WP x (1-GM0%)`,
    reconstructed since the plan's own Landed Cost field is `#ERROR!`
    on every row) for the 400,773 stock units matched to the FW27 plan
    — 775.2M / 370.7M / 145.8M SEK. New Sheet 6 breaks this down by
    Priority Tier and by Activity.
-4. **11 Sep 2026 — Added a heuristic FW27 rename-candidate finder
+5. **11 Sep 2026 — Added a heuristic FW27 rename-candidate finder
    (REG-INV-013, Sheet 5)** for the 54 franchises flagged Open by
    REG-INV-012: shares a distinctive, position-detected family word
    (not raw frequency) with an FW27 style of the same gender/Business
@@ -89,13 +98,13 @@ enough has accumulated across sessions to need it.
    real check: "Rosson Softshell Hood" → "Rosson Mid II Hood",
    "ROC Lite Slim Pant" → "ROC Sight Softshell Pant". Narrows
    REG-INV-012, doesn't resolve it.
-5. **11 Sep 2026 — Found REG-INV-012 was not safe as originally framed.**
+6. **11 Sep 2026 — Found REG-INV-012 was not safe as originally framed.**
    Business framing was to call Sheet 4's 400 "not on FW27 plan"
    franchises "retired before FW27." Cross-checked against SS27 instead:
    54 (41,566 units, ~33% of that bucket's stock) were still Active
    there — not evidence of an earlier retirement. Sheet 4 now carries
    the SS27 cross-check columns directly.
-6. **10-11 Sep 2026 — Built the Sell-Down Priority workbook (REG-INV-010),
+7. **10-11 Sep 2026 — Built the Sell-Down Priority workbook (REG-INV-010),
    joining the FW27 range assortment plan's own planned exit season**
    (`LSO / Exit Season`, column AI, business-identified) to current
    stock: 253 of 683 stocked franchises matched a known exit tier
@@ -104,7 +113,7 @@ enough has accumulated across sessions to need it.
    FW27 tab's own schema/data-quality issues (REG-INV-011): `#ERROR!`
    cost/MOQ formulas, near-empty `Franchise/Family`, an in-progress
    `Category/Layer(V2)` re-taxonomy.
-7. **10 Sep 2026 — Workstream seeded (REG-INV-001 through 009)** from the
+8. **10 Sep 2026 — Workstream seeded (REG-INV-001 through 009)** from the
    `Available_stock_260825.xlsx` warehouse snapshot — the same file
    already used by SS26 Portfolio Tiering's REG-019, reused directly
    rather than duplicated. New to this workstream: a Season-Recency

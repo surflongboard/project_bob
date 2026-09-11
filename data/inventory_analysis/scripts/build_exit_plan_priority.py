@@ -61,6 +61,10 @@ CAVEATS (see ASSUMPTIONS_REGISTER.md for the full reasoning):
     reason on Sheet 4 (REG-INV-016), not a silent blank: below the
     reliability floor (the gate working correctly) or genuinely outside
     the curated franchise universe. Not force-priced either way.
+  - Sheet 7 (REG-INV-017) cross-tabs SS26 Portfolio Tier (business
+    health) against this workbook's own exit urgency (time-to-
+    retirement) -- two independent signals, read together rather than
+    conflated. Value cells mix RRP and ASP bases; don't sum across them.
   - "REVIEW" (Exit Season undecided) is NOT force-ranked into the sell-
     down priority list — REG-INV-010 documents this as a genuine Open
     item per this repo's register discipline. Those franchises get their
@@ -319,6 +323,12 @@ def main():
         stock_units[lib.franchise_key(str(article).strip())] += units
     print(f"stock franchises with units: {len(stock_units)}")
 
+    # --- REG-INV-017: SS26 Portfolio Tier per franchise, for the Tier x Aging cross-tab (Sheet 7) ---
+    wb_t, ws_t = lib.load_full_portfolio()
+    portfolio_tier = {k: v["tier"] for k, v in lib.full_portfolio_lookup(ws_t).items()}
+    NOT_IN_TIERING = "Not in tiering workbook"
+    PORTFOLIO_TIER_ORDER = lib.TIER_ORDER + [NOT_IN_TIERING]
+
     # --- join ---
     ranked = []       # franchises with stock, matched to a ranked exit tier
     pending = []       # franchises with stock, exit season = REVIEW
@@ -384,6 +394,31 @@ def main():
     total_wholesale_value = sum(u * info["wp"] for _, u, info in valued_rows if info["wp"] is not None)
     total_cost_value = sum(u * info["cost"] for _, u, info in valued_rows if info["cost"] is not None)
     n_valued_units = sum(u for _, u, info in valued_rows if info["cost"] is not None)
+
+    # --- REG-INV-017: Portfolio Tier x Aging-Schedule (exit-urgency) cross-tab (Sheet 7) ---
+    NOT_ON_PLAN = "Not on FW27 Plan"
+    AGING_COL_ORDER = [t[1] for t in TIER_RANK.values()] + [
+        "Pending Review (exit season = REVIEW)", NOT_ON_PLAN,
+    ]
+    tier_x_aging_units = defaultdict(lambda: defaultdict(float))
+    tier_x_aging_value = defaultdict(lambda: defaultdict(float))
+    for key, units, info, _, tier_label in ranked:
+        ptier = portfolio_tier.get(key, NOT_IN_TIERING)
+        tier_x_aging_units[ptier][tier_label] += units
+        if info["rrp"] is not None:
+            tier_x_aging_value[ptier][tier_label] += units * info["rrp"]
+    for key, units, info in pending:
+        ptier = portfolio_tier.get(key, NOT_IN_TIERING)
+        col = "Pending Review (exit season = REVIEW)"
+        tier_x_aging_units[ptier][col] += units
+        if info["rrp"] is not None:
+            tier_x_aging_value[ptier][col] += units * info["rrp"]
+    for key, units in unplanned:
+        ptier = portfolio_tier.get(key, NOT_IN_TIERING)
+        tier_x_aging_units[ptier][NOT_ON_PLAN] += units
+        asp = historical_asp.get(key)
+        if asp is not None:
+            tier_x_aging_value[ptier][NOT_ON_PLAN] += units * asp
 
     total_stock = sum(stock_units.values())
     print(f"total stock units: {total_stock:,.0f}  "
@@ -679,6 +714,78 @@ def main():
         for c, v in enumerate(vals, start=2):
             cell = ws6.cell(row=r, column=c, value=round(v)); cell.number_format, cell.font = NUM_FMT, BODY_FONT
         r += 1
+
+    # --- Sheet 7: Portfolio Tier x Aging Schedule (REG-INV-017) ---
+    ws7 = wb.create_sheet("7. Tier x Aging Schedule")
+    n_cols = len(AGING_COL_ORDER) + 2  # + row label + Total
+    ws7["A1"] = "Portfolio Tier x Aging Schedule (Exit Urgency) — Units"
+    ws7["A1"].font = TITLE_FONT
+    ws7.merge_cells(f"A1:{openpyxl.utils.get_column_letter(n_cols)}1")
+    ws7["A3"] = (
+        "Rows = each franchise's current SS26 Portfolio Tier (Hero/Workhorse/Problem Child/etc., "
+        "from the tiering workbook) — a business-health read. Columns = the FW27 plan's own exit "
+        "urgency (this workbook's Sheets 2-4) — a time-to-retirement read. The two are independent "
+        "signals: a Hero-tier franchise exiting FW27 is a generation-transition risk (protect "
+        "continuity); a Problem Child sitting at \"Long runway\" is an ongoing margin problem with "
+        "no forced near-term resolution (needs a pricing/cost fix regardless of aging). \"Not in "
+        f"tiering workbook\" / \"{NOT_ON_PLAN}\" mean exactly what Sheets 4/5 of this workbook and "
+        "the tiering workbook's own register already say about those franchises — not re-explained here."
+    )
+    ws7["A3"].font = GRAY_FONT
+    ws7["A3"].alignment = WRAP
+    ws7.merge_cells(f"A3:{openpyxl.utils.get_column_letter(n_cols)}3")
+    ws7.row_dimensions[3].height = 95
+
+    def write_crosstab(start_row, data, value_fmt, title):
+        ws7.cell(row=start_row, column=1, value=title).font = TITLE_FONT
+        ws7.merge_cells(f"A{start_row}:{openpyxl.utils.get_column_letter(n_cols)}{start_row}")
+        hdr_row = start_row + 1
+        headers = ["Portfolio Tier"] + AGING_COL_ORDER + ["Total"]
+        for c, h in enumerate(headers, start=1):
+            cell = ws7.cell(row=hdr_row, column=c, value=h)
+            cell.font, cell.fill = HDR_FONT, HDR_FILL
+            cell.alignment = WRAP
+        rr = hdr_row + 1
+        col_totals = [0.0] * len(AGING_COL_ORDER)
+        for ptier in PORTFOLIO_TIER_ORDER:
+            row_data = data.get(ptier)
+            if not row_data:
+                continue
+            ws7.cell(row=rr, column=1, value=ptier).font = BODY_FONT
+            row_total = 0.0
+            for c, col_label in enumerate(AGING_COL_ORDER, start=2):
+                v = row_data.get(col_label, 0)
+                row_total += v
+                col_totals[c - 2] += v
+                cell = ws7.cell(row=rr, column=c, value=round(v)); cell.number_format, cell.font = value_fmt, BODY_FONT
+            cell = ws7.cell(row=rr, column=len(AGING_COL_ORDER) + 2, value=round(row_total))
+            cell.number_format, cell.font = value_fmt, Font(name="Arial", bold=True)
+            rr += 1
+        ws7.cell(row=rr, column=1, value="Total").font = Font(name="Arial", bold=True)
+        grand_total = 0.0
+        for c, ct in enumerate(col_totals, start=2):
+            grand_total += ct
+            cell = ws7.cell(row=rr, column=c, value=round(ct)); cell.number_format, cell.font = value_fmt, Font(name="Arial", bold=True)
+        cell = ws7.cell(row=rr, column=len(AGING_COL_ORDER) + 2, value=round(grand_total))
+        cell.number_format, cell.font = value_fmt, Font(name="Arial", bold=True)
+        return rr + 2
+
+    ws7.column_dimensions["A"].width = 30
+    for i in range(2, n_cols + 1):
+        ws7.column_dimensions[openpyxl.utils.get_column_letter(i)].width = 15
+
+    r7 = write_crosstab(5, tier_x_aging_units, NUM_FMT, "Units")
+    ws7.cell(row=r7, column=1, value=(
+        "Value below mixes bases (Target RRP for Sheets 2-3's columns, Historical ASP for "
+        f"\"{NOT_ON_PLAN}\" per REG-INV-015) -- read each cell's own column for what it means, "
+        "don't sum across the RRP and ASP columns as if they were the same currency of estimate. "
+        "Cells with no price source (REG-INV-016) show as 0 here, not blank -- cross-reference "
+        "the Units table above for what's actually being undercounted."
+    )).font = GRAY_FONT
+    ws7.cell(row=r7, column=1).alignment = WRAP
+    ws7.merge_cells(f"A{r7}:{openpyxl.utils.get_column_letter(n_cols)}{r7}")
+    ws7.row_dimensions[r7].height = 60
+    write_crosstab(r7 + 2, tier_x_aging_value, NUM_FMT, "Value (mixed basis — see note above), SEK")
 
     out_name = f"Project_Bob_Sell_Down_Priority_{date.today().strftime('%d%m%Y')}.xlsx"
     out_path = WORKSTREAM_DIR / out_name

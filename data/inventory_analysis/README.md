@@ -46,7 +46,10 @@ either cited from the SS26 register or documented fresh as REG-INV-###.
   units — see REG-INV-015; it's a different basis from REG-INV-014's
   Target-RRP value, not directly comparable to it. The remaining 21%
   (77 franchises) gets an explicit reason, not a silent blank —
-  REG-INV-016.
+  REG-INV-016. A final sheet cross-tabs SS26 Portfolio Tier against
+  this workbook's own exit-urgency tiers (REG-INV-017), in units and
+  value — e.g. surfaces that zero Hero+Near-Hero units are exiting at
+  FW27 or FW27-or-SS28 right now.
 
 ## Running the script
 
