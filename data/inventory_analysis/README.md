@@ -40,7 +40,11 @@ either cited from the SS26 register or documented fresh as REG-INV-###.
   inventory value estimate — Retail/Wholesale/Est. Cost, with a summary
   by Priority Tier and by Activity (REG-INV-014). Landed cost is
   reconstructed (`WP x (1-GM0%)`) since the plan's own cost field is
-  broken — see REG-INV-014 for the validation and caveats.
+  broken — see REG-INV-014 for the validation and caveats. Sheet 4 gets
+  a separate fallback value (Historical ASP from actual FY25 sales in
+  the SS26 tiering workbook) covering 79% of its otherwise-unpriced
+  units — see REG-INV-015; it's a different basis from REG-INV-014's
+  Target-RRP value, not directly comparable to it.
 
 ## Running the script
 

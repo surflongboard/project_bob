@@ -50,9 +50,13 @@ CAVEATS (see ASSUMPTIONS_REGISTER.md for the full reasoning):
     Wholesale/Est. Cost). Landed Cost is broken in the source (#ERROR! on
     every FW27 row) and is reconstructed as WP x (1-GM0%) instead --
     validated against SS27's own non-broken figures, but Target RRP/WP
-    themselves are planned prices, not realized/audited ones. Sheet 4 has
-    no price source at all and is excluded from every value total (shown
-    as units-only, not zero).
+    themselves are planned prices, not realized/audited ones.
+  - Sheet 4 has no RRP/cost source at all, but gets its own fallback
+    (REG-INV-015): Historical ASP = Sales_2025/Units_2025 from the SS26
+    tiering workbook, reliability-gated (REG-004). Covers 79% of Sheet
+    4's units. A different, non-comparable basis from Sheets 2-3's
+    Target-RRP value -- shown as its own row in Sheet 6, never summed
+    into the same total.
   - "REVIEW" (Exit Season undecided) is NOT force-ranked into the sell-
     down priority list — REG-INV-010 documents this as a genuine Open
     item per this repo's register discipline. Those franchises get their
@@ -193,6 +197,28 @@ def find_rename_candidates(orphan_base, business_area, gender, fw27_by_gender_ar
     return best[:3]
 
 
+TIERING_UNITS_2025_COL = 21  # column U, per REG-020 in the SS26 register
+
+
+def load_historical_asp():
+    """REG-INV-015: Sheet 4 fallback. Sales_2025 / Units_2025 per franchise from the SS26
+    tiering workbook (Sheet 2) -- a REALIZED average selling price, unlike Sheets 2/3's
+    planned Target RRP. Gated by MIN_RELIABLE (REG-004/ss26_lib precedent) so a tiny
+    denominator doesn't produce a wild ASP; returns {} entries only where reliable."""
+    wb, ws2 = lib.load_full_portfolio()
+    asp = {}
+    for r in range(lib.FIRST_DATA_ROW, ws2.max_row + 1):
+        base = ws2.cell(row=r, column=1).value
+        if base is None:
+            continue
+        gender = (ws2.cell(row=r, column=2).value or "").strip()
+        sales25 = ws2.cell(row=r, column=6).value or 0
+        units25 = ws2.cell(row=r, column=TIERING_UNITS_2025_COL).value or 0
+        if sales25 >= lib.MIN_RELIABLE and units25 > 0:
+            asp[(base.strip(), gender)] = sales25 / units25
+    return asp
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--assortment", default=str(DEFAULT_ASSORTMENT))
@@ -308,6 +334,16 @@ def main():
     print(f"  of which still Active in {PRIOR_SEASON_SHEET}: {len(still_active_ss27)} "
           f"({sum(u for k, u in still_active_ss27):,.0f} units) -- needs a merch check, not an assumption")
 
+    # --- REG-INV-015: historical-ASP fallback value for Sheet 4 (no FW27/plan price exists) ---
+    unplanned_units = sum(x[1] for x in unplanned)
+    historical_asp = load_historical_asp()
+    unplanned_with_asp = [(k, u, historical_asp[k]) for k, u in unplanned if k in historical_asp]
+    unplanned_asp_value = sum(u * asp for _, u, asp in unplanned_with_asp)
+    print(f"  of the {len(unplanned)} unplanned, {len(unplanned_with_asp)} "
+          f"({sum(u for _, u, _ in unplanned_with_asp):,.0f} units) have a reliable historical ASP "
+          f"fallback ({unplanned_asp_value:,.0f} SEK) -- still {len(unplanned) - len(unplanned_with_asp)} "
+          "with no price source of any kind")
+
     # --- REG-INV-013: rename candidates for the still-Active-in-SS27 subset ---
     rename_candidates = []
     for key, units in still_active_ss27:
@@ -373,12 +409,15 @@ def main():
     ws1.merge_cells("A6:F6")
     ws1.row_dimensions[6].height = 75
     ws1["A9"] = (
-        f"Value estimate (REG-INV-014, Sheets 2-3 only -- {n_valued_units:,.0f} of {total_stock:,.0f} total "
+        f"Value estimate (Sheets 2-3, REG-INV-014 -- {n_valued_units:,.0f} of {total_stock:,.0f} total "
         f"units, {n_valued_units/total_stock*100:.0f}%): {total_retail_value:,.0f} SEK at Target RRP, "
         f"{total_wholesale_value:,.0f} SEK at WP, {total_cost_value:,.0f} SEK estimated landed cost "
         "(reconstructed -- see Sheet 2's own note and REG-INV-014). Sheet 4 (Not on FW27 Plan) has no "
-        "price source anywhere in this data and is NOT included in these totals -- not zero, just unknown. "
-        "See Sheet 6 for the breakdown by priority tier and by Activity."
+        f"RRP/cost source at all, but {sum(u for _, u, _ in unplanned_with_asp):,.0f} of its "
+        f"{unplanned_units:,.0f} units get a fallback Historical ASP value from actual FY25 sales "
+        f"({unplanned_asp_value:,.0f} SEK, REG-INV-015) -- the remaining "
+        f"{unplanned_units - sum(u for _, u, _ in unplanned_with_asp):,.0f} units have no price source of "
+        "any kind. See Sheet 6 for the breakdown by priority tier and by Activity."
     )
     ws1["A9"].font = GRAY_FONT
     ws1["A9"].alignment = WRAP
@@ -477,8 +516,9 @@ def main():
     ws4 = wb.create_sheet("4. Not on FW27 Plan")
     r = write_table(
         ws4,
-        ["Base", "Gender", "Units in Stock", f"In {PRIOR_SEASON_SHEET} Tab?", f"{PRIOR_SEASON_SHEET} Active?", f"{PRIOR_SEASON_SHEET} Status"],
-        (34, 10, 16, 14, 14, 12),
+        ["Base", "Gender", "Units in Stock", f"In {PRIOR_SEASON_SHEET} Tab?", f"{PRIOR_SEASON_SHEET} Active?",
+         f"{PRIOR_SEASON_SHEET} Status", "Historical ASP (SEK/unit)", "Est. Value at Historical ASP (SEK)"],
+        (34, 10, 16, 14, 14, 12, 18, 22),
         "Stock With No Row on the FW27 Tab",
         "NOT safe to blanket-label \"retired before FW27\" (REG-INV-012): cross-checked against "
         f"{PRIOR_SEASON_SHEET} (the season immediately before FW27) below. "
@@ -487,17 +527,26 @@ def main():
         "a name change too large for Base+Gender matching to catch (e.g. \"Rosson Softshell Hood\" -> "
         f"\"Rosson Mid II Hood\", confirmed both exist, neither name matches the other). Rows with "
         f"\"{PRIOR_SEASON_SHEET} Active? = False\" or blank (not in {PRIOR_SEASON_SHEET} either) are the "
-        "safer default for \"likely already retired.\" Sorted by units in stock, descending.",
+        "safer default for \"likely already retired.\" Value columns (REG-INV-015) are a DIFFERENT basis "
+        "from Sheets 2-3's Target-RRP value: Historical ASP = that franchise's actual FY25 Sales_2025 / "
+        "Units_2025 from the SS26 tiering workbook, gated by the same 50,000 SEK/year reliability floor "
+        "used everywhere in that workstream (REG-004) -- blank where unreliable or the franchise isn't in "
+        "that workbook at all. A REALIZED average price, not a planned one, but still no cost/margin figure "
+        "exists for this bucket. Sorted by units in stock, descending.",
     )
     for key, units in unplanned:
         base, g = key
         prior = prior_season.get(key)
+        asp = historical_asp.get(key)
         ws4.cell(row=r, column=1, value=base).font = BODY_FONT
         ws4.cell(row=r, column=2, value=g).font = BODY_FONT
         c = ws4.cell(row=r, column=3, value=round(units)); c.number_format, c.font = NUM_FMT, BODY_FONT
         ws4.cell(row=r, column=4, value="Yes" if prior else "No").font = BODY_FONT
         ws4.cell(row=r, column=5, value=(prior["active"] if prior else None)).font = BODY_FONT
         ws4.cell(row=r, column=6, value=(prior["status"] if prior else None)).font = BODY_FONT
+        if asp is not None:
+            c = ws4.cell(row=r, column=7, value=round(asp, 2)); c.number_format, c.font = "#,##0.00", BODY_FONT
+            c = ws4.cell(row=r, column=8, value=round(units * asp)); c.number_format, c.font = NUM_FMT, BODY_FONT
         r += 1
 
     # --- Sheet 5: possible FW27 renames, for the still-Active-in-SS27 subset ---
@@ -562,12 +611,18 @@ def main():
         for c, v in enumerate(vals, start=2):
             cell = ws6.cell(row=r, column=c, value=round(v)); cell.number_format, cell.font = NUM_FMT, BODY_FONT
         r += 1
-    unplanned_units = sum(x[1] for x in unplanned)
-    ws6.cell(row=r, column=1, value="Not on FW27 Plan (Sheet 4 — no price source)").font = GRAY_FONT
-    c = ws6.cell(row=r, column=2, value=round(unplanned_units)); c.number_format, c.font = NUM_FMT, GRAY_FONT
-    ws6.cell(row=r, column=3, value="n/a").font = GRAY_FONT
-    ws6.cell(row=r, column=4, value="n/a").font = GRAY_FONT
-    ws6.cell(row=r, column=5, value="n/a").font = GRAY_FONT
+    unplanned_asp_units = sum(u for _, u, _ in unplanned_with_asp)
+    ws6.cell(row=r, column=1, value="Not on FW27 Plan — priced at Historical ASP (REG-INV-015, blended, not RRP)").font = GRAY_FONT
+    c = ws6.cell(row=r, column=2, value=round(unplanned_asp_units)); c.number_format, c.font = NUM_FMT, GRAY_FONT
+    c = ws6.cell(row=r, column=3, value=round(unplanned_asp_value)); c.number_format, c.font = NUM_FMT, GRAY_FONT
+    ws6.cell(row=r, column=4, value="n/a — single blended price").font = GRAY_FONT
+    ws6.cell(row=r, column=5, value="n/a — no cost source").font = GRAY_FONT
+    r += 1
+    ws6.cell(row=r, column=1, value="Not on FW27 Plan — no price source of any kind").font = GRAY_FONT
+    c = ws6.cell(row=r, column=2, value=round(unplanned_units - unplanned_asp_units)); c.number_format, c.font = NUM_FMT, GRAY_FONT
+    ws6.cell(row=r, column=3, value="unknown").font = GRAY_FONT
+    ws6.cell(row=r, column=4, value="unknown").font = GRAY_FONT
+    ws6.cell(row=r, column=5, value="unknown").font = GRAY_FONT
     r += 2
 
     hdr_row = r
