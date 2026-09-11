@@ -22,6 +22,19 @@ either cited from the SS26 register or documented fresh as REG-INV-###.
   Stock by Season Recency x Tier, Stock by Layer, Aged Stock Detail, and
   Unmatched Stock. Re-run the script for a fresh dated cut rather than
   editing a workbook by hand.
+- `inputs/assortment/` — the FW27 range assortment plan
+  (`Assortment Attribution Review_11092026.xlsx`, from Google Drive),
+  kept under its original filename per the SS26 workstream's own intake
+  convention.
+- `scripts/build_exit_plan_priority.py` — joins the FW27 tab's own planned
+  exit season (`LSO / Exit Season`, column AI) to current stock, so a
+  franchise already scheduled to leave the collection surfaces before it's
+  discovered as dead stock. A forward-looking complement to
+  `analyze_inventory.py`'s backward-looking Season-Recency view — see
+  REG-INV-010.
+- `Project_Bob_Sell_Down_Priority_<DDMMYYYY>.xlsx` — the output: Overview,
+  ranked Sell-Down Priority, Pending Review (exit timing not yet decided —
+  deliberately not ranked), and stock not on the FW27 plan at all.
 
 ## Running the script
 
