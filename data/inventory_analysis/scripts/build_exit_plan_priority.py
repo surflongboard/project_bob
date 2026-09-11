@@ -762,12 +762,19 @@ def main():
             cell.number_format, cell.font = value_fmt, Font(name="Arial", bold=True)
             rr += 1
         ws7.cell(row=rr, column=1, value="Total").font = Font(name="Arial", bold=True)
-        grand_total = 0.0
+        grand_total = sum(col_totals)
         for c, ct in enumerate(col_totals, start=2):
-            grand_total += ct
             cell = ws7.cell(row=rr, column=c, value=round(ct)); cell.number_format, cell.font = value_fmt, Font(name="Arial", bold=True)
         cell = ws7.cell(row=rr, column=len(AGING_COL_ORDER) + 2, value=round(grand_total))
         cell.number_format, cell.font = value_fmt, Font(name="Arial", bold=True)
+        rr += 1
+        ws7.cell(row=rr, column=1, value="% of Total").font = Font(name="Arial", italic=True, color="FF555555")
+        for c, ct in enumerate(col_totals, start=2):
+            pct = ct / grand_total * 100 if grand_total else 0
+            cell = ws7.cell(row=rr, column=c, value=round(pct, 1))
+            cell.number_format, cell.font = '0.0"%"', Font(name="Arial", italic=True, color="FF555555")
+        cell = ws7.cell(row=rr, column=len(AGING_COL_ORDER) + 2, value=100.0)
+        cell.number_format, cell.font = '0.0"%"', Font(name="Arial", italic=True, color="FF555555")
         return rr + 2
 
     ws7.column_dimensions["A"].width = 30
