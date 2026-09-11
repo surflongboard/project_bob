@@ -52,6 +52,65 @@ code, prompt, or report that depends on it.
 
 | REG-INV-015 | Portfolio Analysis | Historical-ASP fallback value for Sheet 4 ("Not on FW27 Plan") | **Provisional** | Closes most of REG-INV-014's coverage gap for the 400 franchises/127,190 units with no FW27-plan price. Fallback: `Historical ASP = Sales_2025 / Units_2025` per franchise, read from the SS26 Portfolio Tiering workbook's Sheet 2 (`Sales_2025` col F, `Units_2025` col U per REG-020 there) — gated by the same 50,000 SEK/year reliability floor used everywhere in that workstream (REG-004/`ss26_lib.MIN_RELIABLE`), so a tiny-denominator franchise gets no ASP rather than a wild one. **Result: 323 of 400 franchises (100,966 of 127,190 units, 79%) get a value — 75,897,156 SEK** — leaving only 77 franchises (26,224 units) with genuinely no price source of any kind anywhere in this repo's data. **This is a different basis from REG-INV-014's Target-RRP value, not a comparable one:** ASP is a *realized*, blended-across-channels average selling price (net of whatever discounting actually happened in FY25), not a planned RRP — shown in Sheet 6 as its own row rather than folded into the Retail/Wholesale/Cost columns, and with no cost/margin split available at all (Sales_2025 alone doesn't decompose into a landed-cost figure the way REG-INV-014's `WP × (1−GM0%)` does). Don't sum this row's value directly against REG-INV-014's totals as if they were the same currency of estimate — read them side by side, not combined into one grand total. Inherits REG-012's cross-workstream caveat: `Sales_2025`/`Units_2025` themselves carry the unresolved "3-Close out order" reconciliation gap, so treat as directional. |
 
+| REG-INV-016 | Portfolio Analysis | Why 77 franchises still have no value estimate at all (Sheet 4) | **Confirmed** (the reason, not a resolution) | After REG-INV-015's fallback, 77 of Sheet 4's 400 franchises (26,224 units) remain unpriced by any method in this repo — investigated rather than left as an unexplained gap. Two distinct, already-legitimate reasons, both now shown directly on Sheet 4 as a `No-Price Reason` column: **57 are known franchises in the SS26 tiering workbook whose FY25 sales fall below the 50,000 SEK/year reliability floor (REG-004)** — the same rule that blanks GM%/growth/share everywhere else in this repo; computing an ASP on that small a base would be exactly the wild-number problem REG-004 exists to prevent, so this is the gate working as intended, not a gap to close. **20 aren't in the curated 1,860-franchise tiering universe at all** — mostly small accessories (shoelaces, wallets, packing cubes, key rings) by Product Area (`LO Packing cubes`, `LO Wallets`, `Haglöfs Shoe Lace 4mm/2.5mm/5mm Ridge`, `Brand Cord key ring`), consistent with the same out-of-scope class REG-019/REG-INV-007 already documented for the tiering workbook's own ~2.7% unmatched stock. **Not resolved further:** no additional data source in this repo prices these; forcing a number here (e.g. a company-wide average ASP) would manufacture false precision on exactly the SKUs REG-004's own logic says not to trust. Left unpriced is the correct, honest answer, not an oversight. |
+
+---
+
+## Recent changes
+
+Newest first, plain language — mirrors the convention already used by the
+SS26 Portfolio Tiering workstream's own register, adopted here now that
+enough has accumulated across sessions to need it.
+
+1. **11 Sep 2026 — Explained, not just reported, Sheet 4's remaining
+   unpriced stock (REG-INV-016).** Of the 77 franchises left after
+   REG-INV-015's fallback, 57 are known franchises below the 50,000
+   SEK/year reliability floor (the gate working correctly, not a gap)
+   and 20 are small accessories outside the curated franchise universe
+   entirely. Both reasons now show directly on Sheet 4's own
+   `No-Price Reason` column.
+2. **11 Sep 2026 — Closed most of Sheet 4's valuation gap with a
+   historical-ASP fallback (REG-INV-015).** `Sales_2025 / Units_2025`
+   per franchise from the SS26 tiering workbook, reliability-gated:
+   323 of 400 franchises (100,966 of 127,190 units, 79%) now priced at
+   75,897,156 SEK — a realized, blended price, kept as its own row in
+   Sheet 6 rather than summed against REG-INV-014's planned-RRP total.
+3. **11 Sep 2026 — Added an inventory value estimate (REG-INV-014):**
+   Retail (Target RRP) / Wholesale (WP) / Est. Cost (`WP x (1-GM0%)`,
+   reconstructed since the plan's own Landed Cost field is `#ERROR!`
+   on every row) for the 400,773 stock units matched to the FW27 plan
+   — 775.2M / 370.7M / 145.8M SEK. New Sheet 6 breaks this down by
+   Priority Tier and by Activity.
+4. **11 Sep 2026 — Added a heuristic FW27 rename-candidate finder
+   (REG-INV-013, Sheet 5)** for the 54 franchises flagged Open by
+   REG-INV-012: shares a distinctive, position-detected family word
+   (not raw frequency) with an FW27 style of the same gender/Business
+   Area. 15 of 54 got a candidate; two HIGH-confidence hits worth a
+   real check: "Rosson Softshell Hood" → "Rosson Mid II Hood",
+   "ROC Lite Slim Pant" → "ROC Sight Softshell Pant". Narrows
+   REG-INV-012, doesn't resolve it.
+5. **11 Sep 2026 — Found REG-INV-012 was not safe as originally framed.**
+   Business framing was to call Sheet 4's 400 "not on FW27 plan"
+   franchises "retired before FW27." Cross-checked against SS27 instead:
+   54 (41,566 units, ~33% of that bucket's stock) were still Active
+   there — not evidence of an earlier retirement. Sheet 4 now carries
+   the SS27 cross-check columns directly.
+6. **10-11 Sep 2026 — Built the Sell-Down Priority workbook (REG-INV-010),
+   joining the FW27 range assortment plan's own planned exit season**
+   (`LSO / Exit Season`, column AI, business-identified) to current
+   stock: 253 of 683 stocked franchises matched a known exit tier
+   (377,643 units), 19 marked exiting at FW27 itself while still Active
+   with real stock — the actionable sell-down list. Also documented the
+   FW27 tab's own schema/data-quality issues (REG-INV-011): `#ERROR!`
+   cost/MOQ formulas, near-empty `Franchise/Family`, an in-progress
+   `Category/Layer(V2)` re-taxonomy.
+7. **10 Sep 2026 — Workstream seeded (REG-INV-001 through 009)** from the
+   `Available_stock_260825.xlsx` warehouse snapshot — the same file
+   already used by SS26 Portfolio Tiering's REG-019, reused directly
+   rather than duplicated. New to this workstream: a Season-Recency
+   aging lens (REG-INV-008/009) the SS26 tiering workbook's own
+   Stock-by-Tier sheet never covered.
+
 ---
 
 ## Glossary

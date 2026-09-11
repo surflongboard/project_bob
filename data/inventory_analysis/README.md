@@ -44,7 +44,9 @@ either cited from the SS26 register or documented fresh as REG-INV-###.
   a separate fallback value (Historical ASP from actual FY25 sales in
   the SS26 tiering workbook) covering 79% of its otherwise-unpriced
   units — see REG-INV-015; it's a different basis from REG-INV-014's
-  Target-RRP value, not directly comparable to it.
+  Target-RRP value, not directly comparable to it. The remaining 21%
+  (77 franchises) gets an explicit reason, not a silent blank —
+  REG-INV-016.
 
 ## Running the script
 

@@ -57,6 +57,10 @@ CAVEATS (see ASSUMPTIONS_REGISTER.md for the full reasoning):
     4's units. A different, non-comparable basis from Sheets 2-3's
     Target-RRP value -- shown as its own row in Sheet 6, never summed
     into the same total.
+  - The remaining 77 franchises with no price at all get an explicit
+    reason on Sheet 4 (REG-INV-016), not a silent blank: below the
+    reliability floor (the gate working correctly) or genuinely outside
+    the curated franchise universe. Not force-priced either way.
   - "REVIEW" (Exit Season undecided) is NOT force-ranked into the sell-
     down priority list — REG-INV-010 documents this as a genuine Open
     item per this repo's register discipline. Those franchises get their
@@ -204,19 +208,33 @@ def load_historical_asp():
     """REG-INV-015: Sheet 4 fallback. Sales_2025 / Units_2025 per franchise from the SS26
     tiering workbook (Sheet 2) -- a REALIZED average selling price, unlike Sheets 2/3's
     planned Target RRP. Gated by MIN_RELIABLE (REG-004/ss26_lib precedent) so a tiny
-    denominator doesn't produce a wild ASP; returns {} entries only where reliable."""
+    denominator doesn't produce a wild ASP. Also returns the set of franchise keys present
+    in the tiering workbook at all (REG-INV-016 uses this to explain, not just report,
+    Sheet 4's remaining no-price rows: known-but-unreliable vs. not in scope at all)."""
     wb, ws2 = lib.load_full_portfolio()
     asp = {}
+    known_franchises = set()
     for r in range(lib.FIRST_DATA_ROW, ws2.max_row + 1):
         base = ws2.cell(row=r, column=1).value
         if base is None:
             continue
         gender = (ws2.cell(row=r, column=2).value or "").strip()
+        key = (base.strip(), gender)
+        known_franchises.add(key)
         sales25 = ws2.cell(row=r, column=6).value or 0
         units25 = ws2.cell(row=r, column=TIERING_UNITS_2025_COL).value or 0
         if sales25 >= lib.MIN_RELIABLE and units25 > 0:
-            asp[(base.strip(), gender)] = sales25 / units25
-    return asp
+            asp[key] = sales25 / units25
+    return asp, known_franchises
+
+
+def no_price_reason(key, asp, known_franchises):
+    """REG-INV-016: why a Sheet-4 franchise has no value estimate, not just that it doesn't."""
+    if key in asp:
+        return ""
+    if key in known_franchises:
+        return "Below reliability threshold (FY25 sales <50,000 SEK or zero, REG-004)"
+    return "Not in the curated 1,860-franchise tiering universe (likely a small accessory, out of scope)"
 
 
 def main():
@@ -336,13 +354,18 @@ def main():
 
     # --- REG-INV-015: historical-ASP fallback value for Sheet 4 (no FW27/plan price exists) ---
     unplanned_units = sum(x[1] for x in unplanned)
-    historical_asp = load_historical_asp()
+    historical_asp, known_franchises = load_historical_asp()
     unplanned_with_asp = [(k, u, historical_asp[k]) for k, u in unplanned if k in historical_asp]
     unplanned_asp_value = sum(u * asp for _, u, asp in unplanned_with_asp)
+    still_unpriced = [(k, u) for k, u in unplanned if k not in historical_asp]
     print(f"  of the {len(unplanned)} unplanned, {len(unplanned_with_asp)} "
           f"({sum(u for _, u, _ in unplanned_with_asp):,.0f} units) have a reliable historical ASP "
-          f"fallback ({unplanned_asp_value:,.0f} SEK) -- still {len(unplanned) - len(unplanned_with_asp)} "
-          "with no price source of any kind")
+          f"fallback ({unplanned_asp_value:,.0f} SEK) -- still {len(still_unpriced)} with no price "
+          "source of any kind")
+    n_below_threshold = sum(1 for k, u in still_unpriced if k in known_franchises)
+    print(f"    of those {len(still_unpriced)}: {n_below_threshold} are known franchises below the "
+          f"reliability threshold, {len(still_unpriced) - n_below_threshold} aren't in the tiering "
+          "workbook at all (REG-INV-016)")
 
     # --- REG-INV-013: rename candidates for the still-Active-in-SS27 subset ---
     rename_candidates = []
@@ -517,8 +540,9 @@ def main():
     r = write_table(
         ws4,
         ["Base", "Gender", "Units in Stock", f"In {PRIOR_SEASON_SHEET} Tab?", f"{PRIOR_SEASON_SHEET} Active?",
-         f"{PRIOR_SEASON_SHEET} Status", "Historical ASP (SEK/unit)", "Est. Value at Historical ASP (SEK)"],
-        (34, 10, 16, 14, 14, 12, 18, 22),
+         f"{PRIOR_SEASON_SHEET} Status", "Historical ASP (SEK/unit)", "Est. Value at Historical ASP (SEK)",
+         "No-Price Reason (REG-INV-016)"],
+        (34, 10, 16, 14, 14, 12, 18, 22, 48),
         "Stock With No Row on the FW27 Tab",
         "NOT safe to blanket-label \"retired before FW27\" (REG-INV-012): cross-checked against "
         f"{PRIOR_SEASON_SHEET} (the season immediately before FW27) below. "
@@ -547,6 +571,8 @@ def main():
         if asp is not None:
             c = ws4.cell(row=r, column=7, value=round(asp, 2)); c.number_format, c.font = "#,##0.00", BODY_FONT
             c = ws4.cell(row=r, column=8, value=round(units * asp)); c.number_format, c.font = NUM_FMT, BODY_FONT
+        else:
+            ws4.cell(row=r, column=9, value=no_price_reason(key, historical_asp, known_franchises)).font = GRAY_FONT
         r += 1
 
     # --- Sheet 5: possible FW27 renames, for the still-Active-in-SS27 subset ---
