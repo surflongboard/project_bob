@@ -35,6 +35,14 @@ CAVEATS (see ASSUMPTIONS_REGISTER.md for the full reasoning):
     not the full historical franchise universe. Stock on a franchise with
     no FW27-tab row is reported separately (Sheet 4), not silently
     dropped and not assumed safe.
+  - Sheet 4 is NOT safe to blanket-label "retired before FW27" (REG-INV-012):
+    it's cross-checked against the SS27 tab (the season immediately before
+    FW27), and a real share of it was still Active/Carry-Over there. That
+    subset needs a merch check, not an assumption — see the sheet's own
+    flag column and REG-INV-012 for two confirmed examples where the
+    likely explanation is a name change (e.g. "Rosson Softshell Hood" ->
+    "Rosson Mid II Hood"), not a real exit, which Base+Gender matching
+    can't catch (a known limitation, documented in config.py itself).
   - "REVIEW" (Exit Season undecided) is NOT force-ranked into the sell-
     down priority list — REG-INV-010 documents this as a genuine Open
     item per this repo's register discipline. Those franchises get their
@@ -67,6 +75,7 @@ WORKSTREAM_DIR = REPO_ROOT / "data" / "inventory_analysis"
 DEFAULT_ASSORTMENT = WORKSTREAM_DIR / "inputs" / "assortment" / "Assortment Attribution Review_11092026.xlsx"
 DEFAULT_STOCK = REPO_ROOT / "data" / "ss26_portfolio_tiering" / "inputs" / "stock" / "Available_stock_260825.xlsx"
 ASSORTMENT_SHEET = "FW27"
+PRIOR_SEASON_SHEET = "SS27"  # cross-check for Sheet 4 -- see REG-INV-012
 
 # --------------------------------------------------------------------------
 # REG-INV-010: exit-urgency tiers, read directly off the FW27 tab's own
@@ -111,6 +120,19 @@ def main():
             "activity": r[idx["NEW MAPPING: Activity"]],
         }
     print(f"FW27 exit-plan rows: {len(plan)}")
+
+    # --- SS27 tab, for the Sheet-4 "actually retired?" cross-check (REG-INV-012) ---
+    ws_prior = wb_a[PRIOR_SEASON_SHEET]
+    prows = list(ws_prior.iter_rows(values_only=True))
+    phdr = prows[1]
+    pidx = {h: i for i, h in enumerate(phdr) if h}
+    prior_season = {}
+    for r in prows[2:]:
+        if r[pidx["Code"]] in (None, ""):
+            continue
+        key = lib.franchise_key(str(r[pidx["Style"]]))
+        prior_season[key] = {"active": r[pidx["Active"]], "status": r[pidx.get("STATUS", -1)]}
+    print(f"{PRIOR_SEASON_SHEET} rows (for cross-check): {len(prior_season)}")
 
     # --- current stock, same matching as analyze_inventory.py / update_stock.py ---
     wb_s = openpyxl.load_workbook(args.stock, data_only=True, read_only=True)
@@ -157,6 +179,9 @@ def main():
     print(f"matched to a ranked exit tier: {len(ranked)}")
     print(f"pending merch decision (REVIEW): {len(pending)}")
     print(f"no FW27-tab row at all: {len(unplanned)}")
+    still_active_ss27 = [(k, u) for k, u in unplanned if prior_season.get(k, {}).get("active") is True]
+    print(f"  of which still Active in {PRIOR_SEASON_SHEET}: {len(still_active_ss27)} "
+          f"({sum(u for k, u in still_active_ss27):,.0f} units) -- needs a merch check, not an assumption")
     total_stock = sum(stock_units.values())
     print(f"total stock units: {total_stock:,.0f}  "
           f"ranked: {sum(x[1] for x in ranked):,.0f}  "
@@ -195,8 +220,9 @@ def main():
         f"{sum(x[1] for x in ranked):,.0f} matched a franchise with a known FW27 exit-season tier "
         f"(Sheet 2). {sum(x[1] for x in pending):,.0f} matched a franchise still at \"REVIEW\" -- "
         "exit timing undecided, NOT force-ranked (Sheet 3). "
-        f"{sum(x[1] for x in unplanned):,.0f} has no FW27-tab row at all -- not on this season's "
-        "plan, one way or another (Sheet 4)."
+        f"{sum(x[1] for x in unplanned):,.0f} has no FW27-tab row at all (Sheet 4) -- of which "
+        f"{sum(u for k, u in still_active_ss27):,.0f} units ({len(still_active_ss27)} franchises) were "
+        f"still Active in {PRIOR_SEASON_SHEET} and are NOT safe to assume retired (REG-INV-012)."
     )
     ws1["A6"].font = GRAY_FONT
     ws1["A6"].alignment = WRAP
@@ -266,22 +292,33 @@ def main():
         ws3.cell(row=r, column=6, value=bool(info["active"])).font = BODY_FONT
         r += 1
 
-    # --- Sheet 4: unplanned stock (no FW27-tab row) ---
+    # --- Sheet 4: unplanned stock (no FW27-tab row), cross-checked against SS27 ---
+    still_active_prior = sum(1 for k, u in unplanned if prior_season.get(k, {}).get("active") is True)
+    still_active_prior_units = sum(u for k, u in unplanned if prior_season.get(k, {}).get("active") is True)
     ws4 = wb.create_sheet("4. Not on FW27 Plan")
     r = write_table(
         ws4,
-        ["Base", "Gender", "Units in Stock"],
-        (34, 10, 16),
+        ["Base", "Gender", "Units in Stock", f"In {PRIOR_SEASON_SHEET} Tab?", f"{PRIOR_SEASON_SHEET} Active?", f"{PRIOR_SEASON_SHEET} Status"],
+        (34, 10, 16, 14, 14, 12),
         "Stock With No Row on the FW27 Tab",
-        "Not matched to any of the 392 FW27 plan rows -- could be a franchise already fully "
-        "retired before FW27, or a naming mismatch (REG-INV-011). Not assumed safe or unsafe -- "
-        "just not visible to this join. Sorted by units in stock, descending.",
+        "NOT safe to blanket-label \"retired before FW27\" (REG-INV-012): cross-checked against "
+        f"{PRIOR_SEASON_SHEET} (the season immediately before FW27) below. "
+        f"{still_active_prior} franchises ({still_active_prior_units:,.0f} units) were still Active "
+        f"there and need a real merch check -- likely explanations include a genuine drop, but also "
+        "a name change too large for Base+Gender matching to catch (e.g. \"Rosson Softshell Hood\" -> "
+        f"\"Rosson Mid II Hood\", confirmed both exist, neither name matches the other). Rows with "
+        f"\"{PRIOR_SEASON_SHEET} Active? = False\" or blank (not in {PRIOR_SEASON_SHEET} either) are the "
+        "safer default for \"likely already retired.\" Sorted by units in stock, descending.",
     )
     for key, units in unplanned:
         base, g = key
+        prior = prior_season.get(key)
         ws4.cell(row=r, column=1, value=base).font = BODY_FONT
         ws4.cell(row=r, column=2, value=g).font = BODY_FONT
         c = ws4.cell(row=r, column=3, value=round(units)); c.number_format, c.font = NUM_FMT, BODY_FONT
+        ws4.cell(row=r, column=4, value="Yes" if prior else "No").font = BODY_FONT
+        ws4.cell(row=r, column=5, value=(prior["active"] if prior else None)).font = BODY_FONT
+        ws4.cell(row=r, column=6, value=(prior["status"] if prior else None)).font = BODY_FONT
         r += 1
 
     out_name = f"Project_Bob_Sell_Down_Priority_{date.today().strftime('%d%m%Y')}.xlsx"
