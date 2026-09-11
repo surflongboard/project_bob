@@ -46,6 +46,13 @@ CAVEATS (see ASSUMPTIONS_REGISTER.md for the full reasoning):
   - Sheet 5 (REG-INV-013) narrows that subset further with a heuristic
     rename-candidate finder — a ranked suggestion list to check first, not
     a resolved mapping. It never feeds back into Sheets 2-4's numbers.
+  - Sheets 2/3/6 (REG-INV-014) add an inventory value estimate (Retail/
+    Wholesale/Est. Cost). Landed Cost is broken in the source (#ERROR! on
+    every FW27 row) and is reconstructed as WP x (1-GM0%) instead --
+    validated against SS27's own non-broken figures, but Target RRP/WP
+    themselves are planned prices, not realized/audited ones. Sheet 4 has
+    no price source at all and is excluded from every value total (shown
+    as units-only, not zero).
   - "REVIEW" (Exit Season undecided) is NOT force-ranked into the sell-
     down priority list — REG-INV-010 documents this as a genuine Open
     item per this repo's register discipline. Those franchises get their
@@ -198,27 +205,41 @@ def main():
     rows = list(ws_a.iter_rows(values_only=True))
     hdr = rows[1]
     idx = {h: i for i, h in enumerate(hdr) if h}
-    for col in ("Code", "Style", "LSO / Exit Season ", "NEW MAPPING: Activity", "Active", "Business Area"):
+    for col in ("Code", "Style", "LSO / Exit Season ", "NEW MAPPING: Activity", "Active", "Business Area",
+                "Target RRP", "WP", "GM0%"):
         if col not in idx:
             sys.exit(f"Expected column '{col}' not found on {ASSORTMENT_SHEET} header: {hdr}")
     plan = {}
     fw27_by_gender_area = defaultdict(list)
     fw27_bases = []
+    n_cost_reconstructed = 0
     for r in rows[2:]:
         if r[idx["Code"]] in (None, ""):
             continue
         style = str(r[idx["Style"]])
         base, gender = lib.franchise_key(style)
+        rrp, wp, gm = r[idx["Target RRP"]], r[idx["WP"]], r[idx["GM0%"]]
+        # REG-INV-014: LANDED COST SEK itself is #ERROR! on every FW27 row (REG-INV-011).
+        # Reconstructed instead as WP x (1 - GM0%) -- algebraically what GM0% means,
+        # validated against SS27's own (non-broken) LANDED COST SEK where both are
+        # present: exact match to floating-point noise. None when GM0% isn't numeric
+        # (5 of 392 rows are #DIV/0!) rather than a guessed cost.
+        cost = wp * (1 - gm) if isinstance(wp, (int, float)) and isinstance(gm, (int, float)) else None
+        if cost is not None:
+            n_cost_reconstructed += 1
         plan[(base, gender)] = {
             "style": style,
             "active": r[idx["Active"]],
             "exit_season": r[idx["LSO / Exit Season "]],
             "activity": r[idx["NEW MAPPING: Activity"]],
             "business_area": r[idx["Business Area"]],
+            "rrp": rrp if isinstance(rrp, (int, float)) else None,
+            "wp": wp if isinstance(wp, (int, float)) else None,
+            "cost": cost,
         }
         fw27_by_gender_area[(gender, r[idx["Business Area"]])].append(base)
         fw27_bases.append(base)
-    print(f"FW27 exit-plan rows: {len(plan)}")
+    print(f"FW27 exit-plan rows: {len(plan)}  (cost reconstructed for {n_cost_reconstructed})")
     is_distinctive = build_distinctiveness(fw27_bases)
 
     # --- SS27 tab, for the Sheet-4 "actually retired?" cross-check (REG-INV-012) ---
@@ -298,6 +319,13 @@ def main():
     print(f"  of those, found a plausible FW27 rename candidate for: {n_with_candidate} "
           f"of {len(still_active_ss27)} -- still needs human confirmation, not auto-applied")
 
+    # --- REG-INV-014: value rollups (Sell-Down Priority + Pending only -- Sheet 4 has no price source) ---
+    valued_rows = [(key, units, info) for key, units, info, *_ in ranked] + [(key, units, info) for key, units, info in pending]
+    total_retail_value = sum(u * info["rrp"] for _, u, info in valued_rows if info["rrp"] is not None)
+    total_wholesale_value = sum(u * info["wp"] for _, u, info in valued_rows if info["wp"] is not None)
+    total_cost_value = sum(u * info["cost"] for _, u, info in valued_rows if info["cost"] is not None)
+    n_valued_units = sum(u for _, u, info in valued_rows if info["cost"] is not None)
+
     total_stock = sum(stock_units.values())
     print(f"total stock units: {total_stock:,.0f}  "
           f"ranked: {sum(x[1] for x in ranked):,.0f}  "
@@ -344,6 +372,18 @@ def main():
     ws1["A6"].alignment = WRAP
     ws1.merge_cells("A6:F6")
     ws1.row_dimensions[6].height = 75
+    ws1["A9"] = (
+        f"Value estimate (REG-INV-014, Sheets 2-3 only -- {n_valued_units:,.0f} of {total_stock:,.0f} total "
+        f"units, {n_valued_units/total_stock*100:.0f}%): {total_retail_value:,.0f} SEK at Target RRP, "
+        f"{total_wholesale_value:,.0f} SEK at WP, {total_cost_value:,.0f} SEK estimated landed cost "
+        "(reconstructed -- see Sheet 2's own note and REG-INV-014). Sheet 4 (Not on FW27 Plan) has no "
+        "price source anywhere in this data and is NOT included in these totals -- not zero, just unknown. "
+        "See Sheet 6 for the breakdown by priority tier and by Activity."
+    )
+    ws1["A9"].font = GRAY_FONT
+    ws1["A9"].alignment = WRAP
+    ws1.merge_cells("A9:F9")
+    ws1.row_dimensions[9].height = 75
     for col, w in zip("ABCDEF", (20,) * 6):
         ws1.column_dimensions[col].width = w
 
@@ -366,15 +406,36 @@ def main():
             ws.column_dimensions[openpyxl.utils.get_column_letter(c)].width = w
         return start + 1
 
+    def value_cells(ws, row, start_col, units, info):
+        """Writes Retail/Wholesale/Cost value cells (units x per-unit price), blank if unpriced."""
+        rrp, wp, cost = info["rrp"], info["wp"], info["cost"]
+        for i, price in enumerate((rrp, wp, cost)):
+            col = start_col + i
+            val = round(units * price) if price is not None else None
+            c = ws.cell(row=row, column=col, value=val)
+            c.number_format, c.font = NUM_FMT, BODY_FONT
+
+    VALUE_HEADERS = ["Retail Value (RRP, SEK)", "Wholesale Value (WP, SEK)", "Est. Cost Value (SEK)"]
+    VALUE_WIDTHS = (20, 20, 20)
+    VALUE_NOTE = (
+        "Value columns per REG-INV-014: Retail/Wholesale Value = units x the FW27 plan's own "
+        "Target RRP/WP for that franchise; Est. Cost Value = units x Landed Cost RECONSTRUCTED as "
+        "WP x (1-GM0%) since the plan's own Landed Cost field is broken (#ERROR!, REG-INV-011). "
+        "One planned price per franchise applied uniformly across all sizes/colors in stock -- not "
+        "a per-SKU actual. Target RRP is a planned price, not realized/discounted revenue -- read "
+        "Retail Value as a ceiling, not expected recovery."
+    )
+
     # --- Sheet 2: ranked sell-down priority ---
     ws2 = wb.create_sheet("2. Sell-Down Priority")
     r = write_table(
         ws2,
-        ["Priority Tier", "Base", "Gender", "Activity", "Exit Season", "Units in Stock", "Active?"],
-        (34, 30, 10, 20, 16, 16, 10),
+        ["Priority Tier", "Base", "Gender", "Activity", "Exit Season", "Units in Stock", "Active?"] + VALUE_HEADERS,
+        (34, 30, 10, 20, 16, 16, 10) + VALUE_WIDTHS,
         "Sell-Down Priority (most urgent exit, most stock, first)",
         "Sorted by exit urgency (Sheet 1's tier order), then by units in stock, descending. "
-        "\"FW28+\" rows are long-runway, low-urgency -- included for completeness, not action.",
+        "\"FW28+\" rows are long-runway, low-urgency -- included for completeness, not action. "
+        + VALUE_NOTE,
     )
     for key, units, info, tier_num, tier_label in ranked:
         base, g = key
@@ -385,18 +446,19 @@ def main():
         ws2.cell(row=r, column=5, value=info["exit_season"]).font = BODY_FONT
         c = ws2.cell(row=r, column=6, value=round(units)); c.number_format, c.font = NUM_FMT, BODY_FONT
         ws2.cell(row=r, column=7, value=bool(info["active"])).font = BODY_FONT
+        value_cells(ws2, r, 8, units, info)
         r += 1
 
     # --- Sheet 3: pending merch decision ---
     ws3 = wb.create_sheet("3. Pending Review")
     r = write_table(
         ws3,
-        ["Base", "Gender", "Activity", "Exit Season (raw)", "Units in Stock", "Active?"],
-        (34, 10, 20, 22, 16, 10),
+        ["Base", "Gender", "Activity", "Exit Season (raw)", "Units in Stock", "Active?"] + VALUE_HEADERS,
+        (34, 10, 20, 22, 16, 10) + VALUE_WIDTHS,
         "Pending Merch Decision — Exit Timing Not Yet Set",
         "These franchises carry real stock but the FW27 plan hasn't fixed an exit season yet "
         "(\"REVIEW\"). Not ranked above -- ranking these would mean guessing a business decision "
-        "that hasn't been made (REG-INV-010). Sorted by units in stock, descending.",
+        "that hasn't been made (REG-INV-010). Sorted by units in stock, descending. " + VALUE_NOTE,
     )
     for key, units, info in pending:
         base, g = key
@@ -406,6 +468,7 @@ def main():
         ws3.cell(row=r, column=4, value=info["exit_season"]).font = BODY_FONT
         c = ws3.cell(row=r, column=5, value=round(units)); c.number_format, c.font = NUM_FMT, BODY_FONT
         ws3.cell(row=r, column=6, value=bool(info["active"])).font = BODY_FONT
+        value_cells(ws3, r, 7, units, info)
         r += 1
 
     # --- Sheet 4: unplanned stock (no FW27-tab row), cross-checked against SS27 ---
@@ -465,6 +528,75 @@ def main():
         ws5.cell(row=r, column=4, value=names).font = BODY_FONT
         ws5.cell(row=r, column=5, value=tier).font = BODY_FONT
         ws5.cell(row=r, column=6, value=shared).font = BODY_FONT
+        r += 1
+
+    # --- Sheet 6: value summary, by Priority Tier and by Activity (REG-INV-014) ---
+    ws6 = wb.create_sheet("6. Inventory Value Summary")
+    r = write_table(
+        ws6,
+        ["Priority Tier", "Units", "Retail Value (RRP, SEK)", "Wholesale Value (WP, SEK)", "Est. Cost Value (SEK)"],
+        (34, 14, 20, 20, 20),
+        "Inventory Value by Priority Tier",
+        "Sums Sheets 2-3's value columns per tier (REG-INV-014). \"Not on FW27 Plan\" (Sheet 4) has "
+        "no price source and is shown separately below with units only, not zero SEK.",
+    )
+    by_tier = defaultdict(lambda: [0.0, 0.0, 0.0, 0.0])  # units, retail, wholesale, cost
+    for _, units, info, _, tier_label in ranked:
+        row = by_tier[tier_label]
+        row[0] += units
+        row[1] += units * info["rrp"] if info["rrp"] is not None else 0
+        row[2] += units * info["wp"] if info["wp"] is not None else 0
+        row[3] += units * info["cost"] if info["cost"] is not None else 0
+    pending_row = by_tier["Pending Review (exit season = REVIEW)"]
+    for _, units, info in pending:
+        pending_row[0] += units
+        pending_row[1] += units * info["rrp"] if info["rrp"] is not None else 0
+        pending_row[2] += units * info["wp"] if info["wp"] is not None else 0
+        pending_row[3] += units * info["cost"] if info["cost"] is not None else 0
+    tier_order_for_summary = [t[1] for t in TIER_RANK.values()] + ["Pending Review (exit season = REVIEW)"]
+    for tier_label in tier_order_for_summary:
+        vals = by_tier.get(tier_label)
+        if not vals:
+            continue
+        ws6.cell(row=r, column=1, value=tier_label).font = BODY_FONT
+        for c, v in enumerate(vals, start=2):
+            cell = ws6.cell(row=r, column=c, value=round(v)); cell.number_format, cell.font = NUM_FMT, BODY_FONT
+        r += 1
+    unplanned_units = sum(x[1] for x in unplanned)
+    ws6.cell(row=r, column=1, value="Not on FW27 Plan (Sheet 4 — no price source)").font = GRAY_FONT
+    c = ws6.cell(row=r, column=2, value=round(unplanned_units)); c.number_format, c.font = NUM_FMT, GRAY_FONT
+    ws6.cell(row=r, column=3, value="n/a").font = GRAY_FONT
+    ws6.cell(row=r, column=4, value="n/a").font = GRAY_FONT
+    ws6.cell(row=r, column=5, value="n/a").font = GRAY_FONT
+    r += 2
+
+    hdr_row = r
+    headers2 = ["Activity", "Units", "Retail Value (RRP, SEK)", "Wholesale Value (WP, SEK)", "Est. Cost Value (SEK)"]
+    ws6.cell(row=hdr_row, column=1, value="Inventory Value by Activity (merchandising category, column AN)").font = TITLE_FONT
+    ws6.merge_cells(f"A{hdr_row}:E{hdr_row}")
+    ws6.cell(row=hdr_row + 1, column=1, value=(
+        "Same Sheets 2-3 rows, grouped by the FW27 plan's \"NEW MAPPING: Activity\" field (column AN) "
+        "instead of tier. Sorted by Retail Value, descending."
+    )).font = GRAY_FONT
+    ws6.cell(row=hdr_row + 1, column=1).alignment = WRAP
+    ws6.merge_cells(f"A{hdr_row + 1}:E{hdr_row + 1}")
+    hdr_row += 3
+    for c, h in enumerate(headers2, start=1):
+        cell = ws6.cell(row=hdr_row, column=c, value=h)
+        cell.font, cell.fill = HDR_FONT, HDR_FILL
+    r = hdr_row + 1
+    by_activity = defaultdict(lambda: [0.0, 0.0, 0.0, 0.0])
+    for _, units, info in valued_rows:
+        act = info["activity"] or "(blank)"
+        row = by_activity[act]
+        row[0] += units
+        row[1] += units * info["rrp"] if info["rrp"] is not None else 0
+        row[2] += units * info["wp"] if info["wp"] is not None else 0
+        row[3] += units * info["cost"] if info["cost"] is not None else 0
+    for act, vals in sorted(by_activity.items(), key=lambda kv: -kv[1][1]):
+        ws6.cell(row=r, column=1, value=act).font = BODY_FONT
+        for c, v in enumerate(vals, start=2):
+            cell = ws6.cell(row=r, column=c, value=round(v)); cell.number_format, cell.font = NUM_FMT, BODY_FONT
         r += 1
 
     out_name = f"Project_Bob_Sell_Down_Priority_{date.today().strftime('%d%m%Y')}.xlsx"

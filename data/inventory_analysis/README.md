@@ -35,8 +35,12 @@ either cited from the SS26 register or documented fresh as REG-INV-###.
 - `Project_Bob_Sell_Down_Priority_<DDMMYYYY>.xlsx` — the output: Overview,
   ranked Sell-Down Priority, Pending Review (exit timing not yet decided —
   deliberately not ranked), stock not on the FW27 plan at all (cross-checked
-  against SS27 — REG-INV-012), and a heuristic rename-candidate list for
-  that cross-check's still-Active-in-SS27 subset (REG-INV-013).
+  against SS27 — REG-INV-012), a heuristic rename-candidate list for
+  that cross-check's still-Active-in-SS27 subset (REG-INV-013), and an
+  inventory value estimate — Retail/Wholesale/Est. Cost, with a summary
+  by Priority Tier and by Activity (REG-INV-014). Landed cost is
+  reconstructed (`WP x (1-GM0%)`) since the plan's own cost field is
+  broken — see REG-INV-014 for the validation and caveats.
 
 ## Running the script
 
