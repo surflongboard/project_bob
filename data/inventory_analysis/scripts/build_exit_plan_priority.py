@@ -43,6 +43,9 @@ CAVEATS (see ASSUMPTIONS_REGISTER.md for the full reasoning):
     likely explanation is a name change (e.g. "Rosson Softshell Hood" ->
     "Rosson Mid II Hood"), not a real exit, which Base+Gender matching
     can't catch (a known limitation, documented in config.py itself).
+  - Sheet 5 (REG-INV-013) narrows that subset further with a heuristic
+    rename-candidate finder — a ranked suggestion list to check first, not
+    a resolved mapping. It never feeds back into Sheets 2-4's numbers.
   - "REVIEW" (Exit Season undecided) is NOT force-ranked into the sell-
     down priority list — REG-INV-010 documents this as a genuine Open
     item per this repo's register discipline. Those franchises get their
@@ -59,8 +62,9 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import re
 import sys
-from collections import defaultdict
+from collections import Counter, defaultdict
 from datetime import date
 from pathlib import Path
 
@@ -92,6 +96,95 @@ TIER_RANK = {
 }
 PENDING_VALUE = "REVIEW"
 
+# --------------------------------------------------------------------------
+# REG-INV-013: heuristic name-change candidate finder for the "still Active
+# in SS27" subset of Sheet 4 (REG-INV-012). This does NOT resolve REG-INV-012
+# -- it only narrows "needs a merch check" down to "here's a plausible
+# successor to check first," ranked by confidence. Never auto-applied to
+# any figure elsewhere in this workstream.
+#
+# Method: franchise_key() already catches a rename that's just a gender/
+# version-token difference (that's not what lands in Sheet 4 at all -- those
+# match already). What's left in Sheet 4 is a genuine text change, so this
+# looks for shared DISTINCTIVE words between the orphaned SS27 style and
+# every FW27 style of the same gender and Business Area.
+#
+# "Distinctive" is decided positionally, not by raw frequency: a product
+# family name (Rosson, Korp, Zircon, ...) almost always LEADS the style
+# name (or follows a brand/sub-brand prefix like "Haglöfs"/"L.I.M."), while
+# a generic descriptor or garment noun (Jacket, GTX, Proof, Mid, Hood, ...)
+# rarely does, regardless of how often it appears overall -- e.g. "Rosson"
+# and "Mid" both occur ~15-50 times across FW27, but only "Rosson" is a
+# family name; raw frequency alone can't tell them apart, leading position
+# can. BRAND_STOP excludes the two house-wide prefixes explicitly, since
+# they lead almost everything and would otherwise look "distinctive" too.
+#
+# Confidence: HIGH if the two names' last word (garment noun, e.g. "Hood"/
+# "Pant") also matches -- same family AND same silhouette. MEDIUM if not,
+# but 2+ distinctive words are shared. LOW if exactly one distinctive word
+# is shared and the garment noun differs (weak family-line overlap only).
+# All ties at the best confidence level are surfaced (up to 3), not just
+# one -- collapsing to a single guess would hide equally-plausible options
+# from the human doing the actual check.
+# --------------------------------------------------------------------------
+BRAND_STOP_WORDS = {"haglöfs", "l.i.m", "af", "ii", "iii", "iv", "2.0", "1", "2"}
+
+
+def _words(base: str) -> list[str]:
+    return [w.lower() for w in re.findall(r"[\w.]+", base, flags=re.UNICODE) if w]
+
+
+def _leading_word(ws: list[str]) -> str | None:
+    if not ws:
+        return None
+    if ws[0] in BRAND_STOP_WORDS and len(ws) > 1:
+        return ws[1]
+    return ws[0]
+
+
+def build_distinctiveness(fw27_bases: list[str]):
+    """Returns is_distinctive(word) -> bool, fit on the FW27 tab's own base names."""
+    lead_count, total_count = Counter(), Counter()
+    for base in fw27_bases:
+        ws = _words(base)
+        if not ws:
+            continue
+        for w in set(ws):
+            total_count[w] += 1
+        lead_count[_leading_word(ws)] += 1
+
+    def is_distinctive(word: str) -> bool:
+        if word in BRAND_STOP_WORDS:
+            return False
+        tc = total_count[word]
+        if tc <= 1:
+            return True
+        return lead_count[word] / tc >= 0.7
+
+    return is_distinctive
+
+
+def find_rename_candidates(orphan_base, business_area, gender, fw27_by_gender_area, is_distinctive):
+    """Up to 3 same-confidence FW27 base names most likely to be orphan_base's
+    successor under a new name. Returns [] if nothing shares a distinctive word."""
+    wa = _words(orphan_base)
+    sa, last_a = set(wa), (wa[-1] if wa else None)
+    candidates = []
+    for fw_base in fw27_by_gender_area.get((gender, business_area), []):
+        wb = _words(fw_base)
+        shared = [w for w in (sa & set(wb)) if is_distinctive(w)]
+        if not shared:
+            continue
+        last_b = wb[-1] if wb else None
+        tier = "HIGH" if last_a == last_b else ("MEDIUM" if len(shared) >= 2 else "LOW")
+        candidates.append((tier, len(shared), fw_base, shared))
+    if not candidates:
+        return []
+    tier_rank = {"HIGH": 2, "MEDIUM": 1, "LOW": 0}
+    best_rank = max(tier_rank[c[0]] for c in candidates)
+    best = sorted((c for c in candidates if tier_rank[c[0]] == best_rank), key=lambda c: -c[1])
+    return best[:3]
+
 
 def main():
     ap = argparse.ArgumentParser()
@@ -105,21 +198,28 @@ def main():
     rows = list(ws_a.iter_rows(values_only=True))
     hdr = rows[1]
     idx = {h: i for i, h in enumerate(hdr) if h}
-    for col in ("Code", "Style", "LSO / Exit Season ", "NEW MAPPING: Activity", "Active"):
+    for col in ("Code", "Style", "LSO / Exit Season ", "NEW MAPPING: Activity", "Active", "Business Area"):
         if col not in idx:
             sys.exit(f"Expected column '{col}' not found on {ASSORTMENT_SHEET} header: {hdr}")
     plan = {}
+    fw27_by_gender_area = defaultdict(list)
+    fw27_bases = []
     for r in rows[2:]:
         if r[idx["Code"]] in (None, ""):
             continue
-        key = lib.franchise_key(str(r[idx["Style"]]))
-        plan[key] = {
-            "style": r[idx["Style"]],
+        style = str(r[idx["Style"]])
+        base, gender = lib.franchise_key(style)
+        plan[(base, gender)] = {
+            "style": style,
             "active": r[idx["Active"]],
             "exit_season": r[idx["LSO / Exit Season "]],
             "activity": r[idx["NEW MAPPING: Activity"]],
+            "business_area": r[idx["Business Area"]],
         }
+        fw27_by_gender_area[(gender, r[idx["Business Area"]])].append(base)
+        fw27_bases.append(base)
     print(f"FW27 exit-plan rows: {len(plan)}")
+    is_distinctive = build_distinctiveness(fw27_bases)
 
     # --- SS27 tab, for the Sheet-4 "actually retired?" cross-check (REG-INV-012) ---
     ws_prior = wb_a[PRIOR_SEASON_SHEET]
@@ -131,7 +231,11 @@ def main():
         if r[pidx["Code"]] in (None, ""):
             continue
         key = lib.franchise_key(str(r[pidx["Style"]]))
-        prior_season[key] = {"active": r[pidx["Active"]], "status": r[pidx.get("STATUS", -1)]}
+        prior_season[key] = {
+            "active": r[pidx["Active"]],
+            "status": r[pidx.get("STATUS", -1)],
+            "business_area": r[pidx.get("Business Area", -1)],
+        }
     print(f"{PRIOR_SEASON_SHEET} rows (for cross-check): {len(prior_season)}")
 
     # --- current stock, same matching as analyze_inventory.py / update_stock.py ---
@@ -182,6 +286,18 @@ def main():
     still_active_ss27 = [(k, u) for k, u in unplanned if prior_season.get(k, {}).get("active") is True]
     print(f"  of which still Active in {PRIOR_SEASON_SHEET}: {len(still_active_ss27)} "
           f"({sum(u for k, u in still_active_ss27):,.0f} units) -- needs a merch check, not an assumption")
+
+    # --- REG-INV-013: rename candidates for the still-Active-in-SS27 subset ---
+    rename_candidates = []
+    for key, units in still_active_ss27:
+        base, gender = key
+        business_area = prior_season[key]["business_area"]
+        cands = find_rename_candidates(base, business_area, gender, fw27_by_gender_area, is_distinctive)
+        rename_candidates.append((key, units, cands))
+    n_with_candidate = sum(1 for _, _, c in rename_candidates if c)
+    print(f"  of those, found a plausible FW27 rename candidate for: {n_with_candidate} "
+          f"of {len(still_active_ss27)} -- still needs human confirmation, not auto-applied")
+
     total_stock = sum(stock_units.values())
     print(f"total stock units: {total_stock:,.0f}  "
           f"ranked: {sum(x[1] for x in ranked):,.0f}  "
@@ -319,6 +435,36 @@ def main():
         ws4.cell(row=r, column=4, value="Yes" if prior else "No").font = BODY_FONT
         ws4.cell(row=r, column=5, value=(prior["active"] if prior else None)).font = BODY_FONT
         ws4.cell(row=r, column=6, value=(prior["status"] if prior else None)).font = BODY_FONT
+        r += 1
+
+    # --- Sheet 5: possible FW27 renames, for the still-Active-in-SS27 subset ---
+    ws5 = wb.create_sheet("5. Possible FW27 Renames")
+    r = write_table(
+        ws5,
+        ["Base (SS27)", "Gender", "Units in Stock", "Candidate FW27 Name(s)", "Confidence", "Shared Word(s)"],
+        (30, 10, 16, 46, 12, 20),
+        "Heuristic Rename Candidates (REG-INV-013) — Needs Human Confirmation",
+        f"For the {len(still_active_ss27)} franchises on Sheet 4 that were still Active in "
+        f"{PRIOR_SEASON_SHEET}: does an FW27 style of the same gender + Business Area share a "
+        "distinctive family word (e.g. \"Rosson\", \"Korp\") with this SS27 style? HIGH = same "
+        "family word AND same last word (garment type). MEDIUM = 2+ shared distinctive words, "
+        "different garment type. LOW = exactly one shared distinctive word, different garment "
+        "type. This is a candidate list to check, not a resolved mapping -- REG-INV-012 stays "
+        "Open regardless of confidence shown here. Rows with no candidate are omitted.",
+    )
+    for key, units, cands in sorted(rename_candidates, key=lambda x: -x[1]):
+        if not cands:
+            continue
+        base, g = key
+        names = "; ".join(c[2] for c in cands)
+        shared = "; ".join(", ".join(c[3]) for c in cands)
+        tier = cands[0][0]
+        ws5.cell(row=r, column=1, value=base).font = BODY_FONT
+        ws5.cell(row=r, column=2, value=g).font = BODY_FONT
+        c = ws5.cell(row=r, column=3, value=round(units)); c.number_format, c.font = NUM_FMT, BODY_FONT
+        ws5.cell(row=r, column=4, value=names).font = BODY_FONT
+        ws5.cell(row=r, column=5, value=tier).font = BODY_FONT
+        ws5.cell(row=r, column=6, value=shared).font = BODY_FONT
         r += 1
 
     out_name = f"Project_Bob_Sell_Down_Priority_{date.today().strftime('%d%m%Y')}.xlsx"

@@ -34,7 +34,9 @@ either cited from the SS26 register or documented fresh as REG-INV-###.
   REG-INV-010.
 - `Project_Bob_Sell_Down_Priority_<DDMMYYYY>.xlsx` — the output: Overview,
   ranked Sell-Down Priority, Pending Review (exit timing not yet decided —
-  deliberately not ranked), and stock not on the FW27 plan at all.
+  deliberately not ranked), stock not on the FW27 plan at all (cross-checked
+  against SS27 — REG-INV-012), and a heuristic rename-candidate list for
+  that cross-check's still-Active-in-SS27 subset (REG-INV-013).
 
 ## Running the script
 
