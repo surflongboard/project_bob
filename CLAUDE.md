@@ -3,7 +3,7 @@
 Read this first, before `README.md` or either workstream's own docs — it
 tells you which of those to read next depending on what you're doing.
 
-## Two separate workstreams, same business
+## Three workstreams, same business
 
 - **Key-Article Margin Analysis** (repo root: `config.py`, `load_data.py`,
   `analysis.py`, `data/bob_salesdata_*.xlsx`, `data/bob_financialdata_*.xlsx`,
@@ -13,13 +13,24 @@ tells you which of those to read next depending on what you're doing.
   franchise DTC & Wholesale tier classification, built from a separate
   `SS26_DTC_Wholesale_w34_data_*.xlsx` export. Start at
   `data/ss26_portfolio_tiering/ASSUMPTIONS_REGISTER.md`.
+- **FW27/SS28 Range Review** (`data/range_review/`). Narrows the active
+  range (FW27 + SS28) out of existing + incoming SS27 inventory, then tiers
+  what survives (Hero / Harvest / Emerging / Exit) for a layer-by-layer
+  keep/consolidate/improve/kill proposal. Built from range files supplied
+  directly by Product Controlling/Merchandising
+  (`data/range_review/inputs/`), reusing SS26's franchise-matching code
+  rather than redefining it. Start at
+  `data/range_review/ASSUMPTIONS_REGISTER.md`.
 
 They analyze the same underlying business but from different source pulls,
-and **a few rules are deliberately different between them** — most notably
+and **a few rules are deliberately different between each** — most notably
 how the "Core account" exclusions (XXL, China, Zalando, Zalando
-Marketplace, Stadium Outlet) are applied, because the two source exports
-encode account identity in different fields. Don't assume a rule from one
-workstream applies to the other; check that workstream's own docs.
+Marketplace, Stadium Outlet) are applied (the two SS26-era exports encode
+account identity in different fields), and how Range Review deliberately
+drops gender as a separate franchise split where SS26 Portfolio Tiering
+keeps it (see `data/range_review/ASSUMPTIONS_REGISTER.md` RR-001). Don't
+assume a rule from one workstream applies to another; check that
+workstream's own docs.
 
 ## If you're picking up a new data drop
 
