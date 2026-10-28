@@ -24,6 +24,13 @@ this script drops). UPDATE is kept as its own label rather than folded
 into Carry Over or New -- the user only named two buckets, so a 3rd
 distinct value is surfaced rather than silently reclassified.
 
+Shows GP% both blended and split by channel (DTC vs Wholesale) -- the
+blended number hides a real spread (SS28 sanity check: DTC 61.3% vs
+Wholesale 45.4%), so a reviewer deciding "blend or split" needs both
+numbers in front of them, not just the blend. FW27's SALES_CHANNEL
+(WS/DTC) and SS28's CHANNEL (WHOLESALE/DTC) are normalized to the same
+two labels here.
+
 Run: python3 build_forecast_summary.py
 Output: ../outputs/FW27_SS28_Forecast_Summary.xlsx
 """
@@ -45,6 +52,7 @@ FW27_PATH = INPUTS_DIR / "FW27_FC3_data.xlsb.xlsx"
 SS28_PATH = INPUTS_DIR / "SS28_Forecast_1_Bottom_UpForecast_data.csv"
 
 STATUS_LABELS = {"CO": "Carry Over", "NEW": "New", "UPDATE": "Update"}
+CHANNEL_LABELS = {"WS": "Wholesale", "WHOLESALE": "Wholesale", "DTC": "DTC"}
 
 
 def load_fw27(path: Path) -> list[dict]:
@@ -57,6 +65,7 @@ def load_fw27(path: Path) -> list[dict]:
         rows.append({
             "season": "FW27", "code": r[3], "style": r[4], "layer": r[2],
             "business_area": r[1], "gender": r[7], "status": r[11],
+            "channel": CHANNEL_LABELS.get(r[20], r[20]),
             "qty": r[12] or 0, "gross_sales_sek": r[14] or 0, "cogs_sek": r[16] or 0,
         })
     return rows
@@ -76,7 +85,9 @@ def load_ss28(path: Path) -> list[dict]:
             rows.append({
                 "season": "SS28", "code": r["CODE"], "style": r["STYLE_NAME"],
                 "layer": r["CATEGORY"], "business_area": r["BA"], "gender": r["GENDER"],
-                "status": r["STATUS_STYLE"], "qty": _num(r["QTY"]),
+                "status": r["STATUS_STYLE"],
+                "channel": CHANNEL_LABELS.get(r["CHANNEL"], r["CHANNEL"]),
+                "qty": _num(r["QTY"]),
                 "gross_sales_sek": _num(r["GROSS_SALES_SEK"]), "cogs_sek": _num(r["COGS_SEK"]),
             })
     return rows
@@ -89,13 +100,19 @@ def build_rows() -> list[dict]:
     for r in rows:
         by_style[(r["season"], r["code"])].append(r)
 
-    out_rows = []
-    for (season, code), items in by_style.items():
-        first = items[0]
+    def totals(items: list[dict]) -> tuple[float, float, float, float | None]:
         qty = sum(r["qty"] for r in items)
         gross = sum(r["gross_sales_sek"] for r in items)
         cogs = sum(r["cogs_sek"] for r in items)
-        gp_pct = (gross - cogs) / gross if gross else None
+        gp_pct = (gross - cogs) / gross * 100 if gross else None
+        return qty, gross, cogs, gp_pct
+
+    out_rows = []
+    for (season, code), items in by_style.items():
+        first = items[0]
+        qty, gross, cogs, gp_pct = totals(items)
+        dtc_qty, dtc_gross, dtc_cogs, dtc_gp = totals([r for r in items if r["channel"] == "DTC"])
+        ws_qty, ws_gross, ws_cogs, ws_gp = totals([r for r in items if r["channel"] == "Wholesale"])
         statuses = {r["status"] for r in items}
         status_display = "; ".join(sorted(STATUS_LABELS.get(s, s) for s in statuses))
 
@@ -107,10 +124,14 @@ def build_rows() -> list[dict]:
             "Business Area": first["business_area"],
             "Gender": first["gender"],
             "Status": status_display,
-            "Qty (forecast)": round(qty),
-            "Gross Sales SEK": round(gross),
-            "COGS SEK": round(cogs),
-            "GP%": round(gp_pct * 100, 1) if gp_pct is not None else None,
+            "Qty (total)": round(qty),
+            "Gross Sales SEK (total)": round(gross),
+            "COGS SEK (total)": round(cogs),
+            "GP% (blended)": round(gp_pct, 1) if gp_pct is not None else None,
+            "Qty (DTC)": round(dtc_qty),
+            "GP% (DTC)": round(dtc_gp, 1) if dtc_gp is not None else None,
+            "Qty (Wholesale)": round(ws_qty),
+            "GP% (Wholesale)": round(ws_gp, 1) if ws_gp is not None else None,
         })
 
     out_rows.sort(key=lambda r: (r["Layer"] or "", r["Season"], r["Style Name"] or ""))
