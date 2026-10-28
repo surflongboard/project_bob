@@ -31,6 +31,11 @@ with embedded product photos and Target/Sample/realized GM0% fields,
 received 28-Oct-2026. No FW27 equivalent yet. See RR-008 (margin target)
 and RR-015 (product image repository).
 
+`inputs/correspondence/Re__SS28_FC1_stilar_som_inte_m_ter_MOQ.eml` —
+email thread (Buying/Merch/Linden Mallory), forwarded 28-Oct-2026. SS28
+FC1-vs-MOQ exceptions (RR-016) and the Nov 12 workshop's "strategic
+intent" framing (RR-017, not yet adopted).
+
 **Status legend** (same discipline as the SS26 register):
 - **Confirmed** — a fact with one right answer, verified against a source or
   business confirmation. Safe to build on.
@@ -58,6 +63,8 @@ and RR-015 (product image repository).
 | RR-013 | Portfolio Analysis | Forecast Status column (Carry Over / New / Update) | **Provisional** — user-directed 28-Oct-2026 | Both forecast files carry a per-style Status field (`STATUS` in FW27 FC3, `STATUS_STYLE` in SS28) with values `CO`/`NEW`/`UPDATE` (consistent per style across all its channel/market rows — checked, 0 exceptions in either file). `scripts/build_forecast_summary.py`'s "Status" column shows readable labels: CO → "Carry Over", NEW → "New", **UPDATE kept as its own "Update" label** rather than folded into either bucket, since the user named only two ("CO (Carry Over) or New") and a 3rd distinct value shouldn't be silently reclassified into one of them. (A 4th value, `NIS`, appears only in FW27's dropped F26 rows — never reaches this column.) | Found 28-Oct-2026 building the combined forecast summary — 930/19,496 FW27 FC3 rows and a smaller share of SS28 rows are `UPDATE`, not negligible enough to ignore. |
 | RR-014 | Data Hygiene | Forecast-to-range coverage gap — 25 main-range style rows with no forecast match | **Open** | `scripts/build_franchise_list.py` joins the two forecast files to the FW27/SS28 range files on (season, style Code). **591 of 616 main-range style rows match** (96%); **25 don't** — these franchises show blank Forecast Qty/GP%/Status columns, not 0, since 0 would misrepresent "no forecast data" as "forecast is zero." (Separately: 94 forecast rows have no main-range match, but all 94 are accounted for — they're ABS/ABS Exclusive or Inactive styles correctly excluded by RR-002/RR-006, not a data problem.) | Found 28-Oct-2026 merging forecast data into the franchise review list. Worth asking Tobias whether the 25 unmatched styles are simply not yet forecasted (new/recent additions) or a naming/code mismatch between the range and forecast exports. |
 | RR-015 | Portfolio Analysis | Product image repository — representative photo per franchise | **Provisional** — user-directed 28-Oct-2026, SS28 only | `scripts/build_product_images.py` extracts one representative colorway photo per SS28 style Code from the Pic Centric workbook's embedded images (`outputs/product_images/<Code>.jpeg`, 334 of 336 SS28 codes — 2 have no photo anchored in the source). The sheet re-anchors the SAME 636 distinct images across 4,192 row positions (one per colorway sub-row) — the "Active Colorways Images" column's photo (not the "Image" column's flat technical sketch) was chosen as more recognizable at a glance. **Tried embedding these directly into the franchise review list — didn't look good, and Excel's Sort-vs-Filter anchoring fragility made it worse — so the review list has no images.** The repository stays as a reusable asset, keyed by Code, for a better-suited visual format later (see Next steps below). | Found/built 28-Oct-2026 in response to "create a product image database so reviewers have a visual, not just the product name." FW27 image source still needed. |
+| RR-016 | Portfolio Analysis | SS28 FC1 MOQ exceptions — 30 styles below the 1,000-unit Style MOQ | **Confirmed** (the shortfall facts) / **Open** (the suggested actions) — business-directed 28-Oct-2026 | 30 SS28 styles don't meet Style MOQ (1,000 pcs) against FC1 demand, per Buying's (Kristina Thorén/Fanny) analysis and Isabelle Witschard's (Merch) per-style comments — see `inputs/correspondence/Re__SS28_FC1_stilar_som_inte_m_ter_MOQ.eml` and `scripts/build_moq_exceptions.py` → `outputs/SS28_MOQ_Exceptions.xlsx`. Most are "Increase to MOQ" (a buying-ops fix, not a range call); **several are real range-narrowing candidates**: "Drop?" (Korp Mid Halfzip Women, Mimic Alert 2.0 Jacket Women, Swook Mid Halfzip/Sweater) and "Only keep FW season? Or buy with surcharge SS28?" (Nallo Touring Hybrid Mid Men/Women, Ozka Proof Pant Men/Women). **These suggested actions are explicitly NOT decided** — Linden Mallory's reply in the same thread says specific feedback comes after the Nov 12 workshop, making this an input to that discussion, not a settled call. Note: FC1 demand, not FC3 — a different, earlier forecast round than `build_forecast_summary.py`'s Qty/GP% (FC3), not directly comparable without adjustment. | Email thread forwarded 28-Oct-2026. All 30 codes matched cleanly to a franchise/Layer in the FW27/SS28 range files (0 unmatched) via the same Code-based join used elsewhere. |
+| RR-017 | Portfolio Analysis | "Strategic intent" category framing (Trail/Hike+Essentials, Shells, Insulation, Midlayers, Bottoms) | **Open** — explicitly flagged by the user as not usable yet, 28-Oct-2026 | Linden Mallory's email (same thread as RR-016) frames the Nov 12 workshop's review lens partly around these five category groupings plus "assortment depth: narrow & focused, built around Core." **Not adopted as the layer-by-layer review format's structure** — the user does not consider "Trail/Hike" and "Essentials" as clearly defined as "Shells"/"Insulation" (which map cleanly to the existing `Category/Layer` field), and which products belong in Trail/Hike vs Essentials is unclear. A moving target, not a stable grouping to build against. The raw `Category/Layer` field remains the basis for the review format for now. | Found 28-Oct-2026 reading the MOQ-exceptions email thread. Revisit once/if this framing is clarified — don't retrofit the review format to it preemptively. |
 
 ---
 
@@ -72,8 +79,11 @@ and RR-015 (product image repository).
    tiering workbook — SS28 has no equivalent).
 3. **Design a layer-by-layer review format** for the Nov 12 discussion —
    not started yet. Needs to pull together what's already built
-   (franchise review list, forecast summary, product image repository)
-   into something usable in the actual workshop conversation.
+   (franchise review list, forecast summary, product image repository,
+   MOQ exceptions) into something usable in the actual workshop
+   conversation. Use the raw `Category/Layer` field for structure, NOT
+   the "strategic intent" groupings from RR-017 (Trail/Hike+Essentials
+   etc.) — explicitly not ready to build against.
 
 ---
 
