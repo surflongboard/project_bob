@@ -22,6 +22,13 @@ sales cross-check here -- that comparison is a later step, once updated
 sales data is in. "Core Assortment SS28" has no source yet (the flag was
 only ever defined for FW27) -- left as "To confirm" for every row.
 
+Also adds "# active colors" (sum of colorway-level Active flags across
+every style rolled into the franchise -- see RR-010 for a caveat on rows
+with zero colorway sub-rows), and "ABS"/"Asia Fit" Yes/No flags so a
+reviewer knows an ABS/ABS Exclusive or AF/Asian-Fit variant exists
+somewhere for this franchise even though RR-006/RR-007 keep those rows
+out of the main-range count.
+
 Run: python3 build_franchise_list.py
 Output: ../outputs/FW27_SS28_Franchise_Review_List.xlsx
 """
@@ -96,23 +103,53 @@ def load_core_assortment_fw27() -> dict[str, str]:
 
 
 def load_style_rows(path: Path, season_label: str) -> list[dict]:
+    """One dict per style row, with its nested colorway sub-rows counted.
+
+    A style row has Season populated; its colorways are the following rows
+    with Season=None, each with its own Active flag (col 4) -- a colorway
+    carried in the sheet for reference but not actually active this season
+    is NOT counted, since "how many colors" means colors on sale, not
+    every colorway ever listed.
+    """
     wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
     ws = wb[wb.sheetnames[0]]
     rows = []
+    current = None
     for r in ws.iter_rows(min_row=3, values_only=True):
-        if r[0] is None:
-            continue  # colorway-only sub-row
-        rows.append({
-            "season_label": season_label, "active": r[1], "code": r[2], "style": r[3],
-            "target_rrp": r[10], "layer": r[14], "gender": r[15],
-            "business_area": r[16], "collection_type": r[23], "abs_customer": r[24],
-        })
+        if r[0] is not None:  # a style row
+            current = {
+                "season_label": season_label, "active": r[1], "code": r[2], "style": r[3],
+                "target_rrp": r[10], "layer": r[14], "gender": r[15],
+                "business_area": r[16], "collection_type": r[23], "abs_customer": r[24],
+                "active_colors": 0,
+            }
+            rows.append(current)
+        elif current is not None:  # a colorway sub-row of the preceding style
+            if r[4]:  # colorway-level Active flag
+                current["active_colors"] += 1
     return rows
+
+
+def compute_abs_af_flags(all_rows: list[dict]) -> tuple[set[str], set[str]]:
+    """Base -> whether an ABS/ABS Exclusive variant or an AF/Asian-Fit variant
+    exists anywhere for it, scanning ALL style rows (not just the main-range
+    filter) -- RR-006/RR-007 keep these out of the main review's row count,
+    but a reviewer looking at a franchise still needs to know one exists."""
+    abs_bases, af_bases = set(), set()
+    for r in all_rows:
+        stripped, special_flag = strip_special_edition(r["style"])
+        base = lib.base_name(stripped)
+        if r["collection_type"] in ("ABS", "ABS Exclusive"):
+            abs_bases.add(base)
+        if special_flag == "Asian Fit (AF)":
+            af_bases.add(base)
+    return abs_bases, af_bases
 
 
 def build_rows() -> list[dict]:
     core_fw27 = load_core_assortment_fw27()
     rows = load_style_rows(FW27_PATH, "FW27") + load_style_rows(SS28_PATH, "SS28")
+    abs_bases, af_bases = compute_abs_af_flags(rows)
     main_range = [r for r in rows
                   if r["active"] and r["collection_type"] not in ("ABS", "ABS Exclusive")]
 
@@ -140,6 +177,7 @@ def build_rows() -> list[dict]:
             gender_note = f"{genders[0]} only"
 
         rrp_display = rrps[0] if len(rrps) <= 1 else f"{min(rrps)}-{max(rrps)}"
+        total_colors = sum(r["active_colors"] for r in items)
 
         out_rows.append({
             "Franchise": best["display_name"],
@@ -154,8 +192,11 @@ def build_rows() -> list[dict]:
             "Margin target": "",  # RR-008 -- not in source data, see register
             "Special edition / fit note": "; ".join(special_flags),
             "# styles rolled up": len(items),
+            "# active colors": total_colors,
             "Core Assortment FW27": core_fw27.get(base, "No"),
             "Core Assortment SS28": "To confirm",
+            "ABS": "Yes" if base in abs_bases else "No",
+            "Asia Fit": "Yes" if base in af_bases else "No",
         })
 
     out_rows.sort(key=lambda r: (r["Layer"], r["Business Area"], r["Franchise"]))
@@ -204,6 +245,23 @@ def write_workbook(rows: list[dict], path: Path) -> None:
     notes.append(["Core Assortment SS28", "No source yet -- the flag was only ever defined for "
                                            "FW27. Left as 'To confirm' for every row until "
                                            "Tobias/Isabelle define it for SS28."])
+    notes.append(["# active colors", "Sum of active colorways (the colorway-level Active flag, "
+                                      "not just a row listed in the sheet) across every style "
+                                      "rolled into this franchise -- both genders, both seasons. "
+                                      "A colorway still in the file but not Active this season "
+                                      "(e.g. a discontinued or carried-forward-for-reference "
+                                      "color) is not counted. CAVEAT: 88/616 main-range style "
+                                      "rows (incl. 18 Shell styles) have NO colorway sub-rows at "
+                                      "all in this export -- showing 0 here, which may be a real "
+                                      "single-color item or a data gap in the export. Worth "
+                                      "confirming with Tobias before treating 0 as fact."])
+    notes.append(["ABS", "Yes if an ABS or ABS Exclusive variant of this franchise exists "
+                          "anywhere in FW27/SS28 (even though RR-006 keeps those styles out "
+                          "of the main range count above) -- so a reviewer knows one exists "
+                          "before deciding the franchise's main-range fate."])
+    notes.append(["Asia Fit", "Yes if an 'AF'-suffixed (Asian Fit) variant of this franchise "
+                               "exists anywhere in FW27/SS28 (RR-007) -- always also ABS=Yes, "
+                               "since every AF style is tagged ABS Exclusive in the source data."])
     for row in notes.iter_rows():
         for cell in row:
             cell.alignment = Alignment(wrap_text=True)
