@@ -15,13 +15,12 @@ folded into their base franchise rather than listed as separate franchises
 (RR-005/RR-007) -- flagged via the "Special edition / fit note" column
 instead.
 
-Also cross-checks against the legacy "Core Assortment FW27" flag already
-in the SS26 tiering workbook (Sheet 2 -- a sparse, pre-Tobias-data signal:
-only 57/1,860 Base+Gender rows are "Yes", per the Workshop Prep doc). That
-flag is Base+Gender grain; rolled up to Base-only (OR across genders) to
-match this list's RR-001 grain -- 2 bases ("Buteo Mid Jacket", "Rosson
-Down Hood") have Yes on one gender and No on the other, logged as "mixed"
-rather than silently picking one.
+Adds a plain "Core Assortment FW27" Yes/No column, sourced from the flag
+already in the SS26 tiering workbook (Sheet 2), rolled up from Base+Gender
+to Base grain (Yes if either gender was Yes). Not framed as a historic-
+sales cross-check here -- that comparison is a later step, once updated
+sales data is in. "Core Assortment SS28" has no source yet (the flag was
+only ever defined for FW27) -- left as "To confirm" for every row.
 
 Run: python3 build_franchise_list.py
 Output: ../outputs/FW27_SS28_Franchise_Review_List.xlsx
@@ -78,8 +77,13 @@ def strip_special_edition(style: str) -> tuple[str, str | None]:
 TIERING_SHEET = "2. Full Portfolio (1860)"
 
 
-def load_legacy_core_assortment() -> dict[str, str]:
-    """Base -> 'Yes' / 'No' / 'Mixed by gender', from the SS26 tiering workbook."""
+def load_core_assortment_fw27() -> dict[str, str]:
+    """Base -> 'Yes'/'No', from the SS26 tiering workbook's Core Assortment FW27 flag.
+
+    Base+Gender grain in the source, rolled up to Base (Yes if either
+    gender was Yes). A base not found here isn't marked at all -- treated
+    the same as 'No' rather than a separate bucket.
+    """
     wb = openpyxl.load_workbook(lib.WORKBOOK_PATH, read_only=True, data_only=True)
     ws = wb[TIERING_SHEET]
     by_base: dict[str, set[str]] = defaultdict(set)
@@ -88,10 +92,7 @@ def load_legacy_core_assortment() -> dict[str, str]:
         if base is None:
             continue
         by_base[base].add(r[16])  # "Core Assortment FW27" column
-    out = {}
-    for base, flags in by_base.items():
-        out[base] = "Mixed by gender" if len(flags) > 1 else next(iter(flags))
-    return out
+    return {base: ("Yes" if "Yes" in flags else "No") for base, flags in by_base.items()}
 
 
 def load_style_rows(path: Path, season_label: str) -> list[dict]:
@@ -110,7 +111,7 @@ def load_style_rows(path: Path, season_label: str) -> list[dict]:
 
 
 def build_rows() -> list[dict]:
-    legacy_core = load_legacy_core_assortment()
+    core_fw27 = load_core_assortment_fw27()
     rows = load_style_rows(FW27_PATH, "FW27") + load_style_rows(SS28_PATH, "SS28")
     main_range = [r for r in rows
                   if r["active"] and r["collection_type"] not in ("ABS", "ABS Exclusive")]
@@ -140,21 +141,6 @@ def build_rows() -> list[dict]:
 
         rrp_display = rrps[0] if len(rrps) <= 1 else f"{min(rrps)}-{max(rrps)}"
 
-        # "Core Assortment FW27" is a narrow strategic-item flag (57/1,860
-        # bases), not a full range flag -- most franchises are legitimately
-        # "No" and still Active in FW27, so that's not a disagreement worth
-        # flagging. The only meaningful check is: for a franchise the legacy
-        # data flagged Yes/Mixed, does it still show up as Active in FW27?
-        legacy_flag = legacy_core.get(base, "Not in legacy portfolio")
-        active_fw27 = "FW27" in seasons
-        if legacy_flag == "Yes":
-            agreement = "Y" if active_fw27 else "N -- legacy Yes, not Active in new FW27"
-        elif legacy_flag == "Mixed by gender":
-            agreement = ("Y (mixed by gender)" if active_fw27
-                         else "N -- legacy Yes for one gender, not Active in new FW27")
-        else:
-            agreement = ""
-
         out_rows.append({
             "Franchise": best["display_name"],
             "Layer": "; ".join(layers),
@@ -168,8 +154,8 @@ def build_rows() -> list[dict]:
             "Margin target": "",  # RR-008 -- not in source data, see register
             "Special edition / fit note": "; ".join(special_flags),
             "# styles rolled up": len(items),
-            "Legacy Core Assortment FW27": legacy_flag,
-            "Agrees with new FW27-active?": agreement,
+            "Core Assortment FW27": core_fw27.get(base, "No"),
+            "Core Assortment SS28": "To confirm",
         })
 
     out_rows.sort(key=lambda r: (r["Layer"], r["Business Area"], r["Franchise"]))
@@ -212,25 +198,12 @@ def write_workbook(rows: list[dict], path: Path) -> None:
                                          "note column, not listed separately (RR-005/RR-007)."])
     notes.append(["Margin target", "NOT available in the FW27/SS28 source files -- "
                                     "only Target RRP exists. Left blank. See RR-008."])
-    notes.append(["Legacy Core Assortment FW27", "A pre-Tobias-data flag already in the SS26 "
-                                                  "tiering workbook (57/1,860 Base+Gender rows "
-                                                  "= 'Yes') -- sparse and partial, not a full "
-                                                  "FW27 range list. Rolled up to Base grain here "
-                                                  "(Yes if either gender was Yes); 2 bases are "
-                                                  "genuinely 'Mixed by gender'. 'Not in legacy "
-                                                  "portfolio' means this franchise's base name "
-                                                  "has no match in the 1,860-row tiering sheet "
-                                                  "(new, renamed, or a naming mismatch)."])
-    notes.append(["Agrees with new FW27-active?", "'Core Assortment FW27' is a narrow strategic-"
-                                                    "item flag (57/1,860 bases), not a full range "
-                                                    "flag -- most franchises are legitimately 'No' "
-                                                    "and still Active in FW27, so that's NOT a "
-                                                    "disagreement and this column is left blank for "
-                                                    "'No'/'Not in legacy portfolio' rows. Only "
-                                                    "computed where the legacy flag said Yes/Mixed: "
-                                                    "'N' rows are the ones worth a second look -- a "
-                                                    "franchise previously flagged core for FW27 that "
-                                                    "no longer shows Active there in the new data."])
+    notes.append(["Core Assortment FW27", "Yes/No, from the flag already in the SS26 tiering "
+                                           "workbook (57/1,860 Base+Gender rows = 'Yes'), rolled "
+                                           "up to Base grain (Yes if either gender was Yes)."])
+    notes.append(["Core Assortment SS28", "No source yet -- the flag was only ever defined for "
+                                           "FW27. Left as 'To confirm' for every row until "
+                                           "Tobias/Isabelle define it for SS28."])
     for row in notes.iter_rows():
         for cell in row:
             cell.alignment = Alignment(wrap_text=True)
