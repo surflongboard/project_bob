@@ -93,19 +93,23 @@ def load_ss28(path: Path) -> list[dict]:
     return rows
 
 
+def totals(items: list[dict]) -> tuple[float, float, float, float | None]:
+    """Qty/Gross Sales/COGS/GP% summed across any group of forecast rows --
+    shared by this module's style-level summary and build_franchise_list.py's
+    franchise-level rollup, so the same math isn't redefined twice."""
+    qty = sum(r["qty"] for r in items)
+    gross = sum(r["gross_sales_sek"] for r in items)
+    cogs = sum(r["cogs_sek"] for r in items)
+    gp_pct = (gross - cogs) / gross * 100 if gross else None
+    return qty, gross, cogs, gp_pct
+
+
 def build_rows() -> list[dict]:
     rows = load_fw27(FW27_PATH) + load_ss28(SS28_PATH)
 
     by_style: dict[tuple[str, str], list[dict]] = defaultdict(list)
     for r in rows:
         by_style[(r["season"], r["code"])].append(r)
-
-    def totals(items: list[dict]) -> tuple[float, float, float, float | None]:
-        qty = sum(r["qty"] for r in items)
-        gross = sum(r["gross_sales_sek"] for r in items)
-        cogs = sum(r["cogs_sek"] for r in items)
-        gp_pct = (gross - cogs) / gross * 100 if gross else None
-        return qty, gross, cogs, gp_pct
 
     out_rows = []
     for (season, code), items in by_style.items():

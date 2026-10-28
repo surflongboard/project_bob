@@ -29,6 +29,16 @@ reviewer knows an ABS/ABS Exclusive or AF/Asian-Fit variant exists
 somewhere for this franchise even though RR-006/RR-007 keep those rows
 out of the main-range count.
 
+Merges in the forecast data from build_forecast_summary.py (reusing its
+loaders and `totals()` rather than redefining them): Qty/GP% blended and
+split DTC vs Wholesale, summed across every style (both genders, both
+seasons) rolled into the franchise, plus Status shown separately per
+season (Status FW27 / Status SS28) since a franchise can be e.g. New in
+FW27 but Carry Over in SS28. Joined on (season, style Code) -- 591/616
+main-range style rows have a forecast match; 25 don't (RR-014) and show
+blank forecast columns rather than 0, which would misrepresent "no data"
+as "zero forecast."
+
 Run: python3 build_franchise_list.py
 Output: ../outputs/FW27_SS28_Franchise_Review_List.xlsx
 """
@@ -50,6 +60,12 @@ from config import GENDER_TOKENS  # noqa: E402
 RR_DIR = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT / "data" / "ss26_portfolio_tiering" / "scripts"))
 import ss26_lib as lib  # noqa: E402
+
+sys.path.insert(0, str(RR_DIR / "scripts"))
+from build_forecast_summary import (  # noqa: E402
+    FW27_PATH as FORECAST_FW27_PATH, SS28_PATH as FORECAST_SS28_PATH,
+    STATUS_LABELS, load_fw27 as load_forecast_fw27, load_ss28 as load_forecast_ss28, totals,
+)
 
 INPUTS_DIR = RR_DIR / "inputs"
 OUTPUTS_DIR = RR_DIR / "outputs"
@@ -146,8 +162,18 @@ def compute_abs_af_flags(all_rows: list[dict]) -> tuple[set[str], set[str]]:
     return abs_bases, af_bases
 
 
+def load_forecast_by_key() -> dict[tuple[str, str], list[dict]]:
+    """(season, Code) -> its forecast rows (one per Market/Channel/Region)."""
+    forecast_rows = load_forecast_fw27(FORECAST_FW27_PATH) + load_forecast_ss28(FORECAST_SS28_PATH)
+    by_key: dict[tuple[str, str], list[dict]] = defaultdict(list)
+    for r in forecast_rows:
+        by_key[(r["season"], r["code"])].append(r)
+    return by_key
+
+
 def build_rows() -> list[dict]:
     core_fw27 = load_core_assortment_fw27()
+    forecast_by_key = load_forecast_by_key()
     rows = load_style_rows(FW27_PATH, "FW27") + load_style_rows(SS28_PATH, "SS28")
     abs_bases, af_bases = compute_abs_af_flags(rows)
     main_range = [r for r in rows
@@ -179,6 +205,17 @@ def build_rows() -> list[dict]:
         rrp_display = rrps[0] if len(rrps) <= 1 else f"{min(rrps)}-{max(rrps)}"
         total_colors = sum(r["active_colors"] for r in items)
 
+        forecast_rows = [fr for r in items for fr in forecast_by_key.get((r["season_label"], r["code"]), [])]
+        qty, gross, cogs, gp_pct = totals(forecast_rows)
+        dtc_qty, dtc_gross, dtc_cogs, dtc_gp = totals([r for r in forecast_rows if r["channel"] == "DTC"])
+        ws_qty, ws_gross, ws_cogs, ws_gp = totals([r for r in forecast_rows if r["channel"] == "Wholesale"])
+
+        def status_for(season_label: str) -> str:
+            season_rows = [fr for r in items if r["season_label"] == season_label
+                           for fr in forecast_by_key.get((season_label, r["code"]), [])]
+            statuses = {fr["status"] for fr in season_rows}
+            return "; ".join(sorted(STATUS_LABELS.get(s, s) for s in statuses))
+
         out_rows.append({
             "Franchise": best["display_name"],
             "Layer": "; ".join(layers),
@@ -197,6 +234,14 @@ def build_rows() -> list[dict]:
             "Core Assortment SS28": "To confirm",
             "ABS": "Yes" if base in abs_bases else "No",
             "Asia Fit": "Yes" if base in af_bases else "No",
+            "Status FW27": status_for("FW27"),
+            "Status SS28": status_for("SS28"),
+            "Forecast Qty (total)": round(qty) if forecast_rows else "",
+            "Forecast GP% (blended)": round(gp_pct, 1) if gp_pct is not None else "",
+            "Forecast Qty (DTC)": round(dtc_qty) if dtc_qty else "",
+            "Forecast GP% (DTC)": round(dtc_gp, 1) if dtc_gp is not None else "",
+            "Forecast Qty (Wholesale)": round(ws_qty) if ws_qty else "",
+            "Forecast GP% (Wholesale)": round(ws_gp, 1) if ws_gp is not None else "",
         })
 
     out_rows.sort(key=lambda r: (r["Layer"], r["Business Area"], r["Franchise"]))
@@ -262,6 +307,23 @@ def write_workbook(rows: list[dict], path: Path) -> None:
     notes.append(["Asia Fit", "Yes if an 'AF'-suffixed (Asian Fit) variant of this franchise "
                                "exists anywhere in FW27/SS28 (RR-007) -- always also ABS=Yes, "
                                "since every AF style is tagged ABS Exclusive in the source data."])
+    notes.append(["Status FW27 / Status SS28", "Carry Over / New / Update, from the forecast "
+                                                 "files' Status field -- shown per season since a "
+                                                 "franchise can differ between them (e.g. New in "
+                                                 "FW27, Carry Over in SS28). Blank if no forecast "
+                                                 "row matched that season (see RR-014)."])
+    notes.append(["Forecast Qty / GP% (total, DTC, Wholesale)", "Summed across every style and "
+                                                                  "season rolled into the "
+                                                                  "franchise, from the two "
+                                                                  "forecast files (RR-011/RR-012). "
+                                                                  "Blank (not 0) when none of the "
+                                                                  "franchise's styles have a "
+                                                                  "forecast match -- 25/616 "
+                                                                  "main-range style rows don't "
+                                                                  "(RR-014). GP% blended vs. "
+                                                                  "DTC/Wholesale split -- blended "
+                                                                  "hides a real spread, so both "
+                                                                  "are shown."])
     for row in notes.iter_rows():
         for cell in row:
             cell.alignment = Alignment(wrap_text=True)
