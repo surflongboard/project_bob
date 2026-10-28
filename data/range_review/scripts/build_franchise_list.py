@@ -15,6 +15,12 @@ RR-015). The extracted photos stay in outputs/product_images/ as a
 reusable repository, keyed by style Code, for pulling into a better-suited
 format later.
 
+"Consumer Activity" is the raw multi-select field from the range files
+(e.g. "Trekking / Hiking, Everyday Outdoor"), shown as-is per franchise --
+NOT collapsed into a single category. It's a reference signal only; the
+"strategic intent" category framing it might relate to (RR-017) is
+explicitly not adopted as this list's structure.
+
 Scope: Active styles only (RR-002), excluding ABS/ABS Exclusive (RR-006).
 Representative name = latest active generation, gender stripped but
 version kept (RR-003). "Blueberry "-prefixed and " AF"-suffixed styles are
@@ -151,7 +157,7 @@ def load_style_rows(path: Path, season_label: str) -> list[dict]:
                 "season_label": season_label, "active": r[1], "code": r[2], "style": r[3],
                 "target_rrp": r[10], "layer": r[14], "gender": r[15],
                 "business_area": r[16], "collection_type": r[23], "abs_customer": r[24],
-                "active_colors": 0,
+                "consumer_activity": r[37], "active_colors": 0,
             }
             rows.append(current)
         elif current is not None:  # a colorway sub-row of the preceding style
@@ -212,6 +218,10 @@ def build_rows() -> list[dict]:
         seasons = sorted({r["season_label"] for r in items})
         rrps = sorted({r["target_rrp"] for r in items if r["target_rrp"] is not None})
         special_flags = sorted({r["special_flag"] for r in items if r["special_flag"]})
+        activities = sorted({
+            tok.strip() for r in items if r["consumer_activity"]
+            for tok in r["consumer_activity"].split(",")
+        })
 
         gender_note = ""
         if len(genders) == 1 and genders[0] != "Unisex":
@@ -246,6 +256,7 @@ def build_rows() -> list[dict]:
             "Active in SS28": "Y" if "SS28" in seasons else "",
             "Target RRP": rrp_display,
             "RRP varies by style": "Y" if len(rrps) > 1 else "",
+            "Consumer Activity": "; ".join(activities),
             "Margin target": margin_target,  # RR-008 -- SS28 only (Pic Centric), FW27 pending
             "Special edition / fit note": "; ".join(special_flags),
             "# styles rolled up": len(items),
@@ -306,6 +317,16 @@ def write_workbook(rows: list[dict], path: Path) -> None:
                                     "FW27/SS28 range files themselves have no margin field "
                                     "(RR-008). SS28-only for now; blank for franchises with no "
                                     "SS28 code until an equivalent FW27 file arrives."])
+    notes.append(["Consumer Activity", "Raw multi-select field from the range files (e.g. "
+                                        "'Trekking / Hiking, Everyday Outdoor') -- union of every "
+                                        "distinct activity tag across the franchise's styles, "
+                                        "shown as-is, not collapsed into one category. 10 distinct "
+                                        "tags exist overall; more than half of all styles carry "
+                                        "2+ at once, so this is a reference signal, not a clean "
+                                        "single grouping. See RR-017 for why the 'strategic "
+                                        "intent' category framing (Trail/Hike+Essentials etc.) "
+                                        "this might relate to is NOT used as this list's "
+                                        "structure."])
     notes.append(["Core Assortment FW27", "Yes/No, from the flag already in the SS26 tiering "
                                            "workbook (57/1,860 Base+Gender rows = 'Yes'), rolled "
                                            "up to Base grain (Yes if either gender was Yes)."])
