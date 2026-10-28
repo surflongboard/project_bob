@@ -10,13 +10,10 @@ franchises with an SS28 code, via build_product_images.py's extracted
 outputs/ss28_gm_by_code.json. FW27-only franchises stay blank until an
 equivalent FW27 Pic Centric file arrives.
 
-Product Image: a small thumbnail of the franchise's representative SS28
-colorway photo is embedded in the last column, sourced the same way. NOTE
-on sorting -- Excel floating images are anchored to a fixed row position,
-not tied to the row's data, so using Excel's Sort feature (not its Filter
-arrows, which hides/shows rows+images together correctly) can detach an
-image from its franchise. Re-run this script for a clean, re-aligned copy
-if that happens rather than manually fixing it in Excel.
+No embedded product images in this list (tried, didn't look good -- see
+RR-015). The extracted photos stay in outputs/product_images/ as a
+reusable repository, keyed by style Code, for pulling into a better-suited
+format later.
 
 Scope: Active styles only (RR-002), excluding ABS/ABS Exclusive (RR-006).
 Representative name = latest active generation, gender stripped but
@@ -61,7 +58,6 @@ from collections import defaultdict
 from pathlib import Path
 
 import openpyxl
-from openpyxl.drawing.image import Image as XLImage
 from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.utils import get_column_letter
 
@@ -84,7 +80,6 @@ OUTPUTS_DIR = RR_DIR / "outputs"
 FW27_PATH = INPUTS_DIR / "FW27_28_Oct_2026.xlsx"
 SS28_PATH = INPUTS_DIR / "SS28_28_Oct_2026.xlsx"
 SS28_GM_PATH = OUTPUTS_DIR / "ss28_gm_by_code.json"
-IMAGES_DIR = OUTPUTS_DIR / "product_images"
 
 
 def load_ss28_gm() -> dict[str, dict]:
@@ -229,7 +224,6 @@ def build_rows() -> list[dict]:
         ss28_best = max(ss28_items, key=lambda r: r["version_rank"]) if ss28_items else None
         ss28_gm_entry = ss28_gm.get(str(ss28_best["code"])) if ss28_best else None
         margin_target = ss28_gm_entry["target_gm0_pct"] if ss28_gm_entry else ""
-        image_file = ss28_gm_entry["image_file"] if ss28_gm_entry else None
 
         forecast_rows = [fr for r in items for fr in forecast_by_key.get((r["season_label"], r["code"]), [])]
         qty, gross, cogs, gp_pct = totals(forecast_rows)
@@ -268,15 +262,10 @@ def build_rows() -> list[dict]:
             "Forecast GP% (DTC)": round(dtc_gp, 1) if dtc_gp is not None else "",
             "Forecast Qty (Wholesale)": round(ws_qty) if ws_qty else "",
             "Forecast GP% (Wholesale)": round(ws_gp, 1) if ws_gp is not None else "",
-            "_image_file": image_file,  # internal: consumed by write_workbook, not a visible column
         })
 
     out_rows.sort(key=lambda r: (r["Layer"], r["Business Area"], r["Franchise"]))
     return out_rows
-
-
-IMAGE_COL_WIDTH_PX = 60
-IMAGE_ROW_HEIGHT_PT = 60  # ~80px at 96 DPI
 
 
 def write_workbook(rows: list[dict], path: Path) -> None:
@@ -285,32 +274,19 @@ def write_workbook(rows: list[dict], path: Path) -> None:
     ws = wb.active
     ws.title = "Franchise Review List"
 
-    headers = [h for h in rows[0].keys() if not h.startswith("_")] + ["Product Image"]
+    headers = list(rows[0].keys())
     ws.append(headers)
     for cell in ws[1]:
         cell.font = Font(bold=True, color="FFFFFF")
         cell.fill = PatternFill("solid", fgColor="4472C4")
-    image_col_letter = get_column_letter(len(headers))
+    for r in rows:
+        ws.append(list(r.values()))
 
-    n_images = 0
-    for row_idx, r in enumerate(rows, start=2):
-        ws.append([r[h] for h in headers if h != "Product Image"])
-        ws.row_dimensions[row_idx].height = IMAGE_ROW_HEIGHT_PT
-        image_file = r.get("_image_file")
-        if image_file and (IMAGES_DIR / image_file).exists():
-            img = XLImage(str(IMAGES_DIR / image_file))
-            img.height = 75
-            img.width = 50
-            ws.add_image(img, f"{image_col_letter}{row_idx}")
-            n_images += 1
-
-    for i, h in enumerate(headers[:-1], start=1):
+    for i, h in enumerate(headers, start=1):
         width = max(len(h), max((len(str(r[h])) for r in rows), default=0)) + 2
         ws.column_dimensions[get_column_letter(i)].width = min(width, 45)
-    ws.column_dimensions[image_col_letter].width = IMAGE_COL_WIDTH_PX / 7  # ~px to char-width
     ws.freeze_panes = "A2"
     ws.auto_filter.ref = ws.dimensions
-    print(f"{n_images}/{len(rows)} franchises got a product image")
 
     notes = wb.create_sheet("Notes")
     notes.append(["Scope & definitions -- see data/range_review/ASSUMPTIONS_REGISTER.md"])
@@ -330,15 +306,6 @@ def write_workbook(rows: list[dict], path: Path) -> None:
                                     "FW27/SS28 range files themselves have no margin field "
                                     "(RR-008). SS28-only for now; blank for franchises with no "
                                     "SS28 code until an equivalent FW27 file arrives."])
-    notes.append(["Product Image", "The franchise's representative SS28 colorway photo, from "
-                                    "the same Pic Centric workbook. Blank for FW27-only "
-                                    "franchises (pending an FW27 image source) and for the small "
-                                    "number of SS28 codes with no photo anchored in that file. "
-                                    "CAVEAT: these are floating images anchored to a fixed row "
-                                    "position, not tied to the row's data -- using Excel's Sort "
-                                    "feature (not its Filter arrows, which is safe) can detach an "
-                                    "image from its franchise. Re-run build_franchise_list.py for "
-                                    "a clean, re-aligned copy rather than fixing it by hand."])
     notes.append(["Core Assortment FW27", "Yes/No, from the flag already in the SS26 tiering "
                                            "workbook (57/1,860 Base+Gender rows = 'Yes'), rolled "
                                            "up to Base grain (Yes if either gender was Yes)."])
