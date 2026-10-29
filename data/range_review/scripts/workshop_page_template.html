@@ -418,6 +418,17 @@ a { color: var(--accent); }
 .tier-select[data-tier="Harvest"] { color: var(--tier-harvest); border-color: var(--tier-harvest); }
 .tier-select[data-tier="Emerging"] { color: var(--tier-emerging); border-color: var(--tier-emerging); }
 .tier-select[data-tier="Exit"] { color: var(--tier-exit); border-color: var(--tier-exit); }
+.season-select {
+  flex: 1;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 6px 8px;
+  font: inherit;
+  font-weight: 600;
+  font-size: 12.5px;
+  background: var(--bg-sunken);
+  color: var(--fg);
+}
 textarea.action-note {
   width: 100%;
   min-height: 46px;
@@ -503,6 +514,8 @@ textarea.action-note {
     ["Footwear", ["Hiking Shoes", "Trail Shoes", "Trekking Shoes", "Casual Shoes"]]
   ];
 
+  var LAST_SEASON_OPTIONS = ["", "carry over", "FW27", "SS28", "FW28", "SS29", "FW29", "undefined"];
+
   function layerKey(area, layer) { return area + "|" + layer; }
 
   var byLayerKey = {};
@@ -571,9 +584,10 @@ textarea.action-note {
   })();
 
   var pendingWrites = {};
-  function saveDecision(base, franchise, tier, action) {
+  function saveDecision(base, franchise, tier, action, lastSeasonToSell) {
     var id = slug(base);
-    var body = { base: base, franchise: franchise, tier: tier || "", action: action || "", updatedAt: Date.now() };
+    var body = { base: base, franchise: franchise, tier: tier || "", action: action || "",
+      lastSeasonToSell: lastSeasonToSell || "", updatedAt: Date.now() };
     decisions[id] = body; // optimistic local update
     if (!dbCol) return;
     clearTimeout(pendingWrites[id]);
@@ -633,6 +647,7 @@ textarea.action-note {
     var id = slug(d.base);
     var dec = decisions[id] || {};
     var tier = dec.tier || "";
+    var lastSeason = dec.lastSeasonToSell || "";
     var seasons = [];
     if (d.activeFW27) seasons.push("FW27");
     if (d.activeSS28) seasons.push("SS28");
@@ -689,6 +704,13 @@ textarea.action-note {
               '<select class="tier-select" data-tier="' + tier + '">' +
                 ["", "Hero", "Harvest", "Emerging", "Exit"].map(function (t) {
                   return '<option value="' + t + '"' + (t === tier ? " selected" : "") + ">" + (t || "Tier…") + "</option>";
+                }).join("") +
+              "</select>" +
+            "</div>" +
+            '<div class="decision-row">' +
+              '<select class="season-select" data-last-season="' + lastSeason + '">' +
+                LAST_SEASON_OPTIONS.map(function (s) {
+                  return '<option value="' + s + '"' + (s === lastSeason ? " selected" : "") + ">" + (s || "Last season to sell…") + "</option>";
                 }).join("") +
               "</select>" +
             "</div>" +
@@ -751,13 +773,18 @@ textarea.action-note {
       var base = card.getAttribute("data-base");
       var franchise = card.querySelector(".card-title").textContent;
       var select = card.querySelector(".tier-select");
+      var seasonSelect = card.querySelector(".season-select");
       var textarea = card.querySelector(".action-note");
       select.addEventListener("change", function () {
         select.setAttribute("data-tier", select.value);
-        saveDecision(base, franchise, select.value, textarea.value);
+        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value);
+      });
+      seasonSelect.addEventListener("change", function () {
+        seasonSelect.setAttribute("data-last-season", seasonSelect.value);
+        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value);
       });
       textarea.addEventListener("input", function () {
-        saveDecision(base, franchise, select.value, textarea.value);
+        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value);
       });
     });
   }
