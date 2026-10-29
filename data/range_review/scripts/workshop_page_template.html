@@ -482,10 +482,11 @@ textarea.action-note {
 <div class="page-header">
   <h1>Range Review Board</h1>
   <p>FW27/SS28 franchises by layer, for the Nov 12 Range Review Workshop. Each card pulls together: price and
-    margin target from the FW27/SS28 range files; Forecast Qty/GP% from the FW27 FC3 forecast and the SS28
-    forecast file (round unconfirmed — RR-023); MOQ shortfalls from Buying's SS28 FC1 check; and leftover-stock
-    flags from the Inventory Manager's SS27 stock position. Tier, Last season to sell, Consolidate and Action
-    notes are captured live here and shared with everyone viewing this page.</p>
+    margin target from the FW27/SS28 range files; Forecast Qty/GP% from the FW27 FC3 forecast and the SS28 FC1
+    forecast file (its SKU-level figures don't match Buying's FC1 MOQ check below — RR-023, Open); MOQ
+    shortfalls from Buying's SS28 FC1 check; and leftover-stock flags from the Inventory Manager's SS27 stock
+    position. Tier, Last season to sell, Consolidate and Action notes are captured live here and shared with
+    everyone viewing this page.</p>
 </div>
 
 <div class="toolbar">
@@ -671,16 +672,16 @@ textarea.action-note {
     if (d.activeSS28) seasons.push("SS28");
 
     var forecastQty = seasonQty(d), forecastGP = seasonGP(d);
-    // FW27 round is confirmed FC3 (RR-012); SS28 round is only named "Forecast_1" in its
-    // filename -- no vintage column confirms it, and it does NOT reconcile with the MOQ
-    // email's independently-sourced FC1 figure for the same SKU (RR-023, Open) -- labeled
-    // "F1?" rather than a confident "FC1" so the gap stays visible, not papered over.
+    // FW27 round is confirmed FC3 (RR-012). SS28 round is confirmed FC1 by the user
+    // (29-Oct-2026) -- but this file's own SKU-level Qty still doesn't match the MOQ
+    // email's independently-sourced FC1 figure for the same codes (RR-023, still Open
+    // on THAT reconciliation question even though the round itself is now settled).
     var forecastLabel = state.season === "FW27" ? "Forecast Qty (FW27 FC3)" :
-      state.season === "SS28" ? "Forecast Qty (SS28 F1?)" :
-      "Forecast Qty (FW27 FC3 + SS28 F1?)";
+      state.season === "SS28" ? "Forecast Qty (SS28 FC1)" :
+      "Forecast Qty (FW27 FC3 + SS28 FC1)";
     var gpLabel = state.season === "FW27" ? "GP% (FW27 FC3)" :
-      state.season === "SS28" ? "GP% (SS28 F1?)" :
-      "GP% blended (FC3 + F1?)";
+      state.season === "SS28" ? "GP% (SS28 FC1)" :
+      "GP% blended (FC3 + FC1)";
 
     var chips = "";
     if (d.coreAssortmentFW27) chips += '<span class="chip core">Core FW27</span>';
