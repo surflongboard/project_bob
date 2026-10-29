@@ -106,7 +106,7 @@ def load_generation_groups() -> list[dict]:
         version = lib.version_token(g["article"])
         out.append({
             "Franchise": g["franchise"],
-            "Generation": version or "(no version token)",
+            "Generation": version or "Generation 1",
             "_rank": VERSION_RANK.get(version, 99),
             "Style Code": g["style_code"],
             "Article": g["article"],
@@ -163,7 +163,7 @@ def aggregate_by_generation(code_rows: list[dict]) -> list[dict]:
             "Available Stock": g["Available Stock"],
             "Physical Stock": g["Physical Stock"],
         })
-    rank = {None: 0, "II": 2, "2.0": 2, "III": 3, "IV": 4, "(no version token)": 0}
+    rank = {None: 0, "II": 2, "2.0": 2, "III": 3, "IV": 4, "Generation 1": 0}
     out.sort(key=lambda r: (r["Franchise"], rank.get(r["Generation"], 99)))
     return out
 
