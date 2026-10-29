@@ -102,15 +102,35 @@ a { color: var(--accent); }
   border-bottom: 1px solid var(--border);
   padding-top: env(safe-area-inset-top, 0px);
 }
-.layer-nav {
+.layer-nav-row {
   max-width: 1180px;
   margin: 0 auto;
   display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0 12px;
+}
+.layer-nav {
+  flex: 1;
+  min-width: 0;
+  display: flex;
   gap: 6px;
   overflow-x: auto;
-  padding: 10px 0 12px;
   scrollbar-width: thin;
 }
+.summary-btn {
+  flex-shrink: 0;
+  border: 1px solid var(--accent);
+  background: var(--bg-raised);
+  color: var(--accent);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.summary-btn.active { background: var(--accent); color: var(--accent-fg); }
 .area-group { display: flex; gap: 4px; align-items: center; flex-shrink: 0; }
 .area-group + .area-group { margin-left: 10px; padding-left: 10px; border-left: 1px solid var(--border); }
 .layer-chip {
@@ -225,6 +245,95 @@ a { color: var(--accent); }
   padding: 40px 16px;
 }
 
+/* ---- summary view ---- */
+.summary-view {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 18px 0 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.summary-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 10px;
+}
+.summary-tile {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+.summary-tile .label { font-size: 11px; color: var(--fg-muted); text-transform: uppercase; letter-spacing: 0.03em; }
+.summary-tile .value { font-family: "IBM Plex Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; font-size: 24px; font-weight: 700; margin-top: 2px; }
+.summary-tile.tier-Hero .value { color: var(--tier-hero); }
+.summary-tile.tier-Harvest .value { color: var(--tier-harvest); }
+.summary-tile.tier-Emerging .value { color: var(--tier-emerging); }
+.summary-tile.tier-Exit .value { color: var(--tier-exit); }
+.summary-tile.undecided .value { color: var(--fg-muted); }
+
+.summary-progress {
+  display: flex;
+  height: 10px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--bg-sunken);
+  border: 1px solid var(--border);
+}
+.summary-progress span { display: block; }
+.summary-progress .seg-Hero { background: var(--tier-hero); }
+.summary-progress .seg-Harvest { background: var(--tier-harvest); }
+.summary-progress .seg-Emerging { background: var(--tier-emerging); }
+.summary-progress .seg-Exit { background: var(--tier-exit); }
+
+.summary-table-wrap { overflow-x: auto; }
+.summary-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.summary-table th, .summary-table td {
+  text-align: right;
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--border);
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.summary-table th:first-child, .summary-table td:first-child {
+  text-align: left;
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  font-weight: 600;
+}
+.summary-table thead th {
+  color: var(--fg-muted);
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+}
+.summary-table tbody tr:hover { background: var(--bg-sunken); }
+.summary-table td.hero { color: var(--tier-hero); }
+.summary-table td.harvest { color: var(--tier-harvest); }
+.summary-table td.emerging { color: var(--tier-emerging); }
+.summary-table td.exit { color: var(--tier-exit); }
+.summary-table td.undecided { color: var(--fg-muted); }
+
+.summary-undecided-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.summary-undecided-list button {
+  border: 1px solid var(--border);
+  background: var(--bg-raised);
+  color: var(--fg);
+  border-radius: 7px;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.summary-undecided-list button:hover { border-color: var(--accent); color: var(--accent); }
+.summary-section h3 { font-size: 14px; margin-bottom: 10px; }
+
 /* ---- card ---- */
 .card {
   background: var(--bg-raised);
@@ -330,7 +439,10 @@ textarea.action-note {
 </style>
 
 <div class="layer-nav-wrap">
-  <div class="layer-nav" id="layerNav"></div>
+  <div class="layer-nav-row">
+    <button class="summary-btn" id="summaryBtn" type="button">Summary</button>
+    <div class="layer-nav" id="layerNav"></div>
+  </div>
 </div>
 
 <div class="page-header">
@@ -363,6 +475,8 @@ textarea.action-note {
 
 <div class="board" id="board"></div>
 <div class="empty-state" id="emptyState" hidden>No franchises match this filter in this layer.</div>
+
+<div class="summary-view" id="summaryView" hidden></div>
 
 <div class="footer-note" id="footerNote"></div>
 
@@ -418,8 +532,12 @@ textarea.action-note {
   }
 
   // ---------- state ----------
-  var state = { layerKey: LAYERS.length ? LAYERS[0].key : null, search: "", sort: "priority", flaggedOnly: false, season: "all" };
+  var state = { layerKey: LAYERS.length ? LAYERS[0].key : null, search: "", sort: "priority", flaggedOnly: false, season: "all", view: "board" };
   var decisions = {}; // slug -> {tier, action, updatedAt}
+
+  function render() {
+    if (state.view === "summary") renderSummary(); else renderBoard();
+  }
 
   // ---------- db wiring ----------
   var dbCol = null;
@@ -433,7 +551,7 @@ textarea.action-note {
           var data = doc.data();
           if (data) decisions[doc.id] = data;
         });
-        renderBoard();
+        render();
       }, function (err) {
         console.warn("decisions subscription error", err);
       });
@@ -473,11 +591,13 @@ textarea.action-note {
         var flagged = seasonItems.some(needsDecision);
         var btn = document.createElement("button");
         btn.type = "button";
-        btn.className = "layer-chip" + (l.key === state.layerKey ? " active" : "");
+        btn.className = "layer-chip" + (state.view === "board" && l.key === state.layerKey ? " active" : "");
         btn.innerHTML = (flagged ? '<span class="chip-flag"></span>' : "") +
           escapeHtml(l.layer) + ' <span class="chip-count">' + seasonItems.length + "</span>";
         btn.addEventListener("click", function () {
           state.layerKey = l.key;
+          state.view = "board";
+          summaryBtn.classList.remove("active");
           location.hash = slug(l.layer);
           renderNav();
           renderBoard();
@@ -632,7 +752,97 @@ textarea.action-note {
     });
   }
 
-  document.getElementById("searchBox").addEventListener("input", function (e) {
+  var TIERS = ["Hero", "Harvest", "Emerging", "Exit"];
+
+  function tierOf(d) {
+    var dec = decisions[slug(d.base)];
+    return (dec && dec.tier) || "";
+  }
+
+  function jumpToFranchise(d) {
+    state.view = "board";
+    state.layerKey = LAYERS.find(function (l) {
+      return l.area === d.businessArea && l.layer === d.layer;
+    }).key;
+    state.search = d.franchise.toLowerCase();
+    searchBox.value = d.franchise;
+    summaryBtn.classList.remove("active");
+    toolbarEl.hidden = false;
+    layerHeadingEl.hidden = false;
+    board.hidden = false;
+    summaryViewEl.hidden = true;
+    location.hash = slug(d.layer);
+    renderNav();
+    renderBoard();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function renderSummary() {
+    var items = DATA.filter(function (d) { return matchesSeason(d, state.season); });
+    var counts = { Hero: 0, Harvest: 0, Emerging: 0, Exit: 0, "": 0 };
+    items.forEach(function (d) { counts[tierOf(d)] = (counts[tierOf(d)] || 0) + 1; });
+    var total = items.length;
+    var decided = total - counts[""];
+
+    var tiles = TIERS.map(function (t) {
+      return '<div class="summary-tile tier-' + t + '"><div class="label">' + t + '</div>' +
+        '<div class="value num">' + counts[t] + "</div></div>";
+    }).join("") +
+      '<div class="summary-tile undecided"><div class="label">Undecided</div>' +
+      '<div class="value num">' + counts[""] + "</div></div>" +
+      '<div class="summary-tile"><div class="label">Total</div><div class="value num">' + total + "</div></div>";
+
+    var bar = TIERS.map(function (t) {
+      var pct = total ? (counts[t] / total * 100) : 0;
+      return '<span class="seg-' + t + '" style="width:' + pct + '%"></span>';
+    }).join("");
+
+    var rows = LAYERS.map(function (l) {
+      var seasonItems = l.items.filter(function (d) { return matchesSeason(d, state.season); });
+      if (!seasonItems.length) return null;
+      var c = { Hero: 0, Harvest: 0, Emerging: 0, Exit: 0, "": 0 };
+      seasonItems.forEach(function (d) { c[tierOf(d)] = (c[tierOf(d)] || 0) + 1; });
+      return "<tr><td>" + escapeHtml(l.area + " · " + l.layer) + "</td>" +
+        '<td class="hero">' + c.Hero + "</td>" +
+        '<td class="harvest">' + c.Harvest + "</td>" +
+        '<td class="emerging">' + c.Emerging + "</td>" +
+        '<td class="exit">' + c.Exit + "</td>" +
+        '<td class="undecided">' + c[""] + "</td>" +
+        "<td>" + seasonItems.length + "</td></tr>";
+    }).filter(Boolean).join("");
+
+    var undecidedFlagged = items.filter(function (d) { return !tierOf(d) && needsDecision(d); });
+    var undecidedList = undecidedFlagged.length
+      ? undecidedFlagged.map(function (d) {
+          return '<button type="button" data-base="' + escapeHtml(d.base) + '">' + escapeHtml(d.franchise) + "</button>";
+        }).join("")
+      : '<span style="color:var(--fg-muted);font-size:12.5px">None — every flagged franchise has a tier.</span>';
+
+    summaryViewEl.innerHTML =
+      '<div class="summary-section"><h3>Tier breakdown' + (state.season !== "all" ? " — " + state.season : "") + "</h3>" +
+        '<div class="summary-tiles">' + tiles + "</div>" +
+        '<div class="summary-progress" style="margin-top:10px">' + bar + "</div>" +
+      "</div>" +
+      '<div class="summary-section"><h3>By layer</h3>' +
+        '<div class="summary-table-wrap"><table class="summary-table"><thead><tr>' +
+          "<th>Layer</th><th>Hero</th><th>Harvest</th><th>Emerging</th><th>Exit</th><th>Undecided</th><th>Total</th>" +
+        "</tr></thead><tbody>" + rows + "</tbody></table></div>" +
+      "</div>" +
+      '<div class="summary-section"><h3>Flagged but still undecided (' + undecidedFlagged.length + ")</h3>" +
+        '<div class="summary-undecided-list">' + undecidedList + "</div>" +
+      "</div>";
+
+    summaryViewEl.querySelectorAll(".summary-undecided-list button").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var base = btn.getAttribute("data-base");
+        var d = DATA.find(function (x) { return x.base === base; });
+        if (d) jumpToFranchise(d);
+      });
+    });
+  }
+
+  var searchBox = document.getElementById("searchBox");
+  searchBox.addEventListener("input", function (e) {
     state.search = e.target.value.trim().toLowerCase();
     renderBoard();
   });
@@ -655,8 +865,25 @@ textarea.action-note {
         b.classList.toggle("active", b === btn);
       });
       renderNav();
-      renderBoard();
+      render();
     });
+  });
+
+  var summaryBtn = document.getElementById("summaryBtn");
+  var toolbarEl = document.querySelector(".toolbar");
+  var layerHeadingEl = document.querySelector(".layer-heading");
+  var summaryViewEl = document.getElementById("summaryView");
+  summaryBtn.addEventListener("click", function () {
+    state.view = state.view === "summary" ? "board" : "summary";
+    summaryBtn.classList.toggle("active", state.view === "summary");
+    var isSummary = state.view === "summary";
+    toolbarEl.hidden = isSummary;
+    layerHeadingEl.hidden = isSummary;
+    board.hidden = isSummary;
+    summaryViewEl.hidden = !isSummary;
+    renderNav();
+    render();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
   function applyHash() {
