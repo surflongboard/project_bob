@@ -247,6 +247,15 @@ def build_rows() -> list[dict]:
         dtc_qty, dtc_gross, dtc_cogs, dtc_gp = totals([r for r in forecast_rows if r["channel"] == "DTC"])
         ws_qty, ws_gross, ws_cogs, ws_gp = totals([r for r in forecast_rows if r["channel"] == "Wholesale"])
 
+        def forecast_for_season(season_label: str):
+            rows = [fr for r in items if r["season_label"] == season_label
+                    for fr in forecast_by_key.get((season_label, r["code"]), [])]
+            q, g, c, gp = totals(rows)
+            return (round(q) if rows else None), (round(gp, 1) if gp is not None else None)
+
+        fw27_qty, fw27_gp = forecast_for_season("FW27")
+        ss28_qty, ss28_gp = forecast_for_season("SS28")
+
         def status_for(season_label: str) -> str:
             season_rows = [fr for r in items if r["season_label"] == season_label
                            for fr in forecast_by_key.get((season_label, r["code"]), [])]
@@ -256,6 +265,10 @@ def build_rows() -> list[dict]:
         out_rows.append({
             "_base": base,  # internal join key (version-stripped) for downstream scripts
             "_image_file": image_file,  # internal: filename in outputs/product_images/, for downstream scripts
+            "_forecast_fw27_qty": fw27_qty,  # internal: season-specific forecast, for the workshop page's toggle
+            "_forecast_fw27_gp": fw27_gp,
+            "_forecast_ss28_qty": ss28_qty,
+            "_forecast_ss28_gp": ss28_gp,
             "Franchise": best["display_name"],
             "Layer": "; ".join(layers),
             "Business Area": "; ".join(areas),

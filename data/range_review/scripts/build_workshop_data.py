@@ -12,6 +12,14 @@ name would silently miss every franchise with a version token (e.g.
 "Alert GTX Jacket" vs "Alert GTX II Jacket" -- the bug this script
 exists to not repeat).
 
+Carries both the FW27+SS28 combined forecast (forecastQty/forecastGP, as
+shown on the franchise list) and per-season splits (forecastQtyFW27/
+forecastGPFW27, forecastQtySS28/forecastGPSS28) computed in
+build_franchise_list.py -- the workshop page's FW27/SS28/All toggle shows
+whichever one matches the selected season rather than always showing the
+combined total, which it did at first and was misleading once the toggle
+existed.
+
 Run: python3 build_workshop_data.py
 Output: ../outputs/workshop_data.json
 """
@@ -99,6 +107,10 @@ def build() -> list[dict]:
             "forecastGPDTC": r["Forecast GP% (DTC)"] or None,
             "forecastQtyWS": r["Forecast Qty (Wholesale)"] or None,
             "forecastGPWS": r["Forecast GP% (Wholesale)"] or None,
+            "forecastQtyFW27": r["_forecast_fw27_qty"],
+            "forecastGPFW27": r["_forecast_fw27_gp"],
+            "forecastQtySS28": r["_forecast_ss28_qty"],
+            "forecastGPSS28": r["_forecast_ss28_gp"],
             "imageFile": r["_image_file"],
             "moq": moq_by_base.get(base, []),
             "availableStockActive": inv.get("available_active", 0),

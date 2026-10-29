@@ -507,6 +507,10 @@ textarea.action-note {
     if (d.activeFW27) seasons.push("FW27");
     if (d.activeSS28) seasons.push("SS28");
 
+    var forecastQty = seasonQty(d), forecastGP = seasonGP(d);
+    var forecastLabel = state.season === "all" ? "Forecast Qty" : "Forecast Qty (" + state.season + ")";
+    var gpLabel = state.season === "all" ? "GP% blended" : "GP% (" + state.season + ")";
+
     var chips = "";
     if (d.coreAssortmentFW27) chips += '<span class="chip core">Core FW27</span>';
     if (d.genderNote) chips += '<span class="chip">' + escapeHtml(d.genderNote) + "</span>";
@@ -543,8 +547,8 @@ textarea.action-note {
           '<span>&middot;</span><span>' + escapeHtml(d.gender) + "</span></div></div>" +
           (chips ? '<div class="chips">' + chips + "</div>" : "") +
           '<div class="stat-grid">' +
-            '<div class="stat"><div class="label">Forecast Qty</div><div class="value num">' + fmtQty(d.forecastQty) + "</div></div>" +
-            '<div class="stat"><div class="label">GP% blended</div><div class="value num">' + fmtPct(d.forecastGP) + "</div></div>" +
+            '<div class="stat"><div class="label">' + forecastLabel + '</div><div class="value num">' + fmtQty(forecastQty) + "</div></div>" +
+            '<div class="stat"><div class="label">' + gpLabel + '</div><div class="value num">' + fmtPct(forecastGP) + "</div></div>" +
             '<div class="stat"><div class="label">Margin target</div><div class="value num muted">' + fmtPct(d.marginTarget) + "</div></div>" +
             '<div class="stat"><div class="label">Target RRP</div><div class="value num muted">' + fmtSEK(d.targetRRP) + "</div></div>" +
           "</div>" +
@@ -566,14 +570,25 @@ textarea.action-note {
     );
   }
 
+  function seasonQty(d) {
+    if (state.season === "FW27") return d.forecastQtyFW27;
+    if (state.season === "SS28") return d.forecastQtySS28;
+    return d.forecastQty;
+  }
+  function seasonGP(d) {
+    if (state.season === "FW27") return d.forecastGPFW27;
+    if (state.season === "SS28") return d.forecastGPSS28;
+    return d.forecastGP;
+  }
+
   function sortItems(items) {
     var copy = items.slice();
     if (state.sort === "name") {
       copy.sort(function (a, b) { return a.franchise.localeCompare(b.franchise); });
     } else if (state.sort === "forecast") {
-      copy.sort(function (a, b) { return (b.forecastQty || 0) - (a.forecastQty || 0); });
+      copy.sort(function (a, b) { return (seasonQty(b) || 0) - (seasonQty(a) || 0); });
     } else if (state.sort === "gp") {
-      copy.sort(function (a, b) { return (b.forecastGP || 0) - (a.forecastGP || 0); });
+      copy.sort(function (a, b) { return (seasonGP(b) || 0) - (seasonGP(a) || 0); });
     } else {
       copy.sort(function (a, b) {
         var pa = needsDecision(a) ? 0 : 1, pb = needsDecision(b) ? 0 : 1;
