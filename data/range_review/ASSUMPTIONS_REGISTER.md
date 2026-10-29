@@ -114,6 +114,24 @@ doesn't net out.
    Hood"; all 30 MOQ-exception codes checked, none
    reconcile. List: `outputs/SS28_Forecast_Discrepancies.xlsx`. Needs
    Tobias, not a code fix.
+8. **Lifecycle discussion follow-up tasks** (RR-025), to be tracked as a
+   separate task by the user, not worked here:
+   a. Review the **16 active multi-generation franchises** (RR-025 /
+      Range Review Board "Generation timeline" flag) to decide an
+      explicit update-cycle policy per franchise — the ~2-season/
+      2-year refresh gap seen in the data is a pattern to discuss, not
+      a settled rule.
+   b. Confirm the **17 non-active multi-generation franchises** (same
+      generation-timeline data, but with no active successor at all —
+      Astral GTX Pant, Bow Windstopper Glove, Chaos GTX Pant, Gabbro
+      Pant, Haglöfs Krusa GTX Low, Husk Jacket, Husk Pant, L.I.M Alpha
+      Hood, L.I.M Down Jacket, L.I.M Fuse Pant, L.I.M Fuse Shorts, L.I.M
+      Mid Fast Hood, L.I.M Mimic Hood, Puffy Mimic Hood, Riksgränsen
+      Down 850 Hood, Scree Pant, Zodiac Mid Jacket) are indeed being
+      discontinued at end of SS27 per RR-020's EOL cutoff — several
+      (L.I.M Fuse Pant/Shorts, Haglöfs Krusa GTX Low, Scree Pant) show
+      stock as late as S27/F27, worth a sanity-check that this is
+      intentional range narrowing and not a data gap.
 
 ---
 
