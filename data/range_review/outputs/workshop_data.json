@@ -33,6 +33,7 @@
     "forecastGPSS28": null,
     "imageFile": "608690.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -72,6 +73,7 @@
     "forecastGPSS28": null,
     "imageFile": "608688.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 3718,
     "skusNotInRange": 6,
@@ -79,7 +81,8 @@
       {
         "code": "605502",
         "style": "Aze Beanie",
-        "availableStock": 3718
+        "availableStock": 3718,
+        "sameGeneration": false
       }
     ]
   },
@@ -117,6 +120,7 @@
     "forecastGPSS28": 60.9,
     "imageFile": "608587.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 1283,
     "availableStockTail": 115,
     "skusNotInRange": 5,
@@ -124,7 +128,8 @@
       {
         "code": "608142",
         "style": "Brand Five Panel Cap",
-        "availableStock": 115
+        "availableStock": 115,
+        "sameGeneration": false
       }
     ]
   },
@@ -162,6 +167,7 @@
     "forecastGPSS28": 56.4,
     "imageFile": "609152.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 69,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -201,6 +207,7 @@
     "forecastGPSS28": 59.4,
     "imageFile": "607656.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 2094,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -240,6 +247,7 @@
     "forecastGPSS28": 58.0,
     "imageFile": "607868.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 223,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -279,6 +287,7 @@
     "forecastGPSS28": 48.4,
     "imageFile": "608876.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -318,6 +327,7 @@
     "forecastGPSS28": 58.8,
     "imageFile": "607867.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 2777,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -357,6 +367,7 @@
     "forecastGPSS28": 61.6,
     "imageFile": "609155.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 153,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -396,6 +407,7 @@
     "forecastGPSS28": null,
     "imageFile": "607814.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 660,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -435,6 +447,7 @@
     "forecastGPSS28": null,
     "imageFile": "607788.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 1823,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -474,6 +487,7 @@
     "forecastGPSS28": null,
     "imageFile": "608720.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -513,6 +527,7 @@
     "forecastGPSS28": null,
     "imageFile": "608689.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 505,
     "skusNotInRange": 3,
@@ -520,7 +535,8 @@
       {
         "code": "607827",
         "style": "Rosson Balaclava",
-        "availableStock": 505
+        "availableStock": 505,
+        "sameGeneration": false
       }
     ]
   },
@@ -558,6 +574,7 @@
     "forecastGPSS28": 52.0,
     "imageFile": "608201.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 531,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -597,6 +614,7 @@
     "forecastGPSS28": 47.9,
     "imageFile": "603989.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 716,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -636,6 +654,7 @@
     "forecastGPSS28": null,
     "imageFile": "608828.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -675,6 +694,7 @@
     "forecastGPSS28": null,
     "imageFile": "608751.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 776,
     "skusNotInRange": 3,
@@ -682,7 +702,8 @@
       {
         "code": "605503",
         "style": "Thermal Beanie",
-        "availableStock": 776
+        "availableStock": 776,
+        "sameGeneration": false
       }
     ]
   },
@@ -720,6 +741,7 @@
     "forecastGPSS28": null,
     "imageFile": "608691.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -759,6 +781,7 @@
     "forecastGPSS28": null,
     "imageFile": "608483.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 552,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -798,6 +821,7 @@
     "forecastGPSS28": null,
     "imageFile": "608750.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 791,
     "skusNotInRange": 5,
@@ -805,7 +829,8 @@
       {
         "code": "606855",
         "style": "Vassi Beanie",
-        "availableStock": 791
+        "availableStock": 791,
+        "sameGeneration": false
       }
     ]
   },
@@ -843,6 +868,7 @@
     "forecastGPSS28": null,
     "imageFile": "607790.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 1361,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -882,6 +908,7 @@
     "forecastGPSS28": 32.7,
     "imageFile": "608817.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 1902,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -921,6 +948,7 @@
     "forecastGPSS28": 48.9,
     "imageFile": "608443.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 243,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -960,6 +988,7 @@
     "forecastGPSS28": 36.4,
     "imageFile": "608818.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -999,6 +1028,7 @@
     "forecastGPSS28": 57.1,
     "imageFile": "608442.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 1037,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -1038,6 +1068,7 @@
     "forecastGPSS28": 47.3,
     "imageFile": "608564.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -1077,6 +1108,7 @@
     "forecastGPSS28": 40.7,
     "imageFile": "608444.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 295,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -1116,6 +1148,7 @@
     "forecastGPSS28": 40.9,
     "imageFile": "608445.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 237,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -1155,6 +1188,7 @@
     "forecastGPSS28": 57.3,
     "imageFile": "608013.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 887,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -1194,6 +1228,7 @@
     "forecastGPSS28": 56.1,
     "imageFile": "608012.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 823,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -1233,6 +1268,7 @@
     "forecastGPSS28": 36.9,
     "imageFile": "608014.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 826,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -1272,6 +1308,7 @@
     "forecastGPSS28": 53.8,
     "imageFile": "608011.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 943,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -1311,6 +1348,7 @@
     "forecastGPSS28": 58.4,
     "imageFile": "608542.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 129,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -1350,6 +1388,7 @@
     "forecastGPSS28": 65.7,
     "imageFile": "608543.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 162,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -1389,6 +1428,7 @@
     "forecastGPSS28": 60.3,
     "imageFile": "608700.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -1428,6 +1468,7 @@
     "forecastGPSS28": 48.7,
     "imageFile": null,
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 921,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -1467,6 +1508,7 @@
     "forecastGPSS28": 43.9,
     "imageFile": "607755.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 2796,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -1506,6 +1548,7 @@
     "forecastGPSS28": 42.6,
     "imageFile": "608063.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 4077,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -1545,6 +1588,7 @@
     "forecastGPSS28": 51.9,
     "imageFile": "608446.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 286,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -1584,6 +1628,7 @@
     "forecastGPSS28": 58.3,
     "imageFile": "608701.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -1623,6 +1668,7 @@
     "forecastGPSS28": 54.3,
     "imageFile": "608501.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 378,
     "skusNotInRange": 4,
@@ -1630,7 +1676,8 @@
       {
         "code": "606990",
         "style": "Fjatla 40",
-        "availableStock": 378
+        "availableStock": 378,
+        "sameGeneration": false
       }
     ]
   },
@@ -1668,6 +1715,7 @@
     "forecastGPSS28": 58.5,
     "imageFile": "608500.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 1707,
     "skusNotInRange": 4,
@@ -1675,7 +1723,8 @@
       {
         "code": "606989",
         "style": "Fjatla 60",
-        "availableStock": 1707
+        "availableStock": 1707,
+        "sameGeneration": false
       }
     ]
   },
@@ -1713,6 +1762,7 @@
     "forecastGPSS28": 45.2,
     "imageFile": "608315.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 624,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -1752,6 +1802,7 @@
     "forecastGPSS28": 50.4,
     "imageFile": "607688.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 775,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -1791,6 +1842,7 @@
     "forecastGPSS28": 49.0,
     "imageFile": "607687.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 2308,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -1830,6 +1882,7 @@
     "forecastGPSS28": 47.8,
     "imageFile": "607690.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 1988,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -1869,6 +1922,7 @@
     "forecastGPSS28": 47.7,
     "imageFile": "607689.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 1678,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -1908,6 +1962,7 @@
     "forecastGPSS28": 51.2,
     "imageFile": "608221.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 317,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -1947,6 +2002,7 @@
     "forecastGPSS28": 51.9,
     "imageFile": "608222.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 552,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -1986,6 +2042,7 @@
     "forecastGPSS28": 51.3,
     "imageFile": "607752.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 1804,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -2025,6 +2082,7 @@
     "forecastGPSS28": null,
     "imageFile": "607538.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 821,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -2064,6 +2122,7 @@
     "forecastGPSS28": null,
     "imageFile": "607476.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 1447,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -2103,6 +2162,7 @@
     "forecastGPSS28": null,
     "imageFile": "607475.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 1549,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -2142,6 +2202,7 @@
     "forecastGPSS28": 49.1,
     "imageFile": "608649.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -2181,6 +2242,7 @@
     "forecastGPSS28": 55.4,
     "imageFile": "338156.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 186,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -2220,6 +2282,7 @@
     "forecastGPSS28": 40.5,
     "imageFile": "607562.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 3931,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -2259,6 +2322,7 @@
     "forecastGPSS28": 47.4,
     "imageFile": "607561.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 4056,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -2298,6 +2362,7 @@
     "forecastGPSS28": 58.6,
     "imageFile": "608706.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 995,
     "skusNotInRange": 2,
@@ -2305,7 +2370,8 @@
       {
         "code": "606956",
         "style": "Jarve Multi 22",
-        "availableStock": 995
+        "availableStock": 995,
+        "sameGeneration": false
       }
     ]
   },
@@ -2343,6 +2409,7 @@
     "forecastGPSS28": 54.8,
     "imageFile": "608707.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 626,
     "skusNotInRange": 2,
@@ -2350,7 +2417,8 @@
       {
         "code": "606955",
         "style": "Jarve Multi 28",
-        "availableStock": 626
+        "availableStock": 626,
+        "sameGeneration": false
       }
     ]
   },
@@ -2388,6 +2456,7 @@
     "forecastGPSS28": 48.2,
     "imageFile": "608223.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 643,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -2427,6 +2496,7 @@
     "forecastGPSS28": 49.9,
     "imageFile": "608304.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 318,
     "availableStockTail": 86,
     "skusNotInRange": 1,
@@ -2434,7 +2504,8 @@
       {
         "code": "339384",
         "style": "Tight Junior 15",
-        "availableStock": 86
+        "availableStock": 86,
+        "sameGeneration": false
       }
     ]
   },
@@ -2472,6 +2543,7 @@
     "forecastGPSS28": 51.3,
     "imageFile": "608303.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 899,
     "availableStockTail": 108,
     "skusNotInRange": 1,
@@ -2479,7 +2551,8 @@
       {
         "code": "339385",
         "style": "Tight Junior 8",
-        "availableStock": 108
+        "availableStock": 108,
+        "sameGeneration": false
       }
     ]
   },
@@ -2517,6 +2590,7 @@
     "forecastGPSS28": 50.7,
     "imageFile": "608311.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 3888,
     "availableStockTail": 879,
     "skusNotInRange": 4,
@@ -2524,7 +2598,8 @@
       {
         "code": "338150",
         "style": "Tight Large",
-        "availableStock": 879
+        "availableStock": 879,
+        "sameGeneration": false
       }
     ]
   },
@@ -2562,6 +2637,7 @@
     "forecastGPSS28": 48.7,
     "imageFile": null,
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 5884,
     "availableStockTail": 2774,
     "skusNotInRange": 3,
@@ -2569,7 +2645,8 @@
       {
         "code": "338151",
         "style": "Tight Medium",
-        "availableStock": 2774
+        "availableStock": 2774,
+        "sameGeneration": false
       }
     ]
   },
@@ -2607,6 +2684,7 @@
     "forecastGPSS28": 49.0,
     "imageFile": "608309.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 124,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -2646,6 +2724,7 @@
     "forecastGPSS28": 48.8,
     "imageFile": "608308.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 224,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -2685,6 +2764,7 @@
     "forecastGPSS28": 46.6,
     "imageFile": "608307.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 2680,
     "availableStockTail": 146,
     "skusNotInRange": 4,
@@ -2692,7 +2772,8 @@
       {
         "code": "338152",
         "style": "Tight Small",
-        "availableStock": 146
+        "availableStock": 146,
+        "sameGeneration": false
       }
     ]
   },
@@ -2730,6 +2811,7 @@
     "forecastGPSS28": 52.5,
     "imageFile": "607756.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 2802,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -2769,6 +2851,7 @@
     "forecastGPSS28": 47.5,
     "imageFile": "608306.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 1454,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -2808,6 +2891,7 @@
     "forecastGPSS28": 59.3,
     "imageFile": "608441.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 313,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -2847,6 +2931,7 @@
     "forecastGPSS28": 44.7,
     "imageFile": "607555.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 667,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -2886,6 +2971,7 @@
     "forecastGPSS28": 50.0,
     "imageFile": "607554.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 951,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -2925,6 +3011,7 @@
     "forecastGPSS28": 55.4,
     "imageFile": "608563.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -2964,6 +3051,7 @@
     "forecastGPSS28": 50.8,
     "imageFile": "608439.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 386,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -3003,6 +3091,7 @@
     "forecastGPSS28": 51.8,
     "imageFile": "608438.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 423,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -3042,6 +3131,7 @@
     "forecastGPSS28": 48.8,
     "imageFile": "608224.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 563,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -3081,6 +3171,7 @@
     "forecastGPSS28": 46.3,
     "imageFile": "608608.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 5554,
     "skusNotInRange": 3,
@@ -3088,7 +3179,8 @@
       {
         "code": "607106",
         "style": "Vide 20",
-        "availableStock": 5554
+        "availableStock": 5554,
+        "sameGeneration": false
       }
     ]
   },
@@ -3126,6 +3218,7 @@
     "forecastGPSS28": 53.3,
     "imageFile": "608607.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -3165,6 +3258,7 @@
     "forecastGPSS28": 53.0,
     "imageFile": "608565.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -3204,6 +3298,7 @@
     "forecastGPSS28": 54.4,
     "imageFile": "608779.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -3243,6 +3338,7 @@
     "forecastGPSS28": null,
     "imageFile": "608538.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 799,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -3282,6 +3378,7 @@
     "forecastGPSS28": 41.8,
     "imageFile": "608290.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 880,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -3321,6 +3418,7 @@
     "forecastGPSS28": 48.6,
     "imageFile": "608289.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 1349,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -3360,6 +3458,7 @@
     "forecastGPSS28": null,
     "imageFile": "608291.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 1076,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -3399,6 +3498,7 @@
     "forecastGPSS28": 50.2,
     "imageFile": "608279.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 9667,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -3438,6 +3538,7 @@
     "forecastGPSS28": 51.7,
     "imageFile": "608280.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 5144,
     "availableStockTail": 166,
     "skusNotInRange": 4,
@@ -3445,7 +3546,8 @@
       {
         "code": "497830",
         "style": "Haglöfs Ridge GTX Mid Women",
-        "availableStock": 166
+        "availableStock": 166,
+        "sameGeneration": false
       }
     ]
   },
@@ -3483,6 +3585,7 @@
     "forecastGPSS28": 48.5,
     "imageFile": "608391.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 672,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -3522,6 +3625,7 @@
     "forecastGPSS28": 44.5,
     "imageFile": "608282.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 1418,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -3561,6 +3665,7 @@
     "forecastGPSS28": 64.0,
     "imageFile": "608702.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -3600,6 +3705,7 @@
     "forecastGPSS28": 53.3,
     "imageFile": "608566.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -3639,6 +3745,7 @@
     "forecastGPSS28": null,
     "imageFile": "607824.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 1255,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -3678,6 +3785,7 @@
     "forecastGPSS28": null,
     "imageFile": "608481.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 572,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -3717,6 +3825,7 @@
     "forecastGPSS28": null,
     "imageFile": "608102.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 989,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -3756,6 +3865,7 @@
     "forecastGPSS28": 58.8,
     "imageFile": "608097.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 3792,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -3795,6 +3905,7 @@
     "forecastGPSS28": 64.3,
     "imageFile": "608100.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -3834,6 +3945,7 @@
     "forecastGPSS28": 48.6,
     "imageFile": "608808.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -3873,6 +3985,7 @@
     "forecastGPSS28": null,
     "imageFile": "607795.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 769,
     "availableStockTail": 96,
     "skusNotInRange": 12,
@@ -3880,7 +3993,8 @@
       {
         "code": "605356",
         "style": "L.I.M Down Hood Women",
-        "availableStock": 96
+        "availableStock": 96,
+        "sameGeneration": false
       }
     ]
   },
@@ -3918,6 +4032,7 @@
     "forecastGPSS28": 50.9,
     "imageFile": "609153.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 719,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -3957,6 +4072,7 @@
     "forecastGPSS28": 57.2,
     "imageFile": "607966.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 148,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -3996,6 +4112,7 @@
     "forecastGPSS28": null,
     "imageFile": "607775.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 2047,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -4035,6 +4152,7 @@
     "forecastGPSS28": null,
     "imageFile": "608537.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 419,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -4082,7 +4200,9 @@
         "demand_fc1": 600,
         "shortfall": 400,
         "buying_comment": "MOQ is 1000 pcs",
-        "merch_comment": "Increase to MOQ"
+        "merch_comment": "Increase to MOQ",
+        "ss28CsvQty": 447,
+        "hasDiscrepancy": true
       },
       {
         "code": "608695",
@@ -4092,9 +4212,12 @@
         "demand_fc1": 600,
         "shortfall": 400,
         "buying_comment": "MOQ is 1000 pcs",
-        "merch_comment": "Increase to MOQ"
+        "merch_comment": "Increase to MOQ",
+        "ss28CsvQty": 342,
+        "hasDiscrepancy": true
       }
     ],
+    "hasForecastDiscrepancy": true,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -4142,9 +4265,12 @@
         "demand_fc1": 820,
         "shortfall": 180,
         "buying_comment": "MOQ is 1000 pcs",
-        "merch_comment": "Increase to MOQ"
+        "merch_comment": "Increase to MOQ",
+        "ss28CsvQty": 743,
+        "hasDiscrepancy": true
       }
     ],
+    "hasForecastDiscrepancy": true,
     "availableStockActive": 0,
     "availableStockTail": 6903,
     "skusNotInRange": 64,
@@ -4152,12 +4278,14 @@
       {
         "code": "607444",
         "style": "Mimic Alert Hood Men",
-        "availableStock": 3651
+        "availableStock": 3651,
+        "sameGeneration": false
       },
       {
         "code": "607447",
         "style": "Mimic Alert Hood Women",
-        "availableStock": 3252
+        "availableStock": 3252,
+        "sameGeneration": false
       }
     ]
   },
@@ -4203,7 +4331,9 @@
         "demand_fc1": 800,
         "shortfall": 200,
         "buying_comment": "MOQ is 1000 pcs",
-        "merch_comment": "Increase to MOQ"
+        "merch_comment": "Increase to MOQ",
+        "ss28CsvQty": 679,
+        "hasDiscrepancy": true
       },
       {
         "code": "608681",
@@ -4213,9 +4343,12 @@
         "demand_fc1": 500,
         "shortfall": 500,
         "buying_comment": "LOW FC should style be kept MOQ is 1000 pcs",
-        "merch_comment": "340pcs requested from Markets -Drop?"
+        "merch_comment": "340pcs requested from Markets -Drop?",
+        "ss28CsvQty": 474,
+        "hasDiscrepancy": true
       }
     ],
+    "hasForecastDiscrepancy": true,
     "availableStockActive": 0,
     "availableStockTail": 2152,
     "skusNotInRange": 32,
@@ -4223,12 +4356,14 @@
       {
         "code": "607446",
         "style": "Mimic Alert Jacket Men",
-        "availableStock": 1665
+        "availableStock": 1665,
+        "sameGeneration": false
       },
       {
         "code": "607448",
         "style": "Mimic Alert Jacket Women",
-        "availableStock": 487
+        "availableStock": 487,
+        "sameGeneration": false
       }
     ]
   },
@@ -4266,6 +4401,7 @@
     "forecastGPSS28": null,
     "imageFile": "608533.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -4305,6 +4441,7 @@
     "forecastGPSS28": null,
     "imageFile": "608341.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 832,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -4344,6 +4481,7 @@
     "forecastGPSS28": 55.6,
     "imageFile": "607463.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 6033,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -4383,6 +4521,7 @@
     "forecastGPSS28": null,
     "imageFile": "607462.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 3137,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -4422,6 +4561,7 @@
     "forecastGPSS28": null,
     "imageFile": "607461.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 1736,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -4461,6 +4601,7 @@
     "forecastGPSS28": null,
     "imageFile": "607460.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 3521,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -4500,6 +4641,7 @@
     "forecastGPSS28": null,
     "imageFile": "608125.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 1899,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -4539,6 +4681,7 @@
     "forecastGPSS28": null,
     "imageFile": "608241.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 2026,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -4578,6 +4721,7 @@
     "forecastGPSS28": null,
     "imageFile": "607459.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 1608,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -4625,9 +4769,12 @@
         "demand_fc1": 900,
         "shortfall": 100,
         "buying_comment": "MOQ is 1000 pcs",
-        "merch_comment": "Increase to MOQ"
+        "merch_comment": "Increase to MOQ",
+        "ss28CsvQty": 1450,
+        "hasDiscrepancy": true
       }
     ],
+    "hasForecastDiscrepancy": true,
     "availableStockActive": 6181,
     "availableStockTail": 183,
     "skusNotInRange": 29,
@@ -4635,12 +4782,14 @@
       {
         "code": "607776",
         "style": "Särna Mimic Hood Women",
-        "availableStock": 169
+        "availableStock": 169,
+        "sameGeneration": false
       },
       {
         "code": "605132",
         "style": "Särna Mimic Hood Women",
-        "availableStock": 14
+        "availableStock": 14,
+        "sameGeneration": false
       }
     ]
   },
@@ -4678,6 +4827,7 @@
     "forecastGPSS28": 54.0,
     "imageFile": "607645.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 9154,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -4725,9 +4875,12 @@
         "demand_fc1": 960,
         "shortfall": 40,
         "buying_comment": "MOQ is 1000 pcs",
-        "merch_comment": "Increase to MOQ"
+        "merch_comment": "Increase to MOQ",
+        "ss28CsvQty": 1516,
+        "hasDiscrepancy": true
       }
     ],
+    "hasForecastDiscrepancy": true,
     "availableStockActive": 1727,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -4767,6 +4920,7 @@
     "forecastGPSS28": 57.5,
     "imageFile": "608860.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -4806,6 +4960,7 @@
     "forecastGPSS28": 55.3,
     "imageFile": "607646.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 900,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -4845,6 +5000,7 @@
     "forecastGPSS28": 53.2,
     "imageFile": "608810.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -4884,6 +5040,7 @@
     "forecastGPSS28": 40.6,
     "imageFile": "608811.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -4923,6 +5080,7 @@
     "forecastGPSS28": 52.3,
     "imageFile": "608974.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 634,
     "skusNotInRange": 25,
@@ -4930,12 +5088,14 @@
       {
         "code": "607651",
         "style": "Hede Cargo Pant Women",
-        "availableStock": 334
+        "availableStock": 334,
+        "sameGeneration": false
       },
       {
         "code": "607644",
         "style": "Hede Cargo Pant Men",
-        "availableStock": 300
+        "availableStock": 300,
+        "sameGeneration": false
       }
     ]
   },
@@ -4973,6 +5133,7 @@
     "forecastGPSS28": 62.2,
     "imageFile": "609006.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 175,
     "skusNotInRange": 34,
@@ -4980,12 +5141,14 @@
       {
         "code": "608162",
         "style": "Hede Shorts Men",
-        "availableStock": 139
+        "availableStock": 139,
+        "sameGeneration": false
       },
       {
         "code": "608182",
         "style": "Hede Shorts Women",
-        "availableStock": 36
+        "availableStock": 36,
+        "sameGeneration": false
       }
     ]
   },
@@ -5023,6 +5186,7 @@
     "forecastGPSS28": 59.6,
     "imageFile": "608815.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -5062,6 +5226,7 @@
     "forecastGPSS28": 60.3,
     "imageFile": "607759.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 2352,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -5101,6 +5266,7 @@
     "forecastGPSS28": 58.3,
     "imageFile": "607876.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 2535,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -5148,9 +5314,12 @@
         "demand_fc1": 940,
         "shortfall": 60,
         "buying_comment": null,
-        "merch_comment": "Increase to MOQ"
+        "merch_comment": "Increase to MOQ",
+        "ss28CsvQty": 1840,
+        "hasDiscrepancy": true
       }
     ],
+    "hasForecastDiscrepancy": true,
     "availableStockActive": 814,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -5190,6 +5359,7 @@
     "forecastGPSS28": 47.0,
     "imageFile": "608809.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -5229,6 +5399,7 @@
     "forecastGPSS28": 37.0,
     "imageFile": "608160.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 188,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -5268,6 +5439,7 @@
     "forecastGPSS28": 40.8,
     "imageFile": "608161.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -5307,6 +5479,7 @@
     "forecastGPSS28": 59.9,
     "imageFile": "608459.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 460,
     "availableStockTail": 46,
     "skusNotInRange": 13,
@@ -5314,12 +5487,14 @@
       {
         "code": "606931",
         "style": "Lite Standard Zip-Off Pant Women",
-        "availableStock": 36
+        "availableStock": 36,
+        "sameGeneration": false
       },
       {
         "code": "606947",
         "style": "Lite Standard Zip-Off Pant Men",
-        "availableStock": 10
+        "availableStock": 10,
+        "sameGeneration": false
       }
     ]
   },
@@ -5357,6 +5532,7 @@
     "forecastGPSS28": 70.9,
     "imageFile": "608637.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 401,
     "skusNotInRange": 13,
@@ -5364,7 +5540,8 @@
       {
         "code": "606705",
         "style": "Lizard Softshell Shorts Men",
-        "availableStock": 401
+        "availableStock": 401,
+        "sameGeneration": false
       }
     ]
   },
@@ -5410,9 +5587,12 @@
         "demand_fc1": 750,
         "shortfall": 250,
         "buying_comment": "MOQ is 1000 pcs",
-        "merch_comment": "Increase to MOQ"
+        "merch_comment": "Increase to MOQ",
+        "ss28CsvQty": 975,
+        "hasDiscrepancy": true
       }
     ],
+    "hasForecastDiscrepancy": true,
     "availableStockActive": 4574,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -5452,6 +5632,7 @@
     "forecastGPSS28": 37.2,
     "imageFile": "608982.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -5491,6 +5672,7 @@
     "forecastGPSS28": null,
     "imageFile": "609084.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 43,
     "skusNotInRange": 12,
@@ -5498,12 +5680,14 @@
       {
         "code": "607251",
         "style": "Mid Standard Pant Women",
-        "availableStock": 40
+        "availableStock": 40,
+        "sameGeneration": false
       },
       {
         "code": "607604",
         "style": "Mid Standard Pant Women",
-        "availableStock": 3
+        "availableStock": 3,
+        "sameGeneration": false
       }
     ]
   },
@@ -5541,6 +5725,7 @@
     "forecastGPSS28": null,
     "imageFile": "609087.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 120,
     "skusNotInRange": 13,
@@ -5548,12 +5733,14 @@
       {
         "code": "607054",
         "style": "Mid Standard ShortsMen",
-        "availableStock": 95
+        "availableStock": 95,
+        "sameGeneration": false
       },
       {
         "code": "605188",
         "style": "Mid Standard II Shorts Women",
-        "availableStock": 25
+        "availableStock": 25,
+        "sameGeneration": true
       }
     ]
   },
@@ -5591,6 +5778,7 @@
     "forecastGPSS28": null,
     "imageFile": "608830.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 1174,
     "skusNotInRange": 10,
@@ -5598,12 +5786,14 @@
       {
         "code": "605388",
         "style": "Mimic Silver Pant Men",
-        "availableStock": 694
+        "availableStock": 694,
+        "sameGeneration": false
       },
       {
         "code": "605389",
         "style": "Mimic Silver Pant Women",
-        "availableStock": 480
+        "availableStock": 480,
+        "sameGeneration": false
       }
     ]
   },
@@ -5641,6 +5831,7 @@
     "forecastGPSS28": -11.3,
     "imageFile": "608266.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 127,
     "availableStockTail": 35,
     "skusNotInRange": 8,
@@ -5648,12 +5839,14 @@
       {
         "code": "606025",
         "style": "ROC Lite Slim Pant Men",
-        "availableStock": 21
+        "availableStock": 21,
+        "sameGeneration": false
       },
       {
         "code": "606251",
         "style": "ROC Lite Slim Pant Women",
-        "availableStock": 14
+        "availableStock": 14,
+        "sameGeneration": false
       }
     ]
   },
@@ -5699,9 +5892,12 @@
         "demand_fc1": 900,
         "shortfall": 100,
         "buying_comment": "MOQ is 1000 pcs",
-        "merch_comment": "Increase to MOQ"
+        "merch_comment": "Increase to MOQ",
+        "ss28CsvQty": 714,
+        "hasDiscrepancy": true
       }
     ],
+    "hasForecastDiscrepancy": true,
     "availableStockActive": 46,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -5741,6 +5937,7 @@
     "forecastGPSS28": 55.5,
     "imageFile": "608609.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -5780,6 +5977,7 @@
     "forecastGPSS28": null,
     "imageFile": "608834.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -5819,6 +6017,7 @@
     "forecastGPSS28": 59.5,
     "imageFile": "608683.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -5858,6 +6057,7 @@
     "forecastGPSS28": 57.8,
     "imageFile": "608351.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 11137,
     "availableStockTail": 961,
     "skusNotInRange": 41,
@@ -5865,12 +6065,14 @@
       {
         "code": "605074",
         "style": "Buteo Mid Jacket Women",
-        "availableStock": 748
+        "availableStock": 748,
+        "sameGeneration": false
       },
       {
         "code": "605073",
         "style": "Buteo Mid Jacket Men",
-        "availableStock": 213
+        "availableStock": 213,
+        "sameGeneration": false
       }
     ]
   },
@@ -5908,6 +6110,7 @@
     "forecastGPSS28": null,
     "imageFile": "607817.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 3588,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -5947,6 +6150,7 @@
     "forecastGPSS28": 53.5,
     "imageFile": "608164.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 939,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -5994,7 +6198,9 @@
         "demand_fc1": 700,
         "shortfall": 300,
         "buying_comment": "MOQ is 1000 pcs",
-        "merch_comment": "Increase to MOQ"
+        "merch_comment": "Increase to MOQ",
+        "ss28CsvQty": 855,
+        "hasDiscrepancy": true
       },
       {
         "code": "607782",
@@ -6004,9 +6210,12 @@
         "demand_fc1": 600,
         "shortfall": 400,
         "buying_comment": "MOQ is 1000 pcs",
-        "merch_comment": "340pcs requested from Markets -Drop?"
+        "merch_comment": "340pcs requested from Markets -Drop?",
+        "ss28CsvQty": 340,
+        "hasDiscrepancy": true
       }
     ],
+    "hasForecastDiscrepancy": true,
     "availableStockActive": 2800,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -6046,6 +6255,7 @@
     "forecastGPSS28": 58.3,
     "imageFile": "607777.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 3959,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -6085,6 +6295,7 @@
     "forecastGPSS28": 55.8,
     "imageFile": "607778.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 1628,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -6124,6 +6335,7 @@
     "forecastGPSS28": 46.8,
     "imageFile": "608984.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -6163,6 +6375,7 @@
     "forecastGPSS28": 47.2,
     "imageFile": "607631.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 1553,
     "availableStockTail": 0,
     "skusNotInRange": 25,
@@ -6202,6 +6415,7 @@
     "forecastGPSS28": 49.7,
     "imageFile": "608417.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 454,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -6241,6 +6455,7 @@
     "forecastGPSS28": 66.8,
     "imageFile": "609000.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -6288,7 +6503,9 @@
         "demand_fc1": 600,
         "shortfall": 400,
         "buying_comment": "MOQ is 1000 pcs",
-        "merch_comment": "467 pcs requested from Markets -Only keep FW season? Or buy with surcharge SS28?"
+        "merch_comment": "467 pcs requested from Markets -Only keep FW season? Or buy with surcharge SS28?",
+        "ss28CsvQty": 577,
+        "hasDiscrepancy": true
       },
       {
         "code": "608346",
@@ -6298,9 +6515,12 @@
         "demand_fc1": 600,
         "shortfall": 400,
         "buying_comment": "MOQ is 1000 pcs",
-        "merch_comment": "390 pcs requested from Markets -Only keep FW season? Or buy with surcharge SS28?"
+        "merch_comment": "390 pcs requested from Markets -Only keep FW season? Or buy with surcharge SS28?",
+        "ss28CsvQty": 500,
+        "hasDiscrepancy": true
       }
     ],
+    "hasForecastDiscrepancy": true,
     "availableStockActive": 775,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -6340,6 +6560,7 @@
     "forecastGPSS28": null,
     "imageFile": "608832.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 1443,
     "skusNotInRange": 12,
@@ -6347,12 +6568,14 @@
       {
         "code": "607785",
         "style": "Rosson Tights Women",
-        "availableStock": 736
+        "availableStock": 736,
+        "sameGeneration": false
       },
       {
         "code": "607784",
         "style": "Rosson Tights Men",
-        "availableStock": 707
+        "availableStock": 707,
+        "sameGeneration": false
       }
     ]
   },
@@ -6390,6 +6613,7 @@
     "forecastGPSS28": 60.6,
     "imageFile": "608556.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 8214,
     "skusNotInRange": 66,
@@ -6397,12 +6621,14 @@
       {
         "code": "607605",
         "style": "Rosson Mid Hood Men",
-        "availableStock": 4396
+        "availableStock": 4396,
+        "sameGeneration": false
       },
       {
         "code": "607474",
         "style": "Rosson Mid Hood Women",
-        "availableStock": 3818
+        "availableStock": 3818,
+        "sameGeneration": false
       }
     ]
   },
@@ -6440,6 +6666,7 @@
     "forecastGPSS28": 54.6,
     "imageFile": "608557.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 4366,
     "skusNotInRange": 61,
@@ -6447,12 +6674,14 @@
       {
         "code": "607606",
         "style": "Rosson Mid Jacket Women",
-        "availableStock": 2372
+        "availableStock": 2372,
+        "sameGeneration": false
       },
       {
         "code": "607473",
         "style": "Rosson Mid Jacket Men",
-        "availableStock": 1994
+        "availableStock": 1994,
+        "sameGeneration": false
       }
     ]
   },
@@ -6490,6 +6719,7 @@
     "forecastGPSS28": 54.2,
     "imageFile": "608165.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 5528,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -6529,6 +6759,7 @@
     "forecastGPSS28": 56.4,
     "imageFile": "608166.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 3627,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -6576,9 +6807,12 @@
         "demand_fc1": 500,
         "shortfall": 500,
         "buying_comment": "LOW FC should style be kept MOQ is 1000 pcs",
-        "merch_comment": "340pcs requested from Markets -Drop?"
+        "merch_comment": "340pcs requested from Markets -Drop?",
+        "ss28CsvQty": 387,
+        "hasDiscrepancy": true
       }
     ],
+    "hasForecastDiscrepancy": true,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -6626,9 +6860,12 @@
         "demand_fc1": 500,
         "shortfall": 500,
         "buying_comment": "LOW FC should style be kept MOQ is 1000 pcs",
-        "merch_comment": "340pcs requested from Markets -Drop?"
+        "merch_comment": "340pcs requested from Markets -Drop?",
+        "ss28CsvQty": 370,
+        "hasDiscrepancy": true
       }
     ],
+    "hasForecastDiscrepancy": true,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -6676,7 +6913,9 @@
         "demand_fc1": 900,
         "shortfall": 100,
         "buying_comment": "MOQ is 1000 pcs",
-        "merch_comment": "Increase to MOQ"
+        "merch_comment": "Increase to MOQ",
+        "ss28CsvQty": 512,
+        "hasDiscrepancy": true
       },
       {
         "code": "608478",
@@ -6686,9 +6925,12 @@
         "demand_fc1": 800,
         "shortfall": 200,
         "buying_comment": "MOQ is 1000 pcs",
-        "merch_comment": "Increase to MOQ"
+        "merch_comment": "Increase to MOQ",
+        "ss28CsvQty": 452,
+        "hasDiscrepancy": true
       }
     ],
+    "hasForecastDiscrepancy": true,
     "availableStockActive": 120,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -6728,6 +6970,7 @@
     "forecastGPSS28": null,
     "imageFile": "606844.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 1603,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -6767,6 +7010,7 @@
     "forecastGPSS28": null,
     "imageFile": "608710.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -6806,6 +7050,7 @@
     "forecastGPSS28": null,
     "imageFile": "608709.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -6845,6 +7090,7 @@
     "forecastGPSS28": null,
     "imageFile": "608711.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -6892,7 +7138,9 @@
         "demand_fc1": 820,
         "shortfall": 180,
         "buying_comment": "MOQ is 1000 pcs",
-        "merch_comment": "Increase to MOQ"
+        "merch_comment": "Increase to MOQ",
+        "ss28CsvQty": 985,
+        "hasDiscrepancy": true
       },
       {
         "code": "608192",
@@ -6902,9 +7150,12 @@
         "demand_fc1": 740,
         "shortfall": 260,
         "buying_comment": "MOQ is 1000 pcs",
-        "merch_comment": "Increase to MOQ"
+        "merch_comment": "Increase to MOQ",
+        "ss28CsvQty": 804,
+        "hasDiscrepancy": true
       }
     ],
+    "hasForecastDiscrepancy": true,
     "availableStockActive": 5463,
     "availableStockTail": 0,
     "skusNotInRange": 5,
@@ -6944,6 +7195,7 @@
     "forecastGPSS28": null,
     "imageFile": "607936.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 1605,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -6983,6 +7235,7 @@
     "forecastGPSS28": null,
     "imageFile": "607939.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 1466,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -7022,6 +7275,7 @@
     "forecastGPSS28": 42.7,
     "imageFile": "607593.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 8550,
     "availableStockTail": 416,
     "skusNotInRange": 10,
@@ -7029,7 +7283,8 @@
       {
         "code": "604669",
         "style": "Astral GTX Jacket Women",
-        "availableStock": 416
+        "availableStock": 416,
+        "sameGeneration": false
       }
     ]
   },
@@ -7067,6 +7322,7 @@
     "forecastGPSS28": 50.1,
     "imageFile": "607680.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 11466,
     "availableStockTail": 0,
     "skusNotInRange": 40,
@@ -7106,6 +7362,7 @@
     "forecastGPSS28": 48.4,
     "imageFile": "607823.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 7151,
     "availableStockTail": 87,
     "skusNotInRange": 13,
@@ -7113,17 +7370,20 @@
       {
         "code": "606143",
         "style": "Front Proof Jacket Men",
-        "availableStock": 46
+        "availableStock": 46,
+        "sameGeneration": false
       },
       {
         "code": "606177",
         "style": "Front Proof Jacket Women",
-        "availableStock": 37
+        "availableStock": 37,
+        "sameGeneration": false
       },
       {
         "code": "607768",
         "style": "Front Proof Jacket Women",
-        "availableStock": 4
+        "availableStock": 4,
+        "sameGeneration": false
       }
     ]
   },
@@ -7161,6 +7421,7 @@
     "forecastGPSS28": 48.6,
     "imageFile": "609016.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -7208,7 +7469,9 @@
         "demand_fc1": 790,
         "shortfall": 210,
         "buying_comment": "MOQ is 1000 pcs",
-        "merch_comment": "Increase to MOQ"
+        "merch_comment": "Increase to MOQ",
+        "ss28CsvQty": null,
+        "hasDiscrepancy": true
       },
       {
         "code": "609019",
@@ -7218,9 +7481,12 @@
         "demand_fc1": 665,
         "shortfall": 335,
         "buying_comment": "MOQ is 1000 pcs",
-        "merch_comment": "Increase to MOQ"
+        "merch_comment": "Increase to MOQ",
+        "ss28CsvQty": null,
+        "hasDiscrepancy": true
       }
     ],
+    "hasForecastDiscrepancy": true,
     "availableStockActive": 1381,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -7260,6 +7526,7 @@
     "forecastGPSS28": 57.6,
     "imageFile": "608095.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 1009,
     "availableStockTail": 152,
     "skusNotInRange": 3,
@@ -7267,12 +7534,14 @@
       {
         "code": "606131",
         "style": "Korp Proof Pant Women",
-        "availableStock": 148
+        "availableStock": 148,
+        "sameGeneration": false
       },
       {
         "code": "606134",
         "style": "Korp Proof Pant Men",
-        "availableStock": 4
+        "availableStock": 4,
+        "sameGeneration": false
       }
     ]
   },
@@ -7310,6 +7579,7 @@
     "forecastGPSS28": 51.1,
     "imageFile": "607958.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 2954,
     "availableStockTail": 0,
     "skusNotInRange": 25,
@@ -7349,6 +7619,7 @@
     "forecastGPSS28": null,
     "imageFile": "607610.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 4618,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -7388,6 +7659,7 @@
     "forecastGPSS28": null,
     "imageFile": "607613.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 2804,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -7427,6 +7699,7 @@
     "forecastGPSS28": 44.7,
     "imageFile": "608786.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -7466,6 +7739,7 @@
     "forecastGPSS28": 48.3,
     "imageFile": "608787.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -7505,6 +7779,7 @@
     "forecastGPSS28": null,
     "imageFile": "607609.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 4563,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -7544,6 +7819,7 @@
     "forecastGPSS28": 37.1,
     "imageFile": "608973.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 1036,
     "skusNotInRange": 11,
@@ -7551,12 +7827,14 @@
       {
         "code": "607418",
         "style": "L.I.M GTX II JacketWomen",
-        "availableStock": 1035
+        "availableStock": 1035,
+        "sameGeneration": false
       },
       {
         "code": "607417",
         "style": "L.I.M GTX II JacketMen",
-        "availableStock": 1
+        "availableStock": 1,
+        "sameGeneration": false
       }
     ]
   },
@@ -7594,6 +7872,7 @@
     "forecastGPSS28": null,
     "imageFile": "609082.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 673,
     "skusNotInRange": 8,
@@ -7601,12 +7880,14 @@
       {
         "code": "606550",
         "style": "L.I.M GTX Pant Women",
-        "availableStock": 588
+        "availableStock": 588,
+        "sameGeneration": false
       },
       {
         "code": "606551",
         "style": "L.I.M GTX Pant Men",
-        "availableStock": 85
+        "availableStock": 85,
+        "sameGeneration": false
       }
     ]
   },
@@ -7644,6 +7925,7 @@
     "forecastGPSS28": 51.1,
     "imageFile": "608783.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -7683,6 +7965,7 @@
     "forecastGPSS28": 29.6,
     "imageFile": "608784.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -7722,6 +8005,7 @@
     "forecastGPSS28": null,
     "imageFile": "609002.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 3128,
     "skusNotInRange": 53,
@@ -7729,12 +8013,14 @@
       {
         "code": "607469",
         "style": "Latnja GTX Insulated Jacket Men",
-        "availableStock": 1614
+        "availableStock": 1614,
+        "sameGeneration": false
       },
       {
         "code": "607471",
         "style": "Latnja GTX Insulated Jacket Women",
-        "availableStock": 1514
+        "availableStock": 1514,
+        "sameGeneration": false
       }
     ]
   },
@@ -7772,6 +8058,7 @@
     "forecastGPSS28": null,
     "imageFile": "609003.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 2591,
     "skusNotInRange": 48,
@@ -7779,12 +8066,14 @@
       {
         "code": "607472",
         "style": "Latnja GTX Insulated Pant Women",
-        "availableStock": 1348
+        "availableStock": 1348,
+        "sameGeneration": false
       },
       {
         "code": "607470",
         "style": "Latnja GTX Insulated Pant Men",
-        "availableStock": 1243
+        "availableStock": 1243,
+        "sameGeneration": false
       }
     ]
   },
@@ -7822,6 +8111,7 @@
     "forecastGPSS28": 53.2,
     "imageFile": "608560.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -7861,6 +8151,7 @@
     "forecastGPSS28": null,
     "imageFile": "608333.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 1220,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -7900,6 +8191,7 @@
     "forecastGPSS28": null,
     "imageFile": "608335.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 1263,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -7939,6 +8231,7 @@
     "forecastGPSS28": 43.2,
     "imageFile": "608549.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 35,
@@ -7986,7 +8279,9 @@
         "demand_fc1": 860,
         "shortfall": 140,
         "buying_comment": "MOQ is 1000 pcs",
-        "merch_comment": "Increase to MOQ"
+        "merch_comment": "Increase to MOQ",
+        "ss28CsvQty": 1254,
+        "hasDiscrepancy": true
       },
       {
         "code": "608193",
@@ -7996,9 +8291,12 @@
         "demand_fc1": 700,
         "shortfall": 300,
         "buying_comment": "MOQ is 1000 pcs",
-        "merch_comment": "Increase to MOQ"
+        "merch_comment": "Increase to MOQ",
+        "ss28CsvQty": 1022,
+        "hasDiscrepancy": true
       }
     ],
+    "hasForecastDiscrepancy": true,
     "availableStockActive": 4341,
     "availableStockTail": 0,
     "skusNotInRange": 10,
@@ -8046,7 +8344,9 @@
         "demand_fc1": 400,
         "shortfall": 600,
         "buying_comment": "LOW FC should style be kept MOQ is 1000 pcs",
-        "merch_comment": "382 pcs requested from Markets -Only keep FW season? Or buy with surcharge SS28?"
+        "merch_comment": "382 pcs requested from Markets -Only keep FW season? Or buy with surcharge SS28?",
+        "ss28CsvQty": 382,
+        "hasDiscrepancy": true
       },
       {
         "code": "608209",
@@ -8056,9 +8356,12 @@
         "demand_fc1": 400,
         "shortfall": 600,
         "buying_comment": "LOW FC should style be kept MOQ is 1000 pcs",
-        "merch_comment": "368 pcs requested from Markets -Only keep FW season? Or buy with surcharge SS28?"
+        "merch_comment": "368 pcs requested from Markets -Only keep FW season? Or buy with surcharge SS28?",
+        "ss28CsvQty": 368,
+        "hasDiscrepancy": true
       }
     ],
+    "hasForecastDiscrepancy": true,
     "availableStockActive": 3578,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -8098,6 +8401,7 @@
     "forecastGPSS28": 33.8,
     "imageFile": "608447.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 1585,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -8137,6 +8441,7 @@
     "forecastGPSS28": null,
     "imageFile": "608671.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -8176,6 +8481,7 @@
     "forecastGPSS28": null,
     "imageFile": "608672.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -8215,6 +8521,7 @@
     "forecastGPSS28": 60.4,
     "imageFile": "608692.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -8254,6 +8561,7 @@
     "forecastGPSS28": 42.9,
     "imageFile": "608570.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 1478,
     "availableStockTail": 204,
     "skusNotInRange": 10,
@@ -8261,12 +8569,14 @@
       {
         "code": "607799",
         "style": "Spitz GTX Pro II Jacket Women",
-        "availableStock": 140
+        "availableStock": 140,
+        "sameGeneration": true
       },
       {
         "code": "607796",
         "style": "Spitz GTX Pro II Jacket Men",
-        "availableStock": 64
+        "availableStock": 64,
+        "sameGeneration": true
       }
     ]
   },
@@ -8304,6 +8614,7 @@
     "forecastGPSS28": null,
     "imageFile": "608670.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -8343,6 +8654,7 @@
     "forecastGPSS28": null,
     "imageFile": "608673.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -8382,6 +8694,7 @@
     "forecastGPSS28": null,
     "imageFile": "608375.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -8421,6 +8734,7 @@
     "forecastGPSS28": null,
     "imageFile": "608574.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 1485,
     "availableStockTail": 243,
     "skusNotInRange": 26,
@@ -8428,17 +8742,20 @@
       {
         "code": "607793",
         "style": "Vassi GTX II JacketWomen",
-        "availableStock": 171
+        "availableStock": 171,
+        "sameGeneration": true
       },
       {
         "code": "607791",
         "style": "Vassi GTX II JacketMen",
-        "availableStock": 50
+        "availableStock": 50,
+        "sameGeneration": true
       },
       {
         "code": "606840",
         "style": "Vassi GTX Jacket Women",
-        "availableStock": 22
+        "availableStock": 22,
+        "sameGeneration": false
       }
     ]
   },
@@ -8476,6 +8793,7 @@
     "forecastGPSS28": null,
     "imageFile": "608575.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 1776,
     "availableStockTail": 683,
     "skusNotInRange": 32,
@@ -8483,22 +8801,26 @@
       {
         "code": "606841",
         "style": "Vassi GTX Pant Women",
-        "availableStock": 446
+        "availableStock": 446,
+        "sameGeneration": false
       },
       {
         "code": "607816",
         "style": "Vassi GTX II Pant Women",
-        "availableStock": 183
+        "availableStock": 183,
+        "sameGeneration": true
       },
       {
         "code": "606838",
         "style": "Vassi GTX Pant Men",
-        "availableStock": 31
+        "availableStock": 31,
+        "sameGeneration": false
       },
       {
         "code": "607815",
         "style": "Vassi GTX II Pant Men",
-        "availableStock": 23
+        "availableStock": 23,
+        "sameGeneration": true
       }
     ]
   },
@@ -8536,6 +8858,7 @@
     "forecastGPSS28": null,
     "imageFile": "608576.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 927,
     "availableStockTail": 35,
     "skusNotInRange": 6,
@@ -8543,12 +8866,14 @@
       {
         "code": "607798",
         "style": "Vassi GTX Pro II Bib Women",
-        "availableStock": 32
+        "availableStock": 32,
+        "sameGeneration": true
       },
       {
         "code": "607794",
         "style": "Vassi GTX Pro II Bib Men",
-        "availableStock": 3
+        "availableStock": 3,
+        "sameGeneration": true
       }
     ]
   },
@@ -8586,6 +8911,7 @@
     "forecastGPSS28": null,
     "imageFile": "608577.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 717,
     "availableStockTail": 221,
     "skusNotInRange": 19,
@@ -8593,17 +8919,20 @@
       {
         "code": "607783",
         "style": "Vassi GTX Pro II Jacket Men",
-        "availableStock": 81
+        "availableStock": 81,
+        "sameGeneration": true
       },
       {
         "code": "607792",
         "style": "Vassi GTX Pro II Jacket Women",
-        "availableStock": 76
+        "availableStock": 76,
+        "sameGeneration": true
       },
       {
         "code": "604689",
         "style": "Vassi GTX Pro Jacket Women",
-        "availableStock": 64
+        "availableStock": 64,
+        "sameGeneration": false
       }
     ]
   },
@@ -8641,6 +8970,7 @@
     "forecastGPSS28": null,
     "imageFile": "608377.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 1576,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -8680,6 +9010,7 @@
     "forecastGPSS28": 32.7,
     "imageFile": "416330.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 692,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -8719,6 +9050,7 @@
     "forecastGPSS28": 51.7,
     "imageFile": "416240.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 423,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -8758,6 +9090,7 @@
     "forecastGPSS28": 52.2,
     "imageFile": "416230.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 311,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -8797,6 +9130,7 @@
     "forecastGPSS28": 54.5,
     "imageFile": "416220.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 62,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -8836,6 +9170,7 @@
     "forecastGPSS28": 52.0,
     "imageFile": "416190.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -8875,6 +9210,7 @@
     "forecastGPSS28": 52.9,
     "imageFile": "416180.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 162,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -8914,6 +9250,7 @@
     "forecastGPSS28": 55.1,
     "imageFile": "416210.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 81,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -8953,6 +9290,7 @@
     "forecastGPSS28": 51.3,
     "imageFile": "416160.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 136,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -8992,6 +9330,7 @@
     "forecastGPSS28": null,
     "imageFile": "416170.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 315,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -9031,6 +9370,7 @@
     "forecastGPSS28": 50.9,
     "imageFile": "416140.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 975,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -9070,6 +9410,7 @@
     "forecastGPSS28": 53.8,
     "imageFile": "416150.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 639,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -9109,6 +9450,7 @@
     "forecastGPSS28": 53.3,
     "imageFile": "416260.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 180,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -9148,6 +9490,7 @@
     "forecastGPSS28": 66.1,
     "imageFile": "608552.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 30,
@@ -9187,6 +9530,7 @@
     "forecastGPSS28": 50.0,
     "imageFile": "608554.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -9226,6 +9570,7 @@
     "forecastGPSS28": 65.1,
     "imageFile": "607808.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 71,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -9265,6 +9610,7 @@
     "forecastGPSS28": 58.6,
     "imageFile": "607809.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 328,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -9304,6 +9650,7 @@
     "forecastGPSS28": null,
     "imageFile": "607819.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 991,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -9343,6 +9690,7 @@
     "forecastGPSS28": 56.2,
     "imageFile": "607660.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 3062,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -9382,6 +9730,7 @@
     "forecastGPSS28": 53.7,
     "imageFile": "607658.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 4017,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -9421,6 +9770,7 @@
     "forecastGPSS28": 52.4,
     "imageFile": "608796.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 1659,
     "skusNotInRange": 40,
@@ -9428,12 +9778,14 @@
       {
         "code": "607627",
         "style": "Kaise Wool LS Tee Women",
-        "availableStock": 935
+        "availableStock": 935,
+        "sameGeneration": false
       },
       {
         "code": "607625",
         "style": "Kaise Wool LS Tee Men",
-        "availableStock": 724
+        "availableStock": 724,
+        "sameGeneration": false
       }
     ]
   },
@@ -9471,6 +9823,7 @@
     "forecastGPSS28": 54.7,
     "imageFile": "608795.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 1385,
     "skusNotInRange": 44,
@@ -9478,12 +9831,14 @@
       {
         "code": "607628",
         "style": "Kaise Wool Tee Women",
-        "availableStock": 800
+        "availableStock": 800,
+        "sameGeneration": false
       },
       {
         "code": "607626",
         "style": "Kaise Wool Tee Men",
-        "availableStock": 585
+        "availableStock": 585,
+        "sameGeneration": false
       }
     ]
   },
@@ -9529,9 +9884,12 @@
         "demand_fc1": 900,
         "shortfall": 100,
         "buying_comment": null,
-        "merch_comment": "Increase to MOQ"
+        "merch_comment": "Increase to MOQ",
+        "ss28CsvQty": 585,
+        "hasDiscrepancy": true
       }
     ],
+    "hasForecastDiscrepancy": true,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -9571,6 +9929,7 @@
     "forecastGPSS28": 58.9,
     "imageFile": "608216.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 352,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -9610,6 +9969,7 @@
     "forecastGPSS28": 50.8,
     "imageFile": "608215.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 184,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -9649,6 +10009,7 @@
     "forecastGPSS28": 31.6,
     "imageFile": "608799.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -9688,6 +10049,7 @@
     "forecastGPSS28": 36.6,
     "imageFile": "609156.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 166,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -9727,6 +10089,7 @@
     "forecastGPSS28": 31.9,
     "imageFile": "609157.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 787,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -9766,6 +10129,7 @@
     "forecastGPSS28": 57.4,
     "imageFile": "608170.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 79,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -9805,6 +10169,7 @@
     "forecastGPSS28": 33.4,
     "imageFile": "608151.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 3254,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -9844,6 +10209,7 @@
     "forecastGPSS28": 32.9,
     "imageFile": "607659.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 6125,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -9883,6 +10249,7 @@
     "forecastGPSS28": 57.1,
     "imageFile": "606595.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 641,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -9922,6 +10289,7 @@
     "forecastGPSS28": 38.9,
     "imageFile": "608794.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -9961,6 +10329,7 @@
     "forecastGPSS28": 32.5,
     "imageFile": "608793.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 379,
     "skusNotInRange": 40,
@@ -9968,7 +10337,8 @@
       {
         "code": "606594",
         "style": "Ridge Tee Men",
-        "availableStock": 379
+        "availableStock": 379,
+        "sameGeneration": false
       }
     ]
   },
@@ -10006,6 +10376,7 @@
     "forecastGPSS28": 57.6,
     "imageFile": "608325.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 216,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -10053,9 +10424,12 @@
         "demand_fc1": 690,
         "shortfall": 310,
         "buying_comment": "LOW FC should style be kept MOQ is 1000 pcs",
-        "merch_comment": "Increase to MOQ"
+        "merch_comment": "Increase to MOQ",
+        "ss28CsvQty": 820,
+        "hasDiscrepancy": true
       }
     ],
+    "hasForecastDiscrepancy": true,
     "availableStockActive": 1032,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -10095,6 +10469,7 @@
     "forecastGPSS28": 54.0,
     "imageFile": "608407.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 780,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -10142,7 +10517,9 @@
         "demand_fc1": 900,
         "shortfall": 100,
         "buying_comment": "MOQ is 1000 pcs",
-        "merch_comment": "Increase to MOQ"
+        "merch_comment": "Increase to MOQ",
+        "ss28CsvQty": 425,
+        "hasDiscrepancy": true
       },
       {
         "code": "608697",
@@ -10152,9 +10529,12 @@
         "demand_fc1": 500,
         "shortfall": 500,
         "buying_comment": "LOW FC should style be kept MOQ is 1000 pcs",
-        "merch_comment": "Increase to MOQ or buy with surcharge?"
+        "merch_comment": "Increase to MOQ or buy with surcharge?",
+        "ss28CsvQty": 385,
+        "hasDiscrepancy": true
       }
     ],
+    "hasForecastDiscrepancy": true,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -10194,6 +10574,7 @@
     "forecastGPSS28": 55.4,
     "imageFile": "608611.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -10233,6 +10614,7 @@
     "forecastGPSS28": null,
     "imageFile": "608835.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -10272,6 +10654,7 @@
     "forecastGPSS28": 62.0,
     "imageFile": "608798.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 264,
     "skusNotInRange": 44,
@@ -10279,12 +10662,14 @@
       {
         "code": "607855",
         "style": "Trekk Tech LS Tee Men",
-        "availableStock": 203
+        "availableStock": 203,
+        "sameGeneration": false
       },
       {
         "code": "607858",
         "style": "Trekk Tech LS Tee Women",
-        "availableStock": 61
+        "availableStock": 61,
+        "sameGeneration": false
       }
     ]
   },
@@ -10322,6 +10707,7 @@
     "forecastGPSS28": 50.8,
     "imageFile": "608797.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 294,
     "skusNotInRange": 44,
@@ -10329,12 +10715,14 @@
       {
         "code": "607857",
         "style": "Trekk Tech Tee Women",
-        "availableStock": 153
+        "availableStock": 153,
+        "sameGeneration": false
       },
       {
         "code": "607856",
         "style": "Trekk Tech Tee Men",
-        "availableStock": 141
+        "availableStock": 141,
+        "sameGeneration": false
       }
     ]
   },
@@ -10372,6 +10760,7 @@
     "forecastGPSS28": 41.6,
     "imageFile": "608295.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 2368,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -10411,6 +10800,7 @@
     "forecastGPSS28": 51.9,
     "imageFile": "608703.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -10450,6 +10840,7 @@
     "forecastGPSS28": 21.8,
     "imageFile": "608388.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 2588,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -10489,6 +10880,7 @@
     "forecastGPSS28": 27.4,
     "imageFile": "608890.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -10528,6 +10920,7 @@
     "forecastGPSS28": 20.9,
     "imageFile": "608889.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -10567,6 +10960,7 @@
     "forecastGPSS28": 21.9,
     "imageFile": "608888.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 0,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -10606,6 +11000,7 @@
     "forecastGPSS28": 52.4,
     "imageFile": "607129.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 436,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -10645,6 +11040,7 @@
     "forecastGPSS28": 53.2,
     "imageFile": "607122.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 452,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -10684,6 +11080,7 @@
     "forecastGPSS28": 51.1,
     "imageFile": "608093.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 784,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -10723,6 +11120,7 @@
     "forecastGPSS28": 57.2,
     "imageFile": "607514.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 172,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -10762,6 +11160,7 @@
     "forecastGPSS28": null,
     "imageFile": "608069.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 323,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -10801,6 +11200,7 @@
     "forecastGPSS28": null,
     "imageFile": "608071.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 2763,
     "availableStockTail": 0,
     "skusNotInRange": 0,
@@ -10840,6 +11240,7 @@
     "forecastGPSS28": null,
     "imageFile": "608540.jpeg",
     "moq": [],
+    "hasForecastDiscrepancy": false,
     "availableStockActive": 512,
     "availableStockTail": 0,
     "skusNotInRange": 0,

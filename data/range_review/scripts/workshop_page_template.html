@@ -503,7 +503,8 @@ textarea.action-note {
       <option value="forecast">Forecast Qty, high to low</option>
       <option value="gp">GP%, high to low</option>
     </select>
-    <button class="toggle-btn" id="flaggedToggle" type="button">Flagged only</button>
+    <button class="toggle-btn" id="discrepancyToggle" type="button">SS28 forecast discrepancy</button>
+    <button class="toggle-btn" id="overstockToggle" type="button">Non-active item overstocks</button>
   </div>
 </div>
 
@@ -563,7 +564,7 @@ textarea.action-note {
   }
 
   function needsDecision(d) {
-    return (d.moq && d.moq.length > 0) || d.availableStockTail > 0;
+    return d.hasForecastDiscrepancy || d.availableStockTail > 0;
   }
 
   function matchesSeason(d, season) {
@@ -573,7 +574,8 @@ textarea.action-note {
   }
 
   // ---------- state ----------
-  var state = { layerKey: LAYERS.length ? LAYERS[0].key : null, search: "", sort: "priority", flaggedOnly: false, season: "all", view: "board" };
+  var state = { layerKey: LAYERS.length ? LAYERS[0].key : null, search: "", sort: "priority",
+    flagDiscrepancy: false, flagOverstock: false, season: "all", view: "board" };
   var decisions = {}; // slug -> {tier, action, updatedAt}
 
   function render() {
@@ -693,18 +695,40 @@ textarea.action-note {
     var alerts = "";
     if (d.moq && d.moq.length) {
       var lines = d.moq.map(function (m) {
-        return '<div class="alert-line"><strong>' + escapeHtml(m.style) + "</strong> — demand SS28 FC1 " + fmtQty(m.demand_fc1) +
-          " / Style MOQ " + fmtQty(m.moq_style) + " (short " + fmtQty(m.shortfall) + "). " + escapeHtml(m.merch_comment) + "</div>";
+        var line = '<div class="alert-line"><strong>' + escapeHtml(m.style) + "</strong> — demand SS28 FC1 " + fmtQty(m.demand_fc1) +
+          " / Style MOQ " + fmtQty(m.moq_style) + " (short " + fmtQty(m.shortfall) + "). " + escapeHtml(m.merch_comment);
+        if (m.hasDiscrepancy) {
+          line += " SS28 forecast file shows " + (m.ss28CsvQty == null ? "no matching code" : fmtQty(m.ss28CsvQty) + " units") +
+            " — doesn't reconcile with this FC1 demand (RR-023).";
+        }
+        return line + "</div>";
       }).join("");
       alerts += '<div class="alert moq">' + lines + "</div>";
     }
     if (d.availableStockTail > 0) {
-      var tailHeader = '<div class="alert-line"><strong>' + fmtQty(d.availableStockTail) +
-        " units</strong> of old generation in stock" +
-        (d.availableStockActive > 0 ? " (plus " + fmtQty(d.availableStockActive) + " of the current style)" : "") + ".</div>";
+      // Not every tail code is an OLDER generation (RR-019) -- some are a retired code of the
+      // SAME current generation (e.g. last season's SKU for "Vassi GTX II Jacket", still named
+      // "II", under a code no longer in the active range). Wording splits on that distinction
+      // rather than calling every tail "old generation," which would be wrong for those.
+      var oldGenStyles = (d.tailStyles || []).filter(function (s) { return !s.sameGeneration; });
+      var sameGenStyles = (d.tailStyles || []).filter(function (s) { return s.sameGeneration; });
+      var oldGenTotal = oldGenStyles.reduce(function (sum, s) { return sum + s.availableStock; }, 0);
+      var sameGenTotal = sameGenStyles.reduce(function (sum, s) { return sum + s.availableStock; }, 0);
+      var activeNote = d.availableStockActive > 0 ? " (plus " + fmtQty(d.availableStockActive) + " of the current style)" : "";
+      var headerText;
+      if (oldGenTotal > 0 && sameGenTotal > 0) {
+        headerText = "<strong>" + fmtQty(d.availableStockTail) + " units</strong> not in the active range: " +
+          fmtQty(oldGenTotal) + " of old generation, " + fmtQty(sameGenTotal) +
+          " in a retired code of this same style" + activeNote + ".";
+      } else if (sameGenTotal > 0) {
+        headerText = "<strong>" + fmtQty(sameGenTotal) + " units</strong> in a retired code of this same style" + activeNote + ".";
+      } else {
+        headerText = "<strong>" + fmtQty(oldGenTotal) + " units</strong> of old generation in stock" + activeNote + ".";
+      }
+      var tailHeader = '<div class="alert-line">' + headerText + "</div>";
       var tailLines = (d.tailStyles || []).map(function (s) {
         return '<div class="alert-line">' + escapeHtml(s.style) + " (code " + escapeHtml(s.code) + ") — " +
-          fmtQty(s.availableStock) + " units</div>";
+          fmtQty(s.availableStock) + " units" + (s.sameGeneration ? " — same style, retired code" : "") + "</div>";
       }).join("");
       alerts += '<div class="alert tail">' + tailHeader + tailLines + "</div>";
     }
@@ -793,7 +817,11 @@ textarea.action-note {
 
     var items = current.items.filter(function (d) {
       if (!matchesSeason(d, state.season)) return false;
-      if (state.flaggedOnly && !needsDecision(d)) return false;
+      if (state.flagDiscrepancy || state.flagOverstock) {
+        var matchesFlag = (state.flagDiscrepancy && d.hasForecastDiscrepancy) ||
+          (state.flagOverstock && d.availableStockTail > 0);
+        if (!matchesFlag) return false;
+      }
       if (state.search && d.franchise.toLowerCase().indexOf(state.search) === -1) return false;
       return true;
     });
@@ -949,10 +977,16 @@ textarea.action-note {
     state.sort = e.target.value;
     renderBoard();
   });
-  var flaggedToggle = document.getElementById("flaggedToggle");
-  flaggedToggle.addEventListener("click", function () {
-    state.flaggedOnly = !state.flaggedOnly;
-    flaggedToggle.classList.toggle("active", state.flaggedOnly);
+  var discrepancyToggle = document.getElementById("discrepancyToggle");
+  discrepancyToggle.addEventListener("click", function () {
+    state.flagDiscrepancy = !state.flagDiscrepancy;
+    discrepancyToggle.classList.toggle("active", state.flagDiscrepancy);
+    renderBoard();
+  });
+  var overstockToggle = document.getElementById("overstockToggle");
+  overstockToggle.addEventListener("click", function () {
+    state.flagOverstock = !state.flagOverstock;
+    overstockToggle.classList.toggle("active", state.flagOverstock);
     renderBoard();
   });
 
@@ -996,7 +1030,9 @@ textarea.action-note {
 
   document.getElementById("footerNote").textContent =
     DATA.length + " franchises across " + LAYERS.length + " layers · " +
-    DATA.filter(needsDecision).length + " flagged (MOQ or leftover stock) · data as of 29 Oct 2026";
+    DATA.filter(function (d) { return d.hasForecastDiscrepancy; }).length + " with an SS28 forecast discrepancy · " +
+    DATA.filter(function (d) { return d.availableStockTail > 0; }).length + " with non-active item overstocks · " +
+    "data as of 29 Oct 2026";
 
   renderNav();
   renderBoard();

@@ -35,6 +35,11 @@ import openpyxl
 RR_DIR = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(RR_DIR / "scripts"))
 from build_franchise_list import build_rows  # noqa: E402
+from build_forecast_discrepancies import load_ss28_qty_by_code  # noqa: E402
+
+REPO_ROOT = RR_DIR.parents[1]
+sys.path.insert(0, str(REPO_ROOT / "data" / "ss26_portfolio_tiering" / "scripts"))
+import ss26_lib as lib  # noqa: E402
 
 OUTPUTS_DIR = RR_DIR / "outputs"
 MOQ_PATH = OUTPUTS_DIR / "SS28_MOQ_Exceptions.xlsx"
@@ -42,15 +47,25 @@ INVENTORY_PATH = OUTPUTS_DIR / "SS27_Inventory_Review.xlsx"
 
 
 def load_moq_by_base() -> dict[str, list[dict]]:
+    """Each MOQ-exception row also carries the SS28 forecast CSV's own Qty
+    for the same style Code, and whether it disagrees with the MOQ email's
+    FC1 demand (RR-023) -- surfaced as its own "SS28 forecast discrepancy"
+    flag/toggle on the board, separate from the MOQ shortfall itself."""
+    ss28_csv_qty_by_code = load_ss28_qty_by_code()
     wb = openpyxl.load_workbook(MOQ_PATH, data_only=True)
     ws = wb["SS28 MOQ Exceptions"]
     by_base: dict[str, list[dict]] = defaultdict(list)
     for r in ws.iter_rows(min_row=2, values_only=True):
         base = r[2]
+        code, demand_fc1 = r[0], r[11]
+        csv_qty = ss28_csv_qty_by_code.get(code)
+        has_discrepancy = csv_qty is None or round(csv_qty) != demand_fc1
         by_base[base].append({
-            "code": r[0], "style": r[1], "colorway": r[6],
-            "moq_style": r[9], "demand_fc1": r[11], "shortfall": r[12],
+            "code": code, "style": r[1], "colorway": r[6],
+            "moq_style": r[9], "demand_fc1": demand_fc1, "shortfall": r[12],
             "buying_comment": r[13], "merch_comment": r[14],
+            "ss28CsvQty": round(csv_qty) if csv_qty is not None else None,
+            "hasDiscrepancy": has_discrepancy,
         })
     return dict(by_base)
 
@@ -108,6 +123,12 @@ def build() -> list[dict]:
     for r in franchise_rows:
         base = r["_base"]
         inv = inventory_by_base.get(base, {})
+        moq = moq_by_base.get(base, [])
+        franchise_version = lib.version_token(r["Franchise"])
+        tail_styles = []
+        for s in tail_styles_by_base.get(base, []):
+            tail_styles.append({**s, "sameGeneration": lib.version_token(s["style"]) == franchise_version
+                                 and franchise_version is not None})
         out.append({
             "base": base,
             "franchise": r["Franchise"],
@@ -141,11 +162,12 @@ def build() -> list[dict]:
             "forecastQtySS28": r["_forecast_ss28_qty"],
             "forecastGPSS28": r["_forecast_ss28_gp"],
             "imageFile": r["_image_file"],
-            "moq": moq_by_base.get(base, []),
+            "moq": moq,
+            "hasForecastDiscrepancy": any(m["hasDiscrepancy"] for m in moq),
             "availableStockActive": inv.get("available_active", 0),
             "availableStockTail": inv.get("available_not_active", 0),
             "skusNotInRange": inv.get("skus_not_in_range", 0),
-            "tailStyles": tail_styles_by_base.get(base, []),
+            "tailStyles": tail_styles,
         })
     return out
 
@@ -157,7 +179,11 @@ if __name__ == "__main__":
         json.dump(data, f, indent=2, ensure_ascii=False)
 
     n_moq = sum(1 for d in data if d["moq"])
+    n_discrepancy = sum(1 for d in data if d["hasForecastDiscrepancy"])
     n_tail = sum(1 for d in data if d["availableStockTail"])
     n_images = sum(1 for d in data if d["imageFile"])
+    n_same_gen = sum(1 for d in data for s in d["tailStyles"] if s["sameGeneration"])
     print(f"{len(data)} franchises written to {out_path}")
-    print(f"{n_moq} with MOQ flags, {n_tail} with inventory tail, {n_images} with images")
+    print(f"{n_moq} with MOQ flags ({n_discrepancy} with a forecast discrepancy), "
+          f"{n_tail} with inventory tail, {n_images} with images")
+    print(f"{n_same_gen} tail-style lines are a retired code of the SAME generation, not an older one")
