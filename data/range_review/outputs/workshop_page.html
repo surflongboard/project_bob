@@ -669,8 +669,16 @@ textarea.action-note {
     if (d.activeSS28) seasons.push("SS28");
 
     var forecastQty = seasonQty(d), forecastGP = seasonGP(d);
-    var forecastLabel = state.season === "all" ? "Forecast Qty" : "Forecast Qty (" + state.season + ")";
-    var gpLabel = state.season === "all" ? "GP% blended" : "GP% (" + state.season + ")";
+    // FW27 round is confirmed FC3 (RR-012); SS28 round is only named "Forecast_1" in its
+    // filename -- no vintage column confirms it, and it does NOT reconcile with the MOQ
+    // email's independently-sourced FC1 figure for the same SKU (RR-023, Open) -- labeled
+    // "F1?" rather than a confident "FC1" so the gap stays visible, not papered over.
+    var forecastLabel = state.season === "FW27" ? "Forecast Qty (FW27 FC3)" :
+      state.season === "SS28" ? "Forecast Qty (SS28 F1?)" :
+      "Forecast Qty (FW27 FC3 + SS28 F1?)";
+    var gpLabel = state.season === "FW27" ? "GP% (FW27 FC3)" :
+      state.season === "SS28" ? "GP% (SS28 F1?)" :
+      "GP% blended (FC3 + F1?)";
 
     var chips = "";
     if (d.coreAssortmentFW27) chips += '<span class="chip core">Core FW27</span>';
