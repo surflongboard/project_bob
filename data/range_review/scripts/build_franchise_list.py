@@ -5,10 +5,13 @@ name, gender NOT a separate split), with layer, business area, season
 coverage, gender coverage, and Target RRP.
 
 Margin target: the FW27/SS28 range files have no such field (RR-008), but
-the SS28 "Pic Centric" workbook does (Target GM0%) -- pulled in here for
-franchises with an SS28 code, via build_product_images.py's extracted
-outputs/ss28_gm_by_code.json. FW27-only franchises stay blank until an
-equivalent FW27 Pic Centric file arrives.
+the FW27 and SS28 "Pic Centric" workbooks do (Target GM0%) -- pulled in
+here via build_product_images.py's combined outputs/gm_by_code.json
+(both seasons, SS28 winning on the rare conflict -- see that script's
+docstring). Looked up by the franchise's own representative ("best")
+code, so it works regardless of which season that code is from. Still
+blank for the small number of franchises with no Pic Centric match at
+all in either season.
 
 No embedded product images in this list (tried, didn't look good -- see
 RR-015). The extracted photos stay in outputs/product_images/ as a
@@ -85,11 +88,11 @@ INPUTS_DIR = RR_DIR / "inputs"
 OUTPUTS_DIR = RR_DIR / "outputs"
 FW27_PATH = INPUTS_DIR / "FW27_28_Oct_2026.xlsx"
 SS28_PATH = INPUTS_DIR / "SS28_28_Oct_2026.xlsx"
-SS28_GM_PATH = OUTPUTS_DIR / "ss28_gm_by_code.json"
+GM_BY_CODE_PATH = OUTPUTS_DIR / "gm_by_code.json"
 
 
-def load_ss28_gm() -> dict[str, dict]:
-    with open(SS28_GM_PATH) as f:
+def load_gm_by_code() -> dict[str, dict]:
+    with open(GM_BY_CODE_PATH) as f:
         return json.load(f)
 
 # Gender-only strip (keeps version token) -- reuses GENDER_TOKENS from
@@ -194,7 +197,7 @@ def load_forecast_by_key() -> dict[tuple[str, str], list[dict]]:
 def build_rows() -> list[dict]:
     core_fw27 = load_core_assortment_fw27()
     forecast_by_key = load_forecast_by_key()
-    ss28_gm = load_ss28_gm()
+    gm_by_code = load_gm_by_code()
     rows = load_style_rows(FW27_PATH, "FW27") + load_style_rows(SS28_PATH, "SS28")
     abs_bases, af_bases = compute_abs_af_flags(rows)
     main_range = [r for r in rows
@@ -230,10 +233,13 @@ def build_rows() -> list[dict]:
         rrp_display = rrps[0] if len(rrps) <= 1 else f"{min(rrps)}-{max(rrps)}"
         total_colors = sum(r["active_colors"] for r in items)
 
-        ss28_items = [r for r in items if r["season_label"] == "SS28"]
-        ss28_best = max(ss28_items, key=lambda r: r["version_rank"]) if ss28_items else None
-        ss28_gm_entry = ss28_gm.get(str(ss28_best["code"])) if ss28_best else None
-        margin_target = ss28_gm_entry["target_gm0_pct"] if ss28_gm_entry else ""
+        gm_entry = gm_by_code.get(str(best["code"]))
+        if gm_entry is None:  # fall back to any other item's code with a Pic Centric match
+            for r in items:
+                gm_entry = gm_by_code.get(str(r["code"]))
+                if gm_entry:
+                    break
+        margin_target = gm_entry["target_gm0_pct"] if gm_entry else ""
 
         forecast_rows = [fr for r in items for fr in forecast_by_key.get((r["season_label"], r["code"]), [])]
         qty, gross, cogs, gp_pct = totals(forecast_rows)
@@ -313,10 +319,10 @@ def write_workbook(rows: list[dict], path: Path) -> None:
                                          "Blueberry special editions and AF/Asian Fit variants "
                                          "are folded into their base franchise, flagged in the "
                                          "note column, not listed separately (RR-005/RR-007)."])
-    notes.append(["Margin target", "Target GM0% from the SS28 'Pic Centric' workbook -- the "
-                                    "FW27/SS28 range files themselves have no margin field "
-                                    "(RR-008). SS28-only for now; blank for franchises with no "
-                                    "SS28 code until an equivalent FW27 file arrives."])
+    notes.append(["Margin target", "Target GM0% from the FW27+SS28 'Pic Centric' workbooks -- "
+                                    "the FW27/SS28 range files themselves have no margin field "
+                                    "(RR-008). Blank only for franchises with no Pic Centric "
+                                    "match in either season."])
     notes.append(["Consumer Activity", "Raw multi-select field from the range files (e.g. "
                                         "'Trekking / Hiking, Everyday Outdoor') -- union of every "
                                         "distinct activity tag across the franchise's styles, "

@@ -1,0 +1,4502 @@
+{
+  "608822": {
+    "style": "Airak GTX Prototype Jacket Men",
+    "source_season": "FW27",
+    "target_rrp": 6000,
+    "target_gm0_pct": 59.2,
+    "sample_gm0_pct": 53.3,
+    "gm0_pct": 53.3,
+    "image_file": "608822.jpeg"
+  },
+  "608172": {
+    "style": "Alert GTX Jacket Men",
+    "source_season": "FW27",
+    "target_rrp": 3800,
+    "target_gm0_pct": 58.0,
+    "sample_gm0_pct": 60.5,
+    "gm0_pct": 60.5,
+    "image_file": "608172.jpeg"
+  },
+  "608192": {
+    "style": "Alert GTX Jacket Women",
+    "source_season": "FW27",
+    "target_rrp": 3800,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 65.3,
+    "gm0_pct": 66.3,
+    "image_file": "608192.jpeg"
+  },
+  "607645": {
+    "style": "Alert Mid Pant Men",
+    "source_season": "SS28",
+    "target_rrp": 1700,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 62.1,
+    "gm0_pct": 67.4,
+    "image_file": "607645.jpeg"
+  },
+  "607649": {
+    "style": "Alert Mid Pant Women",
+    "source_season": "SS28",
+    "target_rrp": 1700,
+    "target_gm0_pct": 63.0,
+    "sample_gm0_pct": 65.2,
+    "gm0_pct": 68.4,
+    "image_file": "607649.jpeg"
+  },
+  "607936": {
+    "style": "Alper Proof Jacket Men",
+    "source_season": "FW27",
+    "target_rrp": 4000,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 55.7,
+    "gm0_pct": 56.1,
+    "image_file": "607936.jpeg"
+  },
+  "607937": {
+    "style": "Alper Proof Jacket Women",
+    "source_season": "FW27",
+    "target_rrp": 4000,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 57.6,
+    "gm0_pct": 58.4,
+    "image_file": "607937.jpeg"
+  },
+  "607939": {
+    "style": "Alper Proof Pant Men",
+    "source_season": "FW27",
+    "target_rrp": 3200,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 56.9,
+    "gm0_pct": 57.2,
+    "image_file": "607939.jpeg"
+  },
+  "607938": {
+    "style": "Alper Proof Pant Women",
+    "source_season": "FW27",
+    "target_rrp": 3200,
+    "target_gm0_pct": 64.0,
+    "sample_gm0_pct": 57.7,
+    "gm0_pct": 58.0,
+    "image_file": "607938.jpeg"
+  },
+  "608690": {
+    "style": "Aresk Beanie",
+    "source_season": "FW27",
+    "target_rrp": 450,
+    "target_gm0_pct": 65.0,
+    "sample_gm0_pct": 73.0,
+    "gm0_pct": 0,
+    "image_file": "608690.jpeg"
+  },
+  "608363": {
+    "style": "Aska Insulated Jacket Men",
+    "source_season": "FW27",
+    "target_rrp": 2500,
+    "target_gm0_pct": 63.5,
+    "sample_gm0_pct": 65.3,
+    "gm0_pct": 65.0,
+    "image_file": "608363.jpeg"
+  },
+  "608365": {
+    "style": "Aska Insulated Jacket Women",
+    "source_season": "FW27",
+    "target_rrp": 2500,
+    "target_gm0_pct": 64.5,
+    "sample_gm0_pct": 67.8,
+    "gm0_pct": 67.5,
+    "image_file": "608365.jpeg"
+  },
+  "608530": {
+    "style": "Aska Insulated Pant Men",
+    "source_season": "FW27",
+    "target_rrp": 2000,
+    "target_gm0_pct": 59.2,
+    "sample_gm0_pct": 70.4,
+    "gm0_pct": 70.0,
+    "image_file": "608530.jpeg"
+  },
+  "608529": {
+    "style": "Aska Insulated Pant Women",
+    "source_season": "FW27",
+    "target_rrp": 2000,
+    "target_gm0_pct": 57.5,
+    "sample_gm0_pct": 71.2,
+    "gm0_pct": 70.9,
+    "image_file": "608529.jpeg"
+  },
+  "608395": {
+    "style": "Aska Proof Jacket Men",
+    "source_season": "SS28",
+    "target_rrp": 2200,
+    "target_gm0_pct": 59.2,
+    "sample_gm0_pct": 66.8,
+    "gm0_pct": 60.7,
+    "image_file": "608395.jpeg"
+  },
+  "608396": {
+    "style": "Aska Proof Jacket Women",
+    "source_season": "SS28",
+    "target_rrp": 2200,
+    "target_gm0_pct": 57.5,
+    "sample_gm0_pct": 69.6,
+    "gm0_pct": 63.6,
+    "image_file": "608396.jpeg"
+  },
+  "608397": {
+    "style": "Aska Proof Pant Men",
+    "source_season": "SS28",
+    "target_rrp": 1700,
+    "target_gm0_pct": 59.2,
+    "sample_gm0_pct": 66.9,
+    "gm0_pct": 66.6,
+    "image_file": "608397.jpeg"
+  },
+  "608398": {
+    "style": "Aska Proof Pant Women",
+    "source_season": "SS28",
+    "target_rrp": 1700,
+    "target_gm0_pct": 57.5,
+    "sample_gm0_pct": 67.7,
+    "gm0_pct": 67.3,
+    "image_file": "608398.jpeg"
+  },
+  "608656": {
+    "style": "Aska Softshell Hood Men",
+    "source_season": "SS28",
+    "target_rrp": 1800,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 72.4,
+    "gm0_pct": 72.7,
+    "image_file": "608656.jpeg"
+  },
+  "608658": {
+    "style": "Aska Softshell Hood Women",
+    "source_season": "SS28",
+    "target_rrp": 1800,
+    "target_gm0_pct": 64.0,
+    "sample_gm0_pct": 74.2,
+    "gm0_pct": 74.6,
+    "image_file": "608658.jpeg"
+  },
+  "608657": {
+    "style": "Aska Softshell Pant Men",
+    "source_season": "SS28",
+    "target_rrp": 1400,
+    "target_gm0_pct": 65.0,
+    "sample_gm0_pct": 70.7,
+    "gm0_pct": 71.5,
+    "image_file": "608657.jpeg"
+  },
+  "608659": {
+    "style": "Aska Softshell Pant Women",
+    "source_season": "SS28",
+    "target_rrp": 1400,
+    "target_gm0_pct": 65.0,
+    "sample_gm0_pct": 71.4,
+    "gm0_pct": 71.5,
+    "image_file": "608659.jpeg"
+  },
+  "607593": {
+    "style": "Astral GTX II Jacket Men",
+    "source_season": "SS28",
+    "target_rrp": 4500,
+    "target_gm0_pct": 61.5,
+    "sample_gm0_pct": 52.3,
+    "gm0_pct": 57.0,
+    "image_file": "607593.jpeg"
+  },
+  "607563": {
+    "style": "Astral GTX II Jacket Women",
+    "source_season": "SS28",
+    "target_rrp": 4500,
+    "target_gm0_pct": 61.6,
+    "sample_gm0_pct": 56.9,
+    "gm0_pct": 61.0,
+    "image_file": "607563.jpeg"
+  },
+  "608688": {
+    "style": "Aze II Beanie",
+    "source_season": "FW27",
+    "target_rrp": 300,
+    "target_gm0_pct": 61.3,
+    "sample_gm0_pct": 61.4,
+    "gm0_pct": 61.2,
+    "image_file": "608688.jpeg"
+  },
+  "338156": {
+    "style": "Backup",
+    "source_season": "SS28",
+    "target_rrp": 1500,
+    "target_gm0_pct": 64.4,
+    "sample_gm0_pct": 63.8,
+    "gm0_pct": 98.6,
+    "image_file": "338156.jpeg"
+  },
+  "608451": {
+    "style": "Base Mimic II Hood Men",
+    "source_season": "FW27",
+    "target_rrp": 2200,
+    "target_gm0_pct": 61.5,
+    "sample_gm0_pct": 72.0,
+    "gm0_pct": 99.3,
+    "image_file": "608451.jpeg"
+  },
+  "608452": {
+    "style": "Base Mimic II Hood Women",
+    "source_season": "FW27",
+    "target_rrp": 2200,
+    "target_gm0_pct": 65.4,
+    "sample_gm0_pct": 73.3,
+    "gm0_pct": 99.3,
+    "image_file": "608452.jpeg"
+  },
+  "608587": {
+    "style": "Brand Five Panel Cap",
+    "source_season": "SS28",
+    "target_rrp": 450,
+    "target_gm0_pct": 61.3,
+    "sample_gm0_pct": 72.8,
+    "gm0_pct": 99.1,
+    "image_file": "608587.jpeg"
+  },
+  "607824": {
+    "style": "Breeze Mimic Hood Men",
+    "source_season": "FW27",
+    "target_rrp": 2600,
+    "target_gm0_pct": 65.0,
+    "sample_gm0_pct": 68.8,
+    "gm0_pct": 69.2,
+    "image_file": "607824.jpeg"
+  },
+  "607825": {
+    "style": "Breeze Mimic Hood Women",
+    "source_season": "FW27",
+    "target_rrp": 2600,
+    "target_gm0_pct": 64.0,
+    "sample_gm0_pct": 71.2,
+    "gm0_pct": 70.8,
+    "image_file": "607825.jpeg"
+  },
+  "607680": {
+    "style": "Breeze Proof Jacket Men",
+    "source_season": "SS28",
+    "target_rrp": 2000,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 64.0,
+    "gm0_pct": 98.0,
+    "image_file": "607680.jpeg"
+  },
+  "608838": {
+    "style": "Breeze Proof Jacket Men AF",
+    "source_season": "FW27",
+    "target_rrp": 2000,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 62.7,
+    "gm0_pct": 98.0,
+    "image_file": "608838.jpeg"
+  },
+  "607681": {
+    "style": "Breeze Proof Jacket Women",
+    "source_season": "SS28",
+    "target_rrp": 2000,
+    "target_gm0_pct": 61.0,
+    "sample_gm0_pct": 66.1,
+    "gm0_pct": 98.1,
+    "image_file": "607681.jpeg"
+  },
+  "608839": {
+    "style": "Breeze Proof Jacket Women AF",
+    "source_season": "FW27",
+    "target_rrp": 2000,
+    "target_gm0_pct": 61.0,
+    "sample_gm0_pct": 64.9,
+    "gm0_pct": 98.1,
+    "image_file": "608839.jpeg"
+  },
+  "608683": {
+    "style": "Brisen Tech Mid Hood Men",
+    "source_season": "SS28",
+    "target_rrp": 1800,
+    "target_gm0_pct": 58.0,
+    "sample_gm0_pct": 52.7,
+    "gm0_pct": 51.0,
+    "image_file": "608683.jpeg"
+  },
+  "608684": {
+    "style": "Brisen Tech Mid Hood Women",
+    "source_season": "SS28",
+    "target_rrp": 1800,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 58.1,
+    "gm0_pct": 56.1,
+    "image_file": "608684.jpeg"
+  },
+  "608351": {
+    "style": "Buteo Mid II Jacket Men",
+    "source_season": "SS28",
+    "target_rrp": 900,
+    "target_gm0_pct": 65.0,
+    "sample_gm0_pct": 65.1,
+    "gm0_pct": 63.9,
+    "image_file": "608351.jpeg"
+  },
+  "608759": {
+    "style": "Buteo Mid II Jacket Men AF",
+    "source_season": "FW27",
+    "target_rrp": 900,
+    "target_gm0_pct": 65.0,
+    "sample_gm0_pct": 68.7,
+    "gm0_pct": 63.9,
+    "image_file": "608759.jpeg"
+  },
+  "608352": {
+    "style": "Buteo Mid II Jacket Women",
+    "source_season": "SS28",
+    "target_rrp": 900,
+    "target_gm0_pct": 68.0,
+    "sample_gm0_pct": 70.5,
+    "gm0_pct": 65.5,
+    "image_file": "608352.jpeg"
+  },
+  "608760": {
+    "style": "Buteo Mid II Jacket Women AF",
+    "source_season": "FW27",
+    "target_rrp": 900,
+    "target_gm0_pct": 68.0,
+    "sample_gm0_pct": 70.7,
+    "gm0_pct": 65.5,
+    "image_file": "608760.jpeg"
+  },
+  "609008": {
+    "style": "Buteo Mid Vest Men",
+    "source_season": "FW27",
+    "target_rrp": 700,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 59.5,
+    "gm0_pct": 59.9,
+    "image_file": "609008.jpeg"
+  },
+  "609009": {
+    "style": "Buteo Mid Vest Women",
+    "source_season": "FW27",
+    "target_rrp": 700,
+    "target_gm0_pct": 63.0,
+    "sample_gm0_pct": 62.2,
+    "gm0_pct": 62.5,
+    "image_file": "609009.jpeg"
+  },
+  "608421": {
+    "style": "Chaos GTX II Jacket Men",
+    "source_season": "SS28",
+    "target_rrp": 3500,
+    "target_gm0_pct": 59.2,
+    "sample_gm0_pct": 67.1,
+    "gm0_pct": 68.5,
+    "image_file": "608421.jpeg"
+  },
+  "608422": {
+    "style": "Chaos GTX II Jacket Women",
+    "source_season": "SS28",
+    "target_rrp": 3500,
+    "target_gm0_pct": 57.5,
+    "sample_gm0_pct": 69.1,
+    "gm0_pct": 70.4,
+    "image_file": "608422.jpeg"
+  },
+  "605630": {
+    "style": "Chill Down Hood Men",
+    "source_season": "FW27",
+    "target_rrp": 3400,
+    "target_gm0_pct": 61.5,
+    "sample_gm0_pct": 57.4,
+    "gm0_pct": 59.7,
+    "image_file": "605630.jpeg"
+  },
+  "607562": {
+    "style": "Corker Large",
+    "source_season": "SS28",
+    "target_rrp": 1300,
+    "target_gm0_pct": 58.4,
+    "sample_gm0_pct": 52.4,
+    "gm0_pct": 57.8,
+    "image_file": "607562.jpeg"
+  },
+  "607561": {
+    "style": "Corker Medium",
+    "source_season": "SS28",
+    "target_rrp": 1200,
+    "target_gm0_pct": 58.9,
+    "sample_gm0_pct": 58.4,
+    "gm0_pct": 61.5,
+    "image_file": "607561.jpeg"
+  },
+  "608701": {
+    "style": "Courier Messenger Bag",
+    "source_season": "SS28",
+    "target_rrp": 1600,
+    "target_gm0_pct": 61.8,
+    "sample_gm0_pct": 99.5,
+    "gm0_pct": 0,
+    "image_file": "608701.jpeg"
+  },
+  "608565": {
+    "style": "Fast Hike Low Men",
+    "source_season": "SS28",
+    "target_rrp": 1700,
+    "target_gm0_pct": 58.9,
+    "sample_gm0_pct": 57.4,
+    "gm0_pct": 57.5,
+    "image_file": "608565.jpeg"
+  },
+  "608567": {
+    "style": "Fast Hike Low Women",
+    "source_season": "SS28",
+    "target_rrp": 1700,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 53.2,
+    "gm0_pct": 57.5,
+    "image_file": "608567.jpeg"
+  },
+  "608450": {
+    "style": "Fiction Down II Hood Men",
+    "source_season": "FW27",
+    "target_rrp": 2800,
+    "target_gm0_pct": 61.5,
+    "sample_gm0_pct": 63.1,
+    "gm0_pct": 65.3,
+    "image_file": "608450.jpeg"
+  },
+  "608501": {
+    "style": "Fjatla 40",
+    "source_season": "SS28",
+    "target_rrp": 1000,
+    "target_gm0_pct": 58.5,
+    "sample_gm0_pct": 63.2,
+    "gm0_pct": 0,
+    "image_file": "608501.jpeg"
+  },
+  "608500": {
+    "style": "Fjatla 60",
+    "source_season": "SS28",
+    "target_rrp": 1200,
+    "target_gm0_pct": 60.7,
+    "sample_gm0_pct": 66.9,
+    "gm0_pct": 0,
+    "image_file": "608500.jpeg"
+  },
+  "608419": {
+    "style": "Flat accessory bag",
+    "source_season": "FW27",
+    "target_rrp": 400,
+    "target_gm0_pct": 73.0,
+    "sample_gm0_pct": 72.8,
+    "gm0_pct": 0,
+    "image_file": "608419.jpeg"
+  },
+  "608443": {
+    "style": "Fram 1L",
+    "source_season": "SS28",
+    "target_rrp": 650,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 65.5,
+    "gm0_pct": 63.8,
+    "image_file": "608443.jpeg"
+  },
+  "608481": {
+    "style": "Fram Mimic Jacket Men",
+    "source_season": "FW27",
+    "target_rrp": 2500,
+    "target_gm0_pct": 61.0,
+    "sample_gm0_pct": 60.8,
+    "gm0_pct": 52.9,
+    "image_file": "608481.jpeg"
+  },
+  "608482": {
+    "style": "Fram Mimic Jacket Women",
+    "source_season": "FW27",
+    "target_rrp": 2500,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 63.3,
+    "gm0_pct": 56.8,
+    "image_file": "608482.jpeg"
+  },
+  "607646": {
+    "style": "Front Flex Pant Men",
+    "source_season": "SS28",
+    "target_rrp": 1500,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 59.7,
+    "gm0_pct": 62.0,
+    "image_file": "607646.jpeg"
+  },
+  "607650": {
+    "style": "Front Flex Pant Women",
+    "source_season": "SS28",
+    "target_rrp": 1500,
+    "target_gm0_pct": 63.0,
+    "sample_gm0_pct": 62.1,
+    "gm0_pct": 64.1,
+    "image_file": "607650.jpeg"
+  },
+  "607823": {
+    "style": "Front Proof II Jacket Men",
+    "source_season": "SS28",
+    "target_rrp": 3300,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 58.8,
+    "gm0_pct": 51.1,
+    "image_file": "607823.jpeg"
+  },
+  "607821": {
+    "style": "Front Proof II Jacket Women",
+    "source_season": "SS28",
+    "target_rrp": 3300,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 61.0,
+    "gm0_pct": 53.9,
+    "image_file": "607821.jpeg"
+  },
+  "607817": {
+    "style": "Fun\u00e4s Pile Hood Men",
+    "source_season": "FW27",
+    "target_rrp": 1800,
+    "target_gm0_pct": 62.9,
+    "sample_gm0_pct": 64.3,
+    "gm0_pct": 63.6,
+    "image_file": "607817.jpeg"
+  },
+  "607818": {
+    "style": "Fun\u00e4s Pile Hood Women",
+    "source_season": "FW27",
+    "target_rrp": 1800,
+    "target_gm0_pct": 66.0,
+    "sample_gm0_pct": 67.8,
+    "gm0_pct": 67.1,
+    "image_file": "607818.jpeg"
+  },
+  "608821": {
+    "style": "Hagl\u00f6fs Alpha Prototype Sweater Men",
+    "source_season": "FW27",
+    "target_rrp": 1800,
+    "target_gm0_pct": 61.1,
+    "sample_gm0_pct": 54.2,
+    "gm0_pct": 55.9,
+    "image_file": "608821.jpeg"
+  },
+  "608779": {
+    "style": "Hagl\u00f6fs Fast Hike PROOF Low Men",
+    "source_season": "SS28",
+    "target_rrp": 1900,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 59.1,
+    "gm0_pct": 0,
+    "image_file": "608779.jpeg"
+  },
+  "608780": {
+    "style": "Hagl\u00f6fs Fast Hike PROOF Low Women",
+    "source_season": "SS28",
+    "target_rrp": 1900,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 58.1,
+    "gm0_pct": 0,
+    "image_file": "608780.jpeg"
+  },
+  "608164": {
+    "style": "Hagl\u00f6fs Hoodie Men",
+    "source_season": "SS28",
+    "target_rrp": 1500,
+    "target_gm0_pct": 58.0,
+    "sample_gm0_pct": 56.1,
+    "gm0_pct": 56.6,
+    "image_file": "608164.jpeg"
+  },
+  "608184": {
+    "style": "Hagl\u00f6fs Hoodie Women",
+    "source_season": "SS28",
+    "target_rrp": 1500,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 60.7,
+    "gm0_pct": 60.4,
+    "image_file": "608184.jpeg"
+  },
+  "608538": {
+    "style": "Hagl\u00f6fs Horizon Hike GTX WL Mid Men",
+    "source_season": "FW27",
+    "target_rrp": 2600,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 61.1,
+    "gm0_pct": 57.4,
+    "image_file": "608538.jpeg"
+  },
+  "608541": {
+    "style": "Hagl\u00f6fs Horizon Hike GTX WL Mid Women",
+    "source_season": "FW27",
+    "target_rrp": 2600,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 61.1,
+    "gm0_pct": 99.4,
+    "image_file": "608541.jpeg"
+  },
+  "608093": {
+    "style": "Hagl\u00f6fs Incline GTX Mid",
+    "source_season": "SS28",
+    "target_rrp": 3000,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 57.4,
+    "gm0_pct": 99.2,
+    "image_file": "608093.jpeg"
+  },
+  "607514": {
+    "style": "Hagl\u00f6fs Incline Pro GTX High",
+    "source_season": "SS28",
+    "target_rrp": 3800,
+    "target_gm0_pct": 48.0,
+    "sample_gm0_pct": 58.3,
+    "gm0_pct": 99.5,
+    "image_file": "607514.jpeg"
+  },
+  "608277": {
+    "style": "Hagl\u00f6fs Krusa GTX II Low Men",
+    "source_season": "SS28",
+    "target_rrp": 2000,
+    "target_gm0_pct": 55.9,
+    "sample_gm0_pct": 59.7,
+    "gm0_pct": 54.8,
+    "image_file": "608277.jpeg"
+  },
+  "608283": {
+    "style": "Hagl\u00f6fs Krusa GTX II Low Women",
+    "source_season": "SS28",
+    "target_rrp": 2000,
+    "target_gm0_pct": 58.3,
+    "sample_gm0_pct": 59.7,
+    "gm0_pct": 0,
+    "image_file": "608283.jpeg"
+  },
+  "608295": {
+    "style": "Hagl\u00f6fs L.I.M Horizon GTX Low Men",
+    "source_season": "SS28",
+    "target_rrp": 2200,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 54.8,
+    "gm0_pct": 53.7,
+    "image_file": "608295.jpeg"
+  },
+  "608296": {
+    "style": "Hagl\u00f6fs L.I.M Horizon GTX Low Women",
+    "source_season": "SS28",
+    "target_rrp": 2200,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 55.2,
+    "gm0_pct": 0,
+    "image_file": "608296.jpeg"
+  },
+  "608703": {
+    "style": "Hagl\u00f6fs L.I.M Horizon GTX Mid Men",
+    "source_season": "SS28",
+    "target_rrp": 2300,
+    "target_gm0_pct": 56.0,
+    "sample_gm0_pct": 56.1,
+    "gm0_pct": 0,
+    "image_file": "608703.jpeg"
+  },
+  "608705": {
+    "style": "Hagl\u00f6fs L.I.M Horizon GTX Mid Women",
+    "source_season": "SS28",
+    "target_rrp": 2300,
+    "target_gm0_pct": 56.0,
+    "sample_gm0_pct": 56.1,
+    "gm0_pct": 0,
+    "image_file": "608705.jpeg"
+  },
+  "608290": {
+    "style": "Hagl\u00f6fs L.I.M Horizon Hike GTX Low Men",
+    "source_season": "SS28",
+    "target_rrp": 2200,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 58.0,
+    "gm0_pct": 57.9,
+    "image_file": "608290.jpeg"
+  },
+  "608292": {
+    "style": "Hagl\u00f6fs L.I.M Horizon Hike GTX Low Women",
+    "source_season": "SS28",
+    "target_rrp": 2200,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 58.4,
+    "gm0_pct": 99.2,
+    "image_file": "608292.jpeg"
+  },
+  "608289": {
+    "style": "Hagl\u00f6fs L.I.M Horizon Hike GTX Mid Men",
+    "source_season": "SS28",
+    "target_rrp": 2500,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 59.4,
+    "gm0_pct": 60.1,
+    "image_file": "608289.jpeg"
+  },
+  "608293": {
+    "style": "Hagl\u00f6fs L.I.M Horizon Hike GTX Mid Women",
+    "source_season": "SS28",
+    "target_rrp": 2500,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 59.7,
+    "gm0_pct": 99.3,
+    "image_file": "608293.jpeg"
+  },
+  "608291": {
+    "style": "Hagl\u00f6fs L.I.M Horizon Hike Light Mid Men",
+    "source_season": "FW27",
+    "target_rrp": 2000,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 58.0,
+    "gm0_pct": 57.4,
+    "image_file": "608291.jpeg"
+  },
+  "608294": {
+    "style": "Hagl\u00f6fs L.I.M Horizon Hike Light Mid Women",
+    "source_season": "FW27",
+    "target_rrp": 2000,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 58.6,
+    "gm0_pct": 99.2,
+    "image_file": "608294.jpeg"
+  },
+  "608388": {
+    "style": "Hagl\u00f6fs L.I.M Horizon Low Men",
+    "source_season": "SS28",
+    "target_rrp": 1800,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 56.8,
+    "gm0_pct": 54.8,
+    "image_file": "608388.jpeg"
+  },
+  "608389": {
+    "style": "Hagl\u00f6fs L.I.M Horizon Low Women",
+    "source_season": "SS28",
+    "target_rrp": 1800,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 57.4,
+    "gm0_pct": 0,
+    "image_file": "608389.jpeg"
+  },
+  "607660": {
+    "style": "Hagl\u00f6fs LS Tee Men",
+    "source_season": "SS28",
+    "target_rrp": 800,
+    "target_gm0_pct": 61.1,
+    "sample_gm0_pct": 63.7,
+    "gm0_pct": 63.5,
+    "image_file": "607660.jpeg"
+  },
+  "607663": {
+    "style": "Hagl\u00f6fs LS Tee Women",
+    "source_season": "SS28",
+    "target_rrp": 800,
+    "target_gm0_pct": 63.0,
+    "sample_gm0_pct": 66.0,
+    "gm0_pct": 66.0,
+    "image_file": "607663.jpeg"
+  },
+  "608858": {
+    "style": "Hagl\u00f6fs Mimic Mitten",
+    "source_season": "FW27",
+    "target_rrp": 800,
+    "target_gm0_pct": 61.3,
+    "sample_gm0_pct": 62.0,
+    "gm0_pct": 99.5,
+    "image_file": "608858.jpeg"
+  },
+  "608278": {
+    "style": "Hagl\u00f6fs Path GTX II Low Men",
+    "source_season": "SS28",
+    "target_rrp": 2100,
+    "target_gm0_pct": 54.9,
+    "sample_gm0_pct": 59.4,
+    "gm0_pct": 54.7,
+    "image_file": "608278.jpeg"
+  },
+  "608284": {
+    "style": "Hagl\u00f6fs Path GTX II Low Women",
+    "source_season": "SS28",
+    "target_rrp": 2100,
+    "target_gm0_pct": 54.9,
+    "sample_gm0_pct": 59.4,
+    "gm0_pct": 54.7,
+    "image_file": "608284.jpeg"
+  },
+  "608279": {
+    "style": "Hagl\u00f6fs Ridge GTX II Low Men",
+    "source_season": "SS28",
+    "target_rrp": 2200,
+    "target_gm0_pct": 52.4,
+    "sample_gm0_pct": 61.2,
+    "gm0_pct": 57.3,
+    "image_file": "608279.jpeg"
+  },
+  "608285": {
+    "style": "Hagl\u00f6fs Ridge GTX II Low Women",
+    "source_season": "SS28",
+    "target_rrp": 2200,
+    "target_gm0_pct": 52.4,
+    "sample_gm0_pct": 61.2,
+    "gm0_pct": 0,
+    "image_file": "608285.jpeg"
+  },
+  "608280": {
+    "style": "Hagl\u00f6fs Ridge GTX II Mid Men",
+    "source_season": "SS28",
+    "target_rrp": 2500,
+    "target_gm0_pct": 53.9,
+    "sample_gm0_pct": 60.2,
+    "gm0_pct": 57.4,
+    "image_file": "608280.jpeg"
+  },
+  "608286": {
+    "style": "Hagl\u00f6fs Ridge GTX II Mid Women",
+    "source_season": "SS28",
+    "target_rrp": 2500,
+    "target_gm0_pct": 53.4,
+    "sample_gm0_pct": 60.2,
+    "gm0_pct": 0,
+    "image_file": "608286.jpeg"
+  },
+  "608391": {
+    "style": "Hagl\u00f6fs Rosson FG Proof Mid Men",
+    "source_season": "SS28",
+    "target_rrp": 2200,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 59.8,
+    "gm0_pct": 55.4,
+    "image_file": "608391.jpeg"
+  },
+  "608392": {
+    "style": "Hagl\u00f6fs Rosson FG Proof Mid Women",
+    "source_season": "SS28",
+    "target_rrp": 2200,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 59.8,
+    "gm0_pct": 99.2,
+    "image_file": "608392.jpeg"
+  },
+  "608282": {
+    "style": "Hagl\u00f6fs Rosson Proof Mid Men",
+    "source_season": "SS28",
+    "target_rrp": 2000,
+    "target_gm0_pct": 53.4,
+    "sample_gm0_pct": 57.1,
+    "gm0_pct": 54.3,
+    "image_file": "608282.jpeg"
+  },
+  "608288": {
+    "style": "Hagl\u00f6fs Rosson Proof Mid Women",
+    "source_season": "SS28",
+    "target_rrp": 2000,
+    "target_gm0_pct": 56.2,
+    "sample_gm0_pct": 57.1,
+    "gm0_pct": 0,
+    "image_file": "608288.jpeg"
+  },
+  "608069": {
+    "style": "Hagl\u00f6fs Scand GTX Mid",
+    "source_season": "FW27",
+    "target_rrp": 2500,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 55.4,
+    "gm0_pct": 99.0,
+    "image_file": "608069.jpeg"
+  },
+  "608071": {
+    "style": "Hagl\u00f6fs Solid Pro 2 GTX Mid",
+    "source_season": "SS28",
+    "target_rrp": 3500,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 59.6,
+    "gm0_pct": 99.3,
+    "image_file": "608071.jpeg"
+  },
+  "608540": {
+    "style": "Hagl\u00f6fs Solid Pro 2 WL GTX Mid",
+    "source_season": "FW27",
+    "target_rrp": 3600,
+    "target_gm0_pct": 59.8,
+    "sample_gm0_pct": 60.7,
+    "gm0_pct": 61.9,
+    "image_file": "608540.jpeg"
+  },
+  "607658": {
+    "style": "Hagl\u00f6fs Tee Men",
+    "source_season": "SS28",
+    "target_rrp": 700,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 63.6,
+    "gm0_pct": 63.3,
+    "image_file": "607658.jpeg"
+  },
+  "607665": {
+    "style": "Hagl\u00f6fs Tee Women",
+    "source_season": "SS28",
+    "target_rrp": 700,
+    "target_gm0_pct": 61.0,
+    "sample_gm0_pct": 65.5,
+    "gm0_pct": 65.5,
+    "image_file": "607665.jpeg"
+  },
+  "608702": {
+    "style": "Hagl\u00f6fs Vertigo QL PROOF Low Men",
+    "source_season": "SS28",
+    "target_rrp": 2200,
+    "target_gm0_pct": 59.9,
+    "sample_gm0_pct": 99.2,
+    "gm0_pct": 0,
+    "image_file": "608702.jpeg"
+  },
+  "608704": {
+    "style": "Hagl\u00f6fs Vertigo QL PROOF Low Women",
+    "source_season": "SS28",
+    "target_rrp": 2200,
+    "target_gm0_pct": 59.9,
+    "sample_gm0_pct": 99.2,
+    "gm0_pct": 0,
+    "image_file": "608704.jpeg"
+  },
+  "608974": {
+    "style": "Hede Cargo II Pant Men",
+    "source_season": "SS28",
+    "target_rrp": 1800,
+    "target_gm0_pct": 55.0,
+    "sample_gm0_pct": 64.1,
+    "gm0_pct": 0,
+    "image_file": "608974.jpeg"
+  },
+  "608975": {
+    "style": "Hede Cargo II Pant Women",
+    "source_season": "SS28",
+    "target_rrp": 1800,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 65.7,
+    "gm0_pct": 0,
+    "image_file": "608975.jpeg"
+  },
+  "608102": {
+    "style": "Hede Down Coat Women",
+    "source_season": "FW27",
+    "target_rrp": 3500,
+    "target_gm0_pct": 64.0,
+    "sample_gm0_pct": 65.5,
+    "gm0_pct": 65.9,
+    "image_file": "608102.jpeg"
+  },
+  "608097": {
+    "style": "Hede Down Hood Men",
+    "source_season": "SS28",
+    "target_rrp": 2800,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 59.5,
+    "gm0_pct": 63.9,
+    "image_file": "608097.jpeg"
+  },
+  "608098": {
+    "style": "Hede Down Hood Women",
+    "source_season": "SS28",
+    "target_rrp": 2800,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 63.9,
+    "gm0_pct": 66.7,
+    "image_file": "608098.jpeg"
+  },
+  "608819": {
+    "style": "Hede Down Prototype Hood Men",
+    "source_season": "FW27",
+    "target_rrp": 3000,
+    "target_gm0_pct": 61.5,
+    "sample_gm0_pct": 59.5,
+    "gm0_pct": 59.5,
+    "image_file": "608819.jpeg"
+  },
+  "608100": {
+    "style": "Hede Down Vest Men",
+    "source_season": "SS28",
+    "target_rrp": 2000,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 63.3,
+    "gm0_pct": 68.8,
+    "image_file": "608100.jpeg"
+  },
+  "608101": {
+    "style": "Hede Down Vest Women",
+    "source_season": "SS28",
+    "target_rrp": 2000,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 67.5,
+    "gm0_pct": 70.5,
+    "image_file": "608101.jpeg"
+  },
+  "608545": {
+    "style": "Holm GTX Pant Men",
+    "source_season": "SS28",
+    "target_rrp": 2800,
+    "target_gm0_pct": 55.0,
+    "sample_gm0_pct": 56.8,
+    "gm0_pct": 56.8,
+    "image_file": "608545.jpeg"
+  },
+  "608548": {
+    "style": "Holm GTX Pant Women",
+    "source_season": "SS28",
+    "target_rrp": 2800,
+    "target_gm0_pct": 56.0,
+    "sample_gm0_pct": 59.3,
+    "gm0_pct": 59.3,
+    "image_file": "608548.jpeg"
+  },
+  "608706": {
+    "style": "Jarve Multi 22",
+    "source_season": "SS28",
+    "target_rrp": 1500,
+    "target_gm0_pct": 60.9,
+    "sample_gm0_pct": 70.6,
+    "gm0_pct": 70.6,
+    "image_file": "608706.jpeg"
+  },
+  "608707": {
+    "style": "Jarve Multi 28",
+    "source_season": "SS28",
+    "target_rrp": 1600,
+    "target_gm0_pct": 60.6,
+    "sample_gm0_pct": 69.1,
+    "gm0_pct": 0,
+    "image_file": "608707.jpeg"
+  },
+  "608531": {
+    "style": "Klyva GTX Jacket Men",
+    "source_season": "SS28",
+    "target_rrp": 3500,
+    "target_gm0_pct": 59.2,
+    "sample_gm0_pct": 63.1,
+    "gm0_pct": 63.1,
+    "image_file": "608531.jpeg"
+  },
+  "609021": {
+    "style": "Klyva GTX Jacket Men AF",
+    "source_season": "FW27",
+    "target_rrp": 3500,
+    "target_gm0_pct": 59.2,
+    "sample_gm0_pct": 63.2,
+    "gm0_pct": 63.1,
+    "image_file": "609021.jpeg"
+  },
+  "608532": {
+    "style": "Klyva GTX Jacket Women",
+    "source_season": "SS28",
+    "target_rrp": 3500,
+    "target_gm0_pct": 57.5,
+    "sample_gm0_pct": 67.1,
+    "gm0_pct": 67.1,
+    "image_file": "608532.jpeg"
+  },
+  "608600": {
+    "style": "Korp Lite Pant Men AF",
+    "source_season": "FW27",
+    "target_rrp": 1300,
+    "target_gm0_pct": 63.0,
+    "sample_gm0_pct": 67.7,
+    "gm0_pct": 67.2,
+    "image_file": "608600.jpeg"
+  },
+  "607779": {
+    "style": "Korp Mid Halfzip Men",
+    "source_season": "SS28",
+    "target_rrp": 800,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 64.3,
+    "gm0_pct": 65.9,
+    "image_file": "607779.jpeg"
+  },
+  "607782": {
+    "style": "Korp Mid Halfzip Women",
+    "source_season": "SS28",
+    "target_rrp": 800,
+    "target_gm0_pct": 65.0,
+    "sample_gm0_pct": 67.4,
+    "gm0_pct": 69.1,
+    "image_file": "607782.jpeg"
+  },
+  "607777": {
+    "style": "Korp Mid Hood Men",
+    "source_season": "SS28",
+    "target_rrp": 1000,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 65.0,
+    "gm0_pct": 67.8,
+    "image_file": "607777.jpeg"
+  },
+  "607780": {
+    "style": "Korp Mid Hood Women",
+    "source_season": "SS28",
+    "target_rrp": 1000,
+    "target_gm0_pct": 63.0,
+    "sample_gm0_pct": 68.7,
+    "gm0_pct": 71.4,
+    "image_file": "607780.jpeg"
+  },
+  "607778": {
+    "style": "Korp Mid Jacket Men",
+    "source_season": "SS28",
+    "target_rrp": 900,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 63.1,
+    "gm0_pct": 65.7,
+    "image_file": "607778.jpeg"
+  },
+  "607781": {
+    "style": "Korp Mid Jacket Women",
+    "source_season": "SS28",
+    "target_rrp": 900,
+    "target_gm0_pct": 65.0,
+    "sample_gm0_pct": 67.0,
+    "gm0_pct": 69.2,
+    "image_file": "607781.jpeg"
+  },
+  "608095": {
+    "style": "Korp Proof II Pant Men",
+    "source_season": "SS28",
+    "target_rrp": 1300,
+    "target_gm0_pct": 58.0,
+    "sample_gm0_pct": 65.3,
+    "gm0_pct": 99.0,
+    "image_file": "608095.jpeg"
+  },
+  "608096": {
+    "style": "Korp Proof II Pant Women",
+    "source_season": "SS28",
+    "target_rrp": 1300,
+    "target_gm0_pct": 58.0,
+    "sample_gm0_pct": 66.4,
+    "gm0_pct": 99.0,
+    "image_file": "608096.jpeg"
+  },
+  "607958": {
+    "style": "Korp Proof Jacket Men",
+    "source_season": "SS28",
+    "target_rrp": 1800,
+    "target_gm0_pct": 64.0,
+    "sample_gm0_pct": 68.4,
+    "gm0_pct": 58.6,
+    "image_file": "607958.jpeg"
+  },
+  "608840": {
+    "style": "Korp Proof Jacket Men AF",
+    "source_season": "FW27",
+    "target_rrp": 1800,
+    "target_gm0_pct": 64.0,
+    "sample_gm0_pct": 69.4,
+    "gm0_pct": 58.6,
+    "image_file": "608840.jpeg"
+  },
+  "607962": {
+    "style": "Korp Proof Jacket Women",
+    "source_season": "SS28",
+    "target_rrp": 1800,
+    "target_gm0_pct": 65.6,
+    "sample_gm0_pct": 70.3,
+    "gm0_pct": 60.4,
+    "image_file": "607962.jpeg"
+  },
+  "608841": {
+    "style": "Korp Proof Jacket Women AF",
+    "source_season": "FW27",
+    "target_rrp": 1800,
+    "target_gm0_pct": 65.6,
+    "sample_gm0_pct": 72.0,
+    "gm0_pct": 60.4,
+    "image_file": "608841.jpeg"
+  },
+  "608552": {
+    "style": "Korp Softshell Hood Men",
+    "source_season": "SS28",
+    "target_rrp": 1800,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 72.7,
+    "gm0_pct": 71.5,
+    "image_file": "608552.jpeg"
+  },
+  "608856": {
+    "style": "Korp Softshell Hood Men AF",
+    "source_season": "FW27",
+    "target_rrp": 1800,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 73.5,
+    "gm0_pct": 71.9,
+    "image_file": "608856.jpeg"
+  },
+  "608553": {
+    "style": "Korp Softshell Hood Women",
+    "source_season": "SS28",
+    "target_rrp": 1800,
+    "target_gm0_pct": 64.0,
+    "sample_gm0_pct": 74.6,
+    "gm0_pct": 73.6,
+    "image_file": "608553.jpeg"
+  },
+  "608857": {
+    "style": "Korp Softshell Hood Women AF",
+    "source_season": "FW27",
+    "target_rrp": 1800,
+    "target_gm0_pct": 64.0,
+    "sample_gm0_pct": 75.6,
+    "gm0_pct": 74.3,
+    "image_file": "608857.jpeg"
+  },
+  "608554": {
+    "style": "Korp Softshell Pant Men",
+    "source_season": "SS28",
+    "target_rrp": 1400,
+    "target_gm0_pct": 65.0,
+    "sample_gm0_pct": 71.0,
+    "gm0_pct": 70.4,
+    "image_file": "608554.jpeg"
+  },
+  "608555": {
+    "style": "Korp Softshell Pant Women",
+    "source_season": "SS28",
+    "target_rrp": 1400,
+    "target_gm0_pct": 65.0,
+    "sample_gm0_pct": 71.5,
+    "gm0_pct": 70.7,
+    "image_file": "608555.jpeg"
+  },
+  "607610": {
+    "style": "L.I.M Airak 2,5L Jacket Men",
+    "source_season": "FW27",
+    "target_rrp": 3000,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 58.2,
+    "gm0_pct": 98.7,
+    "image_file": "607610.jpeg"
+  },
+  "607615": {
+    "style": "L.I.M Airak 2,5L Jacket Women",
+    "source_season": "FW27",
+    "target_rrp": 3000,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 60.6,
+    "gm0_pct": 98.7,
+    "image_file": "607615.jpeg"
+  },
+  "607613": {
+    "style": "L.I.M Airak 2,5L Pant Men",
+    "source_season": "FW27",
+    "target_rrp": 1700,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 59.5,
+    "gm0_pct": 98.5,
+    "image_file": "607613.jpeg"
+  },
+  "607618": {
+    "style": "L.I.M Airak 2,5L Pant Women",
+    "source_season": "FW27",
+    "target_rrp": 1700,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 61.8,
+    "gm0_pct": 98.5,
+    "image_file": "607618.jpeg"
+  },
+  "607609": {
+    "style": "L.I.M Airak GTX Jacket Men",
+    "source_season": "FW27",
+    "target_rrp": 5000,
+    "target_gm0_pct": 50.0,
+    "sample_gm0_pct": 46.8,
+    "gm0_pct": 98.7,
+    "image_file": "607609.jpeg"
+  },
+  "607614": {
+    "style": "L.I.M Airak GTX Jacket Women",
+    "source_season": "FW27",
+    "target_rrp": 5000,
+    "target_gm0_pct": 52.0,
+    "sample_gm0_pct": 51.5,
+    "gm0_pct": 98.8,
+    "image_file": "607614.jpeg"
+  },
+  "607795": {
+    "style": "L.I.M Down II Hood Men",
+    "source_season": "FW27",
+    "target_rrp": 3500,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 50.5,
+    "gm0_pct": 66.6,
+    "image_file": "607795.jpeg"
+  },
+  "607802": {
+    "style": "L.I.M Down II Hood Women",
+    "source_season": "FW27",
+    "target_rrp": 3500,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 55.2,
+    "gm0_pct": 70.2,
+    "image_file": "607802.jpeg"
+  },
+  "608973": {
+    "style": "L.I.M GTX III Jacket Men",
+    "source_season": "SS28",
+    "target_rrp": 3300,
+    "target_gm0_pct": 59.2,
+    "sample_gm0_pct": 53.4,
+    "gm0_pct": 53.4,
+    "image_file": "608973.jpeg"
+  },
+  "608972": {
+    "style": "L.I.M GTX III Jacket Women",
+    "source_season": "SS28",
+    "target_rrp": 3300,
+    "target_gm0_pct": 57.5,
+    "sample_gm0_pct": 56.0,
+    "gm0_pct": 99.6,
+    "image_file": "608972.jpeg"
+  },
+  "607631": {
+    "style": "L.I.M Mid Multi II Hood Men",
+    "source_season": "SS28",
+    "target_rrp": 1200,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 56.8,
+    "gm0_pct": 59.5,
+    "image_file": "607631.jpeg"
+  },
+  "608846": {
+    "style": "L.I.M Mid Multi II Hood Men AF",
+    "source_season": "FW27",
+    "target_rrp": 1200,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 62.2,
+    "gm0_pct": 59.5,
+    "image_file": "608846.jpeg"
+  },
+  "607634": {
+    "style": "L.I.M Mid Multi II Hood Women",
+    "source_season": "SS28",
+    "target_rrp": 1200,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 59.1,
+    "gm0_pct": 62.6,
+    "image_file": "607634.jpeg"
+  },
+  "608847": {
+    "style": "L.I.M Mid Multi II Hood Women AF",
+    "source_season": "FW27",
+    "target_rrp": 1200,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 64.8,
+    "gm0_pct": 62.6,
+    "image_file": "608847.jpeg"
+  },
+  "607555": {
+    "style": "L.I.M Mountain Trail 25",
+    "source_season": "SS28",
+    "target_rrp": 1700,
+    "target_gm0_pct": 59.7,
+    "sample_gm0_pct": 54.9,
+    "gm0_pct": 64.1,
+    "image_file": "607555.jpeg"
+  },
+  "607554": {
+    "style": "L.I.M Trail 15",
+    "source_season": "SS28",
+    "target_rrp": 1300,
+    "target_gm0_pct": 60.2,
+    "sample_gm0_pct": 59.3,
+    "gm0_pct": 65.4,
+    "image_file": "607554.jpeg"
+  },
+  "608710": {
+    "style": "Latnja 18L",
+    "source_season": "FW27",
+    "target_rrp": 1600,
+    "target_gm0_pct": 59.3,
+    "sample_gm0_pct": 98.7,
+    "gm0_pct": 0,
+    "image_file": "608710.jpeg"
+  },
+  "609002": {
+    "style": "Latnja GTX Insulated II Jacket Men",
+    "source_season": "FW27",
+    "target_rrp": 5000,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 50.7,
+    "gm0_pct": 46.4,
+    "image_file": "609002.jpeg"
+  },
+  "609004": {
+    "style": "Latnja GTX Insulated II Jacket Women",
+    "source_season": "FW27",
+    "target_rrp": 5000,
+    "target_gm0_pct": 64.0,
+    "sample_gm0_pct": 53.5,
+    "gm0_pct": 49.5,
+    "image_file": "609004.jpeg"
+  },
+  "609003": {
+    "style": "Latnja GTX Insulated II Pant Men",
+    "source_season": "FW27",
+    "target_rrp": 4500,
+    "target_gm0_pct": 64.0,
+    "sample_gm0_pct": 58.9,
+    "gm0_pct": 56.1,
+    "image_file": "609003.jpeg"
+  },
+  "609005": {
+    "style": "Latnja GTX Insulated II Pant Women",
+    "source_season": "FW27",
+    "target_rrp": 4500,
+    "target_gm0_pct": 66.0,
+    "sample_gm0_pct": 60.3,
+    "gm0_pct": 57.7,
+    "image_file": "609005.jpeg"
+  },
+  "607538": {
+    "style": "Latnja Wool 3/4 Pant Men",
+    "source_season": "FW27",
+    "target_rrp": 900,
+    "target_gm0_pct": 64.0,
+    "sample_gm0_pct": 61.2,
+    "gm0_pct": 62.2,
+    "image_file": "607538.jpeg"
+  },
+  "607539": {
+    "style": "Latnja Wool 3/4 Pant Women",
+    "source_season": "FW27",
+    "target_rrp": 900,
+    "target_gm0_pct": 65.0,
+    "sample_gm0_pct": 62.0,
+    "gm0_pct": 63.0,
+    "image_file": "607539.jpeg"
+  },
+  "607476": {
+    "style": "Latnja Wool Crew Neck Men",
+    "source_season": "FW27",
+    "target_rrp": 1300,
+    "target_gm0_pct": 57.0,
+    "sample_gm0_pct": 53.7,
+    "gm0_pct": 54.2,
+    "image_file": "607476.jpeg"
+  },
+  "607477": {
+    "style": "Latnja Wool Crew Neck Women",
+    "source_season": "FW27",
+    "target_rrp": 1300,
+    "target_gm0_pct": 58.0,
+    "sample_gm0_pct": 57.8,
+    "gm0_pct": 56.2,
+    "image_file": "607477.jpeg"
+  },
+  "607475": {
+    "style": "Latnja Wool Long John's Men",
+    "source_season": "FW27",
+    "target_rrp": 1000,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 56.9,
+    "gm0_pct": 58.7,
+    "image_file": "607475.jpeg"
+  },
+  "607478": {
+    "style": "Latnja Wool Long John's Women",
+    "source_season": "FW27",
+    "target_rrp": 1000,
+    "target_gm0_pct": 61.0,
+    "sample_gm0_pct": 60.3,
+    "gm0_pct": 60.9,
+    "image_file": "607478.jpeg"
+  },
+  "608315": {
+    "style": "Lava 110",
+    "source_season": "SS28",
+    "target_rrp": 1700,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 57.3,
+    "gm0_pct": 99.5,
+    "image_file": "608315.jpeg"
+  },
+  "607688": {
+    "style": "Lava 30",
+    "source_season": "SS28",
+    "target_rrp": 1300,
+    "target_gm0_pct": 58.2,
+    "sample_gm0_pct": 61.2,
+    "gm0_pct": 0,
+    "image_file": "607688.jpeg"
+  },
+  "607687": {
+    "style": "Lava 50",
+    "source_season": "SS28",
+    "target_rrp": 1400,
+    "target_gm0_pct": 58.0,
+    "sample_gm0_pct": 60.0,
+    "gm0_pct": 0,
+    "image_file": "607687.jpeg"
+  },
+  "607690": {
+    "style": "Lava 70",
+    "source_season": "SS28",
+    "target_rrp": 1500,
+    "target_gm0_pct": 58.5,
+    "sample_gm0_pct": 59.4,
+    "gm0_pct": 0,
+    "image_file": "607690.jpeg"
+  },
+  "607689": {
+    "style": "Lava 90",
+    "source_season": "SS28",
+    "target_rrp": 1600,
+    "target_gm0_pct": 58.5,
+    "sample_gm0_pct": 58.8,
+    "gm0_pct": 0,
+    "image_file": "607689.jpeg"
+  },
+  "608442": {
+    "style": "Lava travel tube",
+    "source_season": "SS28",
+    "target_rrp": 550,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 67.0,
+    "gm0_pct": 65.7,
+    "image_file": "608442.jpeg"
+  },
+  "608160": {
+    "style": "Levante Pant Men",
+    "source_season": "SS28",
+    "target_rrp": 1500,
+    "target_gm0_pct": 61.0,
+    "sample_gm0_pct": 61.0,
+    "gm0_pct": 62.3,
+    "image_file": "608160.jpeg"
+  },
+  "608176": {
+    "style": "Levante Pant Women",
+    "source_season": "SS28",
+    "target_rrp": 1500,
+    "target_gm0_pct": 63.0,
+    "sample_gm0_pct": 64.0,
+    "gm0_pct": 65.2,
+    "image_file": "608176.jpeg"
+  },
+  "608560": {
+    "style": "Ljusna Proof Parka Men",
+    "source_season": "SS28",
+    "target_rrp": 3000,
+    "target_gm0_pct": 58.0,
+    "sample_gm0_pct": 58.4,
+    "gm0_pct": 51.9,
+    "image_file": "608560.jpeg"
+  },
+  "608561": {
+    "style": "Ljusna Proof Parka Women",
+    "source_season": "SS28",
+    "target_rrp": 3000,
+    "target_gm0_pct": 59.0,
+    "sample_gm0_pct": 58.2,
+    "gm0_pct": 58.8,
+    "image_file": "608561.jpeg"
+  },
+  "607775": {
+    "style": "Long Down II Parka Women",
+    "source_season": "FW27",
+    "target_rrp": 4200,
+    "target_gm0_pct": 65.4,
+    "sample_gm0_pct": 62.2,
+    "gm0_pct": 64.3,
+    "image_file": "607775.jpeg"
+  },
+  "608537": {
+    "style": "Long Mimic III Parka Women",
+    "source_season": "FW27",
+    "target_rrp": 3200,
+    "target_gm0_pct": 65.4,
+    "sample_gm0_pct": 67.5,
+    "gm0_pct": 67.7,
+    "image_file": "608537.jpeg"
+  },
+  "608694": {
+    "style": "Lugna Softshell Overshirt Men",
+    "source_season": "SS28",
+    "target_rrp": 1700,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 69.5,
+    "gm0_pct": 70.4,
+    "image_file": "608694.jpeg"
+  },
+  "609024": {
+    "style": "Lugna Softshell Overshirt Men AF",
+    "source_season": "FW27",
+    "target_rrp": 1700,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 69.5,
+    "gm0_pct": 0,
+    "image_file": "609024.jpeg"
+  },
+  "608695": {
+    "style": "Lugna Softshell Overshirt Women",
+    "source_season": "SS28",
+    "target_rrp": 1700,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 71.7,
+    "gm0_pct": 73.1,
+    "image_file": "608695.jpeg"
+  },
+  "608563": {
+    "style": "Magma 30",
+    "source_season": "SS28",
+    "target_rrp": 1700,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 61.7,
+    "gm0_pct": 55.8,
+    "image_file": "608563.jpeg"
+  },
+  "608221": {
+    "style": "Magma 42L",
+    "source_season": "SS28",
+    "target_rrp": 1800,
+    "target_gm0_pct": 59.7,
+    "sample_gm0_pct": 57.1,
+    "gm0_pct": 61.6,
+    "image_file": "608221.jpeg"
+  },
+  "608439": {
+    "style": "Magma 50L",
+    "source_season": "SS28",
+    "target_rrp": 2600,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 52.1,
+    "gm0_pct": 54.2,
+    "image_file": "608439.jpeg"
+  },
+  "608438": {
+    "style": "Magma  60L",
+    "source_season": "SS28",
+    "target_rrp": 2800,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 53.6,
+    "gm0_pct": 54.0,
+    "image_file": "608438.jpeg"
+  },
+  "608222": {
+    "style": "Magma 65L",
+    "source_season": "SS28",
+    "target_rrp": 2000,
+    "target_gm0_pct": 59.4,
+    "sample_gm0_pct": 60.7,
+    "gm0_pct": 60.7,
+    "image_file": "608222.jpeg"
+  },
+  "608224": {
+    "style": "Magma Roll-top 40 WR",
+    "source_season": "SS28",
+    "target_rrp": 2000,
+    "target_gm0_pct": 61.0,
+    "sample_gm0_pct": 55.9,
+    "gm0_pct": 61.2,
+    "image_file": "608224.jpeg"
+  },
+  "607708": {
+    "style": "Magma Rugged Pant Men",
+    "source_season": "SS28",
+    "target_rrp": 2000,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 58.3,
+    "gm0_pct": 53.1,
+    "image_file": "607708.jpeg"
+  },
+  "607707": {
+    "style": "Magma Rugged Pant Women",
+    "source_season": "SS28",
+    "target_rrp": 2000,
+    "target_gm0_pct": 63.0,
+    "sample_gm0_pct": 59.1,
+    "gm0_pct": 57.6,
+    "image_file": "607707.jpeg"
+  },
+  "608823": {
+    "style": "Magma Rugged Prototype Pant Men",
+    "source_season": "FW27",
+    "target_rrp": 2500,
+    "target_gm0_pct": 65.0,
+    "sample_gm0_pct": 64.4,
+    "gm0_pct": 65.5,
+    "image_file": "608823.jpeg"
+  },
+  "608564": {
+    "style": "Magma Waist pack 3,5L",
+    "source_season": "SS28",
+    "target_rrp": 800,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 64.4,
+    "gm0_pct": 66.6,
+    "image_file": "608564.jpeg"
+  },
+  "608620": {
+    "style": "Mid Slim II Pant Men",
+    "source_season": "FW27",
+    "target_rrp": 1300,
+    "target_gm0_pct": 64.5,
+    "sample_gm0_pct": 57.6,
+    "gm0_pct": 0,
+    "image_file": "608620.jpeg"
+  },
+  "608619": {
+    "style": "Mid Slim II Pant Women",
+    "source_season": "FW27",
+    "target_rrp": 1300,
+    "target_gm0_pct": 70.0,
+    "sample_gm0_pct": 58.1,
+    "gm0_pct": 0,
+    "image_file": "608619.jpeg"
+  },
+  "608678": {
+    "style": "Mimic Alert 2.0 Hood Men",
+    "source_season": "SS28",
+    "target_rrp": 2500,
+    "target_gm0_pct": 63.0,
+    "sample_gm0_pct": 56.7,
+    "gm0_pct": 0,
+    "image_file": "608678.jpeg"
+  },
+  "608680": {
+    "style": "Mimic Alert 2.0 Hood Women",
+    "source_season": "SS28",
+    "target_rrp": 2500,
+    "target_gm0_pct": 64.0,
+    "sample_gm0_pct": 57.4,
+    "gm0_pct": 65.3,
+    "image_file": "608680.jpeg"
+  },
+  "608679": {
+    "style": "Mimic Alert 2.0 Jacket Men",
+    "source_season": "SS28",
+    "target_rrp": 2200,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 54.6,
+    "gm0_pct": 0,
+    "image_file": "608679.jpeg"
+  },
+  "608681": {
+    "style": "Mimic Alert 2.0 Jacket Women",
+    "source_season": "SS28",
+    "target_rrp": 2200,
+    "target_gm0_pct": 63.0,
+    "sample_gm0_pct": 57.4,
+    "gm0_pct": 63.3,
+    "image_file": "608681.jpeg"
+  },
+  "608830": {
+    "style": "Mimic Silver II Pant Men",
+    "source_season": "FW27",
+    "target_rrp": 1800,
+    "target_gm0_pct": 65.0,
+    "sample_gm0_pct": 63.9,
+    "gm0_pct": 63.1,
+    "image_file": "608830.jpeg"
+  },
+  "608831": {
+    "style": "Mimic Silver II Pant Women",
+    "source_season": "FW27",
+    "target_rrp": 1800,
+    "target_gm0_pct": 66.0,
+    "sample_gm0_pct": 65.8,
+    "gm0_pct": 65.4,
+    "image_file": "608831.jpeg"
+  },
+  "608533": {
+    "style": "Mojo Down Hood Men",
+    "source_season": "FW27",
+    "target_rrp": 5000,
+    "target_gm0_pct": 61.5,
+    "sample_gm0_pct": 59.8,
+    "gm0_pct": 63.5,
+    "image_file": "608533.jpeg"
+  },
+  "608534": {
+    "style": "Mojo Down Hood Women",
+    "source_season": "FW27",
+    "target_rrp": 5000,
+    "target_gm0_pct": 65.4,
+    "sample_gm0_pct": 62.5,
+    "gm0_pct": 65.8,
+    "image_file": "608534.jpeg"
+  },
+  "416240": {
+    "style": "Moonlite +7",
+    "source_season": "SS28",
+    "target_rrp": 1300,
+    "target_gm0_pct": 50.8,
+    "sample_gm0_pct": 63.2,
+    "gm0_pct": 0,
+    "image_file": "416240.jpeg"
+  },
+  "416230": {
+    "style": "Moonlite -1",
+    "source_season": "SS28",
+    "target_rrp": 1500,
+    "target_gm0_pct": 53.7,
+    "sample_gm0_pct": 63.9,
+    "gm0_pct": 0,
+    "image_file": "416230.jpeg"
+  },
+  "416330": {
+    "style": "Moonlite Junior",
+    "source_season": "SS28",
+    "target_rrp": 1300,
+    "target_gm0_pct": 57.9,
+    "sample_gm0_pct": 51.1,
+    "gm0_pct": 0,
+    "image_file": "416330.jpeg"
+  },
+  "607814": {
+    "style": "Mountain II Cap",
+    "source_season": "FW27",
+    "target_rrp": 500,
+    "target_gm0_pct": 61.0,
+    "sample_gm0_pct": 59.0,
+    "gm0_pct": 57.8,
+    "image_file": "607814.jpeg"
+  },
+  "416220": {
+    "style": "Musca -1",
+    "source_season": "SS28",
+    "target_rrp": 1500,
+    "target_gm0_pct": 53.5,
+    "sample_gm0_pct": 64.6,
+    "gm0_pct": 0,
+    "image_file": "416220.jpeg"
+  },
+  "416190": {
+    "style": "Musca -13",
+    "source_season": "SS28",
+    "target_rrp": 1800,
+    "target_gm0_pct": 55.6,
+    "sample_gm0_pct": 62.5,
+    "gm0_pct": 0,
+    "image_file": "416190.jpeg"
+  },
+  "416180": {
+    "style": "Musca -26",
+    "source_season": "SS28",
+    "target_rrp": 2200,
+    "target_gm0_pct": 55.0,
+    "sample_gm0_pct": 62.9,
+    "gm0_pct": 0,
+    "image_file": "416180.jpeg"
+  },
+  "416210": {
+    "style": "Musca -5",
+    "source_season": "SS28",
+    "target_rrp": 1700,
+    "target_gm0_pct": 54.4,
+    "sample_gm0_pct": 64.9,
+    "gm0_pct": 0,
+    "image_file": "416210.jpeg"
+  },
+  "608709": {
+    "style": "Nallo Pro 40L",
+    "source_season": "FW27",
+    "target_rrp": 2600,
+    "target_gm0_pct": 52.2,
+    "sample_gm0_pct": 59.5,
+    "gm0_pct": 0,
+    "image_file": "608709.jpeg"
+  },
+  "608341": {
+    "style": "Nallo Touring Down Hood Men",
+    "source_season": "FW27",
+    "target_rrp": 6500,
+    "target_gm0_pct": 55.0,
+    "sample_gm0_pct": 47.3,
+    "gm0_pct": 50.5,
+    "image_file": "608341.jpeg"
+  },
+  "608342": {
+    "style": "Nallo Touring Down Hood Women",
+    "source_season": "FW27",
+    "target_rrp": 6500,
+    "target_gm0_pct": 57.0,
+    "sample_gm0_pct": 53.6,
+    "gm0_pct": 55.6,
+    "image_file": "608342.jpeg"
+  },
+  "608333": {
+    "style": "Nallo Touring GTX Jacket Men",
+    "source_season": "FW27",
+    "target_rrp": 7000,
+    "target_gm0_pct": 55.0,
+    "sample_gm0_pct": 51.3,
+    "gm0_pct": 46.5,
+    "image_file": "608333.jpeg"
+  },
+  "608334": {
+    "style": "Nallo Touring GTX Jacket Women",
+    "source_season": "FW27",
+    "target_rrp": 7000,
+    "target_gm0_pct": 57.0,
+    "sample_gm0_pct": 55.5,
+    "gm0_pct": 51.5,
+    "image_file": "608334.jpeg"
+  },
+  "608335": {
+    "style": "Nallo Touring GTX Pant Men",
+    "source_season": "FW27",
+    "target_rrp": 6000,
+    "target_gm0_pct": 55.0,
+    "sample_gm0_pct": 52.0,
+    "gm0_pct": 49.6,
+    "image_file": "608335.jpeg"
+  },
+  "608336": {
+    "style": "Nallo Touring GTX Pant Women",
+    "source_season": "FW27",
+    "target_rrp": 6000,
+    "target_gm0_pct": 57.0,
+    "sample_gm0_pct": 54.0,
+    "gm0_pct": 50.9,
+    "image_file": "608336.jpeg"
+  },
+  "608345": {
+    "style": "Nallo Touring Hybrid Mid Men",
+    "source_season": "SS28",
+    "target_rrp": 2200,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 58.8,
+    "gm0_pct": 72.3,
+    "image_file": "608345.jpeg"
+  },
+  "608346": {
+    "style": "Nallo Touring Hybrid Mid Women",
+    "source_season": "SS28",
+    "target_rrp": 2200,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 63.3,
+    "gm0_pct": 74.1,
+    "image_file": "608346.jpeg"
+  },
+  "608549": {
+    "style": "Norrvind Shield Hood Men",
+    "source_season": "SS28",
+    "target_rrp": 1300,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 63.2,
+    "gm0_pct": 0,
+    "image_file": "608549.jpeg"
+  },
+  "608842": {
+    "style": "Norrvind Shield Hood Men AF",
+    "source_season": "FW27",
+    "target_rrp": 1300,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 63.9,
+    "gm0_pct": 63.7,
+    "image_file": "608842.jpeg"
+  },
+  "608550": {
+    "style": "Norrvind Shield Hood Women",
+    "source_season": "SS28",
+    "target_rrp": 1300,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 64.9,
+    "gm0_pct": 61.0,
+    "image_file": "608550.jpeg"
+  },
+  "608843": {
+    "style": "Norrvind Shield Hood Women AF",
+    "source_season": "FW27",
+    "target_rrp": 1300,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 65.3,
+    "gm0_pct": 61.0,
+    "image_file": "608843.jpeg"
+  },
+  "607788": {
+    "style": "Outsiders Beanie",
+    "source_season": "FW27",
+    "target_rrp": 400,
+    "target_gm0_pct": 64.0,
+    "sample_gm0_pct": 69.6,
+    "gm0_pct": 68.2,
+    "image_file": "607788.jpeg"
+  },
+  "608151": {
+    "style": "Outsiders Graphic Tee Men",
+    "source_season": "SS28",
+    "target_rrp": 450,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 63.9,
+    "gm0_pct": 68.1,
+    "image_file": "608151.jpeg"
+  },
+  "608194": {
+    "style": "Outsiders Graphic Tee Women",
+    "source_season": "SS28",
+    "target_rrp": 450,
+    "target_gm0_pct": 64.0,
+    "sample_gm0_pct": 66.0,
+    "gm0_pct": 98.1,
+    "image_file": "608194.jpeg"
+  },
+  "607659": {
+    "style": "Outsiders Tee Men",
+    "source_season": "SS28",
+    "target_rrp": 400,
+    "target_gm0_pct": 61.1,
+    "sample_gm0_pct": 65.5,
+    "gm0_pct": 97.9,
+    "image_file": "607659.jpeg"
+  },
+  "607664": {
+    "style": "Outsiders Tee Women",
+    "source_season": "SS28",
+    "target_rrp": 400,
+    "target_gm0_pct": 63.0,
+    "sample_gm0_pct": 68.1,
+    "gm0_pct": 97.9,
+    "image_file": "607664.jpeg"
+  },
+  "607129": {
+    "style": "Oxo 60 W",
+    "source_season": "SS28",
+    "target_rrp": 3200,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 55.2,
+    "gm0_pct": 99.4,
+    "image_file": "607129.jpeg"
+  },
+  "607122": {
+    "style": "Oxo 80",
+    "source_season": "SS28",
+    "target_rrp": 3500,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 56.1,
+    "gm0_pct": 99.4,
+    "image_file": "607122.jpeg"
+  },
+  "608173": {
+    "style": "Ozka Proof Jacket Men",
+    "source_season": "SS28",
+    "target_rrp": 3000,
+    "target_gm0_pct": 57.0,
+    "sample_gm0_pct": 64.8,
+    "gm0_pct": 63.7,
+    "image_file": "608173.jpeg"
+  },
+  "608601": {
+    "style": "Ozka Proof Jacket Men AF",
+    "source_season": "FW27",
+    "target_rrp": 3000,
+    "target_gm0_pct": 57.0,
+    "sample_gm0_pct": 64.1,
+    "gm0_pct": 64.8,
+    "image_file": "608601.jpeg"
+  },
+  "608193": {
+    "style": "Ozka Proof Jacket Women",
+    "source_season": "SS28",
+    "target_rrp": 3000,
+    "target_gm0_pct": 59.0,
+    "sample_gm0_pct": 66.2,
+    "gm0_pct": 65.3,
+    "image_file": "608193.jpeg"
+  },
+  "608208": {
+    "style": "Ozka Proof Pant Men",
+    "source_season": "SS28",
+    "target_rrp": 2200,
+    "target_gm0_pct": 58.0,
+    "sample_gm0_pct": 63.7,
+    "gm0_pct": 65.3,
+    "image_file": "608208.jpeg"
+  },
+  "608209": {
+    "style": "Ozka Proof Pant Women",
+    "source_season": "SS28",
+    "target_rrp": 2200,
+    "target_gm0_pct": 57.5,
+    "sample_gm0_pct": 64.8,
+    "gm0_pct": 67.2,
+    "image_file": "608209.jpeg"
+  },
+  "608444": {
+    "style": "Packing cube 12L",
+    "source_season": "SS28",
+    "target_rrp": 800,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 47.7,
+    "gm0_pct": 64.1,
+    "image_file": "608444.jpeg"
+  },
+  "608445": {
+    "style": "Packing cube 8L",
+    "source_season": "SS28",
+    "target_rrp": 700,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 48.6,
+    "gm0_pct": 65.4,
+    "image_file": "608445.jpeg"
+  },
+  "608774": {
+    "style": "Polka Aresk Beanie",
+    "source_season": "FW27",
+    "target_rrp": 500,
+    "target_gm0_pct": 61.0,
+    "sample_gm0_pct": 73.6,
+    "gm0_pct": 72.8,
+    "image_file": "608774.jpeg"
+  },
+  "608773": {
+    "style": "Polka Outsiders Graphic Tee Men",
+    "source_season": "FW27",
+    "target_rrp": 450,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 62.7,
+    "gm0_pct": 68.1,
+    "image_file": null
+  },
+  "608772": {
+    "style": "Polka Outsiders Graphic Tee Women",
+    "source_season": "FW27",
+    "target_rrp": 450,
+    "target_gm0_pct": 64.0,
+    "sample_gm0_pct": 65.1,
+    "gm0_pct": 98.1,
+    "image_file": null
+  },
+  "608766": {
+    "style": "Polka Pouch",
+    "source_season": "FW27",
+    "target_rrp": 900,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 77.1,
+    "gm0_pct": 99.5,
+    "image_file": "608766.jpeg"
+  },
+  "608767": {
+    "style": "Polka Saulo Proof Jacket Men",
+    "source_season": "FW27",
+    "target_rrp": 3500,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 41.5,
+    "gm0_pct": 64.8,
+    "image_file": "608767.jpeg"
+  },
+  "608770": {
+    "style": "Polka Saulo Proof Jacket Women",
+    "source_season": "FW27",
+    "target_rrp": 3500,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 44.8,
+    "gm0_pct": 99.6,
+    "image_file": "608770.jpeg"
+  },
+  "608768": {
+    "style": "Polka Saulo Proof Pant Men",
+    "source_season": "FW27",
+    "target_rrp": 3100,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 66.2,
+    "gm0_pct": 71.0,
+    "image_file": "608768.jpeg"
+  },
+  "608771": {
+    "style": "Polka Saulo Proof Pant Women",
+    "source_season": "FW27",
+    "target_rrp": 3100,
+    "target_gm0_pct": 61.0,
+    "sample_gm0_pct": 52.0,
+    "gm0_pct": 99.6,
+    "image_file": "608771.jpeg"
+  },
+  "608527": {
+    "style": "Pollux 1/2 zip II Jacket Men",
+    "source_season": "FW27",
+    "target_rrp": 800,
+    "target_gm0_pct": 65.0,
+    "sample_gm0_pct": 65.0,
+    "gm0_pct": 65.3,
+    "image_file": "608527.jpeg"
+  },
+  "608528": {
+    "style": "Pollux 1/2 zip II Jacket Women",
+    "source_season": "FW27",
+    "target_rrp": 800,
+    "target_gm0_pct": 68.0,
+    "sample_gm0_pct": 67.5,
+    "gm0_pct": 67.6,
+    "image_file": "608528.jpeg"
+  },
+  "608013": {
+    "style": "Raincover 15-30L",
+    "source_season": "SS28",
+    "target_rrp": 400,
+    "target_gm0_pct": 70.0,
+    "sample_gm0_pct": 69.0,
+    "gm0_pct": 63.6,
+    "image_file": "608013.jpeg"
+  },
+  "608012": {
+    "style": "Raincover 25-40L",
+    "source_season": "SS28",
+    "target_rrp": 450,
+    "target_gm0_pct": 73.1,
+    "sample_gm0_pct": 65.8,
+    "gm0_pct": 64.7,
+    "image_file": "608012.jpeg"
+  },
+  "608014": {
+    "style": "Raincover 40-60L",
+    "source_season": "SS28",
+    "target_rrp": 500,
+    "target_gm0_pct": 66.1,
+    "sample_gm0_pct": 62.4,
+    "gm0_pct": 64.7,
+    "image_file": "608014.jpeg"
+  },
+  "608011": {
+    "style": "Raincover 60-80L",
+    "source_season": "SS28",
+    "target_rrp": 600,
+    "target_gm0_pct": 63.5,
+    "sample_gm0_pct": 66.5,
+    "gm0_pct": 68.0,
+    "image_file": "608011.jpeg"
+  },
+  "607463": {
+    "style": "ROC Flash Down Hood Men",
+    "source_season": "SS28",
+    "target_rrp": 3200,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 60.0,
+    "gm0_pct": 60.7,
+    "image_file": "607463.jpeg"
+  },
+  "607466": {
+    "style": "ROC Flash Down Hood Women",
+    "source_season": "SS28",
+    "target_rrp": 3200,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 62.7,
+    "gm0_pct": 64.1,
+    "image_file": "607466.jpeg"
+  },
+  "607462": {
+    "style": "ROC Flash Down Jacket Men",
+    "source_season": "FW27",
+    "target_rrp": 2800,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 58.6,
+    "gm0_pct": 59.7,
+    "image_file": "607462.jpeg"
+  },
+  "607465": {
+    "style": "ROC Flash Down Jacket Women",
+    "source_season": "FW27",
+    "target_rrp": 2800,
+    "target_gm0_pct": 61.0,
+    "sample_gm0_pct": 62.5,
+    "gm0_pct": 63.0,
+    "image_file": "607465.jpeg"
+  },
+  "607461": {
+    "style": "ROC Flash Down Vest Men",
+    "source_season": "FW27",
+    "target_rrp": 2200,
+    "target_gm0_pct": 66.0,
+    "sample_gm0_pct": 60.6,
+    "gm0_pct": 98.7,
+    "image_file": "607461.jpeg"
+  },
+  "607464": {
+    "style": "ROC Flash Down Vest Women",
+    "source_season": "FW27",
+    "target_rrp": 2200,
+    "target_gm0_pct": 66.0,
+    "sample_gm0_pct": 64.7,
+    "gm0_pct": 98.8,
+    "image_file": "607464.jpeg"
+  },
+  "608447": {
+    "style": "ROC Sight GTX Jacket Men",
+    "source_season": "SS28",
+    "target_rrp": 5000,
+    "target_gm0_pct": 55.0,
+    "sample_gm0_pct": 45.0,
+    "gm0_pct": 47.0,
+    "image_file": "608447.jpeg"
+  },
+  "608448": {
+    "style": "ROC Sight GTX Jacket Women",
+    "source_season": "SS28",
+    "target_rrp": 5000,
+    "target_gm0_pct": 55.0,
+    "sample_gm0_pct": 48.0,
+    "gm0_pct": 49.7,
+    "image_file": "608448.jpeg"
+  },
+  "607808": {
+    "style": "ROC Sight Softshell II Jacket Men",
+    "source_season": "SS28",
+    "target_rrp": 3200,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 65.9,
+    "gm0_pct": 63.5,
+    "image_file": "607808.jpeg"
+  },
+  "609023": {
+    "style": "ROC Sight Softshell II Jacket Men AF",
+    "source_season": "FW27",
+    "target_rrp": 3200,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 65.9,
+    "gm0_pct": 63.5,
+    "image_file": "609023.jpeg"
+  },
+  "607806": {
+    "style": "ROC Sight Softshell II Jacket Women",
+    "source_season": "SS28",
+    "target_rrp": 3200,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 68.5,
+    "gm0_pct": 0,
+    "image_file": "607806.jpeg"
+  },
+  "607809": {
+    "style": "ROC Sight Softshell II Pant Men",
+    "source_season": "SS28",
+    "target_rrp": 2800,
+    "target_gm0_pct": 61.0,
+    "sample_gm0_pct": 60.7,
+    "gm0_pct": 61.5,
+    "image_file": "607809.jpeg"
+  },
+  "607807": {
+    "style": "ROC Sight Softshell II Pant Women",
+    "source_season": "SS28",
+    "target_rrp": 2800,
+    "target_gm0_pct": 63.0,
+    "sample_gm0_pct": 61.5,
+    "gm0_pct": 62.3,
+    "image_file": "607807.jpeg"
+  },
+  "608720": {
+    "style": "Rosson Beanie",
+    "source_season": "FW27",
+    "target_rrp": 350,
+    "target_gm0_pct": 74.3,
+    "sample_gm0_pct": 77.7,
+    "gm0_pct": 0,
+    "image_file": "608720.jpeg"
+  },
+  "607460": {
+    "style": "Rosson Down Hood Men",
+    "source_season": "FW27",
+    "target_rrp": 3500,
+    "target_gm0_pct": 61.0,
+    "sample_gm0_pct": 56.5,
+    "gm0_pct": 57.3,
+    "image_file": "607460.jpeg"
+  },
+  "607468": {
+    "style": "Rosson Down Hood Women",
+    "source_season": "FW27",
+    "target_rrp": 3500,
+    "target_gm0_pct": 61.0,
+    "sample_gm0_pct": 62.2,
+    "gm0_pct": 63.1,
+    "image_file": "607468.jpeg"
+  },
+  "608125": {
+    "style": "Rosson Down Parka Men",
+    "source_season": "FW27",
+    "target_rrp": 4000,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 56.5,
+    "gm0_pct": 59.7,
+    "image_file": "608125.jpeg"
+  },
+  "608124": {
+    "style": "Rosson Down Parka Women",
+    "source_season": "FW27",
+    "target_rrp": 4000,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 60.6,
+    "gm0_pct": 62.9,
+    "image_file": "608124.jpeg"
+  },
+  "608689": {
+    "style": "Rosson II Balaclava",
+    "source_season": "FW27",
+    "target_rrp": 350,
+    "target_gm0_pct": 61.3,
+    "sample_gm0_pct": 98.8,
+    "gm0_pct": 0,
+    "image_file": "608689.jpeg"
+  },
+  "608832": {
+    "style": "Rosson II Tights Men",
+    "source_season": "FW27",
+    "target_rrp": 1000,
+    "target_gm0_pct": 65.0,
+    "sample_gm0_pct": 65.3,
+    "gm0_pct": 66.4,
+    "image_file": "608832.jpeg"
+  },
+  "608833": {
+    "style": "Rosson II Tights Women",
+    "source_season": "FW27",
+    "target_rrp": 1000,
+    "target_gm0_pct": 67.0,
+    "sample_gm0_pct": 67.9,
+    "gm0_pct": 66.0,
+    "image_file": "608833.jpeg"
+  },
+  "608556": {
+    "style": "Rosson Mid II Hood Men",
+    "source_season": "SS28",
+    "target_rrp": 1400,
+    "target_gm0_pct": 64.0,
+    "sample_gm0_pct": 64.6,
+    "gm0_pct": 63.1,
+    "image_file": "608556.jpeg"
+  },
+  "608558": {
+    "style": "Rosson Mid II Hood Women",
+    "source_season": "SS28",
+    "target_rrp": 1400,
+    "target_gm0_pct": 65.0,
+    "sample_gm0_pct": 67.6,
+    "gm0_pct": 65.9,
+    "image_file": "608558.jpeg"
+  },
+  "608557": {
+    "style": "Rosson Mid II Jacket Men",
+    "source_season": "SS28",
+    "target_rrp": 1200,
+    "target_gm0_pct": 64.0,
+    "sample_gm0_pct": 59.6,
+    "gm0_pct": 58.6,
+    "image_file": "608557.jpeg"
+  },
+  "608559": {
+    "style": "Rosson Mid II Jacket Women",
+    "source_season": "SS28",
+    "target_rrp": 1200,
+    "target_gm0_pct": 65.0,
+    "sample_gm0_pct": 63.8,
+    "gm0_pct": 61.7,
+    "image_file": "608559.jpeg"
+  },
+  "608616": {
+    "style": "Rugged Slim II Pant Men",
+    "source_season": "FW27",
+    "target_rrp": 2200,
+    "target_gm0_pct": 64.5,
+    "sample_gm0_pct": 70.3,
+    "gm0_pct": 71.8,
+    "image_file": "608616.jpeg"
+  },
+  "608617": {
+    "style": "Rugged Slim II Pant Women",
+    "source_season": "FW27",
+    "target_rrp": 2200,
+    "target_gm0_pct": 63.0,
+    "sample_gm0_pct": 62.5,
+    "gm0_pct": 63.0,
+    "image_file": "608617.jpeg"
+  },
+  "608241": {
+    "style": "Salix Proof Mimic II Parka Men",
+    "source_season": "FW27",
+    "target_rrp": 2700,
+    "target_gm0_pct": 61.5,
+    "sample_gm0_pct": 65.2,
+    "gm0_pct": 66.2,
+    "image_file": "608241.jpeg"
+  },
+  "608242": {
+    "style": "Salix Proof Mimic II Parka Women",
+    "source_season": "FW27",
+    "target_rrp": 2700,
+    "target_gm0_pct": 65.4,
+    "sample_gm0_pct": 65.1,
+    "gm0_pct": 66.5,
+    "image_file": "608242.jpeg"
+  },
+  "608366": {
+    "style": "S\u00e4rna Mimic II Hood Men",
+    "source_season": "SS28",
+    "target_rrp": 2200,
+    "target_gm0_pct": 70.0,
+    "sample_gm0_pct": 70.7,
+    "gm0_pct": 70.9,
+    "image_file": "608366.jpeg"
+  },
+  "608367": {
+    "style": "S\u00e4rna Mimic II Hood Women",
+    "source_season": "SS28",
+    "target_rrp": 2200,
+    "target_gm0_pct": 71.0,
+    "sample_gm0_pct": 72.4,
+    "gm0_pct": 72.7,
+    "image_file": "608367.jpeg"
+  },
+  "608671": {
+    "style": "Saulo Proof Jacket Men",
+    "source_season": "FW27",
+    "target_rrp": 3200,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 61.9,
+    "gm0_pct": 61.8,
+    "image_file": "608671.jpeg"
+  },
+  "608676": {
+    "style": "Saulo Proof Jacket Women",
+    "source_season": "FW27",
+    "target_rrp": 3200,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 63.8,
+    "gm0_pct": 0,
+    "image_file": "608676.jpeg"
+  },
+  "608672": {
+    "style": "Saulo Proof Pant Men",
+    "source_season": "FW27",
+    "target_rrp": 2800,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 67.2,
+    "gm0_pct": 68.4,
+    "image_file": "608672.jpeg"
+  },
+  "608677": {
+    "style": "Saulo Proof Pant Women",
+    "source_season": "FW27",
+    "target_rrp": 2800,
+    "target_gm0_pct": 61.0,
+    "sample_gm0_pct": 69.0,
+    "gm0_pct": 0,
+    "image_file": "608677.jpeg"
+  },
+  "608696": {
+    "style": "Selme LS Crewneck Men",
+    "source_season": "SS28",
+    "target_rrp": 1200,
+    "target_gm0_pct": 56.0,
+    "sample_gm0_pct": 65.6,
+    "gm0_pct": 44.1,
+    "image_file": "608696.jpeg"
+  },
+  "609025": {
+    "style": "Selme LS Crewneck Men AF",
+    "source_season": "FW27",
+    "target_rrp": 1200,
+    "target_gm0_pct": 56.0,
+    "sample_gm0_pct": 67.0,
+    "gm0_pct": 44.1,
+    "image_file": "609025.jpeg"
+  },
+  "608697": {
+    "style": "Selme LS Crewneck Women",
+    "source_season": "SS28",
+    "target_rrp": 1200,
+    "target_gm0_pct": 58.0,
+    "sample_gm0_pct": 70.6,
+    "gm0_pct": 99.3,
+    "image_file": "608697.jpeg"
+  },
+  "609026": {
+    "style": "Selme LS Crewneck Women AF",
+    "source_season": "FW27",
+    "target_rrp": 1200,
+    "target_gm0_pct": 58.0,
+    "sample_gm0_pct": 74.7,
+    "gm0_pct": 99.3,
+    "image_file": "609026.jpeg"
+  },
+  "608542": {
+    "style": "Shoulder pocket",
+    "source_season": "SS28",
+    "target_rrp": 500,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 63.5,
+    "gm0_pct": 65.6,
+    "image_file": "608542.jpeg"
+  },
+  "608543": {
+    "style": "Shoulder pouch",
+    "source_season": "SS28",
+    "target_rrp": 400,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 71.4,
+    "gm0_pct": 0,
+    "image_file": "608543.jpeg"
+  },
+  "608692": {
+    "style": "Skalvik Softshell Parka Men",
+    "source_season": "SS28",
+    "target_rrp": 3500,
+    "target_gm0_pct": 58.0,
+    "sample_gm0_pct": 55.5,
+    "gm0_pct": 55.5,
+    "image_file": "608692.jpeg"
+  },
+  "608693": {
+    "style": "Skalvik Softshell Parka Women",
+    "source_season": "SS28",
+    "target_rrp": 3500,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 55.7,
+    "gm0_pct": 55.9,
+    "image_file": "608693.jpeg"
+  },
+  "608223": {
+    "style": "Skuta 15",
+    "source_season": "SS28",
+    "target_rrp": 800,
+    "target_gm0_pct": 57.0,
+    "sample_gm0_pct": 56.2,
+    "gm0_pct": 48.0,
+    "image_file": "608223.jpeg"
+  },
+  "608700": {
+    "style": "Sling pouch 2L",
+    "source_season": "SS28",
+    "target_rrp": 800,
+    "target_gm0_pct": 55.3,
+    "sample_gm0_pct": 76.0,
+    "gm0_pct": 0,
+    "image_file": "608700.jpeg"
+  },
+  "608156": {
+    "style": "Solis Zip Off Pant Men",
+    "source_season": "SS28",
+    "target_rrp": 2200,
+    "target_gm0_pct": 65.0,
+    "sample_gm0_pct": 64.1,
+    "gm0_pct": 70.3,
+    "image_file": "608156.jpeg"
+  },
+  "608175": {
+    "style": "Solis Zip Off Pant Women",
+    "source_season": "SS28",
+    "target_rrp": 2200,
+    "target_gm0_pct": 66.0,
+    "sample_gm0_pct": 63.8,
+    "gm0_pct": 63.8,
+    "image_file": "608175.jpeg"
+  },
+  "607459": {
+    "style": "Spitz Down Hood Men",
+    "source_season": "FW27",
+    "target_rrp": 4500,
+    "target_gm0_pct": 55.0,
+    "sample_gm0_pct": 51.2,
+    "gm0_pct": 53.9,
+    "image_file": "607459.jpeg"
+  },
+  "609020": {
+    "style": "Spitz Down Hood Men AF",
+    "source_season": "FW27",
+    "target_rrp": 4500,
+    "target_gm0_pct": 55.0,
+    "sample_gm0_pct": 51.2,
+    "gm0_pct": 53.9,
+    "image_file": "609020.jpeg"
+  },
+  "607467": {
+    "style": "Spitz Down Hood Women",
+    "source_season": "FW27",
+    "target_rrp": 4500,
+    "target_gm0_pct": 58.0,
+    "sample_gm0_pct": 57.9,
+    "gm0_pct": 60.1,
+    "image_file": "607467.jpeg"
+  },
+  "608570": {
+    "style": "Spitz GTX Pro II Jacket Men",
+    "source_season": "SS28",
+    "target_rrp": 7500,
+    "target_gm0_pct": 55.0,
+    "sample_gm0_pct": 46.8,
+    "gm0_pct": 48.6,
+    "image_file": "608570.jpeg"
+  },
+  "608571": {
+    "style": "Spitz GTX Pro II Jacket Women",
+    "source_season": "SS28",
+    "target_rrp": 7500,
+    "target_gm0_pct": 57.0,
+    "sample_gm0_pct": 50.0,
+    "gm0_pct": 51.9,
+    "image_file": "608571.jpeg"
+  },
+  "603989": {
+    "style": "Stretch Webbing Belt",
+    "source_season": "SS28",
+    "target_rrp": 400,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 62.1,
+    "gm0_pct": 67.6,
+    "image_file": "603989.jpeg"
+  },
+  "608820": {
+    "style": "Sunpack Prototype Hoodie Men",
+    "source_season": "FW27",
+    "target_rrp": 1800,
+    "target_gm0_pct": 61.1,
+    "sample_gm0_pct": 61.8,
+    "gm0_pct": 61.8,
+    "image_file": "608820.jpeg"
+  },
+  "608165": {
+    "style": "Swook II Mid Hood Men",
+    "source_season": "SS28",
+    "target_rrp": 1700,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 64.2,
+    "gm0_pct": 64.0,
+    "image_file": "608165.jpeg"
+  },
+  "608848": {
+    "style": "Swook II Mid Hood Men AF",
+    "source_season": "FW27",
+    "target_rrp": 1700,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 67.8,
+    "gm0_pct": 64.0,
+    "image_file": "608848.jpeg"
+  },
+  "608185": {
+    "style": "Swook II Mid Hood Women",
+    "source_season": "SS28",
+    "target_rrp": 1700,
+    "target_gm0_pct": 63.0,
+    "sample_gm0_pct": 67.6,
+    "gm0_pct": 67.5,
+    "image_file": "608185.jpeg"
+  },
+  "608849": {
+    "style": "Swook II Mid Hood Women AF",
+    "source_season": "FW27",
+    "target_rrp": 1700,
+    "target_gm0_pct": 63.0,
+    "sample_gm0_pct": 70.9,
+    "gm0_pct": 67.5,
+    "image_file": "608849.jpeg"
+  },
+  "608166": {
+    "style": "Swook II Mid Jacket Men",
+    "source_season": "SS28",
+    "target_rrp": 1500,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 63.4,
+    "gm0_pct": 63.2,
+    "image_file": "608166.jpeg"
+  },
+  "608850": {
+    "style": "Swook II Mid Jacket Men AF",
+    "source_season": "FW27",
+    "target_rrp": 1500,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 66.8,
+    "gm0_pct": 63.2,
+    "image_file": "608850.jpeg"
+  },
+  "608186": {
+    "style": "Swook II Mid Jacket Women",
+    "source_season": "SS28",
+    "target_rrp": 1500,
+    "target_gm0_pct": 63.0,
+    "sample_gm0_pct": 67.0,
+    "gm0_pct": 66.7,
+    "image_file": "608186.jpeg"
+  },
+  "608851": {
+    "style": "Swook II Mid Jacket Women AF",
+    "source_season": "FW27",
+    "target_rrp": 1500,
+    "target_gm0_pct": 63.0,
+    "sample_gm0_pct": 70.6,
+    "gm0_pct": 66.7,
+    "image_file": "608851.jpeg"
+  },
+  "608686": {
+    "style": "Swook Mid Halfzip W",
+    "source_season": "SS28",
+    "target_rrp": 1400,
+    "target_gm0_pct": 65.0,
+    "sample_gm0_pct": 62.4,
+    "gm0_pct": 58.1,
+    "image_file": "608686.jpeg"
+  },
+  "608687": {
+    "style": "Swook Mid Sweater M",
+    "source_season": "SS28",
+    "target_rrp": 1200,
+    "target_gm0_pct": 64.0,
+    "sample_gm0_pct": 59.2,
+    "gm0_pct": 55.2,
+    "image_file": "608687.jpeg"
+  },
+  "416160": {
+    "style": "Tarius +1",
+    "source_season": "SS28",
+    "target_rrp": 1600,
+    "target_gm0_pct": 55.6,
+    "sample_gm0_pct": 63.1,
+    "gm0_pct": 0,
+    "image_file": "416160.jpeg"
+  },
+  "416170": {
+    "style": "Tarius +6",
+    "source_season": "FW27",
+    "target_rrp": 1500,
+    "target_gm0_pct": 52.2,
+    "sample_gm0_pct": 63.8,
+    "gm0_pct": 0,
+    "image_file": "416170.jpeg"
+  },
+  "416140": {
+    "style": "Tarius -18",
+    "source_season": "SS28",
+    "target_rrp": 2200,
+    "target_gm0_pct": 53.9,
+    "sample_gm0_pct": 61.8,
+    "gm0_pct": 0,
+    "image_file": "416140.jpeg"
+  },
+  "416150": {
+    "style": "Tarius -5",
+    "source_season": "SS28",
+    "target_rrp": 1800,
+    "target_gm0_pct": 56.8,
+    "sample_gm0_pct": 64.4,
+    "gm0_pct": 0,
+    "image_file": "416150.jpeg"
+  },
+  "416260": {
+    "style": "Tarius Lite +8",
+    "source_season": "SS28",
+    "target_rrp": 1200,
+    "target_gm0_pct": 56.4,
+    "sample_gm0_pct": 65.0,
+    "gm0_pct": 0,
+    "image_file": "416260.jpeg"
+  },
+  "608670": {
+    "style": "Tarre Proof Insulated Jacket Men",
+    "source_season": "FW27",
+    "target_rrp": 3500,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 63.3,
+    "gm0_pct": 58.4,
+    "image_file": "608670.jpeg"
+  },
+  "609022": {
+    "style": "Tarre Proof Insulated Jacket Men AF",
+    "source_season": "FW27",
+    "target_rrp": 3500,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 63.3,
+    "gm0_pct": 58.4,
+    "image_file": "609022.jpeg"
+  },
+  "608674": {
+    "style": "Tarre Proof Insulated Jacket Women",
+    "source_season": "FW27",
+    "target_rrp": 3500,
+    "target_gm0_pct": 64.0,
+    "sample_gm0_pct": 63.8,
+    "gm0_pct": 0,
+    "image_file": "608674.jpeg"
+  },
+  "608673": {
+    "style": "Tarre Proof Insulated Pant Men",
+    "source_season": "FW27",
+    "target_rrp": 3000,
+    "target_gm0_pct": 63.0,
+    "sample_gm0_pct": 70.7,
+    "gm0_pct": 70.0,
+    "image_file": "608673.jpeg"
+  },
+  "608675": {
+    "style": "Tarre Proof Insulated Pant Women",
+    "source_season": "FW27",
+    "target_rrp": 3000,
+    "target_gm0_pct": 65.0,
+    "sample_gm0_pct": 71.5,
+    "gm0_pct": 0,
+    "image_file": "608675.jpeg"
+  },
+  "608751": {
+    "style": "Thermal Beanie",
+    "source_season": "FW27",
+    "target_rrp": 400,
+    "target_gm0_pct": 61.3,
+    "sample_gm0_pct": 67.5,
+    "gm0_pct": 68.1,
+    "image_file": "608751.jpeg"
+  },
+  "607752": {
+    "style": "Tight duffle 50",
+    "source_season": "SS28",
+    "target_rrp": 1300,
+    "target_gm0_pct": 61.0,
+    "sample_gm0_pct": 60.4,
+    "gm0_pct": 56.4,
+    "image_file": "607752.jpeg"
+  },
+  "607755": {
+    "style": "Tight hip pack 1",
+    "source_season": "SS28",
+    "target_rrp": 350,
+    "target_gm0_pct": 61.8,
+    "sample_gm0_pct": 59.4,
+    "gm0_pct": 0,
+    "image_file": "607755.jpeg"
+  },
+  "608063": {
+    "style": "Tight hip pack 3,5",
+    "source_season": "SS28",
+    "target_rrp": 450,
+    "target_gm0_pct": 61.8,
+    "sample_gm0_pct": 60.4,
+    "gm0_pct": 0,
+    "image_file": "608063.jpeg"
+  },
+  "608304": {
+    "style": "Tight Junior 15",
+    "source_season": "SS28",
+    "target_rrp": 1000,
+    "target_gm0_pct": 55.3,
+    "sample_gm0_pct": 59.6,
+    "gm0_pct": 97.9,
+    "image_file": "608304.jpeg"
+  },
+  "608303": {
+    "style": "Tight Junior 8",
+    "source_season": "SS28",
+    "target_rrp": 900,
+    "target_gm0_pct": 58.2,
+    "sample_gm0_pct": 62.4,
+    "gm0_pct": 97.7,
+    "image_file": "608303.jpeg"
+  },
+  "608311": {
+    "style": "Tight Large",
+    "source_season": "SS28",
+    "target_rrp": 1200,
+    "target_gm0_pct": 61.1,
+    "sample_gm0_pct": 58.5,
+    "gm0_pct": 98.3,
+    "image_file": "608311.jpeg"
+  },
+  "608310": {
+    "style": "Tight Medium",
+    "source_season": "SS28",
+    "target_rrp": 1100,
+    "target_gm0_pct": 60.1,
+    "sample_gm0_pct": 58.1,
+    "gm0_pct": 98.1,
+    "image_file": "608310.jpeg"
+  },
+  "607757": {
+    "style": "Tight Pocket bag",
+    "source_season": "SS28",
+    "target_rrp": 350,
+    "target_gm0_pct": 63.1,
+    "sample_gm0_pct": 64.3,
+    "gm0_pct": 0,
+    "image_file": "607757.jpeg"
+  },
+  "608309": {
+    "style": "Tight Pro Large",
+    "source_season": "SS28",
+    "target_rrp": 1300,
+    "target_gm0_pct": 63.5,
+    "sample_gm0_pct": 58.6,
+    "gm0_pct": 98.4,
+    "image_file": "608309.jpeg"
+  },
+  "608308": {
+    "style": "Tight Pro Medium",
+    "source_season": "SS28",
+    "target_rrp": 1200,
+    "target_gm0_pct": 62.5,
+    "sample_gm0_pct": 57.9,
+    "gm0_pct": 98.3,
+    "image_file": "608308.jpeg"
+  },
+  "608307": {
+    "style": "Tight Small",
+    "source_season": "SS28",
+    "target_rrp": 1000,
+    "target_gm0_pct": 57.8,
+    "sample_gm0_pct": 55.8,
+    "gm0_pct": 97.9,
+    "image_file": "608307.jpeg"
+  },
+  "607756": {
+    "style": "Tight Tote 25",
+    "source_season": "SS28",
+    "target_rrp": 1000,
+    "target_gm0_pct": 60.6,
+    "sample_gm0_pct": 62.3,
+    "gm0_pct": 68.0,
+    "image_file": "607756.jpeg"
+  },
+  "608306": {
+    "style": "Tight X-Small",
+    "source_season": "SS28",
+    "target_rrp": 900,
+    "target_gm0_pct": 56.3,
+    "sample_gm0_pct": 55.8,
+    "gm0_pct": 97.7,
+    "image_file": "608306.jpeg"
+  },
+  "608691": {
+    "style": "Tova Wool Beanie",
+    "source_season": "FW27",
+    "target_rrp": 600,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 62.7,
+    "gm0_pct": 0,
+    "image_file": "608691.jpeg"
+  },
+  "607855": {
+    "style": "Trekk Tech LS Tee Men",
+    "source_season": "FW27",
+    "target_rrp": 700,
+    "target_gm0_pct": 61.1,
+    "sample_gm0_pct": 74.8,
+    "gm0_pct": 75.8,
+    "image_file": "607855.jpeg"
+  },
+  "607858": {
+    "style": "Trekk Tech LS Tee Women",
+    "source_season": "FW27",
+    "target_rrp": 700,
+    "target_gm0_pct": 64.6,
+    "sample_gm0_pct": 77.3,
+    "gm0_pct": 73.9,
+    "image_file": "607858.jpeg"
+  },
+  "607856": {
+    "style": "Trekk Tech Tee Men",
+    "source_season": "FW27",
+    "target_rrp": 500,
+    "target_gm0_pct": 61.1,
+    "sample_gm0_pct": 69.7,
+    "gm0_pct": 72.2,
+    "image_file": "607856.jpeg"
+  },
+  "607857": {
+    "style": "Trekk Tech Tee Women",
+    "source_season": "FW27",
+    "target_rrp": 500,
+    "target_gm0_pct": 64.6,
+    "sample_gm0_pct": 71.5,
+    "gm0_pct": 73.1,
+    "image_file": "607857.jpeg"
+  },
+  "608446": {
+    "style": "Utility pouch 3L",
+    "source_season": "SS28",
+    "target_rrp": 800,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 60.3,
+    "gm0_pct": 62.0,
+    "image_file": "608446.jpeg"
+  },
+  "608441": {
+    "style": "Vara 20L",
+    "source_season": "SS28",
+    "target_rrp": 1500,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 63.0,
+    "gm0_pct": 61.7,
+    "image_file": "608441.jpeg"
+  },
+  "608483": {
+    "style": "Vara Alpha Cap",
+    "source_season": "FW27",
+    "target_rrp": 550,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 66.9,
+    "gm0_pct": 99.2,
+    "image_file": "608483.jpeg"
+  },
+  "608477": {
+    "style": "Vara Alpha Sweater Men",
+    "source_season": "SS28",
+    "target_rrp": 1500,
+    "target_gm0_pct": 55.0,
+    "sample_gm0_pct": 64.6,
+    "gm0_pct": 61.3,
+    "image_file": "608477.jpeg"
+  },
+  "608478": {
+    "style": "Vara Alpha Sweater Women",
+    "source_season": "SS28",
+    "target_rrp": 1500,
+    "target_gm0_pct": 58.0,
+    "sample_gm0_pct": 68.4,
+    "gm0_pct": 66.1,
+    "image_file": "608478.jpeg"
+  },
+  "608375": {
+    "style": "Vara Down GTX Parka Men",
+    "source_season": "FW27",
+    "target_rrp": 8000,
+    "target_gm0_pct": 55.0,
+    "sample_gm0_pct": 54.9,
+    "gm0_pct": 69.3,
+    "image_file": "608375.jpeg"
+  },
+  "608376": {
+    "style": "Vara Down GTX Parka Women",
+    "source_season": "FW27",
+    "target_rrp": 8000,
+    "target_gm0_pct": 58.0,
+    "sample_gm0_pct": 56.6,
+    "gm0_pct": 70.9,
+    "image_file": "608376.jpeg"
+  },
+  "608750": {
+    "style": "Vassi Beanie",
+    "source_season": "FW27",
+    "target_rrp": 500,
+    "target_gm0_pct": 61.3,
+    "sample_gm0_pct": 64.4,
+    "gm0_pct": 64.4,
+    "image_file": "608750.jpeg"
+  },
+  "608574": {
+    "style": "Vassi GTX II Jacket Men",
+    "source_season": "FW27",
+    "target_rrp": 6500,
+    "target_gm0_pct": 59.2,
+    "sample_gm0_pct": 49.5,
+    "gm0_pct": 50.4,
+    "image_file": "608574.jpeg"
+  },
+  "608578": {
+    "style": "Vassi GTX II Jacket Women",
+    "source_season": "FW27",
+    "target_rrp": 6500,
+    "target_gm0_pct": 57.5,
+    "sample_gm0_pct": 51.8,
+    "gm0_pct": 52.5,
+    "image_file": "608578.jpeg"
+  },
+  "608575": {
+    "style": "Vassi GTX II Pant Men",
+    "source_season": "FW27",
+    "target_rrp": 5500,
+    "target_gm0_pct": 59.2,
+    "sample_gm0_pct": 54.0,
+    "gm0_pct": 54.7,
+    "image_file": "608575.jpeg"
+  },
+  "608580": {
+    "style": "Vassi GTX II Pant Women",
+    "source_season": "FW27",
+    "target_rrp": 5500,
+    "target_gm0_pct": 57.5,
+    "sample_gm0_pct": 55.3,
+    "gm0_pct": 56.2,
+    "image_file": "608580.jpeg"
+  },
+  "608576": {
+    "style": "Vassi GTX Pro II Bib Men",
+    "source_season": "FW27",
+    "target_rrp": 6500,
+    "target_gm0_pct": 59.2,
+    "sample_gm0_pct": 48.6,
+    "gm0_pct": 49.2,
+    "image_file": "608576.jpeg"
+  },
+  "608581": {
+    "style": "Vassi GTX Pro II Bib Women",
+    "source_season": "FW27",
+    "target_rrp": 6500,
+    "target_gm0_pct": 57.5,
+    "sample_gm0_pct": 50.4,
+    "gm0_pct": 51.3,
+    "image_file": "608581.jpeg"
+  },
+  "608577": {
+    "style": "Vassi GTX Pro II Jacket Men",
+    "source_season": "FW27",
+    "target_rrp": 8500,
+    "target_gm0_pct": 59.2,
+    "sample_gm0_pct": 50.9,
+    "gm0_pct": 52.2,
+    "image_file": "608577.jpeg"
+  },
+  "608582": {
+    "style": "Vassi GTX Pro II Jacket Women",
+    "source_season": "FW27",
+    "target_rrp": 8500,
+    "target_gm0_pct": 57.5,
+    "sample_gm0_pct": 55.0,
+    "gm0_pct": 55.9,
+    "image_file": "608582.jpeg"
+  },
+  "607790": {
+    "style": "Vassi Headband",
+    "source_season": "FW27",
+    "target_rrp": 400,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 64.5,
+    "gm0_pct": 64.6,
+    "image_file": "607790.jpeg"
+  },
+  "606844": {
+    "style": "Vassi Mid Hood Men",
+    "source_season": "FW27",
+    "target_rrp": 2200,
+    "target_gm0_pct": 62.9,
+    "sample_gm0_pct": 51.5,
+    "gm0_pct": 51.7,
+    "image_file": "606844.jpeg"
+  },
+  "606826": {
+    "style": "Vassi Mid Hood Women",
+    "source_season": "FW27",
+    "target_rrp": 2200,
+    "target_gm0_pct": 66.0,
+    "sample_gm0_pct": 52.9,
+    "gm0_pct": 57.9,
+    "image_file": "606826.jpeg"
+  },
+  "608711": {
+    "style": "Vassi Pro 32L",
+    "source_season": "FW27",
+    "target_rrp": 2400,
+    "target_gm0_pct": 65.0,
+    "sample_gm0_pct": 59.7,
+    "gm0_pct": 0,
+    "image_file": "608711.jpeg"
+  },
+  "608566": {
+    "style": "Vertigo Proof Low Men",
+    "source_season": "SS28",
+    "target_rrp": 1800,
+    "target_gm0_pct": 58.0,
+    "sample_gm0_pct": 60.6,
+    "gm0_pct": 63.2,
+    "image_file": "608566.jpeg"
+  },
+  "608568": {
+    "style": "Vertigo Proof Low Women",
+    "source_season": "SS28",
+    "target_rrp": 1800,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 60.6,
+    "gm0_pct": 63.2,
+    "image_file": "608568.jpeg"
+  },
+  "608608": {
+    "style": "Vide 20",
+    "source_season": "SS28",
+    "target_rrp": 1100,
+    "target_gm0_pct": 52.8,
+    "sample_gm0_pct": 56.9,
+    "gm0_pct": 54.2,
+    "image_file": "608608.jpeg"
+  },
+  "608607": {
+    "style": "Vide 30",
+    "source_season": "SS28",
+    "target_rrp": 1300,
+    "target_gm0_pct": 54.4,
+    "sample_gm0_pct": 61.5,
+    "gm0_pct": 98.4,
+    "image_file": "608607.jpeg"
+  },
+  "607819": {
+    "style": "Warm Flex Pant Men",
+    "source_season": "FW27",
+    "target_rrp": 2000,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 62.8,
+    "gm0_pct": 99.4,
+    "image_file": "607819.jpeg"
+  },
+  "607820": {
+    "style": "Warm Flex Pant Women",
+    "source_season": "FW27",
+    "target_rrp": 2000,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 64.9,
+    "gm0_pct": 65.4,
+    "image_file": "607820.jpeg"
+  },
+  "608377": {
+    "style": "Yra Mimic Proof Parka Men",
+    "source_season": "FW27",
+    "target_rrp": 4500,
+    "target_gm0_pct": 57.0,
+    "sample_gm0_pct": 60.8,
+    "gm0_pct": 59.2,
+    "image_file": "608377.jpeg"
+  },
+  "608378": {
+    "style": "Yra Mimic Proof Parka Women",
+    "source_season": "FW27",
+    "target_rrp": 4500,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 63.8,
+    "gm0_pct": 60.4,
+    "image_file": "608378.jpeg"
+  },
+  "608872": {
+    "style": "Zircon Flex Pant Men",
+    "source_season": "SS28",
+    "target_rrp": 2000,
+    "target_gm0_pct": 65.0,
+    "sample_gm0_pct": 70.1,
+    "gm0_pct": 66.0,
+    "image_file": "608872.jpeg"
+  },
+  "608871": {
+    "style": "Zircon Flex Pant Women",
+    "source_season": "SS28",
+    "target_rrp": 2000,
+    "target_gm0_pct": 66.0,
+    "sample_gm0_pct": 70.3,
+    "gm0_pct": 0,
+    "image_file": "608871.jpeg"
+  },
+  "608875": {
+    "style": "Zircon Proof Jacket Men",
+    "source_season": "SS28",
+    "target_rrp": 2500,
+    "target_gm0_pct": 59.2,
+    "sample_gm0_pct": 62.8,
+    "gm0_pct": 61.8,
+    "image_file": "608875.jpeg"
+  },
+  "608869": {
+    "style": "Zircon Proof Jacket Women",
+    "source_season": "SS28",
+    "target_rrp": 2500,
+    "target_gm0_pct": 57.5,
+    "sample_gm0_pct": 65.3,
+    "gm0_pct": 65.0,
+    "image_file": "608869.jpeg"
+  },
+  "608639": {
+    "style": "Zodiac Mid II Jacket Men",
+    "source_season": "FW27",
+    "target_rrp": 1300,
+    "target_gm0_pct": 62.9,
+    "sample_gm0_pct": 62.2,
+    "gm0_pct": 99.2,
+    "image_file": "608639.jpeg"
+  },
+  "608640": {
+    "style": "Zodiac Mid II Jacket Women",
+    "source_season": "FW27",
+    "target_rrp": 1300,
+    "target_gm0_pct": 66.0,
+    "sample_gm0_pct": 65.8,
+    "gm0_pct": 99.2,
+    "image_file": "608640.jpeg"
+  },
+  "609012": {
+    "style": "Alert GTX II Jacket Men",
+    "source_season": "SS28",
+    "target_rrp": 3800,
+    "target_gm0_pct": 58.0,
+    "sample_gm0_pct": 64.6,
+    "gm0_pct": 60.5,
+    "image_file": "609012.jpeg"
+  },
+  "609013": {
+    "style": "Alert GTX II Jacket Women",
+    "source_season": "SS28",
+    "target_rrp": 3800,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 68.9,
+    "gm0_pct": 66.3,
+    "image_file": "609013.jpeg"
+  },
+  "608158": {
+    "style": "Alert Mid Shorts Men",
+    "source_season": "SS28",
+    "target_rrp": 1200,
+    "target_gm0_pct": 63.0,
+    "sample_gm0_pct": 63.4,
+    "gm0_pct": 64.2,
+    "image_file": "608158.jpeg"
+  },
+  "608178": {
+    "style": "Alert Mid Shorts Women",
+    "source_season": "SS28",
+    "target_rrp": 1200,
+    "target_gm0_pct": 64.0,
+    "sample_gm0_pct": 65.5,
+    "gm0_pct": 66.8,
+    "image_file": "608178.jpeg"
+  },
+  "609152": {
+    "style": "Blueberry Hagl\u00f6fs Bandana",
+    "source_season": "SS28",
+    "target_rrp": 400,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 56.4,
+    "gm0_pct": 63.2,
+    "image_file": "609152.jpeg"
+  },
+  "609153": {
+    "style": "Blueberry L.I.M Mimic Barrier Hood Men",
+    "source_season": "SS28",
+    "target_rrp": 2500,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 59.4,
+    "gm0_pct": 59.6,
+    "image_file": "609153.jpeg"
+  },
+  "609154": {
+    "style": "Blueberry L.I.M Mimic Barrier Hood Women",
+    "source_season": "SS28",
+    "target_rrp": 2500,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 62.1,
+    "gm0_pct": 62.4,
+    "image_file": "609154.jpeg"
+  },
+  "609155": {
+    "style": "Blueberry L.I.M Pace Cap",
+    "source_season": "SS28",
+    "target_rrp": 500,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 71.5,
+    "gm0_pct": 72.0,
+    "image_file": "609155.jpeg"
+  },
+  "609156": {
+    "style": "Blueberry L.I.M Ridge Tank Women",
+    "source_season": "SS28",
+    "target_rrp": 450,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 50.0,
+    "gm0_pct": 51.7,
+    "image_file": "609156.jpeg"
+  },
+  "609157": {
+    "style": "Blueberry L.I.M Ridge Tee Men",
+    "source_season": "SS28",
+    "target_rrp": 500,
+    "target_gm0_pct": 61.0,
+    "sample_gm0_pct": 53.8,
+    "gm0_pct": 55.8,
+    "image_file": "609157.jpeg"
+  },
+  "609158": {
+    "style": "Blueberry Tight Medium",
+    "source_season": "SS28",
+    "target_rrp": 1100,
+    "target_gm0_pct": 60.1,
+    "sample_gm0_pct": null,
+    "gm0_pct": 98.1,
+    "image_file": null
+  },
+  "609159": {
+    "style": "Blueberry Tight Pocket bag",
+    "source_season": "SS28",
+    "target_rrp": 350,
+    "target_gm0_pct": 63.1,
+    "sample_gm0_pct": null,
+    "gm0_pct": 0,
+    "image_file": null
+  },
+  "609014": {
+    "style": "Chaos GTX III Jacket Men",
+    "source_season": "SS28",
+    "target_rrp": 3500,
+    "target_gm0_pct": 59.2,
+    "sample_gm0_pct": 99.6,
+    "gm0_pct": 68.5,
+    "image_file": "609014.jpeg"
+  },
+  "609015": {
+    "style": "Chaos GTX III Jacket Women",
+    "source_season": "SS28",
+    "target_rrp": 3500,
+    "target_gm0_pct": 57.5,
+    "sample_gm0_pct": 99.6,
+    "gm0_pct": 70.4,
+    "image_file": "609015.jpeg"
+  },
+  "608860": {
+    "style": "Essential Tights",
+    "source_season": "SS28",
+    "target_rrp": 1000,
+    "target_gm0_pct": 66.0,
+    "sample_gm0_pct": 57.2,
+    "gm0_pct": 0,
+    "image_file": "608860.jpeg"
+  },
+  "608817": {
+    "style": "Flat accessory bag II",
+    "source_season": "SS28",
+    "target_rrp": 500,
+    "target_gm0_pct": 59.8,
+    "sample_gm0_pct": 64.6,
+    "gm0_pct": 0,
+    "image_file": "608817.jpeg"
+  },
+  "608810": {
+    "style": "Fuse Pant Men",
+    "source_season": "SS28",
+    "target_rrp": 1200,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 63.4,
+    "gm0_pct": 0,
+    "image_file": "608810.jpeg"
+  },
+  "608813": {
+    "style": "Fuse Pant Women",
+    "source_season": "SS28",
+    "target_rrp": 1200,
+    "target_gm0_pct": 61.0,
+    "sample_gm0_pct": 64.2,
+    "gm0_pct": 0,
+    "image_file": "608813.jpeg"
+  },
+  "608811": {
+    "style": "Fuse Short Men",
+    "source_season": "SS28",
+    "target_rrp": 1000,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 63.5,
+    "gm0_pct": 0,
+    "image_file": "608811.jpeg"
+  },
+  "608812": {
+    "style": "Fuse Short Women",
+    "source_season": "SS28",
+    "target_rrp": 1000,
+    "target_gm0_pct": 61.0,
+    "sample_gm0_pct": 65.1,
+    "gm0_pct": 0,
+    "image_file": "608812.jpeg"
+  },
+  "608204": {
+    "style": "Hagl\u00f6fs Bandana",
+    "source_season": "SS28",
+    "target_rrp": 400,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 56.4,
+    "gm0_pct": 63.2,
+    "image_file": "608204.jpeg"
+  },
+  "607656": {
+    "style": "Hagl\u00f6fs Cap",
+    "source_season": "SS28",
+    "target_rrp": 400,
+    "target_gm0_pct": 61.3,
+    "sample_gm0_pct": 68.3,
+    "gm0_pct": 69.3,
+    "image_file": "607656.jpeg"
+  },
+  "607868": {
+    "style": "Hagl\u00f6fs LX Hat",
+    "source_season": "SS28",
+    "target_rrp": 500,
+    "target_gm0_pct": 52.4,
+    "sample_gm0_pct": 70.6,
+    "gm0_pct": 71.1,
+    "image_file": "607868.jpeg"
+  },
+  "608876": {
+    "style": "Hagl\u00f6fs Neck Tube",
+    "source_season": "SS28",
+    "target_rrp": 300,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 65.6,
+    "gm0_pct": 67.6,
+    "image_file": "608876.jpeg"
+  },
+  "607867": {
+    "style": "Hagl\u00f6fs Trucker Cap",
+    "source_season": "SS28",
+    "target_rrp": 400,
+    "target_gm0_pct": 61.0,
+    "sample_gm0_pct": 69.1,
+    "gm0_pct": 69.3,
+    "image_file": "607867.jpeg"
+  },
+  "609006": {
+    "style": "Hede II Shorts Men",
+    "source_season": "SS28",
+    "target_rrp": 1100,
+    "target_gm0_pct": 64.0,
+    "sample_gm0_pct": 70.6,
+    "gm0_pct": 66.6,
+    "image_file": "609006.jpeg"
+  },
+  "609007": {
+    "style": "Hede II Shorts Women",
+    "source_season": "SS28",
+    "target_rrp": 1100,
+    "target_gm0_pct": 66.0,
+    "sample_gm0_pct": 71.6,
+    "gm0_pct": 68.3,
+    "image_file": "609007.jpeg"
+  },
+  "608815": {
+    "style": "Hiking Tights Women",
+    "source_season": "SS28",
+    "target_rrp": 1200,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 60.5,
+    "gm0_pct": 0,
+    "image_file": "608815.jpeg"
+  },
+  "609016": {
+    "style": "Holm GTX II Pant Men",
+    "source_season": "SS28",
+    "target_rrp": 2800,
+    "target_gm0_pct": 55.0,
+    "sample_gm0_pct": 99.6,
+    "gm0_pct": 56.8,
+    "image_file": "609016.jpeg"
+  },
+  "609017": {
+    "style": "Holm GTX II Pant Women",
+    "source_season": "SS28",
+    "target_rrp": 2800,
+    "target_gm0_pct": 56.0,
+    "sample_gm0_pct": 99.6,
+    "gm0_pct": 59.3,
+    "image_file": "609017.jpeg"
+  },
+  "608796": {
+    "style": "Kaise Wool II LS Tee Men",
+    "source_season": "SS28",
+    "target_rrp": 1000,
+    "target_gm0_pct": 61.0,
+    "sample_gm0_pct": 58.8,
+    "gm0_pct": 0,
+    "image_file": "608796.jpeg"
+  },
+  "608803": {
+    "style": "Kaise Wool II LS Tee Women",
+    "source_season": "SS28",
+    "target_rrp": 1000,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 62.2,
+    "gm0_pct": 0,
+    "image_file": "608803.jpeg"
+  },
+  "608795": {
+    "style": "Kaise Wool II Tee Men",
+    "source_season": "SS28",
+    "target_rrp": 900,
+    "target_gm0_pct": 61.0,
+    "sample_gm0_pct": 60.2,
+    "gm0_pct": 0,
+    "image_file": "608795.jpeg"
+  },
+  "608804": {
+    "style": "Kaise Wool II Tee Women",
+    "source_season": "SS28",
+    "target_rrp": 900,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 64.8,
+    "gm0_pct": 0,
+    "image_file": "608804.jpeg"
+  },
+  "608816": {
+    "style": "Kaise Wool Tank Top",
+    "source_season": "SS28",
+    "target_rrp": 750,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 65.1,
+    "gm0_pct": 0,
+    "image_file": "608816.jpeg"
+  },
+  "608818": {
+    "style": "Keywallet",
+    "source_season": "SS28",
+    "target_rrp": 450,
+    "target_gm0_pct": 60.5,
+    "sample_gm0_pct": 78.2,
+    "gm0_pct": 0,
+    "image_file": "608818.jpeg"
+  },
+  "609018": {
+    "style": "Klyva GTX II Jacket Men",
+    "source_season": "SS28",
+    "target_rrp": 3500,
+    "target_gm0_pct": 59.2,
+    "sample_gm0_pct": 99.6,
+    "gm0_pct": 63.1,
+    "image_file": "609018.jpeg"
+  },
+  "609019": {
+    "style": "Klyva GTX II Jacket Women",
+    "source_season": "SS28",
+    "target_rrp": 3500,
+    "target_gm0_pct": 57.5,
+    "sample_gm0_pct": 99.6,
+    "gm0_pct": 67.1,
+    "image_file": "609019.jpeg"
+  },
+  "608649": {
+    "style": "Kobbe Sandal Low Men",
+    "source_season": "SS28",
+    "target_rrp": 1000,
+    "target_gm0_pct": 55.1,
+    "sample_gm0_pct": 59.5,
+    "gm0_pct": 59.6,
+    "image_file": "608649.jpeg"
+  },
+  "608651": {
+    "style": "Kobbe Sandal Low Women",
+    "source_season": "SS28",
+    "target_rrp": 1000,
+    "target_gm0_pct": 0,
+    "sample_gm0_pct": 59.5,
+    "gm0_pct": 59.6,
+    "image_file": "608651.jpeg"
+  },
+  "607759": {
+    "style": "Korp Lite Pant Men",
+    "source_season": "SS28",
+    "target_rrp": 1300,
+    "target_gm0_pct": 63.0,
+    "sample_gm0_pct": 68.8,
+    "gm0_pct": 68.0,
+    "image_file": "607759.jpeg"
+  },
+  "607760": {
+    "style": "Korp Lite Pant Women",
+    "source_season": "SS28",
+    "target_rrp": 1300,
+    "target_gm0_pct": 61.0,
+    "sample_gm0_pct": 69.6,
+    "gm0_pct": 69.2,
+    "image_file": "607760.jpeg"
+  },
+  "607876": {
+    "style": "Korp Lite Shorts Men",
+    "source_season": "SS28",
+    "target_rrp": 1000,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 68.9,
+    "gm0_pct": 64.9,
+    "image_file": "607876.jpeg"
+  },
+  "607877": {
+    "style": "Korp Lite Shorts Women",
+    "source_season": "SS28",
+    "target_rrp": 1000,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 68.7,
+    "gm0_pct": 70.0,
+    "image_file": "607877.jpeg"
+  },
+  "608786": {
+    "style": "L.I.M Airak 2,5L Proof II Jacket Men",
+    "source_season": "SS28",
+    "target_rrp": 2500,
+    "target_gm0_pct": 58.0,
+    "sample_gm0_pct": 64.3,
+    "gm0_pct": 64.3,
+    "image_file": "608786.jpeg"
+  },
+  "608789": {
+    "style": "L.I.M Airak 2,5L Proof II Jacket Women",
+    "source_season": "SS28",
+    "target_rrp": 2500,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 67.2,
+    "gm0_pct": 0,
+    "image_file": "608789.jpeg"
+  },
+  "608787": {
+    "style": "L.I.M Airak 2,5L Proof II Pant Men",
+    "source_season": "SS28",
+    "target_rrp": 2000,
+    "target_gm0_pct": 59.0,
+    "sample_gm0_pct": 62.7,
+    "gm0_pct": 62.8,
+    "image_file": "608787.jpeg"
+  },
+  "608788": {
+    "style": "L.I.M Airak 2,5L Proof II Pant Women",
+    "source_season": "SS28",
+    "target_rrp": 2000,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 63.3,
+    "gm0_pct": 0,
+    "image_file": "608788.jpeg"
+  },
+  "608216": {
+    "style": "L.I.M Delta Crop Tee Women",
+    "source_season": "SS28",
+    "target_rrp": 700,
+    "target_gm0_pct": 63.0,
+    "sample_gm0_pct": 64.3,
+    "gm0_pct": 67.2,
+    "image_file": "608216.jpeg"
+  },
+  "608215": {
+    "style": "L.I.M Delta Tee Men",
+    "source_season": "SS28",
+    "target_rrp": 700,
+    "target_gm0_pct": 61.0,
+    "sample_gm0_pct": 56.6,
+    "gm0_pct": 60.1,
+    "image_file": "608215.jpeg"
+  },
+  "608808": {
+    "style": "L.I.M Down Hood Jacket Men",
+    "source_season": "SS28",
+    "target_rrp": 6000,
+    "target_gm0_pct": 50.0,
+    "sample_gm0_pct": 56.9,
+    "gm0_pct": 64.1,
+    "image_file": "608808.jpeg"
+  },
+  "608807": {
+    "style": "L.I.M Down Hood Jacket Women",
+    "source_season": "SS28",
+    "target_rrp": 6000,
+    "target_gm0_pct": 50.0,
+    "sample_gm0_pct": 58.0,
+    "gm0_pct": 58.6,
+    "image_file": "608807.jpeg"
+  },
+  "609082": {
+    "style": "L.I.M GTX III Pant Men",
+    "source_season": "SS28",
+    "target_rrp": 2800,
+    "target_gm0_pct": 49.0,
+    "sample_gm0_pct": 99.6,
+    "gm0_pct": 0,
+    "image_file": "609082.jpeg"
+  },
+  "609083": {
+    "style": "L.I.M GTX III Pant Women",
+    "source_season": "SS28",
+    "target_rrp": 2800,
+    "target_gm0_pct": 49.0,
+    "sample_gm0_pct": 99.6,
+    "gm0_pct": 0,
+    "image_file": "609083.jpeg"
+  },
+  "608890": {
+    "style": "L.I.M Light Low Men",
+    "source_season": "SS28",
+    "target_rrp": 2200,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 64.0,
+    "gm0_pct": 0,
+    "image_file": "608890.jpeg"
+  },
+  "608893": {
+    "style": "L.I.M Light Low Women",
+    "source_season": "SS28",
+    "target_rrp": 2200,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 64.7,
+    "gm0_pct": 0,
+    "image_file": "608893.jpeg"
+  },
+  "608783": {
+    "style": "L.I.M Light Proof Jacket Men",
+    "source_season": "SS28",
+    "target_rrp": 3700,
+    "target_gm0_pct": 50.0,
+    "sample_gm0_pct": 53.2,
+    "gm0_pct": 50.3,
+    "image_file": "608783.jpeg"
+  },
+  "608792": {
+    "style": "L.I.M Light Proof Jacket Women",
+    "source_season": "SS28",
+    "target_rrp": 3700,
+    "target_gm0_pct": 50.0,
+    "sample_gm0_pct": 56.8,
+    "gm0_pct": 63.5,
+    "image_file": "608792.jpeg"
+  },
+  "608799": {
+    "style": "L.I.M Light T-Shirt Men",
+    "source_season": "SS28",
+    "target_rrp": 1200,
+    "target_gm0_pct": 50.0,
+    "sample_gm0_pct": 66.2,
+    "gm0_pct": 66.2,
+    "image_file": "608799.jpeg"
+  },
+  "608800": {
+    "style": "L.I.M Light T-Shirt Women",
+    "source_season": "SS28",
+    "target_rrp": 1200,
+    "target_gm0_pct": 50.0,
+    "sample_gm0_pct": 71.6,
+    "gm0_pct": 71.6,
+    "image_file": "608800.jpeg"
+  },
+  "608984": {
+    "style": "L.I.M Mid Hybrid Men",
+    "source_season": "SS28",
+    "target_rrp": 1500,
+    "target_gm0_pct": 62.9,
+    "sample_gm0_pct": 63.0,
+    "gm0_pct": 0,
+    "image_file": "608984.jpeg"
+  },
+  "608985": {
+    "style": "L.I.M Mid Hybrid Women",
+    "source_season": "SS28",
+    "target_rrp": 1500,
+    "target_gm0_pct": 66.0,
+    "sample_gm0_pct": 66.3,
+    "gm0_pct": 0,
+    "image_file": "608985.jpeg"
+  },
+  "608417": {
+    "style": "L.I.M Mid Multi Jacket Men",
+    "source_season": "SS28",
+    "target_rrp": 1100,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 59.0,
+    "gm0_pct": 59.4,
+    "image_file": "608417.jpeg"
+  },
+  "608418": {
+    "style": "L.I.M Mid Multi Jacket Women",
+    "source_season": "SS28",
+    "target_rrp": 1100,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 60.7,
+    "gm0_pct": 61.4,
+    "image_file": "608418.jpeg"
+  },
+  "609000": {
+    "style": "L.I.M Mid Reversible Crew Men",
+    "source_season": "SS28",
+    "target_rrp": 1200,
+    "target_gm0_pct": 62.9,
+    "sample_gm0_pct": 75.6,
+    "gm0_pct": 0,
+    "image_file": "609000.jpeg"
+  },
+  "609001": {
+    "style": "L.I.M Mid Reversible Crew Women",
+    "source_season": "SS28",
+    "target_rrp": 1200,
+    "target_gm0_pct": 66.0,
+    "sample_gm0_pct": 78.1,
+    "gm0_pct": 0,
+    "image_file": "609001.jpeg"
+  },
+  "607964": {
+    "style": "L.I.M Mimic Barrier Hood Men",
+    "source_season": "SS28",
+    "target_rrp": 2500,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 59.4,
+    "gm0_pct": 59.6,
+    "image_file": "607964.jpeg"
+  },
+  "607967": {
+    "style": "L.I.M Mimic Barrier Hood Women",
+    "source_season": "SS28",
+    "target_rrp": 2500,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 62.1,
+    "gm0_pct": 62.4,
+    "image_file": "607967.jpeg"
+  },
+  "607966": {
+    "style": "L.I.M Mimic Barrier Vest Men",
+    "source_season": "SS28",
+    "target_rrp": 1800,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 62.6,
+    "gm0_pct": 62.3,
+    "image_file": "607966.jpeg"
+  },
+  "607969": {
+    "style": "L.I.M Mimic Barrier Vest Women",
+    "source_season": "SS28",
+    "target_rrp": 1800,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 65.8,
+    "gm0_pct": 65.0,
+    "image_file": "607969.jpeg"
+  },
+  "608202": {
+    "style": "L.I.M Pace Cap",
+    "source_season": "SS28",
+    "target_rrp": 500,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 71.5,
+    "gm0_pct": 72.0,
+    "image_file": "608202.jpeg"
+  },
+  "608159": {
+    "style": "L.I.M Pace Shorts Men",
+    "source_season": "SS28",
+    "target_rrp": 900,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 68.4,
+    "gm0_pct": 63.5,
+    "image_file": "608159.jpeg"
+  },
+  "608179": {
+    "style": "L.I.M Pace Shorts Women",
+    "source_season": "SS28",
+    "target_rrp": 900,
+    "target_gm0_pct": 63.0,
+    "sample_gm0_pct": 68.8,
+    "gm0_pct": 68.0,
+    "image_file": "608179.jpeg"
+  },
+  "608420": {
+    "style": "L.I.M Ridge Tank Women",
+    "source_season": "SS28",
+    "target_rrp": 450,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 50.0,
+    "gm0_pct": 51.7,
+    "image_file": "608420.jpeg"
+  },
+  "607685": {
+    "style": "L.I.M Ridge Tee Men",
+    "source_season": "SS28",
+    "target_rrp": 500,
+    "target_gm0_pct": 61.0,
+    "sample_gm0_pct": 53.8,
+    "gm0_pct": 55.8,
+    "image_file": "607685.jpeg"
+  },
+  "607686": {
+    "style": "L.I.M Ridge Tee Women",
+    "source_season": "SS28",
+    "target_rrp": 500,
+    "target_gm0_pct": 61.0,
+    "sample_gm0_pct": 58.3,
+    "gm0_pct": 59.2,
+    "image_file": "607686.jpeg"
+  },
+  "608170": {
+    "style": "L.I.M Sunpack Hoodie Men",
+    "source_season": "SS28",
+    "target_rrp": 1500,
+    "target_gm0_pct": 58.0,
+    "sample_gm0_pct": 63.2,
+    "gm0_pct": 63.7,
+    "image_file": "608170.jpeg"
+  },
+  "608190": {
+    "style": "L.I.M Sunpack Hoodie Women",
+    "source_season": "SS28",
+    "target_rrp": 1500,
+    "target_gm0_pct": 59.0,
+    "sample_gm0_pct": 66.4,
+    "gm0_pct": 66.9,
+    "image_file": "608190.jpeg"
+  },
+  "608889": {
+    "style": "L.I.M Ultralight GTX Low Men",
+    "source_season": "SS28",
+    "target_rrp": 2700,
+    "target_gm0_pct": 57.3,
+    "sample_gm0_pct": 59.3,
+    "gm0_pct": 0,
+    "image_file": "608889.jpeg"
+  },
+  "608892": {
+    "style": "L.I.M Ultralight GTX Low Women",
+    "source_season": "SS28",
+    "target_rrp": 2700,
+    "target_gm0_pct": 57.3,
+    "sample_gm0_pct": 59.9,
+    "gm0_pct": 0,
+    "image_file": "608892.jpeg"
+  },
+  "608888": {
+    "style": "L.I.M Ultralight Low Men",
+    "source_season": "SS28",
+    "target_rrp": 2400,
+    "target_gm0_pct": 56.7,
+    "sample_gm0_pct": 62.6,
+    "gm0_pct": 0,
+    "image_file": "608888.jpeg"
+  },
+  "608891": {
+    "style": "L.I.M Ultralight Low Women",
+    "source_season": "SS28",
+    "target_rrp": 2400,
+    "target_gm0_pct": 56.7,
+    "sample_gm0_pct": 63.6,
+    "gm0_pct": 0,
+    "image_file": "608891.jpeg"
+  },
+  "608809": {
+    "style": "L.I.M Windpace Hybrid Pant Men",
+    "source_season": "SS28",
+    "target_rrp": 1900,
+    "target_gm0_pct": 50.0,
+    "sample_gm0_pct": 64.5,
+    "gm0_pct": 0,
+    "image_file": "608809.jpeg"
+  },
+  "608814": {
+    "style": "L.I.M Windpace Hybrid Pant Women",
+    "source_season": "SS28",
+    "target_rrp": 1900,
+    "target_gm0_pct": 50.0,
+    "sample_gm0_pct": 68.3,
+    "gm0_pct": 73.5,
+    "image_file": "608814.jpeg"
+  },
+  "608784": {
+    "style": "L.I.M Windpack Hood Jacket Men",
+    "source_season": "SS28",
+    "target_rrp": 2000,
+    "target_gm0_pct": 50.0,
+    "sample_gm0_pct": 55.7,
+    "gm0_pct": 0,
+    "image_file": "608784.jpeg"
+  },
+  "608791": {
+    "style": "L.I.M Windpack Hood Jacket Women",
+    "source_season": "SS28",
+    "target_rrp": 2000,
+    "target_gm0_pct": 50.0,
+    "sample_gm0_pct": 57.6,
+    "gm0_pct": 0,
+    "image_file": "608791.jpeg"
+  },
+  "608161": {
+    "style": "Levante Shorts Men",
+    "source_season": "SS28",
+    "target_rrp": 1200,
+    "target_gm0_pct": 61.0,
+    "sample_gm0_pct": 58.5,
+    "gm0_pct": 58.4,
+    "image_file": "608161.jpeg"
+  },
+  "608180": {
+    "style": "Levante Shorts Women",
+    "source_season": "SS28",
+    "target_rrp": 1200,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 67.8,
+    "gm0_pct": 64.1,
+    "image_file": "608180.jpeg"
+  },
+  "608459": {
+    "style": "Lite Standard Zip-Off II Pant Men",
+    "source_season": "SS28",
+    "target_rrp": 1500,
+    "target_gm0_pct": 59.5,
+    "sample_gm0_pct": 70.2,
+    "gm0_pct": 69.4,
+    "image_file": "608459.jpeg"
+  },
+  "608458": {
+    "style": "Lite Standard Zip-Off II Pant Women",
+    "source_season": "SS28",
+    "target_rrp": 1500,
+    "target_gm0_pct": 68.0,
+    "sample_gm0_pct": 68.5,
+    "gm0_pct": 65.5,
+    "image_file": "608458.jpeg"
+  },
+  "608637": {
+    "style": "Lizard Softshell II Shorts Men",
+    "source_season": "SS28",
+    "target_rrp": 1300,
+    "target_gm0_pct": 63.0,
+    "sample_gm0_pct": 75.8,
+    "gm0_pct": 69.6,
+    "image_file": "608637.jpeg"
+  },
+  "608638": {
+    "style": "Lizard Softshell II Shorts Women",
+    "source_season": "SS28",
+    "target_rrp": 1300,
+    "target_gm0_pct": 65.0,
+    "sample_gm0_pct": 75.9,
+    "gm0_pct": 69.7,
+    "image_file": "608638.jpeg"
+  },
+  "608982": {
+    "style": "Magma Rugged Wide Pant Men",
+    "source_season": "SS28",
+    "target_rrp": 2000,
+    "target_gm0_pct": 65.0,
+    "sample_gm0_pct": 56.8,
+    "gm0_pct": 56.8,
+    "image_file": "608982.jpeg"
+  },
+  "608983": {
+    "style": "Magma Rugged Wide Pant Women",
+    "source_season": "SS28",
+    "target_rrp": 2000,
+    "target_gm0_pct": 66.0,
+    "sample_gm0_pct": 60.2,
+    "gm0_pct": 60.2,
+    "image_file": "608983.jpeg"
+  },
+  "609084": {
+    "style": "Mid Standard II Pant Men",
+    "source_season": "SS28",
+    "target_rrp": 1700,
+    "target_gm0_pct": 65.0,
+    "sample_gm0_pct": 99.4,
+    "gm0_pct": 0,
+    "image_file": "609084.jpeg"
+  },
+  "609085": {
+    "style": "Mid Standard II Pant Women",
+    "source_season": "SS28",
+    "target_rrp": 1700,
+    "target_gm0_pct": 70.0,
+    "sample_gm0_pct": 99.4,
+    "gm0_pct": 0,
+    "image_file": "609085.jpeg"
+  },
+  "609087": {
+    "style": "Mid Standard II Shorts Men",
+    "source_season": "SS28",
+    "target_rrp": 1000,
+    "target_gm0_pct": 65.0,
+    "sample_gm0_pct": 99.0,
+    "gm0_pct": 0,
+    "image_file": "609087.jpeg"
+  },
+  "609088": {
+    "style": "Mid Standard II Shorts Women",
+    "source_season": "SS28",
+    "target_rrp": 1000,
+    "target_gm0_pct": 70.0,
+    "sample_gm0_pct": 99.0,
+    "gm0_pct": 58.5,
+    "image_file": "609088.jpeg"
+  },
+  "606595": {
+    "style": "Ridge Hike Tee Women",
+    "source_season": "SS28",
+    "target_rrp": 600,
+    "target_gm0_pct": 64.6,
+    "sample_gm0_pct": 69.2,
+    "gm0_pct": 68.6,
+    "image_file": "606595.jpeg"
+  },
+  "608794": {
+    "style": "Ridge II LS Tee Men",
+    "source_season": "SS28",
+    "target_rrp": 800,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 60.0,
+    "gm0_pct": 0,
+    "image_file": "608794.jpeg"
+  },
+  "608805": {
+    "style": "Ridge II LS Tee Women",
+    "source_season": "SS28",
+    "target_rrp": 800,
+    "target_gm0_pct": 63.0,
+    "sample_gm0_pct": 67.3,
+    "gm0_pct": 0,
+    "image_file": "608805.jpeg"
+  },
+  "608793": {
+    "style": "Ridge II Tee Men",
+    "source_season": "SS28",
+    "target_rrp": 700,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 61.2,
+    "gm0_pct": 70.2,
+    "image_file": "608793.jpeg"
+  },
+  "608806": {
+    "style": "Ridge II Tee Women",
+    "source_season": "SS28",
+    "target_rrp": 700,
+    "target_gm0_pct": 63.0,
+    "sample_gm0_pct": 69.0,
+    "gm0_pct": 0,
+    "image_file": "608806.jpeg"
+  },
+  "608266": {
+    "style": "ROC Lite Slim II Pant Men",
+    "source_season": "SS28",
+    "target_rrp": 1400,
+    "target_gm0_pct": 65.0,
+    "sample_gm0_pct": 58.2,
+    "gm0_pct": 58.9,
+    "image_file": "608266.jpeg"
+  },
+  "608265": {
+    "style": "ROC Lite Slim II Pant Women",
+    "source_season": "SS28",
+    "target_rrp": 1400,
+    "target_gm0_pct": 66.0,
+    "sample_gm0_pct": 59.9,
+    "gm0_pct": 65.1,
+    "image_file": "608265.jpeg"
+  },
+  "608325": {
+    "style": "Salo Dress Women",
+    "source_season": "SS28",
+    "target_rrp": 1200,
+    "target_gm0_pct": 57.0,
+    "sample_gm0_pct": 66.0,
+    "gm0_pct": 66.2,
+    "image_file": "608325.jpeg"
+  },
+  "608155": {
+    "style": "Salo Shirt II Men",
+    "source_season": "SS28",
+    "target_rrp": 1000,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 63.9,
+    "gm0_pct": 61.2,
+    "image_file": "608155.jpeg"
+  },
+  "608198": {
+    "style": "Salo Shirt II Women",
+    "source_season": "SS28",
+    "target_rrp": 1000,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 67.2,
+    "gm0_pct": 67.0,
+    "image_file": "608198.jpeg"
+  },
+  "608407": {
+    "style": "Salo Shirt SS II Men",
+    "source_season": "SS28",
+    "target_rrp": 900,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 64.6,
+    "gm0_pct": 61.2,
+    "image_file": "608407.jpeg"
+  },
+  "608201": {
+    "style": "Solis Hat",
+    "source_season": "SS28",
+    "target_rrp": 600,
+    "target_gm0_pct": 60.0,
+    "sample_gm0_pct": 61.9,
+    "gm0_pct": 0,
+    "image_file": "608201.jpeg"
+  },
+  "608609": {
+    "style": "Solvik Seersucker Shorts Men",
+    "source_season": "SS28",
+    "target_rrp": 1000,
+    "target_gm0_pct": 65.0,
+    "sample_gm0_pct": 62.7,
+    "gm0_pct": 61.3,
+    "image_file": "608609.jpeg"
+  },
+  "608610": {
+    "style": "Solvik Seersucker Shorts Women",
+    "source_season": "SS28",
+    "target_rrp": 1000,
+    "target_gm0_pct": 61.8,
+    "sample_gm0_pct": 63.7,
+    "gm0_pct": 63.7,
+    "image_file": "608610.jpeg"
+  },
+  "608611": {
+    "style": "Solvik Seersucker SS Shirt Men",
+    "source_season": "SS28",
+    "target_rrp": 1100,
+    "target_gm0_pct": 58.4,
+    "sample_gm0_pct": 61.5,
+    "gm0_pct": 60.6,
+    "image_file": "608611.jpeg"
+  },
+  "608612": {
+    "style": "Solvik Seersucker SS Shirt Women",
+    "source_season": "SS28",
+    "target_rrp": 1100,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 63.8,
+    "gm0_pct": 64.3,
+    "image_file": "608612.jpeg"
+  },
+  "608835": {
+    "style": "Sun Capsule Halfzip",
+    "source_season": "SS28",
+    "target_rrp": 2700,
+    "target_gm0_pct": 62.5,
+    "sample_gm0_pct": -9.4,
+    "gm0_pct": -3.5,
+    "image_file": "608835.jpeg"
+  },
+  "608828": {
+    "style": "Sun Capsule Multi Cover",
+    "source_season": "SS28",
+    "target_rrp": 1800,
+    "target_gm0_pct": 61.3,
+    "sample_gm0_pct": -16.7,
+    "gm0_pct": -42.8,
+    "image_file": "608828.jpeg"
+  },
+  "608834": {
+    "style": "Sun Capsule Pant",
+    "source_season": "SS28",
+    "target_rrp": 2400,
+    "target_gm0_pct": 65.3,
+    "sample_gm0_pct": 13.7,
+    "gm0_pct": -5.7,
+    "image_file": "608834.jpeg"
+  },
+  "608798": {
+    "style": "Trekk Tech II LS Tee Men",
+    "source_season": "SS28",
+    "target_rrp": 700,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 63.9,
+    "gm0_pct": 63.9,
+    "image_file": "608798.jpeg"
+  },
+  "608801": {
+    "style": "Trekk Tech II LS Tee Women",
+    "source_season": "SS28",
+    "target_rrp": 700,
+    "target_gm0_pct": 63.0,
+    "sample_gm0_pct": 68.7,
+    "gm0_pct": 68.7,
+    "image_file": "608801.jpeg"
+  },
+  "608797": {
+    "style": "Trekk Tech II Tee Men",
+    "source_season": "SS28",
+    "target_rrp": 500,
+    "target_gm0_pct": 62.0,
+    "sample_gm0_pct": 56.4,
+    "gm0_pct": 56.4,
+    "image_file": "608797.jpeg"
+  },
+  "608802": {
+    "style": "Trekk Tech II Tee Women",
+    "source_season": "SS28",
+    "target_rrp": 500,
+    "target_gm0_pct": 63.0,
+    "sample_gm0_pct": 58.4,
+    "gm0_pct": 58.1,
+    "image_file": "608802.jpeg"
+  }
+}
