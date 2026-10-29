@@ -1,0 +1,617 @@
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Range Review Board</title>
+<style>
+/* layout: sticky layer-tab bar over a scrolling franchise card board --
+   one layer in view at a time, decisions captured inline per card */
+:root {
+  --bg: #F4F5F2;
+  --bg-raised: #FFFFFF;
+  --bg-sunken: #EAEBE6;
+  --fg: #1B211C;
+  --fg-muted: #5C645D;
+  --border: #D7D9D1;
+  --accent: #2F7A6B;
+  --accent-fg: #FFFFFF;
+  --tier-hero: #B9752A;
+  --tier-harvest: #4E7A4C;
+  --tier-emerging: #3D6E93;
+  --tier-exit: #AE4B3E;
+  --warn-bg: #FBF0DC;
+  --warn-fg: #8A5A12;
+  --warn-border: #E3C892;
+  --tail-bg: #F3E8E6;
+  --tail-fg: #8A3F32;
+  --tail-border: #E0C2BC;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141815;
+    --bg-raised: #1C211D;
+    --bg-sunken: #10130F;
+    --fg: #E7E9E3;
+    --fg-muted: #9BA399;
+    --border: #333A32;
+    --accent: #52B39E;
+    --accent-fg: #0C1A16;
+    --tier-hero: #D99A4E;
+    --tier-harvest: #7AAE77;
+    --tier-emerging: #6FA3CC;
+    --tier-exit: #D27A6C;
+    --warn-bg: #2E2410;
+    --warn-fg: #E8C27E;
+    --warn-border: #4A3A18;
+    --tail-bg: #2C1C18;
+    --tail-fg: #E0A396;
+    --tail-border: #4A2B23;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141815;
+  --bg-raised: #1C211D;
+  --bg-sunken: #10130F;
+  --fg: #E7E9E3;
+  --fg-muted: #9BA399;
+  --border: #333A32;
+  --accent: #52B39E;
+  --accent-fg: #0C1A16;
+  --tier-hero: #D99A4E;
+  --tier-harvest: #7AAE77;
+  --tier-emerging: #6FA3CC;
+  --tier-exit: #D27A6C;
+  --warn-bg: #2E2410;
+  --warn-fg: #E8C27E;
+  --warn-border: #4A3A18;
+  --tail-bg: #2C1C18;
+  --tail-fg: #E0A396;
+  --tail-border: #4A2B23;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 15px/1.5 "IBM Plex Sans", system-ui, sans-serif;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+h1, h2, h3 { font-family: "Archivo", system-ui, sans-serif; text-wrap: balance; margin: 0; }
+.num { font-family: "IBM Plex Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+a { color: var(--accent); }
+
+/* ---- header ---- */
+.page-header {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 28px 0 16px;
+}
+.page-header h1 { font-size: 26px; font-weight: 700; letter-spacing: -0.01em; }
+.page-header p { color: var(--fg-muted); margin: 6px 0 0; font-size: 13.5px; max-width: 70ch; }
+.source-note { color: var(--fg-muted); font-size: 12px; margin-top: 10px; }
+
+/* ---- sticky layer nav ---- */
+.layer-nav-wrap {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 10;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding-top: env(safe-area-inset-top, 0px);
+}
+.layer-nav {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 10px 0 12px;
+  scrollbar-width: thin;
+}
+.area-group { display: flex; gap: 4px; align-items: center; flex-shrink: 0; }
+.area-group + .area-group { margin-left: 10px; padding-left: 10px; border-left: 1px solid var(--border); }
+.layer-chip {
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  background: var(--bg-raised);
+  color: var(--fg-muted);
+  border-radius: 999px;
+  padding: 6px 13px;
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.layer-chip:hover { border-color: var(--accent); color: var(--fg); }
+.layer-chip.active { background: var(--accent); border-color: var(--accent); color: var(--accent-fg); }
+.layer-chip .chip-count { opacity: 0.75; font-family: "IBM Plex Mono", monospace; }
+.layer-chip .chip-flag {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--tail-fg); flex-shrink: 0;
+}
+.layer-chip.active .chip-flag { background: var(--accent-fg); }
+
+/* ---- toolbar ---- */
+.toolbar {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  padding: 16px 0 4px;
+}
+.toolbar input[type="search"] {
+  flex: 1 1 220px;
+  min-width: 0;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: var(--fg);
+  font: inherit;
+}
+.sort-select {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  color: var(--fg);
+  font: inherit;
+}
+.toggle-btn {
+  border: 1px solid var(--border);
+  background: var(--bg-raised);
+  color: var(--fg-muted);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.toggle-btn.active { border-color: var(--tail-fg); color: var(--tail-fg); background: var(--tail-bg); }
+.layer-heading {
+  max-width: 1180px;
+  margin: 18px auto 2px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.layer-heading h2 { font-size: 20px; }
+.layer-heading .count { color: var(--fg-muted); font-size: 13px; }
+
+/* ---- board ---- */
+.board {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 14px 0 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+.empty-state {
+  max-width: 1180px;
+  margin: 40px auto;
+  text-align: center;
+  color: var(--fg-muted);
+  padding: 40px 16px;
+}
+
+/* ---- card ---- */
+.card {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.card-media {
+  aspect-ratio: 4 / 3;
+  background: var(--bg-sunken);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+.card-media img { max-width: 78%; max-height: 82%; object-fit: contain; }
+.card-media .no-image { color: var(--fg-muted); font-size: 12px; }
+.card-body { padding: 13px 14px 14px; display: flex; flex-direction: column; gap: 9px; min-width: 0; }
+.card-title { font-family: "Archivo", sans-serif; font-weight: 700; font-size: 15.5px; line-height: 1.25; }
+.card-sub { color: var(--fg-muted); font-size: 11.5px; display: flex; gap: 6px; flex-wrap: wrap; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 5px; }
+.chip {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  padding: 2.5px 7px;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  color: var(--fg-muted);
+  background: var(--bg-sunken);
+}
+.chip.core { color: var(--accent); border-color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, var(--bg-raised)); }
+
+.stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 10px; }
+.stat { min-width: 0; }
+.stat .label { font-size: 10px; color: var(--fg-muted); text-transform: uppercase; letter-spacing: 0.03em; }
+.stat .value { font-size: 14px; font-weight: 600; }
+.stat .value.muted { color: var(--fg-muted); font-weight: 500; }
+
+.alert { border-radius: 8px; padding: 8px 10px; font-size: 12px; line-height: 1.4; border: 1px solid; }
+.alert.moq { background: var(--warn-bg); color: var(--warn-fg); border-color: var(--warn-border); }
+.alert.tail { background: var(--tail-bg); color: var(--tail-fg); border-color: var(--tail-border); }
+.alert strong { font-weight: 700; }
+.alert .alert-line + .alert-line { margin-top: 4px; padding-top: 4px; border-top: 1px solid currentColor; opacity: 0.95; }
+
+.activity-row { font-size: 11px; color: var(--fg-muted); }
+
+.decision {
+  margin-top: 2px;
+  padding-top: 11px;
+  border-top: 1px dashed var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.decision-row { display: flex; gap: 7px; }
+.tier-select {
+  flex: 1;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 6px 8px;
+  font: inherit;
+  font-weight: 600;
+  font-size: 12.5px;
+  background: var(--bg-sunken);
+  color: var(--fg);
+}
+.tier-select[data-tier="Hero"] { color: var(--tier-hero); border-color: var(--tier-hero); }
+.tier-select[data-tier="Harvest"] { color: var(--tier-harvest); border-color: var(--tier-harvest); }
+.tier-select[data-tier="Emerging"] { color: var(--tier-emerging); border-color: var(--tier-emerging); }
+.tier-select[data-tier="Exit"] { color: var(--tier-exit); border-color: var(--tier-exit); }
+textarea.action-note {
+  width: 100%;
+  min-height: 46px;
+  resize: vertical;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 7px 8px;
+  font: inherit;
+  font-size: 12.5px;
+  background: var(--bg-sunken);
+  color: var(--fg);
+}
+.decision-meta { font-size: 10.5px; color: var(--fg-muted); min-height: 13px; }
+
+.footer-note {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 10px 0 40px;
+  color: var(--fg-muted);
+  font-size: 11.5px;
+}
+
+@media (max-width: 480px) {
+  .board { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .stat-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+
+<div class="layer-nav-wrap">
+  <div class="layer-nav" id="layerNav"></div>
+</div>
+
+<div class="page-header">
+  <h1>Range Review Board</h1>
+  <p>FW27/SS28 franchises by layer, for the Nov 12 Range Review Workshop. Forecast, margin, MOQ and leftover-stock
+    signals pulled from the range files, FC3 forecast, Buying's MOQ check and the Inventory Manager's SS27 stock
+    position. Tier and Action are captured live and shared with everyone viewing this page.</p>
+</div>
+
+<div class="toolbar">
+  <input type="search" id="searchBox" placeholder="Search franchise…">
+  <select class="sort-select" id="sortSelect">
+    <option value="priority">Needs a decision first</option>
+    <option value="name">Franchise A–Z</option>
+    <option value="forecast">Forecast Qty, high to low</option>
+    <option value="gp">GP%, high to low</option>
+  </select>
+  <button class="toggle-btn" id="flaggedToggle" type="button">Flagged only</button>
+</div>
+
+<div class="layer-heading">
+  <h2 id="layerTitle">—</h2>
+  <span class="count" id="layerCount"></span>
+</div>
+
+<div class="board" id="board"></div>
+<div class="empty-state" id="emptyState" hidden>No franchises match this filter in this layer.</div>
+
+<div class="footer-note" id="footerNote"></div>
+
+<script type="application/json" id="franchise-data">__DATA_JSON__</script>
+<script>
+(function () {
+  "use strict";
+
+  var DATA = JSON.parse(document.getElementById("franchise-data").textContent);
+
+  var LAYER_ORDER = [
+    ["Apparel", ["Shell", "Insulation", "Softshell", "Midlayer", "Legwear", "Tops", "Baselayer", "Accessories"]],
+    ["Hardware", ["Daypacks", "Hiking Packs", "Mountain Packs", "Trekking Packs", "Bags", "Sleeping Bags", "Accessories"]],
+    ["Footwear", ["Hiking Shoes", "Trail Shoes", "Trekking Shoes", "Casual Shoes"]]
+  ];
+
+  function layerKey(area, layer) { return area + "|" + layer; }
+
+  var byLayerKey = {};
+  DATA.forEach(function (d) {
+    var k = layerKey(d.businessArea, d.layer);
+    (byLayerKey[k] = byLayerKey[k] || []).push(d);
+  });
+
+  var LAYERS = [];
+  LAYER_ORDER.forEach(function (pair) {
+    var area = pair[0], layers = pair[1];
+    layers.forEach(function (layer) {
+      var k = layerKey(area, layer);
+      if (byLayerKey[k]) LAYERS.push({ area: area, layer: layer, key: k, items: byLayerKey[k] });
+    });
+  });
+  // catch anything whose Layer/Business Area wasn't in the expected list
+  Object.keys(byLayerKey).forEach(function (k) {
+    if (!LAYERS.some(function (l) { return l.key === k; })) {
+      var parts = k.split("|");
+      LAYERS.push({ area: parts[0], layer: parts[1], key: k, items: byLayerKey[k] });
+    }
+  });
+
+  function slug(base) {
+    return base.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 120) || "franchise";
+  }
+
+  function needsDecision(d) {
+    return (d.moq && d.moq.length > 0) || d.availableStockTail > 0;
+  }
+
+  // ---------- state ----------
+  var state = { layerKey: LAYERS.length ? LAYERS[0].key : null, search: "", sort: "priority", flaggedOnly: false };
+  var decisions = {}; // slug -> {tier, action, updatedAt}
+
+  // ---------- db wiring ----------
+  var dbCol = null;
+  (async function initDb() {
+    try {
+      var db = await claude.use("db");
+      if (!db) return;
+      dbCol = db.collection("decisions");
+      dbCol.onSnapshot(function (snap) {
+        snap.docs.forEach(function (doc) {
+          var data = doc.data();
+          if (data) decisions[doc.id] = data;
+        });
+        renderBoard();
+      }, function (err) {
+        console.warn("decisions subscription error", err);
+      });
+    } catch (e) {
+      console.warn("db unavailable", e);
+    }
+  })();
+
+  var pendingWrites = {};
+  function saveDecision(base, franchise, tier, action) {
+    var id = slug(base);
+    var body = { base: base, franchise: franchise, tier: tier || "", action: action || "", updatedAt: Date.now() };
+    decisions[id] = body; // optimistic local update
+    if (!dbCol) return;
+    clearTimeout(pendingWrites[id]);
+    pendingWrites[id] = setTimeout(function () {
+      dbCol.doc(id).set(body).catch(function (err) { console.warn("save failed", err); });
+    }, 400);
+  }
+
+  // ---------- rendering ----------
+  var layerNav = document.getElementById("layerNav");
+  var board = document.getElementById("board");
+  var layerTitle = document.getElementById("layerTitle");
+  var layerCount = document.getElementById("layerCount");
+  var emptyState = document.getElementById("emptyState");
+
+  function renderNav() {
+    layerNav.innerHTML = "";
+    var byArea = {};
+    LAYERS.forEach(function (l) { (byArea[l.area] = byArea[l.area] || []).push(l); });
+    Object.keys(byArea).forEach(function (area) {
+      var group = document.createElement("div");
+      group.className = "area-group";
+      byArea[area].forEach(function (l) {
+        var flagged = l.items.some(needsDecision);
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "layer-chip" + (l.key === state.layerKey ? " active" : "");
+        btn.innerHTML = (flagged ? '<span class="chip-flag"></span>' : "") +
+          escapeHtml(l.layer) + ' <span class="chip-count">' + l.items.length + "</span>";
+        btn.addEventListener("click", function () {
+          state.layerKey = l.key;
+          location.hash = slug(l.layer);
+          renderNav();
+          renderBoard();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+        group.appendChild(btn);
+      });
+      layerNav.appendChild(group);
+    });
+  }
+
+  function escapeHtml(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  function fmtQty(n) { return n == null ? "—" : Number(n).toLocaleString("en-US"); }
+  function fmtPct(n) { return n == null ? "—" : n.toFixed(1) + "%"; }
+  function fmtSEK(n) { return n == null ? "—" : Number(n).toLocaleString("en-US") + " SEK"; }
+
+  function cardHtml(d) {
+    var id = slug(d.base);
+    var dec = decisions[id] || {};
+    var tier = dec.tier || "";
+    var seasons = [];
+    if (d.activeFW27) seasons.push("FW27");
+    if (d.activeSS28) seasons.push("SS28");
+
+    var chips = "";
+    if (d.coreAssortmentFW27) chips += '<span class="chip core">Core FW27</span>';
+    if (d.genderNote) chips += '<span class="chip">' + escapeHtml(d.genderNote) + "</span>";
+    if (d.abs) chips += '<span class="chip">ABS</span>';
+    if (d.asiaFit) chips += '<span class="chip">Asia Fit</span>';
+    if (d.specialEditionNote) chips += '<span class="chip">' + escapeHtml(d.specialEditionNote) + "</span>";
+
+    var alerts = "";
+    if (d.moq && d.moq.length) {
+      var lines = d.moq.map(function (m) {
+        return '<div class="alert-line"><strong>' + escapeHtml(m.style) + "</strong> — demand " + fmtQty(m.demand_fc1) +
+          " / MOQ " + fmtQty(m.moq_style) + " (short " + fmtQty(m.shortfall) + "). " + escapeHtml(m.merch_comment) + "</div>";
+      }).join("");
+      alerts += '<div class="alert moq">' + lines + "</div>";
+    }
+    if (d.availableStockTail > 0) {
+      alerts += '<div class="alert tail"><strong>' + fmtQty(d.availableStockTail) +
+        " units</strong> of Available Stock in codes no longer in the active range" +
+        (d.availableStockActive > 0 ? " (plus " + fmtQty(d.availableStockActive) + " in active-range codes)" : "") + ".</div>";
+    }
+
+    var activity = d.consumerActivity ? '<div class="activity-row">' + escapeHtml(d.consumerActivity) + "</div>" : "";
+
+    var media = d.imageFile
+      ? '<img src="' + d.imageFile + '" alt="' + escapeHtml(d.franchise) + '" loading="lazy">'
+      : '<span class="no-image">No image</span>';
+
+    return (
+      '<div class="card" data-base="' + escapeHtml(d.base) + '">' +
+        '<div class="card-media">' + media + "</div>" +
+        '<div class="card-body">' +
+          '<div><div class="card-title">' + escapeHtml(d.franchise) + '</div>' +
+          '<div class="card-sub"><span>' + escapeHtml(seasons.join(" + ") || "—") + '</span>' +
+          '<span>&middot;</span><span>' + escapeHtml(d.gender) + "</span></div></div>" +
+          (chips ? '<div class="chips">' + chips + "</div>" : "") +
+          '<div class="stat-grid">' +
+            '<div class="stat"><div class="label">Forecast Qty</div><div class="value num">' + fmtQty(d.forecastQty) + "</div></div>" +
+            '<div class="stat"><div class="label">GP% blended</div><div class="value num">' + fmtPct(d.forecastGP) + "</div></div>" +
+            '<div class="stat"><div class="label">Margin target</div><div class="value num muted">' + fmtPct(d.marginTarget) + "</div></div>" +
+            '<div class="stat"><div class="label">Target RRP</div><div class="value num muted">' + fmtSEK(d.targetRRP) + "</div></div>" +
+          "</div>" +
+          alerts +
+          activity +
+          '<div class="decision">' +
+            '<div class="decision-row">' +
+              '<select class="tier-select" data-tier="' + tier + '">' +
+                ["", "Hero", "Harvest", "Emerging", "Exit"].map(function (t) {
+                  return '<option value="' + t + '"' + (t === tier ? " selected" : "") + ">" + (t || "Tier…") + "</option>";
+                }).join("") +
+              "</select>" +
+            "</div>" +
+            '<textarea class="action-note" placeholder="Action / notes…">' + escapeHtml(dec.action || "") + "</textarea>" +
+            '<div class="decision-meta">' + (dec.updatedAt ? "Updated " + new Date(dec.updatedAt).toLocaleString() : "") + "</div>" +
+          "</div>" +
+        "</div>" +
+      "</div>"
+    );
+  }
+
+  function sortItems(items) {
+    var copy = items.slice();
+    if (state.sort === "name") {
+      copy.sort(function (a, b) { return a.franchise.localeCompare(b.franchise); });
+    } else if (state.sort === "forecast") {
+      copy.sort(function (a, b) { return (b.forecastQty || 0) - (a.forecastQty || 0); });
+    } else if (state.sort === "gp") {
+      copy.sort(function (a, b) { return (b.forecastGP || 0) - (a.forecastGP || 0); });
+    } else {
+      copy.sort(function (a, b) {
+        var pa = needsDecision(a) ? 0 : 1, pb = needsDecision(b) ? 0 : 1;
+        if (pa !== pb) return pa - pb;
+        return a.franchise.localeCompare(b.franchise);
+      });
+    }
+    return copy;
+  }
+
+  function renderBoard() {
+    var current = LAYERS.find(function (l) { return l.key === state.layerKey; });
+    if (!current) { board.innerHTML = ""; layerTitle.textContent = "—"; layerCount.textContent = ""; return; }
+
+    layerTitle.textContent = current.area + " · " + current.layer;
+
+    var items = current.items.filter(function (d) {
+      if (state.flaggedOnly && !needsDecision(d)) return false;
+      if (state.search && d.franchise.toLowerCase().indexOf(state.search) === -1) return false;
+      return true;
+    });
+    items = sortItems(items);
+
+    layerCount.textContent = items.length + " of " + current.items.length + " franchise" + (current.items.length === 1 ? "" : "s");
+    emptyState.hidden = items.length > 0;
+    board.innerHTML = items.map(cardHtml).join("");
+
+    board.querySelectorAll(".card").forEach(function (card) {
+      var base = card.getAttribute("data-base");
+      var franchise = card.querySelector(".card-title").textContent;
+      var select = card.querySelector(".tier-select");
+      var textarea = card.querySelector(".action-note");
+      select.addEventListener("change", function () {
+        select.setAttribute("data-tier", select.value);
+        saveDecision(base, franchise, select.value, textarea.value);
+      });
+      textarea.addEventListener("input", function () {
+        saveDecision(base, franchise, select.value, textarea.value);
+      });
+    });
+  }
+
+  document.getElementById("searchBox").addEventListener("input", function (e) {
+    state.search = e.target.value.trim().toLowerCase();
+    renderBoard();
+  });
+  document.getElementById("sortSelect").addEventListener("change", function (e) {
+    state.sort = e.target.value;
+    renderBoard();
+  });
+  var flaggedToggle = document.getElementById("flaggedToggle");
+  flaggedToggle.addEventListener("click", function () {
+    state.flaggedOnly = !state.flaggedOnly;
+    flaggedToggle.classList.toggle("active", state.flaggedOnly);
+    renderBoard();
+  });
+
+  function applyHash() {
+    var h = (location.hash || "").slice(1);
+    if (!h) return;
+    var found = LAYERS.find(function (l) { return slug(l.layer) === h; });
+    if (found) state.layerKey = found.key;
+  }
+  applyHash();
+  window.addEventListener("hashchange", applyHash);
+
+  document.getElementById("footerNote").textContent =
+    DATA.length + " franchises across " + LAYERS.length + " layers · " +
+    DATA.filter(needsDecision).length + " flagged (MOQ or leftover stock) · data as of 29 Oct 2026";
+
+  renderNav();
+  renderBoard();
+})();
+</script>
