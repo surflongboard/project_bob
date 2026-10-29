@@ -700,8 +700,8 @@ textarea.action-note {
     }
     if (d.availableStockTail > 0) {
       var tailHeader = '<div class="alert-line"><strong>' + fmtQty(d.availableStockTail) +
-        " units</strong> of Available Stock in codes no longer in the active range" +
-        (d.availableStockActive > 0 ? " (plus " + fmtQty(d.availableStockActive) + " in active-range codes)" : "") + ".</div>";
+        " units</strong> of old-generation stock still available to sell" +
+        (d.availableStockActive > 0 ? " (plus " + fmtQty(d.availableStockActive) + " of the current style)" : "") + ".</div>";
       var tailLines = (d.tailStyles || []).map(function (s) {
         return '<div class="alert-line">' + escapeHtml(s.style) + " (code " + escapeHtml(s.code) + ") — " +
           fmtQty(s.availableStock) + " units</div>";
