@@ -132,7 +132,14 @@ def load_generation_timeline_by_base() -> dict[str, list[dict]]:
             "earliestSeason": r["Earliest Season Seen"],
             "latestSeason": r["Latest Season Seen"],
         })
-    return {base: rows for base, rows in by_base.items() if len(rows) > 1}
+    multi_gen = {base: rows for base, rows in by_base.items() if len(rows) > 1}
+    # "Generation 1" only means something once a franchise actually has a 2nd generation to
+    # compare against -- every franchise remaining here does, so this is safe unconditionally.
+    for rows in multi_gen.values():
+        for r in rows:
+            if r["generation"] == "":
+                r["generation"] = "Generation 1"
+    return multi_gen
 
 
 def build() -> list[dict]:

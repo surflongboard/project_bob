@@ -106,7 +106,7 @@ def load_generation_groups() -> list[dict]:
         version = lib.version_token(g["article"])
         out.append({
             "Franchise": g["franchise"],
-            "Generation": version or "Generation 1",
+            "Generation": version or "",
             "_rank": VERSION_RANK.get(version, 99),
             "Style Code": g["style_code"],
             "Article": g["article"],
@@ -163,7 +163,7 @@ def aggregate_by_generation(code_rows: list[dict]) -> list[dict]:
             "Available Stock": g["Available Stock"],
             "Physical Stock": g["Physical Stock"],
         })
-    rank = {None: 0, "II": 2, "2.0": 2, "III": 3, "IV": 4, "Generation 1": 0}
+    rank = {None: 0, "II": 2, "2.0": 2, "III": 3, "IV": 4, "": 0}
     out.sort(key=lambda r: (r["Franchise"], rank.get(r["Generation"], 99)))
     return out
 
@@ -192,7 +192,18 @@ def write_workbook(all_rows: list[dict], path: Path) -> None:
     by_franchise_gen: dict[str, list[dict]] = defaultdict(list)
     for r in gen_rows:
         by_franchise_gen[r["Franchise"]].append(r)
+    multi_gen_bases = {fr for fr, rows in by_franchise_gen.items() if len(rows) > 1}
     multi_gen_franchise_rows = [r for fr, rows in by_franchise_gen.items() if len(rows) > 1 for r in rows]
+
+    # The blank/no-token generation only gets called "Generation 1" within a franchise that
+    # actually HAS multiple generations -- a single-generation franchise has nothing to number
+    # against, so it stays blank rather than implying a sequence that doesn't exist.
+    for r in gen_rows:
+        if r["Generation"] == "" and r["Franchise"] in multi_gen_bases:
+            r["Generation"] = "Generation 1"
+    for r in all_rows:
+        if r["Generation"] == "" and r["Franchise"] in multi_gen_bases:
+            r["Generation"] = "Generation 1"
 
     write_sheet("Generations (by franchise)", gen_rows)
     if multi_gen_franchise_rows:
