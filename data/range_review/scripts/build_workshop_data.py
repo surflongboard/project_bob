@@ -36,6 +36,7 @@ RR_DIR = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(RR_DIR / "scripts"))
 from build_franchise_list import build_rows  # noqa: E402
 from build_forecast_discrepancies import load_ss28_qty_by_code  # noqa: E402
+from build_generation_timeline import load_generation_groups, aggregate_by_generation  # noqa: E402
 
 REPO_ROOT = RR_DIR.parents[1]
 sys.path.insert(0, str(REPO_ROOT / "data" / "ss26_portfolio_tiering" / "scripts"))
@@ -113,11 +114,33 @@ def load_tail_styles_by_base() -> dict[str, list[dict]]:
     return dict(by_base)
 
 
+def load_generation_timeline_by_base() -> dict[str, list[dict]]:
+    """Per franchise, every distinct generation seen in the stock file
+    (RR-025) -- Men/Women/Asia-Fit codes of the same generation collapsed
+    together. Only kept when a franchise has 2+ generations; a single
+    generation isn't a "timeline," it's just the current style. Dates are
+    a PROXY (earliest "Season Article" tag seen, not a confirmed launch --
+    see RR-025's caveats) and shown as such on the card."""
+    code_rows = load_generation_groups()
+    gen_rows = aggregate_by_generation(code_rows)
+    by_base: dict[str, list[dict]] = defaultdict(list)
+    for r in gen_rows:
+        by_base[r["Franchise"]].append({
+            "generation": r["Generation"],
+            "styleCodes": r["Style Codes"],
+            "active": r["Active in current range"] == "Y",
+            "earliestSeason": r["Earliest Season Seen"],
+            "latestSeason": r["Latest Season Seen"],
+        })
+    return {base: rows for base, rows in by_base.items() if len(rows) > 1}
+
+
 def build() -> list[dict]:
     franchise_rows = build_rows()
     moq_by_base = load_moq_by_base()
     inventory_by_base = load_inventory_by_base()
     tail_styles_by_base = load_tail_styles_by_base()
+    generation_timeline_by_base = load_generation_timeline_by_base()
 
     out = []
     for r in franchise_rows:
@@ -168,6 +191,7 @@ def build() -> list[dict]:
             "availableStockTail": inv.get("available_not_active", 0),
             "skusNotInRange": inv.get("skus_not_in_range", 0),
             "tailStyles": tail_styles,
+            "generationTimeline": generation_timeline_by_base.get(base, []),
         })
     return out
 
@@ -183,7 +207,9 @@ if __name__ == "__main__":
     n_tail = sum(1 for d in data if d["availableStockTail"])
     n_images = sum(1 for d in data if d["imageFile"])
     n_same_gen = sum(1 for d in data for s in d["tailStyles"] if s["sameGeneration"])
+    n_gen_timeline = sum(1 for d in data if d["generationTimeline"])
     print(f"{len(data)} franchises written to {out_path}")
     print(f"{n_moq} with MOQ flags ({n_discrepancy} with a forecast discrepancy), "
           f"{n_tail} with inventory tail, {n_images} with images")
     print(f"{n_same_gen} tail-style lines are a retired code of the SAME generation, not an older one")
+    print(f"{n_gen_timeline} franchises have a multi-generation timeline (RR-025)")

@@ -22,6 +22,9 @@
   --tail-bg: #F3E8E6;
   --tail-fg: #8A3F32;
   --tail-border: #E0C2BC;
+  --gen-bg: #E8ECF3;
+  --gen-fg: #3D5A80;
+  --gen-border: #C7D2E3;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
@@ -44,6 +47,9 @@
     --tail-bg: #2C1C18;
     --tail-fg: #E0A396;
     --tail-border: #4A2B23;
+    --gen-bg: #1C2733;
+    --gen-fg: #9CC0E8;
+    --gen-border: #2E3F52;
     color-scheme: dark;
   }
 }
@@ -66,6 +72,9 @@
   --tail-bg: #2C1C18;
   --tail-fg: #E0A396;
   --tail-border: #4A2B23;
+  --gen-bg: #1C2733;
+  --gen-fg: #9CC0E8;
+  --gen-border: #2E3F52;
   color-scheme: dark;
 }
 
@@ -389,6 +398,7 @@ a { color: var(--accent); }
 .alert { border-radius: 8px; padding: 8px 10px; font-size: 12px; line-height: 1.4; border: 1px solid; }
 .alert.moq { background: var(--warn-bg); color: var(--warn-fg); border-color: var(--warn-border); }
 .alert.tail { background: var(--tail-bg); color: var(--tail-fg); border-color: var(--tail-border); }
+.alert.generation { background: var(--gen-bg); color: var(--gen-fg); border-color: var(--gen-border); }
 .alert strong { font-weight: 700; }
 .alert .alert-line + .alert-line { margin-top: 4px; padding-top: 4px; border-top: 1px solid currentColor; opacity: 0.95; }
 
@@ -505,6 +515,7 @@ textarea.action-note {
     </select>
     <button class="toggle-btn" id="discrepancyToggle" type="button">SS28 forecast discrepancy</button>
     <button class="toggle-btn" id="overstockToggle" type="button">Non-active item overstocks</button>
+    <button class="toggle-btn" id="generationToggle" type="button">Generation timeline</button>
   </div>
 </div>
 
@@ -575,7 +586,7 @@ textarea.action-note {
 
   // ---------- state ----------
   var state = { layerKey: LAYERS.length ? LAYERS[0].key : null, search: "", sort: "priority",
-    flagDiscrepancy: false, flagOverstock: false, season: "all", view: "board" };
+    flagDiscrepancy: false, flagOverstock: false, flagGeneration: false, season: "all", view: "board" };
   var decisions = {}; // slug -> {tier, action, updatedAt}
 
   function render() {
@@ -732,6 +743,20 @@ textarea.action-note {
       }).join("");
       alerts += '<div class="alert tail">' + tailHeader + tailLines + "</div>";
     }
+    if (d.generationTimeline && d.generationTimeline.length > 0) {
+      // Dates are a PROXY (earliest "Season Article" tag seen per generation's style codes),
+      // not a confirmed launch record -- RR-025's caveats apply; said plainly on the card too.
+      var genHeader = '<div class="alert-line">' + d.generationTimeline.length +
+        " generations seen — dates are a proxy from stock-file season tags, not a confirmed launch record (RR-025).</div>";
+      var genLines = d.generationTimeline.map(function (g) {
+        var seasonRange = g.earliestSeason && g.latestSeason
+          ? (g.earliestSeason === g.latestSeason ? g.earliestSeason : g.earliestSeason + "–" + g.latestSeason)
+          : (g.earliestSeason || g.latestSeason || "season unknown");
+        return '<div class="alert-line"><strong>' + escapeHtml(g.generation) + "</strong> — " + seasonRange +
+          (g.active ? " (active)" : "") + " (code " + escapeHtml(g.styleCodes) + ")</div>";
+      }).join("");
+      alerts += '<div class="alert generation">' + genHeader + genLines + "</div>";
+    }
 
     var activity = d.consumerActivity ? '<div class="activity-row">' + escapeHtml(d.consumerActivity) + "</div>" : "";
 
@@ -817,9 +842,10 @@ textarea.action-note {
 
     var items = current.items.filter(function (d) {
       if (!matchesSeason(d, state.season)) return false;
-      if (state.flagDiscrepancy || state.flagOverstock) {
+      if (state.flagDiscrepancy || state.flagOverstock || state.flagGeneration) {
         var matchesFlag = (state.flagDiscrepancy && d.hasForecastDiscrepancy) ||
-          (state.flagOverstock && d.availableStockTail > 0);
+          (state.flagOverstock && d.availableStockTail > 0) ||
+          (state.flagGeneration && d.generationTimeline && d.generationTimeline.length > 0);
         if (!matchesFlag) return false;
       }
       if (state.search && d.franchise.toLowerCase().indexOf(state.search) === -1) return false;
@@ -989,6 +1015,12 @@ textarea.action-note {
     overstockToggle.classList.toggle("active", state.flagOverstock);
     renderBoard();
   });
+  var generationToggle = document.getElementById("generationToggle");
+  generationToggle.addEventListener("click", function () {
+    state.flagGeneration = !state.flagGeneration;
+    generationToggle.classList.toggle("active", state.flagGeneration);
+    renderBoard();
+  });
 
   var seasonToggle = document.getElementById("seasonToggle");
   seasonToggle.querySelectorAll("button").forEach(function (btn) {
@@ -1032,6 +1064,7 @@ textarea.action-note {
     DATA.length + " franchises across " + LAYERS.length + " layers · " +
     DATA.filter(function (d) { return d.hasForecastDiscrepancy; }).length + " with an SS28 forecast discrepancy · " +
     DATA.filter(function (d) { return d.availableStockTail > 0; }).length + " with non-active item overstocks · " +
+    DATA.filter(function (d) { return d.generationTimeline && d.generationTimeline.length > 0; }).length + " with a generation timeline · " +
     "data as of 29 Oct 2026";
 
   renderNav();
