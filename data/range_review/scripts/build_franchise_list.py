@@ -279,7 +279,7 @@ def build_rows() -> list[dict]:
             "Target RRP": rrp_display,
             "RRP varies by style": "Y" if len(rrps) > 1 else "",
             "Consumer Activity": "; ".join(activities),
-            "Margin target": margin_target,  # RR-008 -- SS28 only (Pic Centric), FW27 pending
+            "Target GM0%": margin_target,  # RR-008 -- from FW27+SS28 Pic Centric; a pricing/costing goal, not a forecast
             "Special edition / fit note": "; ".join(special_flags),
             "# styles rolled up": len(items),
             "# active colors": total_colors,
@@ -335,10 +335,15 @@ def write_workbook(rows: list[dict], path: Path) -> None:
                                          "Blueberry special editions and AF/Asian Fit variants "
                                          "are folded into their base franchise, flagged in the "
                                          "note column, not listed separately (RR-005/RR-007)."])
-    notes.append(["Margin target", "Target GM0% from the FW27+SS28 'Pic Centric' workbooks -- "
-                                    "the FW27/SS28 range files themselves have no margin field "
-                                    "(RR-008). Blank only for franchises with no Pic Centric "
-                                    "match in either season."])
+    notes.append(["Target GM0%", "A pricing/costing GOAL set during product costing (Target RRP "
+                                  "vs. Target FOB), from the FW27+SS28 'Pic Centric' workbooks -- "
+                                  "the FW27/SS28 range files themselves have no margin field "
+                                  "(RR-008). NOT the same thing as Forecast GP% (the Forecast "
+                                  "sheet/page's blended/DTC/Wholesale GP% columns), which is a "
+                                  "forecast OUTCOME derived from FC3 volume, price and channel mix "
+                                  "-- the two can genuinely differ, and the gap is itself worth "
+                                  "a look. Blank only for franchises with no Pic Centric match in "
+                                  "either season."])
     notes.append(["Consumer Activity", "Raw multi-select field from the range files (e.g. "
                                         "'Trekking / Hiking, Everyday Outdoor') -- union of every "
                                         "distinct activity tag across the franchise's styles, "

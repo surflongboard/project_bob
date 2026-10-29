@@ -91,7 +91,7 @@ def build() -> list[dict]:
             "targetRRP": r["Target RRP"],
             "rrpVaries": r["RRP varies by style"] == "Y",
             "consumerActivity": r["Consumer Activity"],
-            "marginTarget": r["Margin target"] or None,
+            "marginTarget": r["Target GM0%"] or None,
             "specialEditionNote": r["Special edition / fit note"],
             "numStyles": r["# styles rolled up"],
             "numColors": r["# active colors"],
