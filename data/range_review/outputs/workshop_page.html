@@ -796,6 +796,11 @@ textarea.action-note {
     return (dec && dec.tier) || "";
   }
 
+  function lastSeasonOf(d) {
+    var dec = decisions[slug(d.base)];
+    return (dec && dec.lastSeasonToSell) || "";
+  }
+
   function jumpToFranchise(d) {
     state.view = "board";
     state.layerKey = LAYERS.find(function (l) {
@@ -848,6 +853,19 @@ textarea.action-note {
         "<td>" + seasonItems.length + "</td></tr>";
     }).filter(Boolean).join("");
 
+    var lsValues = LAST_SEASON_OPTIONS.slice(1);
+    var lsCounts = { "": 0 };
+    lsValues.forEach(function (v) { lsCounts[v] = 0; });
+    items.forEach(function (d) { var v = lastSeasonOf(d); lsCounts[v] = (lsCounts[v] || 0) + 1; });
+    var lsDecided = total - lsCounts[""];
+
+    var lsRows = lsValues.map(function (v) {
+      var pct = total ? (lsCounts[v] / total * 100) : 0;
+      return "<tr><td>" + escapeHtml(v) + "</td><td>" + lsCounts[v] + "</td><td>" + pct.toFixed(0) + "%</td></tr>";
+    }).join("") +
+      '<tr><td class="undecided">Undecided</td><td class="undecided">' + lsCounts[""] + "</td><td class=\"undecided\">" +
+      (total ? (lsCounts[""] / total * 100).toFixed(0) : "0") + "%</td></tr>";
+
     var undecidedFlagged = items.filter(function (d) { return !tierOf(d) && needsDecision(d); });
     var undecidedList = undecidedFlagged.length
       ? undecidedFlagged.map(function (d) {
@@ -864,6 +882,12 @@ textarea.action-note {
         '<div class="summary-table-wrap"><table class="summary-table"><thead><tr>' +
           "<th>Layer</th><th>Hero</th><th>Harvest</th><th>Emerging</th><th>Exit</th><th>Undecided</th><th>Total</th>" +
         "</tr></thead><tbody>" + rows + "</tbody></table></div>" +
+      "</div>" +
+      '<div class="summary-section"><h3>Lifecycle decision — Last season to sell' + (state.season !== "all" ? " — " + state.season : "") +
+        " (" + lsDecided + " of " + total + " decided)</h3>" +
+        '<div class="summary-table-wrap"><table class="summary-table"><thead><tr>' +
+          "<th>Last season to sell</th><th>Franchises</th><th>Share</th>" +
+        "</tr></thead><tbody>" + lsRows + "</tbody></table></div>" +
       "</div>" +
       '<div class="summary-section"><h3>Flagged but still undecided (' + undecidedFlagged.length + ")</h3>" +
         '<div class="summary-undecided-list">' + undecidedList + "</div>" +
