@@ -177,6 +177,27 @@ a { color: var(--accent); }
   white-space: nowrap;
 }
 .toggle-btn.active { border-color: var(--tail-fg); color: var(--tail-fg); background: var(--tail-bg); }
+
+.segmented {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.segmented button {
+  border: none;
+  background: var(--bg-raised);
+  color: var(--fg-muted);
+  padding: 8px 13px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.segmented button + button { border-left: 1px solid var(--border); }
+.segmented button.active { background: var(--accent); color: var(--accent-fg); }
 .layer-heading {
   max-width: 1180px;
   margin: 18px auto 2px;
@@ -320,6 +341,11 @@ textarea.action-note {
 </div>
 
 <div class="toolbar">
+  <div class="segmented" id="seasonToggle">
+    <button type="button" data-season="all" class="active">All seasons</button>
+    <button type="button" data-season="FW27">FW27</button>
+    <button type="button" data-season="SS28">SS28</button>
+  </div>
   <input type="search" id="searchBox" placeholder="Search franchise…">
   <select class="sort-select" id="sortSelect">
     <option value="priority">Needs a decision first</option>
@@ -385,8 +411,14 @@ textarea.action-note {
     return (d.moq && d.moq.length > 0) || d.availableStockTail > 0;
   }
 
+  function matchesSeason(d, season) {
+    if (season === "FW27") return d.activeFW27;
+    if (season === "SS28") return d.activeSS28;
+    return true;
+  }
+
   // ---------- state ----------
-  var state = { layerKey: LAYERS.length ? LAYERS[0].key : null, search: "", sort: "priority", flaggedOnly: false };
+  var state = { layerKey: LAYERS.length ? LAYERS[0].key : null, search: "", sort: "priority", flaggedOnly: false, season: "all" };
   var decisions = {}; // slug -> {tier, action, updatedAt}
 
   // ---------- db wiring ----------
@@ -437,12 +469,13 @@ textarea.action-note {
       var group = document.createElement("div");
       group.className = "area-group";
       byArea[area].forEach(function (l) {
-        var flagged = l.items.some(needsDecision);
+        var seasonItems = l.items.filter(function (d) { return matchesSeason(d, state.season); });
+        var flagged = seasonItems.some(needsDecision);
         var btn = document.createElement("button");
         btn.type = "button";
         btn.className = "layer-chip" + (l.key === state.layerKey ? " active" : "");
         btn.innerHTML = (flagged ? '<span class="chip-flag"></span>' : "") +
-          escapeHtml(l.layer) + ' <span class="chip-count">' + l.items.length + "</span>";
+          escapeHtml(l.layer) + ' <span class="chip-count">' + seasonItems.length + "</span>";
         btn.addEventListener("click", function () {
           state.layerKey = l.key;
           location.hash = slug(l.layer);
@@ -558,6 +591,7 @@ textarea.action-note {
     layerTitle.textContent = current.area + " · " + current.layer;
 
     var items = current.items.filter(function (d) {
+      if (!matchesSeason(d, state.season)) return false;
       if (state.flaggedOnly && !needsDecision(d)) return false;
       if (state.search && d.franchise.toLowerCase().indexOf(state.search) === -1) return false;
       return true;
@@ -596,6 +630,18 @@ textarea.action-note {
     state.flaggedOnly = !state.flaggedOnly;
     flaggedToggle.classList.toggle("active", state.flaggedOnly);
     renderBoard();
+  });
+
+  var seasonToggle = document.getElementById("seasonToggle");
+  seasonToggle.querySelectorAll("button").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      state.season = btn.getAttribute("data-season");
+      seasonToggle.querySelectorAll("button").forEach(function (b) {
+        b.classList.toggle("active", b === btn);
+      });
+      renderNav();
+      renderBoard();
+    });
   });
 
   function applyHash() {
