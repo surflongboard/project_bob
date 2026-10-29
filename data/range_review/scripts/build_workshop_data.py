@@ -70,10 +70,39 @@ def load_inventory_by_base() -> dict[str, dict]:
     return by_base
 
 
+def load_tail_styles_by_base() -> dict[str, list[dict]]:
+    """Per franchise, which NOT-in-active-range style code(s) make up its
+    inventory tail -- e.g. "Mimic Alert 2.0 Hood" (current) carries leftover
+    stock attributed to it because the pre-"2.0" generation ("Mimic Alert
+    Hood", codes 607444/607447) shares the same version-stripped base. The
+    generic "N units in codes no longer in the active range" alert gave no
+    way to see WHICH old style that was -- this breaks it out by style so
+    the card can name it, same as the MOQ alert names each flagged style."""
+    wb = openpyxl.load_workbook(INVENTORY_PATH, data_only=True)
+    ws = wb["SKU Detail"]
+    totals: dict[tuple[str, str, str], int] = defaultdict(int)
+    for r in ws.iter_rows(min_row=2, values_only=True):
+        in_active_range, franchise, style_code, article, available_stock = r[6], r[7], r[1], r[2], r[9]
+        if in_active_range == "Y" or not franchise:
+            continue
+        key = (franchise, style_code, (article or "").strip())
+        totals[key] += available_stock or 0
+
+    by_base: dict[str, list[dict]] = defaultdict(list)
+    for (base, style_code, article), stock in totals.items():
+        if stock <= 0:
+            continue
+        by_base[base].append({"code": style_code, "style": article, "availableStock": stock})
+    for base in by_base:
+        by_base[base].sort(key=lambda s: -s["availableStock"])
+    return dict(by_base)
+
+
 def build() -> list[dict]:
     franchise_rows = build_rows()
     moq_by_base = load_moq_by_base()
     inventory_by_base = load_inventory_by_base()
+    tail_styles_by_base = load_tail_styles_by_base()
 
     out = []
     for r in franchise_rows:
@@ -116,6 +145,7 @@ def build() -> list[dict]:
             "availableStockActive": inv.get("available_active", 0),
             "availableStockTail": inv.get("available_not_active", 0),
             "skusNotInRange": inv.get("skus_not_in_range", 0),
+            "tailStyles": tail_styles_by_base.get(base, []),
         })
     return out
 

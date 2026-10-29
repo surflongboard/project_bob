@@ -35,7 +35,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Aze Beanie",
@@ -73,7 +74,14 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 3718,
-    "skusNotInRange": 6
+    "skusNotInRange": 6,
+    "tailStyles": [
+      {
+        "code": "605502",
+        "style": "Aze Beanie",
+        "availableStock": 3718
+      }
+    ]
   },
   {
     "base": "Brand Five Panel Cap",
@@ -111,7 +119,14 @@
     "moq": [],
     "availableStockActive": 1283,
     "availableStockTail": 115,
-    "skusNotInRange": 5
+    "skusNotInRange": 5,
+    "tailStyles": [
+      {
+        "code": "608142",
+        "style": "Brand Five Panel Cap",
+        "availableStock": 115
+      }
+    ]
   },
   {
     "base": "Haglöfs Bandana",
@@ -149,7 +164,8 @@
     "moq": [],
     "availableStockActive": 69,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Haglöfs Cap",
@@ -187,7 +203,8 @@
     "moq": [],
     "availableStockActive": 2094,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Haglöfs LX Hat",
@@ -225,7 +242,8 @@
     "moq": [],
     "availableStockActive": 223,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Haglöfs Neck Tube",
@@ -263,7 +281,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Haglöfs Trucker Cap",
@@ -301,7 +320,8 @@
     "moq": [],
     "availableStockActive": 2777,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "L.I.M Pace Cap",
@@ -339,7 +359,8 @@
     "moq": [],
     "availableStockActive": 153,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Mountain Cap",
@@ -377,7 +398,8 @@
     "moq": [],
     "availableStockActive": 660,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Outsiders Beanie",
@@ -415,7 +437,8 @@
     "moq": [],
     "availableStockActive": 1823,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Rosson Beanie",
@@ -453,7 +476,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Rosson Balaclava",
@@ -491,7 +515,14 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 505,
-    "skusNotInRange": 3
+    "skusNotInRange": 3,
+    "tailStyles": [
+      {
+        "code": "607827",
+        "style": "Rosson Balaclava",
+        "availableStock": 505
+      }
+    ]
   },
   {
     "base": "Solis Hat",
@@ -529,7 +560,8 @@
     "moq": [],
     "availableStockActive": 531,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Stretch Webbing Belt",
@@ -567,7 +599,8 @@
     "moq": [],
     "availableStockActive": 716,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Sun Capsule Multi Cover",
@@ -605,7 +638,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Thermal Beanie",
@@ -643,7 +677,14 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 776,
-    "skusNotInRange": 3
+    "skusNotInRange": 3,
+    "tailStyles": [
+      {
+        "code": "605503",
+        "style": "Thermal Beanie",
+        "availableStock": 776
+      }
+    ]
   },
   {
     "base": "Tova Wool Beanie",
@@ -681,7 +722,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Vara Alpha Cap",
@@ -719,7 +761,8 @@
     "moq": [],
     "availableStockActive": 552,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Vassi Beanie",
@@ -757,7 +800,14 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 791,
-    "skusNotInRange": 5
+    "skusNotInRange": 5,
+    "tailStyles": [
+      {
+        "code": "606855",
+        "style": "Vassi Beanie",
+        "availableStock": 791
+      }
+    ]
   },
   {
     "base": "Vassi Headband",
@@ -795,7 +845,8 @@
     "moq": [],
     "availableStockActive": 1361,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Flat accessory bag",
@@ -833,7 +884,8 @@
     "moq": [],
     "availableStockActive": 1902,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Fram 1L",
@@ -871,7 +923,8 @@
     "moq": [],
     "availableStockActive": 243,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Keywallet",
@@ -909,7 +962,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Lava travel tube",
@@ -947,7 +1001,8 @@
     "moq": [],
     "availableStockActive": 1037,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Magma Waist pack 3,5L",
@@ -985,7 +1040,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Packing cube 12L",
@@ -1023,7 +1079,8 @@
     "moq": [],
     "availableStockActive": 295,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Packing cube 8L",
@@ -1061,7 +1118,8 @@
     "moq": [],
     "availableStockActive": 237,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Raincover 15-30L",
@@ -1099,7 +1157,8 @@
     "moq": [],
     "availableStockActive": 887,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Raincover 25-40L",
@@ -1137,7 +1196,8 @@
     "moq": [],
     "availableStockActive": 823,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Raincover 40-60L",
@@ -1175,7 +1235,8 @@
     "moq": [],
     "availableStockActive": 826,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Raincover 60-80L",
@@ -1213,7 +1274,8 @@
     "moq": [],
     "availableStockActive": 943,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Shoulder pocket",
@@ -1251,7 +1313,8 @@
     "moq": [],
     "availableStockActive": 129,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Shoulder pouch",
@@ -1289,7 +1352,8 @@
     "moq": [],
     "availableStockActive": 162,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Sling pouch 2L",
@@ -1327,7 +1391,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Tight Pocket bag",
@@ -1365,7 +1430,8 @@
     "moq": [],
     "availableStockActive": 921,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Tight hip pack 1",
@@ -1403,7 +1469,8 @@
     "moq": [],
     "availableStockActive": 2796,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Tight hip pack 3,5",
@@ -1441,7 +1508,8 @@
     "moq": [],
     "availableStockActive": 4077,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Utility pouch 3L",
@@ -1479,7 +1547,8 @@
     "moq": [],
     "availableStockActive": 286,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Courier Messenger Bag",
@@ -1517,7 +1586,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Fjatla 40",
@@ -1555,7 +1625,14 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 378,
-    "skusNotInRange": 4
+    "skusNotInRange": 4,
+    "tailStyles": [
+      {
+        "code": "606990",
+        "style": "Fjatla 40",
+        "availableStock": 378
+      }
+    ]
   },
   {
     "base": "Fjatla 60",
@@ -1593,7 +1670,14 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 1707,
-    "skusNotInRange": 4
+    "skusNotInRange": 4,
+    "tailStyles": [
+      {
+        "code": "606989",
+        "style": "Fjatla 60",
+        "availableStock": 1707
+      }
+    ]
   },
   {
     "base": "Lava 110",
@@ -1631,7 +1715,8 @@
     "moq": [],
     "availableStockActive": 624,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Lava 30",
@@ -1669,7 +1754,8 @@
     "moq": [],
     "availableStockActive": 775,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Lava 50",
@@ -1707,7 +1793,8 @@
     "moq": [],
     "availableStockActive": 2308,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Lava 70",
@@ -1745,7 +1832,8 @@
     "moq": [],
     "availableStockActive": 1988,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Lava 90",
@@ -1783,7 +1871,8 @@
     "moq": [],
     "availableStockActive": 1678,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Magma 42L",
@@ -1821,7 +1910,8 @@
     "moq": [],
     "availableStockActive": 317,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Magma 65L",
@@ -1859,7 +1949,8 @@
     "moq": [],
     "availableStockActive": 552,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Tight duffle 50",
@@ -1897,7 +1988,8 @@
     "moq": [],
     "availableStockActive": 1804,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Latnja Wool 3/4 Pant",
@@ -1935,7 +2027,8 @@
     "moq": [],
     "availableStockActive": 821,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Latnja Wool Crew Neck",
@@ -1973,7 +2066,8 @@
     "moq": [],
     "availableStockActive": 1447,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Latnja Wool Long John's",
@@ -2011,7 +2105,8 @@
     "moq": [],
     "availableStockActive": 1549,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Kobbe Sandal Low",
@@ -2049,7 +2144,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Backup",
@@ -2087,7 +2183,8 @@
     "moq": [],
     "availableStockActive": 186,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Corker Large",
@@ -2125,7 +2222,8 @@
     "moq": [],
     "availableStockActive": 3931,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Corker Medium",
@@ -2163,7 +2261,8 @@
     "moq": [],
     "availableStockActive": 4056,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Jarve Multi 22",
@@ -2201,7 +2300,14 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 995,
-    "skusNotInRange": 2
+    "skusNotInRange": 2,
+    "tailStyles": [
+      {
+        "code": "606956",
+        "style": "Jarve Multi 22",
+        "availableStock": 995
+      }
+    ]
   },
   {
     "base": "Jarve Multi 28",
@@ -2239,7 +2345,14 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 626,
-    "skusNotInRange": 2
+    "skusNotInRange": 2,
+    "tailStyles": [
+      {
+        "code": "606955",
+        "style": "Jarve Multi 28",
+        "availableStock": 626
+      }
+    ]
   },
   {
     "base": "Skuta 15",
@@ -2277,7 +2390,8 @@
     "moq": [],
     "availableStockActive": 643,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Tight 15",
@@ -2315,7 +2429,14 @@
     "moq": [],
     "availableStockActive": 318,
     "availableStockTail": 86,
-    "skusNotInRange": 1
+    "skusNotInRange": 1,
+    "tailStyles": [
+      {
+        "code": "339384",
+        "style": "Tight Junior 15",
+        "availableStock": 86
+      }
+    ]
   },
   {
     "base": "Tight 8",
@@ -2353,7 +2474,14 @@
     "moq": [],
     "availableStockActive": 899,
     "availableStockTail": 108,
-    "skusNotInRange": 1
+    "skusNotInRange": 1,
+    "tailStyles": [
+      {
+        "code": "339385",
+        "style": "Tight Junior 8",
+        "availableStock": 108
+      }
+    ]
   },
   {
     "base": "Tight Large",
@@ -2391,7 +2519,14 @@
     "moq": [],
     "availableStockActive": 3888,
     "availableStockTail": 879,
-    "skusNotInRange": 4
+    "skusNotInRange": 4,
+    "tailStyles": [
+      {
+        "code": "338150",
+        "style": "Tight Large",
+        "availableStock": 879
+      }
+    ]
   },
   {
     "base": "Tight Medium",
@@ -2429,7 +2564,14 @@
     "moq": [],
     "availableStockActive": 5884,
     "availableStockTail": 2774,
-    "skusNotInRange": 3
+    "skusNotInRange": 3,
+    "tailStyles": [
+      {
+        "code": "338151",
+        "style": "Tight Medium",
+        "availableStock": 2774
+      }
+    ]
   },
   {
     "base": "Tight Pro Large",
@@ -2467,7 +2609,8 @@
     "moq": [],
     "availableStockActive": 124,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Tight Pro Medium",
@@ -2505,7 +2648,8 @@
     "moq": [],
     "availableStockActive": 224,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Tight Small",
@@ -2543,7 +2687,14 @@
     "moq": [],
     "availableStockActive": 2680,
     "availableStockTail": 146,
-    "skusNotInRange": 4
+    "skusNotInRange": 4,
+    "tailStyles": [
+      {
+        "code": "338152",
+        "style": "Tight Small",
+        "availableStock": 146
+      }
+    ]
   },
   {
     "base": "Tight Tote 25",
@@ -2581,7 +2732,8 @@
     "moq": [],
     "availableStockActive": 2802,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Tight X-Small",
@@ -2619,7 +2771,8 @@
     "moq": [],
     "availableStockActive": 1454,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Vara 20L",
@@ -2657,7 +2810,8 @@
     "moq": [],
     "availableStockActive": 313,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "L.I.M Mountain Trail 25",
@@ -2695,7 +2849,8 @@
     "moq": [],
     "availableStockActive": 667,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "L.I.M Trail 15",
@@ -2733,7 +2888,8 @@
     "moq": [],
     "availableStockActive": 951,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Magma 30",
@@ -2771,7 +2927,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Magma 50L",
@@ -2809,7 +2966,8 @@
     "moq": [],
     "availableStockActive": 386,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Magma 60L",
@@ -2847,7 +3005,8 @@
     "moq": [],
     "availableStockActive": 423,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Magma Roll-top 40 WR",
@@ -2885,7 +3044,8 @@
     "moq": [],
     "availableStockActive": 563,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Vide 20",
@@ -2923,7 +3083,14 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 5554,
-    "skusNotInRange": 3
+    "skusNotInRange": 3,
+    "tailStyles": [
+      {
+        "code": "607106",
+        "style": "Vide 20",
+        "availableStock": 5554
+      }
+    ]
   },
   {
     "base": "Vide 30",
@@ -2961,7 +3128,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Fast Hike Low",
@@ -2999,7 +3167,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Haglöfs Fast Hike PROOF Low",
@@ -3037,7 +3206,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Haglöfs Horizon Hike GTX WL Mid",
@@ -3075,7 +3245,8 @@
     "moq": [],
     "availableStockActive": 799,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Haglöfs L.I.M Horizon Hike GTX Low",
@@ -3113,7 +3284,8 @@
     "moq": [],
     "availableStockActive": 880,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Haglöfs L.I.M Horizon Hike GTX Mid",
@@ -3151,7 +3323,8 @@
     "moq": [],
     "availableStockActive": 1349,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Haglöfs L.I.M Horizon Hike Light Mid",
@@ -3189,7 +3362,8 @@
     "moq": [],
     "availableStockActive": 1076,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Haglöfs Ridge GTX Low",
@@ -3227,7 +3401,8 @@
     "moq": [],
     "availableStockActive": 9667,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Haglöfs Ridge GTX Mid",
@@ -3265,7 +3440,14 @@
     "moq": [],
     "availableStockActive": 5144,
     "availableStockTail": 166,
-    "skusNotInRange": 4
+    "skusNotInRange": 4,
+    "tailStyles": [
+      {
+        "code": "497830",
+        "style": "Haglöfs Ridge GTX Mid Women",
+        "availableStock": 166
+      }
+    ]
   },
   {
     "base": "Haglöfs Rosson FG Proof Mid",
@@ -3303,7 +3485,8 @@
     "moq": [],
     "availableStockActive": 672,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Haglöfs Rosson Proof Mid",
@@ -3341,7 +3524,8 @@
     "moq": [],
     "availableStockActive": 1418,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Haglöfs Vertigo QL PROOF Low",
@@ -3379,7 +3563,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Vertigo Proof Low",
@@ -3417,7 +3602,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Breeze Mimic Hood",
@@ -3455,7 +3641,8 @@
     "moq": [],
     "availableStockActive": 1255,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Fram Mimic Jacket",
@@ -3493,7 +3680,8 @@
     "moq": [],
     "availableStockActive": 572,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Hede Down Coat",
@@ -3531,7 +3719,8 @@
     "moq": [],
     "availableStockActive": 989,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Hede Down Hood",
@@ -3569,7 +3758,8 @@
     "moq": [],
     "availableStockActive": 3792,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Hede Down Vest",
@@ -3607,7 +3797,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "L.I.M Down Hood Jacket",
@@ -3645,7 +3836,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "L.I.M Down Hood",
@@ -3683,7 +3875,14 @@
     "moq": [],
     "availableStockActive": 769,
     "availableStockTail": 96,
-    "skusNotInRange": 12
+    "skusNotInRange": 12,
+    "tailStyles": [
+      {
+        "code": "605356",
+        "style": "L.I.M Down Hood Women",
+        "availableStock": 96
+      }
+    ]
   },
   {
     "base": "L.I.M Mimic Barrier Hood",
@@ -3721,7 +3920,8 @@
     "moq": [],
     "availableStockActive": 719,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "L.I.M Mimic Barrier Vest",
@@ -3759,7 +3959,8 @@
     "moq": [],
     "availableStockActive": 148,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Long Down Parka",
@@ -3797,7 +3998,8 @@
     "moq": [],
     "availableStockActive": 2047,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Long Mimic Parka",
@@ -3835,7 +4037,8 @@
     "moq": [],
     "availableStockActive": 419,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Lugna Softshell Overshirt",
@@ -3894,7 +4097,8 @@
     ],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Mimic Alert Hood",
@@ -3943,7 +4147,19 @@
     ],
     "availableStockActive": 0,
     "availableStockTail": 6903,
-    "skusNotInRange": 64
+    "skusNotInRange": 64,
+    "tailStyles": [
+      {
+        "code": "607444",
+        "style": "Mimic Alert Hood Men",
+        "availableStock": 3651
+      },
+      {
+        "code": "607447",
+        "style": "Mimic Alert Hood Women",
+        "availableStock": 3252
+      }
+    ]
   },
   {
     "base": "Mimic Alert Jacket",
@@ -4002,7 +4218,19 @@
     ],
     "availableStockActive": 0,
     "availableStockTail": 2152,
-    "skusNotInRange": 32
+    "skusNotInRange": 32,
+    "tailStyles": [
+      {
+        "code": "607446",
+        "style": "Mimic Alert Jacket Men",
+        "availableStock": 1665
+      },
+      {
+        "code": "607448",
+        "style": "Mimic Alert Jacket Women",
+        "availableStock": 487
+      }
+    ]
   },
   {
     "base": "Mojo Down Hood",
@@ -4040,7 +4268,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Nallo Touring Down Hood",
@@ -4078,7 +4307,8 @@
     "moq": [],
     "availableStockActive": 832,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "ROC Flash Down Hood",
@@ -4116,7 +4346,8 @@
     "moq": [],
     "availableStockActive": 6033,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "ROC Flash Down Jacket",
@@ -4154,7 +4385,8 @@
     "moq": [],
     "availableStockActive": 3137,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "ROC Flash Down Vest",
@@ -4192,7 +4424,8 @@
     "moq": [],
     "availableStockActive": 1736,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Rosson Down Hood",
@@ -4230,7 +4463,8 @@
     "moq": [],
     "availableStockActive": 3521,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Rosson Down Parka",
@@ -4268,7 +4502,8 @@
     "moq": [],
     "availableStockActive": 1899,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Salix Proof Mimic Parka",
@@ -4306,7 +4541,8 @@
     "moq": [],
     "availableStockActive": 2026,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Spitz Down Hood",
@@ -4344,7 +4580,8 @@
     "moq": [],
     "availableStockActive": 1608,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Särna Mimic Hood",
@@ -4393,7 +4630,19 @@
     ],
     "availableStockActive": 6181,
     "availableStockTail": 183,
-    "skusNotInRange": 29
+    "skusNotInRange": 29,
+    "tailStyles": [
+      {
+        "code": "607776",
+        "style": "Särna Mimic Hood Women",
+        "availableStock": 169
+      },
+      {
+        "code": "605132",
+        "style": "Särna Mimic Hood Women",
+        "availableStock": 14
+      }
+    ]
   },
   {
     "base": "Alert Mid Pant",
@@ -4431,7 +4680,8 @@
     "moq": [],
     "availableStockActive": 9154,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Alert Mid Shorts",
@@ -4480,7 +4730,8 @@
     ],
     "availableStockActive": 1727,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Essential Tights",
@@ -4518,7 +4769,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Front Flex Pant",
@@ -4556,7 +4808,8 @@
     "moq": [],
     "availableStockActive": 900,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Fuse Pant",
@@ -4594,7 +4847,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Fuse Short",
@@ -4632,7 +4886,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Hede Cargo Pant",
@@ -4670,7 +4925,19 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 634,
-    "skusNotInRange": 25
+    "skusNotInRange": 25,
+    "tailStyles": [
+      {
+        "code": "607651",
+        "style": "Hede Cargo Pant Women",
+        "availableStock": 334
+      },
+      {
+        "code": "607644",
+        "style": "Hede Cargo Pant Men",
+        "availableStock": 300
+      }
+    ]
   },
   {
     "base": "Hede Shorts",
@@ -4708,7 +4975,19 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 175,
-    "skusNotInRange": 34
+    "skusNotInRange": 34,
+    "tailStyles": [
+      {
+        "code": "608162",
+        "style": "Hede Shorts Men",
+        "availableStock": 139
+      },
+      {
+        "code": "608182",
+        "style": "Hede Shorts Women",
+        "availableStock": 36
+      }
+    ]
   },
   {
     "base": "Hiking Tights",
@@ -4746,7 +5025,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Korp Lite Pant",
@@ -4784,7 +5064,8 @@
     "moq": [],
     "availableStockActive": 2352,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Korp Lite Shorts",
@@ -4822,7 +5103,8 @@
     "moq": [],
     "availableStockActive": 2535,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "L.I.M Pace Shorts",
@@ -4871,7 +5153,8 @@
     ],
     "availableStockActive": 814,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "L.I.M Windpace Hybrid Pant",
@@ -4909,7 +5192,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Levante Pant",
@@ -4947,7 +5231,8 @@
     "moq": [],
     "availableStockActive": 188,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Levante Shorts",
@@ -4985,7 +5270,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Lite Standard Zip-Off Pant",
@@ -5023,7 +5309,19 @@
     "moq": [],
     "availableStockActive": 460,
     "availableStockTail": 46,
-    "skusNotInRange": 13
+    "skusNotInRange": 13,
+    "tailStyles": [
+      {
+        "code": "606931",
+        "style": "Lite Standard Zip-Off Pant Women",
+        "availableStock": 36
+      },
+      {
+        "code": "606947",
+        "style": "Lite Standard Zip-Off Pant Men",
+        "availableStock": 10
+      }
+    ]
   },
   {
     "base": "Lizard Softshell Shorts",
@@ -5061,7 +5359,14 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 401,
-    "skusNotInRange": 13
+    "skusNotInRange": 13,
+    "tailStyles": [
+      {
+        "code": "606705",
+        "style": "Lizard Softshell Shorts Men",
+        "availableStock": 401
+      }
+    ]
   },
   {
     "base": "Magma Rugged Pant",
@@ -5110,7 +5415,8 @@
     ],
     "availableStockActive": 4574,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Magma Rugged Wide Pant",
@@ -5148,7 +5454,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Mid Standard Pant",
@@ -5186,7 +5493,19 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 43,
-    "skusNotInRange": 12
+    "skusNotInRange": 12,
+    "tailStyles": [
+      {
+        "code": "607251",
+        "style": "Mid Standard Pant Women",
+        "availableStock": 40
+      },
+      {
+        "code": "607604",
+        "style": "Mid Standard Pant Women",
+        "availableStock": 3
+      }
+    ]
   },
   {
     "base": "Mid Standard Shorts",
@@ -5224,7 +5543,19 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 120,
-    "skusNotInRange": 13
+    "skusNotInRange": 13,
+    "tailStyles": [
+      {
+        "code": "607054",
+        "style": "Mid Standard ShortsMen",
+        "availableStock": 95
+      },
+      {
+        "code": "605188",
+        "style": "Mid Standard II Shorts Women",
+        "availableStock": 25
+      }
+    ]
   },
   {
     "base": "Mimic Silver Pant",
@@ -5262,7 +5593,19 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 1174,
-    "skusNotInRange": 10
+    "skusNotInRange": 10,
+    "tailStyles": [
+      {
+        "code": "605388",
+        "style": "Mimic Silver Pant Men",
+        "availableStock": 694
+      },
+      {
+        "code": "605389",
+        "style": "Mimic Silver Pant Women",
+        "availableStock": 480
+      }
+    ]
   },
   {
     "base": "ROC Lite Slim Pant",
@@ -5300,7 +5643,19 @@
     "moq": [],
     "availableStockActive": 127,
     "availableStockTail": 35,
-    "skusNotInRange": 8
+    "skusNotInRange": 8,
+    "tailStyles": [
+      {
+        "code": "606025",
+        "style": "ROC Lite Slim Pant Men",
+        "availableStock": 21
+      },
+      {
+        "code": "606251",
+        "style": "ROC Lite Slim Pant Women",
+        "availableStock": 14
+      }
+    ]
   },
   {
     "base": "Solis Zip Off Pant",
@@ -5349,7 +5704,8 @@
     ],
     "availableStockActive": 46,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Solvik Seersucker Shorts",
@@ -5387,7 +5743,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Sun Capsule Pant",
@@ -5425,7 +5782,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Brisen Tech Mid Hood",
@@ -5463,7 +5821,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Buteo Mid Jacket",
@@ -5501,7 +5860,19 @@
     "moq": [],
     "availableStockActive": 11137,
     "availableStockTail": 961,
-    "skusNotInRange": 41
+    "skusNotInRange": 41,
+    "tailStyles": [
+      {
+        "code": "605074",
+        "style": "Buteo Mid Jacket Women",
+        "availableStock": 748
+      },
+      {
+        "code": "605073",
+        "style": "Buteo Mid Jacket Men",
+        "availableStock": 213
+      }
+    ]
   },
   {
     "base": "Funäs Pile Hood",
@@ -5539,7 +5910,8 @@
     "moq": [],
     "availableStockActive": 3588,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Haglöfs Hoodie",
@@ -5577,7 +5949,8 @@
     "moq": [],
     "availableStockActive": 939,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Korp Mid Halfzip",
@@ -5636,7 +6009,8 @@
     ],
     "availableStockActive": 2800,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Korp Mid Hood",
@@ -5674,7 +6048,8 @@
     "moq": [],
     "availableStockActive": 3959,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Korp Mid Jacket",
@@ -5712,7 +6087,8 @@
     "moq": [],
     "availableStockActive": 1628,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "L.I.M Mid Hybrid",
@@ -5750,7 +6126,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "L.I.M Mid Multi Hood",
@@ -5788,7 +6165,8 @@
     "moq": [],
     "availableStockActive": 1553,
     "availableStockTail": 0,
-    "skusNotInRange": 25
+    "skusNotInRange": 25,
+    "tailStyles": []
   },
   {
     "base": "L.I.M Mid Multi Jacket",
@@ -5826,7 +6204,8 @@
     "moq": [],
     "availableStockActive": 454,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "L.I.M Mid Reversible Crew",
@@ -5864,7 +6243,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Nallo Touring Hybrid Mid",
@@ -5923,7 +6303,8 @@
     ],
     "availableStockActive": 775,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Rosson Tights",
@@ -5961,7 +6342,19 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 1443,
-    "skusNotInRange": 12
+    "skusNotInRange": 12,
+    "tailStyles": [
+      {
+        "code": "607785",
+        "style": "Rosson Tights Women",
+        "availableStock": 736
+      },
+      {
+        "code": "607784",
+        "style": "Rosson Tights Men",
+        "availableStock": 707
+      }
+    ]
   },
   {
     "base": "Rosson Mid Hood",
@@ -5999,7 +6392,19 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 8214,
-    "skusNotInRange": 66
+    "skusNotInRange": 66,
+    "tailStyles": [
+      {
+        "code": "607605",
+        "style": "Rosson Mid Hood Men",
+        "availableStock": 4396
+      },
+      {
+        "code": "607474",
+        "style": "Rosson Mid Hood Women",
+        "availableStock": 3818
+      }
+    ]
   },
   {
     "base": "Rosson Mid Jacket",
@@ -6037,7 +6442,19 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 4366,
-    "skusNotInRange": 61
+    "skusNotInRange": 61,
+    "tailStyles": [
+      {
+        "code": "607606",
+        "style": "Rosson Mid Jacket Women",
+        "availableStock": 2372
+      },
+      {
+        "code": "607473",
+        "style": "Rosson Mid Jacket Men",
+        "availableStock": 1994
+      }
+    ]
   },
   {
     "base": "Swook Mid Hood",
@@ -6075,7 +6492,8 @@
     "moq": [],
     "availableStockActive": 5528,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Swook Mid Jacket",
@@ -6113,7 +6531,8 @@
     "moq": [],
     "availableStockActive": 3627,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Swook Mid Halfzip W",
@@ -6162,7 +6581,8 @@
     ],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Swook Mid Sweater M",
@@ -6211,7 +6631,8 @@
     ],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Vara Alpha Sweater",
@@ -6270,7 +6691,8 @@
     ],
     "availableStockActive": 120,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Vassi Mid Hood",
@@ -6308,7 +6730,8 @@
     "moq": [],
     "availableStockActive": 1603,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Latnja 18L",
@@ -6346,7 +6769,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Nallo Pro 40L",
@@ -6384,7 +6808,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Vassi Pro 32L",
@@ -6422,7 +6847,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Alert GTX Jacket",
@@ -6481,7 +6907,8 @@
     ],
     "availableStockActive": 5463,
     "availableStockTail": 0,
-    "skusNotInRange": 5
+    "skusNotInRange": 5,
+    "tailStyles": []
   },
   {
     "base": "Alper Proof Jacket",
@@ -6519,7 +6946,8 @@
     "moq": [],
     "availableStockActive": 1605,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Alper Proof Pant",
@@ -6557,7 +6985,8 @@
     "moq": [],
     "availableStockActive": 1466,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Astral GTX Jacket",
@@ -6595,7 +7024,14 @@
     "moq": [],
     "availableStockActive": 8550,
     "availableStockTail": 416,
-    "skusNotInRange": 10
+    "skusNotInRange": 10,
+    "tailStyles": [
+      {
+        "code": "604669",
+        "style": "Astral GTX Jacket Women",
+        "availableStock": 416
+      }
+    ]
   },
   {
     "base": "Breeze Proof Jacket",
@@ -6633,7 +7069,8 @@
     "moq": [],
     "availableStockActive": 11466,
     "availableStockTail": 0,
-    "skusNotInRange": 40
+    "skusNotInRange": 40,
+    "tailStyles": []
   },
   {
     "base": "Front Proof Jacket",
@@ -6671,7 +7108,24 @@
     "moq": [],
     "availableStockActive": 7151,
     "availableStockTail": 87,
-    "skusNotInRange": 13
+    "skusNotInRange": 13,
+    "tailStyles": [
+      {
+        "code": "606143",
+        "style": "Front Proof Jacket Men",
+        "availableStock": 46
+      },
+      {
+        "code": "606177",
+        "style": "Front Proof Jacket Women",
+        "availableStock": 37
+      },
+      {
+        "code": "607768",
+        "style": "Front Proof Jacket Women",
+        "availableStock": 4
+      }
+    ]
   },
   {
     "base": "Holm GTX Pant",
@@ -6709,7 +7163,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Klyva GTX Jacket",
@@ -6768,7 +7223,8 @@
     ],
     "availableStockActive": 1381,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Korp Proof Pant",
@@ -6806,7 +7262,19 @@
     "moq": [],
     "availableStockActive": 1009,
     "availableStockTail": 152,
-    "skusNotInRange": 3
+    "skusNotInRange": 3,
+    "tailStyles": [
+      {
+        "code": "606131",
+        "style": "Korp Proof Pant Women",
+        "availableStock": 148
+      },
+      {
+        "code": "606134",
+        "style": "Korp Proof Pant Men",
+        "availableStock": 4
+      }
+    ]
   },
   {
     "base": "Korp Proof Jacket",
@@ -6844,7 +7312,8 @@
     "moq": [],
     "availableStockActive": 2954,
     "availableStockTail": 0,
-    "skusNotInRange": 25
+    "skusNotInRange": 25,
+    "tailStyles": []
   },
   {
     "base": "L.I.M Airak 2,5L Jacket",
@@ -6882,7 +7351,8 @@
     "moq": [],
     "availableStockActive": 4618,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "L.I.M Airak 2,5L Pant",
@@ -6920,7 +7390,8 @@
     "moq": [],
     "availableStockActive": 2804,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "L.I.M Airak 2,5L Proof Jacket",
@@ -6958,7 +7429,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "L.I.M Airak 2,5L Proof Pant",
@@ -6996,7 +7468,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "L.I.M Airak GTX Jacket",
@@ -7034,7 +7507,8 @@
     "moq": [],
     "availableStockActive": 4563,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "L.I.M GTX Jacket",
@@ -7072,7 +7546,19 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 1036,
-    "skusNotInRange": 11
+    "skusNotInRange": 11,
+    "tailStyles": [
+      {
+        "code": "607418",
+        "style": "L.I.M GTX II JacketWomen",
+        "availableStock": 1035
+      },
+      {
+        "code": "607417",
+        "style": "L.I.M GTX II JacketMen",
+        "availableStock": 1
+      }
+    ]
   },
   {
     "base": "L.I.M GTX Pant",
@@ -7110,7 +7596,19 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 673,
-    "skusNotInRange": 8
+    "skusNotInRange": 8,
+    "tailStyles": [
+      {
+        "code": "606550",
+        "style": "L.I.M GTX Pant Women",
+        "availableStock": 588
+      },
+      {
+        "code": "606551",
+        "style": "L.I.M GTX Pant Men",
+        "availableStock": 85
+      }
+    ]
   },
   {
     "base": "L.I.M Light Proof Jacket",
@@ -7148,7 +7646,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "L.I.M Windpack Hood Jacket",
@@ -7186,7 +7685,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Latnja GTX Insulated Jacket",
@@ -7224,7 +7724,19 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 3128,
-    "skusNotInRange": 53
+    "skusNotInRange": 53,
+    "tailStyles": [
+      {
+        "code": "607469",
+        "style": "Latnja GTX Insulated Jacket Men",
+        "availableStock": 1614
+      },
+      {
+        "code": "607471",
+        "style": "Latnja GTX Insulated Jacket Women",
+        "availableStock": 1514
+      }
+    ]
   },
   {
     "base": "Latnja GTX Insulated Pant",
@@ -7262,7 +7774,19 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 2591,
-    "skusNotInRange": 48
+    "skusNotInRange": 48,
+    "tailStyles": [
+      {
+        "code": "607472",
+        "style": "Latnja GTX Insulated Pant Women",
+        "availableStock": 1348
+      },
+      {
+        "code": "607470",
+        "style": "Latnja GTX Insulated Pant Men",
+        "availableStock": 1243
+      }
+    ]
   },
   {
     "base": "Ljusna Proof Parka",
@@ -7300,7 +7824,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Nallo Touring GTX Jacket",
@@ -7338,7 +7863,8 @@
     "moq": [],
     "availableStockActive": 1220,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Nallo Touring GTX Pant",
@@ -7376,7 +7902,8 @@
     "moq": [],
     "availableStockActive": 1263,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Norrvind Shield Hood",
@@ -7414,7 +7941,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 35
+    "skusNotInRange": 35,
+    "tailStyles": []
   },
   {
     "base": "Ozka Proof Jacket",
@@ -7473,7 +8001,8 @@
     ],
     "availableStockActive": 4341,
     "availableStockTail": 0,
-    "skusNotInRange": 10
+    "skusNotInRange": 10,
+    "tailStyles": []
   },
   {
     "base": "Ozka Proof Pant",
@@ -7532,7 +8061,8 @@
     ],
     "availableStockActive": 3578,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "ROC Sight GTX Jacket",
@@ -7570,7 +8100,8 @@
     "moq": [],
     "availableStockActive": 1585,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Saulo Proof Jacket",
@@ -7608,7 +8139,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Saulo Proof Pant",
@@ -7646,7 +8178,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Skalvik Softshell Parka",
@@ -7684,7 +8217,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Spitz GTX Pro Jacket",
@@ -7722,7 +8256,19 @@
     "moq": [],
     "availableStockActive": 1478,
     "availableStockTail": 204,
-    "skusNotInRange": 10
+    "skusNotInRange": 10,
+    "tailStyles": [
+      {
+        "code": "607799",
+        "style": "Spitz GTX Pro II Jacket Women",
+        "availableStock": 140
+      },
+      {
+        "code": "607796",
+        "style": "Spitz GTX Pro II Jacket Men",
+        "availableStock": 64
+      }
+    ]
   },
   {
     "base": "Tarre Proof Insulated Jacket",
@@ -7760,7 +8306,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Tarre Proof Insulated Pant",
@@ -7798,7 +8345,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Vara Down GTX Parka",
@@ -7836,7 +8384,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Vassi GTX Jacket",
@@ -7874,7 +8423,24 @@
     "moq": [],
     "availableStockActive": 1485,
     "availableStockTail": 243,
-    "skusNotInRange": 26
+    "skusNotInRange": 26,
+    "tailStyles": [
+      {
+        "code": "607793",
+        "style": "Vassi GTX II JacketWomen",
+        "availableStock": 171
+      },
+      {
+        "code": "607791",
+        "style": "Vassi GTX II JacketMen",
+        "availableStock": 50
+      },
+      {
+        "code": "606840",
+        "style": "Vassi GTX Jacket Women",
+        "availableStock": 22
+      }
+    ]
   },
   {
     "base": "Vassi GTX Pant",
@@ -7912,7 +8478,29 @@
     "moq": [],
     "availableStockActive": 1776,
     "availableStockTail": 683,
-    "skusNotInRange": 32
+    "skusNotInRange": 32,
+    "tailStyles": [
+      {
+        "code": "606841",
+        "style": "Vassi GTX Pant Women",
+        "availableStock": 446
+      },
+      {
+        "code": "607816",
+        "style": "Vassi GTX II Pant Women",
+        "availableStock": 183
+      },
+      {
+        "code": "606838",
+        "style": "Vassi GTX Pant Men",
+        "availableStock": 31
+      },
+      {
+        "code": "607815",
+        "style": "Vassi GTX II Pant Men",
+        "availableStock": 23
+      }
+    ]
   },
   {
     "base": "Vassi GTX Pro Bib",
@@ -7950,7 +8538,19 @@
     "moq": [],
     "availableStockActive": 927,
     "availableStockTail": 35,
-    "skusNotInRange": 6
+    "skusNotInRange": 6,
+    "tailStyles": [
+      {
+        "code": "607798",
+        "style": "Vassi GTX Pro II Bib Women",
+        "availableStock": 32
+      },
+      {
+        "code": "607794",
+        "style": "Vassi GTX Pro II Bib Men",
+        "availableStock": 3
+      }
+    ]
   },
   {
     "base": "Vassi GTX Pro Jacket",
@@ -7988,7 +8588,24 @@
     "moq": [],
     "availableStockActive": 717,
     "availableStockTail": 221,
-    "skusNotInRange": 19
+    "skusNotInRange": 19,
+    "tailStyles": [
+      {
+        "code": "607783",
+        "style": "Vassi GTX Pro II Jacket Men",
+        "availableStock": 81
+      },
+      {
+        "code": "607792",
+        "style": "Vassi GTX Pro II Jacket Women",
+        "availableStock": 76
+      },
+      {
+        "code": "604689",
+        "style": "Vassi GTX Pro Jacket Women",
+        "availableStock": 64
+      }
+    ]
   },
   {
     "base": "Yra Mimic Proof Parka",
@@ -8026,7 +8643,8 @@
     "moq": [],
     "availableStockActive": 1576,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Moonlite",
@@ -8064,7 +8682,8 @@
     "moq": [],
     "availableStockActive": 692,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Moonlite +7",
@@ -8102,7 +8721,8 @@
     "moq": [],
     "availableStockActive": 423,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Moonlite -1",
@@ -8140,7 +8760,8 @@
     "moq": [],
     "availableStockActive": 311,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Musca -1",
@@ -8178,7 +8799,8 @@
     "moq": [],
     "availableStockActive": 62,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Musca -13",
@@ -8216,7 +8838,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Musca -26",
@@ -8254,7 +8877,8 @@
     "moq": [],
     "availableStockActive": 162,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Musca -5",
@@ -8292,7 +8916,8 @@
     "moq": [],
     "availableStockActive": 81,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Tarius +1",
@@ -8330,7 +8955,8 @@
     "moq": [],
     "availableStockActive": 136,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Tarius +6",
@@ -8368,7 +8994,8 @@
     "moq": [],
     "availableStockActive": 315,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Tarius -18",
@@ -8406,7 +9033,8 @@
     "moq": [],
     "availableStockActive": 975,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Tarius -5",
@@ -8444,7 +9072,8 @@
     "moq": [],
     "availableStockActive": 639,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Tarius Lite +8",
@@ -8482,7 +9111,8 @@
     "moq": [],
     "availableStockActive": 180,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Korp Softshell Hood",
@@ -8520,7 +9150,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 30
+    "skusNotInRange": 30,
+    "tailStyles": []
   },
   {
     "base": "Korp Softshell Pant",
@@ -8558,7 +9189,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "ROC Sight Softshell Jacket",
@@ -8596,7 +9228,8 @@
     "moq": [],
     "availableStockActive": 71,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "ROC Sight Softshell Pant",
@@ -8634,7 +9267,8 @@
     "moq": [],
     "availableStockActive": 328,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Warm Flex Pant",
@@ -8672,7 +9306,8 @@
     "moq": [],
     "availableStockActive": 991,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Haglöfs LS Tee",
@@ -8710,7 +9345,8 @@
     "moq": [],
     "availableStockActive": 3062,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Haglöfs Tee",
@@ -8748,7 +9384,8 @@
     "moq": [],
     "availableStockActive": 4017,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Kaise Wool LS Tee",
@@ -8786,7 +9423,19 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 1659,
-    "skusNotInRange": 40
+    "skusNotInRange": 40,
+    "tailStyles": [
+      {
+        "code": "607627",
+        "style": "Kaise Wool LS Tee Women",
+        "availableStock": 935
+      },
+      {
+        "code": "607625",
+        "style": "Kaise Wool LS Tee Men",
+        "availableStock": 724
+      }
+    ]
   },
   {
     "base": "Kaise Wool Tee",
@@ -8824,7 +9473,19 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 1385,
-    "skusNotInRange": 44
+    "skusNotInRange": 44,
+    "tailStyles": [
+      {
+        "code": "607628",
+        "style": "Kaise Wool Tee Women",
+        "availableStock": 800
+      },
+      {
+        "code": "607626",
+        "style": "Kaise Wool Tee Men",
+        "availableStock": 585
+      }
+    ]
   },
   {
     "base": "Kaise Wool Tank Top",
@@ -8873,7 +9534,8 @@
     ],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "L.I.M Delta Crop Tee",
@@ -8911,7 +9573,8 @@
     "moq": [],
     "availableStockActive": 352,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "L.I.M Delta Tee",
@@ -8949,7 +9612,8 @@
     "moq": [],
     "availableStockActive": 184,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "L.I.M Light T-Shirt",
@@ -8987,7 +9651,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "L.I.M Ridge Tank",
@@ -9025,7 +9690,8 @@
     "moq": [],
     "availableStockActive": 166,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "L.I.M Ridge Tee",
@@ -9063,7 +9729,8 @@
     "moq": [],
     "availableStockActive": 787,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "L.I.M Sunpack Hoodie",
@@ -9101,7 +9768,8 @@
     "moq": [],
     "availableStockActive": 79,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Outsiders Graphic Tee",
@@ -9139,7 +9807,8 @@
     "moq": [],
     "availableStockActive": 3254,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Outsiders Tee",
@@ -9177,7 +9846,8 @@
     "moq": [],
     "availableStockActive": 6125,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Ridge Hike Tee",
@@ -9215,7 +9885,8 @@
     "moq": [],
     "availableStockActive": 641,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Ridge LS Tee",
@@ -9253,7 +9924,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Ridge Tee",
@@ -9291,7 +9963,14 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 379,
-    "skusNotInRange": 40
+    "skusNotInRange": 40,
+    "tailStyles": [
+      {
+        "code": "606594",
+        "style": "Ridge Tee Men",
+        "availableStock": 379
+      }
+    ]
   },
   {
     "base": "Salo Dress",
@@ -9329,7 +10008,8 @@
     "moq": [],
     "availableStockActive": 216,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Salo Shirt",
@@ -9378,7 +10058,8 @@
     ],
     "availableStockActive": 1032,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Salo Shirt SS",
@@ -9416,7 +10097,8 @@
     "moq": [],
     "availableStockActive": 780,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Selme LS Crewneck",
@@ -9475,7 +10157,8 @@
     ],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Solvik Seersucker SS Shirt",
@@ -9513,7 +10196,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Sun Capsule Halfzip",
@@ -9551,7 +10235,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Trekk Tech LS Tee",
@@ -9589,7 +10274,19 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 264,
-    "skusNotInRange": 44
+    "skusNotInRange": 44,
+    "tailStyles": [
+      {
+        "code": "607855",
+        "style": "Trekk Tech LS Tee Men",
+        "availableStock": 203
+      },
+      {
+        "code": "607858",
+        "style": "Trekk Tech LS Tee Women",
+        "availableStock": 61
+      }
+    ]
   },
   {
     "base": "Trekk Tech Tee",
@@ -9627,7 +10324,19 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 294,
-    "skusNotInRange": 44
+    "skusNotInRange": 44,
+    "tailStyles": [
+      {
+        "code": "607857",
+        "style": "Trekk Tech Tee Women",
+        "availableStock": 153
+      },
+      {
+        "code": "607856",
+        "style": "Trekk Tech Tee Men",
+        "availableStock": 141
+      }
+    ]
   },
   {
     "base": "Haglöfs L.I.M Horizon GTX Low",
@@ -9665,7 +10374,8 @@
     "moq": [],
     "availableStockActive": 2368,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Haglöfs L.I.M Horizon GTX Mid",
@@ -9703,7 +10413,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Haglöfs L.I.M Horizon Low",
@@ -9741,7 +10452,8 @@
     "moq": [],
     "availableStockActive": 2588,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "L.I.M Light Low",
@@ -9779,7 +10491,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "L.I.M Ultralight GTX Low",
@@ -9817,7 +10530,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "L.I.M Ultralight Low",
@@ -9855,7 +10569,8 @@
     "moq": [],
     "availableStockActive": 0,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Oxo 60 W",
@@ -9893,7 +10608,8 @@
     "moq": [],
     "availableStockActive": 436,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Oxo 80",
@@ -9931,7 +10647,8 @@
     "moq": [],
     "availableStockActive": 452,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Haglöfs Incline GTX Mid",
@@ -9969,7 +10686,8 @@
     "moq": [],
     "availableStockActive": 784,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Haglöfs Incline Pro GTX High",
@@ -10007,7 +10725,8 @@
     "moq": [],
     "availableStockActive": 172,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Haglöfs Scand GTX Mid",
@@ -10045,7 +10764,8 @@
     "moq": [],
     "availableStockActive": 323,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Haglöfs Solid Pro 2 GTX Mid",
@@ -10083,7 +10803,8 @@
     "moq": [],
     "availableStockActive": 2763,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   },
   {
     "base": "Haglöfs Solid Pro 2 WL GTX Mid",
@@ -10121,6 +10842,7 @@
     "moq": [],
     "availableStockActive": 512,
     "availableStockTail": 0,
-    "skusNotInRange": 0
+    "skusNotInRange": 0,
+    "tailStyles": []
   }
 ]

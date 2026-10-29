@@ -699,9 +699,14 @@ textarea.action-note {
       alerts += '<div class="alert moq">' + lines + "</div>";
     }
     if (d.availableStockTail > 0) {
-      alerts += '<div class="alert tail"><strong>' + fmtQty(d.availableStockTail) +
+      var tailHeader = '<div class="alert-line"><strong>' + fmtQty(d.availableStockTail) +
         " units</strong> of Available Stock in codes no longer in the active range" +
         (d.availableStockActive > 0 ? " (plus " + fmtQty(d.availableStockActive) + " in active-range codes)" : "") + ".</div>";
+      var tailLines = (d.tailStyles || []).map(function (s) {
+        return '<div class="alert-line">' + escapeHtml(s.style) + " (code " + escapeHtml(s.code) + ") — " +
+          fmtQty(s.availableStock) + " units</div>";
+      }).join("");
+      alerts += '<div class="alert tail">' + tailHeader + tailLines + "</div>";
     }
 
     var activity = d.consumerActivity ? '<div class="activity-row">' + escapeHtml(d.consumerActivity) + "</div>" : "";
