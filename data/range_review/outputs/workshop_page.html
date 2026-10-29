@@ -429,6 +429,21 @@ a { color: var(--accent); }
   background: var(--bg-sunken);
   color: var(--fg);
 }
+.consolidate-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12.5px;
+  color: var(--fg);
+  cursor: pointer;
+}
+.consolidate-row input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--accent);
+  cursor: pointer;
+  flex-shrink: 0;
+}
 textarea.action-note {
   width: 100%;
   min-height: 46px;
@@ -584,10 +599,10 @@ textarea.action-note {
   })();
 
   var pendingWrites = {};
-  function saveDecision(base, franchise, tier, action, lastSeasonToSell) {
+  function saveDecision(base, franchise, tier, action, lastSeasonToSell, consolidate) {
     var id = slug(base);
     var body = { base: base, franchise: franchise, tier: tier || "", action: action || "",
-      lastSeasonToSell: lastSeasonToSell || "", updatedAt: Date.now() };
+      lastSeasonToSell: lastSeasonToSell || "", consolidate: !!consolidate, updatedAt: Date.now() };
     decisions[id] = body; // optimistic local update
     if (!dbCol) return;
     clearTimeout(pendingWrites[id]);
@@ -648,6 +663,7 @@ textarea.action-note {
     var dec = decisions[id] || {};
     var tier = dec.tier || "";
     var lastSeason = dec.lastSeasonToSell || "";
+    var consolidate = !!dec.consolidate;
     var seasons = [];
     if (d.activeFW27) seasons.push("FW27");
     if (d.activeSS28) seasons.push("SS28");
@@ -714,6 +730,7 @@ textarea.action-note {
                 }).join("") +
               "</select>" +
             "</div>" +
+            '<label class="consolidate-row"><input type="checkbox" class="consolidate-check"' + (consolidate ? " checked" : "") + '> Consolidate with other models</label>' +
             '<textarea class="action-note" placeholder="Action / notes…">' + escapeHtml(dec.action || "") + "</textarea>" +
             '<div class="decision-meta">' + (dec.updatedAt ? "Updated " + new Date(dec.updatedAt).toLocaleString() : "") + "</div>" +
           "</div>" +
@@ -774,17 +791,21 @@ textarea.action-note {
       var franchise = card.querySelector(".card-title").textContent;
       var select = card.querySelector(".tier-select");
       var seasonSelect = card.querySelector(".season-select");
+      var consolidateCheck = card.querySelector(".consolidate-check");
       var textarea = card.querySelector(".action-note");
       select.addEventListener("change", function () {
         select.setAttribute("data-tier", select.value);
-        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value);
+        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value, consolidateCheck.checked);
       });
       seasonSelect.addEventListener("change", function () {
         seasonSelect.setAttribute("data-last-season", seasonSelect.value);
-        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value);
+        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value, consolidateCheck.checked);
+      });
+      consolidateCheck.addEventListener("change", function () {
+        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value, consolidateCheck.checked);
       });
       textarea.addEventListener("input", function () {
-        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value);
+        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value, consolidateCheck.checked);
       });
     });
   }
