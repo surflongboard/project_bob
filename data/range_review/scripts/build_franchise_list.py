@@ -240,6 +240,7 @@ def build_rows() -> list[dict]:
                 if gm_entry:
                     break
         margin_target = gm_entry["target_gm0_pct"] if gm_entry else ""
+        image_file = gm_entry["image_file"] if gm_entry else None
 
         forecast_rows = [fr for r in items for fr in forecast_by_key.get((r["season_label"], r["code"]), [])]
         qty, gross, cogs, gp_pct = totals(forecast_rows)
@@ -253,6 +254,8 @@ def build_rows() -> list[dict]:
             return "; ".join(sorted(STATUS_LABELS.get(s, s) for s in statuses))
 
         out_rows.append({
+            "_base": base,  # internal join key (version-stripped) for downstream scripts
+            "_image_file": image_file,  # internal: filename in outputs/product_images/, for downstream scripts
             "Franchise": best["display_name"],
             "Layer": "; ".join(layers),
             "Business Area": "; ".join(areas),
@@ -291,13 +294,13 @@ def write_workbook(rows: list[dict], path: Path) -> None:
     ws = wb.active
     ws.title = "Franchise Review List"
 
-    headers = list(rows[0].keys())
+    headers = [h for h in rows[0].keys() if not h.startswith("_")]
     ws.append(headers)
     for cell in ws[1]:
         cell.font = Font(bold=True, color="FFFFFF")
         cell.fill = PatternFill("solid", fgColor="4472C4")
     for r in rows:
-        ws.append(list(r.values()))
+        ws.append([r[h] for h in headers])
 
     for i, h in enumerate(headers, start=1):
         width = max(len(h), max((len(str(r[h])) for r in rows), default=0)) + 2
