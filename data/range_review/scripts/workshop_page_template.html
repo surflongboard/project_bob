@@ -682,8 +682,8 @@ textarea.action-note {
     var alerts = "";
     if (d.moq && d.moq.length) {
       var lines = d.moq.map(function (m) {
-        return '<div class="alert-line"><strong>' + escapeHtml(m.style) + "</strong> — demand " + fmtQty(m.demand_fc1) +
-          " / MOQ " + fmtQty(m.moq_style) + " (short " + fmtQty(m.shortfall) + "). " + escapeHtml(m.merch_comment) + "</div>";
+        return '<div class="alert-line"><strong>' + escapeHtml(m.style) + "</strong> — demand SS28 FC1 " + fmtQty(m.demand_fc1) +
+          " / Style MOQ " + fmtQty(m.moq_style) + " (short " + fmtQty(m.shortfall) + "). " + escapeHtml(m.merch_comment) + "</div>";
       }).join("");
       alerts += '<div class="alert moq">' + lines + "</div>";
     }
