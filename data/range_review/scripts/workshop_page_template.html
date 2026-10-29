@@ -167,6 +167,14 @@ a { color: var(--accent); }
   align-items: center;
   padding: 16px 0 4px;
 }
+.board-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  flex: 1 1 320px;
+  min-width: 0;
+}
 .toolbar input[type="search"] {
   flex: 1 1 220px;
   min-width: 0;
@@ -458,14 +466,16 @@ textarea.action-note {
     <button type="button" data-season="FW27">FW27</button>
     <button type="button" data-season="SS28">SS28</button>
   </div>
-  <input type="search" id="searchBox" placeholder="Search franchise…">
-  <select class="sort-select" id="sortSelect">
-    <option value="priority">Needs a decision first</option>
-    <option value="name">Franchise A–Z</option>
-    <option value="forecast">Forecast Qty, high to low</option>
-    <option value="gp">GP%, high to low</option>
-  </select>
-  <button class="toggle-btn" id="flaggedToggle" type="button">Flagged only</button>
+  <div class="board-controls" id="boardControls">
+    <input type="search" id="searchBox" placeholder="Search franchise…">
+    <select class="sort-select" id="sortSelect">
+      <option value="priority">Needs a decision first</option>
+      <option value="name">Franchise A–Z</option>
+      <option value="forecast">Forecast Qty, high to low</option>
+      <option value="gp">GP%, high to low</option>
+    </select>
+    <button class="toggle-btn" id="flaggedToggle" type="button">Flagged only</button>
+  </div>
 </div>
 
 <div class="layer-heading">
@@ -767,7 +777,7 @@ textarea.action-note {
     state.search = d.franchise.toLowerCase();
     searchBox.value = d.franchise;
     summaryBtn.classList.remove("active");
-    toolbarEl.hidden = false;
+    boardControls.hidden = false;
     layerHeadingEl.hidden = false;
     board.hidden = false;
     summaryViewEl.hidden = true;
@@ -870,14 +880,14 @@ textarea.action-note {
   });
 
   var summaryBtn = document.getElementById("summaryBtn");
-  var toolbarEl = document.querySelector(".toolbar");
+  var boardControls = document.getElementById("boardControls");
   var layerHeadingEl = document.querySelector(".layer-heading");
   var summaryViewEl = document.getElementById("summaryView");
   summaryBtn.addEventListener("click", function () {
     state.view = state.view === "summary" ? "board" : "summary";
     summaryBtn.classList.toggle("active", state.view === "summary");
     var isSummary = state.view === "summary";
-    toolbarEl.hidden = isSummary;
+    boardControls.hidden = isSummary;
     layerHeadingEl.hidden = isSummary;
     board.hidden = isSummary;
     summaryViewEl.hidden = !isSummary;
