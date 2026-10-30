@@ -39,8 +39,7 @@ bob_salesdata_2025.xlsx / 52, at style level (sales data has no colour).
 Weeks of cover = style Available Stock / weekly rate of sale, blanked
 where the style's 2025 sales are under MIN_RELIABLE (50,000 SEK) per
 CLAUDE.md -- a small denominator makes cover meaningless (IP-008).
-Compared against two window lengths, since when the sell-off starts is
-still Open (IP-007).
+Compared against the sell-off window, 1-Dec-2026 to 1-Sep-2027 (IP-007).
 
 No discount % is assigned -- headroom only, per the user (30-Oct-2026).
 
@@ -77,11 +76,10 @@ PIC_PATHS = [RR_INPUTS / "images" / "FW27_Pic_Centric_28_oct.xlsx",
 SALES_PATH = REPO_ROOT / "data" / "bob_salesdata_2025.xlsx"
 OUTPUTS_DIR = IP_DIR / "outputs"
 
-# IP-007: sell-off ends when FW27 starts; the start is still Open, so both shown.
+# IP-007: sell-off runs from 1-Dec-2026 until FW27 starts (user-directed).
 WINDOW_END = date(2027, 9, 1)
 WINDOWS = {
-    "from 30-Oct-2026": date(2026, 10, 30),
-    "from 1-Feb-2027 (SS27 only)": date(2027, 2, 1),
+    "from 1-Dec-2026": date(2026, 12, 1),
 }
 
 SEASON_ORDER = ["S22", "F22", "S23", "F23", "S24", "F24",
