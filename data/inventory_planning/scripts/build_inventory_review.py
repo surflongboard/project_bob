@@ -28,6 +28,16 @@ SS28 range files (RR-002/RR-006 scope -- excl. ABS/ABS Exclusive). A SKU
 NOT in the active range is a List-3/end-of-life candidate: per the user,
 these are "articles to build actions for, by end of SS27."
 
+Moved out of the FW27/SS28 Range Review workstream into its own
+"Inventory Planning" workstream on 30-Oct-2026 (see
+data/inventory_planning/ASSUMPTIONS_REGISTER.md IP-001/IP-002) -- the
+active-range lookup it needs still comes from Range Review's
+`build_franchise_list.py`, imported cross-workstream the same way this
+repo already imports `ss26_lib` from the SS26 Portfolio Tiering
+workstream. The Range Review Board's "Non-active item overstocks" and
+"Generation timeline" cards still read this script's output directly
+(`build_workshop_data.py` imports from this new location).
+
 Run: python3 build_inventory_review.py
 Output: ../outputs/SS27_Inventory_Review.xlsx (SKU Detail + Franchise Summary)
 """
@@ -41,16 +51,17 @@ import openpyxl
 from openpyxl.styles import Font, PatternFill
 from openpyxl.utils import get_column_letter
 
-RR_DIR = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(RR_DIR / "scripts"))
+IP_DIR = Path(__file__).resolve().parents[1]
+REPO_ROOT = IP_DIR.parents[1]
+
+sys.path.insert(0, str(REPO_ROOT / "data" / "range_review" / "scripts"))
 from build_franchise_list import FW27_PATH, SS28_PATH, load_style_rows, strip_special_edition  # noqa: E402
 
-REPO_ROOT = RR_DIR.parents[1]
 sys.path.insert(0, str(REPO_ROOT / "data" / "ss26_portfolio_tiering" / "scripts"))
 import ss26_lib as lib  # noqa: E402
 
-STOCK_PATH = RR_DIR / "inputs" / "stock" / "Stock_and_purchase_261029.xlsx"
-OUTPUTS_DIR = RR_DIR / "outputs"
+STOCK_PATH = IP_DIR / "inputs" / "stock" / "Stock_and_purchase_261029.xlsx"
+OUTPUTS_DIR = IP_DIR / "outputs"
 
 
 def load_active_range_lookup() -> dict[str, dict]:

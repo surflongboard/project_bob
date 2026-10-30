@@ -34,6 +34,14 @@ Generation ordering within a franchise: no version token < "II"/"2.0"
 (2nd gen -- different product lines use one convention or the other,
 never both, so they're treated as equivalent rank) < "III" < "IV".
 
+Moved out of the FW27/SS28 Range Review workstream into its own
+"Inventory Planning" workstream on 30-Oct-2026 (see
+data/inventory_planning/ASSUMPTIONS_REGISTER.md IP-005) -- the Range
+Review Board's "Generation timeline" card alert still reads this
+script's output (`build_workshop_data.py` imports `load_generation_groups`/
+`aggregate_by_generation` from this new location directly, the same
+way it already imports `ss26_lib` from a different workstream).
+
 Run: python3 build_generation_timeline.py
 Output: ../outputs/Franchise_Generation_Timeline.xlsx
 """
@@ -47,12 +55,12 @@ import openpyxl
 from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.utils import get_column_letter
 
-RR_DIR = Path(__file__).resolve().parents[1]
-REPO_ROOT = RR_DIR.parents[1]
+IP_DIR = Path(__file__).resolve().parents[1]
+REPO_ROOT = IP_DIR.parents[1]
 sys.path.insert(0, str(REPO_ROOT / "data" / "ss26_portfolio_tiering" / "scripts"))
 import ss26_lib as lib  # noqa: E402
 
-OUTPUTS_DIR = RR_DIR / "outputs"
+OUTPUTS_DIR = IP_DIR / "outputs"
 INVENTORY_PATH = OUTPUTS_DIR / "SS27_Inventory_Review.xlsx"
 
 VERSION_RANK = {None: 0, "II": 2, "2.0": 2, "III": 3, "IV": 4}

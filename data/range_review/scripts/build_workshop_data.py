@@ -20,6 +20,14 @@ whichever one matches the selected season rather than always showing the
 combined total, which it did at first and was misleading once the toggle
 existed.
 
+Inventory review and generation timeline moved to their own "Inventory
+Planning" workstream on 30-Oct-2026 (data/inventory_planning/, see its
+ASSUMPTIONS_REGISTER.md and RR-018/019/020/024/025's pointer entries
+here) -- imported cross-workstream below, the same way `ss26_lib` is
+imported from the SS26 Portfolio Tiering workstream. Re-run
+`data/inventory_planning/scripts/build_inventory_review.py` and
+`build_generation_timeline.py` first if their outputs are stale.
+
 Run: python3 build_workshop_data.py
 Output: ../outputs/workshop_data.json
 """
@@ -36,15 +44,18 @@ RR_DIR = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(RR_DIR / "scripts"))
 from build_franchise_list import build_rows  # noqa: E402
 from build_forecast_discrepancies import load_ss28_qty_by_code  # noqa: E402
-from build_generation_timeline import load_generation_groups, aggregate_by_generation  # noqa: E402
 
 REPO_ROOT = RR_DIR.parents[1]
 sys.path.insert(0, str(REPO_ROOT / "data" / "ss26_portfolio_tiering" / "scripts"))
 import ss26_lib as lib  # noqa: E402
 
+IP_DIR = REPO_ROOT / "data" / "inventory_planning"
+sys.path.insert(0, str(IP_DIR / "scripts"))
+from build_generation_timeline import load_generation_groups, aggregate_by_generation  # noqa: E402
+
 OUTPUTS_DIR = RR_DIR / "outputs"
 MOQ_PATH = OUTPUTS_DIR / "SS28_MOQ_Exceptions.xlsx"
-INVENTORY_PATH = OUTPUTS_DIR / "SS27_Inventory_Review.xlsx"
+INVENTORY_PATH = IP_DIR / "outputs" / "SS27_Inventory_Review.xlsx"
 
 
 def load_moq_by_base() -> dict[str, list[dict]]:

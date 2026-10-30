@@ -1,9 +1,9 @@
 # Project Bob — conventions for working in this repo
 
-Read this first, before `README.md` or either workstream's own docs — it
+Read this first, before `README.md` or any workstream's own docs — it
 tells you which of those to read next depending on what you're doing.
 
-## Three workstreams, same business
+## Four workstreams, same business
 
 - **Key-Article Margin Analysis** (repo root: `config.py`, `load_data.py`,
   `analysis.py`, `data/bob_salesdata_*.xlsx`, `data/bob_financialdata_*.xlsx`,
@@ -21,6 +21,18 @@ tells you which of those to read next depending on what you're doing.
   (`data/range_review/inputs/`), reusing SS26's franchise-matching code
   rather than redefining it. Start at
   `data/range_review/ASSUMPTIONS_REGISTER.md`.
+- **Inventory Planning** (`data/inventory_planning/`). Carved out of
+  Range Review on 30-Oct-2026 — the SS27 stock/purchase position (end-
+  of-life timing, overstock/tail analysis, per-franchise generation
+  history) as its own topic, not a side-concern bolted onto the Range
+  Review Board. Built from the Inventory Manager's stock file
+  (`data/inventory_planning/inputs/stock/`); still imports Range
+  Review's franchise list and SS26's matching code rather than
+  redefining either. The Range Review Board's "Non-active item
+  overstocks" and "Generation timeline" card alerts read this
+  workstream's output directly — re-run this workstream's scripts
+  before Range Review's `build_workshop_data.py` if its inputs change.
+  Start at `data/inventory_planning/ASSUMPTIONS_REGISTER.md`.
 
 They analyze the same underlying business but from different source pulls,
 and **a few rules are deliberately different between each** — most notably
@@ -65,7 +77,7 @@ Franchise identity is **Base + Gender**, derived from the raw `Article`
 text by stripping gender tokens (`Men`/`Women`/`Unisex`/`Junior`) and
 version tokens (`2.0`/`II`/`III`/`IV`), including glued-text export
 artifacts (no space before the token). The canonical token sets live in
-`config.py` (`GENDER_TOKENS`/`VERSION_TOKENS`) and are reused by BOTH
+`config.py` (`GENDER_TOKENS`/`VERSION_TOKENS`) and are reused across
 workstreams rather than redefined — don't fork a second copy of these
 lists. The SS26 workstream's parsing functions live in
 `data/ss26_portfolio_tiering/scripts/ss26_lib.py`
@@ -75,8 +87,8 @@ there rather than re-copying the regex.
 A **50,000 SEK/year reliability threshold** (`MIN_SALES_FOR_RELIABLE_MARGIN_PCT`
 in `config.py`, `MIN_RELIABLE` in `ss26_lib.py`) blanks/excludes GM%,
 growth, and share calculations built on a small denominator — reused
-everywhere in both workstreams. Don't compute a new margin/growth/share
-metric without applying it.
+everywhere across these workstreams. Don't compute a new margin/growth/
+share metric without applying it.
 
 ## Register discipline
 
@@ -98,5 +110,5 @@ model.
 
 Check `data/ss26_portfolio_tiering/LAUNCH_READINESS_CHECKLIST.md` first —
 it tracks what's still open (unresolved register items, Tier Bench QA,
-sharing scope) before either workstream is ready for an audience beyond
+sharing scope) before any workstream is ready for an audience beyond
 the person driving it today.
