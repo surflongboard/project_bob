@@ -1,0 +1,926 @@
+{
+ "part1": {
+  "window_weeks": 39.1,
+  "kpis": {
+   "units": 144756,
+   "landed_cost": 45833855,
+   "wp": 114627933,
+   "headroom": 0.6001510818484357,
+   "style_codes": 435,
+   "colours": 849,
+   "excess_units": 16725,
+   "excess_cost": 6068189,
+   "no_rate_units": 16815,
+   "undelivered_purchase_units": 110852,
+   "broken_size_units": 441
+  },
+  "age_order": [
+   "Current (S27/F27)",
+   "Last season (F26)",
+   "1 year (S26)",
+   "2 years (S25/F25)",
+   "3+ years (F24 and older)"
+  ],
+  "age_by_seasonality": {
+   "Current (S27/F27)": {
+    "All year": 21731,
+    "Spring/Summer": 3899,
+    "Fall/Winter": 158
+   },
+   "Last season (F26)": {
+    "All year": 54454,
+    "Fall/Winter": 16810
+   },
+   "1 year (S26)": {
+    "All year": 12443,
+    "Spring/Summer": 734
+   },
+   "2 years (S25/F25)": {
+    "All year": 18015,
+    "Fall/Winter": 805,
+    "Spring/Summer": 319
+   },
+   "3+ years (F24 and older)": {
+    "All year": 14595,
+    "Fall/Winter": 609,
+    "Spring/Summer": 184
+   }
+  },
+  "outlook_by_age": {
+   "Current (S27/F27)": {
+    "Won't clear": {
+     "units": 4322,
+     "wp": 4563535
+    },
+    "Clears": {
+     "units": 14969,
+     "wp": 10087413
+    },
+    "No reliable rate": {
+     "units": 6497,
+     "wp": 5086885
+    }
+   },
+   "Last season (F26)": {
+    "Won't clear": {
+     "units": 35180,
+     "wp": 31050900
+    },
+    "Clears": {
+     "units": 34414,
+     "wp": 25323547
+    },
+    "No reliable rate": {
+     "units": 1670,
+     "wp": 1265287
+    }
+   },
+   "1 year (S26)": {
+    "Clears": {
+     "units": 5592,
+     "wp": 4032885
+    },
+    "No reliable rate": {
+     "units": 6312,
+     "wp": 1457437
+    },
+    "Won't clear": {
+     "units": 1273,
+     "wp": 912337
+    }
+   },
+   "2 years (S25/F25)": {
+    "Clears": {
+     "units": 14982,
+     "wp": 12228642
+    },
+    "Won't clear": {
+     "units": 2580,
+     "wp": 3267726
+    },
+    "No reliable rate": {
+     "units": 1577,
+     "wp": 1488303
+    }
+   },
+   "3+ years (F24 and older)": {
+    "Clears": {
+     "units": 13213,
+     "wp": 11804166
+    },
+    "Won't clear": {
+     "units": 1416,
+     "wp": 1891648
+    },
+    "No reliable rate": {
+     "units": 759,
+     "wp": 167222
+    }
+   }
+  },
+  "layers": [
+   {
+    "layer": "Shell",
+    "units": 18377,
+    "cost": 14015830,
+    "wp": 31435815,
+    "excess": 1046,
+    "excess_cost": 1036685,
+    "headroom": 0.5541445322795036
+   },
+   {
+    "layer": "Insulation",
+    "units": 18129,
+    "cost": 8412240,
+    "wp": 21969891,
+    "excess": 4247,
+    "excess_cost": 1989635,
+    "headroom": 0.6171014230339149
+   },
+   {
+    "layer": "Mid layer",
+    "units": 20902,
+    "cost": 4961806,
+    "wp": 14192974,
+    "excess": 3539,
+    "excess_cost": 837715,
+    "headroom": 0.6504040661245487
+   },
+   {
+    "layer": "Hiking packs",
+    "units": 12334,
+    "cost": 3285460,
+    "wp": 7947286,
+    "excess": 4878,
+    "excess_cost": 1203195,
+    "headroom": 0.5865934609626482
+   },
+   {
+    "layer": "Legwear",
+    "units": 14595,
+    "cost": 3233891,
+    "wp": 8835786,
+    "excess": 0,
+    "excess_cost": 0,
+    "headroom": 0.6340007555637948
+   },
+   {
+    "layer": "Soft shell",
+    "units": 7354,
+    "cost": 2326849,
+    "wp": 6963365,
+    "excess": 0,
+    "excess_cost": 0,
+    "headroom": 0.665844171603815
+   },
+   {
+    "layer": "Daypacks",
+    "units": 7524,
+    "cost": 2168268,
+    "wp": 4726986,
+    "excess": 491,
+    "excess_cost": 160401,
+    "headroom": 0.5413001011638283
+   },
+   {
+    "layer": "Sleepingbags",
+    "units": 4361,
+    "cost": 1717375,
+    "wp": 3868254,
+    "excess": 96,
+    "excess_cost": 146975,
+    "headroom": 0.5560335489861834
+   },
+   {
+    "layer": "Tops",
+    "units": 10750,
+    "cost": 1602516,
+    "wp": 4426295,
+    "excess": 1022,
+    "excess_cost": 168433,
+    "headroom": 0.6379554458073852
+   },
+   {
+    "layer": "Accessories",
+    "units": 21098,
+    "cost": 1345070,
+    "wp": 3573600,
+    "excess": 52,
+    "excess_cost": 2221,
+    "headroom": 0.6236092455786881
+   },
+   {
+    "layer": "Mountain packs",
+    "units": 2398,
+    "cost": 1182157,
+    "wp": 2520043,
+    "excess": 1127,
+    "excess_cost": 491572,
+    "headroom": 0.530898083881902
+   },
+   {
+    "layer": "Bags",
+    "units": 2634,
+    "cost": 491357,
+    "wp": 1369162,
+    "excess": 0,
+    "excess_cost": 0,
+    "headroom": 0.6411257396860269
+   },
+   {
+    "layer": "Trekking shoes",
+    "units": 1035,
+    "cost": 349962,
+    "wp": 885820,
+    "excess": 0,
+    "excess_cost": 0,
+    "headroom": 0.604928766566571
+   },
+   {
+    "layer": "Base layer",
+    "units": 2283,
+    "cost": 321063,
+    "wp": 912549,
+    "excess": 227,
+    "excess_cost": 31356,
+    "headroom": 0.6481690298274394
+   },
+   {
+    "layer": "Hiking shoes",
+    "units": 605,
+    "cost": 211258,
+    "wp": 540972,
+    "excess": 0,
+    "excess_cost": 0,
+    "headroom": 0.6094844095443017
+   },
+   {
+    "layer": "Trekking packs",
+    "units": 377,
+    "cost": 208753,
+    "wp": 459135,
+    "excess": 0,
+    "excess_cost": 0,
+    "headroom": 0.5453341609766191
+   }
+  ],
+  "excess_by_age": {
+   "Current (S27/F27)": {
+    "units": 1776,
+    "cost": 663963
+   },
+   "Last season (F26)": {
+    "units": 13007,
+    "cost": 4224784
+   },
+   "1 year (S26)": {
+    "units": 589,
+    "cost": 158601
+   },
+   "2 years (S25/F25)": {
+    "units": 809,
+    "cost": 597148
+   },
+   "3+ years (F24 and older)": {
+    "units": 545,
+    "cost": 423693
+   }
+  },
+  "excess_by_seasonality": {
+   "All year": {
+    "units": 14666,
+    "cost": 4570010
+   },
+   "Fall/Winter": {
+    "units": 2059,
+    "cost": 1498178
+   }
+  },
+  "undelivered_in_available_units": 25233,
+  "top_styles_by_excess_cost": [
+   {
+    "code": "607106",
+    "article": "Vide 20",
+    "layer": "Hiking packs",
+    "main_season": "F26",
+    "seasonality": "All year",
+    "units": 5554,
+    "excess": 3137,
+    "excess_cost": 758998,
+    "weeks_cover": 89.9,
+    "headroom": 0.5806077810682373
+   },
+   {
+    "code": "607444",
+    "article": "Mimic Alert Hood Men",
+    "layer": "Insulation",
+    "main_season": "S27",
+    "seasonality": "All year",
+    "units": 3651,
+    "excess": 1523,
+    "excess_cost": 635906,
+    "weeks_cover": 67.2,
+    "headroom": 0.649267607850283
+   },
+   {
+    "code": "607447",
+    "article": "Mimic Alert Hood Women",
+    "layer": "Insulation",
+    "main_season": "F26",
+    "seasonality": "All year",
+    "units": 3252,
+    "excess": 1560,
+    "excess_cost": 612485,
+    "weeks_cover": 75.2,
+    "headroom": 0.6701644168153409
+   },
+   {
+    "code": "607472",
+    "article": "Latnja GTX Insulated Pant Women",
+    "layer": "Shell",
+    "main_season": "F26",
+    "seasonality": "Fall/Winter",
+    "units": 1348,
+    "excess": 483,
+    "excess_cost": 426206,
+    "weeks_cover": 61.0,
+    "headroom": 0.5882868969738386
+   },
+   {
+    "code": "607605",
+    "article": "Rosson Mid Hood Men",
+    "layer": "Mid layer",
+    "main_season": "F26",
+    "seasonality": "All year",
+    "units": 4396,
+    "excess": 1507,
+    "excess_cost": 376055,
+    "weeks_cover": 59.6,
+    "headroom": 0.6506378940261527
+   },
+   {
+    "code": "607107",
+    "article": "Vide 25",
+    "layer": "Hiking packs",
+    "main_season": "F26",
+    "seasonality": "All year",
+    "units": 4510,
+    "excess": 1429,
+    "excess_cost": 359303,
+    "weeks_cover": 57.3,
+    "headroom": 0.5977032372505543
+   },
+   {
+    "code": "606841",
+    "article": "Vassi GTX Pant Women",
+    "layer": "Shell",
+    "main_season": "F24",
+    "seasonality": "Fall/Winter",
+    "units": 446,
+    "excess": 260,
+    "excess_cost": 357324,
+    "weeks_cover": 93.9,
+    "headroom": 0.47790120679842274
+   },
+   {
+    "code": "607474",
+    "article": "Rosson Mid Hood Women",
+    "layer": "Mid layer",
+    "main_season": "F26",
+    "seasonality": "All year",
+    "units": 3818,
+    "excess": 1299,
+    "excess_cost": 308981,
+    "weeks_cover": 59.3,
+    "headroom": 0.667075517049061
+   },
+   {
+    "code": "607422",
+    "article": "Sensate Pro 32",
+    "layer": "Mountain packs",
+    "main_season": "F26",
+    "seasonality": "Fall/Winter",
+    "units": 997,
+    "excess": 487,
+    "excess_cost": 269365,
+    "weeks_cover": 76.5,
+    "headroom": 0.5394675022844577
+   },
+   {
+    "code": "607471",
+    "article": "Latnja GTX Insulated Jacket Women",
+    "layer": "Shell",
+    "main_season": "F26",
+    "seasonality": "Fall/Winter",
+    "units": 1514,
+    "excess": 186,
+    "excess_cost": 216203,
+    "weeks_cover": 44.6,
+    "headroom": 0.5122026188158487
+   },
+   {
+    "code": "607423",
+    "article": "Latnja 18",
+    "layer": "Mountain packs",
+    "main_season": "F26",
+    "seasonality": "Fall/Winter",
+    "units": 839,
+    "excess": 625,
+    "excess_cost": 213152,
+    "weeks_cover": 153.6,
+    "headroom": 0.5567987430738909
+   },
+   {
+    "code": "608207",
+    "article": "Riksgränsen Down 850 II Hood Women",
+    "layer": "Insulation",
+    "main_season": "F25",
+    "seasonality": "All year",
+    "units": 259,
+    "excess": 104,
+    "excess_cost": 198970,
+    "weeks_cover": 65.4,
+    "headroom": 0.3815050388752437
+   },
+   {
+    "code": "606954",
+    "article": "Ardos Rolltop 22",
+    "layer": "Daypacks",
+    "main_season": "F26",
+    "seasonality": "All year",
+    "units": 771,
+    "excess": 491,
+    "excess_cost": 160401,
+    "weeks_cover": 107.8,
+    "headroom": 0.6002783481923237
+   },
+   {
+    "code": "607606",
+    "article": "Rosson Mid Jacket Women",
+    "layer": "Mid layer",
+    "main_season": "F26",
+    "seasonality": "All year",
+    "units": 2372,
+    "excess": 569,
+    "excess_cost": 124738,
+    "weeks_cover": 51.5,
+    "headroom": 0.6459766028823484
+   },
+   {
+    "code": "606971",
+    "article": "Scand Down +5",
+    "layer": "Sleepingbags",
+    "main_season": "F26",
+    "seasonality": "All year",
+    "units": 129,
+    "excess": 78,
+    "excess_cost": 113861,
+    "weeks_cover": 98.6,
+    "headroom": 0.3912840175815955
+   }
+  ]
+ },
+ "part2": {
+  "multi_generation_franchises": 33,
+  "active_multi_generation": 16,
+  "discontinued_multi_generation": 17,
+  "gap_seasons": [
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   3,
+   3,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   5,
+   5,
+   6
+  ],
+  "active": [
+   {
+    "franchise": "Rosson Mid Hood",
+    "generations": [
+     {
+      "generation": "Generation 1",
+      "codes": "607474, 607605",
+      "active": false,
+      "earliest": "S26",
+      "latest": "F26",
+      "available": 8214
+     },
+     {
+      "generation": "II",
+      "codes": "608556, 608558",
+      "active": true,
+      "earliest": null,
+      "latest": null,
+      "available": 0
+     }
+    ],
+    "old_generation_stock": 8214
+   },
+   {
+    "franchise": "Rosson Mid Jacket",
+    "generations": [
+     {
+      "generation": "Generation 1",
+      "codes": "607473, 607606",
+      "active": false,
+      "earliest": "F26",
+      "latest": "F26",
+      "available": 4366
+     },
+     {
+      "generation": "II",
+      "codes": "608557, 608559",
+      "active": true,
+      "earliest": null,
+      "latest": null,
+      "available": 0
+     }
+    ],
+    "old_generation_stock": 4366
+   },
+   {
+    "franchise": "L.I.M GTX Jacket",
+    "generations": [
+     {
+      "generation": "II",
+      "codes": "607417, 607418",
+      "active": false,
+      "earliest": "F24",
+      "latest": "F24",
+      "available": 1036
+     },
+     {
+      "generation": "III",
+      "codes": "608972, 608973",
+      "active": true,
+      "earliest": null,
+      "latest": null,
+      "available": 0
+     }
+    ],
+    "old_generation_stock": 1036
+   },
+   {
+    "franchise": "Buteo Mid Jacket",
+    "generations": [
+     {
+      "generation": "Generation 1",
+      "codes": "605073, 605074",
+      "active": false,
+      "earliest": "F24",
+      "latest": "S26",
+      "available": 961
+     },
+     {
+      "generation": "II",
+      "codes": "608351, 608352, 608759, 608760",
+      "active": true,
+      "earliest": "F26",
+      "latest": "F27",
+      "available": 11137
+     }
+    ],
+    "old_generation_stock": 961
+   },
+   {
+    "franchise": "Vassi GTX Pant",
+    "generations": [
+     {
+      "generation": "Generation 1",
+      "codes": "606838, 606841",
+      "active": false,
+      "earliest": "F24",
+      "latest": "F24",
+      "available": 477
+     },
+     {
+      "generation": "II",
+      "codes": "607815, 607816, 608575, 608580",
+      "active": true,
+      "earliest": "F25",
+      "latest": "F27",
+      "available": 1982
+     }
+    ],
+    "old_generation_stock": 477
+   },
+   {
+    "franchise": "Astral GTX Jacket",
+    "generations": [
+     {
+      "generation": "Generation 1",
+      "codes": "604669",
+      "active": false,
+      "earliest": "F24",
+      "latest": "F24",
+      "available": 416
+     },
+     {
+      "generation": "II",
+      "codes": "607563, 607593",
+      "active": true,
+      "earliest": "F26",
+      "latest": "F27",
+      "available": 8550
+     }
+    ],
+    "old_generation_stock": 416
+   },
+   {
+    "franchise": "Särna Mimic Hood",
+    "generations": [
+     {
+      "generation": "Generation 1",
+      "codes": "605132, 607771, 607776",
+      "active": false,
+      "earliest": "F24",
+      "latest": "S26",
+      "available": 183
+     },
+     {
+      "generation": "II",
+      "codes": "608366, 608367",
+      "active": true,
+      "earliest": "F26",
+      "latest": "F27",
+      "available": 6181
+     }
+    ],
+    "old_generation_stock": 183
+   },
+   {
+    "franchise": "Haglöfs Ridge GTX Mid",
+    "generations": [
+     {
+      "generation": "Generation 1",
+      "codes": "497830",
+      "active": false,
+      "earliest": "F25",
+      "latest": "F25",
+      "available": 166
+     },
+     {
+      "generation": "II",
+      "codes": "608280, 608286",
+      "active": true,
+      "earliest": "F27",
+      "latest": "F27",
+      "available": 5144
+     }
+    ],
+    "old_generation_stock": 166
+   },
+   {
+    "franchise": "Korp Proof Pant",
+    "generations": [
+     {
+      "generation": "Generation 1",
+      "codes": "606131, 606134",
+      "active": false,
+      "earliest": "S25",
+      "latest": "S25",
+      "available": 152
+     },
+     {
+      "generation": "II",
+      "codes": "608095, 608096",
+      "active": true,
+      "earliest": "F27",
+      "latest": "F27",
+      "available": 1009
+     }
+    ],
+    "old_generation_stock": 152
+   },
+   {
+    "franchise": "Mid Standard Shorts",
+    "generations": [
+     {
+      "generation": "Generation 1",
+      "codes": "607054",
+      "active": false,
+      "earliest": "S25",
+      "latest": "S25",
+      "available": 95
+     },
+     {
+      "generation": "II",
+      "codes": "605188",
+      "active": false,
+      "earliest": "S24",
+      "latest": "S25",
+      "available": 25
+     }
+    ],
+    "old_generation_stock": 120
+   },
+   {
+    "franchise": "L.I.M Down Hood",
+    "generations": [
+     {
+      "generation": "Generation 1",
+      "codes": "605356",
+      "active": false,
+      "earliest": "F24",
+      "latest": "S25",
+      "available": 96
+     },
+     {
+      "generation": "II",
+      "codes": "607795, 607802",
+      "active": true,
+      "earliest": "F26",
+      "latest": "F27",
+      "available": 769
+     }
+    ],
+    "old_generation_stock": 96
+   },
+   {
+    "franchise": "Front Proof Jacket",
+    "generations": [
+     {
+      "generation": "Generation 1",
+      "codes": "606143, 606177, 607768",
+      "active": false,
+      "earliest": "F24",
+      "latest": "S25",
+      "available": 87
+     },
+     {
+      "generation": "II",
+      "codes": "607821, 607823",
+      "active": true,
+      "earliest": "S26",
+      "latest": "F27",
+      "available": 7151
+     }
+    ],
+    "old_generation_stock": 87
+   },
+   {
+    "franchise": "Vassi GTX Pro Jacket",
+    "generations": [
+     {
+      "generation": "Generation 1",
+      "codes": "604689",
+      "active": false,
+      "earliest": "F24",
+      "latest": "F24",
+      "available": 64
+     },
+     {
+      "generation": "II",
+      "codes": "607783, 607792, 608577, 608582",
+      "active": true,
+      "earliest": "F25",
+      "latest": "F26",
+      "available": 874
+     }
+    ],
+    "old_generation_stock": 64
+   },
+   {
+    "franchise": "Lite Standard Zip-Off Pant",
+    "generations": [
+     {
+      "generation": "Generation 1",
+      "codes": "606931, 606947",
+      "active": false,
+      "earliest": "S25",
+      "latest": "S25",
+      "available": 46
+     },
+     {
+      "generation": "II",
+      "codes": "608458, 608459",
+      "active": true,
+      "earliest": "S27",
+      "latest": "S27",
+      "available": 460
+     }
+    ],
+    "old_generation_stock": 46
+   },
+   {
+    "franchise": "ROC Lite Slim Pant",
+    "generations": [
+     {
+      "generation": "Generation 1",
+      "codes": "606025, 606251",
+      "active": false,
+      "earliest": "S24",
+      "latest": "S25",
+      "available": 35
+     },
+     {
+      "generation": "II",
+      "codes": "608265, 608266",
+      "active": true,
+      "earliest": "S26",
+      "latest": "S27",
+      "available": 127
+     }
+    ],
+    "old_generation_stock": 35
+   },
+   {
+    "franchise": "Vassi GTX Jacket",
+    "generations": [
+     {
+      "generation": "Generation 1",
+      "codes": "606840",
+      "active": false,
+      "earliest": "F24",
+      "latest": "F24",
+      "available": 22
+     },
+     {
+      "generation": "II",
+      "codes": "607791, 607793, 608574, 608578",
+      "active": true,
+      "earliest": "F25",
+      "latest": "F26",
+      "available": 1706
+     }
+    ],
+    "old_generation_stock": 22
+   }
+  ],
+  "eol_units_in_active_franchises": 29292,
+  "active_franchises_with_eol_stock": 27,
+  "top_left_behind": [
+   {
+    "franchise": "Rosson Mid Hood",
+    "layer": "Midlayer",
+    "units": 8214
+   },
+   {
+    "franchise": "Vide 20",
+    "layer": "Hiking Packs",
+    "units": 5554
+   },
+   {
+    "franchise": "Rosson Mid Jacket",
+    "layer": "Midlayer",
+    "units": 4366
+   },
+   {
+    "franchise": "Tight Medium",
+    "layer": "Daypacks",
+    "units": 2774
+   },
+   {
+    "franchise": "Fjatla 60",
+    "layer": "Bags",
+    "units": 1707
+   },
+   {
+    "franchise": "L.I.M GTX Jacket",
+    "layer": "Shell",
+    "units": 1036
+   },
+   {
+    "franchise": "Buteo Mid Jacket",
+    "layer": "Midlayer",
+    "units": 961
+   },
+   {
+    "franchise": "Tight Large",
+    "layer": "Daypacks",
+    "units": 879
+   },
+   {
+    "franchise": "Vassi GTX Pant",
+    "layer": "Shell",
+    "units": 683
+   },
+   {
+    "franchise": "Astral GTX Jacket",
+    "layer": "Shell",
+    "units": 416
+   }
+  ]
+ }
+}
