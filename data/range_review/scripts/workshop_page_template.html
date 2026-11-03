@@ -801,8 +801,7 @@ textarea.action-note {
       // an older generation happened (agedByPreviousGeneration), the card says so explicitly.
       var ageNote = d.agedByPreviousGeneration
         ? " Catalog shows <strong>" + escapeHtml(d.generationLabel || "a newer generation") +
-          "</strong> (released " + escapeHtml(d.generationReleaseSeason) + ") but it has no real sales yet — " +
-          "aged using what's actually selling instead."
+          "</strong> (released " + escapeHtml(d.generationReleaseSeason) + ")."
         : "";
       alerts += '<div class="alert age"><div class="alert-line">Current generation' +
         (d.ageGenerationLabel ? " (<strong>" + escapeHtml(d.ageGenerationLabel) + "</strong>)" : "") +
