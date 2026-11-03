@@ -836,9 +836,9 @@ textarea.action-note {
           '<div class="decision">' +
             (d.isNewInSeason && !tier
               ? '<div class="hint-row">' + (d.newKind === "generation"
-                  ? "New generation (" + escapeHtml(d.generationLabel || "?") + ") launched " + escapeHtml(d.newSeasonLabel) + " — no track record on this generation yet"
-                  : "New franchise, " + escapeHtml(d.newSeasonLabel)) +
-                '; consider defaulting to Emerging until established.</div>'
+                  ? "New generation (" + escapeHtml(d.generationLabel || "?") + ") launched " + escapeHtml(d.newSeasonLabel)
+                  : "New franchise, " + escapeHtml(d.newSeasonLabel) + "; consider defaulting to Emerging until established.") +
+                "</div>"
               : "") +
             '<div class="decision-row">' +
               '<select class="tier-select" data-tier="' + tier + '">' +
