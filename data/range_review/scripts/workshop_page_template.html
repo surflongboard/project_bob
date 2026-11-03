@@ -535,8 +535,6 @@ textarea.action-note {
       <option value="gp">GP%, high to low</option>
     </select>
     <button class="toggle-btn" id="discrepancyToggle" type="button">SS28 forecast discrepancy</button>
-    <button class="toggle-btn" id="overstockToggle" type="button">Non-active item overstocks</button>
-    <button class="toggle-btn" id="generationToggle" type="button">Generation timeline</button>
     <button class="toggle-btn" id="generationAgeToggle" type="button">Generation age</button>
   </div>
 </div>
@@ -597,7 +595,9 @@ textarea.action-note {
   }
 
   function needsDecision(d) {
-    return d.hasForecastDiscrepancy || d.availableStockTail > 0;
+    // availableStockTail dropped from this check 3-Nov-2026 (RR-031) -- overstock review
+    // moved to the Inventory Planning workstream, no longer a Board decision driver.
+    return d.hasForecastDiscrepancy;
   }
 
   function matchesSeason(d, season) {
@@ -608,7 +608,7 @@ textarea.action-note {
 
   // ---------- state ----------
   var state = { layerKey: LAYERS.length ? LAYERS[0].key : null, search: "", sort: "priority",
-    flagDiscrepancy: false, flagOverstock: false, flagGeneration: false, flagGenerationAge: false,
+    flagDiscrepancy: false, flagGenerationAge: false,
     season: "all", view: "board" };
   var decisions = {}; // slug -> {tier, action, updatedAt}
 
@@ -723,7 +723,17 @@ textarea.action-note {
     var chips = "";
     if (d.coreAssortmentFW27) chips += '<span class="chip core">Core FW27</span>';
     if (d.coreAssortmentSS28 === "Yes") chips += '<span class="chip core">Core SS28</span>';
-    if (d.isNewInSeason) chips += '<span class="chip new">New in ' + escapeHtml(d.newSeasonLabel) + "</span>";
+    if (d.isNewInSeason) {
+      // newKind distinguishes a brand-new franchise (first-ever appearance) from a new
+      // GENERATION of a franchise that was already active before (e.g. "Alert GTX Jacket"/
+      // "Klyva GTX Jacket" -- continuous FW27+SS28+FW28, but the "II" generation itself only
+      // launched in SS28). Flagging the latter as "New in SS28" with no qualifier reads as
+      // "the whole franchise just launched," which is wrong -- flagged as confusing 3-Nov-2026.
+      var newChipText = d.newKind === "generation"
+        ? "New generation (" + escapeHtml(d.generationLabel || "?") + ") in " + escapeHtml(d.newSeasonLabel)
+        : "New franchise — " + escapeHtml(d.newSeasonLabel);
+      chips += '<span class="chip new">' + newChipText + "</span>";
+    }
     if (d.genderNote) chips += '<span class="chip">' + escapeHtml(d.genderNote) + "</span>";
     if (d.abs) chips += '<span class="chip">ABS</span>';
     if (d.asiaFit) chips += '<span class="chip">Asia Fit</span>';
@@ -742,47 +752,13 @@ textarea.action-note {
       }).join("");
       alerts += '<div class="alert moq">' + lines + "</div>";
     }
-    if (d.availableStockTail > 0) {
-      // Not every tail code is an OLDER generation (RR-019) -- some are a retired code of the
-      // SAME current generation (e.g. last season's SKU for "Vassi GTX II Jacket", still named
-      // "II", under a code no longer in the active range). Wording splits on that distinction
-      // rather than calling every tail "old generation," which would be wrong for those.
-      var oldGenStyles = (d.tailStyles || []).filter(function (s) { return !s.sameGeneration; });
-      var sameGenStyles = (d.tailStyles || []).filter(function (s) { return s.sameGeneration; });
-      var oldGenTotal = oldGenStyles.reduce(function (sum, s) { return sum + s.availableStock; }, 0);
-      var sameGenTotal = sameGenStyles.reduce(function (sum, s) { return sum + s.availableStock; }, 0);
-      var activeNote = d.availableStockActive > 0 ? " (plus " + fmtQty(d.availableStockActive) + " of the current style)" : "";
-      var headerText;
-      if (oldGenTotal > 0 && sameGenTotal > 0) {
-        headerText = "<strong>" + fmtQty(d.availableStockTail) + " units</strong> not in the active range: " +
-          fmtQty(oldGenTotal) + " of old generation, " + fmtQty(sameGenTotal) +
-          " in a retired code of this same style" + activeNote + ".";
-      } else if (sameGenTotal > 0) {
-        headerText = "<strong>" + fmtQty(sameGenTotal) + " units</strong> in a retired code of this same style" + activeNote + ".";
-      } else {
-        headerText = "<strong>" + fmtQty(oldGenTotal) + " units</strong> of old generation in stock" + activeNote + ".";
-      }
-      var tailHeader = '<div class="alert-line">' + headerText + "</div>";
-      var tailLines = (d.tailStyles || []).map(function (s) {
-        return '<div class="alert-line">' + escapeHtml(s.style) + " (code " + escapeHtml(s.code) + ") — " +
-          fmtQty(s.availableStock) + " units" + (s.sameGeneration ? " — same style, retired code" : "") + "</div>";
-      }).join("");
-      alerts += '<div class="alert tail">' + tailHeader + tailLines + "</div>";
-    }
-    if (d.generationTimeline && d.generationTimeline.length > 0) {
-      // Dates are a PROXY (earliest "Season Article" tag seen per generation's style codes),
-      // not a confirmed launch record -- RR-025's caveats apply; said plainly on the card too.
-      var genHeader = '<div class="alert-line">' + d.generationTimeline.length +
-        " generations seen — dates are a proxy from stock-file season tags, not a confirmed launch record (RR-025).</div>";
-      var genLines = d.generationTimeline.map(function (g) {
-        var seasonRange = g.earliestSeason && g.latestSeason
-          ? (g.earliestSeason === g.latestSeason ? g.earliestSeason : g.earliestSeason + "–" + g.latestSeason)
-          : (g.earliestSeason || g.latestSeason || "season unknown");
-        return '<div class="alert-line"><strong>' + escapeHtml(g.generation) + "</strong> — " + seasonRange +
-          (g.active ? " (active)" : "") + " (code " + escapeHtml(g.styleCodes) + ")</div>";
-      }).join("");
-      alerts += '<div class="alert generation">' + genHeader + genLines + "</div>";
-    }
+    // Non-active item overstock / old-generation-stock alert removed from the Board 3-Nov-2026
+    // (RR-031) -- moving to the Inventory Planning workstream's own discussion instead; the
+    // availableStockTail/tailStyles data is still computed and carried in workshop_data.json,
+    // just not surfaced here "for now."
+    // The old "Generation timeline" alert (IP-005's stock-snapshot-proxy dates) was removed
+    // 3-Nov-2026 (RR-032) -- the generationAgeFlag alert below, sourced from IP-011's real
+    // per-code release-season data, superseded it; keeping both was duplicate information.
     if (d.generationAgeFlag) {
       // IP-011 -- real per-code release-season field (Product master), not a stock-file
       // proxy. Flags only the current generation's own age, independent of whether the
@@ -819,8 +795,10 @@ textarea.action-note {
           activity +
           '<div class="decision">' +
             (d.isNewInSeason && !tier
-              ? '<div class="hint-row">New in ' + escapeHtml(d.newSeasonLabel) +
-                ' — no track record yet; consider defaulting to Emerging until established.</div>'
+              ? '<div class="hint-row">' + (d.newKind === "generation"
+                  ? "New generation (" + escapeHtml(d.generationLabel || "?") + ") launched " + escapeHtml(d.newSeasonLabel) + " — no track record on this generation yet"
+                  : "New franchise, " + escapeHtml(d.newSeasonLabel)) +
+                '; consider defaulting to Emerging until established.</div>'
               : "") +
             '<div class="decision-row">' +
               '<select class="tier-select" data-tier="' + tier + '">' +
@@ -882,10 +860,8 @@ textarea.action-note {
 
     var items = current.items.filter(function (d) {
       if (!matchesSeason(d, state.season)) return false;
-      if (state.flagDiscrepancy || state.flagOverstock || state.flagGeneration || state.flagGenerationAge) {
+      if (state.flagDiscrepancy || state.flagGenerationAge) {
         var matchesFlag = (state.flagDiscrepancy && d.hasForecastDiscrepancy) ||
-          (state.flagOverstock && d.availableStockTail > 0) ||
-          (state.flagGeneration && d.generationTimeline && d.generationTimeline.length > 0) ||
           (state.flagGenerationAge && d.generationAgeFlag);
         if (!matchesFlag) return false;
       }
@@ -1050,18 +1026,6 @@ textarea.action-note {
     discrepancyToggle.classList.toggle("active", state.flagDiscrepancy);
     renderBoard();
   });
-  var overstockToggle = document.getElementById("overstockToggle");
-  overstockToggle.addEventListener("click", function () {
-    state.flagOverstock = !state.flagOverstock;
-    overstockToggle.classList.toggle("active", state.flagOverstock);
-    renderBoard();
-  });
-  var generationToggle = document.getElementById("generationToggle");
-  generationToggle.addEventListener("click", function () {
-    state.flagGeneration = !state.flagGeneration;
-    generationToggle.classList.toggle("active", state.flagGeneration);
-    renderBoard();
-  });
   var generationAgeToggle = document.getElementById("generationAgeToggle");
   generationAgeToggle.addEventListener("click", function () {
     state.flagGenerationAge = !state.flagGenerationAge;
@@ -1110,8 +1074,6 @@ textarea.action-note {
   document.getElementById("footerNote").textContent =
     DATA.length + " franchises across " + LAYERS.length + " layers · " +
     DATA.filter(function (d) { return d.hasForecastDiscrepancy; }).length + " with an SS28 forecast discrepancy · " +
-    DATA.filter(function (d) { return d.availableStockTail > 0; }).length + " with non-active item overstocks · " +
-    DATA.filter(function (d) { return d.generationTimeline && d.generationTimeline.length > 0; }).length + " with a generation timeline · " +
     DATA.filter(function (d) { return d.generationAgeFlag; }).length + " with an aging current generation (IP-011) · " +
     DATA.filter(function (d) { return d.isNewInSeason; }).length + " new in SS28/FW28 · " +
     "data as of 29 Oct 2026";

@@ -20,13 +20,22 @@ whichever one matches the selected season rather than always showing the
 combined total, which it did at first and was misleading once the toggle
 existed.
 
-Inventory review and generation timeline moved to their own "Inventory
-Planning" workstream on 30-Oct-2026 (data/inventory_planning/, see its
-ASSUMPTIONS_REGISTER.md and RR-018/019/020/024/025's pointer entries
-here) -- imported cross-workstream below, the same way `ss26_lib` is
-imported from the SS26 Portfolio Tiering workstream. Re-run
-`data/inventory_planning/scripts/build_inventory_review.py` and
-`build_generation_timeline.py` first if their outputs are stale.
+Inventory review moved to its own "Inventory Planning" workstream on
+30-Oct-2026 (data/inventory_planning/, see its ASSUMPTIONS_REGISTER.md
+and RR-018/019/020/024's pointer entries here) -- imported cross-
+workstream below, the same way `ss26_lib` is imported from the SS26
+Portfolio Tiering workstream. Re-run
+`data/inventory_planning/scripts/build_inventory_review.py` first if
+its output is stale.
+
+The old "Generation timeline" card (IP-005's stock-snapshot-proxy
+dates, via `build_generation_timeline.load_generation_groups`/
+`aggregate_by_generation`) was REMOVED from this script 3-Nov-2026
+(RR-032) -- IP-011's `build_generation_release_timeline.build_generation_table()`
+(the Product master's real per-code release seasons) superseded it,
+and keeping both was duplicate information on the Board. IP-005's own
+script/output still exist in inventory_planning for other uses; only
+the cross-workstream wiring into this file was removed.
 
 Run: python3 build_workshop_data.py
 Output: ../outputs/workshop_data.json
@@ -51,7 +60,6 @@ import ss26_lib as lib  # noqa: E402
 
 IP_DIR = REPO_ROOT / "data" / "inventory_planning"
 sys.path.insert(0, str(IP_DIR / "scripts"))
-from build_generation_timeline import load_generation_groups, aggregate_by_generation  # noqa: E402
 from build_generation_release_timeline import build_generation_table  # noqa: E402
 
 GENERATION_AGE_FLAG_SEASONS = 4  # RR-029/IP-011/RR-030 -- no confirmed renewal cadence exists; 4
@@ -131,40 +139,12 @@ def load_tail_styles_by_base() -> dict[str, list[dict]]:
     return dict(by_base)
 
 
-def load_generation_timeline_by_base() -> dict[str, list[dict]]:
-    """Per franchise, every distinct generation seen in the stock file
-    (RR-025) -- Men/Women/Asia-Fit codes of the same generation collapsed
-    together. Only kept when a franchise has 2+ generations; a single
-    generation isn't a "timeline," it's just the current style. Dates are
-    a PROXY (earliest "Season Article" tag seen, not a confirmed launch --
-    see RR-025's caveats) and shown as such on the card."""
-    code_rows = load_generation_groups()
-    gen_rows = aggregate_by_generation(code_rows)
-    by_base: dict[str, list[dict]] = defaultdict(list)
-    for r in gen_rows:
-        by_base[r["Franchise"]].append({
-            "generation": r["Generation"],
-            "styleCodes": r["Style Codes"],
-            "active": r["Active in current range"] == "Y",
-            "earliestSeason": r["Earliest Season Seen"],
-            "latestSeason": r["Latest Season Seen"],
-        })
-    multi_gen = {base: rows for base, rows in by_base.items() if len(rows) > 1}
-    # "Generation 1" only means something once a franchise actually has a 2nd generation to
-    # compare against -- every franchise remaining here does, so this is safe unconditionally.
-    for rows in multi_gen.values():
-        for r in rows:
-            if r["generation"] == "":
-                r["generation"] = "Generation 1"
-    return multi_gen
-
-
 def load_generation_age_by_base() -> dict[str, dict]:
     """Per active-range franchise: how old its CURRENT generation is, from the
     Product master file's own release-season field (IP-011) -- richer than
-    load_generation_timeline_by_base()'s stock-snapshot proxy above (applies
-    to every franchise, not just multi-generation ones; a single-generation
-    product can still be old). Also flags whether this generation's own
+    IP-005's old stock-snapshot proxy (removed from this script, RR-032;
+    applies to every franchise here, not just multi-generation ones -- a
+    single-generation product can still be old). Also flags whether this generation's own
     Release Season is SS28/FW28 -- i.e. it just launched (RR-029's "too early
     to signal an ending" case, reused here for the Board's "New in season"
     chip rather than re-derived)."""
@@ -188,7 +168,6 @@ def build() -> list[dict]:
     moq_by_base = load_moq_by_base()
     inventory_by_base = load_inventory_by_base()
     tail_styles_by_base = load_tail_styles_by_base()
-    generation_timeline_by_base = load_generation_timeline_by_base()
     generation_age_by_base = load_generation_age_by_base()
 
     out = []
@@ -215,6 +194,17 @@ def build() -> list[dict]:
             is_new, new_season_label = True, "FW28"
         else:
             is_new, new_season_label = False, None
+        # Distinguish a genuinely NEW FRANCHISE (first-ever appearance) from a NEW GENERATION of
+        # a franchise that was already active before this generation launched -- e.g. "Alert GTX
+        # Jacket"/"Klyva GTX Jacket" are active FW27+SS28+FW28 (continuous), but their "II"
+        # generation's own Release Season is SS28 (Gen 1 and "II" coexist that one season, same
+        # overlap pattern as "L.I.M GTX Jacket" in IP-011). Flagging that as "New in SS28" without
+        # this distinction reads as "the whole franchise just launched," which is wrong and was
+        # flagged as confusing (3-Nov-2026) -- active_fw27/active_ss28 (seasons BEFORE this
+        # generation's own release) is what tells the two cases apart.
+        new_kind = None
+        if is_new:
+            new_kind = "generation" if (active_fw27 or (new_season_label == "FW28" and active_ss28)) else "franchise"
 
         out.append({
             "base": base,
@@ -257,12 +247,12 @@ def build() -> list[dict]:
             "availableStockTail": inv.get("available_not_active", 0),
             "skusNotInRange": inv.get("skus_not_in_range", 0),
             "tailStyles": tail_styles,
-            "generationTimeline": generation_timeline_by_base.get(base, []),
             "generationLabel": age["label"] if age else "",  # IP-011 -- current generation's own label, e.g. "III"
             "generationReleaseSeason": age["releaseSeason"] if age else "",
             "generationAgeSeasons": age_seasons,
             "generationAgeFlag": age_seasons is not None and age_seasons >= GENERATION_AGE_FLAG_SEASONS,
             "isNewInSeason": is_new,  # RR-029 -- first season for this generation (or brand-new FW28 launch)
+            "newKind": new_kind,  # "generation" (franchise continues, only this generation is new) or "franchise" (first-ever appearance)
             "newSeasonLabel": new_season_label,
         })
     return out
@@ -279,12 +269,10 @@ if __name__ == "__main__":
     n_tail = sum(1 for d in data if d["availableStockTail"])
     n_images = sum(1 for d in data if d["imageFile"])
     n_same_gen = sum(1 for d in data for s in d["tailStyles"] if s["sameGeneration"])
-    n_gen_timeline = sum(1 for d in data if d["generationTimeline"])
     print(f"{len(data)} franchises written to {out_path}")
     print(f"{n_moq} with MOQ flags ({n_discrepancy} with a forecast discrepancy), "
           f"{n_tail} with inventory tail, {n_images} with images")
     print(f"{n_same_gen} tail-style lines are a retired code of the SAME generation, not an older one")
-    print(f"{n_gen_timeline} franchises have a multi-generation timeline (RR-025)")
 
     n_age_known = sum(1 for d in data if d["generationAgeSeasons"] is not None)
     n_age_flagged = sum(1 for d in data if d["generationAgeFlag"])

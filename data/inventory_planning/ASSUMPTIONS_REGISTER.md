@@ -98,15 +98,15 @@ framing):
    oldest-current-generation-first) — no threshold is set in code;
    this is exactly the "is it time to renew (SS29? FW29?)" judgment
    call IP-011 was built to inform, not resolve on its own.
-5. ~~Surface IP-011's generation-age data on the Board~~ — **done
-   3-Nov-2026**, as an ADDITION (Range Review's RR-030: a "Generation
-   age" flag-only toggle + "New in SS28/FW28" chip), not a swap. The
-   original question — whether to replace IP-005's "Generation
-   timeline" card (stock-snapshot proxy) with IP-011's richer
-   per-code source — is still open; IP-011 finds more real
-   multi-generation franchises (112 vs. 33) precisely because it
-   isn't limited to current stock, so the two cards currently coexist
-   on the Board rather than one replacing the other.
+5. ~~Surface IP-011's generation-age data on the Board, and decide
+   swap vs. coexist with IP-005's "Generation timeline" card~~ —
+   **done 3-Nov-2026**. Added as an addition first (Range Review's
+   RR-030: a "Generation age" flag-only toggle + "New in SS28/FW28"
+   chip); the user then resolved the swap question same day (RR-032):
+   IP-005's "Generation timeline" card/toggle is **removed** from the
+   Board ("the data from IP-011 is good enough... there is a
+   duplication of the information") — IP-011 fully supersedes it
+   there. IP-005's own script/output are unchanged for any other use.
 
 ---
 
