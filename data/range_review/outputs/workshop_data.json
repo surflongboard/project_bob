@@ -205,7 +205,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -499,7 +499,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -548,7 +548,7 @@
     "generationLabel": "II",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -597,7 +597,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -898,7 +898,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -1304,7 +1304,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -1696,7 +1696,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -1745,7 +1745,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -1794,7 +1794,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -1843,7 +1843,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -2039,7 +2039,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -2088,7 +2088,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -2137,7 +2137,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -2396,7 +2396,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -2641,7 +2641,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -2690,7 +2690,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -2739,7 +2739,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -3390,7 +3390,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -3817,7 +3817,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -4209,7 +4209,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -4510,7 +4510,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -4559,7 +4559,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -4608,7 +4608,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -4657,7 +4657,7 @@
     "generationLabel": "II",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -4728,7 +4728,7 @@
     "generationLabel": "II",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -4777,7 +4777,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -4826,7 +4826,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -5120,7 +5120,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -5169,7 +5169,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -5218,7 +5218,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -5338,7 +5338,7 @@
     "generationLabel": "II",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -5387,7 +5387,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -5436,7 +5436,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -5485,7 +5485,7 @@
     "generationLabel": "II",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -5534,7 +5534,7 @@
     "generationLabel": "III",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -6211,7 +6211,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -6260,7 +6260,7 @@
     "generationLabel": "II",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -6559,7 +6559,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -7088,7 +7088,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -7312,7 +7312,7 @@
     "generationLabel": "II",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -7757,7 +7757,7 @@
     "generationLabel": "II",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -7819,7 +7819,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -8141,7 +8141,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -8264,7 +8264,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -8313,7 +8313,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -8362,7 +8362,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -8509,7 +8509,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -8995,7 +8995,7 @@
     "generationLabel": "II",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -9044,7 +9044,7 @@
     "generationLabel": "II",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -9561,7 +9561,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -9610,7 +9610,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -9813,7 +9813,7 @@
     "generationLabel": "II",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -10013,7 +10013,7 @@
     "generationLabel": "II",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -10938,7 +10938,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -11012,7 +11012,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -11368,7 +11368,7 @@
     "generationLabel": "II",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -11598,7 +11598,7 @@
     "generationLabel": "II",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -11687,7 +11687,7 @@
     "generationLabel": "II",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -11749,7 +11749,7 @@
     "generationLabel": "II",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -11832,7 +11832,7 @@
     "generationLabel": "II",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -12616,7 +12616,7 @@
     "generationLabel": "II",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -12665,7 +12665,7 @@
     "generationLabel": "II",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -12812,7 +12812,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "FW25",
     "generationAgeSeasons": 5,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -13145,7 +13145,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -13194,7 +13194,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -13292,7 +13292,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -13390,7 +13390,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -13439,7 +13439,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -13691,7 +13691,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -13753,7 +13753,7 @@
     "generationLabel": "II",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -13802,7 +13802,7 @@
     "generationLabel": "II",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -14147,7 +14147,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },
@@ -14245,7 +14245,7 @@
     "generationLabel": "",
     "generationReleaseSeason": "SS26",
     "generationAgeSeasons": 4,
-    "generationAgeFlag": false,
+    "generationAgeFlag": true,
     "isNewInSeason": false,
     "newSeasonLabel": null
   },

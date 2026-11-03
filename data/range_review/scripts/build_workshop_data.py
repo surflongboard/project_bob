@@ -54,9 +54,10 @@ sys.path.insert(0, str(IP_DIR / "scripts"))
 from build_generation_timeline import load_generation_groups, aggregate_by_generation  # noqa: E402
 from build_generation_release_timeline import build_generation_table  # noqa: E402
 
-GENERATION_AGE_FLAG_SEASONS = 6  # RR-029/IP-011 -- no confirmed renewal cadence exists; 6 seasons
-                                  # (3 years) is a judgment call for both the card alert and the
-                                  # "Generation age" toggle, not a business rule -- adjust freely.
+GENERATION_AGE_FLAG_SEASONS = 4  # RR-029/IP-011/RR-030 -- no confirmed renewal cadence exists; 4
+                                  # seasons (2 years, user-set 3-Nov-2026, was 6) is a judgment
+                                  # call for both the card alert and the "Generation age" toggle,
+                                  # not a business rule -- adjust freely.
 
 OUTPUTS_DIR = RR_DIR / "outputs"
 MOQ_PATH = OUTPUTS_DIR / "SS28_MOQ_Exceptions.xlsx"
