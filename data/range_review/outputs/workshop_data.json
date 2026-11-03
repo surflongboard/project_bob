@@ -53,7 +53,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW27"
+    "newSeasonLabel": "FW27",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW27"
   },
   {
     "base": "Aze Beanie",
@@ -153,7 +155,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": true,
     "newKind": "generation",
-    "newSeasonLabel": "FW27"
+    "newSeasonLabel": "FW27",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW27"
   },
   {
     "base": "Brand Five Panel Cap",
@@ -232,7 +236,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Hero",
+    "suggestedTierReason": "Core Assortment, 2026 GP% 65% > 50%"
   },
   {
     "base": "Haglöfs Bandana",
@@ -294,7 +300,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 65% ≥ 30%"
   },
   {
     "base": "Haglöfs Cap",
@@ -366,7 +374,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 63% ≥ 30%"
   },
   {
     "base": "Haglöfs LX Hat",
@@ -438,7 +448,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 61% ≥ 30%"
   },
   {
     "base": "Haglöfs Neck Tube",
@@ -494,7 +506,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "SS28"
+    "newSeasonLabel": "SS28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in SS28"
   },
   {
     "base": "Haglöfs Trucker Cap",
@@ -566,7 +580,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 62% ≥ 30%"
   },
   {
     "base": "Hiking Sock",
@@ -622,7 +638,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW28"
+    "newSeasonLabel": "FW28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW28"
   },
   {
     "base": "L.I.M Pace Cap",
@@ -689,7 +707,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 66% ≥ 30%"
   },
   {
     "base": "Mountain Cap",
@@ -802,7 +822,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 53% ≥ 30%"
   },
   {
     "base": "Outsiders Beanie",
@@ -874,7 +896,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 62% ≥ 30%"
   },
   {
     "base": "Rosson Beanie",
@@ -930,7 +954,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW27"
+    "newSeasonLabel": "FW27",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW27"
   },
   {
     "base": "Rosson Balaclava",
@@ -1030,7 +1056,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "generation",
-    "newSeasonLabel": "FW27"
+    "newSeasonLabel": "FW27",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW27"
   },
   {
     "base": "Ski Glove",
@@ -1086,7 +1114,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW28"
+    "newSeasonLabel": "FW28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW28"
   },
   {
     "base": "Ski Mitten",
@@ -1142,7 +1172,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW28"
+    "newSeasonLabel": "FW28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW28"
   },
   {
     "base": "Ski Sock",
@@ -1198,7 +1230,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW28"
+    "newSeasonLabel": "FW28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW28"
   },
   {
     "base": "Solis Hat",
@@ -1265,7 +1299,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 50% ≥ 30%"
   },
   {
     "base": "Stretch Webbing Belt",
@@ -1337,7 +1373,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 64% ≥ 30%"
   },
   {
     "base": "Sun Capsule Multi Cover",
@@ -1393,7 +1431,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Tech Headwear",
@@ -1449,7 +1489,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW28"
+    "newSeasonLabel": "FW28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW28"
   },
   {
     "base": "Thermal Beanie",
@@ -1528,7 +1570,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 61% ≥ 30%"
   },
   {
     "base": "Tova Wool Beanie",
@@ -1584,7 +1628,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW27"
+    "newSeasonLabel": "FW27",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW27"
   },
   {
     "base": "Vara Alpha Cap",
@@ -1646,7 +1692,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 52% ≥ 30%"
   },
   {
     "base": "Vassi Beanie",
@@ -1725,7 +1773,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 57% ≥ 30%"
   },
   {
     "base": "Vassi Headband",
@@ -1797,7 +1847,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 56% ≥ 30%"
   },
   {
     "base": "Flat accessory bag",
@@ -1880,7 +1932,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": true,
     "newKind": "generation",
-    "newSeasonLabel": "SS28"
+    "newSeasonLabel": "SS28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in SS28"
   },
   {
     "base": "Fram 1L",
@@ -1942,7 +1996,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Keywallet",
@@ -1998,7 +2054,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "SS28"
+    "newSeasonLabel": "SS28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in SS28"
   },
   {
     "base": "Lava travel tube",
@@ -2060,7 +2118,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 47% ≥ 30%"
   },
   {
     "base": "Magma Waist pack 3,5L",
@@ -2116,7 +2176,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Packing cube 12L",
@@ -2178,7 +2240,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Packing cube 8L",
@@ -2240,7 +2304,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Raincover 15-30L",
@@ -2312,7 +2378,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Raincover 25-40L",
@@ -2384,7 +2452,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Raincover 40-60L",
@@ -2456,7 +2526,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Raincover 60-80L",
@@ -2528,7 +2600,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Shoulder pocket",
@@ -2590,7 +2664,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Shoulder pouch",
@@ -2652,7 +2728,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Sling pouch 2L",
@@ -2708,7 +2786,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW27"
+    "newSeasonLabel": "FW27",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW27"
   },
   {
     "base": "Tight Pocket bag",
@@ -2780,7 +2860,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 49% ≥ 30%"
   },
   {
     "base": "Tight hip pack 1",
@@ -2852,7 +2934,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "Core Assortment, 2026 GP% 45% ≤ 50%"
   },
   {
     "base": "Tight hip pack 3,5",
@@ -2924,7 +3008,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "Core Assortment, 2026 GP% 43% ≤ 50%"
   },
   {
     "base": "Utility pouch 3L",
@@ -2986,7 +3072,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 44% ≥ 30%"
   },
   {
     "base": "Courier Messenger Bag",
@@ -3042,7 +3130,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW27"
+    "newSeasonLabel": "FW27",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW27"
   },
   {
     "base": "Fjatla 40",
@@ -3121,7 +3211,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 46% ≥ 30%"
   },
   {
     "base": "Fjatla 60",
@@ -3200,7 +3292,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 50% ≥ 30%"
   },
   {
     "base": "Lava 110",
@@ -3272,7 +3366,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 47% ≥ 30%"
   },
   {
     "base": "Lava 30",
@@ -3344,7 +3440,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 48% ≥ 30%"
   },
   {
     "base": "Lava 50",
@@ -3416,7 +3514,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "Core Assortment, 2026 GP% 48% ≤ 50%"
   },
   {
     "base": "Lava 70",
@@ -3488,7 +3588,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 49% ≥ 30%"
   },
   {
     "base": "Lava 90",
@@ -3560,7 +3662,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 49% ≥ 30%"
   },
   {
     "base": "Magma 42L",
@@ -3622,7 +3726,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 47% ≥ 30%"
   },
   {
     "base": "Magma 65L",
@@ -3684,7 +3790,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 46% ≥ 30%"
   },
   {
     "base": "Tight duffle 50",
@@ -3740,7 +3848,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Baselayer 3/4 Tights",
@@ -3796,7 +3906,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW28"
+    "newSeasonLabel": "FW28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW28"
   },
   {
     "base": "Baselayer Crewneck",
@@ -3852,7 +3964,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW28"
+    "newSeasonLabel": "FW28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW28"
   },
   {
     "base": "Baselayer Tights",
@@ -3908,7 +4022,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW28"
+    "newSeasonLabel": "FW28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW28"
   },
   {
     "base": "Latnja Wool 3/4 Pant",
@@ -3980,7 +4096,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 41% ≥ 30%"
   },
   {
     "base": "Latnja Wool Crew Neck",
@@ -4052,7 +4170,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 40% ≥ 30%"
   },
   {
     "base": "Latnja Wool Long John's",
@@ -4124,7 +4244,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 57% ≥ 30%"
   },
   {
     "base": "Kobbe Sandal Low",
@@ -4186,7 +4308,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Backup",
@@ -4258,7 +4382,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 52% ≥ 30%"
   },
   {
     "base": "Corker Large",
@@ -4330,7 +4456,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "Core Assortment, 2026 GP% 42% ≤ 50%"
   },
   {
     "base": "Corker Medium",
@@ -4402,7 +4530,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "Core Assortment, 2026 GP% 47% ≤ 50%"
   },
   {
     "base": "Jarve Multi 22",
@@ -4481,7 +4611,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 49% ≥ 30%"
   },
   {
     "base": "Jarve Multi 28",
@@ -4560,7 +4692,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 52% ≥ 30%"
   },
   {
     "base": "Skuta 15",
@@ -4622,7 +4756,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 41% ≥ 30%"
   },
   {
     "base": "Tight 15",
@@ -4701,7 +4837,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 48% ≥ 30%"
   },
   {
     "base": "Tight 8",
@@ -4780,7 +4918,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 52% ≥ 30%"
   },
   {
     "base": "Tight Large",
@@ -4859,7 +4999,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "Core Assortment, 2026 GP% 48% ≤ 50%"
   },
   {
     "base": "Tight Medium",
@@ -4938,7 +5080,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "Core Assortment, 2026 GP% 46% ≤ 50%"
   },
   {
     "base": "Tight Pro Large",
@@ -5010,7 +5154,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 43% ≥ 30%"
   },
   {
     "base": "Tight Pro Medium",
@@ -5082,7 +5228,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 42% ≥ 30%"
   },
   {
     "base": "Tight Small",
@@ -5161,7 +5309,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 46% ≥ 30%"
   },
   {
     "base": "Tight Tote 25",
@@ -5233,7 +5383,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 50% ≥ 30%"
   },
   {
     "base": "Tight X-Small",
@@ -5305,7 +5457,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 43% ≥ 30%"
   },
   {
     "base": "Vara 20L",
@@ -5367,7 +5521,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 50% ≥ 30%"
   },
   {
     "base": "L.I.M Mountain Trail 25",
@@ -5439,7 +5595,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 43% ≥ 30%"
   },
   {
     "base": "L.I.M Trail 15",
@@ -5511,7 +5669,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 48% ≥ 30%"
   },
   {
     "base": "Magma 30",
@@ -5567,7 +5727,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Magma 50L",
@@ -5634,7 +5796,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 44% ≥ 30%"
   },
   {
     "base": "Magma 60L",
@@ -5696,7 +5860,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 44% ≥ 30%"
   },
   {
     "base": "Magma Roll-top 40 WR",
@@ -5763,7 +5929,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 52% ≥ 30%"
   },
   {
     "base": "Vide 20",
@@ -5842,7 +6010,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 50% ≥ 30%"
   },
   {
     "base": "Vide 30",
@@ -5898,7 +6068,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Fast Hike Low",
@@ -5954,7 +6126,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Haglöfs Fast Hike PROOF Low",
@@ -6010,7 +6184,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW27"
+    "newSeasonLabel": "FW27",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW27"
   },
   {
     "base": "Haglöfs Horizon Hike GTX WL Mid",
@@ -6072,7 +6248,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 50% ≥ 30%"
   },
   {
     "base": "Haglöfs L.I.M Horizon Hike GTX Low",
@@ -6128,7 +6306,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Haglöfs L.I.M Horizon Hike GTX Mid",
@@ -6184,7 +6364,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Haglöfs L.I.M Horizon Hike Light Mid",
@@ -6246,7 +6428,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 52% ≥ 30%"
   },
   {
     "base": "Haglöfs Ridge GTX Low",
@@ -6349,7 +6533,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "Core Assortment, 2026 GP% 49% ≤ 50%"
   },
   {
     "base": "Haglöfs Ridge GTX Mid",
@@ -6459,7 +6645,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 45% ≥ 30%"
   },
   {
     "base": "Haglöfs Rosson FG Proof Mid",
@@ -6521,7 +6709,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 44% ≥ 30%"
   },
   {
     "base": "Haglöfs Rosson Proof Mid",
@@ -6583,7 +6773,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 44% ≥ 30%"
   },
   {
     "base": "Haglöfs Vertigo QL PROOF Low",
@@ -6639,7 +6831,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW27"
+    "newSeasonLabel": "FW27",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW27"
   },
   {
     "base": "Vertigo Proof Low",
@@ -6695,7 +6889,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Brandheat Insulation",
@@ -6751,7 +6947,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW28"
+    "newSeasonLabel": "FW28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW28"
   },
   {
     "base": "Breeze Mimic Hood",
@@ -6823,7 +7021,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 60% ≥ 30%"
   },
   {
     "base": "Fram Mimic Jacket",
@@ -6885,7 +7085,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 53% ≥ 30%"
   },
   {
     "base": "Hede Down Coat",
@@ -6957,7 +7159,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 66% ≥ 30%"
   },
   {
     "base": "Hede Down Hood",
@@ -7029,7 +7233,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Hero",
+    "suggestedTierReason": "Core Assortment, 2026 GP% 59% > 50%"
   },
   {
     "base": "Hede Down Vest",
@@ -7101,7 +7307,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Hero",
+    "suggestedTierReason": "Core Assortment, 2026 GP% 56% > 50%"
   },
   {
     "base": "L.I.M Down Hood Jacket",
@@ -7157,7 +7365,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "SS28"
+    "newSeasonLabel": "SS28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in SS28"
   },
   {
     "base": "L.I.M Down Hood",
@@ -7277,7 +7487,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 43% ≥ 30%"
   },
   {
     "base": "L.I.M Mimic Barrier Hood",
@@ -7333,7 +7545,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "L.I.M Mimic Barrier Vest",
@@ -7389,7 +7603,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Long Down Parka",
@@ -7497,7 +7713,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Hero",
+    "suggestedTierReason": "Core Assortment, 2026 GP% 56% > 50%"
   },
   {
     "base": "Long Mimic Parka",
@@ -7625,7 +7843,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 43% ≥ 30%"
   },
   {
     "base": "Lugna Softshell Overshirt",
@@ -7706,7 +7926,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW27"
+    "newSeasonLabel": "FW27",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW27"
   },
   {
     "base": "Mimic Alert Hood",
@@ -7825,7 +8047,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": true,
     "newKind": "generation",
-    "newSeasonLabel": "FW27"
+    "newSeasonLabel": "FW27",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW27"
   },
   {
     "base": "Mimic Alert Jacket",
@@ -7956,7 +8180,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": true,
     "newKind": "generation",
-    "newSeasonLabel": "FW27"
+    "newSeasonLabel": "FW27",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW27"
   },
   {
     "base": "Mimic Alert 3/4 Pant",
@@ -8012,7 +8238,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW28"
+    "newSeasonLabel": "FW28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW28"
   },
   {
     "base": "Mimic Alert Pant",
@@ -8068,7 +8296,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW28"
+    "newSeasonLabel": "FW28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW28"
   },
   {
     "base": "Mojo Down Hood",
@@ -8140,7 +8370,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Nallo Touring Down Hood",
@@ -8202,7 +8434,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 44% ≥ 30%"
   },
   {
     "base": "ROC Flash Down Hood",
@@ -8274,7 +8508,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Hero",
+    "suggestedTierReason": "Core Assortment, 2026 GP% 53% > 50%"
   },
   {
     "base": "ROC Flash Down Jacket",
@@ -8346,7 +8582,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Hero",
+    "suggestedTierReason": "Core Assortment, 2026 GP% 56% > 50%"
   },
   {
     "base": "ROC Flash Down Vest",
@@ -8418,7 +8656,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Hero",
+    "suggestedTierReason": "Core Assortment, 2026 GP% 58% > 50%"
   },
   {
     "base": "Rosson Down Hood",
@@ -8490,7 +8730,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Hero",
+    "suggestedTierReason": "Core Assortment, 2026 GP% 56% > 50%"
   },
   {
     "base": "Rosson Down Parka",
@@ -8562,7 +8804,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 56% ≥ 30%"
   },
   {
     "base": "Salix Proof Mimic Parka",
@@ -8670,7 +8914,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 56% ≥ 30%"
   },
   {
     "base": "Spitz Down Hood",
@@ -8742,7 +8988,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 45% ≥ 30%"
   },
   {
     "base": "Särna Mimic Hood",
@@ -8871,7 +9119,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Hero",
+    "suggestedTierReason": "Core Assortment, 2026 GP% 60% > 50%"
   },
   {
     "base": "Särna Mimic Vest",
@@ -8927,7 +9177,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Alert Mid Pant",
@@ -8999,7 +9251,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Hero",
+    "suggestedTierReason": "Core Assortment, 2026 GP% 55% > 50%"
   },
   {
     "base": "Alert Mid Shorts",
@@ -9079,7 +9333,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 53% ≥ 30%"
   },
   {
     "base": "Essential Tights",
@@ -9135,7 +9391,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "SS28"
+    "newSeasonLabel": "SS28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in SS28"
   },
   {
     "base": "Front Flex Pant",
@@ -9207,7 +9465,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 56% ≥ 30%"
   },
   {
     "base": "Fuse Pant",
@@ -9263,7 +9523,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "SS28"
+    "newSeasonLabel": "SS28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in SS28"
   },
   {
     "base": "Fuse Short",
@@ -9319,7 +9581,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "SS28"
+    "newSeasonLabel": "SS28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in SS28"
   },
   {
     "base": "Hede Cargo Pant",
@@ -9425,7 +9689,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "generation",
-    "newSeasonLabel": "FW27"
+    "newSeasonLabel": "FW27",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW27"
   },
   {
     "base": "Hede Shorts",
@@ -9521,7 +9787,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": true,
     "newKind": "generation",
-    "newSeasonLabel": "SS28"
+    "newSeasonLabel": "SS28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in SS28"
   },
   {
     "base": "Hiking Tights",
@@ -9577,7 +9845,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "SS28"
+    "newSeasonLabel": "SS28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in SS28"
   },
   {
     "base": "Korp Lite Pant",
@@ -9649,7 +9919,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 58% ≥ 30%"
   },
   {
     "base": "Korp Lite Shorts",
@@ -9721,7 +9993,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 57% ≥ 30%"
   },
   {
     "base": "L.I.M Pace Shorts",
@@ -9801,7 +10075,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 62% ≥ 30%"
   },
   {
     "base": "L.I.M Windpace Hybrid Pant",
@@ -9857,7 +10133,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "SS28"
+    "newSeasonLabel": "SS28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in SS28"
   },
   {
     "base": "Levante Pant",
@@ -9924,7 +10202,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 58% ≥ 30%"
   },
   {
     "base": "Levante Shorts",
@@ -9991,7 +10271,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Lite Standard Zip-Off Pant",
@@ -10112,7 +10394,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 58% ≥ 30%"
   },
   {
     "base": "Lizard Softshell Shorts",
@@ -10212,7 +10496,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 61% ≥ 30%"
   },
   {
     "base": "Magma Rugged Pant",
@@ -10297,7 +10583,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Hero",
+    "suggestedTierReason": "Core Assortment, 2026 GP% 59% > 50%"
   },
   {
     "base": "Magma Rugged Wide Pant",
@@ -10353,7 +10641,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "SS28"
+    "newSeasonLabel": "SS28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in SS28"
   },
   {
     "base": "Mid Standard Pant",
@@ -10459,7 +10749,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": true,
     "newKind": "generation",
-    "newSeasonLabel": "SS28"
+    "newSeasonLabel": "SS28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in SS28"
   },
   {
     "base": "Mid Standard Shorts",
@@ -10580,7 +10872,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 55% ≥ 30%"
   },
   {
     "base": "Mimic Silver Pant",
@@ -10686,7 +10980,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": true,
     "newKind": "generation",
-    "newSeasonLabel": "FW27"
+    "newSeasonLabel": "FW27",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW27"
   },
   {
     "base": "ROC Lite Slim Pant",
@@ -10802,7 +11098,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 43% ≥ 30%"
   },
   {
     "base": "Solis Zip Off Pant",
@@ -10882,7 +11180,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 65% ≥ 30%"
   },
   {
     "base": "Solvik Seersucker Shorts",
@@ -10938,7 +11238,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Sun Capsule Pant",
@@ -10994,7 +11296,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Brisen Tech Mid",
@@ -11050,7 +11354,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW28"
+    "newSeasonLabel": "FW28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW28"
   },
   {
     "base": "Brisen Tech Mid Hood",
@@ -11106,7 +11412,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW27"
+    "newSeasonLabel": "FW27",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW27"
   },
   {
     "base": "Buteo Mid Jacket",
@@ -11222,7 +11530,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Hero",
+    "suggestedTierReason": "Core Assortment, 2026 GP% 59% > 50%"
   },
   {
     "base": "Funäs Pile Hood",
@@ -11294,7 +11604,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 57% ≥ 30%"
   },
   {
     "base": "Haglöfs Hoodie",
@@ -11356,7 +11668,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 38% ≥ 30%"
   },
   {
     "base": "Korp Mid Halfzip",
@@ -11453,7 +11767,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 39% ≥ 30%"
   },
   {
     "base": "Korp Mid Hood",
@@ -11525,7 +11841,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 56% ≥ 30%"
   },
   {
     "base": "Korp Mid Jacket",
@@ -11597,7 +11915,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 51% ≥ 30%"
   },
   {
     "base": "L.I.M Mid Hybrid",
@@ -11653,7 +11973,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "SS28"
+    "newSeasonLabel": "SS28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in SS28"
   },
   {
     "base": "L.I.M Mid Multi Hood",
@@ -11766,7 +12088,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 54% ≥ 30%"
   },
   {
     "base": "L.I.M Mid Multi Jacket",
@@ -11833,7 +12157,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 60% ≥ 30%"
   },
   {
     "base": "L.I.M Mid Reversible Crew",
@@ -11889,7 +12215,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "SS28"
+    "newSeasonLabel": "SS28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in SS28"
   },
   {
     "base": "Nallo Touring Hybrid Mid",
@@ -11976,7 +12304,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 50% ≥ 30%"
   },
   {
     "base": "Pile Jacket",
@@ -12038,7 +12368,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW28"
+    "newSeasonLabel": "FW28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW28"
   },
   {
     "base": "Pile Vest",
@@ -12110,7 +12442,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Rosson Tights",
@@ -12216,7 +12550,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": true,
     "newKind": "generation",
-    "newSeasonLabel": "FW27"
+    "newSeasonLabel": "FW27",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW27"
   },
   {
     "base": "Rosson Mid Hood",
@@ -12322,7 +12658,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Hero",
+    "suggestedTierReason": "Core Assortment, 2026 GP% 56% > 50%"
   },
   {
     "base": "Rosson Mid Jacket",
@@ -12428,7 +12766,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Hero",
+    "suggestedTierReason": "Core Assortment, 2026 GP% 56% > 50%"
   },
   {
     "base": "Swook Mid Hood",
@@ -12495,7 +12835,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 58% ≥ 30%"
   },
   {
     "base": "Swook Mid Jacket",
@@ -12557,7 +12899,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 55% ≥ 30%"
   },
   {
     "base": "Swook Mid Halfzip W",
@@ -12626,7 +12970,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW27"
+    "newSeasonLabel": "FW27",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW27"
   },
   {
     "base": "Swook Mid Sweater M",
@@ -12695,7 +13041,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW27"
+    "newSeasonLabel": "FW27",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW27"
   },
   {
     "base": "Vara Alpha Sweater",
@@ -12782,7 +13130,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 60% ≥ 30%"
   },
   {
     "base": "Vassi Mid Hood",
@@ -12854,7 +13204,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 39% ≥ 30%"
   },
   {
     "base": "Latnja 18L",
@@ -12910,7 +13262,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW27"
+    "newSeasonLabel": "FW27",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW27"
   },
   {
     "base": "Nallo Pro 40L",
@@ -12966,7 +13320,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW27"
+    "newSeasonLabel": "FW27",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW27"
   },
   {
     "base": "Vassi Pro 32L",
@@ -13022,7 +13378,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW27"
+    "newSeasonLabel": "FW27",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW27"
   },
   {
     "base": "Alert GTX Jacket",
@@ -13120,7 +13478,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": true,
     "newKind": "generation",
-    "newSeasonLabel": "SS28"
+    "newSeasonLabel": "SS28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in SS28"
   },
   {
     "base": "Alper Proof Jacket",
@@ -13192,7 +13552,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "Core Assortment, 2026 GP% 45% ≤ 50%"
   },
   {
     "base": "Alper Proof Pant",
@@ -13264,7 +13626,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Hero",
+    "suggestedTierReason": "Core Assortment, 2026 GP% 53% > 50%"
   },
   {
     "base": "Astral GTX Jacket",
@@ -13384,7 +13748,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "Core Assortment, 2026 GP% 49% ≤ 50%"
   },
   {
     "base": "Breeze Proof Jacket",
@@ -13456,7 +13822,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 55% ≥ 30%"
   },
   {
     "base": "Front Proof Jacket",
@@ -13588,7 +13956,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "Core Assortment, 2026 GP% 44% ≤ 50%"
   },
   {
     "base": "Holm GTX Pant",
@@ -13644,7 +14014,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "generation",
-    "newSeasonLabel": "SS28"
+    "newSeasonLabel": "SS28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in SS28"
   },
   {
     "base": "Klyva GTX Jacket",
@@ -13742,7 +14114,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": true,
     "newKind": "generation",
-    "newSeasonLabel": "SS28"
+    "newSeasonLabel": "SS28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in SS28"
   },
   {
     "base": "Korp Proof Pant",
@@ -13868,7 +14242,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 56% ≥ 30%"
   },
   {
     "base": "Korp Proof Jacket",
@@ -13940,7 +14316,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 59% ≥ 30%"
   },
   {
     "base": "L.I.M Airak 2,5L Jacket",
@@ -13996,7 +14374,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "L.I.M Airak 2,5L Pant",
@@ -14052,7 +14432,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "L.I.M Airak 2,5L Proof Jacket",
@@ -14124,7 +14506,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "generation",
-    "newSeasonLabel": "SS28"
+    "newSeasonLabel": "SS28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in SS28"
   },
   {
     "base": "L.I.M Airak 2,5L Proof Pant",
@@ -14196,7 +14580,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "generation",
-    "newSeasonLabel": "SS28"
+    "newSeasonLabel": "SS28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in SS28"
   },
   {
     "base": "L.I.M Airak GTX Jacket",
@@ -14268,7 +14654,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 44% ≥ 30%"
   },
   {
     "base": "L.I.M GTX Jacket",
@@ -14394,7 +14782,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "Core Assortment, 2026 GP% 44% ≤ 50%"
   },
   {
     "base": "L.I.M GTX Pant",
@@ -14500,7 +14890,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": true,
     "newKind": "generation",
-    "newSeasonLabel": "SS28"
+    "newSeasonLabel": "SS28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in SS28"
   },
   {
     "base": "L.I.M Light Proof Jacket",
@@ -14556,7 +14948,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "SS28"
+    "newSeasonLabel": "SS28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in SS28"
   },
   {
     "base": "L.I.M Windpack Hood Jacket",
@@ -14612,7 +15006,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "SS28"
+    "newSeasonLabel": "SS28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in SS28"
   },
   {
     "base": "Latnja GTX Insulated Jacket",
@@ -14718,7 +15114,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": true,
     "newKind": "generation",
-    "newSeasonLabel": "FW27"
+    "newSeasonLabel": "FW27",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW27"
   },
   {
     "base": "Latnja GTX Insulated Pant",
@@ -14824,7 +15222,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": true,
     "newKind": "generation",
-    "newSeasonLabel": "FW27"
+    "newSeasonLabel": "FW27",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW27"
   },
   {
     "base": "Ljusna Proof Parka",
@@ -14880,7 +15280,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Nallo Touring GTX Jacket",
@@ -14942,7 +15344,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 44% ≥ 30%"
   },
   {
     "base": "Nallo Touring GTX Pant",
@@ -15004,7 +15408,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 44% ≥ 30%"
   },
   {
     "base": "Norrvind Shield Hood",
@@ -15060,7 +15466,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Ozka Proof Jacket",
@@ -15152,7 +15560,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 58% ≥ 30%"
   },
   {
     "base": "Ozka Proof Pant",
@@ -15239,7 +15649,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 58% ≥ 30%"
   },
   {
     "base": "ROC Sight GTX Jacket",
@@ -15306,7 +15718,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 41% ≥ 30%"
   },
   {
     "base": "Saulo Proof Jacket",
@@ -15362,7 +15776,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW27"
+    "newSeasonLabel": "FW27",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW27"
   },
   {
     "base": "Saulo Proof Pant",
@@ -15418,7 +15834,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW27"
+    "newSeasonLabel": "FW27",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW27"
   },
   {
     "base": "Skalvik Softshell Parka",
@@ -15474,7 +15892,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW27"
+    "newSeasonLabel": "FW27",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW27"
   },
   {
     "base": "Spitz GTX Jacket",
@@ -15530,7 +15950,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW28"
+    "newSeasonLabel": "FW28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW28"
   },
   {
     "base": "Spitz GTX Pant",
@@ -15586,7 +16008,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW28"
+    "newSeasonLabel": "FW28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW28"
   },
   {
     "base": "Spitz GTX Pro Jacket",
@@ -15692,7 +16116,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 34% ≥ 30%"
   },
   {
     "base": "Tarre Proof Insulated Jacket",
@@ -15748,7 +16174,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW27"
+    "newSeasonLabel": "FW27",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW27"
   },
   {
     "base": "Tarre Proof Insulated Pant",
@@ -15804,7 +16232,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW27"
+    "newSeasonLabel": "FW27",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW27"
   },
   {
     "base": "Vara Down GTX Parka",
@@ -15866,7 +16296,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 42% ≥ 30%"
   },
   {
     "base": "Vassi GTX Jacket",
@@ -15998,7 +16430,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 38% ≥ 30%"
   },
   {
     "base": "Vassi GTX Pant",
@@ -16136,7 +16570,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 44% ≥ 30%"
   },
   {
     "base": "Vassi GTX Pro Bib",
@@ -16262,7 +16698,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 41% ≥ 30%"
   },
   {
     "base": "Vassi GTX Pro Jacket",
@@ -16394,7 +16832,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 43% ≥ 30%"
   },
   {
     "base": "Yra Mimic Proof Parka",
@@ -16456,7 +16896,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 54% ≥ 30%"
   },
   {
     "base": "Moonlite",
@@ -16528,7 +16970,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 31% ≥ 30%"
   },
   {
     "base": "Moonlite +7",
@@ -16600,7 +17044,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 45% ≥ 30%"
   },
   {
     "base": "Moonlite -1",
@@ -16672,7 +17118,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 45% ≥ 30%"
   },
   {
     "base": "Musca -1",
@@ -16744,7 +17192,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 52% ≥ 30%"
   },
   {
     "base": "Musca -13",
@@ -16816,7 +17266,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 51% ≥ 30%"
   },
   {
     "base": "Musca -26",
@@ -16888,7 +17340,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 51% ≥ 30%"
   },
   {
     "base": "Musca -5",
@@ -16960,7 +17414,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 55% ≥ 30%"
   },
   {
     "base": "Tarius +1",
@@ -17032,7 +17488,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 51% ≥ 30%"
   },
   {
     "base": "Tarius +6",
@@ -17104,7 +17562,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 47% ≥ 30%"
   },
   {
     "base": "Tarius -18",
@@ -17176,7 +17636,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 49% ≥ 30%"
   },
   {
     "base": "Tarius -5",
@@ -17248,7 +17710,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 52% ≥ 30%"
   },
   {
     "base": "Tarius Lite +8",
@@ -17320,7 +17784,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 55% ≥ 30%"
   },
   {
     "base": "Korp Softshell Hood",
@@ -17376,7 +17842,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Korp Softshell Pant",
@@ -17432,7 +17900,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "ROC Sight Softshell Jacket",
@@ -17504,7 +17974,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 58% ≥ 30%"
   },
   {
     "base": "ROC Sight Softshell Pant",
@@ -17576,7 +18048,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 56% ≥ 30%"
   },
   {
     "base": "Spitz Softshell Jacket",
@@ -17632,7 +18106,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW28"
+    "newSeasonLabel": "FW28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW28"
   },
   {
     "base": "Spitz Softshell Pant",
@@ -17688,7 +18164,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW28"
+    "newSeasonLabel": "FW28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW28"
   },
   {
     "base": "Warm Flex Pant",
@@ -17760,7 +18238,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Hero",
+    "suggestedTierReason": "Core Assortment, 2026 GP% 60% > 50%"
   },
   {
     "base": "Haglöfs LS Tee",
@@ -17832,7 +18312,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 58% ≥ 30%"
   },
   {
     "base": "Haglöfs Tee",
@@ -17904,7 +18386,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 53% ≥ 30%"
   },
   {
     "base": "Kaise Wool LS Tee",
@@ -18010,7 +18494,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": true,
     "newKind": "generation",
-    "newSeasonLabel": "SS28"
+    "newSeasonLabel": "SS28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in SS28"
   },
   {
     "base": "Kaise Wool Tee",
@@ -18116,7 +18602,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": true,
     "newKind": "generation",
-    "newSeasonLabel": "SS28"
+    "newSeasonLabel": "SS28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in SS28"
   },
   {
     "base": "Kaise Wool Tank Top",
@@ -18185,7 +18673,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "SS28"
+    "newSeasonLabel": "SS28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in SS28"
   },
   {
     "base": "L.I.M Delta Crop Tee",
@@ -18252,7 +18742,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 59% ≥ 30%"
   },
   {
     "base": "L.I.M Delta Tee",
@@ -18319,7 +18811,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 54% ≥ 30%"
   },
   {
     "base": "L.I.M Light T-Shirt",
@@ -18375,7 +18869,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "SS28"
+    "newSeasonLabel": "SS28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in SS28"
   },
   {
     "base": "L.I.M Ridge Tank",
@@ -18442,7 +18938,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 39% ≥ 30%"
   },
   {
     "base": "L.I.M Ridge Tee",
@@ -18514,7 +19012,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 43% ≥ 30%"
   },
   {
     "base": "L.I.M Sunpack Hoodie",
@@ -18581,7 +19081,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 62% ≥ 30%"
   },
   {
     "base": "Outsiders Graphic Tee",
@@ -18648,7 +19150,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 57% ≥ 30%"
   },
   {
     "base": "Outsiders Tee",
@@ -18720,7 +19224,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Hero",
+    "suggestedTierReason": "Core Assortment, 2026 GP% 58% > 50%"
   },
   {
     "base": "Ridge Hike Tee",
@@ -18792,7 +19298,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 58% ≥ 30%"
   },
   {
     "base": "Ridge LS Tee",
@@ -18885,7 +19393,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": true,
     "newKind": "generation",
-    "newSeasonLabel": "SS28"
+    "newSeasonLabel": "SS28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in SS28"
   },
   {
     "base": "Ridge Tee",
@@ -18985,7 +19495,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": true,
     "newKind": "generation",
-    "newSeasonLabel": "SS28"
+    "newSeasonLabel": "SS28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in SS28"
   },
   {
     "base": "Salo Dress",
@@ -19052,7 +19564,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 59% ≥ 30%"
   },
   {
     "base": "Salo Shirt",
@@ -19132,7 +19646,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 57% ≥ 30%"
   },
   {
     "base": "Salo Shirt SS",
@@ -19199,7 +19715,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 55% ≥ 30%"
   },
   {
     "base": "Selme LS Crewneck",
@@ -19280,7 +19798,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW27"
+    "newSeasonLabel": "FW27",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW27"
   },
   {
     "base": "Solvik Seersucker SS Shirt",
@@ -19336,7 +19856,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Sun Capsule Halfzip",
@@ -19392,7 +19914,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Trekk Tech LS Tee",
@@ -19498,7 +20022,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": true,
     "newKind": "generation",
-    "newSeasonLabel": "SS28"
+    "newSeasonLabel": "SS28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in SS28"
   },
   {
     "base": "Trekk Tech Tee",
@@ -19604,7 +20130,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": true,
     "newKind": "generation",
-    "newSeasonLabel": "SS28"
+    "newSeasonLabel": "SS28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in SS28"
   },
   {
     "base": "Haglöfs L.I.M Horizon GTX Low",
@@ -19666,7 +20194,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "Core Assortment, 2026 GP% 36% ≤ 50%"
   },
   {
     "base": "Haglöfs L.I.M Horizon GTX Mid",
@@ -19722,7 +20252,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "FW27"
+    "newSeasonLabel": "FW27",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in FW27"
   },
   {
     "base": "Haglöfs L.I.M Horizon Low",
@@ -19789,7 +20321,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 40% ≥ 30%"
   },
   {
     "base": "L.I.M Light Low",
@@ -19845,7 +20379,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "SS28"
+    "newSeasonLabel": "SS28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in SS28"
   },
   {
     "base": "L.I.M Ultralight GTX Low",
@@ -19901,7 +20437,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "SS28"
+    "newSeasonLabel": "SS28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in SS28"
   },
   {
     "base": "L.I.M Ultralight Low",
@@ -19957,7 +20495,9 @@
     "generationAgeFlag": false,
     "isNewInSeason": true,
     "newKind": "franchise",
-    "newSeasonLabel": "SS28"
+    "newSeasonLabel": "SS28",
+    "suggestedTier": "Emerging",
+    "suggestedTierReason": "New in SS28"
   },
   {
     "base": "Oxo 60 W",
@@ -20024,7 +20564,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 39% ≥ 30%"
   },
   {
     "base": "Oxo 80",
@@ -20091,7 +20633,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 43% ≥ 30%"
   },
   {
     "base": "Haglöfs Incline GTX Mid",
@@ -20147,7 +20691,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Haglöfs Incline Pro GTX High",
@@ -20203,7 +20749,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Haglöfs Scand GTX Mid",
@@ -20275,7 +20823,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "Not Core Assortment, 2026 GP% 44% ≥ 30%"
   },
   {
     "base": "Haglöfs Solid Pro 2 GTX Mid",
@@ -20331,7 +20881,9 @@
     "generationAgeFlag": true,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Haglöfs Solid Pro 2 WL GTX Mid",
@@ -20387,6 +20939,8 @@
     "generationAgeFlag": false,
     "isNewInSeason": false,
     "newKind": null,
-    "newSeasonLabel": null
+    "newSeasonLabel": null,
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   }
 ]

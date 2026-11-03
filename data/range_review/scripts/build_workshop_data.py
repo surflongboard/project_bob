@@ -56,6 +56,7 @@ from build_forecast_discrepancies import load_ss28_qty_by_code  # noqa: E402
 from build_historical_sales import (  # noqa: E402
     build_by_base as build_historical_sales_by_base,
     build_by_base_and_generation as build_historical_sales_by_base_and_generation,
+    load_all_years_by_base_and_gen,
 )
 
 REPO_ROOT = RR_DIR.parents[1]
@@ -71,9 +72,67 @@ GENERATION_AGE_FLAG_SEASONS = 4  # RR-029/IP-011/RR-030 -- no confirmed renewal 
                                   # call for both the card alert and the "Generation age" toggle,
                                   # not a business rule -- adjust freely.
 
+TIER_HERO_EMERGING_GP_PCT = 50.0  # RR-048 -- user-set 3-Nov-2026: within Core Assortment, 2026
+                                   # GP% > this is Hero, <= this is Emerging.
+TIER_EXIT_GP_PCT = 30.0  # RR-048 -- user-set: Exit requires 2026 GP% below this (lower bar than
+                          # the Hero/Emerging split -- Exit is about clearly-losing cases).
+TIER_HARVEST_MIN_GP_PCT = 30.0  # RR-048 -- my own judgment call, not explicitly set by the user:
+                                 # a non-Core franchise needs at least this GP% to count as
+                                 # "healthy" for Harvest (reusing the Exit floor as the natural
+                                 # "not clearly struggling" line) -- flag if a different number
+                                 # is wanted.
+
 OUTPUTS_DIR = RR_DIR / "outputs"
 MOQ_PATH = OUTPUTS_DIR / "SS28_MOQ_Exceptions.xlsx"
 INVENTORY_PATH = IP_DIR / "outputs" / "SS27_Inventory_Review.xlsx"
+
+
+def compute_suggested_tier(d: dict) -> tuple[str | None, str]:
+    """RR-048 -- a SUGGESTED tier only, shown as a hint on the Board; never written to the live
+    `decisions` database (same discipline as every other decision field on this Board -- Tier
+    stays a human call). Rules are the user's own, given/corrected 3-Nov-2026 for the tiering-
+    guidance doc (`TIERING_GUIDANCE.md`) -- this function is that guidance's one implementation,
+    not a separate copy of it. Precedence (first match wins):
+      1. New in FW27/SS28/FW28 -> Emerging, unconditionally -- too early to judge anything else,
+         overrides every other rule including an otherwise-Exit-looking aging/declining signal.
+      2. Aging generation (generationAgeFlag, RR-041's actually-selling basis) AND declining
+         (2025 units < 2024 units, both full years -- 2026 is YTD and left out of this specific
+         comparison to avoid an apples-to-oranges partial-year read) AND 2026 GP% < TIER_EXIT_GP_PCT
+         -> Exit. Applies regardless of Core status -- a declining, thin-margin old item is an
+         Exit candidate whether or not it's Core.
+      3. Core Assortment (FW27 or SS28): 2026 GP% > TIER_HERO_EMERGING_GP_PCT -> Hero;
+         otherwise -> Emerging (the user explicitly rejected a Core->Hero/non-Core->Emerging
+         split, and rejected GP%-based Hero/Harvest -- within Core, it's Hero/Emerging by GP%).
+      4. Not Core Assortment: 2026 GP% >= TIER_HARVEST_MIN_GP_PCT -> Harvest ("not Core, but
+         healthy" -- the user's own framing). Below that floor, or no 2026 GP% to judge by at
+         all -> no suggestion (None), rather than guessing without the data to back it."""
+    if d["isNewInSeason"]:
+        return "Emerging", f"New in {d['newSeasonLabel']}"
+
+    hs = d["historicalSales"] or {}
+    # NOTE: int keys here, not strings -- this runs on the pre-JSON-serialization dict (year
+    # keys only become "2024"/"2025"/"2026" strings once json.dump writes the output file; the
+    # frontend reads those post-serialization string keys, but this function runs earlier).
+    y2024 = hs.get(2024, {}).get("units")
+    y2025 = hs.get(2025, {}).get("units")
+    y2026_gp = hs.get(2026, {}).get("gpPct")
+
+    declining = y2024 is not None and y2025 is not None and y2025 < y2024
+    if d["generationAgeFlag"] and declining and y2026_gp is not None and y2026_gp < TIER_EXIT_GP_PCT:
+        return "Exit", (f"Aging generation ({d['generationAgeSeasons']} seasons), sales declining "
+                         f"2024→2025, 2026 GP% {y2026_gp:.0f}% < {TIER_EXIT_GP_PCT:.0f}%")
+
+    is_core = d["coreAssortmentFW27"] or d["coreAssortmentSS28"] == "Yes"
+    if is_core:
+        if y2026_gp is None:
+            return None, ""
+        if y2026_gp > TIER_HERO_EMERGING_GP_PCT:
+            return "Hero", f"Core Assortment, 2026 GP% {y2026_gp:.0f}% > {TIER_HERO_EMERGING_GP_PCT:.0f}%"
+        return "Emerging", f"Core Assortment, 2026 GP% {y2026_gp:.0f}% ≤ {TIER_HERO_EMERGING_GP_PCT:.0f}%"
+
+    if y2026_gp is not None and y2026_gp >= TIER_HARVEST_MIN_GP_PCT:
+        return "Harvest", f"Not Core Assortment, 2026 GP% {y2026_gp:.0f}% ≥ {TIER_HARVEST_MIN_GP_PCT:.0f}%"
+    return None, ""
 
 
 def load_moq_by_base() -> dict[str, list[dict]]:
@@ -229,8 +288,9 @@ def build() -> list[dict]:
     moq_by_base = load_moq_by_base()
     inventory_by_base = load_inventory_by_base()
     tail_styles_by_base = load_tail_styles_by_base()
-    historical_sales_by_base = build_historical_sales_by_base()
-    historical_sales_by_base_and_gen = build_historical_sales_by_base_and_generation()
+    _sales_raw = load_all_years_by_base_and_gen()  # RR-048 -- read the sales CSVs once, not twice
+    historical_sales_by_base = build_historical_sales_by_base(_sales_raw)
+    historical_sales_by_base_and_gen = build_historical_sales_by_base_and_generation(_sales_raw)
     generation_age_by_base = load_generation_age_by_base(historical_sales_by_base_and_gen)
     gen_counts: dict[str, int] = defaultdict(int)
     for r in build_generation_table():
@@ -347,6 +407,12 @@ def build() -> list[dict]:
             "newKind": new_kind,  # "generation" (franchise continues, only this generation is new) or "franchise" (first-ever appearance)
             "newSeasonLabel": new_season_label,
         })
+
+    for d in out:
+        suggested, reason = compute_suggested_tier(d)
+        d["suggestedTier"] = suggested
+        d["suggestedTierReason"] = reason
+
     return out
 
 

@@ -872,10 +872,18 @@ textarea.action-note {
           alerts +
           activity +
           '<div class="decision">' +
-            (d.isNewInSeason && !tier
-              ? '<div class="hint-row">' + (d.newKind === "generation"
-                  ? "New generation (" + escapeHtml(d.generationLabel || "?") + ") launched " + escapeHtml(d.newSeasonLabel)
-                  : "New franchise, " + escapeHtml(d.newSeasonLabel) + "; consider defaulting to Emerging until established.") +
+            // RR-048 -- one unified "Suggested: <Tier>" hint, covering all four tiers, not just
+            // the new-in-season case. The new-in-season wording stays richer (generation vs
+            // franchise, same as before) since d.suggestedTierReason alone is terser for that
+            // case; every other tier just shows its own reason text. Never writes to the Tier
+            // dropdown itself -- same discipline as every other hint/suggestion on this Board.
+            (!tier && (d.isNewInSeason || d.suggestedTier)
+              ? '<div class="hint-row">Suggested: <strong>' + escapeHtml(d.suggestedTier) + '</strong> — ' +
+                (d.isNewInSeason
+                  ? (d.newKind === "generation"
+                      ? "new generation (" + escapeHtml(d.generationLabel || "?") + ") launched " + escapeHtml(d.newSeasonLabel)
+                      : "new franchise, " + escapeHtml(d.newSeasonLabel))
+                  : escapeHtml(d.suggestedTierReason)) +
                 "</div>"
               : "") +
             '<div class="decision-row">' +

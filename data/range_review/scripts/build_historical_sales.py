@@ -166,7 +166,7 @@ def load_year_from_new_csvs(filenames: list[str]) -> dict[tuple[str, str], dict]
     return {k: {"sek": v[0], "units": v[1], "margin": v[2]} for k, v in agg.items()}
 
 
-def _load_all_years_by_base_and_gen() -> dict[tuple[str, str], dict]:
+def load_all_years_by_base_and_gen() -> dict[tuple[str, str], dict]:
     """(base, generation) -> {2024: {...}, 2025: {...}, 2026: {...}}, each with units/gpPct/sek."""
     by_year = {
         2024: load_2024_from_old_file(),
@@ -187,11 +187,15 @@ def _load_all_years_by_base_and_gen() -> dict[tuple[str, str], dict]:
     return dict(out)
 
 
-def build_by_base() -> dict[str, dict]:
+def build_by_base(by_base_gen: dict[tuple[str, str], dict] | None = None) -> dict[str, dict]:
     """base -> {2024: {...}, 2025: {...}, 2026: {...}}, BLENDED across every generation sold
     under that base -- the franchise's whole historical total, same as before 3-Nov-2026's
-    per-generation split was added (RR-039)."""
-    by_base_gen = _load_all_years_by_base_and_gen()
+    per-generation split was added (RR-039). Pass an already-computed `by_base_gen` (from
+    `load_all_years_by_base_and_gen()`) when also calling `build_by_base_and_generation()` in
+    the same run, to avoid reading all 6 sales CSVs (~50MB) twice (RR-048 -- this doubled read
+    was slow enough to cause a transient resource hiccup when both were called independently)."""
+    if by_base_gen is None:
+        by_base_gen = load_all_years_by_base_and_gen()
     out: dict[str, dict] = defaultdict(lambda: defaultdict(lambda: {"units": 0, "sek": 0, "_margin": 0.0}))
     for (base, _gen), years in by_base_gen.items():
         for year, v in years.items():
@@ -211,13 +215,16 @@ def build_by_base() -> dict[str, dict]:
     return result
 
 
-def build_by_base_and_generation() -> dict[str, dict]:
+def build_by_base_and_generation(by_base_gen: dict[tuple[str, str], dict] | None = None) -> dict[str, dict]:
     """base -> {generation_token ('' for no-token, 'II', 'III', ...): {2024: {...}, ...}} --
     the SAME source data as build_by_base(), not blended, so a franchise's sales can be shown
     broken out by generation (RR-039 -- "show the previous generation's sales too, so you know
     as one franchise what's the historic sales"). Generation-token relabeling to "Generation 1"
-    happens downstream (build_workshop_data.py), same convention as IP-011/RR-025."""
-    by_base_gen = _load_all_years_by_base_and_gen()
+    happens downstream (build_workshop_data.py), same convention as IP-011/RR-025. Pass an
+    already-computed `by_base_gen` when also calling `build_by_base()` in the same run (see
+    that function's docstring -- avoids reading the sales CSVs twice)."""
+    if by_base_gen is None:
+        by_base_gen = load_all_years_by_base_and_gen()
     out: dict[str, dict] = defaultdict(dict)
     for (base, gen), years in by_base_gen.items():
         out[base][gen] = years
@@ -344,8 +351,9 @@ def write_workbook(by_base: dict[str, dict], by_base_gen: dict[str, dict], path:
 
 
 if __name__ == "__main__":
-    by_base = build_by_base()
-    by_base_gen = build_by_base_and_generation()
+    _by_base_gen_raw = load_all_years_by_base_and_gen()
+    by_base = build_by_base(_by_base_gen_raw)
+    by_base_gen = build_by_base_and_generation(_by_base_gen_raw)
     out_path = OUTPUTS_DIR / "Historical_Sales_By_Franchise.xlsx"
     write_workbook(by_base, by_base_gen, out_path)
     n_2024 = sum(1 for b in by_base if 2024 in by_base[b] and by_base[b][2024]["units"])
