@@ -195,18 +195,27 @@ def load_generation_age_by_base(historical_sales_by_base_and_gen: dict[str, dict
     return by_base
 
 
-def load_historical_sales_by_generation_by_base(by_base_gen: dict[str, dict]) -> dict[str, list[dict]]:
+def load_historical_sales_by_generation_by_base(by_base_gen: dict[str, dict],
+                                                 multi_gen_bases: set[str]) -> dict[str, list[dict]]:
     """RR-039 -- per franchise, a list of {generation, years} entries, oldest first, so a
     multi-generation franchise's card can show its PREVIOUS generation's historical sales
     alongside its current one ("as one franchise, what's the historic sales" -- the blended
     `historicalSales` field alone hides exactly this, since a new "II"/"III" generation barely
-    has any sales yet and the blended number is almost entirely the old generation's). Only
-    returned (non-empty) when 2+ generations actually have their own sales data; a single-
-    generation franchise relies on the existing blended `historicalSales` field instead -- no
-    need to duplicate it here under a "Generation 1" label nobody asked to see twice."""
+    has any sales yet and the blended number is almost entirely the old generation's).
+
+    Gated on `multi_gen_bases` (2+ generations in the Product master's own catalog, IP-011) --
+    NOT on whether 2+ of them have their own sales bucket. RR-043 fix: the original version
+    gated on sales-bucket count, so a franchise whose "II" has literally never sold (RR-041's
+    22 cases, e.g. "Alert GTX II Jacket") fell through to the single blended row with a generic
+    "Historical sales" label -- which happens to equal Generation 1's full history (II
+    contributes nothing) but didn't SAY so, reading as if the predecessor's sales were missing
+    rather than already being the only number shown. Now any base with 2+ catalog generations
+    gets labeled rows for whichever of its generations actually have sales data (often just
+    one) -- a single-generation franchise still relies on the plain blended `historicalSales`
+    field, no label needed since there's nothing to distinguish it from."""
     out: dict[str, list[dict]] = {}
     for base, gens in by_base_gen.items():
-        if len(gens) < 2:
+        if base not in multi_gen_bases:
             continue
         rows = []
         for gen in sorted(gens, key=lambda g: _GEN_RANK.get(g, 99)):
@@ -223,8 +232,12 @@ def build() -> list[dict]:
     historical_sales_by_base = build_historical_sales_by_base()
     historical_sales_by_base_and_gen = build_historical_sales_by_base_and_generation()
     generation_age_by_base = load_generation_age_by_base(historical_sales_by_base_and_gen)
+    gen_counts: dict[str, int] = defaultdict(int)
+    for r in build_generation_table():
+        gen_counts[r["Franchise"]] += 1
+    multi_gen_bases = {base for base, n in gen_counts.items() if n > 1}
     historical_sales_by_gen_by_base = load_historical_sales_by_generation_by_base(
-        historical_sales_by_base_and_gen)
+        historical_sales_by_base_and_gen, multi_gen_bases)
 
     out = []
     for r in franchise_rows:

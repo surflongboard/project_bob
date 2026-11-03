@@ -108,7 +108,28 @@
         "gpPct": 52.6
       }
     },
-    "historicalSalesByGeneration": [],
+    "historicalSalesByGeneration": [
+      {
+        "generation": "Generation 1",
+        "years": {
+          "2024": {
+            "units": 10551,
+            "gpPct": 53.8,
+            "sek": 1228204
+          },
+          "2025": {
+            "units": 6260,
+            "gpPct": 51.6,
+            "sek": 725495
+          },
+          "2026": {
+            "units": 3624,
+            "gpPct": 52.6,
+            "sek": 415524
+          }
+        }
+      }
+    ],
     "imageFile": "608688.jpeg",
     "moq": [],
     "hasForecastDiscrepancy": false,
@@ -964,7 +985,28 @@
         "gpPct": 66.9
       }
     },
-    "historicalSalesByGeneration": [],
+    "historicalSalesByGeneration": [
+      {
+        "generation": "Generation 1",
+        "years": {
+          "2024": {
+            "units": 4,
+            "gpPct": null,
+            "sek": 590
+          },
+          "2025": {
+            "units": 1327,
+            "gpPct": 64.5,
+            "sek": 220947
+          },
+          "2026": {
+            "units": 1803,
+            "gpPct": 66.9,
+            "sek": 311779
+          }
+        }
+      }
+    ],
     "imageFile": "608689.jpeg",
     "moq": [],
     "hasForecastDiscrepancy": false,
@@ -1805,7 +1847,23 @@
         "gpPct": 61.5
       }
     },
-    "historicalSalesByGeneration": [],
+    "historicalSalesByGeneration": [
+      {
+        "generation": "Generation 1",
+        "years": {
+          "2025": {
+            "units": 400,
+            "gpPct": 100.0,
+            "sek": 55837
+          },
+          "2026": {
+            "units": 2105,
+            "gpPct": 61.5,
+            "sek": 330919
+          }
+        }
+      }
+    ],
     "imageFile": "608817.jpeg",
     "moq": [],
     "hasForecastDiscrepancy": false,
@@ -7703,7 +7761,28 @@
         "gpPct": 50.8
       }
     },
-    "historicalSalesByGeneration": [],
+    "historicalSalesByGeneration": [
+      {
+        "generation": "Generation 1",
+        "years": {
+          "2024": {
+            "units": 5111,
+            "gpPct": 59.0,
+            "sek": 5091999
+          },
+          "2025": {
+            "units": 4679,
+            "gpPct": 52.5,
+            "sek": 4185377
+          },
+          "2026": {
+            "units": 3767,
+            "gpPct": 50.8,
+            "sek": 3198803
+          }
+        }
+      }
+    ],
     "imageFile": "608678.jpeg",
     "moq": [
       {
@@ -7801,7 +7880,28 @@
         "gpPct": 46.6
       }
     },
-    "historicalSalesByGeneration": [],
+    "historicalSalesByGeneration": [
+      {
+        "generation": "Generation 1",
+        "years": {
+          "2024": {
+            "units": 1188,
+            "gpPct": 61.8,
+            "sek": 1074041
+          },
+          "2025": {
+            "units": 1886,
+            "gpPct": 56.0,
+            "sek": 1625408
+          },
+          "2026": {
+            "units": 2342,
+            "gpPct": 46.6,
+            "sek": 1584493
+          }
+        }
+      }
+    ],
     "imageFile": "608679.jpeg",
     "moq": [
       {
@@ -9274,7 +9374,28 @@
         "gpPct": 58.3
       }
     },
-    "historicalSalesByGeneration": [],
+    "historicalSalesByGeneration": [
+      {
+        "generation": "Generation 1",
+        "years": {
+          "2024": {
+            "units": 0,
+            "gpPct": null,
+            "sek": 0
+          },
+          "2025": {
+            "units": 1192,
+            "gpPct": 49.2,
+            "sek": 779072
+          },
+          "2026": {
+            "units": 1986,
+            "gpPct": 58.3,
+            "sek": 1511234
+          }
+        }
+      }
+    ],
     "imageFile": "608974.jpeg",
     "moq": [],
     "hasForecastDiscrepancy": false,
@@ -9354,7 +9475,23 @@
         "gpPct": 60.8
       }
     },
-    "historicalSalesByGeneration": [],
+    "historicalSalesByGeneration": [
+      {
+        "generation": "Generation 1",
+        "years": {
+          "2025": {
+            "units": 480,
+            "gpPct": 56.8,
+            "sek": 160705
+          },
+          "2026": {
+            "units": 3378,
+            "gpPct": 60.8,
+            "sek": 1327553
+          }
+        }
+      }
+    ],
     "imageFile": "609006.jpeg",
     "moq": [],
     "hasForecastDiscrepancy": false,
@@ -10030,7 +10167,28 @@
         "gpPct": 60.6
       }
     },
-    "historicalSalesByGeneration": [],
+    "historicalSalesByGeneration": [
+      {
+        "generation": "Generation 1",
+        "years": {
+          "2024": {
+            "units": 1115,
+            "gpPct": 58.7,
+            "sek": 542444
+          },
+          "2025": {
+            "units": 1690,
+            "gpPct": 60.4,
+            "sek": 851155
+          },
+          "2026": {
+            "units": 1717,
+            "gpPct": 60.6,
+            "sek": 789618
+          }
+        }
+      }
+    ],
     "imageFile": "608637.jpeg",
     "moq": [],
     "hasForecastDiscrepancy": false,
@@ -10250,7 +10408,28 @@
         "gpPct": 48.7
       }
     },
-    "historicalSalesByGeneration": [],
+    "historicalSalesByGeneration": [
+      {
+        "generation": "Generation 1",
+        "years": {
+          "2024": {
+            "units": 11784,
+            "gpPct": 54.0,
+            "sek": 7679864
+          },
+          "2025": {
+            "units": 12939,
+            "gpPct": 45.6,
+            "sek": 7058646
+          },
+          "2026": {
+            "units": 5567,
+            "gpPct": 48.7,
+            "sek": 3166117
+          }
+        }
+      }
+    ],
     "imageFile": "609084.jpeg",
     "moq": [],
     "hasForecastDiscrepancy": false,
@@ -10456,7 +10635,28 @@
         "gpPct": 56.6
       }
     },
-    "historicalSalesByGeneration": [],
+    "historicalSalesByGeneration": [
+      {
+        "generation": "Generation 1",
+        "years": {
+          "2024": {
+            "units": 2820,
+            "gpPct": 57.6,
+            "sek": 2112876
+          },
+          "2025": {
+            "units": 2139,
+            "gpPct": 59.6,
+            "sek": 1575700
+          },
+          "2026": {
+            "units": 2156,
+            "gpPct": 56.6,
+            "sek": 1484669
+          }
+        }
+      }
+    ],
     "imageFile": "608830.jpeg",
     "moq": [],
     "hasForecastDiscrepancy": false,
@@ -11965,7 +12165,28 @@
         "gpPct": 60.5
       }
     },
-    "historicalSalesByGeneration": [],
+    "historicalSalesByGeneration": [
+      {
+        "generation": "Generation 1",
+        "years": {
+          "2024": {
+            "units": 6,
+            "gpPct": null,
+            "sek": 1967
+          },
+          "2025": {
+            "units": 1030,
+            "gpPct": 59.1,
+            "sek": 434181
+          },
+          "2026": {
+            "units": 1152,
+            "gpPct": 60.5,
+            "sek": 488411
+          }
+        }
+      }
+    ],
     "imageFile": "608832.jpeg",
     "moq": [],
     "hasForecastDiscrepancy": false,
@@ -12050,7 +12271,28 @@
         "gpPct": 56.2
       }
     },
-    "historicalSalesByGeneration": [],
+    "historicalSalesByGeneration": [
+      {
+        "generation": "Generation 1",
+        "years": {
+          "2024": {
+            "units": 5921,
+            "gpPct": 54.0,
+            "sek": 3053423
+          },
+          "2025": {
+            "units": 5970,
+            "gpPct": 53.6,
+            "sek": 3367155
+          },
+          "2026": {
+            "units": 5823,
+            "gpPct": 56.2,
+            "sek": 3271742
+          }
+        }
+      }
+    ],
     "imageFile": "608556.jpeg",
     "moq": [],
     "hasForecastDiscrepancy": false,
@@ -12135,7 +12377,28 @@
         "gpPct": 56.2
       }
     },
-    "historicalSalesByGeneration": [],
+    "historicalSalesByGeneration": [
+      {
+        "generation": "Generation 1",
+        "years": {
+          "2024": {
+            "units": 4962,
+            "gpPct": 52.1,
+            "sek": 2330224
+          },
+          "2025": {
+            "units": 7053,
+            "gpPct": 51.2,
+            "sek": 3600293
+          },
+          "2026": {
+            "units": 7309,
+            "gpPct": 56.2,
+            "sek": 3820592
+          }
+        }
+      }
+    ],
     "imageFile": "608557.jpeg",
     "moq": [],
     "hasForecastDiscrepancy": false,
@@ -12804,7 +13067,18 @@
         "gpPct": 56.6
       }
     },
-    "historicalSalesByGeneration": [],
+    "historicalSalesByGeneration": [
+      {
+        "generation": "Generation 1",
+        "years": {
+          "2026": {
+            "units": 3637,
+            "gpPct": 56.6,
+            "sek": 5184847
+          }
+        }
+      }
+    ],
     "imageFile": "609012.jpeg",
     "moq": [
       {
@@ -13415,7 +13689,18 @@
         "gpPct": 45.2
       }
     },
-    "historicalSalesByGeneration": [],
+    "historicalSalesByGeneration": [
+      {
+        "generation": "Generation 1",
+        "years": {
+          "2026": {
+            "units": 3072,
+            "gpPct": 45.2,
+            "sek": 3159643
+          }
+        }
+      }
+    ],
     "imageFile": "609018.jpeg",
     "moq": [
       {
@@ -14164,7 +14449,28 @@
         "gpPct": 42.8
       }
     },
-    "historicalSalesByGeneration": [],
+    "historicalSalesByGeneration": [
+      {
+        "generation": "Generation 1",
+        "years": {
+          "2024": {
+            "units": 6612,
+            "gpPct": 33.7,
+            "sek": 7014837
+          },
+          "2025": {
+            "units": 4537,
+            "gpPct": 40.3,
+            "sek": 5344057
+          },
+          "2026": {
+            "units": 1675,
+            "gpPct": 42.8,
+            "sek": 2044143
+          }
+        }
+      }
+    ],
     "imageFile": "609082.jpeg",
     "moq": [],
     "hasForecastDiscrepancy": false,
@@ -14361,7 +14667,28 @@
         "gpPct": 41.6
       }
     },
-    "historicalSalesByGeneration": [],
+    "historicalSalesByGeneration": [
+      {
+        "generation": "Generation 1",
+        "years": {
+          "2024": {
+            "units": 2730,
+            "gpPct": 40.6,
+            "sek": 5694893
+          },
+          "2025": {
+            "units": 3551,
+            "gpPct": 43.1,
+            "sek": 7774561
+          },
+          "2026": {
+            "units": 3380,
+            "gpPct": 41.6,
+            "sek": 7034700
+          }
+        }
+      }
+    ],
     "imageFile": "609002.jpeg",
     "moq": [],
     "hasForecastDiscrepancy": false,
@@ -14446,7 +14773,28 @@
         "gpPct": 50.8
       }
     },
-    "historicalSalesByGeneration": [],
+    "historicalSalesByGeneration": [
+      {
+        "generation": "Generation 1",
+        "years": {
+          "2024": {
+            "units": 1874,
+            "gpPct": 48.4,
+            "sek": 3399473
+          },
+          "2025": {
+            "units": 2399,
+            "gpPct": 49.7,
+            "sek": 4445888
+          },
+          "2026": {
+            "units": 2607,
+            "gpPct": 50.8,
+            "sek": 4787804
+          }
+        }
+      }
+    ],
     "imageFile": "609003.jpeg",
     "moq": [],
     "hasForecastDiscrepancy": false,
@@ -15293,7 +15641,28 @@
         "gpPct": 34.0
       }
     },
-    "historicalSalesByGeneration": [],
+    "historicalSalesByGeneration": [
+      {
+        "generation": "II",
+        "years": {
+          "2024": {
+            "units": 7,
+            "gpPct": null,
+            "sek": 14869
+          },
+          "2025": {
+            "units": 1029,
+            "gpPct": 31.7,
+            "sek": 2774729
+          },
+          "2026": {
+            "units": 1589,
+            "gpPct": 34.0,
+            "sek": 4194340
+          }
+        }
+      }
+    ],
     "imageFile": "608570.jpeg",
     "moq": [],
     "hasForecastDiscrepancy": false,
@@ -17590,7 +17959,28 @@
         "gpPct": 58.7
       }
     },
-    "historicalSalesByGeneration": [],
+    "historicalSalesByGeneration": [
+      {
+        "generation": "Generation 1",
+        "years": {
+          "2024": {
+            "units": 1,
+            "gpPct": null,
+            "sek": 299
+          },
+          "2025": {
+            "units": 1323,
+            "gpPct": 54.4,
+            "sek": 525546
+          },
+          "2026": {
+            "units": 1325,
+            "gpPct": 58.7,
+            "sek": 528596
+          }
+        }
+      }
+    ],
     "imageFile": "608796.jpeg",
     "moq": [],
     "hasForecastDiscrepancy": false,
@@ -17675,7 +18065,28 @@
         "gpPct": 56.4
       }
     },
-    "historicalSalesByGeneration": [],
+    "historicalSalesByGeneration": [
+      {
+        "generation": "Generation 1",
+        "years": {
+          "2024": {
+            "units": 0,
+            "gpPct": null,
+            "sek": 0
+          },
+          "2025": {
+            "units": 1027,
+            "gpPct": 56.7,
+            "sek": 366106
+          },
+          "2026": {
+            "units": 1557,
+            "gpPct": 56.4,
+            "sek": 492625
+          }
+        }
+      }
+    ],
     "imageFile": "608795.jpeg",
     "moq": [],
     "hasForecastDiscrepancy": false,
@@ -18436,7 +18847,28 @@
         "gpPct": null
       }
     },
-    "historicalSalesByGeneration": [],
+    "historicalSalesByGeneration": [
+      {
+        "generation": "Generation 1",
+        "years": {
+          "2024": {
+            "units": 29,
+            "gpPct": null,
+            "sek": 7921
+          },
+          "2025": {
+            "units": 60,
+            "gpPct": null,
+            "sek": 7212
+          },
+          "2026": {
+            "units": 30,
+            "gpPct": null,
+            "sek": 7362
+          }
+        }
+      }
+    ],
     "imageFile": "608794.jpeg",
     "moq": [],
     "hasForecastDiscrepancy": false,
@@ -18508,7 +18940,28 @@
         "gpPct": 57.2
       }
     },
-    "historicalSalesByGeneration": [],
+    "historicalSalesByGeneration": [
+      {
+        "generation": "Generation 1",
+        "years": {
+          "2024": {
+            "units": 4418,
+            "gpPct": 56.4,
+            "sek": 1102643
+          },
+          "2025": {
+            "units": 3743,
+            "gpPct": 50.1,
+            "sek": 853214
+          },
+          "2026": {
+            "units": 3245,
+            "gpPct": 57.2,
+            "sek": 748295
+          }
+        }
+      }
+    ],
     "imageFile": "608793.jpeg",
     "moq": [],
     "hasForecastDiscrepancy": false,
@@ -18994,7 +19447,28 @@
         "gpPct": 58.9
       }
     },
-    "historicalSalesByGeneration": [],
+    "historicalSalesByGeneration": [
+      {
+        "generation": "Generation 1",
+        "years": {
+          "2024": {
+            "units": 2166,
+            "gpPct": 49.8,
+            "sek": 451623
+          },
+          "2025": {
+            "units": 2632,
+            "gpPct": 53.3,
+            "sek": 529574
+          },
+          "2026": {
+            "units": 1762,
+            "gpPct": 58.9,
+            "sek": 380382
+          }
+        }
+      }
+    ],
     "imageFile": "608798.jpeg",
     "moq": [],
     "hasForecastDiscrepancy": false,
@@ -19079,7 +19553,28 @@
         "gpPct": 58.0
       }
     },
-    "historicalSalesByGeneration": [],
+    "historicalSalesByGeneration": [
+      {
+        "generation": "Generation 1",
+        "years": {
+          "2024": {
+            "units": 4115,
+            "gpPct": 49.5,
+            "sek": 697800
+          },
+          "2025": {
+            "units": 4599,
+            "gpPct": 44.8,
+            "sek": 689052
+          },
+          "2026": {
+            "units": 5583,
+            "gpPct": 58.0,
+            "sek": 956342
+          }
+        }
+      }
+    ],
     "imageFile": "608797.jpeg",
     "moq": [],
     "hasForecastDiscrepancy": false,

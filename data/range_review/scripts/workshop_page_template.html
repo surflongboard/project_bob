@@ -723,12 +723,13 @@ textarea.action-note {
   }
 
   function historicalSalesHtml(d) {
-    // RR-039 -- when 2+ generations have their own sales data, show each generation's history
-    // as its own row (oldest first) instead of one blended total -- a franchise on a new "II"/
-    // "III" generation barely has sales under that name yet, so the blended number alone is
-    // almost entirely the PREVIOUS generation's and hides the transition the user wants to see.
+    // RR-039/RR-043 -- when the franchise has 2+ generations in the catalog, label each row by
+    // generation (oldest first) instead of one blended, unlabeled total -- even when only ONE
+    // generation has ever actually sold (RR-041's 22 cases, e.g. "Alert GTX II Jacket": "II" has
+    // never sold, so this is a single row, but it's Generation 1's full history and needs to say
+    // so, not look like a plain "whole franchise" total with the predecessor's data missing).
     var byGen = d.historicalSalesByGeneration || [];
-    if (byGen.length > 1) {
+    if (byGen.length > 0) {
       var rows = byGen.map(function (g) {
         return '<div class="hist-sales"><div class="hist-sales-label">Historical sales — ' +
           escapeHtml(g.generation) + '</div><div class="hist-cols">' + histCols(g.years) + "</div></div>";
