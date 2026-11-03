@@ -1,8 +1,17 @@
 """
-Builds the FW27/SS28 franchise-level review list for the Nov 12 Range
+Builds the FW27/SS28/FW28 franchise-level review list for the Nov 12 Range
 Review workshop prep: one row per franchise (RR-001 definition -- base
 name, gender NOT a separate split), with layer, business area, season
 coverage, gender coverage, and Target RRP.
+
+FW28 (received 2-Nov-2026, RR-026) is read from a DIFFERENT file layout
+than FW27/SS28 -- one flat row per colorway (Season/Code/Style repeated
+on every row) rather than nested style+colorway-sub-rows -- via
+load_style_rows_flat() rather than load_style_rows(). Apparel-only (no
+Hardware/Footwear rows at all in this drop) and no forecast/MOQ/
+inventory data exists for FW28 yet, so Forecast Qty/GP% and Status FW28
+are blank for every franchise, same "blank not zero" convention as
+RR-014's existing FW27/SS28 forecast gaps.
 
 Margin target: the FW27/SS28 range files have no such field (RR-008), but
 the FW27 and SS28 "Pic Centric" workbooks do (Target GM0%) -- pulled in
@@ -88,7 +97,13 @@ INPUTS_DIR = RR_DIR / "inputs"
 OUTPUTS_DIR = RR_DIR / "outputs"
 FW27_PATH = INPUTS_DIR / "FW27_28_Oct_2026.xlsx"
 SS28_PATH = INPUTS_DIR / "SS28_28_Oct_2026.xlsx"
+FW28_PATH = INPUTS_DIR / "FW28_2_Nov_2026.xlsx"
 GM_BY_CODE_PATH = OUTPUTS_DIR / "gm_by_code.json"
+
+# Season recency for picking which style represents a franchise when version
+# tokens tie (RR-003's "latest active generation") -- extended for FW28
+# (RR-026) rather than the FW27/SS28-only boolean check this replaced.
+SEASON_RANK = {"FW27": 0, "SS28": 1, "FW28": 2}
 
 
 def load_gm_by_code() -> dict[str, dict]:
@@ -169,6 +184,38 @@ def load_style_rows(path: Path, season_label: str) -> list[dict]:
     return rows
 
 
+def load_style_rows_flat(path: Path, season_label: str) -> list[dict]:
+    """Same output shape as load_style_rows(), for a FLAT export where every
+    colorway is its own full row (Season/Active/Code/Style repeated, not
+    blanked on sub-rows) instead of FW27/SS28's nested style+colorway-
+    sub-row layout (RR-026) -- the FW28 Assortment Plan (received 2-Nov-2026)
+    uses this format. Column positions are otherwise identical to
+    load_style_rows()'s, confirmed against this file directly (not assumed).
+
+    Single header row (data starts row 2, not row 3), and rows for the same
+    Code are contiguous and share one value for every per-style field
+    (verified exhaustively against this file -- not just the common case).
+    """
+    wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
+    ws = wb[wb.sheetnames[0]]
+    rows: list[dict] = []
+    current = None
+    current_code = object()  # sentinel that matches nothing on the first row
+    for r in ws.iter_rows(min_row=2, values_only=True):
+        if r[2] != current_code:
+            current_code = r[2]
+            current = {
+                "season_label": season_label, "active": r[1], "code": r[2], "style": r[3],
+                "target_rrp": r[10], "layer": r[14], "gender": r[15],
+                "business_area": r[16], "collection_type": r[23], "abs_customer": r[24],
+                "consumer_activity": r[37], "active_colors": 0,
+            }
+            rows.append(current)
+        if r[4]:  # colorway-level Active flag, same column as load_style_rows()
+            current["active_colors"] += 1
+    return rows
+
+
 def compute_abs_af_flags(all_rows: list[dict]) -> tuple[set[str], set[str]]:
     """Base -> whether an ABS/ABS Exclusive variant or an AF/Asian-Fit variant
     exists anywhere for it, scanning ALL style rows (not just the main-range
@@ -198,7 +245,8 @@ def build_rows() -> list[dict]:
     core_fw27 = load_core_assortment_fw27()
     forecast_by_key = load_forecast_by_key()
     gm_by_code = load_gm_by_code()
-    rows = load_style_rows(FW27_PATH, "FW27") + load_style_rows(SS28_PATH, "SS28")
+    rows = (load_style_rows(FW27_PATH, "FW27") + load_style_rows(SS28_PATH, "SS28")
+            + load_style_rows_flat(FW28_PATH, "FW28"))
     abs_bases, af_bases = compute_abs_af_flags(rows)
     main_range = [r for r in rows
                   if r["active"] and r["collection_type"] not in ("ABS", "ABS Exclusive")]
@@ -214,7 +262,7 @@ def build_rows() -> list[dict]:
 
     out_rows = []
     for base, items in franchises.items():
-        best = max(items, key=lambda r: (r["version_rank"], r["season_label"] == "SS28"))
+        best = max(items, key=lambda r: (r["version_rank"], SEASON_RANK.get(r["season_label"], 0)))
         layers = sorted({r["layer"] for r in items if r["layer"]})
         areas = sorted({r["business_area"] for r in items if r["business_area"]})
         genders = sorted({r["gender"] for r in items if r["gender"]})
@@ -276,6 +324,7 @@ def build_rows() -> list[dict]:
             "Gender note": gender_note,
             "Active in FW27": "Y" if "FW27" in seasons else "",
             "Active in SS28": "Y" if "SS28" in seasons else "",
+            "Active in FW28": "Y" if "FW28" in seasons else "",
             "Target RRP": rrp_display,
             "RRP varies by style": "Y" if len(rrps) > 1 else "",
             "Consumer Activity": "; ".join(activities),
@@ -289,6 +338,7 @@ def build_rows() -> list[dict]:
             "Asia Fit": "Yes" if base in af_bases else "No",
             "Status FW27": status_for("FW27"),
             "Status SS28": status_for("SS28"),
+            "Status FW28": status_for("FW28"),  # always blank for now -- no FW28 forecast file exists yet (RR-026)
             "Forecast Qty (total)": round(qty) if forecast_rows else "",
             "Forecast GP% (blended)": round(gp_pct, 1) if gp_pct is not None else "",
             "Forecast Qty (DTC)": round(dtc_qty) if dtc_qty else "",
@@ -377,11 +427,18 @@ def write_workbook(rows: list[dict], path: Path) -> None:
     notes.append(["Asia Fit", "Yes if an 'AF'-suffixed (Asian Fit) variant of this franchise "
                                "exists anywhere in FW27/SS28 (RR-007) -- always also ABS=Yes, "
                                "since every AF style is tagged ABS Exclusive in the source data."])
-    notes.append(["Status FW27 / Status SS28", "Carry Over / New / Update, from the forecast "
-                                                 "files' Status field -- shown per season since a "
-                                                 "franchise can differ between them (e.g. New in "
-                                                 "FW27, Carry Over in SS28). Blank if no forecast "
-                                                 "row matched that season (see RR-014)."])
+    notes.append(["Status FW27 / Status SS28 / Status FW28", "Carry Over / New / Update, from the "
+                                                 "forecast files' Status field -- shown per season "
+                                                 "since a franchise can differ between them (e.g. "
+                                                 "New in FW27, Carry Over in SS28). Blank if no "
+                                                 "forecast row matched that season (RR-014). "
+                                                 "Status FW28 is blank for EVERY franchise -- no "
+                                                 "FW28 forecast file exists yet (RR-026)."])
+    notes.append(["Active in FW28", "Y if any of this franchise's styles are Active=True in the "
+                                      "FW28 Assortment Plan (received 2-Nov-2026, RR-026). That "
+                                      "file is Apparel-only -- a franchise with no Apparel styles "
+                                      "cannot show Y here regardless of its FW28 plans for other "
+                                      "layers, because no such data exists yet."])
     notes.append(["Forecast Qty / GP% (total, DTC, Wholesale)", "Summed across every style and "
                                                                   "season rolled into the "
                                                                   "franchise, from the two "
