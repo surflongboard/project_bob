@@ -220,6 +220,18 @@ a { color: var(--accent); }
   color: var(--fg);
   font: inherit;
 }
+.threshold-group { display: flex; align-items: center; gap: 5px; }
+.threshold-group label { font-size: 11.5px; color: var(--fg-muted); white-space: nowrap; }
+.threshold-input {
+  width: 72px;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 7px 8px;
+  color: var(--fg);
+  font: inherit;
+}
+.threshold-input:not(:placeholder-shown) { border-color: var(--accent); color: var(--accent); font-weight: 600; }
 .toggle-btn {
   border: 1px solid var(--border);
   background: var(--bg-raised);
@@ -546,6 +558,14 @@ textarea.action-note {
     </select>
     <button class="toggle-btn" id="generationAgeToggle" type="button">Generation age</button>
     <button class="toggle-btn" id="newFranchiseToggle" type="button">New franchise</button>
+    <div class="threshold-group">
+      <label for="minSales2026">2026 Sales ≥</label>
+      <input type="number" id="minSales2026" class="threshold-input" placeholder="e.g. 10000" min="0" step="100">
+    </div>
+    <div class="threshold-group">
+      <label for="minGp2026">2026 GP% ≥</label>
+      <input type="number" id="minGp2026" class="threshold-input" placeholder="e.g. 50" min="0" max="100" step="1">
+    </div>
   </div>
 </div>
 
@@ -620,9 +640,24 @@ textarea.action-note {
     return true;
   }
 
+  // RR-045 -- threshold filter for Tier categorisation ("2026 sales 10k above, GP% 50 above"):
+  // a franchise with no 2026 data at all doesn't meet a threshold that's actually set (there's
+  // nothing to compare), same "blank not zero" spirit as the rest of this board -- it just means
+  // excluded from THIS filter, not that its real value is 0.
+  function matchesThresholds(d) {
+    var y = (d.historicalSales && d.historicalSales["2026"]) || null;
+    if (state.minSales2026 != null) {
+      if (!y || y.units == null || y.units < state.minSales2026) return false;
+    }
+    if (state.minGp2026 != null) {
+      if (!y || y.gpPct == null || y.gpPct < state.minGp2026) return false;
+    }
+    return true;
+  }
+
   // ---------- state ----------
   var state = { layerKey: LAYERS.length ? LAYERS[0].key : null, search: "", sort: "priority",
-    flagGenerationAge: false, flagNewFranchise: false,
+    flagGenerationAge: false, flagNewFranchise: false, minSales2026: null, minGp2026: null,
     season: "all", view: "board" };
   var decisions = {}; // slug -> {tier, action, updatedAt}
 
@@ -924,6 +959,7 @@ textarea.action-note {
           (state.flagNewFranchise && d.newKind === "franchise");
         if (!matchesFlag) return false;
       }
+      if (!matchesThresholds(d)) return false;
       if (state.search && d.franchise.toLowerCase().indexOf(state.search) === -1) return false;
       return true;
     });
@@ -1089,6 +1125,14 @@ textarea.action-note {
   newFranchiseToggle.addEventListener("click", function () {
     state.flagNewFranchise = !state.flagNewFranchise;
     newFranchiseToggle.classList.toggle("active", state.flagNewFranchise);
+    renderBoard();
+  });
+  document.getElementById("minSales2026").addEventListener("input", function (e) {
+    state.minSales2026 = e.target.value === "" ? null : Number(e.target.value);
+    renderBoard();
+  });
+  document.getElementById("minGp2026").addEventListener("input", function (e) {
+    state.minGp2026 = e.target.value === "" ? null : Number(e.target.value);
     renderBoard();
   });
 
