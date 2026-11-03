@@ -64,7 +64,7 @@ import ss26_lib as lib  # noqa: E402
 
 IP_DIR = REPO_ROOT / "data" / "inventory_planning"
 sys.path.insert(0, str(IP_DIR / "scripts"))
-from build_generation_release_timeline import build_generation_table  # noqa: E402
+from build_generation_release_timeline import build_generation_table, season_key, seasons_between  # noqa: E402
 
 GENERATION_AGE_FLAG_SEASONS = 4  # RR-029/IP-011/RR-030 -- no confirmed renewal cadence exists; 4
                                   # seasons (2 years, user-set 3-Nov-2026, was 6) is a judgment
@@ -143,31 +143,56 @@ def load_tail_styles_by_base() -> dict[str, list[dict]]:
     return dict(by_base)
 
 
-def load_generation_age_by_base() -> dict[str, dict]:
-    """Per active-range franchise: how old its CURRENT generation is, from the
-    Product master file's own release-season field (IP-011) -- richer than
-    IP-005's old stock-snapshot proxy (removed from this script, RR-032;
-    applies to every franchise here, not just multi-generation ones -- a
-    single-generation product can still be old). Also flags whether this generation's own
-    Release Season is SS28/FW28 -- i.e. it just launched (RR-029's "too early
-    to signal an ending" case, reused here for the Board's "New in season"
-    chip rather than re-derived)."""
+_GEN_RANK = {"": 0, "Generation 1": 0, "2.0": 1, "II": 1, "III": 2, "IV": 3}
+
+
+def load_generation_age_by_base(historical_sales_by_base_and_gen: dict[str, dict]) -> dict[str, dict]:
+    """Per active-range franchise: how old its CURRENT generation is (catalog label, for the
+    "New generation" chip) AND how old whatever is ACTUALLY SELLING is (for the "Generation age"
+    alert) -- RR-041, these can diverge badly. IP-011's Release Season is when a generation was
+    added to the Product master/catalog, not when it actually launched in the market: "Rosson
+    Mid II Jacket/Hood" is catalogued since SS27 (2 seasons old) but has sold a grand total of 5
+    sample units (all in an excluded market) through Oct 2026 -- every real unit sold in
+    2024-2026 is still under the Generation-1 codes, which released FW24 (7 seasons old). Found
+    from a user question on the Board, 3-Nov-2026 ("seems they are around +3 years given the
+    historical data... why aren't they flagged +4?") -- checked and confirmed 22 active-range
+    franchises have this same pattern (catalog-current generation with ZERO real sales anywhere).
+    User direction: age whichever generation is ACTUALLY selling, not the catalog's latest.
+    Walks from the newest generation down (by `_GEN_RANK`) until it finds one with real recorded
+    sales (`historical_sales_by_base_and_gen`, RR-037/RR-039's per-generation sales, matched by
+    the same sales-side version-token bucket) -- falls back to the catalog-current generation
+    only if NONE of a franchise's generations have any recorded sales at all."""
     gen_table = build_generation_table()
-    by_base = {}
+    by_franchise: dict[str, list[dict]] = defaultdict(list)
     for r in gen_table:
-        if r["Is Current Generation"] != "Y":
-            continue
-        by_base[r["Franchise"]] = {
-            "label": r["Generation"],
-            "releaseSeason": r["Release Season"],
-            "ageSeasons": r["Seasons Since Release (as of SS28)"] if isinstance(
-                r["Seasons Since Release (as of SS28)"], int) else None,
-            "isNew": r["Release Season"] in ("SS28", "FW28"),
+        by_franchise[r["Franchise"]].append(r)
+
+    by_base = {}
+    for base, rows in by_franchise.items():
+        rows_sorted = sorted(rows, key=lambda r: _GEN_RANK.get(r["Generation"], 99))
+        catalog_cur = next((r for r in rows_sorted if r["Is Current Generation"] == "Y"), rows_sorted[-1])
+        sales_for_base = historical_sales_by_base_and_gen.get(base, {})
+
+        def has_real_sales(row):
+            sales_key = "" if row["Generation"] in ("", "Generation 1") else row["Generation"]
+            years = sales_for_base.get(sales_key, {})
+            return sum(y.get("units", 0) for y in years.values()) > 0
+
+        effective = next((r for r in reversed(rows_sorted) if has_real_sales(r)), None)
+        if effective is None:
+            effective = catalog_cur
+
+        by_base[base] = {
+            "label": catalog_cur["Generation"],
+            "releaseSeason": catalog_cur["Release Season"],
+            "isNew": catalog_cur["Release Season"] in ("SS28", "FW28"),
+            "ageLabel": effective["Generation"],
+            "ageReleaseSeason": effective["Release Season"],
+            "ageSeasons": seasons_between(season_key(effective["Release Season"]), season_key("SS28"))
+                          if effective["Release Season"] else None,
+            "agedByPreviousGeneration": effective is not catalog_cur,
         }
     return by_base
-
-
-_GEN_RANK = {"": 0, "2.0": 1, "II": 1, "III": 2, "IV": 3}
 
 
 def load_historical_sales_by_generation_by_base(by_base_gen: dict[str, dict]) -> dict[str, list[dict]]:
@@ -195,10 +220,11 @@ def build() -> list[dict]:
     moq_by_base = load_moq_by_base()
     inventory_by_base = load_inventory_by_base()
     tail_styles_by_base = load_tail_styles_by_base()
-    generation_age_by_base = load_generation_age_by_base()
     historical_sales_by_base = build_historical_sales_by_base()
+    historical_sales_by_base_and_gen = build_historical_sales_by_base_and_generation()
+    generation_age_by_base = load_generation_age_by_base(historical_sales_by_base_and_gen)
     historical_sales_by_gen_by_base = load_historical_sales_by_generation_by_base(
-        build_historical_sales_by_base_and_generation())
+        historical_sales_by_base_and_gen)
 
     out = []
     for r in franchise_rows:
@@ -292,8 +318,15 @@ def build() -> list[dict]:
             "availableStockTail": inv.get("available_not_active", 0),
             "skusNotInRange": inv.get("skus_not_in_range", 0),
             "tailStyles": tail_styles,
-            "generationLabel": age["label"] if age else "",  # IP-011 -- current generation's own label, e.g. "III"
+            "generationLabel": age["label"] if age else "",  # IP-011 -- CATALOG-current generation's own label, e.g. "III" (chip/hint only)
             "generationReleaseSeason": age["releaseSeason"] if age else "",
+            # RR-041 -- the generation actually used for the age alert/flag may NOT be the
+            # catalog-current one above, if that generation has never actually sold (see
+            # load_generation_age_by_base's docstring). ageGenerationLabel/ageGenerationReleaseSeason
+            # are what the age alert displays; agedByPreviousGeneration flags when a fallback happened.
+            "ageGenerationLabel": age["ageLabel"] if age else "",
+            "ageGenerationReleaseSeason": age["ageReleaseSeason"] if age else "",
+            "agedByPreviousGeneration": age["agedByPreviousGeneration"] if age else False,
             "generationAgeSeasons": age_seasons,
             "generationAgeFlag": age_seasons is not None and age_seasons >= GENERATION_AGE_FLAG_SEASONS,
             "isNewInSeason": is_new,  # RR-029 -- first season for this generation (or brand-new FW28 launch)

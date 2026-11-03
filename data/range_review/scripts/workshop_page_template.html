@@ -792,10 +792,21 @@ textarea.action-note {
       // IP-011 -- real per-code release-season field (Product master), not a stock-file
       // proxy. Flags only the current generation's own age, independent of whether the
       // franchise has 2+ generations at all -- a single-generation product can still be old.
+      // RR-041 -- aged off whichever generation is ACTUALLY SELLING, not necessarily the
+      // catalog-current one: a generation can be in the Product master for seasons before it
+      // has any real sell-through (e.g. "Rosson Mid II" catalogued SS27, only 5 sample units
+      // sold through Oct 2026) -- ageing THAT would under-report by years. When a fallback to
+      // an older generation happened (agedByPreviousGeneration), the card says so explicitly.
+      var ageNote = d.agedByPreviousGeneration
+        ? " Catalog shows <strong>" + escapeHtml(d.generationLabel || "a newer generation") +
+          "</strong> (released " + escapeHtml(d.generationReleaseSeason) + ") but it has no real sales yet — " +
+          "aged using what's actually selling instead."
+        : "";
       alerts += '<div class="alert age"><div class="alert-line">Current generation' +
-        (d.generationLabel ? " (<strong>" + escapeHtml(d.generationLabel) + "</strong>)" : "") +
-        " released " + escapeHtml(d.generationReleaseSeason) + " — <strong>" + d.generationAgeSeasons +
-        " seasons old</strong> as of SS28. No confirmed renewal cadence exists — flagged for the team to judge, not a rule.</div></div>";
+        (d.ageGenerationLabel ? " (<strong>" + escapeHtml(d.ageGenerationLabel) + "</strong>)" : "") +
+        " released " + escapeHtml(d.ageGenerationReleaseSeason) + " — <strong>" + d.generationAgeSeasons +
+        " seasons old</strong> as of SS28." + ageNote +
+        " No confirmed renewal cadence exists — flagged for the team to judge, not a rule.</div></div>";
     }
 
     var activity = d.consumerActivity ? '<div class="activity-row">' + escapeHtml(d.consumerActivity) + "</div>" : "";
