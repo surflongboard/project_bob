@@ -525,6 +525,7 @@ textarea.action-note {
     <button type="button" data-season="all" class="active">All seasons</button>
     <button type="button" data-season="FW27">FW27</button>
     <button type="button" data-season="SS28">SS28</button>
+    <button type="button" data-season="FW28">FW28</button>
   </div>
   <div class="board-controls" id="boardControls">
     <input type="search" id="searchBox" placeholder="Search franchise…">
@@ -534,7 +535,6 @@ textarea.action-note {
       <option value="forecast">Forecast Qty, high to low</option>
       <option value="gp">GP%, high to low</option>
     </select>
-    <button class="toggle-btn" id="discrepancyToggle" type="button">SS28 forecast discrepancy</button>
     <button class="toggle-btn" id="generationAgeToggle" type="button">Generation age</button>
   </div>
 </div>
@@ -595,20 +595,24 @@ textarea.action-note {
   }
 
   function needsDecision(d) {
-    // availableStockTail dropped from this check 3-Nov-2026 (RR-031) -- overstock review
-    // moved to the Inventory Planning workstream, no longer a Board decision driver.
-    return d.hasForecastDiscrepancy;
+    // availableStockTail dropped 3-Nov-2026 (RR-031, overstock moved to Inventory Planning).
+    // hasForecastDiscrepancy dropped same day (RR-033, being resolved separately) -- no
+    // remaining signal feeds this for now; kept as a function (not deleted) so the layer-nav
+    // flag dot, priority sort, and Summary panel's "Flagged but still undecided" section have
+    // somewhere to plug back into once a new Board-level decision flag exists.
+    return false;
   }
 
   function matchesSeason(d, season) {
     if (season === "FW27") return d.activeFW27;
     if (season === "SS28") return d.activeSS28;
+    if (season === "FW28") return d.activeFW28;
     return true;
   }
 
   // ---------- state ----------
   var state = { layerKey: LAYERS.length ? LAYERS[0].key : null, search: "", sort: "priority",
-    flagDiscrepancy: false, flagGenerationAge: false,
+    flagGenerationAge: false,
     season: "all", view: "board" };
   var decisions = {}; // slug -> {tier, action, updatedAt}
 
@@ -715,9 +719,11 @@ textarea.action-note {
     // on THAT reconciliation question even though the round itself is now settled).
     var forecastLabel = state.season === "FW27" ? "Forecast Qty (FW27 FC3)" :
       state.season === "SS28" ? "Forecast Qty (SS28 FC1)" :
+      state.season === "FW28" ? "Forecast Qty (FW28 — none yet)" :
       "Forecast Qty (FW27 FC3 + SS28 FC1)";
     var gpLabel = state.season === "FW27" ? "GP% (FW27 FC3)" :
       state.season === "SS28" ? "GP% (SS28 FC1)" :
+      state.season === "FW28" ? "GP% (FW28 — none yet)" :
       "GP% blended (FC3 + FC1)";
 
     var chips = "";
@@ -742,12 +748,12 @@ textarea.action-note {
     var alerts = "";
     if (d.moq && d.moq.length) {
       var lines = d.moq.map(function (m) {
+        // The "doesn't reconcile with this FC1 demand" note (RR-023) was removed from this line
+        // 3-Nov-2026 (RR-033) -- the SS28 forecast discrepancy is being resolved separately,
+        // not surfaced on the Board for now; m.hasDiscrepancy/m.ss28CsvQty are still carried in
+        // workshop_data.json, just unused here.
         var line = '<div class="alert-line"><strong>' + escapeHtml(m.style) + "</strong> — demand SS28 FC1 " + fmtQty(m.demand_fc1) +
           " / Style MOQ " + fmtQty(m.moq_style) + " (short " + fmtQty(m.shortfall) + "). " + escapeHtml(m.merch_comment);
-        if (m.hasDiscrepancy) {
-          line += " SS28 forecast file shows " + (m.ss28CsvQty == null ? "no matching code" : fmtQty(m.ss28CsvQty) + " units") +
-            " — doesn't reconcile with this FC1 demand (RR-023).";
-        }
         return line + "</div>";
       }).join("");
       alerts += '<div class="alert moq">' + lines + "</div>";
@@ -826,11 +832,13 @@ textarea.action-note {
   function seasonQty(d) {
     if (state.season === "FW27") return d.forecastQtyFW27;
     if (state.season === "SS28") return d.forecastQtySS28;
+    if (state.season === "FW28") return null;  // RR-026/RR-034 -- no FW28 forecast file exists yet
     return d.forecastQty;
   }
   function seasonGP(d) {
     if (state.season === "FW27") return d.forecastGPFW27;
     if (state.season === "SS28") return d.forecastGPSS28;
+    if (state.season === "FW28") return null;
     return d.forecastGP;
   }
 
@@ -860,9 +868,8 @@ textarea.action-note {
 
     var items = current.items.filter(function (d) {
       if (!matchesSeason(d, state.season)) return false;
-      if (state.flagDiscrepancy || state.flagGenerationAge) {
-        var matchesFlag = (state.flagDiscrepancy && d.hasForecastDiscrepancy) ||
-          (state.flagGenerationAge && d.generationAgeFlag);
+      if (state.flagGenerationAge) {
+        var matchesFlag = d.generationAgeFlag;
         if (!matchesFlag) return false;
       }
       if (state.search && d.franchise.toLowerCase().indexOf(state.search) === -1) return false;
@@ -1020,12 +1027,6 @@ textarea.action-note {
     state.sort = e.target.value;
     renderBoard();
   });
-  var discrepancyToggle = document.getElementById("discrepancyToggle");
-  discrepancyToggle.addEventListener("click", function () {
-    state.flagDiscrepancy = !state.flagDiscrepancy;
-    discrepancyToggle.classList.toggle("active", state.flagDiscrepancy);
-    renderBoard();
-  });
   var generationAgeToggle = document.getElementById("generationAgeToggle");
   generationAgeToggle.addEventListener("click", function () {
     state.flagGenerationAge = !state.flagGenerationAge;
@@ -1073,7 +1074,6 @@ textarea.action-note {
 
   document.getElementById("footerNote").textContent =
     DATA.length + " franchises across " + LAYERS.length + " layers · " +
-    DATA.filter(function (d) { return d.hasForecastDiscrepancy; }).length + " with an SS28 forecast discrepancy · " +
     DATA.filter(function (d) { return d.generationAgeFlag; }).length + " with an aging current generation (IP-011) · " +
     DATA.filter(function (d) { return d.isNewInSeason; }).length + " new in SS28/FW28 · " +
     "data as of 29 Oct 2026";
