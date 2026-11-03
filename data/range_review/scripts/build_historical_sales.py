@@ -89,28 +89,36 @@ def base_of(article: str) -> str:
     return lib.base_name(stripped)
 
 
-def load_2024_from_old_file() -> dict[str, dict]:
+def gen_of(article: str) -> str:
+    """Raw version token ('', 'II', 'III', 'IV'...) -- the generation bucket a sale belongs to,
+    not yet relabeled to 'Generation 1' (that's only meaningful once we know the franchise has
+    2+ generations, done downstream in build_workshop_data.py, same convention as IP-011)."""
+    stripped, _ = strip_special_edition(article)
+    return lib.version_token(stripped) or ""
+
+
+def load_2024_from_old_file() -> dict[tuple[str, str], dict]:
     wb = openpyxl.load_workbook(OLD_2024_PATH, read_only=True, data_only=True)
     ws = wb["2024"]
     rows = ws.iter_rows(values_only=True)
     next(rows)  # header
-    agg: dict[str, list[float]] = defaultdict(lambda: [0.0, 0.0, 0.0])  # sek, units, margin
+    agg: dict[tuple[str, str], list[float]] = defaultdict(lambda: [0.0, 0.0, 0.0])  # sek, units, margin
     for r in rows:
         article, customer_group = r[5], r[3]
         if not article or article == "Total":
             continue
         if not lib.is_core_customer_group(customer_group):
             continue
-        base = base_of(article)
-        a = agg[base]
+        key = (base_of(article), gen_of(article))
+        a = agg[key]
         a[0] += r[7] or 0   # Garp SEK Sales
         a[1] += r[9] or 0   # Units Sold
         a[2] += r[15] or 0  # Garp SEK Margin
-    return {b: {"sek": v[0], "units": v[1], "margin": v[2]} for b, v in agg.items()}
+    return {k: {"sek": v[0], "units": v[1], "margin": v[2]} for k, v in agg.items()}
 
 
-def load_year_from_new_csvs(filenames: list[str]) -> dict[str, dict]:
-    agg: dict[str, list[float]] = defaultdict(lambda: [0.0, 0.0, 0.0])
+def load_year_from_new_csvs(filenames: list[str]) -> dict[tuple[str, str], dict]:
+    agg: dict[tuple[str, str], list[float]] = defaultdict(lambda: [0.0, 0.0, 0.0])
     for fn in filenames:
         path = SALES_DIR / fn
         with open(path, newline="", encoding="utf-8-sig") as f:
@@ -122,8 +130,8 @@ def load_year_from_new_csvs(filenames: list[str]) -> dict[str, dict]:
                     continue
                 if not lib.is_core_market(market):
                     continue
-                base = base_of(article)
-                a = agg[base]
+                key = (base_of(article), gen_of(article))
+                a = agg[key]
                 try:
                     a[0] += float(row[11]) if row[11] else 0.0  # Garp SEK Sales
                 except ValueError:
@@ -136,23 +144,23 @@ def load_year_from_new_csvs(filenames: list[str]) -> dict[str, dict]:
                     a[2] += float(row[13]) if row[13] else 0.0  # Garp SEK Margin
                 except ValueError:
                     pass
-    return {b: {"sek": v[0], "units": v[1], "margin": v[2]} for b, v in agg.items()}
+    return {k: {"sek": v[0], "units": v[1], "margin": v[2]} for k, v in agg.items()}
 
 
-def build_by_base() -> dict[str, dict]:
-    """base -> {2024: {...}, 2025: {...}, 2026: {...}}, each with units/sek/margin/gpPct."""
+def _load_all_years_by_base_and_gen() -> dict[tuple[str, str], dict]:
+    """(base, generation) -> {2024: {...}, 2025: {...}, 2026: {...}}, each with units/gpPct/sek."""
     by_year = {
         2024: load_2024_from_old_file(),
         2025: load_year_from_new_csvs(NEW_CSV_YEARS[2025]),
         2026: load_year_from_new_csvs(NEW_CSV_YEARS[2026]),
     }
-    out: dict[str, dict] = defaultdict(dict)
+    out: dict[tuple[str, str], dict] = defaultdict(dict)
     for year, data in by_year.items():
-        for base, v in data.items():
+        for key, v in data.items():
             gp_pct = (v["margin"] / v["sek"] * 100) if v["sek"] else None
             if gp_pct is not None and v["sek"] < lib.MIN_RELIABLE:
                 gp_pct = None  # small-denominator convention -- blank, not a misleading number
-            out[base][year] = {
+            out[key][year] = {
                 "units": round(v["units"]) if v["units"] else 0,
                 "gpPct": round(gp_pct, 1) if gp_pct is not None else None,
                 "sek": round(v["sek"]),
@@ -160,29 +168,91 @@ def build_by_base() -> dict[str, dict]:
     return dict(out)
 
 
-def write_workbook(by_base: dict[str, dict], path: Path) -> None:
+def build_by_base() -> dict[str, dict]:
+    """base -> {2024: {...}, 2025: {...}, 2026: {...}}, BLENDED across every generation sold
+    under that base -- the franchise's whole historical total, same as before 3-Nov-2026's
+    per-generation split was added (RR-039)."""
+    by_base_gen = _load_all_years_by_base_and_gen()
+    out: dict[str, dict] = defaultdict(lambda: defaultdict(lambda: {"units": 0, "sek": 0, "_margin": 0.0}))
+    for (base, _gen), years in by_base_gen.items():
+        for year, v in years.items():
+            o = out[base][year]
+            o["units"] += v["units"]
+            o["sek"] += v["sek"]
+            o["_margin"] += (v["sek"] * (v["gpPct"] / 100)) if v["gpPct"] is not None else 0.0
+    result: dict[str, dict] = {}
+    for base, years in out.items():
+        result[base] = {}
+        for year, v in years.items():
+            gp_pct = (v["_margin"] / v["sek"] * 100) if v["sek"] else None
+            if gp_pct is not None and v["sek"] < lib.MIN_RELIABLE:
+                gp_pct = None
+            result[base][year] = {"units": v["units"], "sek": v["sek"],
+                                   "gpPct": round(gp_pct, 1) if gp_pct is not None else None}
+    return result
+
+
+def build_by_base_and_generation() -> dict[str, dict]:
+    """base -> {generation_token ('' for no-token, 'II', 'III', ...): {2024: {...}, ...}} --
+    the SAME source data as build_by_base(), not blended, so a franchise's sales can be shown
+    broken out by generation (RR-039 -- "show the previous generation's sales too, so you know
+    as one franchise what's the historic sales"). Generation-token relabeling to "Generation 1"
+    happens downstream (build_workshop_data.py), same convention as IP-011/RR-025."""
+    by_base_gen = _load_all_years_by_base_and_gen()
+    out: dict[str, dict] = defaultdict(dict)
+    for (base, gen), years in by_base_gen.items():
+        out[base][gen] = years
+    return dict(out)
+
+
+def write_workbook(by_base: dict[str, dict], by_base_gen: dict[str, dict], path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     wb = openpyxl.Workbook()
     wb.remove(wb.active)
 
-    ws = wb.create_sheet("Historical Sales By Franchise")
+    def write_sheet(title: str, headers: list[str], data_rows: list[list]) -> None:
+        ws = wb.create_sheet(title)
+        ws.append(headers)
+        for cell in ws[1]:
+            cell.font = Font(bold=True, color="FFFFFF")
+            cell.fill = PatternFill("solid", fgColor="4472C4")
+        for row in data_rows:
+            ws.append(row)
+        for i, h in enumerate(headers, start=1):
+            ws.column_dimensions[get_column_letter(i)].width = max(len(h) + 2, 14)
+        ws.freeze_panes = "A2"
+        ws.auto_filter.ref = ws.dimensions
+
     headers = ["Franchise (base)", "2024 Units", "2024 GP%", "2024 SEK",
                "2025 Units", "2025 GP%", "2025 SEK",
                "2026 YTD Units", "2026 YTD GP%", "2026 YTD SEK"]
-    ws.append(headers)
-    for cell in ws[1]:
-        cell.font = Font(bold=True, color="FFFFFF")
-        cell.fill = PatternFill("solid", fgColor="4472C4")
+    rows = []
     for base in sorted(by_base):
         row = [base]
         for year in (2024, 2025, 2026):
             v = by_base[base].get(year, {})
             row += [v.get("units", ""), v.get("gpPct", ""), v.get("sek", "")]
-        ws.append(row)
-    for i, h in enumerate(headers, start=1):
-        ws.column_dimensions[get_column_letter(i)].width = max(len(h) + 2, 14)
-    ws.freeze_panes = "A2"
-    ws.auto_filter.ref = ws.dimensions
+        rows.append(row)
+    write_sheet("Historical Sales By Franchise", headers, rows)
+
+    # RR-039 -- same data, NOT blended across generations, so a multi-generation franchise's
+    # history can be read generation by generation (e.g. Gen 1's declining sales alongside a
+    # new "II"/"III" generation just starting to ramp up), not just as one combined number.
+    gen_headers = ["Franchise (base)", "Generation", "2024 Units", "2024 GP%",
+                   "2025 Units", "2025 GP%", "2026 YTD Units", "2026 YTD GP%"]
+    gen_rows = []
+    rank = {"": 0, "2.0": 1, "II": 1, "III": 2, "IV": 3}
+    for base in sorted(by_base_gen):
+        gens = by_base_gen[base]
+        multi_gen = len(gens) > 1
+        for gen in sorted(gens, key=lambda g: rank.get(g, 99)):
+            label = (gen or "Generation 1") if multi_gen else gen
+            row = [base, label]
+            for year in (2024, 2025, 2026):
+                v = gens[gen].get(year, {})
+                row += [v.get("units", ""), v.get("gpPct", "")]
+            gen_rows.append(row)
+    write_sheet("Historical Sales By Generation", gen_headers, gen_rows)
 
     notes = wb.create_sheet("Notes")
     notes.append(["What this is", "Per-franchise (base-name, version-stripped) historical "
@@ -231,6 +301,16 @@ def write_workbook(by_base: dict[str, dict], path: Path) -> None:
     notes.append(["GP% blanking", f"Blank (not 0%) when that franchise-year's SEK sales are "
                                     f"under {lib.MIN_RELIABLE:,} SEK -- the shared small-"
                                     f"denominator convention. Units Sold is never blanked."])
+    notes.append(["By Generation sheet (RR-039)", "Same underlying data as the main sheet, "
+                                                     "NOT blended across generations -- one row "
+                                                     "per (franchise, generation) so a franchise "
+                                                     "currently on its 'II'/'III' generation shows "
+                                                     "its earlier generation's sales as its own "
+                                                     "row too. 'Generation 1' only labels the "
+                                                     "no-token bucket when the franchise has 2+ "
+                                                     "generations in this data; a single-generation "
+                                                     "franchise's one row is left unlabeled, same "
+                                                     "convention as IP-011/RR-025."])
     notes.append(["Status", "Provisional -- methodology is consistent and documented, but the "
                              "2025/2026 account-exclusion gap and the predecessor-generation "
                              "rollup are both judgment calls worth flagging if used for anything "
@@ -246,10 +326,13 @@ def write_workbook(by_base: dict[str, dict], path: Path) -> None:
 
 if __name__ == "__main__":
     by_base = build_by_base()
+    by_base_gen = build_by_base_and_generation()
     out_path = OUTPUTS_DIR / "Historical_Sales_By_Franchise.xlsx"
-    write_workbook(by_base, out_path)
+    write_workbook(by_base, by_base_gen, out_path)
     n_2024 = sum(1 for b in by_base if 2024 in by_base[b] and by_base[b][2024]["units"])
     n_2025 = sum(1 for b in by_base if 2025 in by_base[b] and by_base[b][2025]["units"])
     n_2026 = sum(1 for b in by_base if 2026 in by_base[b] and by_base[b][2026]["units"])
+    n_multi_gen = sum(1 for b in by_base_gen if len(by_base_gen[b]) > 1)
     print(f"{len(by_base)} franchise bases written to {out_path}")
     print(f"{n_2024} with 2024 units, {n_2025} with 2025 units, {n_2026} with 2026 YTD units")
+    print(f"{n_multi_gen} franchise bases have 2+ generations with their own sales history")

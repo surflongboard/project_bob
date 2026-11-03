@@ -712,17 +712,32 @@ textarea.action-note {
   // export's Wholesale channel is badly undercounted for 2024 specifically, confirmed against
   // the user's own unsplit master file too -- not used here). 2025/2026 are the new per-year
   // CSVs; 2026 is YTD through October only. GP% is blank (not 0%) under MIN_RELIABLE SEK.
-  function historicalSalesHtml(d) {
-    var hs = d.historicalSales || {};
-    if (!hs["2024"] && !hs["2025"] && !hs["2026"]) return "";
-    var cols = [["2024", hs["2024"]], ["2025", hs["2025"]], ["2026 YTD", hs["2026"]]].map(function (pair) {
+  function histCols(years) {
+    return [["2024", years["2024"]], ["2025", years["2025"]], ["2026 YTD", years["2026"]]].map(function (pair) {
       var label = pair[0], v = pair[1] || {};
       return '<div class="hist-col"><div class="hist-year">' + label + '</div>' +
         '<div class="hist-units">' + fmtQty(v.units) + ' units</div>' +
         '<div class="hist-gp">' + fmtPct(v.gpPct) + ' GP</div></div>';
     }).join("");
+  }
+
+  function historicalSalesHtml(d) {
+    // RR-039 -- when 2+ generations have their own sales data, show each generation's history
+    // as its own row (oldest first) instead of one blended total -- a franchise on a new "II"/
+    // "III" generation barely has sales under that name yet, so the blended number alone is
+    // almost entirely the PREVIOUS generation's and hides the transition the user wants to see.
+    var byGen = d.historicalSalesByGeneration || [];
+    if (byGen.length > 1) {
+      var rows = byGen.map(function (g) {
+        return '<div class="hist-sales"><div class="hist-sales-label">Historical sales — ' +
+          escapeHtml(g.generation) + '</div><div class="hist-cols">' + histCols(g.years) + "</div></div>";
+      }).join("");
+      return rows;
+    }
+    var hs = d.historicalSales || {};
+    if (!hs["2024"] && !hs["2025"] && !hs["2026"]) return "";
     return '<div class="hist-sales"><div class="hist-sales-label">Historical sales</div>' +
-      '<div class="hist-cols">' + cols + "</div></div>";
+      '<div class="hist-cols">' + histCols(hs) + "</div></div>";
   }
 
   function cardHtml(d) {

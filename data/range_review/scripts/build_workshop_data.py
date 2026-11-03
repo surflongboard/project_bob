@@ -53,7 +53,10 @@ RR_DIR = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(RR_DIR / "scripts"))
 from build_franchise_list import build_rows  # noqa: E402
 from build_forecast_discrepancies import load_ss28_qty_by_code  # noqa: E402
-from build_historical_sales import build_by_base as build_historical_sales_by_base  # noqa: E402
+from build_historical_sales import (  # noqa: E402
+    build_by_base as build_historical_sales_by_base,
+    build_by_base_and_generation as build_historical_sales_by_base_and_generation,
+)
 
 REPO_ROOT = RR_DIR.parents[1]
 sys.path.insert(0, str(REPO_ROOT / "data" / "ss26_portfolio_tiering" / "scripts"))
@@ -164,6 +167,29 @@ def load_generation_age_by_base() -> dict[str, dict]:
     return by_base
 
 
+_GEN_RANK = {"": 0, "2.0": 1, "II": 1, "III": 2, "IV": 3}
+
+
+def load_historical_sales_by_generation_by_base(by_base_gen: dict[str, dict]) -> dict[str, list[dict]]:
+    """RR-039 -- per franchise, a list of {generation, years} entries, oldest first, so a
+    multi-generation franchise's card can show its PREVIOUS generation's historical sales
+    alongside its current one ("as one franchise, what's the historic sales" -- the blended
+    `historicalSales` field alone hides exactly this, since a new "II"/"III" generation barely
+    has any sales yet and the blended number is almost entirely the old generation's). Only
+    returned (non-empty) when 2+ generations actually have their own sales data; a single-
+    generation franchise relies on the existing blended `historicalSales` field instead -- no
+    need to duplicate it here under a "Generation 1" label nobody asked to see twice."""
+    out: dict[str, list[dict]] = {}
+    for base, gens in by_base_gen.items():
+        if len(gens) < 2:
+            continue
+        rows = []
+        for gen in sorted(gens, key=lambda g: _GEN_RANK.get(g, 99)):
+            rows.append({"generation": gen or "Generation 1", "years": gens[gen]})
+        out[base] = rows
+    return out
+
+
 def build() -> list[dict]:
     franchise_rows = build_rows()
     moq_by_base = load_moq_by_base()
@@ -171,6 +197,8 @@ def build() -> list[dict]:
     tail_styles_by_base = load_tail_styles_by_base()
     generation_age_by_base = load_generation_age_by_base()
     historical_sales_by_base = build_historical_sales_by_base()
+    historical_sales_by_gen_by_base = load_historical_sales_by_generation_by_base(
+        build_historical_sales_by_base_and_generation())
 
     out = []
     for r in franchise_rows:
@@ -256,6 +284,7 @@ def build() -> list[dict]:
             "forecastQtySS28BottomUp": r["_forecast_ss28_qty"],
             "forecastQtyFW28": None,  # RR-026/RR-034 -- no FW28 forecast file exists yet
             "historicalSales": historical_sales_by_base.get(base, {}),  # RR-037 -- {"2024": {...}, "2025": {...}, "2026": {...}}
+            "historicalSalesByGeneration": historical_sales_by_gen_by_base.get(base, []),  # RR-039 -- only set for 2+ generations
             "imageFile": r["_image_file"],
             "moq": moq,
             "hasForecastDiscrepancy": any(m["hasDiscrepancy"] for m in moq),
