@@ -746,18 +746,10 @@ textarea.action-note {
     if (d.specialEditionNote) chips += '<span class="chip">' + escapeHtml(d.specialEditionNote) + "</span>";
 
     var alerts = "";
-    if (d.moq && d.moq.length) {
-      var lines = d.moq.map(function (m) {
-        // The "doesn't reconcile with this FC1 demand" note (RR-023) was removed from this line
-        // 3-Nov-2026 (RR-033) -- the SS28 forecast discrepancy is being resolved separately,
-        // not surfaced on the Board for now; m.hasDiscrepancy/m.ss28CsvQty are still carried in
-        // workshop_data.json, just unused here.
-        var line = '<div class="alert-line"><strong>' + escapeHtml(m.style) + "</strong> — demand SS28 FC1 " + fmtQty(m.demand_fc1) +
-          " / Style MOQ " + fmtQty(m.moq_style) + " (short " + fmtQty(m.shortfall) + "). " + escapeHtml(m.merch_comment);
-        return line + "</div>";
-      }).join("");
-      alerts += '<div class="alert moq">' + lines + "</div>";
-    }
+    // MOQ/demand-discrepancy alert removed from the card 3-Nov-2026 (RR-035) -- too much info
+    // on the card for now, per the user; `d.moq` (demand_fc1/moq_style/shortfall/merch_comment/
+    // hasDiscrepancy/ss28CsvQty) is still carried in workshop_data.json unchanged, just unused
+    // here. FW28 forecast/MOQ stat tiles are planned once an FW28 forecast file exists (RR-034).
     // Non-active item overstock / old-generation-stock alert removed from the Board 3-Nov-2026
     // (RR-031) -- moving to the Inventory Planning workstream's own discussion instead; the
     // availableStockTail/tailStyles data is still computed and carried in workshop_data.json,
