@@ -52,6 +52,11 @@ import ss26_lib as lib  # noqa: E402
 IP_DIR = REPO_ROOT / "data" / "inventory_planning"
 sys.path.insert(0, str(IP_DIR / "scripts"))
 from build_generation_timeline import load_generation_groups, aggregate_by_generation  # noqa: E402
+from build_generation_release_timeline import build_generation_table  # noqa: E402
+
+GENERATION_AGE_FLAG_SEASONS = 6  # RR-029/IP-011 -- no confirmed renewal cadence exists; 6 seasons
+                                  # (3 years) is a judgment call for both the card alert and the
+                                  # "Generation age" toggle, not a business rule -- adjust freely.
 
 OUTPUTS_DIR = RR_DIR / "outputs"
 MOQ_PATH = OUTPUTS_DIR / "SS28_MOQ_Exceptions.xlsx"
@@ -153,12 +158,37 @@ def load_generation_timeline_by_base() -> dict[str, list[dict]]:
     return multi_gen
 
 
+def load_generation_age_by_base() -> dict[str, dict]:
+    """Per active-range franchise: how old its CURRENT generation is, from the
+    Product master file's own release-season field (IP-011) -- richer than
+    load_generation_timeline_by_base()'s stock-snapshot proxy above (applies
+    to every franchise, not just multi-generation ones; a single-generation
+    product can still be old). Also flags whether this generation's own
+    Release Season is SS28/FW28 -- i.e. it just launched (RR-029's "too early
+    to signal an ending" case, reused here for the Board's "New in season"
+    chip rather than re-derived)."""
+    gen_table = build_generation_table()
+    by_base = {}
+    for r in gen_table:
+        if r["Is Current Generation"] != "Y":
+            continue
+        by_base[r["Franchise"]] = {
+            "label": r["Generation"],
+            "releaseSeason": r["Release Season"],
+            "ageSeasons": r["Seasons Since Release (as of SS28)"] if isinstance(
+                r["Seasons Since Release (as of SS28)"], int) else None,
+            "isNew": r["Release Season"] in ("SS28", "FW28"),
+        }
+    return by_base
+
+
 def build() -> list[dict]:
     franchise_rows = build_rows()
     moq_by_base = load_moq_by_base()
     inventory_by_base = load_inventory_by_base()
     tail_styles_by_base = load_tail_styles_by_base()
     generation_timeline_by_base = load_generation_timeline_by_base()
+    generation_age_by_base = load_generation_age_by_base()
 
     out = []
     for r in franchise_rows:
@@ -170,6 +200,21 @@ def build() -> list[dict]:
         for s in tail_styles_by_base.get(base, []):
             tail_styles.append({**s, "sameGeneration": lib.version_token(s["style"]) == franchise_version
                                  and franchise_version is not None})
+
+        age = generation_age_by_base.get(base)
+        active_fw27, active_ss28, active_fw28 = r["Active in FW27"] == "Y", r["Active in SS28"] == "Y", r["Active in FW28"] == "Y"
+        age_seasons = age["ageSeasons"] if age else None
+        # "New in season" -- either the Product master's own Release Season says so (age["isNew"]),
+        # or the franchise isn't in the Product master at all (brand-new FW28 launch, RR-029's
+        # "No Product master match" case) and FW28 is its only active season.
+        if age is not None:
+            is_new = age["isNew"]
+            new_season_label = age["releaseSeason"] if is_new else None
+        elif active_fw28 and not active_fw27 and not active_ss28:
+            is_new, new_season_label = True, "FW28"
+        else:
+            is_new, new_season_label = False, None
+
         out.append({
             "base": base,
             "franchise": r["Franchise"],
@@ -212,6 +257,12 @@ def build() -> list[dict]:
             "skusNotInRange": inv.get("skus_not_in_range", 0),
             "tailStyles": tail_styles,
             "generationTimeline": generation_timeline_by_base.get(base, []),
+            "generationLabel": age["label"] if age else "",  # IP-011 -- current generation's own label, e.g. "III"
+            "generationReleaseSeason": age["releaseSeason"] if age else "",
+            "generationAgeSeasons": age_seasons,
+            "generationAgeFlag": age_seasons is not None and age_seasons >= GENERATION_AGE_FLAG_SEASONS,
+            "isNewInSeason": is_new,  # RR-029 -- first season for this generation (or brand-new FW28 launch)
+            "newSeasonLabel": new_season_label,
         })
     return out
 
@@ -233,3 +284,10 @@ if __name__ == "__main__":
           f"{n_tail} with inventory tail, {n_images} with images")
     print(f"{n_same_gen} tail-style lines are a retired code of the SAME generation, not an older one")
     print(f"{n_gen_timeline} franchises have a multi-generation timeline (RR-025)")
+
+    n_age_known = sum(1 for d in data if d["generationAgeSeasons"] is not None)
+    n_age_flagged = sum(1 for d in data if d["generationAgeFlag"])
+    n_new = sum(1 for d in data if d["isNewInSeason"])
+    print(f"{n_age_known} franchises have a known current-generation age (IP-011); "
+          f"{n_age_flagged} flagged at {GENERATION_AGE_FLAG_SEASONS}+ seasons old")
+    print(f"{n_new} franchises are new in SS28/FW28 (first season for their current generation)")

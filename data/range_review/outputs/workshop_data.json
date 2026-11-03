@@ -40,7 +40,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW27",
+    "generationAgeSeasons": 1,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Aze Beanie",
@@ -90,7 +96,13 @@
         "sameGeneration": false
       }
     ],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "FW27",
+    "generationAgeSeasons": 1,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Brand Five Panel Cap",
@@ -140,7 +152,13 @@
         "sameGeneration": false
       }
     ],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS25",
+    "generationAgeSeasons": 6,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Haglöfs Bandana",
@@ -183,7 +201,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Haglöfs Cap",
@@ -226,7 +250,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS25",
+    "generationAgeSeasons": 6,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Haglöfs LX Hat",
@@ -269,7 +299,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS19",
+    "generationAgeSeasons": 18,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Haglöfs Neck Tube",
@@ -312,7 +348,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS28",
+    "generationAgeSeasons": 0,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "SS28"
   },
   {
     "base": "Haglöfs Trucker Cap",
@@ -355,7 +397,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS19",
+    "generationAgeSeasons": 18,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Hiking Sock",
@@ -398,7 +446,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "",
+    "generationAgeSeasons": null,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "FW28"
   },
   {
     "base": "L.I.M Pace Cap",
@@ -441,7 +495,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Mountain Cap",
@@ -484,7 +544,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Outsiders Beanie",
@@ -527,7 +593,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Rosson Beanie",
@@ -570,7 +642,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW27",
+    "generationAgeSeasons": 1,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Rosson Balaclava",
@@ -620,7 +698,13 @@
         "sameGeneration": false
       }
     ],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "FW27",
+    "generationAgeSeasons": 1,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Ski Glove",
@@ -663,7 +747,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "",
+    "generationAgeSeasons": null,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "FW28"
   },
   {
     "base": "Ski Mitten",
@@ -706,7 +796,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "",
+    "generationAgeSeasons": null,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "FW28"
   },
   {
     "base": "Ski Sock",
@@ -749,7 +845,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "",
+    "generationAgeSeasons": null,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "FW28"
   },
   {
     "base": "Solis Hat",
@@ -792,7 +894,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Stretch Webbing Belt",
@@ -835,7 +943,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS18",
+    "generationAgeSeasons": 20,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Sun Capsule Multi Cover",
@@ -878,7 +992,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS27",
+    "generationAgeSeasons": 2,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Tech Headwear",
@@ -921,7 +1041,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "",
+    "generationAgeSeasons": null,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "FW28"
   },
   {
     "base": "Thermal Beanie",
@@ -971,7 +1097,13 @@
         "sameGeneration": false
       }
     ],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW22",
+    "generationAgeSeasons": 11,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Tova Wool Beanie",
@@ -1014,7 +1146,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW27",
+    "generationAgeSeasons": 1,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Vara Alpha Cap",
@@ -1057,7 +1195,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW26",
+    "generationAgeSeasons": 3,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Vassi Beanie",
@@ -1107,7 +1251,13 @@
         "sameGeneration": false
       }
     ],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW23",
+    "generationAgeSeasons": 9,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Vassi Headband",
@@ -1150,7 +1300,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Flat accessory bag",
@@ -1193,7 +1349,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "SS28",
+    "generationAgeSeasons": 0,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "SS28"
   },
   {
     "base": "Fram 1L",
@@ -1236,7 +1398,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW26",
+    "generationAgeSeasons": 3,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Keywallet",
@@ -1279,7 +1447,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS28",
+    "generationAgeSeasons": 0,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "SS28"
   },
   {
     "base": "Lava travel tube",
@@ -1322,7 +1496,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW26",
+    "generationAgeSeasons": 3,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Magma Waist pack 3,5L",
@@ -1365,7 +1545,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS27",
+    "generationAgeSeasons": 2,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Packing cube 12L",
@@ -1408,7 +1594,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW26",
+    "generationAgeSeasons": 3,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Packing cube 8L",
@@ -1451,7 +1643,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW26",
+    "generationAgeSeasons": 3,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Raincover 15-30L",
@@ -1494,7 +1692,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Raincover 25-40L",
@@ -1537,7 +1741,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Raincover 40-60L",
@@ -1580,7 +1790,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Raincover 60-80L",
@@ -1623,7 +1839,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Shoulder pocket",
@@ -1666,7 +1888,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW26",
+    "generationAgeSeasons": 3,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Shoulder pouch",
@@ -1709,7 +1937,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW26",
+    "generationAgeSeasons": 3,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Sling pouch 2L",
@@ -1752,7 +1986,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW27",
+    "generationAgeSeasons": 1,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Tight Pocket bag",
@@ -1795,7 +2035,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Tight hip pack 1",
@@ -1838,7 +2084,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Tight hip pack 3,5",
@@ -1881,7 +2133,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Utility pouch 3L",
@@ -1924,7 +2182,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW26",
+    "generationAgeSeasons": 3,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Courier Messenger Bag",
@@ -1967,7 +2231,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW27",
+    "generationAgeSeasons": 1,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Fjatla 40",
@@ -2017,7 +2287,13 @@
         "sameGeneration": false
       }
     ],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW23",
+    "generationAgeSeasons": 9,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Fjatla 60",
@@ -2067,7 +2343,13 @@
         "sameGeneration": false
       }
     ],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW23",
+    "generationAgeSeasons": 9,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Lava 110",
@@ -2110,7 +2392,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Lava 30",
@@ -2153,7 +2441,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS18",
+    "generationAgeSeasons": 20,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Lava 50",
@@ -2196,7 +2490,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS18",
+    "generationAgeSeasons": 20,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Lava 70",
@@ -2239,7 +2539,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW18",
+    "generationAgeSeasons": 19,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Lava 90",
@@ -2282,7 +2588,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS18",
+    "generationAgeSeasons": 20,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Magma 42L",
@@ -2325,7 +2637,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Magma 65L",
@@ -2368,7 +2686,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Tight duffle 50",
@@ -2411,7 +2735,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Baselayer 3/4 Tights",
@@ -2454,7 +2784,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "",
+    "generationAgeSeasons": null,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "FW28"
   },
   {
     "base": "Baselayer Crewneck",
@@ -2497,7 +2833,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "",
+    "generationAgeSeasons": null,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "FW28"
   },
   {
     "base": "Baselayer Tights",
@@ -2540,7 +2882,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "",
+    "generationAgeSeasons": null,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "FW28"
   },
   {
     "base": "Latnja Wool 3/4 Pant",
@@ -2583,7 +2931,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW24",
+    "generationAgeSeasons": 7,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Latnja Wool Crew Neck",
@@ -2626,7 +2980,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW24",
+    "generationAgeSeasons": 7,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Latnja Wool Long John's",
@@ -2669,7 +3029,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW24",
+    "generationAgeSeasons": 7,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Kobbe Sandal Low",
@@ -2712,7 +3078,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS27",
+    "generationAgeSeasons": 2,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Backup",
@@ -2755,7 +3127,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS21",
+    "generationAgeSeasons": 14,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Corker Large",
@@ -2798,7 +3176,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS14",
+    "generationAgeSeasons": 28,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Corker Medium",
@@ -2841,7 +3225,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS14",
+    "generationAgeSeasons": 28,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Jarve Multi 22",
@@ -2891,7 +3281,13 @@
         "sameGeneration": false
       }
     ],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS24",
+    "generationAgeSeasons": 8,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Jarve Multi 28",
@@ -2941,7 +3337,13 @@
         "sameGeneration": false
       }
     ],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS24",
+    "generationAgeSeasons": 8,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Skuta 15",
@@ -2984,7 +3386,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Tight 15",
@@ -3034,7 +3442,13 @@
         "sameGeneration": false
       }
     ],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW18",
+    "generationAgeSeasons": 19,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Tight 8",
@@ -3084,7 +3498,13 @@
         "sameGeneration": false
       }
     ],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW18",
+    "generationAgeSeasons": 19,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Tight Large",
@@ -3134,7 +3554,13 @@
         "sameGeneration": false
       }
     ],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS20",
+    "generationAgeSeasons": 16,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Tight Medium",
@@ -3184,7 +3610,13 @@
         "sameGeneration": false
       }
     ],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS20",
+    "generationAgeSeasons": 16,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Tight Pro Large",
@@ -3227,7 +3659,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS14",
+    "generationAgeSeasons": 28,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Tight Pro Medium",
@@ -3270,7 +3708,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS14",
+    "generationAgeSeasons": 28,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Tight Small",
@@ -3320,7 +3764,13 @@
         "sameGeneration": false
       }
     ],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS20",
+    "generationAgeSeasons": 16,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Tight Tote 25",
@@ -3363,7 +3813,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Tight X-Small",
@@ -3406,7 +3862,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS20",
+    "generationAgeSeasons": 16,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Vara 20L",
@@ -3449,7 +3911,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW26",
+    "generationAgeSeasons": 3,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "L.I.M Mountain Trail 25",
@@ -3492,7 +3960,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS25",
+    "generationAgeSeasons": 6,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "L.I.M Trail 15",
@@ -3535,7 +4009,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS25",
+    "generationAgeSeasons": 6,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Magma 30",
@@ -3578,7 +4058,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS27",
+    "generationAgeSeasons": 2,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Magma 50L",
@@ -3621,7 +4107,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW26",
+    "generationAgeSeasons": 3,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Magma 60L",
@@ -3664,7 +4156,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW26",
+    "generationAgeSeasons": 3,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Magma Roll-top 40 WR",
@@ -3707,7 +4205,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Vide 20",
@@ -3757,7 +4261,13 @@
         "sameGeneration": false
       }
     ],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS21",
+    "generationAgeSeasons": 14,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Vide 30",
@@ -3800,7 +4310,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS27",
+    "generationAgeSeasons": 2,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Fast Hike Low",
@@ -3843,7 +4359,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS27",
+    "generationAgeSeasons": 2,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Haglöfs Fast Hike PROOF Low",
@@ -3886,7 +4408,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW27",
+    "generationAgeSeasons": 1,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Haglöfs Horizon Hike GTX WL Mid",
@@ -3929,7 +4457,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW26",
+    "generationAgeSeasons": 3,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Haglöfs L.I.M Horizon Hike GTX Low",
@@ -3972,7 +4506,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Haglöfs L.I.M Horizon Hike GTX Mid",
@@ -4015,7 +4555,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Haglöfs L.I.M Horizon Hike Light Mid",
@@ -4058,7 +4604,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Haglöfs Ridge GTX Low",
@@ -4101,7 +4653,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Haglöfs Ridge GTX Mid",
@@ -4166,7 +4724,13 @@
         "earliestSeason": "F27",
         "latestSeason": "F27"
       }
-    ]
+    ],
+    "generationLabel": "II",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Haglöfs Rosson FG Proof Mid",
@@ -4209,7 +4773,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Haglöfs Rosson Proof Mid",
@@ -4252,7 +4822,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Haglöfs Vertigo QL PROOF Low",
@@ -4295,7 +4871,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW27",
+    "generationAgeSeasons": 1,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Vertigo Proof Low",
@@ -4338,7 +4920,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS27",
+    "generationAgeSeasons": 2,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Brandheat Insulation",
@@ -4381,7 +4969,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "",
+    "generationAgeSeasons": null,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "FW28"
   },
   {
     "base": "Breeze Mimic Hood",
@@ -4424,7 +5018,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "",
+    "generationAgeSeasons": null,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Fram Mimic Jacket",
@@ -4467,7 +5067,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW26",
+    "generationAgeSeasons": 3,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Hede Down Coat",
@@ -4510,7 +5116,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Hede Down Hood",
@@ -4553,7 +5165,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Hede Down Vest",
@@ -4596,7 +5214,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "L.I.M Down Hood Jacket",
@@ -4639,7 +5263,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS28",
+    "generationAgeSeasons": 0,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "SS28"
   },
   {
     "base": "L.I.M Down Hood",
@@ -4704,7 +5334,13 @@
         "earliestSeason": "F26",
         "latestSeason": "F27"
       }
-    ]
+    ],
+    "generationLabel": "II",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "L.I.M Mimic Barrier Hood",
@@ -4747,7 +5383,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "L.I.M Mimic Barrier Vest",
@@ -4790,7 +5432,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Long Down Parka",
@@ -4833,7 +5481,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Long Mimic Parka",
@@ -4876,7 +5530,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "III",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Lugna Softshell Overshirt",
@@ -4944,7 +5604,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW27",
+    "generationAgeSeasons": 1,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Mimic Alert Hood",
@@ -5013,7 +5679,13 @@
         "sameGeneration": false
       }
     ],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "2.0",
+    "generationReleaseSeason": "FW27",
+    "generationAgeSeasons": 1,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Mimic Alert Jacket",
@@ -5094,7 +5766,13 @@
         "sameGeneration": false
       }
     ],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "2.0",
+    "generationReleaseSeason": "FW27",
+    "generationAgeSeasons": 1,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Mimic Alert 3/4 Pant",
@@ -5137,7 +5815,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "",
+    "generationAgeSeasons": null,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "FW28"
   },
   {
     "base": "Mimic Alert Pant",
@@ -5180,7 +5864,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "",
+    "generationAgeSeasons": null,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "FW28"
   },
   {
     "base": "Mojo Down Hood",
@@ -5223,7 +5913,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW20",
+    "generationAgeSeasons": 15,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Nallo Touring Down Hood",
@@ -5266,7 +5962,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW26",
+    "generationAgeSeasons": 3,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "ROC Flash Down Hood",
@@ -5309,7 +6011,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW24",
+    "generationAgeSeasons": 7,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "ROC Flash Down Jacket",
@@ -5352,7 +6060,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW24",
+    "generationAgeSeasons": 7,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "ROC Flash Down Vest",
@@ -5395,7 +6109,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW24",
+    "generationAgeSeasons": 7,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Rosson Down Hood",
@@ -5438,7 +6158,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW24",
+    "generationAgeSeasons": 7,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Rosson Down Parka",
@@ -5481,7 +6207,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Salix Proof Mimic Parka",
@@ -5524,7 +6256,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Spitz Down Hood",
@@ -5567,7 +6305,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW24",
+    "generationAgeSeasons": 7,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Särna Mimic Hood",
@@ -5651,7 +6395,13 @@
         "earliestSeason": "F26",
         "latestSeason": "F27"
       }
-    ]
+    ],
+    "generationLabel": "II",
+    "generationReleaseSeason": "FW26",
+    "generationAgeSeasons": 3,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Särna Mimic Vest",
@@ -5694,7 +6444,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "",
+    "generationAgeSeasons": null,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Alert Mid Pant",
@@ -5737,7 +6493,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS25",
+    "generationAgeSeasons": 6,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Alert Mid Shorts",
@@ -5793,7 +6555,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Essential Tights",
@@ -5836,7 +6604,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS28",
+    "generationAgeSeasons": 0,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "SS28"
   },
   {
     "base": "Front Flex Pant",
@@ -5879,7 +6653,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS25",
+    "generationAgeSeasons": 6,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Fuse Pant",
@@ -5922,7 +6702,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS28",
+    "generationAgeSeasons": 0,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "SS28"
   },
   {
     "base": "Fuse Short",
@@ -5965,7 +6751,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS28",
+    "generationAgeSeasons": 0,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "SS28"
   },
   {
     "base": "Hede Cargo Pant",
@@ -6021,7 +6813,13 @@
         "sameGeneration": false
       }
     ],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "FW27",
+    "generationAgeSeasons": 1,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Hede Shorts",
@@ -6077,7 +6875,13 @@
         "sameGeneration": false
       }
     ],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "SS28",
+    "generationAgeSeasons": 0,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "SS28"
   },
   {
     "base": "Hiking Tights",
@@ -6120,7 +6924,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS28",
+    "generationAgeSeasons": 0,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "SS28"
   },
   {
     "base": "Korp Lite Pant",
@@ -6163,7 +6973,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS25",
+    "generationAgeSeasons": 6,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Korp Lite Shorts",
@@ -6206,7 +7022,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS25",
+    "generationAgeSeasons": 6,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "L.I.M Pace Shorts",
@@ -6262,7 +7084,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "L.I.M Windpace Hybrid Pant",
@@ -6305,7 +7133,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS28",
+    "generationAgeSeasons": 0,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "SS28"
   },
   {
     "base": "Levante Pant",
@@ -6348,7 +7182,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW26",
+    "generationAgeSeasons": 3,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Levante Shorts",
@@ -6391,7 +7231,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS27",
+    "generationAgeSeasons": 2,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Lite Standard Zip-Off Pant",
@@ -6462,7 +7308,13 @@
         "earliestSeason": "S27",
         "latestSeason": "S27"
       }
-    ]
+    ],
+    "generationLabel": "II",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Lizard Softshell Shorts",
@@ -6512,7 +7364,13 @@
         "sameGeneration": false
       }
     ],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "SS27",
+    "generationAgeSeasons": 2,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Magma Rugged Pant",
@@ -6568,7 +7426,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS25",
+    "generationAgeSeasons": 6,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Magma Rugged Wide Pant",
@@ -6611,7 +7475,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS28",
+    "generationAgeSeasons": 0,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "SS28"
   },
   {
     "base": "Mid Standard Pant",
@@ -6667,7 +7537,13 @@
         "sameGeneration": false
       }
     ],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "SS28",
+    "generationAgeSeasons": 0,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "SS28"
   },
   {
     "base": "Mid Standard Shorts",
@@ -6738,7 +7614,13 @@
         "earliestSeason": "S24",
         "latestSeason": "S25"
       }
-    ]
+    ],
+    "generationLabel": "II",
+    "generationReleaseSeason": "SS22",
+    "generationAgeSeasons": 12,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Mimic Silver Pant",
@@ -6794,7 +7676,13 @@
         "sameGeneration": false
       }
     ],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "FW27",
+    "generationAgeSeasons": 1,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "ROC Lite Slim Pant",
@@ -6865,7 +7753,13 @@
         "earliestSeason": "S26",
         "latestSeason": "S27"
       }
-    ]
+    ],
+    "generationLabel": "II",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Solis Zip Off Pant",
@@ -6921,7 +7815,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Solvik Seersucker Shorts",
@@ -6964,7 +7864,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS27",
+    "generationAgeSeasons": 2,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Sun Capsule Pant",
@@ -7007,7 +7913,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS27",
+    "generationAgeSeasons": 2,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Brisen Tech Mid",
@@ -7050,7 +7962,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "",
+    "generationAgeSeasons": null,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "FW28"
   },
   {
     "base": "Brisen Tech Mid Hood",
@@ -7093,7 +8011,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW27",
+    "generationAgeSeasons": 1,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Buteo Mid Jacket",
@@ -7164,7 +8088,13 @@
         "earliestSeason": "F26",
         "latestSeason": "F27"
       }
-    ]
+    ],
+    "generationLabel": "II",
+    "generationReleaseSeason": "FW26",
+    "generationAgeSeasons": 3,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Funäs Pile Hood",
@@ -7207,7 +8137,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Haglöfs Hoodie",
@@ -7250,7 +8186,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW26",
+    "generationAgeSeasons": 3,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Korp Mid Halfzip",
@@ -7318,7 +8260,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Korp Mid Hood",
@@ -7361,7 +8309,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Korp Mid Jacket",
@@ -7404,7 +8358,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "L.I.M Mid Hybrid",
@@ -7447,7 +8407,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS28",
+    "generationAgeSeasons": 0,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "SS28"
   },
   {
     "base": "L.I.M Mid Multi Hood",
@@ -7490,7 +8456,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 25,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "SS25",
+    "generationAgeSeasons": 6,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "L.I.M Mid Multi Jacket",
@@ -7533,7 +8505,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "L.I.M Mid Reversible Crew",
@@ -7576,7 +8554,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS28",
+    "generationAgeSeasons": 0,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "SS28"
   },
   {
     "base": "Nallo Touring Hybrid Mid",
@@ -7644,7 +8628,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW26",
+    "generationAgeSeasons": 3,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Pile Jacket",
@@ -7687,7 +8677,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "",
+    "generationAgeSeasons": null,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "FW28"
   },
   {
     "base": "Pile Vest",
@@ -7730,7 +8726,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "",
+    "generationAgeSeasons": null,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Rosson Tights",
@@ -7786,7 +8788,13 @@
         "sameGeneration": false
       }
     ],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "FW27",
+    "generationAgeSeasons": 1,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Rosson Mid Hood",
@@ -7857,7 +8865,13 @@
         "earliestSeason": "",
         "latestSeason": ""
       }
-    ]
+    ],
+    "generationLabel": "II",
+    "generationReleaseSeason": "SS27",
+    "generationAgeSeasons": 2,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Rosson Mid Jacket",
@@ -7928,7 +8942,13 @@
         "earliestSeason": "",
         "latestSeason": ""
       }
-    ]
+    ],
+    "generationLabel": "II",
+    "generationReleaseSeason": "SS27",
+    "generationAgeSeasons": 2,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Swook Mid Hood",
@@ -7971,7 +8991,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Swook Mid Jacket",
@@ -8014,7 +9040,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Swook Mid Halfzip W",
@@ -8070,7 +9102,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW27",
+    "generationAgeSeasons": 1,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Swook Mid Sweater M",
@@ -8126,7 +9164,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW27",
+    "generationAgeSeasons": 1,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Vara Alpha Sweater",
@@ -8194,7 +9238,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW26",
+    "generationAgeSeasons": 3,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Vassi Mid Hood",
@@ -8237,7 +9287,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW21",
+    "generationAgeSeasons": 13,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Latnja 18L",
@@ -8280,7 +9336,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW27",
+    "generationAgeSeasons": 1,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Nallo Pro 40L",
@@ -8323,7 +9385,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW27",
+    "generationAgeSeasons": 1,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Vassi Pro 32L",
@@ -8366,7 +9434,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW27",
+    "generationAgeSeasons": 1,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Alert GTX Jacket",
@@ -8434,7 +9508,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 5,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "SS28",
+    "generationAgeSeasons": 0,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "SS28"
   },
   {
     "base": "Alper Proof Jacket",
@@ -8477,7 +9557,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Alper Proof Pant",
@@ -8520,7 +9606,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Astral GTX Jacket",
@@ -8585,7 +9677,13 @@
         "earliestSeason": "F26",
         "latestSeason": "F27"
       }
-    ]
+    ],
+    "generationLabel": "II",
+    "generationReleaseSeason": "SS25",
+    "generationAgeSeasons": 6,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Breeze Proof Jacket",
@@ -8628,7 +9726,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 40,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS25",
+    "generationAgeSeasons": 6,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Front Proof Jacket",
@@ -8705,7 +9809,13 @@
         "earliestSeason": "S26",
         "latestSeason": "F27"
       }
-    ]
+    ],
+    "generationLabel": "II",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Holm GTX Pant",
@@ -8748,7 +9858,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "SS28",
+    "generationAgeSeasons": 0,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "SS28"
   },
   {
     "base": "Klyva GTX Jacket",
@@ -8816,7 +9932,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "SS28",
+    "generationAgeSeasons": 0,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "SS28"
   },
   {
     "base": "Korp Proof Pant",
@@ -8887,7 +10009,13 @@
         "earliestSeason": "F27",
         "latestSeason": "F27"
       }
-    ]
+    ],
+    "generationLabel": "II",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Korp Proof Jacket",
@@ -8930,7 +10058,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 25,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS23",
+    "generationAgeSeasons": 10,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "L.I.M Airak 2,5L Jacket",
@@ -8973,7 +10107,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS25",
+    "generationAgeSeasons": 6,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "L.I.M Airak 2,5L Pant",
@@ -9016,7 +10156,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS25",
+    "generationAgeSeasons": 6,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "L.I.M Airak 2,5L Proof Jacket",
@@ -9059,7 +10205,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "SS28",
+    "generationAgeSeasons": 0,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "SS28"
   },
   {
     "base": "L.I.M Airak 2,5L Proof Pant",
@@ -9102,7 +10254,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "SS28",
+    "generationAgeSeasons": 0,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "SS28"
   },
   {
     "base": "L.I.M Airak GTX Jacket",
@@ -9145,7 +10303,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS25",
+    "generationAgeSeasons": 6,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "L.I.M GTX Jacket",
@@ -9216,7 +10380,13 @@
         "earliestSeason": "",
         "latestSeason": ""
       }
-    ]
+    ],
+    "generationLabel": "III",
+    "generationReleaseSeason": "SS27",
+    "generationAgeSeasons": 2,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "L.I.M GTX Pant",
@@ -9272,7 +10442,13 @@
         "sameGeneration": false
       }
     ],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "III",
+    "generationReleaseSeason": "SS28",
+    "generationAgeSeasons": 0,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "SS28"
   },
   {
     "base": "L.I.M Light Proof Jacket",
@@ -9315,7 +10491,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS28",
+    "generationAgeSeasons": 0,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "SS28"
   },
   {
     "base": "L.I.M Windpack Hood Jacket",
@@ -9358,7 +10540,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS28",
+    "generationAgeSeasons": 0,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "SS28"
   },
   {
     "base": "Latnja GTX Insulated Jacket",
@@ -9414,7 +10602,13 @@
         "sameGeneration": false
       }
     ],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "FW27",
+    "generationAgeSeasons": 1,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Latnja GTX Insulated Pant",
@@ -9470,7 +10664,13 @@
         "sameGeneration": false
       }
     ],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "FW27",
+    "generationAgeSeasons": 1,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Ljusna Proof Parka",
@@ -9513,7 +10713,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS27",
+    "generationAgeSeasons": 2,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Nallo Touring GTX Jacket",
@@ -9556,7 +10762,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW26",
+    "generationAgeSeasons": 3,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Nallo Touring GTX Pant",
@@ -9599,7 +10811,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW26",
+    "generationAgeSeasons": 3,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Norrvind Shield Hood",
@@ -9642,7 +10860,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 35,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS27",
+    "generationAgeSeasons": 2,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Ozka Proof Jacket",
@@ -9710,7 +10934,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 10,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Ozka Proof Pant",
@@ -9778,7 +11008,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "ROC Sight GTX Jacket",
@@ -9821,7 +11057,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "",
+    "generationAgeSeasons": null,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Saulo Proof Jacket",
@@ -9864,7 +11106,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW27",
+    "generationAgeSeasons": 1,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Saulo Proof Pant",
@@ -9907,7 +11155,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW27",
+    "generationAgeSeasons": 1,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Skalvik Softshell Parka",
@@ -9950,7 +11204,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW27",
+    "generationAgeSeasons": 1,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Spitz GTX Jacket",
@@ -9993,7 +11253,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "",
+    "generationAgeSeasons": null,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "FW28"
   },
   {
     "base": "Spitz GTX Pant",
@@ -10036,7 +11302,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "",
+    "generationAgeSeasons": null,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "FW28"
   },
   {
     "base": "Spitz GTX Pro Jacket",
@@ -10092,7 +11364,13 @@
         "sameGeneration": true
       }
     ],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Tarre Proof Insulated Jacket",
@@ -10135,7 +11413,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW27",
+    "generationAgeSeasons": 1,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Tarre Proof Insulated Pant",
@@ -10178,7 +11462,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW27",
+    "generationAgeSeasons": 1,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Vara Down GTX Parka",
@@ -10221,7 +11511,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW26",
+    "generationAgeSeasons": 3,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Vassi GTX Jacket",
@@ -10298,7 +11594,13 @@
         "earliestSeason": "F25",
         "latestSeason": "F26"
       }
-    ]
+    ],
+    "generationLabel": "II",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Vassi GTX Pant",
@@ -10381,7 +11683,13 @@
         "earliestSeason": "F25",
         "latestSeason": "F27"
       }
-    ]
+    ],
+    "generationLabel": "II",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Vassi GTX Pro Bib",
@@ -10437,7 +11745,13 @@
         "sameGeneration": true
       }
     ],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Vassi GTX Pro Jacket",
@@ -10514,7 +11828,13 @@
         "earliestSeason": "F25",
         "latestSeason": "F26"
       }
-    ]
+    ],
+    "generationLabel": "II",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Yra Mimic Proof Parka",
@@ -10557,7 +11877,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW26",
+    "generationAgeSeasons": 3,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Moonlite",
@@ -10600,7 +11926,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS22",
+    "generationAgeSeasons": 12,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Moonlite +7",
@@ -10643,7 +11975,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS20",
+    "generationAgeSeasons": 16,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Moonlite -1",
@@ -10686,7 +12024,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS20",
+    "generationAgeSeasons": 16,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Musca -1",
@@ -10729,7 +12073,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS20",
+    "generationAgeSeasons": 16,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Musca -13",
@@ -10772,7 +12122,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS20",
+    "generationAgeSeasons": 16,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Musca -26",
@@ -10815,7 +12171,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW20",
+    "generationAgeSeasons": 15,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Musca -5",
@@ -10858,7 +12220,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS20",
+    "generationAgeSeasons": 16,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Tarius +1",
@@ -10901,7 +12269,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS20",
+    "generationAgeSeasons": 16,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Tarius +6",
@@ -10944,7 +12318,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS20",
+    "generationAgeSeasons": 16,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Tarius -18",
@@ -10987,7 +12367,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW20",
+    "generationAgeSeasons": 15,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Tarius -5",
@@ -11030,7 +12416,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS20",
+    "generationAgeSeasons": 16,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Tarius Lite +8",
@@ -11073,7 +12465,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS20",
+    "generationAgeSeasons": 16,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Korp Softshell Hood",
@@ -11116,7 +12514,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 30,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS27",
+    "generationAgeSeasons": 2,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Korp Softshell Pant",
@@ -11159,7 +12563,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS27",
+    "generationAgeSeasons": 2,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "ROC Sight Softshell Jacket",
@@ -11202,7 +12612,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "ROC Sight Softshell Pant",
@@ -11245,7 +12661,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Spitz Softshell Jacket",
@@ -11288,7 +12710,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "",
+    "generationAgeSeasons": null,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "FW28"
   },
   {
     "base": "Spitz Softshell Pant",
@@ -11331,7 +12759,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "",
+    "generationAgeSeasons": null,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "FW28"
   },
   {
     "base": "Warm Flex Pant",
@@ -11374,7 +12808,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW25",
+    "generationAgeSeasons": 5,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Haglöfs LS Tee",
@@ -11417,7 +12857,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS25",
+    "generationAgeSeasons": 6,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Haglöfs Tee",
@@ -11460,7 +12906,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS25",
+    "generationAgeSeasons": 6,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Kaise Wool LS Tee",
@@ -11516,7 +12968,13 @@
         "sameGeneration": false
       }
     ],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "SS28",
+    "generationAgeSeasons": 0,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "SS28"
   },
   {
     "base": "Kaise Wool Tee",
@@ -11572,7 +13030,13 @@
         "sameGeneration": false
       }
     ],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "SS28",
+    "generationAgeSeasons": 0,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "SS28"
   },
   {
     "base": "Kaise Wool Tank Top",
@@ -11628,7 +13092,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS28",
+    "generationAgeSeasons": 0,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "SS28"
   },
   {
     "base": "L.I.M Delta Crop Tee",
@@ -11671,7 +13141,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "L.I.M Delta Tee",
@@ -11714,7 +13190,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "L.I.M Light T-Shirt",
@@ -11757,7 +13239,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS28",
+    "generationAgeSeasons": 0,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "SS28"
   },
   {
     "base": "L.I.M Ridge Tank",
@@ -11800,7 +13288,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "L.I.M Ridge Tee",
@@ -11843,7 +13337,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS25",
+    "generationAgeSeasons": 6,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "L.I.M Sunpack Hoodie",
@@ -11886,7 +13386,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Outsiders Graphic Tee",
@@ -11929,7 +13435,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Outsiders Tee",
@@ -11972,7 +13484,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS25",
+    "generationAgeSeasons": 6,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Ridge Hike Tee",
@@ -12015,7 +13533,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS20",
+    "generationAgeSeasons": 16,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Ridge LS Tee",
@@ -12058,7 +13582,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "SS28",
+    "generationAgeSeasons": 0,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "SS28"
   },
   {
     "base": "Ridge Tee",
@@ -12108,7 +13638,13 @@
         "sameGeneration": false
       }
     ],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "SS28",
+    "generationAgeSeasons": 0,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "SS28"
   },
   {
     "base": "Salo Dress",
@@ -12151,7 +13687,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Salo Shirt",
@@ -12207,7 +13749,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Salo Shirt SS",
@@ -12250,7 +13798,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Selme LS Crewneck",
@@ -12318,7 +13872,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW27",
+    "generationAgeSeasons": 1,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Solvik Seersucker SS Shirt",
@@ -12361,7 +13921,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS27",
+    "generationAgeSeasons": 2,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Sun Capsule Halfzip",
@@ -12404,7 +13970,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS27",
+    "generationAgeSeasons": 2,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Trekk Tech LS Tee",
@@ -12460,7 +14032,13 @@
         "sameGeneration": false
       }
     ],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "SS28",
+    "generationAgeSeasons": 0,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "SS28"
   },
   {
     "base": "Trekk Tech Tee",
@@ -12516,7 +14094,13 @@
         "sameGeneration": false
       }
     ],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "II",
+    "generationReleaseSeason": "SS28",
+    "generationAgeSeasons": 0,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "SS28"
   },
   {
     "base": "Haglöfs L.I.M Horizon GTX Low",
@@ -12559,7 +14143,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Haglöfs L.I.M Horizon GTX Mid",
@@ -12602,7 +14192,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW27",
+    "generationAgeSeasons": 1,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Haglöfs L.I.M Horizon Low",
@@ -12645,7 +14241,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS26",
+    "generationAgeSeasons": 4,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "L.I.M Light Low",
@@ -12688,7 +14290,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS28",
+    "generationAgeSeasons": 0,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "SS28"
   },
   {
     "base": "L.I.M Ultralight GTX Low",
@@ -12731,7 +14339,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS28",
+    "generationAgeSeasons": 0,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "SS28"
   },
   {
     "base": "L.I.M Ultralight Low",
@@ -12774,7 +14388,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS28",
+    "generationAgeSeasons": 0,
+    "generationAgeFlag": false,
+    "isNewInSeason": true,
+    "newSeasonLabel": "SS28"
   },
   {
     "base": "Oxo 60 W",
@@ -12817,7 +14437,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS14",
+    "generationAgeSeasons": 28,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Oxo 80",
@@ -12860,7 +14486,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS19",
+    "generationAgeSeasons": 18,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Haglöfs Incline GTX Mid",
@@ -12903,7 +14535,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS25",
+    "generationAgeSeasons": 6,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Haglöfs Incline Pro GTX High",
@@ -12946,7 +14584,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS25",
+    "generationAgeSeasons": 6,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Haglöfs Scand GTX Mid",
@@ -12989,7 +14633,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS25",
+    "generationAgeSeasons": 6,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Haglöfs Solid Pro 2 GTX Mid",
@@ -13032,7 +14682,13 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "SS25",
+    "generationAgeSeasons": 6,
+    "generationAgeFlag": true,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   },
   {
     "base": "Haglöfs Solid Pro 2 WL GTX Mid",
@@ -13075,6 +14731,12 @@
     "availableStockTail": 0,
     "skusNotInRange": 0,
     "tailStyles": [],
-    "generationTimeline": []
+    "generationTimeline": [],
+    "generationLabel": "",
+    "generationReleaseSeason": "FW26",
+    "generationAgeSeasons": 3,
+    "generationAgeFlag": false,
+    "isNewInSeason": false,
+    "newSeasonLabel": null
   }
 ]
