@@ -13126,23 +13126,7 @@
     "forecastGPSS28": null,
     "forecastQtySS28BottomUp": null,
     "forecastQtyFW28": null,
-    "historicalSales": {
-      "2024": {
-        "units": 10,
-        "sek": 8612,
-        "gpPct": null
-      },
-      "2025": {
-        "units": 6033,
-        "sek": 6569514,
-        "gpPct": 46.4
-      },
-      "2026": {
-        "units": 5516,
-        "sek": 6200038,
-        "gpPct": 52.3
-      }
-    },
+    "historicalSales": {},
     "historicalSalesByGeneration": [],
     "imageFile": "607610.jpeg",
     "moq": [],
@@ -13195,23 +13179,7 @@
     "forecastGPSS28": null,
     "forecastQtySS28BottomUp": null,
     "forecastQtyFW28": null,
-    "historicalSales": {
-      "2024": {
-        "units": 2,
-        "sek": 865,
-        "gpPct": null
-      },
-      "2025": {
-        "units": 1629,
-        "sek": 1062810,
-        "gpPct": 50.8
-      },
-      "2026": {
-        "units": 2637,
-        "sek": 1812879,
-        "gpPct": 57.9
-      }
-    },
+    "historicalSales": {},
     "historicalSalesByGeneration": [],
     "imageFile": "607613.jpeg",
     "moq": [],
@@ -13264,7 +13232,23 @@
     "forecastGPSS28": 44.7,
     "forecastQtySS28BottomUp": 14692,
     "forecastQtyFW28": null,
-    "historicalSales": {},
+    "historicalSales": {
+      "2024": {
+        "units": 10,
+        "sek": 8612,
+        "gpPct": null
+      },
+      "2025": {
+        "units": 6033,
+        "sek": 6569514,
+        "gpPct": 46.4
+      },
+      "2026": {
+        "units": 5516,
+        "sek": 6200038,
+        "gpPct": 52.3
+      }
+    },
     "historicalSalesByGeneration": [],
     "imageFile": "608786.jpeg",
     "moq": [],
@@ -13317,7 +13301,23 @@
     "forecastGPSS28": 48.3,
     "forecastQtySS28BottomUp": 6736,
     "forecastQtyFW28": null,
-    "historicalSales": {},
+    "historicalSales": {
+      "2024": {
+        "units": 2,
+        "sek": 865,
+        "gpPct": null
+      },
+      "2025": {
+        "units": 1629,
+        "sek": 1062810,
+        "gpPct": 50.8
+      },
+      "2026": {
+        "units": 2637,
+        "sek": 1812879,
+        "gpPct": 57.9
+      }
+    },
     "historicalSalesByGeneration": [],
     "imageFile": "608787.jpeg",
     "moq": [],

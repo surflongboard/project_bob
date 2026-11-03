@@ -83,10 +83,29 @@ NEW_CSV_YEARS = {
     2026: ["Sales_Data_2026_H1.csv", "Sales_Data_2026_H2.csv"],
 }
 
+# RR-040 -- a HANDFUL of manually-confirmed renames where text-based base_name() matching can't
+# bridge the gap on its own, because the predecessor's own article text doesn't share the same
+# stripped base at all (a word was added/changed, not just a version-token suffix). Found
+# 3-Nov-2026 chasing why "L.I.M Airak 2,5L Proof II Jacket/Pant" showed NO historical sales at
+# all despite obviously being a 2nd generation: their predecessor sold under "L.I.M Airak 2,5L
+# Jacket"/"Pant" (no "Proof"), confirmed by a clean hand-off (the non-Proof franchise is active
+# FW27 only; the Proof II franchise picks up exactly at SS28, no overlap, no gap) -- not a
+# coincidence. A broader automated scan for similar cases (same hand-off-timing + word-overlap
+# heuristic) was run and came back mostly noise -- generic shared words ("L.I.M", "Jacket",
+# "GTX", "Hood") between otherwise-unrelated products, not real renames -- so this is a short,
+# manually-verified list, NOT a general rename-detection mechanism. Old base -> new base; sales
+# under the old name are folded into the new base's "" (no-token) generation bucket, since the
+# old name itself carries no version token -- it IS that franchise's Generation 1.
+BASE_RENAME_ALIASES = {
+    "L.I.M Airak 2,5L Jacket": "L.I.M Airak 2,5L Proof Jacket",
+    "L.I.M Airak 2,5L Pant": "L.I.M Airak 2,5L Proof Pant",
+}
+
 
 def base_of(article: str) -> str:
     stripped, _ = strip_special_edition(article)
-    return lib.base_name(stripped)
+    base = lib.base_name(stripped)
+    return BASE_RENAME_ALIASES.get(base, base)
 
 
 def gen_of(article: str) -> str:
