@@ -51,9 +51,9 @@
     "agedByPreviousGeneration": false,
     "generationAgeSeasons": 1,
     "generationAgeFlag": false,
-    "isNewInSeason": false,
-    "newKind": null,
-    "newSeasonLabel": null
+    "isNewInSeason": true,
+    "newKind": "franchise",
+    "newSeasonLabel": "FW27"
   },
   {
     "base": "Aze Beanie",
@@ -130,9 +130,9 @@
     "agedByPreviousGeneration": true,
     "generationAgeSeasons": 11,
     "generationAgeFlag": true,
-    "isNewInSeason": false,
-    "newKind": null,
-    "newSeasonLabel": null
+    "isNewInSeason": true,
+    "newKind": "generation",
+    "newSeasonLabel": "FW27"
   },
   {
     "base": "Brand Five Panel Cap",
@@ -907,9 +907,9 @@
     "agedByPreviousGeneration": false,
     "generationAgeSeasons": 1,
     "generationAgeFlag": false,
-    "isNewInSeason": false,
-    "newKind": null,
-    "newSeasonLabel": null
+    "isNewInSeason": true,
+    "newKind": "franchise",
+    "newSeasonLabel": "FW27"
   },
   {
     "base": "Rosson Balaclava",
@@ -986,9 +986,9 @@
     "agedByPreviousGeneration": true,
     "generationAgeSeasons": null,
     "generationAgeFlag": false,
-    "isNewInSeason": false,
-    "newKind": null,
-    "newSeasonLabel": null
+    "isNewInSeason": true,
+    "newKind": "generation",
+    "newSeasonLabel": "FW27"
   },
   {
     "base": "Ski Glove",
@@ -1540,9 +1540,9 @@
     "agedByPreviousGeneration": false,
     "generationAgeSeasons": 1,
     "generationAgeFlag": false,
-    "isNewInSeason": false,
-    "newKind": null,
-    "newSeasonLabel": null
+    "isNewInSeason": true,
+    "newKind": "franchise",
+    "newSeasonLabel": "FW27"
   },
   {
     "base": "Vara Alpha Cap",
@@ -2648,9 +2648,9 @@
     "agedByPreviousGeneration": false,
     "generationAgeSeasons": 1,
     "generationAgeFlag": false,
-    "isNewInSeason": false,
-    "newKind": null,
-    "newSeasonLabel": null
+    "isNewInSeason": true,
+    "newKind": "franchise",
+    "newSeasonLabel": "FW27"
   },
   {
     "base": "Tight Pocket bag",
@@ -2982,9 +2982,9 @@
     "agedByPreviousGeneration": false,
     "generationAgeSeasons": 1,
     "generationAgeFlag": false,
-    "isNewInSeason": false,
-    "newKind": null,
-    "newSeasonLabel": null
+    "isNewInSeason": true,
+    "newKind": "franchise",
+    "newSeasonLabel": "FW27"
   },
   {
     "base": "Fjatla 40",
@@ -5950,9 +5950,9 @@
     "agedByPreviousGeneration": false,
     "generationAgeSeasons": 1,
     "generationAgeFlag": false,
-    "isNewInSeason": false,
-    "newKind": null,
-    "newSeasonLabel": null
+    "isNewInSeason": true,
+    "newKind": "franchise",
+    "newSeasonLabel": "FW27"
   },
   {
     "base": "Haglöfs Horizon Hike GTX WL Mid",
@@ -6579,9 +6579,9 @@
     "agedByPreviousGeneration": false,
     "generationAgeSeasons": 1,
     "generationAgeFlag": false,
-    "isNewInSeason": false,
-    "newKind": null,
-    "newSeasonLabel": null
+    "isNewInSeason": true,
+    "newKind": "franchise",
+    "newSeasonLabel": "FW27"
   },
   {
     "base": "Vertigo Proof Low",
@@ -7646,9 +7646,9 @@
     "agedByPreviousGeneration": false,
     "generationAgeSeasons": 1,
     "generationAgeFlag": false,
-    "isNewInSeason": false,
-    "newKind": null,
-    "newSeasonLabel": null
+    "isNewInSeason": true,
+    "newKind": "franchise",
+    "newSeasonLabel": "FW27"
   },
   {
     "base": "Mimic Alert Hood",
@@ -7744,9 +7744,9 @@
     "agedByPreviousGeneration": true,
     "generationAgeSeasons": 7,
     "generationAgeFlag": true,
-    "isNewInSeason": false,
-    "newKind": null,
-    "newSeasonLabel": null
+    "isNewInSeason": true,
+    "newKind": "generation",
+    "newSeasonLabel": "FW27"
   },
   {
     "base": "Mimic Alert Jacket",
@@ -7854,9 +7854,9 @@
     "agedByPreviousGeneration": true,
     "generationAgeSeasons": 7,
     "generationAgeFlag": true,
-    "isNewInSeason": false,
-    "newKind": null,
-    "newSeasonLabel": null
+    "isNewInSeason": true,
+    "newKind": "generation",
+    "newSeasonLabel": "FW27"
   },
   {
     "base": "Mimic Alert 3/4 Pant",
@@ -9302,9 +9302,9 @@
     "agedByPreviousGeneration": true,
     "generationAgeSeasons": null,
     "generationAgeFlag": false,
-    "isNewInSeason": false,
-    "newKind": null,
-    "newSeasonLabel": null
+    "isNewInSeason": true,
+    "newKind": "generation",
+    "newSeasonLabel": "FW27"
   },
   {
     "base": "Hede Shorts",
@@ -10484,9 +10484,9 @@
     "agedByPreviousGeneration": true,
     "generationAgeSeasons": 11,
     "generationAgeFlag": true,
-    "isNewInSeason": false,
-    "newKind": null,
-    "newSeasonLabel": null
+    "isNewInSeason": true,
+    "newKind": "generation",
+    "newSeasonLabel": "FW27"
   },
   {
     "base": "ROC Lite Slim Pant",
@@ -10904,9 +10904,9 @@
     "agedByPreviousGeneration": false,
     "generationAgeSeasons": 1,
     "generationAgeFlag": false,
-    "isNewInSeason": false,
-    "newKind": null,
-    "newSeasonLabel": null
+    "isNewInSeason": true,
+    "newKind": "franchise",
+    "newSeasonLabel": "FW27"
   },
   {
     "base": "Buteo Mid Jacket",
@@ -11993,9 +11993,9 @@
     "agedByPreviousGeneration": true,
     "generationAgeSeasons": 5,
     "generationAgeFlag": true,
-    "isNewInSeason": false,
-    "newKind": null,
-    "newSeasonLabel": null
+    "isNewInSeason": true,
+    "newKind": "generation",
+    "newSeasonLabel": "FW27"
   },
   {
     "base": "Rosson Mid Hood",
@@ -12361,9 +12361,9 @@
     "agedByPreviousGeneration": false,
     "generationAgeSeasons": 1,
     "generationAgeFlag": false,
-    "isNewInSeason": false,
-    "newKind": null,
-    "newSeasonLabel": null
+    "isNewInSeason": true,
+    "newKind": "franchise",
+    "newSeasonLabel": "FW27"
   },
   {
     "base": "Swook Mid Sweater M",
@@ -12430,9 +12430,9 @@
     "agedByPreviousGeneration": false,
     "generationAgeSeasons": 1,
     "generationAgeFlag": false,
-    "isNewInSeason": false,
-    "newKind": null,
-    "newSeasonLabel": null
+    "isNewInSeason": true,
+    "newKind": "franchise",
+    "newSeasonLabel": "FW27"
   },
   {
     "base": "Vara Alpha Sweater",
@@ -12645,9 +12645,9 @@
     "agedByPreviousGeneration": false,
     "generationAgeSeasons": 1,
     "generationAgeFlag": false,
-    "isNewInSeason": false,
-    "newKind": null,
-    "newSeasonLabel": null
+    "isNewInSeason": true,
+    "newKind": "franchise",
+    "newSeasonLabel": "FW27"
   },
   {
     "base": "Nallo Pro 40L",
@@ -12701,9 +12701,9 @@
     "agedByPreviousGeneration": false,
     "generationAgeSeasons": 1,
     "generationAgeFlag": false,
-    "isNewInSeason": false,
-    "newKind": null,
-    "newSeasonLabel": null
+    "isNewInSeason": true,
+    "newKind": "franchise",
+    "newSeasonLabel": "FW27"
   },
   {
     "base": "Vassi Pro 32L",
@@ -12757,9 +12757,9 @@
     "agedByPreviousGeneration": false,
     "generationAgeSeasons": 1,
     "generationAgeFlag": false,
-    "isNewInSeason": false,
-    "newKind": null,
-    "newSeasonLabel": null
+    "isNewInSeason": true,
+    "newKind": "franchise",
+    "newSeasonLabel": "FW27"
   },
   {
     "base": "Alert GTX Jacket",
@@ -14389,9 +14389,9 @@
     "agedByPreviousGeneration": true,
     "generationAgeSeasons": 7,
     "generationAgeFlag": true,
-    "isNewInSeason": false,
-    "newKind": null,
-    "newSeasonLabel": null
+    "isNewInSeason": true,
+    "newKind": "generation",
+    "newSeasonLabel": "FW27"
   },
   {
     "base": "Latnja GTX Insulated Pant",
@@ -14474,9 +14474,9 @@
     "agedByPreviousGeneration": true,
     "generationAgeSeasons": 7,
     "generationAgeFlag": true,
-    "isNewInSeason": false,
-    "newKind": null,
-    "newSeasonLabel": null
+    "isNewInSeason": true,
+    "newKind": "generation",
+    "newSeasonLabel": "FW27"
   },
   {
     "base": "Ljusna Proof Parka",
@@ -15012,9 +15012,9 @@
     "agedByPreviousGeneration": false,
     "generationAgeSeasons": 1,
     "generationAgeFlag": false,
-    "isNewInSeason": false,
-    "newKind": null,
-    "newSeasonLabel": null
+    "isNewInSeason": true,
+    "newKind": "franchise",
+    "newSeasonLabel": "FW27"
   },
   {
     "base": "Saulo Proof Pant",
@@ -15068,9 +15068,9 @@
     "agedByPreviousGeneration": false,
     "generationAgeSeasons": 1,
     "generationAgeFlag": false,
-    "isNewInSeason": false,
-    "newKind": null,
-    "newSeasonLabel": null
+    "isNewInSeason": true,
+    "newKind": "franchise",
+    "newSeasonLabel": "FW27"
   },
   {
     "base": "Skalvik Softshell Parka",
@@ -15124,9 +15124,9 @@
     "agedByPreviousGeneration": false,
     "generationAgeSeasons": 1,
     "generationAgeFlag": false,
-    "isNewInSeason": false,
-    "newKind": null,
-    "newSeasonLabel": null
+    "isNewInSeason": true,
+    "newKind": "franchise",
+    "newSeasonLabel": "FW27"
   },
   {
     "base": "Spitz GTX Jacket",
@@ -15377,9 +15377,9 @@
     "agedByPreviousGeneration": false,
     "generationAgeSeasons": 1,
     "generationAgeFlag": false,
-    "isNewInSeason": false,
-    "newKind": null,
-    "newSeasonLabel": null
+    "isNewInSeason": true,
+    "newKind": "franchise",
+    "newSeasonLabel": "FW27"
   },
   {
     "base": "Tarre Proof Insulated Pant",
@@ -15433,9 +15433,9 @@
     "agedByPreviousGeneration": false,
     "generationAgeSeasons": 1,
     "generationAgeFlag": false,
-    "isNewInSeason": false,
-    "newKind": null,
-    "newSeasonLabel": null
+    "isNewInSeason": true,
+    "newKind": "franchise",
+    "newSeasonLabel": "FW27"
   },
   {
     "base": "Vara Down GTX Parka",
@@ -18825,9 +18825,9 @@
     "agedByPreviousGeneration": false,
     "generationAgeSeasons": 1,
     "generationAgeFlag": false,
-    "isNewInSeason": false,
-    "newKind": null,
-    "newSeasonLabel": null
+    "isNewInSeason": true,
+    "newKind": "franchise",
+    "newSeasonLabel": "FW27"
   },
   {
     "base": "Solvik Seersucker SS Shirt",
@@ -19225,9 +19225,9 @@
     "agedByPreviousGeneration": false,
     "generationAgeSeasons": 1,
     "generationAgeFlag": false,
-    "isNewInSeason": false,
-    "newKind": null,
-    "newSeasonLabel": null
+    "isNewInSeason": true,
+    "newKind": "franchise",
+    "newSeasonLabel": "FW27"
   },
   {
     "base": "Haglöfs L.I.M Horizon Low",

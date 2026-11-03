@@ -185,7 +185,7 @@ def load_generation_age_by_base(historical_sales_by_base_and_gen: dict[str, dict
         by_base[base] = {
             "label": catalog_cur["Generation"],
             "releaseSeason": catalog_cur["Release Season"],
-            "isNew": catalog_cur["Release Season"] in ("SS28", "FW28"),
+            "isNew": catalog_cur["Release Season"] in ("FW27", "SS28", "FW28"),  # RR-042 -- FW27 added, the earliest season this active range covers
             "ageLabel": effective["Generation"],
             "ageReleaseSeason": effective["Release Season"],
             "ageSeasons": seasons_between(season_key(effective["Release Season"]), season_key("SS28"))
@@ -240,9 +240,10 @@ def build() -> list[dict]:
         age = generation_age_by_base.get(base)
         active_fw27, active_ss28, active_fw28 = r["Active in FW27"] == "Y", r["Active in SS28"] == "Y", r["Active in FW28"] == "Y"
         age_seasons = age["ageSeasons"] if age else None
-        # "New in season" -- either the Product master's own Release Season says so (age["isNew"]),
-        # or the franchise isn't in the Product master at all (brand-new FW28 launch, RR-029's
-        # "No Product master match" case) and FW28 is its only active season.
+        # "New in season" -- either the Product master's own Release Season says so (age["isNew"],
+        # RR-042: FW27/SS28/FW28, i.e. anywhere in this active range's own coverage), or the
+        # franchise isn't in the Product master at all (brand-new FW28 launch, RR-029's "No
+        # Product master match" case) and FW28 is its only active season.
         if age is not None:
             is_new = age["isNew"]
             new_season_label = age["releaseSeason"] if is_new else None
@@ -357,4 +358,4 @@ if __name__ == "__main__":
     n_new = sum(1 for d in data if d["isNewInSeason"])
     print(f"{n_age_known} franchises have a known current-generation age (IP-011); "
           f"{n_age_flagged} flagged at {GENERATION_AGE_FLAG_SEASONS}+ seasons old")
-    print(f"{n_new} franchises are new in SS28/FW28 (first season for their current generation)")
+    print(f"{n_new} franchises are new in FW27/SS28/FW28 (first season for their current generation)")
