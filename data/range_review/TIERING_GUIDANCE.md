@@ -1,11 +1,13 @@
 # Range Review tiering guidance (Hero / Harvest / Emerging / Exit)
 
-Proposed and refined with the user 3-Nov-2026 (RR-048). Maps to
-CLAUDE.md's "layer-by-layer keep/consolidate/improve/kill proposal"
-framing for this workstream. Implemented as `compute_suggested_tier()`
-in `scripts/build_workshop_data.py` — this document and that function
-are the same guidance, not two independent copies; if one changes, so
-should the other.
+Proposed with the user 3-Nov-2026, then fully revised same day (RR-049
+supersedes RR-048's first pass entirely — Core Assortment, generation
+age, and declining-trend are no longer part of this logic at all).
+Maps to CLAUDE.md's "layer-by-layer keep/consolidate/improve/kill
+proposal" framing for this workstream. Implemented as
+`compute_suggested_tier()` in `scripts/build_workshop_data.py` — this
+document and that function are the same guidance, not two independent
+copies; if one changes, so should the other.
 
 **This is a suggestion engine, not a decision engine.** The Range
 Review Board shows a "Suggested: <Tier> — <reason>" hint on any
@@ -15,77 +17,65 @@ Board's own `decisions` database, exactly like every other decision
 field (Last season to sell, Consolidate). Treat every suggestion here
 as a starting point for the Nov 12 workshop discussion, not a verdict.
 
-## Definitions
-
-| Tier | Meaning |
-|---|---|
-| **Hero** | Proven, strong performer — invest further, a safe bet to buy more. |
-| **Harvest** | Not Core Assortment, but healthy — keep selling, no fresh investment needed. |
-| **Emerging** | New, unproven, or Core Assortment but not yet clearing the margin bar — give it a season or two, or watch closely. |
-| **Exit** | Old, declining, and under-margin — the clearest kill/consolidate candidate. |
-
 ## Rules (first match wins)
 
 1. **New in FW27, SS28, or FW28** (`isNewInSeason`) → **Emerging**,
-   unconditionally. Too early to judge anything else about it — this
-   overrides every other rule, including an otherwise-Exit-looking
-   aging/declining read.
-2. **Aging generation** (`generationAgeFlag` — the generation that is
-   *actually selling*, per RR-041, not necessarily the catalog-current
-   one) **AND declining** (2025 units < 2024 units, both full
-   calendar years — 2026 is YTD-through-October and deliberately left
-   out of this specific comparison to avoid an apples-to-oranges
-   partial-year read) **AND 2026 GP% < 30%** → **Exit**. Applies
-   regardless of Core Assortment status.
-3. **Core Assortment** (FW27 or SS28, per RR-008/RR-028):
-   - 2026 GP% **> 50%** → **Hero**
-   - 2026 GP% **≤ 50%** (or no 2026 GP% to judge by) → **Emerging**
-4. **Not Core Assortment**:
-   - 2026 GP% **≥ 30%** → **Harvest**
-   - 2026 GP% **< 30%**, or no 2026 GP% at all → **no suggestion**
-     (left for a human to judge — not forced into a tier without the
-     data to back it)
+   unconditionally.
+2. **New in 2026** — no recorded sales in 2024 or 2025 at all (both
+   genuinely absent, not zero — "blank not zero") but has 2026 sales
+   → **Emerging**. A sales-based newness signal, independent of rule
+   1 — catches a franchise whose Product master release season isn't
+   cleanly FW27/SS28/FW28 but whose real sales history clearly starts
+   in 2026.
+3. **2026 units > 10,000 AND 2026 GP% > 55%** → **Hero**. Per the
+   user, a Hero suggestion from this rule still needs the team's own
+   manual confirmation — the card's reason text says so explicitly
+   ("— confirm with team"); this tier is treated as less settled than
+   the other three.
+4. **2026 units > 5,000 AND 2026 GP% > 45%** → **Harvest**. Checked
+   *after* Hero, not before — Harvest's bar is strictly looser (5k/45%
+   vs. 10k/55%), so a franchise clearing both gets the stronger Hero
+   call, not double-counted into Harvest.
+5. **2026 units < 200, and not already Emerging** (rule 1 or 2) →
+   **Exit**.
+6. **Everything else** → **no suggestion** (left undecided). Expected
+   to be the majority under these tighter, sales-only thresholds — see
+   the distribution below.
 
-## Thresholds, and which are confirmed vs. a judgment call
+## Thresholds — all user-set, 3-Nov-2026
 
-- **50% GP% (Hero/Emerging split within Core)** — user-set, 3-Nov-2026. Confirmed.
-- **30% GP% (Exit floor)** — user-set, 3-Nov-2026. Confirmed.
-- **30% GP% (Harvest floor, non-Core)** — **not explicitly set by the
-  user**; reuses the Exit floor as "the natural not-clearly-struggling
-  line," my own judgment call (`TIER_HARVEST_MIN_GP_PCT` in the code).
-  Flag if a different number is wanted.
-- **4+ seasons (generation age flag)** — set earlier in this
-  workstream (RR-029/RR-030, lowered from 6 to 4 per user direction),
-  reused here rather than inventing a separate aging threshold for
-  tiering specifically.
-- **2024→2025 full-year comparison for "declining"** — a methodology
-  choice to avoid comparing a partial 2026 YTD figure against full
-  years; not separately confirmed with the user.
+| Tier | Units | GP% |
+|---|---|---|
+| Hero | > 10,000 | > 55% |
+| Harvest | > 5,000 | > 45% |
+| Exit | < 200 | — |
 
-## Known gap: the 30% Exit floor hasn't fired yet
-
-As of 3-Nov-2026, **23 franchises** are aging *and* declining
-2024→2025, but **none** currently has 2026 GP% under 30% — the lowest
-is 37.7% ("Vassi GTX II Jacket"). So rule 2 (Exit) currently suggests
-nothing. This is a real finding, not a bug: margins on declining-volume
-old generations in this portfolio are mostly holding up, at least
-through October 2026. Worth flagging at the workshop — either the 30%
-floor is set correctly and genuinely nothing qualifies yet, or the
-team may want a higher floor (e.g. the Harvest floor, 30%, vs. a
-tighter Exit-specific number) to actually catch anything.
+No judgment-call thresholds remain in this version (RR-048's one
+unconfirmed Harvest floor is gone along with the rest of that
+approach).
 
 ## Current distribution (3-Nov-2026, before the workshop)
 
 | Suggested tier | Count |
 |---|---|
-| Harvest | 128 |
-| Emerging | 93 (80 new-in-season + 13 Core Assortment, GP% ≤ 50%) |
-| Hero | 17 |
-| Exit | 0 (see gap above) |
-| No suggestion | 39 |
+| No suggestion | 135 |
+| Emerging | 111 (80 new-in-season + 31 new-in-2026) |
+| Harvest | 22 |
+| Exit | 7 |
+| Hero | 2 |
 
 These are **suggestions on 277 active-range franchises**, most of
 which have no real Tier decision yet (RR-047's export: 1 as of
-3-Nov-2026) — this distribution will shift as real sales data and Core
-Assortment coverage fill in gaps (82 franchises still have no matched
-historical sales at all, RR-037/RR-040).
+3-Nov-2026) — this distribution will shift as more 2026 sales data
+comes in through the rest of the year, and as the remaining
+unmatched-sales gap closes (82 franchises still have no historical
+sales matched at all, RR-037/RR-040).
+
+## Revision history
+
+- **3-Nov-2026, first pass (RR-048, superseded)**: Core Assortment +
+  GP% thresholds (50%/30%) + generation-age + declining-trend. Full
+  details preserved in RR-048's own register entry, not repeated here.
+- **3-Nov-2026, this version (RR-049)**: user said "let me revise" and
+  replaced the entire rule set with pure 2026 sales/GP% thresholds —
+  simpler, no Core Assortment or generation-age dependency.

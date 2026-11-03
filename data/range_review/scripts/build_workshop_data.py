@@ -72,15 +72,11 @@ GENERATION_AGE_FLAG_SEASONS = 4  # RR-029/IP-011/RR-030 -- no confirmed renewal 
                                   # call for both the card alert and the "Generation age" toggle,
                                   # not a business rule -- adjust freely.
 
-TIER_HERO_EMERGING_GP_PCT = 50.0  # RR-048 -- user-set 3-Nov-2026: within Core Assortment, 2026
-                                   # GP% > this is Hero, <= this is Emerging.
-TIER_EXIT_GP_PCT = 30.0  # RR-048 -- user-set: Exit requires 2026 GP% below this (lower bar than
-                          # the Hero/Emerging split -- Exit is about clearly-losing cases).
-TIER_HARVEST_MIN_GP_PCT = 30.0  # RR-048 -- my own judgment call, not explicitly set by the user:
-                                 # a non-Core franchise needs at least this GP% to count as
-                                 # "healthy" for Harvest (reusing the Exit floor as the natural
-                                 # "not clearly struggling" line) -- flag if a different number
-                                 # is wanted.
+TIER_HERO_MIN_UNITS = 10_000  # RR-049 -- user-set 3-Nov-2026 (replaced RR-048's Core/GP% rules)
+TIER_HERO_MIN_GP_PCT = 55.0
+TIER_HARVEST_MIN_UNITS = 5_000
+TIER_HARVEST_MIN_GP_PCT = 45.0
+TIER_EXIT_MAX_UNITS = 200
 
 OUTPUTS_DIR = RR_DIR / "outputs"
 MOQ_PATH = OUTPUTS_DIR / "SS28_MOQ_Exceptions.xlsx"
@@ -88,24 +84,29 @@ INVENTORY_PATH = IP_DIR / "outputs" / "SS27_Inventory_Review.xlsx"
 
 
 def compute_suggested_tier(d: dict) -> tuple[str | None, str]:
-    """RR-048 -- a SUGGESTED tier only, shown as a hint on the Board; never written to the live
+    """RR-049 -- a SUGGESTED tier only, shown as a hint on the Board; never written to the live
     `decisions` database (same discipline as every other decision field on this Board -- Tier
-    stays a human call). Rules are the user's own, given/corrected 3-Nov-2026 for the tiering-
-    guidance doc (`TIERING_GUIDANCE.md`) -- this function is that guidance's one implementation,
-    not a separate copy of it. Precedence (first match wins):
-      1. New in FW27/SS28/FW28 -> Emerging, unconditionally -- too early to judge anything else,
-         overrides every other rule including an otherwise-Exit-looking aging/declining signal.
-      2. Aging generation (generationAgeFlag, RR-041's actually-selling basis) AND declining
-         (2025 units < 2024 units, both full years -- 2026 is YTD and left out of this specific
-         comparison to avoid an apples-to-oranges partial-year read) AND 2026 GP% < TIER_EXIT_GP_PCT
-         -> Exit. Applies regardless of Core status -- a declining, thin-margin old item is an
-         Exit candidate whether or not it's Core.
-      3. Core Assortment (FW27 or SS28): 2026 GP% > TIER_HERO_EMERGING_GP_PCT -> Hero;
-         otherwise -> Emerging (the user explicitly rejected a Core->Hero/non-Core->Emerging
-         split, and rejected GP%-based Hero/Harvest -- within Core, it's Hero/Emerging by GP%).
-      4. Not Core Assortment: 2026 GP% >= TIER_HARVEST_MIN_GP_PCT -> Harvest ("not Core, but
-         healthy" -- the user's own framing). Below that floor, or no 2026 GP% to judge by at
-         all -> no suggestion (None), rather than guessing without the data to back it."""
+    stays a human call). Rules are the user's own, revised 3-Nov-2026 (TIERING_GUIDANCE.md) --
+    this REPLACES RR-048's first pass entirely (Core Assortment / generation age / declining-
+    trend are no longer part of this logic at all, by user direction: "let me revise"). This
+    function is that guidance's one implementation, not a separate copy of it. Precedence
+    (first match wins):
+      1. New in FW27/SS28/FW28 (`isNewInSeason`) -> Emerging, unconditionally.
+      2. "New in 2026" -- no recorded sales in 2024 or 2025 (both genuinely absent, not zero)
+         but has 2026 sales -- a SALES-based newness signal, independent of rule 1 (catches a
+         generation the Product master doesn't clearly date, or a franchise rule 1 doesn't
+         already flag) -> Emerging.
+      3. 2026 units > TIER_HERO_MIN_UNITS AND 2026 GP% > TIER_HERO_MIN_GP_PCT -> Hero.
+         Per the user: a Hero suggestion from this rule still needs the team's own manual
+         confirmation -- the reason text says so explicitly, this isn't meant to read as
+         settled the way the other three are.
+      4. 2026 units > TIER_HARVEST_MIN_UNITS AND 2026 GP% > TIER_HARVEST_MIN_GP_PCT -> Harvest.
+         Checked after Hero (not before) so a franchise clearing BOTH bars gets the stronger
+         Hero call, not Harvest -- Harvest's bar is strictly looser (5k/45% vs 10k/55%).
+      5. 2026 units < TIER_EXIT_MAX_UNITS (and not already Emerging via rule 1 or 2 -- "that are
+         not emerging", the user's own phrasing) -> Exit.
+      6. Everything else -> no suggestion (None) -- most franchises will land here under these
+         tighter, sales-only thresholds; that's expected, not a bug (see TIERING_GUIDANCE.md)."""
     if d["isNewInSeason"]:
         return "Emerging", f"New in {d['newSeasonLabel']}"
 
@@ -115,23 +116,24 @@ def compute_suggested_tier(d: dict) -> tuple[str | None, str]:
     # frontend reads those post-serialization string keys, but this function runs earlier).
     y2024 = hs.get(2024, {}).get("units")
     y2025 = hs.get(2025, {}).get("units")
+    y2026 = hs.get(2026, {}).get("units")
     y2026_gp = hs.get(2026, {}).get("gpPct")
 
-    declining = y2024 is not None and y2025 is not None and y2025 < y2024
-    if d["generationAgeFlag"] and declining and y2026_gp is not None and y2026_gp < TIER_EXIT_GP_PCT:
-        return "Exit", (f"Aging generation ({d['generationAgeSeasons']} seasons), sales declining "
-                         f"2024→2025, 2026 GP% {y2026_gp:.0f}% < {TIER_EXIT_GP_PCT:.0f}%")
+    new_in_2026 = y2024 is None and y2025 is None and y2026 is not None and y2026 > 0
+    if new_in_2026:
+        return "Emerging", "New in 2026 (no 2024/2025 sales recorded)"
 
-    is_core = d["coreAssortmentFW27"] or d["coreAssortmentSS28"] == "Yes"
-    if is_core:
-        if y2026_gp is None:
-            return None, ""
-        if y2026_gp > TIER_HERO_EMERGING_GP_PCT:
-            return "Hero", f"Core Assortment, 2026 GP% {y2026_gp:.0f}% > {TIER_HERO_EMERGING_GP_PCT:.0f}%"
-        return "Emerging", f"Core Assortment, 2026 GP% {y2026_gp:.0f}% ≤ {TIER_HERO_EMERGING_GP_PCT:.0f}%"
+    if y2026 is not None and y2026_gp is not None:
+        if y2026 > TIER_HERO_MIN_UNITS and y2026_gp > TIER_HERO_MIN_GP_PCT:
+            return "Hero", (f"2026 sales {y2026:,} units > {TIER_HERO_MIN_UNITS:,}, GP% "
+                             f"{y2026_gp:.0f}% > {TIER_HERO_MIN_GP_PCT:.0f}% -- confirm with team")
+        if y2026 > TIER_HARVEST_MIN_UNITS and y2026_gp > TIER_HARVEST_MIN_GP_PCT:
+            return "Harvest", (f"2026 sales {y2026:,} units > {TIER_HARVEST_MIN_UNITS:,}, GP% "
+                                f"{y2026_gp:.0f}% > {TIER_HARVEST_MIN_GP_PCT:.0f}%")
 
-    if y2026_gp is not None and y2026_gp >= TIER_HARVEST_MIN_GP_PCT:
-        return "Harvest", f"Not Core Assortment, 2026 GP% {y2026_gp:.0f}% ≥ {TIER_HARVEST_MIN_GP_PCT:.0f}%"
+    if y2026 is not None and y2026 < TIER_EXIT_MAX_UNITS:
+        return "Exit", f"2026 sales {y2026:,} units < {TIER_EXIT_MAX_UNITS:,}"
+
     return None, ""
 
 
