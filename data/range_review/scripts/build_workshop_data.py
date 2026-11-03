@@ -73,10 +73,10 @@ GENERATION_AGE_FLAG_SEASONS = 4  # RR-029/IP-011/RR-030 -- no confirmed renewal 
                                   # not a business rule -- adjust freely.
 
 TIER_HERO_MIN_UNITS = 10_000  # RR-049 -- user-set 3-Nov-2026 (replaced RR-048's Core/GP% rules)
-TIER_HERO_MIN_GP_PCT = 55.0
+TIER_HERO_MIN_GP_PCT = 50.0  # RR-051 -- lowered from 55.0, user-set 3-Nov-2026
 TIER_HARVEST_MIN_UNITS = 5_000
 TIER_HARVEST_MIN_GP_PCT = 45.0
-TIER_EXIT_MAX_UNITS = 200
+TIER_EXIT_MAX_UNITS = 500  # RR-051 -- raised from 200, user-set 3-Nov-2026
 
 OUTPUTS_DIR = RR_DIR / "outputs"
 MOQ_PATH = OUTPUTS_DIR / "SS28_MOQ_Exceptions.xlsx"
@@ -102,7 +102,7 @@ def compute_suggested_tier(d: dict) -> tuple[str | None, str]:
          settled the way the other three are.
       4. 2026 units > TIER_HARVEST_MIN_UNITS AND 2026 GP% > TIER_HARVEST_MIN_GP_PCT -> Harvest.
          Checked after Hero (not before) so a franchise clearing BOTH bars gets the stronger
-         Hero call, not Harvest -- Harvest's bar is strictly looser (5k/45% vs 10k/55%).
+         Hero call, not Harvest -- Harvest's bar is strictly looser (5k/45% vs Hero's 10k/50%).
       5. 2026 units < TIER_EXIT_MAX_UNITS (and not already Emerging via rule 1 or 2 -- "that are
          not emerging", the user's own phrasing) -> Exit.
       6. Everything else -> no suggestion (None) -- most franchises will land here under these

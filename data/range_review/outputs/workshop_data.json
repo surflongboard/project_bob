@@ -2379,8 +2379,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Exit",
+    "suggestedTierReason": "2026 sales 236 units < 500"
   },
   {
     "base": "Raincover 25-40L",
@@ -2454,7 +2454,7 @@
     "newKind": null,
     "newSeasonLabel": null,
     "suggestedTier": "Exit",
-    "suggestedTierReason": "2026 sales 184 units < 200"
+    "suggestedTierReason": "2026 sales 184 units < 500"
   },
   {
     "base": "Raincover 40-60L",
@@ -2528,7 +2528,7 @@
     "newKind": null,
     "newSeasonLabel": null,
     "suggestedTier": "Exit",
-    "suggestedTierReason": "2026 sales 102 units < 200"
+    "suggestedTierReason": "2026 sales 102 units < 500"
   },
   {
     "base": "Raincover 60-80L",
@@ -2602,7 +2602,7 @@
     "newKind": null,
     "newSeasonLabel": null,
     "suggestedTier": "Exit",
-    "suggestedTierReason": "2026 sales 107 units < 200"
+    "suggestedTierReason": "2026 sales 107 units < 500"
   },
   {
     "base": "Shoulder pocket",
@@ -4097,8 +4097,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Exit",
+    "suggestedTierReason": "2026 sales 339 units < 500"
   },
   {
     "base": "Latnja Wool Crew Neck",
@@ -4245,8 +4245,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Exit",
+    "suggestedTierReason": "2026 sales 379 units < 500"
   },
   {
     "base": "Kobbe Sandal Low",
@@ -5596,8 +5596,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Exit",
+    "suggestedTierReason": "2026 sales 337 units < 500"
   },
   {
     "base": "L.I.M Trail 15",
@@ -5670,8 +5670,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Exit",
+    "suggestedTierReason": "2026 sales 234 units < 500"
   },
   {
     "base": "Magma 30",
@@ -5798,7 +5798,7 @@
     "newKind": null,
     "newSeasonLabel": null,
     "suggestedTier": "Exit",
-    "suggestedTierReason": "2026 sales 108 units < 200"
+    "suggestedTierReason": "2026 sales 108 units < 500"
   },
   {
     "base": "Magma 60L",
@@ -7160,8 +7160,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Exit",
+    "suggestedTierReason": "2026 sales 231 units < 500"
   },
   {
     "base": "Hede Down Hood",
@@ -8372,7 +8372,7 @@
     "newKind": null,
     "newSeasonLabel": null,
     "suggestedTier": "Exit",
-    "suggestedTierReason": "2026 sales 1 units < 200"
+    "suggestedTierReason": "2026 sales 1 units < 500"
   },
   {
     "base": "Nallo Touring Down Hood",
@@ -9121,7 +9121,7 @@
     "newKind": null,
     "newSeasonLabel": null,
     "suggestedTier": "Hero",
-    "suggestedTierReason": "2026 sales 21,742 units > 10,000, GP% 60% > 55% -- confirm with team"
+    "suggestedTierReason": "2026 sales 21,742 units > 10,000, GP% 60% > 50% -- confirm with team"
   },
   {
     "base": "Särna Mimic Vest",
@@ -9252,8 +9252,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": "Harvest",
-    "suggestedTierReason": "2026 sales 14,683 units > 5,000, GP% 55% > 45%"
+    "suggestedTier": "Hero",
+    "suggestedTierReason": "2026 sales 14,683 units > 10,000, GP% 55% > 50% -- confirm with team"
   },
   {
     "base": "Alert Mid Shorts",
@@ -10273,7 +10273,7 @@
     "newKind": null,
     "newSeasonLabel": null,
     "suggestedTier": "Exit",
-    "suggestedTierReason": "2026 sales 3 units < 200"
+    "suggestedTierReason": "2026 sales 3 units < 500"
   },
   {
     "base": "Lite Standard Zip-Off Pant",
@@ -11532,7 +11532,7 @@
     "newKind": null,
     "newSeasonLabel": null,
     "suggestedTier": "Hero",
-    "suggestedTierReason": "2026 sales 37,271 units > 10,000, GP% 59% > 55% -- confirm with team"
+    "suggestedTierReason": "2026 sales 37,271 units > 10,000, GP% 59% > 50% -- confirm with team"
   },
   {
     "base": "Funäs Pile Hood",
@@ -12444,7 +12444,7 @@
     "newKind": null,
     "newSeasonLabel": null,
     "suggestedTier": "Exit",
-    "suggestedTierReason": "2026 sales 33 units < 200"
+    "suggestedTierReason": "2026 sales 33 units < 500"
   },
   {
     "base": "Rosson Tights",
@@ -16971,8 +16971,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Exit",
+    "suggestedTierReason": "2026 sales 271 units < 500"
   },
   {
     "base": "Moonlite +7",
@@ -17045,8 +17045,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Exit",
+    "suggestedTierReason": "2026 sales 419 units < 500"
   },
   {
     "base": "Moonlite -1",
@@ -17119,8 +17119,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Exit",
+    "suggestedTierReason": "2026 sales 390 units < 500"
   },
   {
     "base": "Musca -1",
@@ -17563,8 +17563,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Exit",
+    "suggestedTierReason": "2026 sales 439 units < 500"
   },
   {
     "base": "Tarius -18",
@@ -18049,8 +18049,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Exit",
+    "suggestedTierReason": "2026 sales 428 units < 500"
   },
   {
     "base": "Spitz Softshell Jacket",
@@ -20565,8 +20565,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Exit",
+    "suggestedTierReason": "2026 sales 290 units < 500"
   },
   {
     "base": "Oxo 80",
@@ -20634,8 +20634,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Exit",
+    "suggestedTierReason": "2026 sales 359 units < 500"
   },
   {
     "base": "Haglöfs Incline GTX Mid",
@@ -20824,8 +20824,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Exit",
+    "suggestedTierReason": "2026 sales 441 units < 500"
   },
   {
     "base": "Haglöfs Solid Pro 2 GTX Mid",

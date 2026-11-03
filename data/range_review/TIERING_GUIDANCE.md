@@ -27,16 +27,16 @@ as a starting point for the Nov 12 workshop discussion, not a verdict.
    1 — catches a franchise whose Product master release season isn't
    cleanly FW27/SS28/FW28 but whose real sales history clearly starts
    in 2026.
-3. **2026 units > 10,000 AND 2026 GP% > 55%** → **Hero**. Per the
+3. **2026 units > 10,000 AND 2026 GP% > 50%** → **Hero**. Per the
    user, a Hero suggestion from this rule still needs the team's own
    manual confirmation — the card's reason text says so explicitly
    ("— confirm with team"); this tier is treated as less settled than
    the other three.
 4. **2026 units > 5,000 AND 2026 GP% > 45%** → **Harvest**. Checked
    *after* Hero, not before — Harvest's bar is strictly looser (5k/45%
-   vs. 10k/55%), so a franchise clearing both gets the stronger Hero
+   vs. 10k/50%), so a franchise clearing both gets the stronger Hero
    call, not double-counted into Harvest.
-5. **2026 units < 200, and not already Emerging** (rule 1 or 2) →
+5. **2026 units < 500, and not already Emerging** (rule 1 or 2) →
    **Exit**.
 6. **Everything else** → **no suggestion** (left undecided). Expected
    to be the majority under these tighter, sales-only thresholds — see
@@ -46,9 +46,9 @@ as a starting point for the Nov 12 workshop discussion, not a verdict.
 
 | Tier | Units | GP% |
 |---|---|---|
-| Hero | > 10,000 | > 55% |
+| Hero | > 10,000 | > 50% |
 | Harvest | > 5,000 | > 45% |
-| Exit | < 200 | — |
+| Exit | < 500 | — |
 
 No judgment-call thresholds remain in this version (RR-048's one
 unconfirmed Harvest floor is gone along with the rest of that
@@ -58,11 +58,11 @@ approach).
 
 | Suggested tier | Count |
 |---|---|
-| No suggestion | 135 |
+| No suggestion | 121 |
 | Emerging | 111 (80 new-in-season + 31 new-in-2026) |
-| Harvest | 22 |
-| Exit | 7 |
-| Hero | 2 |
+| Exit | 21 |
+| Harvest | 21 |
+| Hero | 3 |
 
 These are **suggestions on 277 active-range franchises**, most of
 which have no real Tier decision yet (RR-047's export: 1 as of
@@ -76,6 +76,9 @@ sales matched at all, RR-037/RR-040).
 - **3-Nov-2026, first pass (RR-048, superseded)**: Core Assortment +
   GP% thresholds (50%/30%) + generation-age + declining-trend. Full
   details preserved in RR-048's own register entry, not repeated here.
-- **3-Nov-2026, this version (RR-049)**: user said "let me revise" and
-  replaced the entire rule set with pure 2026 sales/GP% thresholds —
-  simpler, no Core Assortment or generation-age dependency.
+- **3-Nov-2026, RR-049**: user said "let me revise" and replaced the
+  entire rule set with pure 2026 sales/GP% thresholds — simpler, no
+  Core Assortment or generation-age dependency.
+- **3-Nov-2026, RR-051 (current)**: Hero's GP% floor lowered 55% → 50%;
+  Exit's units ceiling raised 200 → 500. Same rule structure as RR-049,
+  thresholds only.
