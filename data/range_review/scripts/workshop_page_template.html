@@ -232,6 +232,24 @@ a { color: var(--accent); }
   font: inherit;
 }
 .threshold-input:not(:placeholder-shown) { border-color: var(--accent); color: var(--accent); font-weight: 600; }
+.multiselect { position: relative; }
+.multiselect-panel {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 20;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 150px;
+}
+.multiselect-panel label { display: flex; align-items: center; gap: 7px; font-size: 13px; color: var(--fg); cursor: pointer; white-space: nowrap; }
+.multiselect-panel input[type="checkbox"] { accent-color: var(--accent); width: 15px; height: 15px; }
 .toggle-btn {
   border: 1px solid var(--border);
   background: var(--bg-raised);
@@ -566,6 +584,16 @@ textarea.action-note {
       <label for="minGp2026">2026 GP% ≥</label>
       <input type="number" id="minGp2026" class="threshold-input" placeholder="e.g. 50" min="0" max="100" step="1">
     </div>
+    <div class="multiselect" id="tierFilterWrap">
+      <button class="toggle-btn" id="tierFilterBtn" type="button" aria-haspopup="true" aria-expanded="false">Suggested tier ▾</button>
+      <div class="multiselect-panel" id="tierFilterPanel" hidden>
+        <label><input type="checkbox" value="Hero"> Hero</label>
+        <label><input type="checkbox" value="Harvest"> Harvest</label>
+        <label><input type="checkbox" value="Emerging"> Emerging</label>
+        <label><input type="checkbox" value="Exit"> Exit</label>
+        <label><input type="checkbox" value="__none__"> No suggestion</label>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -655,10 +683,18 @@ textarea.action-note {
     return true;
   }
 
+  // RR-050 -- "Suggested tier" multi-select filter. "__none__" stands for a card with no
+  // suggestion at all (d.suggestedTier is null) -- an empty state.tierFilter means no filter
+  // (every card matches), same convention as the other optional filters on this board.
+  function matchesTierFilter(d) {
+    if (state.tierFilter.size === 0) return true;
+    return state.tierFilter.has(d.suggestedTier || "__none__");
+  }
+
   // ---------- state ----------
   var state = { layerKey: LAYERS.length ? LAYERS[0].key : null, search: "", sort: "priority",
     flagGenerationAge: false, flagNewFranchise: false, minSales2026: null, minGp2026: null,
-    season: "all", view: "board" };
+    tierFilter: new Set(), season: "all", view: "board" };
   var decisions = {}; // slug -> {tier, action, updatedAt}
 
   function render() {
@@ -963,6 +999,7 @@ textarea.action-note {
         if (!matchesFlag) return false;
       }
       if (!matchesThresholds(d)) return false;
+      if (!matchesTierFilter(d)) return false;
       if (state.search && d.franchise.toLowerCase().indexOf(state.search) === -1) return false;
       return true;
     });
@@ -1137,6 +1174,32 @@ textarea.action-note {
   document.getElementById("minGp2026").addEventListener("input", function (e) {
     state.minGp2026 = e.target.value === "" ? null : Number(e.target.value);
     renderBoard();
+  });
+
+  var tierFilterBtn = document.getElementById("tierFilterBtn");
+  var tierFilterPanel = document.getElementById("tierFilterPanel");
+  function updateTierFilterLabel() {
+    var n = state.tierFilter.size;
+    tierFilterBtn.textContent = (n ? "Suggested tier (" + n + ")" : "Suggested tier") + " ▾";
+    tierFilterBtn.classList.toggle("active", n > 0);
+  }
+  tierFilterBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    var opening = tierFilterPanel.hidden;
+    tierFilterPanel.hidden = !opening;
+    tierFilterBtn.setAttribute("aria-expanded", opening ? "true" : "false");
+  });
+  tierFilterPanel.addEventListener("click", function (e) { e.stopPropagation(); });
+  tierFilterPanel.querySelectorAll("input[type=checkbox]").forEach(function (cb) {
+    cb.addEventListener("change", function () {
+      if (cb.checked) state.tierFilter.add(cb.value); else state.tierFilter.delete(cb.value);
+      updateTierFilterLabel();
+      renderBoard();
+    });
+  });
+  document.addEventListener("click", function () {
+    tierFilterPanel.hidden = true;
+    tierFilterBtn.setAttribute("aria-expanded", "false");
   });
 
   var seasonToggle = document.getElementById("seasonToggle");
