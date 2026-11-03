@@ -179,6 +179,7 @@ def build() -> list[dict]:
             "genderNote": r["Gender note"],
             "activeFW27": r["Active in FW27"] == "Y",
             "activeSS28": r["Active in SS28"] == "Y",
+            "activeFW28": r["Active in FW28"] == "Y",  # RR-026 -- tag only, no FW28 forecast/MOQ data to show yet
             "targetRRP": r["Target RRP"],
             "rrpVaries": r["RRP varies by style"] == "Y",
             "consumerActivity": r["Consumer Activity"],
