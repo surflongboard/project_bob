@@ -552,7 +552,7 @@ textarea.action-note {
       <option value="priority">Needs a decision first</option>
       <option value="name">Franchise A–Z</option>
       <option value="forecast">Forecast Qty, high to low</option>
-      <option value="gp">GP%, high to low</option>
+      <option value="gp">Target GM0%, high to low</option>
       <option value="sales2026">2026 Sales (units), high to low</option>
       <option value="gp2026">2026 GP%, high to low</option>
     </select>
@@ -907,13 +907,6 @@ textarea.action-note {
     if (state.season === "FW28") return null;  // RR-026/RR-034 -- no FW28 forecast file exists yet
     return d.forecastQty;
   }
-  function seasonGP(d) {
-    if (state.season === "FW27") return d.forecastGPFW27;
-    if (state.season === "SS28") return d.forecastGPSS28;
-    if (state.season === "FW28") return null;
-    return d.forecastGP;
-  }
-
   function sortItems(items) {
     var copy = items.slice();
     if (state.sort === "name") {
@@ -921,7 +914,9 @@ textarea.action-note {
     } else if (state.sort === "forecast") {
       copy.sort(function (a, b) { return (seasonQty(b) || 0) - (seasonQty(a) || 0); });
     } else if (state.sort === "gp") {
-      copy.sort(function (a, b) { return (seasonGP(b) || 0) - (seasonGP(a) || 0); });
+      // Changed 3-Nov-2026 (RR-046) from the season-dependent forecast GP% to Target GM0% --
+      // a stable, non-season-specific pricing/costing goal (RR-008), per user direction.
+      copy.sort(function (a, b) { return (b.marginTarget || 0) - (a.marginTarget || 0); });
     } else if (state.sort === "sales2026") {
       // 2026 is YTD through October -- sorting on it anyway per user direction, for Tier
       // categorisation (3-Nov-2026) -- a partial year is still the most recent real signal.
