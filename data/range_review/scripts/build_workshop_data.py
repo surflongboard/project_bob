@@ -53,6 +53,7 @@ RR_DIR = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(RR_DIR / "scripts"))
 from build_franchise_list import build_rows  # noqa: E402
 from build_forecast_discrepancies import load_ss28_qty_by_code  # noqa: E402
+from build_historical_sales import build_by_base as build_historical_sales_by_base  # noqa: E402
 
 REPO_ROOT = RR_DIR.parents[1]
 sys.path.insert(0, str(REPO_ROOT / "data" / "ss26_portfolio_tiering" / "scripts"))
@@ -169,6 +170,7 @@ def build() -> list[dict]:
     inventory_by_base = load_inventory_by_base()
     tail_styles_by_base = load_tail_styles_by_base()
     generation_age_by_base = load_generation_age_by_base()
+    historical_sales_by_base = build_historical_sales_by_base()
 
     out = []
     for r in franchise_rows:
@@ -195,16 +197,21 @@ def build() -> list[dict]:
         else:
             is_new, new_season_label = False, None
         # Distinguish a genuinely NEW FRANCHISE (first-ever appearance) from a NEW GENERATION of
-        # a franchise that was already active before this generation launched -- e.g. "Alert GTX
-        # Jacket"/"Klyva GTX Jacket" are active FW27+SS28+FW28 (continuous), but their "II"
-        # generation's own Release Season is SS28 (Gen 1 and "II" coexist that one season, same
-        # overlap pattern as "L.I.M GTX Jacket" in IP-011). Flagging that as "New in SS28" without
-        # this distinction reads as "the whole franchise just launched," which is wrong and was
-        # flagged as confusing (3-Nov-2026) -- active_fw27/active_ss28 (seasons BEFORE this
-        # generation's own release) is what tells the two cases apart.
+        # a franchise that already existed -- e.g. "Alert GTX II Jacket" is active FW27+SS28+FW28
+        # (continuous), but its "II" generation's own Release Season is SS28. The first pass
+        # (3-Nov-2026) checked "was the franchise active in a season before this generation's own
+        # release" -- but that misses a predecessor that already phased out before FW27 even
+        # started, e.g. "L.I.M Airak 2,5L Proof II Jacket"/"L.I.M GTX III Pant": their own Gen-1
+        # row either predates the Product master's SS20 coverage or just isn't active any more,
+        # so active_fw27/active_ss28 were both False and they were wrongly called "franchise"
+        # (caught by the user 3-Nov-2026). The reliable signal doesn't need Gen 1 to be visible at
+        # all: a version token (II/2.0/III/IV) IN THE CURRENT GENERATION'S OWN NAME is definitional
+        # proof something came before it, regardless of whether that predecessor still shows up
+        # anywhere in available data. `age["label"]` already IS that token (blank only for a true
+        # first generation) -- no separate lookup needed.
         new_kind = None
         if is_new:
-            new_kind = "generation" if (active_fw27 or (new_season_label == "FW28" and active_ss28)) else "franchise"
+            new_kind = "generation" if (age is not None and age["label"]) else "franchise"
 
         out.append({
             "base": base,
@@ -225,7 +232,7 @@ def build() -> list[dict]:
             "numColors": r["# active colors"],
             "coreAssortmentFW27": r["Core Assortment FW27"] == "Yes",
             "coreAssortmentSS28": r["Core Assortment SS28"],
-            "fc1TopdownDemandSS28": r["SS28 FC1 Demand (Top-Down Comparison)"] or None,  # RR-028 -- deliberately separate from forecastQty, see that entry
+            "fc1TopdownDemandSS28": r["SS28 FC1 Demand (Top-Down Comparison)"] or None,  # RR-028 -- kept for audit; no longer its own card stat (RR-038, folded into forecastQtySS28 below)
             "abs": r["ABS"] == "Yes",
             "asiaFit": r["Asia Fit"] == "Yes",
             "statusFW27": r["Status FW27"],
@@ -236,10 +243,19 @@ def build() -> list[dict]:
             "forecastGPDTC": r["Forecast GP% (DTC)"] or None,
             "forecastQtyWS": r["Forecast Qty (Wholesale)"] or None,
             "forecastGPWS": r["Forecast GP% (Wholesale)"] or None,
-            "forecastQtyFW27": r["_forecast_fw27_qty"],
+            "forecastQtyFW27": r["_forecast_fw27_qty"],  # FW27 FC3, unchanged (RR-012)
             "forecastGPFW27": r["_forecast_fw27_gp"],
-            "forecastQtySS28": r["_forecast_ss28_qty"],
+            # RR-038 -- SS28's card figure now comes from the FC1 Top-Down vs Bottom-Up file
+            # (RR-028's fc1TopdownDemandSS28), per user direction 3-Nov-2026, NOT the original
+            # bottom-up forecast CSV (RR-011/RR-023) any more -- that figure is kept under
+            # forecastQtySS28BottomUp for audit, since RR-023 found it doesn't reconcile with
+            # the MOQ email's FC1 figure either and this swap doesn't resolve that, just picks
+            # which number the card shows.
+            "forecastQtySS28": r["SS28 FC1 Demand (Top-Down Comparison)"] or None,
             "forecastGPSS28": r["_forecast_ss28_gp"],
+            "forecastQtySS28BottomUp": r["_forecast_ss28_qty"],
+            "forecastQtyFW28": None,  # RR-026/RR-034 -- no FW28 forecast file exists yet
+            "historicalSales": historical_sales_by_base.get(base, {}),  # RR-037 -- {"2024": {...}, "2025": {...}, "2026": {...}}
             "imageFile": r["_image_file"],
             "moq": moq,
             "hasForecastDiscrepancy": any(m["hasDiscrepancy"] for m in moq),

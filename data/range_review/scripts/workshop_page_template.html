@@ -413,6 +413,13 @@ a { color: var(--accent); }
 .stat .label { font-size: 10px; color: var(--fg-muted); text-transform: uppercase; letter-spacing: 0.03em; }
 .stat .value { font-size: 14px; font-weight: 600; }
 .stat .value.muted { color: var(--fg-muted); font-weight: 500; }
+.hist-sales { border-top: 1px dashed var(--border); padding-top: 6px; }
+.hist-sales-label { font-size: 10px; color: var(--fg-muted); text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 3px; }
+.hist-cols { display: flex; gap: 10px; }
+.hist-col { flex: 1; min-width: 0; }
+.hist-year { font-size: 10px; color: var(--fg-muted); font-weight: 600; }
+.hist-units { font-size: 13px; font-weight: 600; }
+.hist-gp { font-size: 11px; color: var(--fg-muted); }
 
 .alert { border-radius: 8px; padding: 8px 10px; font-size: 12px; line-height: 1.4; border: 1px solid; }
 .alert.moq { background: var(--warn-bg); color: var(--warn-fg); border-color: var(--warn-border); }
@@ -701,6 +708,23 @@ textarea.action-note {
   function fmtPct(n) { return n == null ? "—" : n.toFixed(1) + "%"; }
   function fmtSEK(n) { return n == null ? "—" : Number(n).toLocaleString("en-US") + " SEK"; }
 
+  // RR-037 -- 2024 is from the existing bob_salesdata_2024.xlsx (the new Sales_Data_2024
+  // export's Wholesale channel is badly undercounted for 2024 specifically, confirmed against
+  // the user's own unsplit master file too -- not used here). 2025/2026 are the new per-year
+  // CSVs; 2026 is YTD through October only. GP% is blank (not 0%) under MIN_RELIABLE SEK.
+  function historicalSalesHtml(d) {
+    var hs = d.historicalSales || {};
+    if (!hs["2024"] && !hs["2025"] && !hs["2026"]) return "";
+    var cols = [["2024", hs["2024"]], ["2025", hs["2025"]], ["2026 YTD", hs["2026"]]].map(function (pair) {
+      var label = pair[0], v = pair[1] || {};
+      return '<div class="hist-col"><div class="hist-year">' + label + '</div>' +
+        '<div class="hist-units">' + fmtQty(v.units) + ' units</div>' +
+        '<div class="hist-gp">' + fmtPct(v.gpPct) + ' GP</div></div>';
+    }).join("");
+    return '<div class="hist-sales"><div class="hist-sales-label">Historical sales</div>' +
+      '<div class="hist-cols">' + cols + "</div></div>";
+  }
+
   function cardHtml(d) {
     var id = slug(d.base);
     var dec = decisions[id] || {};
@@ -712,19 +736,11 @@ textarea.action-note {
     if (d.activeSS28) seasons.push("SS28");
     if (d.activeFW28) seasons.push("FW28");  // RR-026 -- tag only, no forecast/MOQ data behind this yet
 
-    var forecastQty = seasonQty(d), forecastGP = seasonGP(d);
-    // FW27 round is confirmed FC3 (RR-012). SS28 round is confirmed FC1 by the user
-    // (29-Oct-2026) -- but this file's own SKU-level Qty still doesn't match the MOQ
-    // email's independently-sourced FC1 figure for the same codes (RR-023, still Open
-    // on THAT reconciliation question even though the round itself is now settled).
-    var forecastLabel = state.season === "FW27" ? "Forecast Qty (FW27 FC3)" :
-      state.season === "SS28" ? "Forecast Qty (SS28 FC1)" :
-      state.season === "FW28" ? "Forecast Qty (FW28 — none yet)" :
-      "Forecast Qty (FW27 FC3 + SS28 FC1)";
-    var gpLabel = state.season === "FW27" ? "GP% (FW27 FC3)" :
-      state.season === "SS28" ? "GP% (SS28 FC1)" :
-      state.season === "FW28" ? "GP% (FW28 — none yet)" :
-      "GP% blended (FC3 + FC1)";
+    // RR-038 -- forecast quantity is now shown as all three seasons together, always, rather
+    // than swapping a single tile with the season toggle -- "clean up forecast FW27, SS28 and
+    // FW28 units," per the user 3-Nov-2026. SS28's figure is the FC1 Top-Down vs Bottom-Up file
+    // (RR-028), not the original bottom-up forecast CSV (kept as forecastQtySS28BottomUp for
+    // audit, unused here). FW28 has no forecast file yet (RR-026/RR-034) and shows "—".
 
     var chips = "";
     if (d.coreAssortmentFW27) chips += '<span class="chip core">Core FW27</span>';
@@ -782,13 +798,14 @@ textarea.action-note {
           '<span>&middot;</span><span>' + escapeHtml(d.gender) + "</span></div></div>" +
           (chips ? '<div class="chips">' + chips + "</div>" : "") +
           '<div class="stat-grid">' +
-            '<div class="stat"><div class="label">' + forecastLabel + '</div><div class="value num">' + fmtQty(forecastQty) + "</div></div>" +
-            '<div class="stat"><div class="label">' + gpLabel + '</div><div class="value num">' + fmtPct(forecastGP) + "</div></div>" +
+            '<div class="stat"><div class="label">FW27 Qty</div><div class="value num">' + fmtQty(d.forecastQtyFW27) + "</div></div>" +
+            '<div class="stat"><div class="label">SS28 Qty</div><div class="value num">' + fmtQty(d.forecastQtySS28) + "</div></div>" +
+            '<div class="stat"><div class="label">FW28 Qty</div><div class="value num muted">' + fmtQty(d.forecastQtyFW28) + "</div></div>" +
             '<div class="stat"><div class="label">Target GM0%</div><div class="value num muted">' + fmtPct(d.marginTarget) + "</div></div>" +
             '<div class="stat"><div class="label">Target RRP</div><div class="value num muted">' + fmtSEK(d.targetRRP) + "</div></div>" +
             '<div class="stat"><div class="label"># Colors</div><div class="value num muted">' + fmtQty(d.numColors) + "</div></div>" +
-            '<div class="stat"><div class="label">FC1 Demand (Top-Down)</div><div class="value num muted">' + fmtQty(d.fc1TopdownDemandSS28) + "</div></div>" +
           "</div>" +
+          historicalSalesHtml(d) +
           alerts +
           activity +
           '<div class="decision">' +
