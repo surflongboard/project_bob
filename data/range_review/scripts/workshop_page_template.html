@@ -699,6 +699,7 @@ textarea.action-note {
 
     var chips = "";
     if (d.coreAssortmentFW27) chips += '<span class="chip core">Core FW27</span>';
+    if (d.coreAssortmentSS28 === "Yes") chips += '<span class="chip core">Core SS28</span>';
     if (d.genderNote) chips += '<span class="chip">' + escapeHtml(d.genderNote) + "</span>";
     if (d.abs) chips += '<span class="chip">ABS</span>';
     if (d.asiaFit) chips += '<span class="chip">Asia Fit</span>';
@@ -779,6 +780,7 @@ textarea.action-note {
             '<div class="stat"><div class="label">Target GM0%</div><div class="value num muted">' + fmtPct(d.marginTarget) + "</div></div>" +
             '<div class="stat"><div class="label">Target RRP</div><div class="value num muted">' + fmtSEK(d.targetRRP) + "</div></div>" +
             '<div class="stat"><div class="label"># Colors</div><div class="value num muted">' + fmtQty(d.numColors) + "</div></div>" +
+            '<div class="stat"><div class="label">FC1 Demand (Top-Down)</div><div class="value num muted">' + fmtQty(d.fc1TopdownDemandSS28) + "</div></div>" +
           "</div>" +
           alerts +
           activity +

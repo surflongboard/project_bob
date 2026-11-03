@@ -44,8 +44,15 @@ Adds a plain "Core Assortment FW27" Yes/No column, sourced from the flag
 already in the SS26 tiering workbook (Sheet 2), rolled up from Base+Gender
 to Base grain (Yes if either gender was Yes). Not framed as a historic-
 sales cross-check here -- that comparison is a later step, once updated
-sales data is in. "Core Assortment SS28" has no source yet (the flag was
-only ever defined for FW27) -- left as "To confirm" for every row.
+sales data is in. "Core Assortment SS28" (received 3-Nov-2026, RR-028) now
+has a real source too -- the "Comparison FC1 Top-Down vs. Bottom-Up SS28"
+workbook's CORE-HEAT tab, column P, Code-grain -- "To confirm" only for
+the handful of franchises whose SS28 codes aren't covered by that file.
+That same workbook's FC1 tab (column AM) also adds a THIRD, separately-
+labeled SS28 demand figure ("SS28 FC1 Demand (Top-Down Comparison)") --
+deliberately not merged into or overwriting the existing Forecast Qty
+(SS28), since RR-023 already found two other "FC1" SS28 sources don't
+reconcile with each other.
 
 Also adds "# active colors" (sum of colorway-level Active flags across
 every style rolled into the franchise -- see RR-010 for a caveat on rows
@@ -156,6 +163,51 @@ def load_core_assortment_fw27() -> dict[str, str]:
     return {base: ("Yes" if "Yes" in flags else "No") for base, flags in by_base.items()}
 
 
+FC1_TOPDOWN_PATH = INPUTS_DIR / "forecast" / "Comparison_FC1_Top-Down_vs_Bottom-Up_SS28.xlsx"
+
+
+def load_core_assortment_ss28_by_code() -> dict[str, str]:
+    """Code -> 'Yes'/'No', from the "Comparison FC1 Top-Down vs. Bottom-Up
+    SS28" workbook's CORE-HEAT tab, column P (RR-028) -- the first real
+    source for SS28 Core Assortment (previously "To confirm" for every
+    row, RR-008). 'CORE' and 'CORE -ADD SS28' (7 codes -- newly added to
+    Core for SS28, not already-Core) both count as Yes; blank is No.
+    Code-grain, not Base -- rolled up to franchise level in build_rows()
+    the same way Core Assortment FW27 is, except per-code here since this
+    source only covers 312 of the ~316 main-range SS28 codes (RR-014-style
+    gap), not every code for every franchise."""
+    wb = openpyxl.load_workbook(FC1_TOPDOWN_PATH, read_only=True, data_only=True)
+    ws = wb["CORE-HEAT"]
+    by_code: dict[str, str] = {}
+    for r in ws.iter_rows(min_row=3, values_only=True):
+        code = r[1]
+        if code is None:
+            continue
+        by_code[str(code)] = "Yes" if r[15] else "No"  # column P
+    return by_code
+
+
+def load_fc1_topdown_demand_by_code() -> dict[str, float]:
+    """Code -> "UPDATE Total QTY incl. Re-order" (column AM) from the same
+    workbook's FC1 tab (RR-028) -- the user's own framing: "the latest FC1
+    forecast (total demand)". This is a THIRD distinct SS28 demand figure
+    alongside the existing Forecast Qty (SS28) (RR-011, from the separate
+    SS28 forecast CSV) and the MOQ email's FC1 demand (RR-016) -- RR-023
+    already found those two don't reconcile with each other at single-SKU
+    grain, so this one is kept in its OWN column ("SS28 FC1 Demand (Top-
+    Down Comparison)") rather than overwriting or averaging into either,
+    until the team reconciles all three."""
+    wb = openpyxl.load_workbook(FC1_TOPDOWN_PATH, read_only=True, data_only=True)
+    ws = wb["FC1"]
+    by_code: dict[str, float] = {}
+    for r in ws.iter_rows(min_row=3, values_only=True):
+        code = r[1]
+        if code is None:
+            continue
+        by_code[str(code)] = r[38]  # column AM
+    return by_code
+
+
 def load_style_rows(path: Path, season_label: str) -> list[dict]:
     """One dict per style row, with its nested colorway sub-rows counted.
 
@@ -243,6 +295,8 @@ def load_forecast_by_key() -> dict[tuple[str, str], list[dict]]:
 
 def build_rows() -> list[dict]:
     core_fw27 = load_core_assortment_fw27()
+    core_ss28_by_code = load_core_assortment_ss28_by_code()
+    fc1_topdown_by_code = load_fc1_topdown_demand_by_code()
     forecast_by_key = load_forecast_by_key()
     gm_by_code = load_gm_by_code()
     rows = (load_style_rows(FW27_PATH, "FW27") + load_style_rows(SS28_PATH, "SS28")
@@ -304,6 +358,23 @@ def build_rows() -> list[dict]:
         fw27_qty, fw27_gp = forecast_for_season("FW27")
         ss28_qty, ss28_gp = forecast_for_season("SS28")
 
+        # RR-028: Core Assortment SS28, Yes if any of the franchise's SS28 codes
+        # is flagged Core; No if matched but not flagged; "To confirm" if none of
+        # its SS28 codes appear in the source at all (same convention as the
+        # 25-code gap already documented for forecast matching, RR-014).
+        ss28_core_matches = {core_ss28_by_code[str(r["code"])] for r in items
+                              if r["season_label"] == "SS28" and str(r["code"]) in core_ss28_by_code}
+        if "Yes" in ss28_core_matches:
+            core_ss28 = "Yes"
+        elif "No" in ss28_core_matches:
+            core_ss28 = "No"
+        else:
+            core_ss28 = "To confirm"
+
+        fc1_topdown_vals = [fc1_topdown_by_code[str(r["code"])] for r in items
+                             if r["season_label"] == "SS28" and str(r["code"]) in fc1_topdown_by_code]
+        fc1_topdown_demand = round(sum(fc1_topdown_vals)) if fc1_topdown_vals else ""
+
         def status_for(season_label: str) -> str:
             season_rows = [fr for r in items if r["season_label"] == season_label
                            for fr in forecast_by_key.get((season_label, r["code"]), [])]
@@ -333,7 +404,7 @@ def build_rows() -> list[dict]:
             "# styles rolled up": len(items),
             "# active colors": total_colors,
             "Core Assortment FW27": core_fw27.get(base, "No"),
-            "Core Assortment SS28": "To confirm",
+            "Core Assortment SS28": core_ss28,
             "ABS": "Yes" if base in abs_bases else "No",
             "Asia Fit": "Yes" if base in af_bases else "No",
             "Status FW27": status_for("FW27"),
@@ -345,6 +416,7 @@ def build_rows() -> list[dict]:
             "Forecast GP% (DTC)": round(dtc_gp, 1) if dtc_gp is not None else "",
             "Forecast Qty (Wholesale)": round(ws_qty) if ws_qty else "",
             "Forecast GP% (Wholesale)": round(ws_gp, 1) if ws_gp is not None else "",
+            "SS28 FC1 Demand (Top-Down Comparison)": fc1_topdown_demand,  # RR-028 -- a THIRD, separate SS28 demand figure; see that entry before assuming it should match Forecast Qty (SS28) above
         })
 
     out_rows.sort(key=lambda r: (r["Layer"], r["Business Area"], r["Franchise"]))
@@ -407,9 +479,23 @@ def write_workbook(rows: list[dict], path: Path) -> None:
     notes.append(["Core Assortment FW27", "Yes/No, from the flag already in the SS26 tiering "
                                            "workbook (57/1,860 Base+Gender rows = 'Yes'), rolled "
                                            "up to Base grain (Yes if either gender was Yes)."])
-    notes.append(["Core Assortment SS28", "No source yet -- the flag was only ever defined for "
-                                           "FW27. Left as 'To confirm' for every row until "
-                                           "Tobias/Isabelle define it for SS28."])
+    notes.append(["Core Assortment SS28", "Yes/No from the 'Comparison FC1 Top-Down vs. "
+                                           "Bottom-Up SS28' workbook's CORE-HEAT tab, column P "
+                                           "(RR-028, received 3-Nov-2026) -- 'CORE' and 'CORE "
+                                           "-ADD SS28' both count as Yes. Code-grain, rolled up "
+                                           "Yes if any of the franchise's SS28 codes is flagged; "
+                                           "'To confirm' only when none of its SS28 codes are "
+                                           "covered by that file at all."])
+    notes.append(["SS28 FC1 Demand (Top-Down Comparison)", "The 'Comparison FC1 Top-Down vs. "
+                                           "Bottom-Up SS28' workbook's FC1 tab, column AM "
+                                           "('UPDATE Total QTY incl. Re-order') -- RR-028. "
+                                           "Deliberately kept SEPARATE from Forecast Qty (SS28) "
+                                           "above, not merged or averaged in: RR-023 already "
+                                           "found two other 'FC1' SS28 demand sources don't "
+                                           "reconcile with each other at single-SKU grain, so a "
+                                           "third one gets its own column pending the team's "
+                                           "reconciliation, not another silent assumption. Blank "
+                                           "when none of the franchise's SS28 codes are covered."])
     notes.append(["# active colors", "Sum of active colorways (the colorway-level Active flag, "
                                       "not just a row listed in the sheet) across every style "
                                       "rolled into this franchise -- both genders, both seasons. "

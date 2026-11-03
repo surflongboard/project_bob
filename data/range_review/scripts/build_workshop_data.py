@@ -189,6 +189,7 @@ def build() -> list[dict]:
             "numColors": r["# active colors"],
             "coreAssortmentFW27": r["Core Assortment FW27"] == "Yes",
             "coreAssortmentSS28": r["Core Assortment SS28"],
+            "fc1TopdownDemandSS28": r["SS28 FC1 Demand (Top-Down Comparison)"] or None,  # RR-028 -- deliberately separate from forecastQty, see that entry
             "abs": r["ABS"] == "Yes",
             "asiaFit": r["Asia Fit"] == "Yes",
             "statusFW27": r["Status FW27"],
