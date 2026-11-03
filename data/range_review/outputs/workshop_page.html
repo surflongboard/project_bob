@@ -541,6 +541,8 @@ textarea.action-note {
       <option value="name">Franchise A–Z</option>
       <option value="forecast">Forecast Qty, high to low</option>
       <option value="gp">GP%, high to low</option>
+      <option value="sales2026">2026 Sales (units), high to low</option>
+      <option value="gp2026">2026 GP%, high to low</option>
     </select>
     <button class="toggle-btn" id="generationAgeToggle" type="button">Generation age</button>
     <button class="toggle-btn" id="newFranchiseToggle" type="button">New franchise</button>
@@ -885,6 +887,20 @@ textarea.action-note {
       copy.sort(function (a, b) { return (seasonQty(b) || 0) - (seasonQty(a) || 0); });
     } else if (state.sort === "gp") {
       copy.sort(function (a, b) { return (seasonGP(b) || 0) - (seasonGP(a) || 0); });
+    } else if (state.sort === "sales2026") {
+      // 2026 is YTD through October -- sorting on it anyway per user direction, for Tier
+      // categorisation (3-Nov-2026) -- a partial year is still the most recent real signal.
+      copy.sort(function (a, b) {
+        var au = (a.historicalSales && a.historicalSales["2026"] && a.historicalSales["2026"].units) || 0;
+        var bu = (b.historicalSales && b.historicalSales["2026"] && b.historicalSales["2026"].units) || 0;
+        return bu - au;
+      });
+    } else if (state.sort === "gp2026") {
+      copy.sort(function (a, b) {
+        var ag = (a.historicalSales && a.historicalSales["2026"] && a.historicalSales["2026"].gpPct);
+        var bg = (b.historicalSales && b.historicalSales["2026"] && b.historicalSales["2026"].gpPct);
+        return (bg == null ? -Infinity : bg) - (ag == null ? -Infinity : ag);
+      });
     } else {
       copy.sort(function (a, b) {
         var pa = needsDecision(a) ? 0 : 1, pb = needsDecision(b) ? 0 : 1;
