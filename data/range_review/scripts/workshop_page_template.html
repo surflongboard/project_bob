@@ -526,6 +526,51 @@ textarea.action-note {
 }
 .decision-meta { font-size: 10.5px; color: var(--fg-muted); min-height: 13px; }
 
+/* RR-053 -- homework mode: each viewer's own private tier pick (data/users/<id>/,
+   sealed until THEY reveal it -- see db capability's "Hidden-until-reveal" pattern)
+   plus the live tally of whoever has revealed so far (homework_responses, open read). */
+.homework-bar {
+  max-width: 1180px;
+  margin: 10px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  background: color-mix(in srgb, var(--accent) 10%, var(--bg-raised));
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 12.5px;
+  color: var(--fg-muted);
+}
+.reveal-btn {
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: var(--accent-fg);
+  border-radius: 8px;
+  padding: 7px 14px;
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.reveal-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.homework-pick-row {
+  border: 1px dashed var(--accent);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+.homework-pick-row label {
+  display: block;
+  font-size: 10px;
+  color: var(--fg-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 4px;
+}
+.homework-tally { color: var(--accent); }
+
 .footer-note {
   max-width: 1180px;
   margin: 0 auto;
@@ -576,6 +621,7 @@ textarea.action-note {
     </select>
     <button class="toggle-btn" id="generationAgeToggle" type="button">Generation age</button>
     <button class="toggle-btn" id="newFranchiseToggle" type="button">New franchise</button>
+    <button class="toggle-btn" id="homeworkModeToggle" type="button">Homework mode</button>
     <div class="threshold-group">
       <label for="minSales2026">2026 Sales ≥</label>
       <input type="number" id="minSales2026" class="threshold-input" placeholder="e.g. 10000" min="0" step="100">
@@ -595,6 +641,11 @@ textarea.action-note {
       </div>
     </div>
   </div>
+</div>
+
+<div class="homework-bar" id="homeworkBar" hidden>
+  <span id="homeworkBarText"></span>
+  <button class="reveal-btn" id="revealBtn" type="button">Reveal my homework to the team</button>
 </div>
 
 <div class="layer-heading">
@@ -694,20 +745,32 @@ textarea.action-note {
   // ---------- state ----------
   var state = { layerKey: LAYERS.length ? LAYERS[0].key : null, search: "", sort: "priority",
     flagGenerationAge: false, flagNewFranchise: false, minSales2026: null, minGp2026: null,
-    tierFilter: new Set(), season: "all", view: "board" };
+    tierFilter: new Set(), season: "all", view: "board", homeworkMode: false };
   var decisions = {}; // slug -> {tier, action, updatedAt}
 
   function render() {
+    updateHomeworkBar();
     if (state.view === "summary") renderSummary(); else renderBoard();
   }
 
   // ---------- db wiring ----------
   var dbCol = null;
+  var dbModule = null;
+  // RR-053 -- homework mode. Each viewer's own picks live under data/users/<id>/homework,
+  // private by the db capability's default (sealed from every other viewer, the owner
+  // included) until THEY individually copy their own responses into the shared,
+  // openly-readable `homework_responses` collection -- the platform's documented
+  // "hidden-until-reveal" pattern. There is no single owner-side "reveal everyone" switch:
+  // nobody else can read a sealed draft to reveal it on that person's behalf.
+  var myDraftDoc = null;
+  var sharedHomeworkCol = null;
+  var myHomeworkDraft = {}; // slug -> {tier, updatedAt} -- this viewer's own, private
+  var homeworkResponses = {}; // userId -> {responses: {...}, submittedAt} -- revealed, shared
   (async function initDb() {
     try {
-      var db = await claude.use("db");
-      if (!db) return;
-      dbCol = db.collection("decisions");
+      dbModule = await claude.use("db");
+      if (!dbModule) return;
+      dbCol = dbModule.collection("decisions");
       dbCol.onSnapshot(function (snap) {
         snap.docs.forEach(function (doc) {
           var data = doc.data();
@@ -717,10 +780,48 @@ textarea.action-note {
       }, function (err) {
         console.warn("decisions subscription error", err);
       });
+      sharedHomeworkCol = dbModule.collection("homework_responses");
+      sharedHomeworkCol.onSnapshot(function (snap) {
+        var next = {};
+        snap.docs.forEach(function (doc) {
+          var data = doc.data();
+          if (data) next[doc.id] = data;
+        });
+        homeworkResponses = next;
+        render();
+      }, function (err) {
+        console.warn("homework_responses subscription error", err);
+      });
+      maybeInitMyHomeworkDraft();
     } catch (e) {
       console.warn("db unavailable", e);
     }
   })();
+
+  var myUserId = null;
+  (async function initUser() {
+    try {
+      var userModule = await claude.use("user");
+      if (!userModule) return;
+      myUserId = await userModule.id();
+      maybeInitMyHomeworkDraft();
+      render();
+    } catch (e) {
+      console.warn("user capability unavailable", e);
+    }
+  })();
+
+  function maybeInitMyHomeworkDraft() {
+    if (!dbModule || !myUserId || myDraftDoc) return;
+    myDraftDoc = dbModule.doc("data/users/" + myUserId + "/homework");
+    myDraftDoc.onSnapshot(function (doc) {
+      var data = doc && doc.exists ? doc.data() : null;
+      myHomeworkDraft = (data && data.responses) || {};
+      renderBoard();
+    }, function (err) {
+      console.warn("homework draft subscription error", err);
+    });
+  }
 
   var pendingWrites = {};
   function saveDecision(base, franchise, tier, action, lastSeasonToSell, consolidate) {
@@ -733,6 +834,69 @@ textarea.action-note {
     pendingWrites[id] = setTimeout(function () {
       dbCol.doc(id).set(body).catch(function (err) { console.warn("save failed", err); });
     }, 400);
+  }
+
+  var pendingDraftWrite = null;
+  function saveHomeworkPick(base, tier) {
+    if (!myDraftDoc) return;
+    var s = slug(base);
+    if (tier) myHomeworkDraft[s] = { tier: tier, updatedAt: Date.now() };
+    else delete myHomeworkDraft[s];
+    renderBoard(); // optimistic local update
+    clearTimeout(pendingDraftWrite);
+    pendingDraftWrite = setTimeout(function () {
+      myDraftDoc.set({ responses: myHomeworkDraft, updatedAt: Date.now() })
+        .catch(function (err) { console.warn("homework draft save failed", err); });
+    }, 400);
+  }
+
+  function revealMyHomework() {
+    if (!myUserId || !sharedHomeworkCol) return;
+    sharedHomeworkCol.doc(myUserId).set({ responses: myHomeworkDraft, submittedAt: Date.now() })
+      .then(function () { render(); })
+      .catch(function (err) {
+        console.warn("reveal failed", err);
+        alert("Reveal failed — see console.");
+      });
+  }
+
+  // Live tally across everyone who has revealed so far (homeworkResponses is openly
+  // readable once a person reveals -- see the db-wiring note above). Returns null when
+  // nobody has picked a tier for this franchise yet.
+  function homeworkTallyFor(base) {
+    var s = slug(base);
+    var tally = {};
+    var total = 0;
+    Object.keys(homeworkResponses).forEach(function (uid) {
+      var r = homeworkResponses[uid] && homeworkResponses[uid].responses;
+      var pick = r && r[s] && r[s].tier;
+      if (!pick) return;
+      tally[pick] = (tally[pick] || 0) + 1;
+      total++;
+    });
+    return total ? { tally: tally, total: total } : null;
+  }
+
+  function updateHomeworkBar() {
+    var bar = document.getElementById("homeworkBar");
+    var text = document.getElementById("homeworkBarText");
+    var btn = document.getElementById("revealBtn");
+    if (!bar || !text || !btn) return;
+    bar.hidden = !state.homeworkMode;
+    if (!state.homeworkMode) return;
+    var n = Object.keys(myHomeworkDraft).length;
+    var revealed = myUserId && homeworkResponses[myUserId];
+    if (!myUserId) {
+      text.textContent = "Sign in to save your own homework picks privately.";
+    } else if (revealed) {
+      var revealedCount = Object.keys(homeworkResponses[myUserId].responses || {}).length;
+      text.textContent = "You've revealed " + revealedCount + " pick" + (revealedCount === 1 ? "" : "s") +
+        " to the team. Pick more, then reveal again to update.";
+    } else {
+      text.textContent = n + " private pick" + (n === 1 ? "" : "s") +
+        " saved so far — nobody else can see these, not even the Board owner, until you reveal.";
+    }
+    btn.disabled = !myUserId || n === 0;
   }
 
   // ---------- rendering ----------
@@ -820,6 +984,8 @@ textarea.action-note {
     var tier = dec.tier || "";
     var lastSeason = dec.lastSeasonToSell || "";
     var consolidate = !!dec.consolidate;
+    var myPick = (myHomeworkDraft[id] && myHomeworkDraft[id].tier) || "";
+    var hwTally = homeworkTallyFor(d.base);
     var seasons = [];
     if (d.activeFW27) seasons.push("FW27");
     if (d.activeSS28) seasons.push("SS28");
@@ -907,6 +1073,25 @@ textarea.action-note {
           alerts +
           activity +
           '<div class="decision">' +
+            // RR-053 -- team homework tally, shown whenever anyone has revealed a pick for
+            // this franchise, independent of Homework mode being on -- useful context going
+            // into the workshop discussion, same spirit as the rule-based "Suggested" hint.
+            (hwTally
+              ? '<div class="hint-row homework-tally">Team homework (' + hwTally.total + '): ' +
+                Object.keys(hwTally.tally).map(function (t) {
+                  return escapeHtml(t) + " (" + hwTally.tally[t] + ")";
+                }).join(", ") + "</div>"
+              : "") +
+            // RR-053 -- this viewer's own private pick, visible only in Homework mode. Writes
+            // to data/users/<id>/homework, sealed from everyone else until this person reveals.
+            (state.homeworkMode
+              ? '<div class="homework-pick-row"><label>Your pick (private until you reveal)</label>' +
+                '<select class="tier-select homework-select" data-tier="' + myPick + '">' +
+                  ["", "Hero", "Harvest", "Emerging", "Exit"].map(function (t) {
+                    return '<option value="' + t + '"' + (t === myPick ? " selected" : "") + ">" + (t || "No pick yet…") + "</option>";
+                  }).join("") +
+                "</select></div>"
+              : "") +
             // RR-048 -- one unified "Suggested: <Tier>" hint, covering all four tiers, not just
             // the new-in-season case. The new-in-season wording stays richer (generation vs
             // franchise, same as before) since d.suggestedTierReason alone is terser for that
@@ -1015,6 +1200,13 @@ textarea.action-note {
       var seasonSelect = card.querySelector(".season-select");
       var consolidateCheck = card.querySelector(".consolidate-check");
       var textarea = card.querySelector(".action-note");
+      var homeworkSelect = card.querySelector(".homework-select");
+      if (homeworkSelect) {
+        homeworkSelect.addEventListener("change", function () {
+          homeworkSelect.setAttribute("data-tier", homeworkSelect.value);
+          saveHomeworkPick(base, homeworkSelect.value);
+        });
+      }
       select.addEventListener("change", function () {
         select.setAttribute("data-tier", select.value);
         saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value, consolidateCheck.checked);
@@ -1160,6 +1352,16 @@ textarea.action-note {
     state.flagNewFranchise = !state.flagNewFranchise;
     newFranchiseToggle.classList.toggle("active", state.flagNewFranchise);
     renderBoard();
+  });
+  var homeworkModeToggle = document.getElementById("homeworkModeToggle");
+  homeworkModeToggle.addEventListener("click", function () {
+    state.homeworkMode = !state.homeworkMode;
+    homeworkModeToggle.classList.toggle("active", state.homeworkMode);
+    updateHomeworkBar();
+    renderBoard();
+  });
+  document.getElementById("revealBtn").addEventListener("click", function () {
+    revealMyHomework();
   });
   document.getElementById("minSales2026").addEventListener("input", function (e) {
     state.minSales2026 = e.target.value === "" ? null : Number(e.target.value);
