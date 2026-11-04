@@ -1482,7 +1482,7 @@ textarea.homework-note {
   // back to the same plain format as fmtSEK().
   function fmtSEKCompact(n) {
     if (n == null) return "—";
-    if (Math.abs(n) >= 1000) return Math.round(n / 1000) + "K SEK";
+    if (Math.abs(n) >= 1000) return Math.round(n / 1000) + "k SEK";
     return Number(n).toLocaleString("en-US") + " SEK";
   }
 
