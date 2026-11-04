@@ -125,6 +125,30 @@ a { color: var(--accent); }
 .page-header-top { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 .source-note { color: var(--fg-muted); font-size: 12px; margin-top: 10px; }
 
+/* RR-074 -- "Suggested tier" definition box, top-right of the page header. Pinned to the end
+   of the .page-header-top flex row with margin-left: auto so it stays right-aligned next to
+   the H1/Homework-mode row on wide screens, and drops to its own full-width line when the row
+   wraps (flex-wrap already set on the parent) rather than overlapping anything. */
+.tier-definition-box {
+  margin-left: auto;
+  max-width: 320px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-raised);
+  padding: 10px 12px;
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--fg-muted);
+}
+.tier-definition-box .tdb-title { color: var(--fg); font-weight: 700; font-size: 12px; display: block; margin-bottom: 4px; }
+.tier-definition-box ul { margin: 2px 0 4px 15px; padding: 0; }
+.tier-definition-box li { margin-bottom: 2px; }
+.tier-definition-box .tdb-tier-hero { color: var(--tier-hero); font-weight: 600; }
+.tier-definition-box .tdb-tier-harvest { color: var(--tier-harvest); font-weight: 600; }
+.tier-definition-box .tdb-tier-emerging { color: var(--tier-emerging); font-weight: 600; }
+.tier-definition-box .tdb-tier-exit { color: var(--tier-exit); font-weight: 600; }
+.tier-definition-box .tdb-foot { display: block; margin-top: 4px; font-style: italic; }
+
 /* ---- sticky layer nav ---- */
 .layer-nav-wrap {
   position: sticky;
@@ -714,6 +738,16 @@ textarea.homework-note {
   <div class="page-header-top">
     <h1>Range Review Board</h1>
     <button class="toggle-btn" id="homeworkModeToggle" type="button">Homework mode</button>
+    <div class="tier-definition-box">
+      <span class="tdb-title">Suggested tier — how it's computed</span>
+      <ul>
+        <li><span class="tdb-tier-emerging">Emerging</span> — new franchise this season, or no 2024/2025 sales but 2026 sales exist</li>
+        <li><span class="tdb-tier-hero">Hero</span> — 2026 sales &gt;10,000 units and GP% &gt;50% (confirm with team)</li>
+        <li><span class="tdb-tier-harvest">Harvest</span> — 2026 sales &gt;5,000 units and GP% &gt;45%</li>
+        <li><span class="tdb-tier-exit">Exit</span> — 2026 sales &lt;500 units</li>
+      </ul>
+      <span class="tdb-foot">Blank = none of these rules match. This is a hint only — Tier is always your own call.</span>
+    </div>
   </div>
   <p>FW27/SS28 franchises by layer, for the Nov 12 Range Review Workshop. Each card pulls together: price and
     margin target from the FW27/SS28 range files; Forecast Units/GP% from the FW27 FC3 forecast and the SS28 FC1
