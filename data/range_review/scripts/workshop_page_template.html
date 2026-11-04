@@ -595,7 +595,22 @@ textarea.action-note {
   letter-spacing: 0.03em;
   margin-bottom: 4px;
 }
-.homework-tally { color: var(--accent); }
+textarea.homework-note {
+  width: 100%;
+  min-height: 40px;
+  resize: vertical;
+  margin-top: 6px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 7px 8px;
+  font: inherit;
+  font-size: 12.5px;
+  background: var(--bg-sunken);
+  color: var(--fg);
+}
+/* RR-059 -- per-person homework entries, not an anonymous tally. */
+.homework-tally { color: var(--accent); line-height: 1.5; }
+.homework-entry .muted { color: var(--fg-muted); font-style: normal; }
 
 .footer-note {
   max-width: 1180px;
@@ -794,8 +809,24 @@ textarea.action-note {
   // nobody else can read a sealed draft to reveal it on that person's behalf.
   var myDraftDoc = null;
   var sharedHomeworkCol = null;
-  var myHomeworkDraft = {}; // slug -> {tier, updatedAt} -- this viewer's own, private
+  var myHomeworkDraft = {}; // slug -> {tier, note, updatedAt} -- this viewer's own, private
   var homeworkResponses = {}; // userId -> {responses: {...}, submittedAt} -- revealed, shared
+  var userModule = null;
+  // RR-059 -- resolved display names for every id that's revealed homework, id -> {name, ...}
+  // (user.d.ts's Profile shape). Re-resolved whenever the set of revealed ids changes; never
+  // written to db or kept across reloads (names are viewer-relative and can go stale -- only
+  // the id itself is persisted).
+  var profileNames = {};
+  function refreshHomeworkProfiles() {
+    if (!userModule) return;
+    var ids = Object.keys(homeworkResponses);
+    if (!ids.length) return;
+    userModule.profiles(ids).then(function (ps) {
+      profileNames = ps;
+      render();
+    }).catch(function (err) { console.warn("profiles lookup failed", err); });
+  }
+
   (async function initDb() {
     try {
       dbModule = await claude.use("db");
@@ -818,6 +849,7 @@ textarea.action-note {
           if (data) next[doc.id] = data;
         });
         homeworkResponses = next;
+        refreshHomeworkProfiles();
         render();
       }, function (err) {
         console.warn("homework_responses subscription error", err);
@@ -831,10 +863,11 @@ textarea.action-note {
   var myUserId = null;
   (async function initUser() {
     try {
-      var userModule = await claude.use("user");
+      userModule = await claude.use("user");
       if (!userModule) return;
       myUserId = await userModule.id();
       maybeInitMyHomeworkDraft();
+      refreshHomeworkProfiles();
       render();
     } catch (e) {
       console.warn("user capability unavailable", e);
@@ -867,10 +900,17 @@ textarea.action-note {
   }
 
   var pendingDraftWrite = null;
-  function saveHomeworkPick(base, tier) {
+  // RR-059 -- homework now carries a private note alongside the tier pick ("own submission
+  // and own notes before the meeting," per the user). Both are written together so one save
+  // covers whichever field just changed; the entry is dropped only once NEITHER has anything
+  // left in it (a note with no tier yet, or a tier with no note, both still count as "has
+  // homework" for this franchise).
+  function saveHomeworkPick(base, tier, note) {
     if (!myDraftDoc) return;
     var s = slug(base);
-    if (tier) myHomeworkDraft[s] = { tier: tier, updatedAt: Date.now() };
+    tier = tier || "";
+    note = note || "";
+    if (tier || note) myHomeworkDraft[s] = { tier: tier, note: note, updatedAt: Date.now() };
     else delete myHomeworkDraft[s];
     renderBoard(); // optimistic local update
     clearTimeout(pendingDraftWrite);
@@ -890,21 +930,20 @@ textarea.action-note {
       });
   }
 
-  // Live tally across everyone who has revealed so far (homeworkResponses is openly
-  // readable once a person reveals -- see the db-wiring note above). Returns null when
-  // nobody has picked a tier for this franchise yet.
-  function homeworkTallyFor(base) {
+  // RR-059 -- per-person entries (not an anonymous tally) across everyone who has revealed
+  // so far (homeworkResponses is openly readable once a person reveals -- see the db-wiring
+  // note above), by user direction: the team wants to see WHOSE pick/note is whose at the
+  // meeting, not just a blind count. [] when nobody has revealed anything for this franchise.
+  function homeworkEntriesFor(base) {
     var s = slug(base);
-    var tally = {};
-    var total = 0;
+    var entries = [];
     Object.keys(homeworkResponses).forEach(function (uid) {
       var r = homeworkResponses[uid] && homeworkResponses[uid].responses;
-      var pick = r && r[s] && r[s].tier;
-      if (!pick) return;
-      tally[pick] = (tally[pick] || 0) + 1;
-      total++;
+      var entry = r && r[s];
+      if (!entry || (!entry.tier && !entry.note)) return;
+      entries.push({ uid: uid, tier: entry.tier || "", note: entry.note || "" });
     });
-    return total ? { tally: tally, total: total } : null;
+    return entries;
   }
 
   function updateHomeworkBar() {
@@ -1051,7 +1090,8 @@ textarea.action-note {
     var lastSeason = dec.lastSeasonToSell || "";
     var consolidate = !!dec.consolidate;
     var myPick = (myHomeworkDraft[id] && myHomeworkDraft[id].tier) || "";
-    var hwTally = homeworkTallyFor(d.base);
+    var myHomeworkNote = (myHomeworkDraft[id] && myHomeworkDraft[id].note) || "";
+    var hwEntries = homeworkEntriesFor(d.base);
     var seasons = [];
     if (d.activeFW27) seasons.push("FW27");
     if (d.activeSS28) seasons.push("SS28");
@@ -1139,24 +1179,35 @@ textarea.action-note {
           alerts +
           activity +
           '<div class="decision">' +
-            // RR-053 -- team homework tally, shown whenever anyone has revealed a pick for
-            // this franchise, independent of Homework mode being on -- useful context going
-            // into the workshop discussion, same spirit as the rule-based "Suggested" hint.
-            (hwTally
-              ? '<div class="hint-row homework-tally">Team homework (' + hwTally.total + '): ' +
-                Object.keys(hwTally.tally).map(function (t) {
-                  return escapeHtml(t) + " (" + hwTally.tally[t] + ")";
-                }).join(", ") + "</div>"
+            // RR-059 -- team homework now shows WHO picked/wrote what, not an anonymous tally
+            // (per user direction: "see WHO submitted each pick/note"), shown whenever anyone
+            // has revealed for this franchise, independent of Homework mode being on -- same
+            // spirit as the rule-based "Suggested" hint. Resolving uid -> name needs the
+            // `profiles()` lookup to have come back already (profileNames, refreshed on every
+            // homeworkResponses change) -- falls back to "Someone" for an id not yet resolved,
+            // same as the user capability's own documented fallback.
+            (hwEntries.length
+              ? '<div class="hint-row homework-tally">Team homework (' + hwEntries.length + '):<br>' +
+                hwEntries.map(function (e) {
+                  var name = (profileNames[e.uid] && profileNames[e.uid].name) || "Someone";
+                  return '<span class="homework-entry"><strong>' + escapeHtml(name) + ':</strong> ' +
+                    (e.tier ? escapeHtml(e.tier) : '<span class="muted">no pick yet</span>') +
+                    (e.note ? " — " + escapeHtml(e.note) : "") + "</span>";
+                }).join("<br>") +
+                "</div>"
               : "") +
-            // RR-053 -- this viewer's own private pick, visible only in Homework mode. Writes
-            // to data/users/<id>/homework, sealed from everyone else until this person reveals.
+            // RR-053/RR-059 -- this viewer's own private pick + note, visible only in Homework
+            // mode. Writes to data/users/<id>/homework, sealed from everyone else until this
+            // person reveals.
             (state.homeworkMode
               ? '<div class="homework-pick-row"><label>Your pick (private until you reveal)</label>' +
                 '<select class="tier-select homework-select" data-tier="' + myPick + '">' +
                   ["", "Hero", "Harvest", "Emerging", "Exit"].map(function (t) {
                     return '<option value="' + t + '"' + (t === myPick ? " selected" : "") + ">" + (t || "No pick yet…") + "</option>";
                   }).join("") +
-                "</select></div>"
+                "</select>" +
+                '<textarea class="homework-note" placeholder="Your notes (private)…">' + escapeHtml(myHomeworkNote) + "</textarea>" +
+                "</div>"
               : "") +
             // RR-048 -- one unified "Suggested: <Tier>" hint, covering all four tiers, not just
             // the new-in-season case; every tier just shows its own reason text. Never writes
@@ -1277,15 +1328,27 @@ textarea.action-note {
     board.querySelectorAll(".card").forEach(function (card) {
       var base = card.getAttribute("data-base");
       var franchise = card.querySelector(".card-title").textContent;
-      var select = card.querySelector(".tier-select");
+      // RR-059 -- scoped to ".decision-row .tier-select": a plain ".tier-select" query also
+      // matches the homework pick's own select (it reuses the same class for its data-tier
+      // colour styling, RR-053), which sits EARLIER in the card's markup than the official
+      // decision-row -- in Homework mode, an unscoped query here was silently grabbing the
+      // homework select instead of the official one, breaking the official Tier dropdown's
+      // own save wiring. Pre-existing since RR-053, found while adding the notes field below.
+      var select = card.querySelector(".decision-row .tier-select");
       var seasonSelect = card.querySelector(".season-select");
       var consolidateCheck = card.querySelector(".consolidate-check");
       var textarea = card.querySelector(".action-note");
       var homeworkSelect = card.querySelector(".homework-select");
+      var homeworkNote = card.querySelector(".homework-note");
       if (homeworkSelect) {
         homeworkSelect.addEventListener("change", function () {
           homeworkSelect.setAttribute("data-tier", homeworkSelect.value);
-          saveHomeworkPick(base, homeworkSelect.value);
+          saveHomeworkPick(base, homeworkSelect.value, homeworkNote ? homeworkNote.value : "");
+        });
+      }
+      if (homeworkNote) {
+        homeworkNote.addEventListener("input", function () {
+          saveHomeworkPick(base, homeworkSelect ? homeworkSelect.value : "", homeworkNote.value);
         });
       }
       select.addEventListener("change", function () {
