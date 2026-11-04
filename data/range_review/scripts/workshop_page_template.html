@@ -1422,6 +1422,17 @@ textarea.homework-note {
   function fmtQty(n) { return n == null ? "—" : Number(n).toLocaleString("en-US"); }
   function fmtPct(n) { return n == null ? "—" : n.toFixed(1) + "%"; }
   function fmtSEK(n) { return n == null ? "—" : Number(n).toLocaleString("en-US") + " SEK"; }
+  // RR-072 -- "use K for 1000, e.g 1000K to save space," for the Historical Sales section
+  // specifically (where SEK totals run into the millions and crowd the card) -- NOT applied to
+  // fmtSEK() itself/Target RRP, since RRP values sit in the low thousands (e.g. 1,200 vs 1,700
+  // SEK) and rounding to the nearest K there would blur genuinely different price points
+  // together (both round to "1K"/"2K"). Below 1,000 there's nothing to compact, so it falls
+  // back to the same plain format as fmtSEK().
+  function fmtSEKCompact(n) {
+    if (n == null) return "—";
+    if (Math.abs(n) >= 1000) return Math.round(n / 1000) + "K SEK";
+    return Number(n).toLocaleString("en-US") + " SEK";
+  }
 
   // RR-037 -- 2024 is from the existing bob_salesdata_2024.xlsx (the new Sales_Data_2024
   // export's Wholesale channel is badly undercounted for 2024 specifically, confirmed against
@@ -1438,10 +1449,10 @@ textarea.homework-note {
       var v = raw || {};
       var wh = v.wholesale || {};
       return '<div class="hist-col"><div class="hist-year">' + label + '</div>' +
-        '<div class="hist-units">' + fmtQty(v.units) + ' units · ' + fmtSEK(v.sek) + '</div>' +
+        '<div class="hist-units">' + fmtQty(v.units) + ' units · ' + fmtSEKCompact(v.sek) + '</div>' +
         '<div class="hist-gp">' + fmtPct(v.gpPct) + ' GP</div>' +
         (hasYear
-          ? '<div class="hist-wh">Wholesale: ' + fmtQty(wh.units) + ' units · ' + fmtSEK(wh.sek) +
+          ? '<div class="hist-wh">WHS: ' + fmtQty(wh.units) + ' units · ' + fmtSEKCompact(wh.sek) +
             ' · ' + fmtPct(wh.gpPct) + ' GP</div>'
           : "") +
         "</div>";
