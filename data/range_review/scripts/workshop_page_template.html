@@ -813,6 +813,24 @@ textarea.homework-note {
     if (state.view === "summary") renderSummary(); else renderBoard();
   }
 
+  // RR-063 -- every db subscription update (someone ELSE's edit, or even this viewer's own
+  // write echoing back) was rebuilding the ENTIRE board (board.innerHTML = ...), which destroys
+  // and recreates every card's DOM, native <select> dropdowns included. If that happened while a
+  // viewer had an OS-level dropdown picker open or was mid-typing, the browser just closes/drops
+  // the in-progress interaction -- no "change" event ever fires, so nothing saves, and it reads
+  // exactly as "I picked something and it reset." Found while investigating a real user report
+  // of homework picks not registering even on an Editor-level account (ruling out the RR-060
+  // access-level theory). requestRender() defers a subscription-triggered re-render while any
+  // card's own input has focus, applying it on blur instead -- the user's OWN direct interaction
+  // (saveDecision/saveHomeworkPick's own optimistic renderBoard() call) is untouched and still
+  // renders immediately, since that one reflects a field whose own event already finished firing.
+  var renderSuppressed = false;
+  var renderPending = false;
+  function requestRender() {
+    if (renderSuppressed) { renderPending = true; return; }
+    render();
+  }
+
   // ---------- db wiring ----------
   var dbCol = null;
   var dbModule = null;
@@ -838,7 +856,7 @@ textarea.homework-note {
     if (!ids.length) return;
     userModule.profiles(ids).then(function (ps) {
       profileNames = ps;
-      render();
+      requestRender(); // RR-063 -- don't clobber an in-progress edit elsewhere on the board
     }).catch(function (err) { console.warn("profiles lookup failed", err); });
   }
 
@@ -852,7 +870,7 @@ textarea.homework-note {
           var data = doc.data();
           if (data) decisions[doc.id] = data;
         });
-        render();
+        requestRender(); // RR-063 -- don't clobber an in-progress edit elsewhere on the board
       }, function (err) {
         console.warn("decisions subscription error", err);
       });
@@ -865,7 +883,7 @@ textarea.homework-note {
         });
         homeworkResponses = next;
         refreshHomeworkProfiles();
-        render();
+        requestRender(); // RR-063 -- don't clobber an in-progress edit elsewhere on the board
       }, function (err) {
         console.warn("homework_responses subscription error", err);
       });
@@ -898,7 +916,7 @@ textarea.homework-note {
     myDraftDoc.onSnapshot(function (doc) {
       var data = doc && doc.exists ? doc.data() : null;
       myHomeworkDraft = (data && data.responses) || {};
-      renderBoard();
+      requestRender(); // RR-063 -- don't clobber an in-progress edit elsewhere on the board
     }, function (err) {
       console.warn("homework draft subscription error", err);
     });
@@ -955,7 +973,19 @@ textarea.homework-note {
     } else {
       delete myHomeworkDraft[s];
     }
-    renderBoard(); // optimistic local update
+    // RR-063 -- THE actual bug behind "I pick something and it resets": this used to call
+    // renderBoard(), which rebuilds board.innerHTML -- EVERY card's entire DOM, destroying and
+    // recreating the very <select>/<textarea> the viewer is actively using -- on every single
+    // keystroke or selection. A textarea loses focus and the in-progress edit after the FIRST
+    // character typed; a <select> loses its native dropdown mid-pick. saveDecision() (the
+    // official fields, just above) never had this bug because it never calls renderBoard() at
+    // all -- the field's own visual state (selected option, checkbox, typed text, the data-tier/
+    // data-last-season colour attribute) is already correct via the browser's native behavior
+    // plus the explicit setAttribute() calls in the event handlers below, with no re-render
+    // needed. The one thing that DOES need to update immediately is the Homework bar (the
+    // entry count, the "unsaved changes" status) -- updateHomeworkBar() touches only that bar's
+    // own two text nodes, never #board, so it can't interrupt anything.
+    updateHomeworkBar();
     clearTimeout(pendingDraftWrite);
     pendingDraftWrite = setTimeout(function () {
       myDraftDoc.set({ responses: myHomeworkDraft, updatedAt: Date.now() })
@@ -1061,6 +1091,21 @@ textarea.homework-note {
   var layerTitle = document.getElementById("layerTitle");
   var layerCount = document.getElementById("layerCount");
   var emptyState = document.getElementById("emptyState");
+
+  // RR-063 -- suppress a subscription-triggered re-render while a card's own select/input/
+  // textarea has focus (an open native dropdown picker included), applying the deferred render
+  // once focus leaves the board. focusin/focusout bubble (unlike focus/blur), so one pair of
+  // listeners on #board covers every card without per-field wiring.
+  board.addEventListener("focusin", function (e) {
+    if (e.target && /^(SELECT|INPUT|TEXTAREA)$/.test(e.target.tagName)) renderSuppressed = true;
+  });
+  board.addEventListener("focusout", function () {
+    setTimeout(function () {
+      if (board.contains(document.activeElement)) return; // focus moved to another field in the card
+      renderSuppressed = false;
+      if (renderPending) { renderPending = false; render(); }
+    }, 50);
+  });
 
   function renderNav() {
     layerNav.innerHTML = "";
