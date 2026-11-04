@@ -716,7 +716,7 @@ textarea.homework-note {
     <button class="toggle-btn" id="homeworkModeToggle" type="button">Homework mode</button>
   </div>
   <p>FW27/SS28 franchises by layer, for the Nov 12 Range Review Workshop. Each card pulls together: price and
-    margin target from the FW27/SS28 range files; Forecast Qty/GP% from the FW27 FC3 forecast and the SS28 FC1
+    margin target from the FW27/SS28 range files; Forecast Units/GP% from the FW27 FC3 forecast and the SS28 FC1
     forecast file (its SKU-level figures don't match Buying's FC1 MOQ check below — RR-023, Open); MOQ
     shortfalls from Buying's SS28 FC1 check; and leftover-stock flags from the Inventory Manager's SS27 stock
     position. Tier, Last season to sell, Consolidate and Action notes are captured live here and shared with
@@ -744,7 +744,7 @@ textarea.homework-note {
     <select class="sort-select" id="sortSelect">
       <option value="priority">Sort by</option>
       <option value="name">Franchise A–Z</option>
-      <option value="forecast">Forecast Qty, high to low</option>
+      <option value="forecast">Forecast Units, high to low</option>
       <option value="gp">Target GM0%, high to low</option>
       <option value="sales2026">2026 Sales (units), high to low</option>
       <option value="gp2026">2026 GP%, high to low</option>
@@ -754,12 +754,20 @@ textarea.homework-note {
     <button class="toggle-btn" id="absToggle" type="button">ABS</button>
     <button class="toggle-btn" id="asiaFitToggle" type="button">Asia Fit</button>
     <div class="threshold-group">
-      <label for="minSales2026">2026 Sales ≥</label>
+      <label for="minSales2026">2026 Sales (units) ≥</label>
       <input type="number" id="minSales2026" class="threshold-input" placeholder="e.g. 10000" min="0" step="100">
+    </div>
+    <div class="threshold-group">
+      <label for="maxSales2026">2026 Sales (units) &lt;</label>
+      <input type="number" id="maxSales2026" class="threshold-input" placeholder="e.g. 500" min="0" step="100">
     </div>
     <div class="threshold-group">
       <label for="minGp2026">2026 GP% ≥</label>
       <input type="number" id="minGp2026" class="threshold-input" placeholder="e.g. 50" min="0" max="100" step="1">
+    </div>
+    <div class="threshold-group">
+      <label for="maxGp2026">2026 GP% &lt;</label>
+      <input type="number" id="maxGp2026" class="threshold-input" placeholder="e.g. 30" min="0" max="100" step="1">
     </div>
     <div class="multiselect" id="tierFilterWrap">
       <button class="toggle-btn" id="tierFilterBtn" type="button" aria-haspopup="true" aria-expanded="false">Suggested tier ▾</button>
@@ -867,8 +875,18 @@ textarea.homework-note {
     if (state.minSales2026 != null) {
       if (!y || y.units == null || y.units < state.minSales2026) return false;
     }
+    // RR-073 -- "less than" filters added alongside the existing "at least" ones, so a search
+    // for low performers (e.g. Exit candidates) is as direct as one for high performers --
+    // same "blank not zero" convention: a franchise with no 2026 data doesn't meet a "< X"
+    // threshold either, since there's nothing to compare, not a real value under X.
+    if (state.maxSales2026 != null) {
+      if (!y || y.units == null || y.units >= state.maxSales2026) return false;
+    }
     if (state.minGp2026 != null) {
       if (!y || y.gpPct == null || y.gpPct < state.minGp2026) return false;
+    }
+    if (state.maxGp2026 != null) {
+      if (!y || y.gpPct == null || y.gpPct >= state.maxGp2026) return false;
     }
     return true;
   }
@@ -888,7 +906,7 @@ textarea.homework-note {
   // modifier-click and a toggle-mode button, "plain click toggles each chip."
   var state = { layerKeys: new Set(LAYERS.length ? [LAYERS[0].key] : []), search: "", sort: "priority",
     flagGenerationAge: false, flagNewFranchise: false, flagAbs: false, flagAsiaFit: false,
-    minSales2026: null, minGp2026: null,
+    minSales2026: null, maxSales2026: null, minGp2026: null, maxGp2026: null,
     tierFilter: new Set(), season: "all", view: "board", homeworkMode: false };
   var decisions = {}; // slug -> {tier, action, updatedAt}
 
@@ -1570,9 +1588,9 @@ textarea.homework-note {
           '<span>&middot;</span><span>' + escapeHtml(d.gender) + "</span></div></div>" +
           (chips ? '<div class="chips">' + chips + "</div>" : "") +
           '<div class="stat-grid">' +
-            '<div class="stat"><div class="label">FW27 Qty</div><div class="value num">' + fmtQty(d.forecastQtyFW27) + "</div></div>" +
-            '<div class="stat"><div class="label">SS28 Qty</div><div class="value num">' + fmtQty(d.forecastQtySS28) + "</div></div>" +
-            '<div class="stat"><div class="label">FW28 Qty</div><div class="value num muted">' + fmtQty(d.forecastQtyFW28) + "</div></div>" +
+            '<div class="stat"><div class="label">FW27 Units</div><div class="value num">' + fmtQty(d.forecastQtyFW27) + "</div></div>" +
+            '<div class="stat"><div class="label">SS28 Units</div><div class="value num">' + fmtQty(d.forecastQtySS28) + "</div></div>" +
+            '<div class="stat"><div class="label">FW28 Units</div><div class="value num muted">' + fmtQty(d.forecastQtyFW28) + "</div></div>" +
             '<div class="stat"><div class="label">Target GM0%</div><div class="value num muted">' + fmtPct(d.marginTarget) + "</div></div>" +
             '<div class="stat"><div class="label">Target RRP</div><div class="value num muted">' + fmtSEK(d.targetRRP) + "</div></div>" +
             '<div class="stat"><div class="label"># Colors</div><div class="value num muted">' + fmtQty(d.numColors) + "</div></div>" +
@@ -2030,8 +2048,16 @@ textarea.homework-note {
     state.minSales2026 = e.target.value === "" ? null : Number(e.target.value);
     renderBoard();
   });
+  document.getElementById("maxSales2026").addEventListener("input", function (e) {
+    state.maxSales2026 = e.target.value === "" ? null : Number(e.target.value);
+    renderBoard();
+  });
   document.getElementById("minGp2026").addEventListener("input", function (e) {
     state.minGp2026 = e.target.value === "" ? null : Number(e.target.value);
+    renderBoard();
+  });
+  document.getElementById("maxGp2026").addEventListener("input", function (e) {
+    state.maxGp2026 = e.target.value === "" ? null : Number(e.target.value);
     renderBoard();
   });
 
