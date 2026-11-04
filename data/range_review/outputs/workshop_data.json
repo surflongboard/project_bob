@@ -97,17 +97,32 @@
       "2024": {
         "units": 10551,
         "sek": 1228204,
-        "gpPct": 53.8
+        "gpPct": 53.8,
+        "wholesale": {
+          "units": 9775,
+          "sek": 1072920,
+          "gpPct": 51.2
+        }
       },
       "2025": {
         "units": 6260,
         "sek": 725495,
-        "gpPct": 51.6
+        "gpPct": 51.6,
+        "wholesale": {
+          "units": 5494,
+          "sek": 588276,
+          "gpPct": 47.3
+        }
       },
       "2026": {
         "units": 3624,
         "sek": 415524,
-        "gpPct": 52.6
+        "gpPct": 52.6,
+        "wholesale": {
+          "units": 3223,
+          "sek": 341101,
+          "gpPct": 48.5
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -117,17 +132,32 @@
           "2024": {
             "units": 10551,
             "gpPct": 53.8,
-            "sek": 1228204
+            "sek": 1228204,
+            "wholesale": {
+              "units": 9775,
+              "gpPct": 51.2,
+              "sek": 1072920
+            }
           },
           "2025": {
             "units": 6260,
             "gpPct": 51.6,
-            "sek": 725495
+            "sek": 725495,
+            "wholesale": {
+              "units": 5494,
+              "gpPct": 47.3,
+              "sek": 588276
+            }
           },
           "2026": {
             "units": 3624,
             "gpPct": 52.6,
-            "sek": 415524
+            "sek": 415524,
+            "wholesale": {
+              "units": 3223,
+              "gpPct": 48.5,
+              "sek": 341101
+            }
           }
         }
       }
@@ -199,17 +229,32 @@
       "2024": {
         "units": 309,
         "sek": 42109,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 304,
+          "sek": 41605,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 2680,
         "sek": 447227,
-        "gpPct": 66.9
+        "gpPct": 66.9,
+        "wholesale": {
+          "units": 2307,
+          "sek": 335779,
+          "gpPct": 62.3
+        }
       },
       "2026": {
         "units": 3828,
         "sek": 706858,
-        "gpPct": 65.2
+        "gpPct": 65.2,
+        "wholesale": {
+          "units": 2439,
+          "sek": 348500,
+          "gpPct": 54.5
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -280,7 +325,12 @@
       "2026": {
         "units": 657,
         "sek": 132871,
-        "gpPct": 64.9
+        "gpPct": 64.9,
+        "wholesale": {
+          "units": 288,
+          "sek": 37927,
+          "gpPct": null
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -344,17 +394,32 @@
       "2024": {
         "units": 80,
         "sek": 10969,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 80,
+          "sek": 10969,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 1324,
         "sek": 205073,
-        "gpPct": 67.0
+        "gpPct": 67.0,
+        "wholesale": {
+          "units": 1254,
+          "sek": 185086,
+          "gpPct": 65.4
+        }
       },
       "2026": {
         "units": 1727,
         "sek": 299260,
-        "gpPct": 63.0
+        "gpPct": 63.0,
+        "wholesale": {
+          "units": 1459,
+          "sek": 226616,
+          "gpPct": 58.7
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -418,17 +483,32 @@
       "2024": {
         "units": 1982,
         "sek": 345202,
-        "gpPct": 42.7
+        "gpPct": 42.7,
+        "wholesale": {
+          "units": 1699,
+          "sek": 272421,
+          "gpPct": 38.4
+        }
       },
       "2025": {
         "units": 2237,
         "sek": 414082,
-        "gpPct": 61.4
+        "gpPct": 61.4,
+        "wholesale": {
+          "units": 1890,
+          "sek": 317182,
+          "gpPct": 59.5
+        }
       },
       "2026": {
         "units": 2992,
         "sek": 597405,
-        "gpPct": 61.1
+        "gpPct": 61.1,
+        "wholesale": {
+          "units": 2533,
+          "sek": 440168,
+          "gpPct": 55.3
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -550,17 +630,32 @@
       "2024": {
         "units": 873,
         "sek": 129708,
-        "gpPct": 46.2
+        "gpPct": 46.2,
+        "wholesale": {
+          "units": 633,
+          "sek": 85917,
+          "gpPct": 41.0
+        }
       },
       "2025": {
         "units": 852,
         "sek": 152566,
-        "gpPct": 67.5
+        "gpPct": 67.5,
+        "wholesale": {
+          "units": 618,
+          "sek": 98181,
+          "gpPct": 66.3
+        }
       },
       "2026": {
         "units": 960,
         "sek": 163064,
-        "gpPct": 62.5
+        "gpPct": 62.5,
+        "wholesale": {
+          "units": 786,
+          "sek": 122533,
+          "gpPct": 59.7
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -682,12 +777,22 @@
       "2025": {
         "units": 146,
         "sek": 24123,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 145,
+          "sek": 24053,
+          "gpPct": null
+        }
       },
       "2026": {
         "units": 1146,
         "sek": 257401,
-        "gpPct": 66.3
+        "gpPct": 66.3,
+        "wholesale": {
+          "units": 758,
+          "sek": 130361,
+          "gpPct": 56.0
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -751,17 +856,32 @@
       "2024": {
         "units": 716,
         "sek": 199943,
-        "gpPct": 59.5
+        "gpPct": 59.5,
+        "wholesale": {
+          "units": 559,
+          "sek": 138161,
+          "gpPct": 54.1
+        }
       },
       "2025": {
         "units": 3429,
         "sek": 785157,
-        "gpPct": 53.1
+        "gpPct": 53.1,
+        "wholesale": {
+          "units": 2906,
+          "sek": 580218,
+          "gpPct": 44.7
+        }
       },
       "2026": {
         "units": 3212,
         "sek": 725489,
-        "gpPct": 52.9
+        "gpPct": 52.9,
+        "wholesale": {
+          "units": 2621,
+          "sek": 510958,
+          "gpPct": 45.9
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -771,17 +891,32 @@
           "2024": {
             "units": 705,
             "gpPct": 60.2,
-            "sek": 197774
+            "sek": 197774,
+            "wholesale": {
+              "units": 548,
+              "gpPct": 55.0,
+              "sek": 135992
+            }
           },
           "2025": {
             "units": 269,
             "gpPct": 54.9,
-            "sek": 68110
+            "sek": 68110,
+            "wholesale": {
+              "units": 151,
+              "gpPct": null,
+              "sek": 27988
+            }
           },
           "2026": {
             "units": 7,
             "gpPct": null,
-            "sek": 1810
+            "sek": 1810,
+            "wholesale": {
+              "units": 0,
+              "gpPct": null,
+              "sek": 0
+            }
           }
         }
       },
@@ -791,17 +926,32 @@
           "2024": {
             "units": 11,
             "gpPct": null,
-            "sek": 2169
+            "sek": 2169,
+            "wholesale": {
+              "units": 11,
+              "gpPct": null,
+              "sek": 2169
+            }
           },
           "2025": {
             "units": 3160,
             "gpPct": 52.9,
-            "sek": 717047
+            "sek": 717047,
+            "wholesale": {
+              "units": 2755,
+              "gpPct": 47.0,
+              "sek": 552230
+            }
           },
           "2026": {
             "units": 3205,
             "gpPct": 53.0,
-            "sek": 723679
+            "sek": 723679,
+            "wholesale": {
+              "units": 2621,
+              "gpPct": 45.9,
+              "sek": 510958
+            }
           }
         }
       }
@@ -866,17 +1016,32 @@
       "2024": {
         "units": 16,
         "sek": 1841,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 16,
+          "sek": 1841,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 6275,
         "sek": 879069,
-        "gpPct": 55.7
+        "gpPct": 55.7,
+        "wholesale": {
+          "units": 5960,
+          "sek": 797985,
+          "gpPct": 53.6
+        }
       },
       "2026": {
         "units": 4497,
         "sek": 711006,
-        "gpPct": 62.5
+        "gpPct": 62.5,
+        "wholesale": {
+          "units": 4199,
+          "sek": 634331,
+          "gpPct": 60.9
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -998,17 +1163,32 @@
       "2024": {
         "units": 4,
         "sek": 590,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 4,
+          "sek": 590,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 1327,
         "sek": 220947,
-        "gpPct": 64.5
+        "gpPct": 64.5,
+        "wholesale": {
+          "units": 1099,
+          "sek": 159729,
+          "gpPct": 59.5
+        }
       },
       "2026": {
         "units": 1803,
         "sek": 311779,
-        "gpPct": 66.9
+        "gpPct": 66.9,
+        "wholesale": {
+          "units": 1414,
+          "sek": 202759,
+          "gpPct": 60.5
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -1018,17 +1198,32 @@
           "2024": {
             "units": 4,
             "gpPct": null,
-            "sek": 590
+            "sek": 590,
+            "wholesale": {
+              "units": 4,
+              "gpPct": null,
+              "sek": 590
+            }
           },
           "2025": {
             "units": 1327,
             "gpPct": 64.5,
-            "sek": 220947
+            "sek": 220947,
+            "wholesale": {
+              "units": 1099,
+              "gpPct": 59.5,
+              "sek": 159729
+            }
           },
           "2026": {
             "units": 1803,
             "gpPct": 66.9,
-            "sek": 311779
+            "sek": 311779,
+            "wholesale": {
+              "units": 1414,
+              "gpPct": 60.5,
+              "sek": 202759
+            }
           }
         }
       }
@@ -1274,12 +1469,22 @@
       "2025": {
         "units": 325,
         "sek": 62780,
-        "gpPct": 46.4
+        "gpPct": 46.4,
+        "wholesale": {
+          "units": 325,
+          "sek": 62780,
+          "gpPct": 46.4
+        }
       },
       "2026": {
         "units": 1053,
         "sek": 252442,
-        "gpPct": 50.4
+        "gpPct": 50.4,
+        "wholesale": {
+          "units": 793,
+          "sek": 161595,
+          "gpPct": 41.7
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -1343,17 +1548,32 @@
       "2024": {
         "units": 1843,
         "sek": 327128,
-        "gpPct": 65.4
+        "gpPct": 65.4,
+        "wholesale": {
+          "units": 1596,
+          "sek": 255150,
+          "gpPct": 61.8
+        }
       },
       "2025": {
         "units": 1929,
         "sek": 354904,
-        "gpPct": 66.2
+        "gpPct": 66.2,
+        "wholesale": {
+          "units": 1516,
+          "sek": 237602,
+          "gpPct": 60.6
+        }
       },
       "2026": {
         "units": 1415,
         "sek": 258138,
-        "gpPct": 63.6
+        "gpPct": 63.6,
+        "wholesale": {
+          "units": 1169,
+          "sek": 181672,
+          "gpPct": 57.2
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -1533,17 +1753,32 @@
       "2024": {
         "units": 2049,
         "sek": 367080,
-        "gpPct": 66.2
+        "gpPct": 66.2,
+        "wholesale": {
+          "units": 1774,
+          "sek": 290403,
+          "gpPct": 63.4
+        }
       },
       "2025": {
         "units": 3238,
         "sek": 530073,
-        "gpPct": 60.8
+        "gpPct": 60.8,
+        "wholesale": {
+          "units": 2920,
+          "sek": 438422,
+          "gpPct": 57.4
+        }
       },
       "2026": {
         "units": 2309,
         "sek": 368183,
-        "gpPct": 61.0
+        "gpPct": 61.0,
+        "wholesale": {
+          "units": 1975,
+          "sek": 277197,
+          "gpPct": 56.0
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -1672,7 +1907,12 @@
       "2026": {
         "units": 448,
         "sek": 82998,
-        "gpPct": 52.0
+        "gpPct": 52.0,
+        "wholesale": {
+          "units": 424,
+          "sek": 73900,
+          "gpPct": 49.1
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -1736,17 +1976,32 @@
       "2024": {
         "units": 1708,
         "sek": 434381,
-        "gpPct": 55.1
+        "gpPct": 55.1,
+        "wholesale": {
+          "units": 1266,
+          "sek": 291078,
+          "gpPct": 49.5
+        }
       },
       "2025": {
         "units": 2241,
         "sek": 499187,
-        "gpPct": 55.6
+        "gpPct": 55.6,
+        "wholesale": {
+          "units": 1823,
+          "sek": 370086,
+          "gpPct": 52.1
+        }
       },
       "2026": {
         "units": 2954,
         "sek": 640720,
-        "gpPct": 56.9
+        "gpPct": 56.9,
+        "wholesale": {
+          "units": 2639,
+          "sek": 530167,
+          "gpPct": 53.8
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -1817,17 +2072,32 @@
       "2024": {
         "units": 4,
         "sek": 601,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 4,
+          "sek": 601,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 708,
         "sek": 130899,
-        "gpPct": 57.7
+        "gpPct": 57.7,
+        "wholesale": {
+          "units": 650,
+          "sek": 112746,
+          "gpPct": 55.0
+        }
       },
       "2026": {
         "units": 1326,
         "sek": 227868,
-        "gpPct": 55.9
+        "gpPct": 55.9,
+        "wholesale": {
+          "units": 1150,
+          "sek": 180085,
+          "gpPct": 51.9
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -1891,12 +2161,22 @@
       "2025": {
         "units": 400,
         "sek": 55837,
-        "gpPct": 100.0
+        "gpPct": 100.0,
+        "wholesale": {
+          "units": 400,
+          "sek": 55837,
+          "gpPct": 100.0
+        }
       },
       "2026": {
         "units": 2105,
         "sek": 330919,
-        "gpPct": 61.5
+        "gpPct": 61.5,
+        "wholesale": {
+          "units": 1924,
+          "sek": 279540,
+          "gpPct": 58.8
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -1906,12 +2186,22 @@
           "2025": {
             "units": 400,
             "gpPct": 100.0,
-            "sek": 55837
+            "sek": 55837,
+            "wholesale": {
+              "units": 400,
+              "gpPct": 100.0,
+              "sek": 55837
+            }
           },
           "2026": {
             "units": 2105,
             "gpPct": 61.5,
-            "sek": 330919
+            "sek": 330919,
+            "wholesale": {
+              "units": 1924,
+              "gpPct": 58.8,
+              "sek": 279540
+            }
           }
         }
       }
@@ -1976,7 +2266,12 @@
       "2026": {
         "units": 646,
         "sek": 154920,
-        "gpPct": 23.7
+        "gpPct": 23.7,
+        "wholesale": {
+          "units": 597,
+          "sek": 131654,
+          "gpPct": 18.1
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -2098,7 +2393,12 @@
       "2026": {
         "units": 1205,
         "sek": 228509,
-        "gpPct": 46.6
+        "gpPct": 46.6,
+        "wholesale": {
+          "units": 1162,
+          "sek": 211542,
+          "gpPct": 44.3
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -2220,7 +2520,12 @@
       "2026": {
         "units": 81,
         "sek": 24185,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 70,
+          "sek": 19128,
+          "gpPct": null
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -2284,7 +2589,12 @@
       "2026": {
         "units": 84,
         "sek": 22581,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 70,
+          "sek": 16258,
+          "gpPct": null
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -2348,17 +2658,32 @@
       "2024": {
         "units": 0,
         "sek": 0,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 0,
+          "sek": 0,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 197,
         "sek": 31203,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 159,
+          "sek": 20696,
+          "gpPct": null
+        }
       },
       "2026": {
         "units": 236,
         "sek": 49249,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 166,
+          "sek": 26802,
+          "gpPct": null
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -2422,17 +2747,32 @@
       "2024": {
         "units": 0,
         "sek": 0,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 0,
+          "sek": 0,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 140,
         "sek": 22272,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 131,
+          "sek": 19252,
+          "gpPct": null
+        }
       },
       "2026": {
         "units": 184,
         "sek": 40974,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 137,
+          "sek": 24593,
+          "gpPct": null
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -2496,17 +2836,32 @@
       "2024": {
         "units": 0,
         "sek": 0,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 0,
+          "sek": 0,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 73,
         "sek": 12790,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 70,
+          "sek": 11726,
+          "gpPct": null
+        }
       },
       "2026": {
         "units": 102,
         "sek": 23335,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 82,
+          "sek": 15699,
+          "gpPct": null
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -2570,17 +2925,32 @@
       "2024": {
         "units": 0,
         "sek": 0,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 0,
+          "sek": 0,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 63,
         "sek": 13030,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 58,
+          "sek": 10851,
+          "gpPct": null
+        }
       },
       "2026": {
         "units": 107,
         "sek": 28734,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 81,
+          "sek": 18992,
+          "gpPct": null
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -2644,7 +3014,12 @@
       "2026": {
         "units": 230,
         "sek": 43580,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 211,
+          "sek": 36375,
+          "gpPct": null
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -2708,7 +3083,12 @@
       "2026": {
         "units": 209,
         "sek": 33349,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 188,
+          "sek": 26661,
+          "gpPct": null
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -2830,17 +3210,32 @@
       "2024": {
         "units": 4,
         "sek": 490,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 4,
+          "sek": 490,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 3502,
         "sek": 528793,
-        "gpPct": 50.3
+        "gpPct": 50.3,
+        "wholesale": {
+          "units": 2889,
+          "sek": 363687,
+          "gpPct": 40.7
+        }
       },
       "2026": {
         "units": 4086,
         "sek": 570197,
-        "gpPct": 49.0
+        "gpPct": 49.0,
+        "wholesale": {
+          "units": 3280,
+          "sek": 419716,
+          "gpPct": 45.0
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -2904,17 +3299,32 @@
       "2024": {
         "units": 4,
         "sek": 490,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 4,
+          "sek": 490,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 5183,
         "sek": 748539,
-        "gpPct": 42.8
+        "gpPct": 42.8,
+        "wholesale": {
+          "units": 4592,
+          "sek": 588713,
+          "gpPct": 36.0
+        }
       },
       "2026": {
         "units": 4867,
         "sek": 732929,
-        "gpPct": 44.6
+        "gpPct": 44.6,
+        "wholesale": {
+          "units": 4219,
+          "sek": 579788,
+          "gpPct": 39.4
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -2978,17 +3388,32 @@
       "2024": {
         "units": 4,
         "sek": 631,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 4,
+          "sek": 631,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 3746,
         "sek": 644060,
-        "gpPct": 46.4
+        "gpPct": 46.4,
+        "wholesale": {
+          "units": 3424,
+          "sek": 536836,
+          "gpPct": 41.5
+        }
       },
       "2026": {
         "units": 2976,
         "sek": 519785,
-        "gpPct": 42.6
+        "gpPct": 42.6,
+        "wholesale": {
+          "units": 2762,
+          "sek": 449552,
+          "gpPct": 38.4
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -3052,7 +3477,12 @@
       "2026": {
         "units": 579,
         "sek": 151740,
-        "gpPct": 44.5
+        "gpPct": 44.5,
+        "wholesale": {
+          "units": 570,
+          "sek": 146337,
+          "gpPct": 43.5
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -3174,17 +3604,32 @@
       "2024": {
         "units": 4035,
         "sek": 1446775,
-        "gpPct": 51.6
+        "gpPct": 51.6,
+        "wholesale": {
+          "units": 3979,
+          "sek": 1409072,
+          "gpPct": 51.0
+        }
       },
       "2025": {
         "units": 4149,
         "sek": 1428938,
-        "gpPct": 46.9
+        "gpPct": 46.9,
+        "wholesale": {
+          "units": 4124,
+          "sek": 1414320,
+          "gpPct": 46.6
+        }
       },
       "2026": {
         "units": 2028,
         "sek": 695620,
-        "gpPct": 46.2
+        "gpPct": 46.2,
+        "wholesale": {
+          "units": 1995,
+          "sek": 674353,
+          "gpPct": 45.5
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -3255,17 +3700,32 @@
       "2024": {
         "units": 2901,
         "sek": 1212439,
-        "gpPct": 55.4
+        "gpPct": 55.4,
+        "wholesale": {
+          "units": 2864,
+          "sek": 1184471,
+          "gpPct": 54.9
+        }
       },
       "2025": {
         "units": 3510,
         "sek": 1410361,
-        "gpPct": 51.5
+        "gpPct": 51.5,
+        "wholesale": {
+          "units": 3213,
+          "sek": 1258094,
+          "gpPct": 50.3
+        }
       },
       "2026": {
         "units": 2492,
         "sek": 985895,
-        "gpPct": 49.6
+        "gpPct": 49.6,
+        "wholesale": {
+          "units": 2428,
+          "sek": 948141,
+          "gpPct": 48.9
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -3336,17 +3796,32 @@
       "2024": {
         "units": 0,
         "sek": 0,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 0,
+          "sek": 0,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 345,
         "sek": 218841,
-        "gpPct": 45.1
+        "gpPct": 45.1,
+        "wholesale": {
+          "units": 334,
+          "sek": 208248,
+          "gpPct": 44.0
+        }
       },
       "2026": {
         "units": 522,
         "sek": 351628,
-        "gpPct": 47.0
+        "gpPct": 47.0,
+        "wholesale": {
+          "units": 506,
+          "sek": 332335,
+          "gpPct": 45.7
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -3410,17 +3885,32 @@
       "2024": {
         "units": 2231,
         "sek": 1039512,
-        "gpPct": 49.7
+        "gpPct": 49.7,
+        "wholesale": {
+          "units": 2099,
+          "sek": 951207,
+          "gpPct": 48.1
+        }
       },
       "2025": {
         "units": 3029,
         "sek": 1405352,
-        "gpPct": 48.7
+        "gpPct": 48.7,
+        "wholesale": {
+          "units": 2804,
+          "sek": 1265385,
+          "gpPct": 47.1
+        }
       },
       "2026": {
         "units": 1473,
         "sek": 707654,
-        "gpPct": 48.5
+        "gpPct": 48.5,
+        "wholesale": {
+          "units": 1299,
+          "sek": 595652,
+          "gpPct": 45.9
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -3484,17 +3974,32 @@
       "2024": {
         "units": 7162,
         "sek": 3587348,
-        "gpPct": 48.1
+        "gpPct": 48.1,
+        "wholesale": {
+          "units": 6780,
+          "sek": 3338660,
+          "gpPct": 47.2
+        }
       },
       "2025": {
         "units": 6613,
         "sek": 3326698,
-        "gpPct": 46.9
+        "gpPct": 46.9,
+        "wholesale": {
+          "units": 6174,
+          "sek": 3017932,
+          "gpPct": 45.5
+        }
       },
       "2026": {
         "units": 5281,
         "sek": 2811325,
-        "gpPct": 48.2
+        "gpPct": 48.2,
+        "wholesale": {
+          "units": 4862,
+          "sek": 2510954,
+          "gpPct": 46.5
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -3558,17 +4063,32 @@
       "2024": {
         "units": 2366,
         "sek": 1264069,
-        "gpPct": 45.7
+        "gpPct": 45.7,
+        "wholesale": {
+          "units": 2212,
+          "sek": 1152821,
+          "gpPct": 44.2
+        }
       },
       "2025": {
         "units": 2372,
         "sek": 1285201,
-        "gpPct": 46.5
+        "gpPct": 46.5,
+        "wholesale": {
+          "units": 2099,
+          "sek": 1081375,
+          "gpPct": 43.4
+        }
       },
       "2026": {
         "units": 875,
         "sek": 513939,
-        "gpPct": 48.7
+        "gpPct": 48.7,
+        "wholesale": {
+          "units": 758,
+          "sek": 417750,
+          "gpPct": 44.9
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -3632,17 +4152,32 @@
       "2024": {
         "units": 2075,
         "sek": 1238648,
-        "gpPct": 46.9
+        "gpPct": 46.9,
+        "wholesale": {
+          "units": 1927,
+          "sek": 1116525,
+          "gpPct": 45.1
+        }
       },
       "2025": {
         "units": 2061,
         "sek": 1221813,
-        "gpPct": 47.2
+        "gpPct": 47.2,
+        "wholesale": {
+          "units": 1915,
+          "sek": 1098998,
+          "gpPct": 45.4
+        }
       },
       "2026": {
         "units": 1270,
         "sek": 809272,
-        "gpPct": 49.3
+        "gpPct": 49.3,
+        "wholesale": {
+          "units": 1201,
+          "sek": 737437,
+          "gpPct": 47.2
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -3706,7 +4241,12 @@
       "2026": {
         "units": 573,
         "sek": 406106,
-        "gpPct": 47.4
+        "gpPct": 47.4,
+        "wholesale": {
+          "units": 489,
+          "sek": 308429,
+          "gpPct": 40.9
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -3770,7 +4310,12 @@
       "2026": {
         "units": 449,
         "sek": 344610,
-        "gpPct": 45.7
+        "gpPct": 45.7,
+        "wholesale": {
+          "units": 402,
+          "sek": 288135,
+          "gpPct": 41.9
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -4066,17 +4611,32 @@
       "2024": {
         "units": 279,
         "sek": 104368,
-        "gpPct": 59.7
+        "gpPct": 59.7,
+        "wholesale": {
+          "units": 228,
+          "sek": 78104,
+          "gpPct": 56.9
+        }
       },
       "2025": {
         "units": 306,
         "sek": 124738,
-        "gpPct": 58.6
+        "gpPct": 58.6,
+        "wholesale": {
+          "units": 203,
+          "sek": 64194,
+          "gpPct": 47.4
+        }
       },
       "2026": {
         "units": 339,
         "sek": 118325,
-        "gpPct": 41.2
+        "gpPct": 41.2,
+        "wholesale": {
+          "units": 294,
+          "sek": 89564,
+          "gpPct": 31.9
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -4140,17 +4700,32 @@
       "2024": {
         "units": 814,
         "sek": 350968,
-        "gpPct": 38.1
+        "gpPct": 38.1,
+        "wholesale": {
+          "units": 636,
+          "sek": 253117,
+          "gpPct": 33.5
+        }
       },
       "2025": {
         "units": 1011,
         "sek": 491484,
-        "gpPct": 41.3
+        "gpPct": 41.3,
+        "wholesale": {
+          "units": 707,
+          "sek": 279787,
+          "gpPct": 27.3
+        }
       },
       "2026": {
         "units": 657,
         "sek": 290656,
-        "gpPct": 39.7
+        "gpPct": 39.7,
+        "wholesale": {
+          "units": 536,
+          "sek": 194002,
+          "gpPct": 27.0
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -4214,17 +4789,32 @@
       "2024": {
         "units": 617,
         "sek": 262254,
-        "gpPct": 54.7
+        "gpPct": 54.7,
+        "wholesale": {
+          "units": 426,
+          "sek": 160003,
+          "gpPct": 49.6
+        }
       },
       "2025": {
         "units": 849,
         "sek": 375843,
-        "gpPct": 53.7
+        "gpPct": 53.7,
+        "wholesale": {
+          "units": 575,
+          "sek": 204193,
+          "gpPct": 42.3
+        }
       },
       "2026": {
         "units": 379,
         "sek": 174054,
-        "gpPct": 57.4
+        "gpPct": 57.4,
+        "wholesale": {
+          "units": 261,
+          "sek": 89540,
+          "gpPct": 44.0
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -4288,7 +4878,12 @@
       "2026": {
         "units": 6,
         "sek": 1745,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 6,
+          "sek": 1745,
+          "gpPct": null
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -4352,17 +4947,32 @@
       "2024": {
         "units": 1838,
         "sek": 1048893,
-        "gpPct": 52.7
+        "gpPct": 52.7,
+        "wholesale": {
+          "units": 1758,
+          "sek": 964807,
+          "gpPct": 50.8
+        }
       },
       "2025": {
         "units": 2497,
         "sek": 1279575,
-        "gpPct": 46.5
+        "gpPct": 46.5,
+        "wholesale": {
+          "units": 2439,
+          "sek": 1218103,
+          "gpPct": 45.1
+        }
       },
       "2026": {
         "units": 809,
         "sek": 470476,
-        "gpPct": 52.4
+        "gpPct": 52.4,
+        "wholesale": {
+          "units": 778,
+          "sek": 435378,
+          "gpPct": 50.5
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -4426,17 +5036,32 @@
       "2024": {
         "units": 85,
         "sek": 30197,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 85,
+          "sek": 30197,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 7129,
         "sek": 3399946,
-        "gpPct": 34.0
+        "gpPct": 34.0,
+        "wholesale": {
+          "units": 6856,
+          "sek": 3176917,
+          "gpPct": 32.2
+        }
       },
       "2026": {
         "units": 5531,
         "sek": 2905523,
-        "gpPct": 41.9
+        "gpPct": 41.9,
+        "wholesale": {
+          "units": 5383,
+          "sek": 2764034,
+          "gpPct": 40.7
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -4500,17 +5125,32 @@
       "2024": {
         "units": 9,
         "sek": 1384,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 9,
+          "sek": 1384,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 6258,
         "sek": 2503928,
-        "gpPct": 33.2
+        "gpPct": 33.2,
+        "wholesale": {
+          "units": 6096,
+          "sek": 2381855,
+          "gpPct": 31.8
+        }
       },
       "2026": {
         "units": 3582,
         "sek": 1695885,
-        "gpPct": 47.0
+        "gpPct": 47.0,
+        "wholesale": {
+          "units": 3480,
+          "sek": 1609835,
+          "gpPct": 45.8
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -4574,17 +5214,32 @@
       "2024": {
         "units": 915,
         "sek": 606651,
-        "gpPct": 57.1
+        "gpPct": 57.1,
+        "wholesale": {
+          "units": 799,
+          "sek": 470492,
+          "gpPct": 52.1
+        }
       },
       "2025": {
         "units": 1579,
         "sek": 924367,
-        "gpPct": 50.1
+        "gpPct": 50.1,
+        "wholesale": {
+          "units": 1482,
+          "sek": 805800,
+          "gpPct": 46.4
+        }
       },
       "2026": {
         "units": 714,
         "sek": 402849,
-        "gpPct": 49.0
+        "gpPct": 49.0,
+        "wholesale": {
+          "units": 654,
+          "sek": 336042,
+          "gpPct": 44.3
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -4655,17 +5310,32 @@
       "2024": {
         "units": 2340,
         "sek": 1655056,
-        "gpPct": 54.9
+        "gpPct": 54.9,
+        "wholesale": {
+          "units": 2193,
+          "sek": 1468939,
+          "gpPct": 52.5
+        }
       },
       "2025": {
         "units": 3124,
         "sek": 1977999,
-        "gpPct": 49.3
+        "gpPct": 49.3,
+        "wholesale": {
+          "units": 2895,
+          "sek": 1689694,
+          "gpPct": 45.1
+        }
       },
       "2026": {
         "units": 1518,
         "sek": 1004993,
-        "gpPct": 52.4
+        "gpPct": 52.4,
+        "wholesale": {
+          "units": 1351,
+          "sek": 794489,
+          "gpPct": 46.6
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -4736,7 +5406,12 @@
       "2026": {
         "units": 893,
         "sek": 254209,
-        "gpPct": 41.3
+        "gpPct": 41.3,
+        "wholesale": {
+          "units": 849,
+          "sek": 227700,
+          "gpPct": 37.8
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -4800,17 +5475,32 @@
       "2024": {
         "units": 1720,
         "sek": 593167,
-        "gpPct": 51.2
+        "gpPct": 51.2,
+        "wholesale": {
+          "units": 1589,
+          "sek": 531405,
+          "gpPct": 49.5
+        }
       },
       "2025": {
         "units": 1448,
         "sek": 497116,
-        "gpPct": 46.1
+        "gpPct": 46.1,
+        "wholesale": {
+          "units": 1261,
+          "sek": 411447,
+          "gpPct": 42.9
+        }
       },
       "2026": {
         "units": 1211,
         "sek": 476687,
-        "gpPct": 48.5
+        "gpPct": 48.5,
+        "wholesale": {
+          "units": 1127,
+          "sek": 423142,
+          "gpPct": 45.9
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -4881,17 +5571,32 @@
       "2024": {
         "units": 1175,
         "sek": 337742,
-        "gpPct": 55.1
+        "gpPct": 55.1,
+        "wholesale": {
+          "units": 1063,
+          "sek": 301091,
+          "gpPct": 54.6
+        }
       },
       "2025": {
         "units": 1519,
         "sek": 396377,
-        "gpPct": 45.6
+        "gpPct": 45.6,
+        "wholesale": {
+          "units": 1376,
+          "sek": 342089,
+          "gpPct": 42.9
+        }
       },
       "2026": {
         "units": 899,
         "sek": 308312,
-        "gpPct": 51.9
+        "gpPct": 51.9,
+        "wholesale": {
+          "units": 799,
+          "sek": 259958,
+          "gpPct": 48.2
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -4962,17 +5667,32 @@
       "2024": {
         "units": 9761,
         "sek": 4658340,
-        "gpPct": 51.2
+        "gpPct": 51.2,
+        "wholesale": {
+          "units": 9244,
+          "sek": 4315166,
+          "gpPct": 49.8
+        }
       },
       "2025": {
         "units": 10699,
         "sek": 4925641,
-        "gpPct": 48.5
+        "gpPct": 48.5,
+        "wholesale": {
+          "units": 10248,
+          "sek": 4626442,
+          "gpPct": 47.2
+        }
       },
       "2026": {
         "units": 9039,
         "sek": 4170922,
-        "gpPct": 48.0
+        "gpPct": 48.0,
+        "wholesale": {
+          "units": 8383,
+          "sek": 3757972,
+          "gpPct": 46.4
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -5043,17 +5763,32 @@
       "2024": {
         "units": 11863,
         "sek": 5006512,
-        "gpPct": 48.6
+        "gpPct": 48.6,
+        "wholesale": {
+          "units": 11384,
+          "sek": 4704191,
+          "gpPct": 47.3
+        }
       },
       "2025": {
         "units": 11724,
         "sek": 4800757,
-        "gpPct": 47.2
+        "gpPct": 47.2,
+        "wholesale": {
+          "units": 11233,
+          "sek": 4507587,
+          "gpPct": 45.9
+        }
       },
       "2026": {
         "units": 9868,
         "sek": 4082064,
-        "gpPct": 46.3
+        "gpPct": 46.3,
+        "wholesale": {
+          "units": 9336,
+          "sek": 3764200,
+          "gpPct": 45.0
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -5124,17 +5859,32 @@
       "2024": {
         "units": 3042,
         "sek": 1594508,
-        "gpPct": 54.1
+        "gpPct": 54.1,
+        "wholesale": {
+          "units": 2971,
+          "sek": 1520849,
+          "gpPct": 53.0
+        }
       },
       "2025": {
         "units": 1983,
         "sek": 993714,
-        "gpPct": 51.2
+        "gpPct": 51.2,
+        "wholesale": {
+          "units": 1903,
+          "sek": 919416,
+          "gpPct": 49.3
+        }
       },
       "2026": {
         "units": 2228,
         "sek": 1023935,
-        "gpPct": 42.9
+        "gpPct": 42.9,
+        "wholesale": {
+          "units": 2116,
+          "sek": 933755,
+          "gpPct": 40.2
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -5198,17 +5948,32 @@
       "2024": {
         "units": 3792,
         "sek": 1745797,
-        "gpPct": 51.0
+        "gpPct": 51.0,
+        "wholesale": {
+          "units": 3751,
+          "sek": 1713655,
+          "gpPct": 50.7
+        }
       },
       "2025": {
         "units": 2614,
         "sek": 1151073,
-        "gpPct": 47.1
+        "gpPct": 47.1,
+        "wholesale": {
+          "units": 2583,
+          "sek": 1125760,
+          "gpPct": 46.6
+        }
       },
       "2026": {
         "units": 1327,
         "sek": 562455,
-        "gpPct": 42.0
+        "gpPct": 42.0,
+        "wholesale": {
+          "units": 1251,
+          "sek": 505901,
+          "gpPct": 38.9
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -5272,17 +6037,32 @@
       "2024": {
         "units": 5573,
         "sek": 2118615,
-        "gpPct": 48.4
+        "gpPct": 48.4,
+        "wholesale": {
+          "units": 5121,
+          "sek": 1881448,
+          "gpPct": 46.1
+        }
       },
       "2025": {
         "units": 5074,
         "sek": 1910731,
-        "gpPct": 48.4
+        "gpPct": 48.4,
+        "wholesale": {
+          "units": 4821,
+          "sek": 1736474,
+          "gpPct": 45.9
+        }
       },
       "2026": {
         "units": 5078,
         "sek": 1951948,
-        "gpPct": 45.5
+        "gpPct": 45.5,
+        "wholesale": {
+          "units": 4598,
+          "sek": 1678648,
+          "gpPct": 42.1
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -5353,17 +6133,32 @@
       "2024": {
         "units": 4,
         "sek": 1401,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 4,
+          "sek": 1401,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 1925,
         "sek": 758919,
-        "gpPct": 49.9
+        "gpPct": 49.9,
+        "wholesale": {
+          "units": 1732,
+          "sek": 616725,
+          "gpPct": 44.7
+        }
       },
       "2026": {
         "units": 1598,
         "sek": 618545,
-        "gpPct": 49.9
+        "gpPct": 49.9,
+        "wholesale": {
+          "units": 1345,
+          "sek": 452877,
+          "gpPct": 42.7
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -5427,17 +6222,32 @@
       "2024": {
         "units": 417,
         "sek": 94924,
-        "gpPct": 35.5
+        "gpPct": 35.5,
+        "wholesale": {
+          "units": 384,
+          "sek": 85340,
+          "gpPct": 33.7
+        }
       },
       "2025": {
         "units": 87,
         "sek": 24517,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 78,
+          "sek": 21749,
+          "gpPct": null
+        }
       },
       "2026": {
         "units": 2077,
         "sek": 751305,
-        "gpPct": 43.2
+        "gpPct": 43.2,
+        "wholesale": {
+          "units": 1995,
+          "sek": 694013,
+          "gpPct": 40.9
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -5501,7 +6311,12 @@
       "2026": {
         "units": 296,
         "sek": 164316,
-        "gpPct": 49.7
+        "gpPct": 49.7,
+        "wholesale": {
+          "units": 268,
+          "sek": 134704,
+          "gpPct": 44.8
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -5565,17 +6380,32 @@
       "2024": {
         "units": 1,
         "sek": 538,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 0,
+          "sek": 0,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 336,
         "sek": 217558,
-        "gpPct": 41.5
+        "gpPct": 41.5,
+        "wholesale": {
+          "units": 310,
+          "sek": 188496,
+          "gpPct": 37.4
+        }
       },
       "2026": {
         "units": 337,
         "sek": 223760,
-        "gpPct": 42.7
+        "gpPct": 42.7,
+        "wholesale": {
+          "units": 266,
+          "sek": 150984,
+          "gpPct": 32.3
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -5639,17 +6469,32 @@
       "2024": {
         "units": 0,
         "sek": 0,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 0,
+          "sek": 0,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 244,
         "sek": 119725,
-        "gpPct": 47.6
+        "gpPct": 47.6,
+        "wholesale": {
+          "units": 219,
+          "sek": 96980,
+          "gpPct": 41.8
+        }
       },
       "2026": {
         "units": 234,
         "sek": 112080,
-        "gpPct": 47.9
+        "gpPct": 47.9,
+        "wholesale": {
+          "units": 178,
+          "sek": 70479,
+          "gpPct": 34.1
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -5771,12 +6616,22 @@
       "2025": {
         "units": 1,
         "sek": 775,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 1,
+          "sek": 775,
+          "gpPct": null
+        }
       },
       "2026": {
         "units": 108,
         "sek": 114144,
-        "gpPct": 44.1
+        "gpPct": 44.1,
+        "wholesale": {
+          "units": 100,
+          "sek": 101521,
+          "gpPct": 41.9
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -5840,7 +6695,12 @@
       "2026": {
         "units": 114,
         "sek": 127045,
-        "gpPct": 43.6
+        "gpPct": 43.6,
+        "wholesale": {
+          "units": 107,
+          "sek": 114665,
+          "gpPct": 41.4
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -5904,12 +6764,22 @@
       "2025": {
         "units": 170,
         "sek": 103974,
-        "gpPct": 37.9
+        "gpPct": 37.9,
+        "wholesale": {
+          "units": 170,
+          "sek": 103974,
+          "gpPct": 37.9
+        }
       },
       "2026": {
         "units": 878,
         "sek": 737049,
-        "gpPct": 51.8
+        "gpPct": 51.8,
+        "wholesale": {
+          "units": 764,
+          "sek": 575822,
+          "gpPct": 46.3
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -5973,17 +6843,32 @@
       "2024": {
         "units": 4905,
         "sek": 2322602,
-        "gpPct": 50.5
+        "gpPct": 50.5,
+        "wholesale": {
+          "units": 4564,
+          "sek": 2093370,
+          "gpPct": 48.9
+        }
       },
       "2025": {
         "units": 3154,
         "sek": 1500976,
-        "gpPct": 49.7
+        "gpPct": 49.7,
+        "wholesale": {
+          "units": 2981,
+          "sek": 1385199,
+          "gpPct": 48.4
+        }
       },
       "2026": {
         "units": 2287,
         "sek": 1103791,
-        "gpPct": 50.0
+        "gpPct": 50.0,
+        "wholesale": {
+          "units": 2211,
+          "sek": 1036508,
+          "gpPct": 48.4
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -6228,7 +7113,12 @@
       "2026": {
         "units": 1050,
         "sek": 1097208,
-        "gpPct": 50.2
+        "gpPct": 50.2,
+        "wholesale": {
+          "units": 1019,
+          "sek": 1035206,
+          "gpPct": 48.9
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -6408,7 +7298,12 @@
       "2026": {
         "units": 462,
         "sek": 404621,
-        "gpPct": 52.5
+        "gpPct": 52.5,
+        "wholesale": {
+          "units": 417,
+          "sek": 334302,
+          "gpPct": 48.1
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -6472,17 +7367,32 @@
       "2024": {
         "units": 10966,
         "sek": 9168643,
-        "gpPct": 44.5
+        "gpPct": 44.5,
+        "wholesale": {
+          "units": 10226,
+          "sek": 8072333,
+          "gpPct": 41.4
+        }
       },
       "2025": {
         "units": 10828,
         "sek": 9197319,
-        "gpPct": 43.6
+        "gpPct": 43.6,
+        "wholesale": {
+          "units": 10152,
+          "sek": 8233010,
+          "gpPct": 41.2
+        }
       },
       "2026": {
         "units": 9739,
         "sek": 8532577,
-        "gpPct": 49.2
+        "gpPct": 49.2,
+        "wholesale": {
+          "units": 8531,
+          "sek": 7077245,
+          "gpPct": 46.6
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -6492,17 +7402,32 @@
           "2024": {
             "units": 10966,
             "gpPct": 44.5,
-            "sek": 9168643
+            "sek": 9168643,
+            "wholesale": {
+              "units": 10226,
+              "gpPct": 41.4,
+              "sek": 8072333
+            }
           },
           "2025": {
             "units": 10828,
             "gpPct": 43.6,
-            "sek": 9197319
+            "sek": 9197319,
+            "wholesale": {
+              "units": 10152,
+              "gpPct": 41.2,
+              "sek": 8233010
+            }
           },
           "2026": {
             "units": 1740,
             "gpPct": 26.5,
-            "sek": 1135773
+            "sek": 1135773,
+            "wholesale": {
+              "units": 1109,
+              "gpPct": 16.8,
+              "sek": 645450
+            }
           }
         }
       },
@@ -6512,7 +7437,12 @@
           "2026": {
             "units": 7999,
             "gpPct": 52.7,
-            "sek": 7396804
+            "sek": 7396804,
+            "wholesale": {
+              "units": 7422,
+              "gpPct": 49.6,
+              "sek": 6431795
+            }
           }
         }
       }
@@ -6577,17 +7507,32 @@
       "2024": {
         "units": 3028,
         "sek": 2982005,
-        "gpPct": 50.9
+        "gpPct": 50.9,
+        "wholesale": {
+          "units": 2843,
+          "sek": 2679786,
+          "gpPct": 48.7
+        }
       },
       "2025": {
         "units": 3702,
         "sek": 3520194,
-        "gpPct": 47.9
+        "gpPct": 47.9,
+        "wholesale": {
+          "units": 2928,
+          "sek": 2584812,
+          "gpPct": 43.8
+        }
       },
       "2026": {
         "units": 4392,
         "sek": 3917609,
-        "gpPct": 45.2
+        "gpPct": 45.2,
+        "wholesale": {
+          "units": 2901,
+          "sek": 2685291,
+          "gpPct": 45.9
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -6597,17 +7542,32 @@
           "2024": {
             "units": 3028,
             "gpPct": 50.9,
-            "sek": 2982005
+            "sek": 2982005,
+            "wholesale": {
+              "units": 2843,
+              "gpPct": 48.7,
+              "sek": 2679786
+            }
           },
           "2025": {
             "units": 3702,
             "gpPct": 47.9,
-            "sek": 3520194
+            "sek": 3520194,
+            "wholesale": {
+              "units": 2928,
+              "gpPct": 43.8,
+              "sek": 2584812
+            }
           },
           "2026": {
             "units": 2030,
             "gpPct": 33.0,
-            "sek": 1432401
+            "sek": 1432401,
+            "wholesale": {
+              "units": 652,
+              "gpPct": 22.8,
+              "sek": 417405
+            }
           }
         }
       },
@@ -6617,7 +7577,12 @@
           "2026": {
             "units": 2362,
             "gpPct": 52.3,
-            "sek": 2485208
+            "sek": 2485208,
+            "wholesale": {
+              "units": 2249,
+              "gpPct": 50.2,
+              "sek": 2267886
+            }
           }
         }
       }
@@ -6689,7 +7654,12 @@
       "2026": {
         "units": 899,
         "sek": 738471,
-        "gpPct": 44.4
+        "gpPct": 44.4,
+        "wholesale": {
+          "units": 859,
+          "sek": 671014,
+          "gpPct": 41.5
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -6753,7 +7723,12 @@
       "2026": {
         "units": 2310,
         "sek": 1871012,
-        "gpPct": 44.3
+        "gpPct": 44.3,
+        "wholesale": {
+          "units": 2199,
+          "sek": 1710390,
+          "gpPct": 42.0
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -6991,17 +7966,32 @@
       "2024": {
         "units": 17,
         "sek": 14487,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 17,
+          "sek": 14487,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 1619,
         "sek": 1665827,
-        "gpPct": 61.8
+        "gpPct": 61.8,
+        "wholesale": {
+          "units": 1426,
+          "sek": 1367438,
+          "gpPct": 58.7
+        }
       },
       "2026": {
         "units": 1310,
         "sek": 1273525,
-        "gpPct": 60.1
+        "gpPct": 60.1,
+        "wholesale": {
+          "units": 1180,
+          "sek": 1069436,
+          "gpPct": 57.4
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -7065,7 +8055,12 @@
       "2026": {
         "units": 1306,
         "sek": 1097351,
-        "gpPct": 52.6
+        "gpPct": 52.6,
+        "wholesale": {
+          "units": 1233,
+          "sek": 957949,
+          "gpPct": 48.9
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -7129,17 +8124,32 @@
       "2024": {
         "units": 7,
         "sek": 8050,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 7,
+          "sek": 8050,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 391,
         "sek": 556487,
-        "gpPct": 58.8
+        "gpPct": 58.8,
+        "wholesale": {
+          "units": 340,
+          "sek": 421745,
+          "gpPct": 53.2
+        }
       },
       "2026": {
         "units": 231,
         "sek": 362691,
-        "gpPct": 65.6
+        "gpPct": 65.6,
+        "wholesale": {
+          "units": 177,
+          "sek": 218186,
+          "gpPct": 57.2
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -7203,17 +8213,32 @@
       "2024": {
         "units": 14,
         "sek": 12421,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 14,
+          "sek": 12421,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 2375,
         "sek": 2518195,
-        "gpPct": 50.4
+        "gpPct": 50.4,
+        "wholesale": {
+          "units": 2172,
+          "sek": 2097642,
+          "gpPct": 45.6
+        }
       },
       "2026": {
         "units": 3064,
         "sek": 3480044,
-        "gpPct": 59.3
+        "gpPct": 59.3,
+        "wholesale": {
+          "units": 2492,
+          "sek": 2417215,
+          "gpPct": 53.5
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -7277,17 +8302,32 @@
       "2024": {
         "units": 6,
         "sek": 3738,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 6,
+          "sek": 3738,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 725,
         "sek": 532942,
-        "gpPct": 56.2
+        "gpPct": 56.2,
+        "wholesale": {
+          "units": 623,
+          "sek": 421486,
+          "gpPct": 52.3
+        }
       },
       "2026": {
         "units": 708,
         "sek": 533618,
-        "gpPct": 56.3
+        "gpPct": 56.3,
+        "wholesale": {
+          "units": 370,
+          "sek": 185157,
+          "gpPct": 35.6
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -7409,17 +8449,32 @@
       "2024": {
         "units": 2280,
         "sek": 3094258,
-        "gpPct": 41.9
+        "gpPct": 41.9,
+        "wholesale": {
+          "units": 1473,
+          "sek": 1714904,
+          "gpPct": 26.9
+        }
       },
       "2025": {
         "units": 2790,
         "sek": 3438326,
-        "gpPct": 34.2
+        "gpPct": 34.2,
+        "wholesale": {
+          "units": 1961,
+          "sek": 2114667,
+          "gpPct": 24.8
+        }
       },
       "2026": {
         "units": 2105,
         "sek": 2669214,
-        "gpPct": 43.4
+        "gpPct": 43.4,
+        "wholesale": {
+          "units": 1585,
+          "sek": 1750155,
+          "gpPct": 37.1
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -7429,17 +8484,32 @@
           "2024": {
             "units": 2272,
             "gpPct": 42.0,
-            "sek": 3085613
+            "sek": 3085613,
+            "wholesale": {
+              "units": 1465,
+              "gpPct": 27.0,
+              "sek": 1706259
+            }
           },
           "2025": {
             "units": 1761,
             "gpPct": 32.4,
-            "sek": 2122631
+            "sek": 2122631,
+            "wholesale": {
+              "units": 978,
+              "gpPct": 10.9,
+              "sek": 899702
+            }
           },
           "2026": {
             "units": 451,
             "gpPct": 38.7,
-            "sek": 568845
+            "sek": 568845,
+            "wholesale": {
+              "units": 168,
+              "gpPct": 16.5,
+              "sek": 151577
+            }
           }
         }
       },
@@ -7449,17 +8519,32 @@
           "2024": {
             "units": 8,
             "gpPct": null,
-            "sek": 8645
+            "sek": 8645,
+            "wholesale": {
+              "units": 8,
+              "gpPct": null,
+              "sek": 8645
+            }
           },
           "2025": {
             "units": 1029,
             "gpPct": 37.1,
-            "sek": 1315695
+            "sek": 1315695,
+            "wholesale": {
+              "units": 983,
+              "gpPct": 35.1,
+              "sek": 1214965
+            }
           },
           "2026": {
             "units": 1654,
             "gpPct": 44.7,
-            "sek": 2100369
+            "sek": 2100369,
+            "wholesale": {
+              "units": 1417,
+              "gpPct": 39.1,
+              "sek": 1598578
+            }
           }
         }
       }
@@ -7647,17 +8732,32 @@
       "2024": {
         "units": 3379,
         "sek": 6085452,
-        "gpPct": 56.4
+        "gpPct": 56.4,
+        "wholesale": {
+          "units": 2851,
+          "sek": 4766188,
+          "gpPct": 53.7
+        }
       },
       "2025": {
         "units": 3522,
         "sek": 6331354,
-        "gpPct": 55.9
+        "gpPct": 55.9,
+        "wholesale": {
+          "units": 2760,
+          "sek": 4509635,
+          "gpPct": 51.8
+        }
       },
       "2026": {
         "units": 3047,
         "sek": 5274181,
-        "gpPct": 56.3
+        "gpPct": 56.3,
+        "wholesale": {
+          "units": 2667,
+          "sek": 4364407,
+          "gpPct": 54.5
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -7667,17 +8767,32 @@
           "2024": {
             "units": 3379,
             "gpPct": 56.4,
-            "sek": 6085452
+            "sek": 6085452,
+            "wholesale": {
+              "units": 2851,
+              "gpPct": 53.7,
+              "sek": 4766188
+            }
           },
           "2025": {
             "units": 762,
             "gpPct": 61.2,
-            "sek": 1628152
+            "sek": 1628152,
+            "wholesale": {
+              "units": 129,
+              "gpPct": 33.1,
+              "sek": 172483
+            }
           },
           "2026": {
             "units": 219,
             "gpPct": 53.0,
-            "sek": 393957
+            "sek": 393957,
+            "wholesale": {
+              "units": 61,
+              "gpPct": 18.8,
+              "sek": 62348
+            }
           }
         }
       },
@@ -7687,12 +8802,22 @@
           "2025": {
             "units": 2760,
             "gpPct": 54.0,
-            "sek": 4703202
+            "sek": 4703202,
+            "wholesale": {
+              "units": 2631,
+              "gpPct": 52.5,
+              "sek": 4337152
+            }
           },
           "2026": {
             "units": 2828,
             "gpPct": 56.6,
-            "sek": 4880224
+            "sek": 4880224,
+            "wholesale": {
+              "units": 2606,
+              "gpPct": 55.0,
+              "sek": 4302059
+            }
           }
         }
       }
@@ -7757,17 +8882,32 @@
       "2024": {
         "units": 3898,
         "sek": 4393443,
-        "gpPct": 45.8
+        "gpPct": 45.8,
+        "wholesale": {
+          "units": 3662,
+          "sek": 3982807,
+          "gpPct": 44.1
+        }
       },
       "2025": {
         "units": 2511,
         "sek": 2637538,
-        "gpPct": 62.8
+        "gpPct": 62.8,
+        "wholesale": {
+          "units": 2127,
+          "sek": 2040478,
+          "gpPct": 63.5
+        }
       },
       "2026": {
         "units": 4692,
         "sek": 4604764,
-        "gpPct": 42.8
+        "gpPct": 42.8,
+        "wholesale": {
+          "units": 4527,
+          "sek": 4326913,
+          "gpPct": 41.3
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -7777,17 +8917,32 @@
           "2024": {
             "units": 3056,
             "gpPct": 44.1,
-            "sek": 3272324
+            "sek": 3272324,
+            "wholesale": {
+              "units": 2821,
+              "gpPct": 41.6,
+              "sek": 2862851
+            }
           },
           "2025": {
             "units": 901,
             "gpPct": 34.8,
-            "sek": 920596
+            "sek": 920596,
+            "wholesale": {
+              "units": 576,
+              "gpPct": 11.8,
+              "sek": 449618
+            }
           },
           "2026": {
             "units": 157,
             "gpPct": 46.2,
-            "sek": 191431
+            "sek": 191431,
+            "wholesale": {
+              "units": 54,
+              "gpPct": null,
+              "sek": 39403
+            }
           }
         }
       },
@@ -7797,17 +8952,32 @@
           "2024": {
             "units": 842,
             "gpPct": 50.6,
-            "sek": 1121119
+            "sek": 1121119,
+            "wholesale": {
+              "units": 841,
+              "gpPct": 50.6,
+              "sek": 1119956
+            }
           },
           "2025": {
             "units": -651,
             "gpPct": null,
-            "sek": -836938
+            "sek": -836938,
+            "wholesale": {
+              "units": -651,
+              "gpPct": null,
+              "sek": -836938
+            }
           },
           "2026": {
             "units": 1116,
             "gpPct": 1.0,
-            "sek": 740754
+            "sek": 740754,
+            "wholesale": {
+              "units": 1116,
+              "gpPct": 1.0,
+              "sek": 740754
+            }
           }
         }
       },
@@ -7817,12 +8987,22 @@
           "2025": {
             "units": 2261,
             "gpPct": 52.3,
-            "sek": 2553880
+            "sek": 2553880,
+            "wholesale": {
+              "units": 2202,
+              "gpPct": 51.2,
+              "sek": 2427798
+            }
           },
           "2026": {
             "units": 3419,
             "gpPct": 51.0,
-            "sek": 3672579
+            "sek": 3672579,
+            "wholesale": {
+              "units": 3357,
+              "gpPct": 50.2,
+              "sek": 3546756
+            }
           }
         }
       }
@@ -7970,17 +9150,32 @@
       "2024": {
         "units": 5111,
         "sek": 5091999,
-        "gpPct": 59.0
+        "gpPct": 59.0,
+        "wholesale": {
+          "units": 5051,
+          "sek": 4986372,
+          "gpPct": 58.7
+        }
       },
       "2025": {
         "units": 4679,
         "sek": 4185377,
-        "gpPct": 52.5
+        "gpPct": 52.5,
+        "wholesale": {
+          "units": 4311,
+          "sek": 3720219,
+          "gpPct": 51.0
+        }
       },
       "2026": {
         "units": 3767,
         "sek": 3198803,
-        "gpPct": 50.8
+        "gpPct": 50.8,
+        "wholesale": {
+          "units": 3360,
+          "sek": 2712356,
+          "gpPct": 48.8
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -7990,17 +9185,32 @@
           "2024": {
             "units": 5111,
             "gpPct": 59.0,
-            "sek": 5091999
+            "sek": 5091999,
+            "wholesale": {
+              "units": 5051,
+              "gpPct": 58.7,
+              "sek": 4986372
+            }
           },
           "2025": {
             "units": 4679,
             "gpPct": 52.5,
-            "sek": 4185377
+            "sek": 4185377,
+            "wholesale": {
+              "units": 4311,
+              "gpPct": 51.0,
+              "sek": 3720219
+            }
           },
           "2026": {
             "units": 3767,
             "gpPct": 50.8,
-            "sek": 3198803
+            "sek": 3198803,
+            "wholesale": {
+              "units": 3360,
+              "gpPct": 48.8,
+              "sek": 2712356
+            }
           }
         }
       }
@@ -8091,17 +9301,32 @@
       "2024": {
         "units": 1188,
         "sek": 1074041,
-        "gpPct": 61.8
+        "gpPct": 61.8,
+        "wholesale": {
+          "units": 1156,
+          "sek": 1022999,
+          "gpPct": 61.1
+        }
       },
       "2025": {
         "units": 1886,
         "sek": 1625408,
-        "gpPct": 56.0
+        "gpPct": 56.0,
+        "wholesale": {
+          "units": 1685,
+          "sek": 1378705,
+          "gpPct": 54.1
+        }
       },
       "2026": {
         "units": 2342,
         "sek": 1584493,
-        "gpPct": 46.6
+        "gpPct": 46.6,
+        "wholesale": {
+          "units": 2164,
+          "sek": 1372028,
+          "gpPct": 43.5
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -8111,17 +9336,32 @@
           "2024": {
             "units": 1188,
             "gpPct": 61.8,
-            "sek": 1074041
+            "sek": 1074041,
+            "wholesale": {
+              "units": 1156,
+              "gpPct": 61.1,
+              "sek": 1022999
+            }
           },
           "2025": {
             "units": 1886,
             "gpPct": 56.0,
-            "sek": 1625408
+            "sek": 1625408,
+            "wholesale": {
+              "units": 1685,
+              "gpPct": 54.1,
+              "sek": 1378705
+            }
           },
           "2026": {
             "units": 2342,
             "gpPct": 46.6,
-            "sek": 1584493
+            "sek": 1584493,
+            "wholesale": {
+              "units": 2164,
+              "gpPct": 43.5,
+              "sek": 1372028
+            }
           }
         }
       }
@@ -8340,17 +9580,32 @@
       "2024": {
         "units": 59,
         "sek": 132861,
-        "gpPct": 51.6
+        "gpPct": 51.6,
+        "wholesale": {
+          "units": 2,
+          "sek": 2621,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 27,
         "sek": 32720,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 0,
+          "sek": 0,
+          "gpPct": null
+        }
       },
       "2026": {
         "units": 1,
         "sek": 736,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 0,
+          "sek": 0,
+          "gpPct": null
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -8414,7 +9669,12 @@
       "2026": {
         "units": 405,
         "sek": 964009,
-        "gpPct": 44.5
+        "gpPct": 44.5,
+        "wholesale": {
+          "units": 382,
+          "sek": 891831,
+          "gpPct": 43.3
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -8478,17 +9738,32 @@
       "2024": {
         "units": 4953,
         "sek": 5589198,
-        "gpPct": -251.9
+        "gpPct": -251.9,
+        "wholesale": {
+          "units": 4822,
+          "sek": 5299140,
+          "gpPct": -269.8
+        }
       },
       "2025": {
         "units": 8952,
         "sek": 10112235,
-        "gpPct": 47.4
+        "gpPct": 47.4,
+        "wholesale": {
+          "units": 8241,
+          "sek": 8756758,
+          "gpPct": 44.2
+        }
       },
       "2026": {
         "units": 7765,
         "sek": 9045823,
-        "gpPct": 52.6
+        "gpPct": 52.6,
+        "wholesale": {
+          "units": 6770,
+          "sek": 7233782,
+          "gpPct": 49.2
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -8552,17 +9827,32 @@
       "2024": {
         "units": 1868,
         "sek": 2021108,
-        "gpPct": 53.5
+        "gpPct": 53.5,
+        "wholesale": {
+          "units": 1657,
+          "sek": 1623739,
+          "gpPct": 49.2
+        }
       },
       "2025": {
         "units": 1973,
         "sek": 2429398,
-        "gpPct": 55.6
+        "gpPct": 55.6,
+        "wholesale": {
+          "units": 1192,
+          "sek": 1134066,
+          "gpPct": 42.7
+        }
       },
       "2026": {
         "units": 2444,
         "sek": 2791314,
-        "gpPct": 55.7
+        "gpPct": 55.7,
+        "wholesale": {
+          "units": 1861,
+          "sek": 1846634,
+          "gpPct": 50.3
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -8626,17 +9916,32 @@
       "2024": {
         "units": 1384,
         "sek": 1113562,
-        "gpPct": 56.2
+        "gpPct": 56.2,
+        "wholesale": {
+          "units": 1283,
+          "sek": 953348,
+          "gpPct": 53.0
+        }
       },
       "2025": {
         "units": 2286,
         "sek": 2020211,
-        "gpPct": 55.5
+        "gpPct": 55.5,
+        "wholesale": {
+          "units": 2061,
+          "sek": 1679356,
+          "gpPct": 52.0
+        }
       },
       "2026": {
         "units": 1743,
         "sek": 1534977,
-        "gpPct": 57.5
+        "gpPct": 57.5,
+        "wholesale": {
+          "units": 1407,
+          "sek": 1075125,
+          "gpPct": 52.4
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -8700,17 +10005,32 @@
       "2024": {
         "units": 6398,
         "sek": 7826205,
-        "gpPct": 51.4
+        "gpPct": 51.4,
+        "wholesale": {
+          "units": 6151,
+          "sek": 7320074,
+          "gpPct": 50.2
+        }
       },
       "2025": {
         "units": 5809,
         "sek": 7664518,
-        "gpPct": 48.0
+        "gpPct": 48.0,
+        "wholesale": {
+          "units": 5093,
+          "sek": 6276369,
+          "gpPct": 44.0
+        }
       },
       "2026": {
         "units": 4387,
         "sek": 6068476,
-        "gpPct": 55.6
+        "gpPct": 55.6,
+        "wholesale": {
+          "units": 4054,
+          "sek": 5386245,
+          "gpPct": 54.1
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -8774,17 +10094,32 @@
       "2024": {
         "units": 8,
         "sek": 10528,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 8,
+          "sek": 10528,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 2463,
         "sek": 3961634,
-        "gpPct": 51.2
+        "gpPct": 51.2,
+        "wholesale": {
+          "units": 2357,
+          "sek": 3666139,
+          "gpPct": 49.6
+        }
       },
       "2026": {
         "units": 1184,
         "sek": 1910854,
-        "gpPct": 56.5
+        "gpPct": 56.5,
+        "wholesale": {
+          "units": 1078,
+          "sek": 1664929,
+          "gpPct": 55.2
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -8848,17 +10183,32 @@
       "2024": {
         "units": 5130,
         "sek": 5651039,
-        "gpPct": 47.6
+        "gpPct": 47.6,
+        "wholesale": {
+          "units": 4668,
+          "sek": 4850116,
+          "gpPct": 44.3
+        }
       },
       "2025": {
         "units": 5195,
         "sek": 5477697,
-        "gpPct": 52.4
+        "gpPct": 52.4,
+        "wholesale": {
+          "units": 4578,
+          "sek": 4425099,
+          "gpPct": 48.6
+        }
       },
       "2026": {
         "units": 3302,
         "sek": 3666698,
-        "gpPct": 56.1
+        "gpPct": 56.1,
+        "wholesale": {
+          "units": 2882,
+          "sek": 2963726,
+          "gpPct": 53.4
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -8868,17 +10218,32 @@
           "2024": {
             "units": 5130,
             "gpPct": 47.6,
-            "sek": 5651039
+            "sek": 5651039,
+            "wholesale": {
+              "units": 4668,
+              "gpPct": 44.3,
+              "sek": 4850116
+            }
           },
           "2025": {
             "units": 1076,
             "gpPct": 47.8,
-            "sek": 1178003
+            "sek": 1178003,
+            "wholesale": {
+              "units": 621,
+              "gpPct": 22.9,
+              "sek": 465334
+            }
           },
           "2026": {
             "units": 106,
             "gpPct": 49.3,
-            "sek": 134927
+            "sek": 134927,
+            "wholesale": {
+              "units": -7,
+              "gpPct": null,
+              "sek": -8475
+            }
           }
         }
       },
@@ -8888,12 +10253,22 @@
           "2025": {
             "units": 4119,
             "gpPct": 53.7,
-            "sek": 4299694
+            "sek": 4299694,
+            "wholesale": {
+              "units": 3957,
+              "gpPct": 51.6,
+              "sek": 3959765
+            }
           },
           "2026": {
             "units": 3196,
             "gpPct": 56.4,
-            "sek": 3531771
+            "sek": 3531771,
+            "wholesale": {
+              "units": 2889,
+              "gpPct": 53.2,
+              "sek": 2972201
+            }
           }
         }
       }
@@ -8958,17 +10333,32 @@
       "2024": {
         "units": 3616,
         "sek": 5716442,
-        "gpPct": 47.5
+        "gpPct": 47.5,
+        "wholesale": {
+          "units": 3409,
+          "sek": 5126154,
+          "gpPct": 45.0
+        }
       },
       "2025": {
         "units": 3736,
         "sek": 5885899,
-        "gpPct": 42.1
+        "gpPct": 42.1,
+        "wholesale": {
+          "units": 3190,
+          "sek": 4533725,
+          "gpPct": 35.5
+        }
       },
       "2026": {
         "units": 3145,
         "sek": 5075744,
-        "gpPct": 45.0
+        "gpPct": 45.0,
+        "wholesale": {
+          "units": 2786,
+          "sek": 4248601,
+          "gpPct": 41.7
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -9032,17 +10422,32 @@
       "2024": {
         "units": 18459,
         "sek": 13419713,
-        "gpPct": 61.8
+        "gpPct": 61.8,
+        "wholesale": {
+          "units": 17634,
+          "sek": 12464410,
+          "gpPct": 60.9
+        }
       },
       "2025": {
         "units": 21755,
         "sek": 15812297,
-        "gpPct": 61.1
+        "gpPct": 61.1,
+        "wholesale": {
+          "units": 20426,
+          "sek": 14453679,
+          "gpPct": 60.5
+        }
       },
       "2026": {
         "units": 21742,
         "sek": 15694805,
-        "gpPct": 60.4
+        "gpPct": 60.4,
+        "wholesale": {
+          "units": 19958,
+          "sek": 13810580,
+          "gpPct": 58.8
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -9052,17 +10457,32 @@
           "2024": {
             "units": 18459,
             "gpPct": 61.8,
-            "sek": 13419713
+            "sek": 13419713,
+            "wholesale": {
+              "units": 17634,
+              "gpPct": 60.9,
+              "sek": 12464410
+            }
           },
           "2025": {
             "units": 21755,
             "gpPct": 61.1,
-            "sek": 15812297
+            "sek": 15812297,
+            "wholesale": {
+              "units": 20426,
+              "gpPct": 60.5,
+              "sek": 14453679
+            }
           },
           "2026": {
             "units": 7039,
             "gpPct": 61.0,
-            "sek": 5066723
+            "sek": 5066723,
+            "wholesale": {
+              "units": 5355,
+              "gpPct": 56.0,
+              "sek": 3352800
+            }
           }
         }
       },
@@ -9072,7 +10492,12 @@
           "2026": {
             "units": 14703,
             "gpPct": 60.1,
-            "sek": 10628082
+            "sek": 10628082,
+            "wholesale": {
+              "units": 14603,
+              "gpPct": 59.7,
+              "sek": 10457780
+            }
           }
         }
       }
@@ -9221,17 +10646,32 @@
       "2024": {
         "units": 8,
         "sek": 3928,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 8,
+          "sek": 3928,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 12769,
         "sek": 8483347,
-        "gpPct": 46.7
+        "gpPct": 46.7,
+        "wholesale": {
+          "units": 12138,
+          "sek": 7709215,
+          "gpPct": 43.7
+        }
       },
       "2026": {
         "units": 14683,
         "sek": 9732852,
-        "gpPct": 54.6
+        "gpPct": 54.6,
+        "wholesale": {
+          "units": 14000,
+          "sek": 8878227,
+          "gpPct": 52.6
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -9295,12 +10735,22 @@
       "2025": {
         "units": 120,
         "sek": 43677,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 120,
+          "sek": 43677,
+          "gpPct": null
+        }
       },
       "2026": {
         "units": 5082,
         "sek": 2276637,
-        "gpPct": 52.6
+        "gpPct": 52.6,
+        "wholesale": {
+          "units": 4839,
+          "sek": 2064865,
+          "gpPct": 50.3
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -9435,17 +10885,32 @@
       "2024": {
         "units": 0,
         "sek": 0,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 0,
+          "sek": 0,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 2527,
         "sek": 1600464,
-        "gpPct": 48.9
+        "gpPct": 48.9,
+        "wholesale": {
+          "units": 2314,
+          "sek": 1364741,
+          "gpPct": 45.1
+        }
       },
       "2026": {
         "units": 2719,
         "sek": 1706041,
-        "gpPct": 56.2
+        "gpPct": 56.2,
+        "wholesale": {
+          "units": 2036,
+          "sek": 1104551,
+          "gpPct": 49.1
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -9625,17 +11090,32 @@
       "2024": {
         "units": 0,
         "sek": 0,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 0,
+          "sek": 0,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 1192,
         "sek": 779072,
-        "gpPct": 49.2
+        "gpPct": 49.2,
+        "wholesale": {
+          "units": 1003,
+          "sek": 552898,
+          "gpPct": 39.9
+        }
       },
       "2026": {
         "units": 1986,
         "sek": 1511234,
-        "gpPct": 58.3
+        "gpPct": 58.3,
+        "wholesale": {
+          "units": 1580,
+          "sek": 989390,
+          "gpPct": 49.6
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -9645,17 +11125,32 @@
           "2024": {
             "units": 0,
             "gpPct": null,
-            "sek": 0
+            "sek": 0,
+            "wholesale": {
+              "units": 0,
+              "gpPct": null,
+              "sek": 0
+            }
           },
           "2025": {
             "units": 1192,
             "gpPct": 49.2,
-            "sek": 779072
+            "sek": 779072,
+            "wholesale": {
+              "units": 1003,
+              "gpPct": 39.9,
+              "sek": 552898
+            }
           },
           "2026": {
             "units": 1986,
             "gpPct": 58.3,
-            "sek": 1511234
+            "sek": 1511234,
+            "wholesale": {
+              "units": 1580,
+              "gpPct": 49.6,
+              "sek": 989390
+            }
           }
         }
       }
@@ -9733,12 +11228,22 @@
       "2025": {
         "units": 480,
         "sek": 160705,
-        "gpPct": 56.8
+        "gpPct": 56.8,
+        "wholesale": {
+          "units": 480,
+          "sek": 160705,
+          "gpPct": 56.8
+        }
       },
       "2026": {
         "units": 3378,
         "sek": 1327553,
-        "gpPct": 60.8
+        "gpPct": 60.8,
+        "wholesale": {
+          "units": 2791,
+          "sek": 999555,
+          "gpPct": 56.8
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -9748,12 +11253,22 @@
           "2025": {
             "units": 480,
             "gpPct": 56.8,
-            "sek": 160705
+            "sek": 160705,
+            "wholesale": {
+              "units": 480,
+              "gpPct": 56.8,
+              "sek": 160705
+            }
           },
           "2026": {
             "units": 3378,
             "gpPct": 60.8,
-            "sek": 1327553
+            "sek": 1327553,
+            "wholesale": {
+              "units": 2791,
+              "gpPct": 56.8,
+              "sek": 999555
+            }
           }
         }
       }
@@ -9889,17 +11404,32 @@
       "2024": {
         "units": 0,
         "sek": 0,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 0,
+          "sek": 0,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 5216,
         "sek": 2516982,
-        "gpPct": 52.6
+        "gpPct": 52.6,
+        "wholesale": {
+          "units": 4902,
+          "sek": 2236060,
+          "gpPct": 49.8
+        }
       },
       "2026": {
         "units": 3978,
         "sek": 1950424,
-        "gpPct": 57.5
+        "gpPct": 57.5,
+        "wholesale": {
+          "units": 3601,
+          "sek": 1624266,
+          "gpPct": 54.1
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -9963,17 +11493,32 @@
       "2024": {
         "units": 0,
         "sek": 0,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 0,
+          "sek": 0,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 5408,
         "sek": 1939271,
-        "gpPct": 51.8
+        "gpPct": 51.8,
+        "wholesale": {
+          "units": 5175,
+          "sek": 1782658,
+          "gpPct": 49.9
+        }
       },
       "2026": {
         "units": 4579,
         "sek": 1638383,
-        "gpPct": 57.1
+        "gpPct": 57.1,
+        "wholesale": {
+          "units": 4312,
+          "sek": 1478715,
+          "gpPct": 55.4
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -10037,12 +11582,22 @@
       "2025": {
         "units": 405,
         "sek": 112850,
-        "gpPct": 54.1
+        "gpPct": 54.1,
+        "wholesale": {
+          "units": 405,
+          "sek": 112850,
+          "gpPct": 54.1
+        }
       },
       "2026": {
         "units": 1786,
         "sek": 634740,
-        "gpPct": 62.2
+        "gpPct": 62.2,
+        "wholesale": {
+          "units": 1280,
+          "sek": 356101,
+          "gpPct": 51.4
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -10177,12 +11732,22 @@
       "2025": {
         "units": 1,
         "sek": 321,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 1,
+          "sek": 321,
+          "gpPct": null
+        }
       },
       "2026": {
         "units": 1071,
         "sek": 652175,
-        "gpPct": 57.5
+        "gpPct": 57.5,
+        "wholesale": {
+          "units": 866,
+          "sek": 429345,
+          "gpPct": 47.4
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -10246,12 +11811,22 @@
       "2025": {
         "units": 3,
         "sek": 772,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 3,
+          "sek": 772,
+          "gpPct": null
+        }
       },
       "2026": {
         "units": 3,
         "sek": 819,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 2,
+          "sek": 471,
+          "gpPct": null
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -10315,17 +11890,32 @@
       "2024": {
         "units": 3098,
         "sek": 1758106,
-        "gpPct": 55.3
+        "gpPct": 55.3,
+        "wholesale": {
+          "units": 2949,
+          "sek": 1615923,
+          "gpPct": 53.8
+        }
       },
       "2025": {
         "units": 3832,
         "sek": 2117888,
-        "gpPct": 54.8
+        "gpPct": 54.8,
+        "wholesale": {
+          "units": 3398,
+          "sek": 1741875,
+          "gpPct": 51.1
+        }
       },
       "2026": {
         "units": 5391,
         "sek": 2935792,
-        "gpPct": 58.5
+        "gpPct": 58.5,
+        "wholesale": {
+          "units": 4929,
+          "sek": 2539333,
+          "gpPct": 56.3
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -10335,17 +11925,32 @@
           "2024": {
             "units": 3098,
             "gpPct": 55.3,
-            "sek": 1758106
+            "sek": 1758106,
+            "wholesale": {
+              "units": 2949,
+              "gpPct": 53.8,
+              "sek": 1615923
+            }
           },
           "2025": {
             "units": 3812,
             "gpPct": 55.0,
-            "sek": 2108368
+            "sek": 2108368,
+            "wholesale": {
+              "units": 3378,
+              "gpPct": 51.4,
+              "sek": 1732355
+            }
           },
           "2026": {
             "units": 479,
             "gpPct": 62.6,
-            "sek": 314353
+            "sek": 314353,
+            "wholesale": {
+              "units": 163,
+              "gpPct": 51.4,
+              "sek": 84487
+            }
           }
         }
       },
@@ -10355,12 +11960,22 @@
           "2025": {
             "units": 20,
             "gpPct": null,
-            "sek": 9520
+            "sek": 9520,
+            "wholesale": {
+              "units": 20,
+              "gpPct": null,
+              "sek": 9520
+            }
           },
           "2026": {
             "units": 4912,
             "gpPct": 58.0,
-            "sek": 2621439
+            "sek": 2621439,
+            "wholesale": {
+              "units": 4766,
+              "gpPct": 56.5,
+              "sek": 2454846
+            }
           }
         }
       }
@@ -10438,17 +12053,32 @@
       "2024": {
         "units": 1115,
         "sek": 542444,
-        "gpPct": 58.7
+        "gpPct": 58.7,
+        "wholesale": {
+          "units": 796,
+          "sek": 352219,
+          "gpPct": 55.6
+        }
       },
       "2025": {
         "units": 1690,
         "sek": 851155,
-        "gpPct": 60.4
+        "gpPct": 60.4,
+        "wholesale": {
+          "units": 1104,
+          "sek": 474329,
+          "gpPct": 54.3
+        }
       },
       "2026": {
         "units": 1717,
         "sek": 789618,
-        "gpPct": 60.6
+        "gpPct": 60.6,
+        "wholesale": {
+          "units": 1110,
+          "sek": 436108,
+          "gpPct": 56.1
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -10458,17 +12088,32 @@
           "2024": {
             "units": 1115,
             "gpPct": 58.7,
-            "sek": 542444
+            "sek": 542444,
+            "wholesale": {
+              "units": 796,
+              "gpPct": 55.6,
+              "sek": 352219
+            }
           },
           "2025": {
             "units": 1690,
             "gpPct": 60.4,
-            "sek": 851155
+            "sek": 851155,
+            "wholesale": {
+              "units": 1104,
+              "gpPct": 54.3,
+              "sek": 474329
+            }
           },
           "2026": {
             "units": 1717,
             "gpPct": 60.6,
-            "sek": 789618
+            "sek": 789618,
+            "wholesale": {
+              "units": 1110,
+              "gpPct": 56.1,
+              "sek": 436108
+            }
           }
         }
       }
@@ -10540,17 +12185,32 @@
       "2024": {
         "units": 2,
         "sek": 1316,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 2,
+          "sek": 1316,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 5248,
         "sek": 4556089,
-        "gpPct": 52.3
+        "gpPct": 52.3,
+        "wholesale": {
+          "units": 4916,
+          "sek": 4051496,
+          "gpPct": 49.5
+        }
       },
       "2026": {
         "units": 5204,
         "sek": 4411435,
-        "gpPct": 58.6
+        "gpPct": 58.6,
+        "wholesale": {
+          "units": 4380,
+          "sek": 3432274,
+          "gpPct": 53.6
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -10685,17 +12345,32 @@
       "2024": {
         "units": 11784,
         "sek": 7679864,
-        "gpPct": 54.0
+        "gpPct": 54.0,
+        "wholesale": {
+          "units": 9904,
+          "sek": 5909205,
+          "gpPct": 49.9
+        }
       },
       "2025": {
         "units": 12939,
         "sek": 7058646,
-        "gpPct": 45.6
+        "gpPct": 45.6,
+        "wholesale": {
+          "units": 10606,
+          "sek": 5128918,
+          "gpPct": 39.2
+        }
       },
       "2026": {
         "units": 5567,
         "sek": 3166117,
-        "gpPct": 48.7
+        "gpPct": 48.7,
+        "wholesale": {
+          "units": 4122,
+          "sek": 1993647,
+          "gpPct": 41.0
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -10705,17 +12380,32 @@
           "2024": {
             "units": 11784,
             "gpPct": 54.0,
-            "sek": 7679864
+            "sek": 7679864,
+            "wholesale": {
+              "units": 9904,
+              "gpPct": 49.9,
+              "sek": 5909205
+            }
           },
           "2025": {
             "units": 12939,
             "gpPct": 45.6,
-            "sek": 7058646
+            "sek": 7058646,
+            "wholesale": {
+              "units": 10606,
+              "gpPct": 39.2,
+              "sek": 5128918
+            }
           },
           "2026": {
             "units": 5567,
             "gpPct": 48.7,
-            "sek": 3166117
+            "sek": 3166117,
+            "wholesale": {
+              "units": 4122,
+              "gpPct": 41.0,
+              "sek": 1993647
+            }
           }
         }
       }
@@ -10793,17 +12483,32 @@
       "2024": {
         "units": 5578,
         "sek": 2718852,
-        "gpPct": 54.6
+        "gpPct": 54.6,
+        "wholesale": {
+          "units": 4117,
+          "sek": 1776851,
+          "gpPct": 48.6
+        }
       },
       "2025": {
         "units": 5415,
         "sek": 2572953,
-        "gpPct": 52.6
+        "gpPct": 52.6,
+        "wholesale": {
+          "units": 3935,
+          "sek": 1657597,
+          "gpPct": 46.5
+        }
       },
       "2026": {
         "units": 1344,
         "sek": 678667,
-        "gpPct": 55.4
+        "gpPct": 55.4,
+        "wholesale": {
+          "units": 298,
+          "sek": 101717,
+          "gpPct": 22.6
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -10813,17 +12518,32 @@
           "2024": {
             "units": 5578,
             "gpPct": 54.6,
-            "sek": 2718852
+            "sek": 2718852,
+            "wholesale": {
+              "units": 4117,
+              "gpPct": 48.6,
+              "sek": 1776851
+            }
           },
           "2025": {
             "units": 2864,
             "gpPct": 54.1,
-            "sek": 1418567
+            "sek": 1418567,
+            "wholesale": {
+              "units": 2027,
+              "gpPct": 47.6,
+              "sek": 876280
+            }
           },
           "2026": {
             "units": 778,
             "gpPct": 55.4,
-            "sek": 399464
+            "sek": 399464,
+            "wholesale": {
+              "units": 218,
+              "gpPct": 30.8,
+              "sek": 74620
+            }
           }
         }
       },
@@ -10833,12 +12553,22 @@
           "2025": {
             "units": 2551,
             "gpPct": 50.8,
-            "sek": 1154386
+            "sek": 1154386,
+            "wholesale": {
+              "units": 1908,
+              "gpPct": 45.2,
+              "sek": 781317
+            }
           },
           "2026": {
             "units": 566,
             "gpPct": 55.5,
-            "sek": 279203
+            "sek": 279203,
+            "wholesale": {
+              "units": 80,
+              "gpPct": null,
+              "sek": 27097
+            }
           }
         }
       }
@@ -10916,17 +12646,32 @@
       "2024": {
         "units": 2820,
         "sek": 2112876,
-        "gpPct": 57.6
+        "gpPct": 57.6,
+        "wholesale": {
+          "units": 2641,
+          "sek": 1915126,
+          "gpPct": 56.2
+        }
       },
       "2025": {
         "units": 2139,
         "sek": 1575700,
-        "gpPct": 59.6
+        "gpPct": 59.6,
+        "wholesale": {
+          "units": 1935,
+          "sek": 1349028,
+          "gpPct": 57.9
+        }
       },
       "2026": {
         "units": 2156,
         "sek": 1484669,
-        "gpPct": 56.6
+        "gpPct": 56.6,
+        "wholesale": {
+          "units": 2062,
+          "sek": 1361122,
+          "gpPct": 55.0
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -10936,17 +12681,32 @@
           "2024": {
             "units": 2820,
             "gpPct": 57.6,
-            "sek": 2112876
+            "sek": 2112876,
+            "wholesale": {
+              "units": 2641,
+              "gpPct": 56.2,
+              "sek": 1915126
+            }
           },
           "2025": {
             "units": 2139,
             "gpPct": 59.6,
-            "sek": 1575700
+            "sek": 1575700,
+            "wholesale": {
+              "units": 1935,
+              "gpPct": 57.9,
+              "sek": 1349028
+            }
           },
           "2026": {
             "units": 2156,
             "gpPct": 56.6,
-            "sek": 1484669
+            "sek": 1484669,
+            "wholesale": {
+              "units": 2062,
+              "gpPct": 55.0,
+              "sek": 1361122
+            }
           }
         }
       }
@@ -11024,17 +12784,32 @@
       "2024": {
         "units": 2010,
         "sek": 998502,
-        "gpPct": 45.1
+        "gpPct": 45.1,
+        "wholesale": {
+          "units": 1787,
+          "sek": 839709,
+          "gpPct": 42.1
+        }
       },
       "2025": {
         "units": 2212,
         "sek": 1048823,
-        "gpPct": 41.6
+        "gpPct": 41.6,
+        "wholesale": {
+          "units": 1530,
+          "sek": 599415,
+          "gpPct": 29.3
+        }
       },
       "2026": {
         "units": 5977,
         "sek": 2351764,
-        "gpPct": 42.6
+        "gpPct": 42.6,
+        "wholesale": {
+          "units": 5565,
+          "sek": 2098810,
+          "gpPct": 40.9
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -11044,17 +12819,32 @@
           "2024": {
             "units": 2010,
             "gpPct": 45.1,
-            "sek": 998502
+            "sek": 998502,
+            "wholesale": {
+              "units": 1787,
+              "gpPct": 42.1,
+              "sek": 839709
+            }
           },
           "2025": {
             "units": 2212,
             "gpPct": 41.6,
-            "sek": 1048823
+            "sek": 1048823,
+            "wholesale": {
+              "units": 1530,
+              "gpPct": 29.3,
+              "sek": 599415
+            }
           },
           "2026": {
             "units": 412,
             "gpPct": 53.0,
-            "sek": 237674
+            "sek": 237674,
+            "wholesale": {
+              "units": 27,
+              "gpPct": null,
+              "sek": 8082
+            }
           }
         }
       },
@@ -11064,7 +12854,12 @@
           "2026": {
             "units": 5565,
             "gpPct": 41.4,
-            "sek": 2114090
+            "sek": 2114090,
+            "wholesale": {
+              "units": 5538,
+              "gpPct": 41.1,
+              "sek": 2090728
+            }
           }
         }
       }
@@ -11142,12 +12937,22 @@
       "2025": {
         "units": 265,
         "sek": 182896,
-        "gpPct": 45.1
+        "gpPct": 45.1,
+        "wholesale": {
+          "units": 265,
+          "sek": 182896,
+          "gpPct": 45.1
+        }
       },
       "2026": {
         "units": 885,
         "sek": 979679,
-        "gpPct": 64.9
+        "gpPct": 64.9,
+        "wholesale": {
+          "units": 379,
+          "sek": 287541,
+          "gpPct": 48.9
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -11456,17 +13261,32 @@
       "2024": {
         "units": 40028,
         "sek": 12533442,
-        "gpPct": 59.0
+        "gpPct": 59.0,
+        "wholesale": {
+          "units": 33209,
+          "sek": 9963711,
+          "gpPct": 57.4
+        }
       },
       "2025": {
         "units": 42164,
         "sek": 12766436,
-        "gpPct": 56.4
+        "gpPct": 56.4,
+        "wholesale": {
+          "units": 36523,
+          "sek": 10584967,
+          "gpPct": 54.2
+        }
       },
       "2026": {
         "units": 37271,
         "sek": 11760294,
-        "gpPct": 58.9
+        "gpPct": 58.9,
+        "wholesale": {
+          "units": 34031,
+          "sek": 10156892,
+          "gpPct": 56.5
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -11476,17 +13296,32 @@
           "2024": {
             "units": 40028,
             "gpPct": 59.0,
-            "sek": 12533442
+            "sek": 12533442,
+            "wholesale": {
+              "units": 33209,
+              "gpPct": 57.4,
+              "sek": 9963711
+            }
           },
           "2025": {
             "units": 42164,
             "gpPct": 56.4,
-            "sek": 12766436
+            "sek": 12766436,
+            "wholesale": {
+              "units": 36523,
+              "gpPct": 54.2,
+              "sek": 10584967
+            }
           },
           "2026": {
             "units": 17889,
             "gpPct": 61.3,
-            "sek": 5655957
+            "sek": 5655957,
+            "wholesale": {
+              "units": 14998,
+              "gpPct": 57.8,
+              "sek": 4297624
+            }
           }
         }
       },
@@ -11496,7 +13331,12 @@
           "2026": {
             "units": 19382,
             "gpPct": 56.6,
-            "sek": 6104337
+            "sek": 6104337,
+            "wholesale": {
+              "units": 19033,
+              "gpPct": 55.6,
+              "sek": 5859268
+            }
           }
         }
       }
@@ -11574,17 +13414,32 @@
       "2024": {
         "units": 16,
         "sek": 8693,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 14,
+          "sek": 7348,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 3863,
         "sek": 2593702,
-        "gpPct": 57.7
+        "gpPct": 57.7,
+        "wholesale": {
+          "units": 3601,
+          "sek": 2260658,
+          "gpPct": 54.7
+        }
       },
       "2026": {
         "units": 4053,
         "sek": 2677243,
-        "gpPct": 57.0
+        "gpPct": 57.0,
+        "wholesale": {
+          "units": 3645,
+          "sek": 2227356,
+          "gpPct": 53.9
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -11648,7 +13503,12 @@
       "2026": {
         "units": 689,
         "sek": 353178,
-        "gpPct": 37.6
+        "gpPct": 37.6,
+        "wholesale": {
+          "units": 627,
+          "sek": 292973,
+          "gpPct": 32.1
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -11712,17 +13572,32 @@
       "2024": {
         "units": 12,
         "sek": 2953,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 12,
+          "sek": 2953,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 1388,
         "sek": 398962,
-        "gpPct": 52.2
+        "gpPct": 52.2,
+        "wholesale": {
+          "units": 1312,
+          "sek": 358619,
+          "gpPct": 49.8
+        }
       },
       "2026": {
         "units": 2731,
         "sek": 763765,
-        "gpPct": 39.1
+        "gpPct": 39.1,
+        "wholesale": {
+          "units": 2595,
+          "sek": 689997,
+          "gpPct": 35.7
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -11811,17 +13686,32 @@
       "2024": {
         "units": 11,
         "sek": 3609,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 11,
+          "sek": 3609,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 3049,
         "sek": 1092017,
-        "gpPct": 54.1
+        "gpPct": 54.1,
+        "wholesale": {
+          "units": 2953,
+          "sek": 1017558,
+          "gpPct": 52.4
+        }
       },
       "2026": {
         "units": 7905,
         "sek": 2933852,
-        "gpPct": 56.5
+        "gpPct": 56.5,
+        "wholesale": {
+          "units": 7397,
+          "sek": 2670467,
+          "gpPct": 55.4
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -11885,17 +13775,32 @@
       "2024": {
         "units": 10,
         "sek": 2943,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 10,
+          "sek": 2943,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 3423,
         "sek": 1155224,
-        "gpPct": 52.8
+        "gpPct": 52.8,
+        "wholesale": {
+          "units": 3329,
+          "sek": 1092298,
+          "gpPct": 51.5
+        }
       },
       "2026": {
         "units": 6760,
         "sek": 2151452,
-        "gpPct": 50.8
+        "gpPct": 50.8,
+        "wholesale": {
+          "units": 6432,
+          "sek": 1956447,
+          "gpPct": 48.6
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -12017,17 +13922,32 @@
       "2024": {
         "units": 3357,
         "sek": 1825731,
-        "gpPct": 55.2
+        "gpPct": 55.2,
+        "wholesale": {
+          "units": 2196,
+          "sek": 1053742,
+          "gpPct": 50.0
+        }
       },
       "2025": {
         "units": 5786,
         "sek": 2890922,
-        "gpPct": 50.6
+        "gpPct": 50.6,
+        "wholesale": {
+          "units": 4204,
+          "sek": 1834450,
+          "gpPct": 43.9
+        }
       },
       "2026": {
         "units": 5069,
         "sek": 2444880,
-        "gpPct": 53.6
+        "gpPct": 53.6,
+        "wholesale": {
+          "units": 3620,
+          "sek": 1488326,
+          "gpPct": 46.0
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -12037,17 +13957,32 @@
           "2024": {
             "units": 3355,
             "gpPct": 55.2,
-            "sek": 1824949
+            "sek": 1824949,
+            "wholesale": {
+              "units": 2194,
+              "gpPct": 50.0,
+              "sek": 1052960
+            }
           },
           "2025": {
             "units": 1856,
             "gpPct": 48.0,
-            "sek": 863100
+            "sek": 863100,
+            "wholesale": {
+              "units": 870,
+              "gpPct": 32.2,
+              "sek": 294143
+            }
           },
           "2026": {
             "units": 281,
             "gpPct": 51.7,
-            "sek": 146543
+            "sek": 146543,
+            "wholesale": {
+              "units": 55,
+              "gpPct": null,
+              "sek": 18122
+            }
           }
         }
       },
@@ -12057,17 +13992,32 @@
           "2024": {
             "units": 2,
             "gpPct": null,
-            "sek": 782
+            "sek": 782,
+            "wholesale": {
+              "units": 2,
+              "gpPct": null,
+              "sek": 782
+            }
           },
           "2025": {
             "units": 3930,
             "gpPct": 51.7,
-            "sek": 2027822
+            "sek": 2027822,
+            "wholesale": {
+              "units": 3334,
+              "gpPct": 46.1,
+              "sek": 1540307
+            }
           },
           "2026": {
             "units": 4788,
             "gpPct": 53.7,
-            "sek": 2298337
+            "sek": 2298337,
+            "wholesale": {
+              "units": 3565,
+              "gpPct": 46.6,
+              "sek": 1470204
+            }
           }
         }
       }
@@ -12132,12 +14082,22 @@
       "2025": {
         "units": 175,
         "sek": 58798,
-        "gpPct": 47.1
+        "gpPct": 47.1,
+        "wholesale": {
+          "units": 175,
+          "sek": 58798,
+          "gpPct": 47.1
+        }
       },
       "2026": {
         "units": 1679,
         "sek": 801234,
-        "gpPct": 60.5
+        "gpPct": 60.5,
+        "wholesale": {
+          "units": 922,
+          "sek": 327083,
+          "gpPct": 47.2
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -12259,7 +14219,12 @@
       "2026": {
         "units": 1726,
         "sek": 1357755,
-        "gpPct": 49.5
+        "gpPct": 49.5,
+        "wholesale": {
+          "units": 1690,
+          "sek": 1301209,
+          "gpPct": 48.4
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -12348,7 +14313,12 @@
       "2024": {
         "units": 1,
         "sek": 259,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 1,
+          "sek": 259,
+          "gpPct": null
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -12412,17 +14382,32 @@
       "2024": {
         "units": 96,
         "sek": 46713,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 0,
+          "sek": 0,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 13,
         "sek": 7070,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 0,
+          "sek": 0,
+          "gpPct": null
+        }
       },
       "2026": {
         "units": 33,
         "sek": 22375,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 0,
+          "sek": 0,
+          "gpPct": null
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -12486,17 +14471,32 @@
       "2024": {
         "units": 6,
         "sek": 1967,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 6,
+          "sek": 1967,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 1030,
         "sek": 434181,
-        "gpPct": 59.1
+        "gpPct": 59.1,
+        "wholesale": {
+          "units": 955,
+          "sek": 378214,
+          "gpPct": 56.7
+        }
       },
       "2026": {
         "units": 1152,
         "sek": 488411,
-        "gpPct": 60.5
+        "gpPct": 60.5,
+        "wholesale": {
+          "units": 1073,
+          "sek": 427928,
+          "gpPct": 58.1
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -12506,17 +14506,32 @@
           "2024": {
             "units": 6,
             "gpPct": null,
-            "sek": 1967
+            "sek": 1967,
+            "wholesale": {
+              "units": 6,
+              "gpPct": null,
+              "sek": 1967
+            }
           },
           "2025": {
             "units": 1030,
             "gpPct": 59.1,
-            "sek": 434181
+            "sek": 434181,
+            "wholesale": {
+              "units": 955,
+              "gpPct": 56.7,
+              "sek": 378214
+            }
           },
           "2026": {
             "units": 1152,
             "gpPct": 60.5,
-            "sek": 488411
+            "sek": 488411,
+            "wholesale": {
+              "units": 1073,
+              "gpPct": 58.1,
+              "sek": 427928
+            }
           }
         }
       }
@@ -12594,17 +14609,32 @@
       "2024": {
         "units": 5921,
         "sek": 3053423,
-        "gpPct": 54.0
+        "gpPct": 54.0,
+        "wholesale": {
+          "units": 5804,
+          "sek": 2943856,
+          "gpPct": 53.4
+        }
       },
       "2025": {
         "units": 5970,
         "sek": 3367155,
-        "gpPct": 53.6
+        "gpPct": 53.6,
+        "wholesale": {
+          "units": 5124,
+          "sek": 2720342,
+          "gpPct": 51.3
+        }
       },
       "2026": {
         "units": 5823,
         "sek": 3271742,
-        "gpPct": 56.2
+        "gpPct": 56.2,
+        "wholesale": {
+          "units": 5421,
+          "sek": 2931007,
+          "gpPct": 54.9
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -12614,17 +14644,32 @@
           "2024": {
             "units": 5921,
             "gpPct": 54.0,
-            "sek": 3053423
+            "sek": 3053423,
+            "wholesale": {
+              "units": 5804,
+              "gpPct": 53.4,
+              "sek": 2943856
+            }
           },
           "2025": {
             "units": 5970,
             "gpPct": 53.6,
-            "sek": 3367155
+            "sek": 3367155,
+            "wholesale": {
+              "units": 5124,
+              "gpPct": 51.3,
+              "sek": 2720342
+            }
           },
           "2026": {
             "units": 5823,
             "gpPct": 56.2,
-            "sek": 3271742
+            "sek": 3271742,
+            "wholesale": {
+              "units": 5421,
+              "gpPct": 54.9,
+              "sek": 2931007
+            }
           }
         }
       }
@@ -12702,17 +14747,32 @@
       "2024": {
         "units": 4962,
         "sek": 2330224,
-        "gpPct": 52.1
+        "gpPct": 52.1,
+        "wholesale": {
+          "units": 4679,
+          "sek": 2094065,
+          "gpPct": 49.9
+        }
       },
       "2025": {
         "units": 7053,
         "sek": 3600293,
-        "gpPct": 51.2
+        "gpPct": 51.2,
+        "wholesale": {
+          "units": 5876,
+          "sek": 2726731,
+          "gpPct": 46.5
+        }
       },
       "2026": {
         "units": 7309,
         "sek": 3820592,
-        "gpPct": 56.2
+        "gpPct": 56.2,
+        "wholesale": {
+          "units": 6643,
+          "sek": 3280756,
+          "gpPct": 54.0
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -12722,17 +14782,32 @@
           "2024": {
             "units": 4962,
             "gpPct": 52.1,
-            "sek": 2330224
+            "sek": 2330224,
+            "wholesale": {
+              "units": 4679,
+              "gpPct": 49.9,
+              "sek": 2094065
+            }
           },
           "2025": {
             "units": 7053,
             "gpPct": 51.2,
-            "sek": 3600293
+            "sek": 3600293,
+            "wholesale": {
+              "units": 5876,
+              "gpPct": 46.5,
+              "sek": 2726731
+            }
           },
           "2026": {
             "units": 7309,
             "gpPct": 56.2,
-            "sek": 3820592
+            "sek": 3820592,
+            "wholesale": {
+              "units": 6643,
+              "gpPct": 54.0,
+              "sek": 3280756
+            }
           }
         }
       }
@@ -12810,12 +14885,22 @@
       "2025": {
         "units": 1,
         "sek": 400,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 0,
+          "sek": 0,
+          "gpPct": null
+        }
       },
       "2026": {
         "units": 2796,
         "sek": 1705284,
-        "gpPct": 58.3
+        "gpPct": 58.3,
+        "wholesale": {
+          "units": 2602,
+          "sek": 1460830,
+          "gpPct": 54.9
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -12879,7 +14964,12 @@
       "2026": {
         "units": 5039,
         "sek": 2742879,
-        "gpPct": 55.2
+        "gpPct": 55.2,
+        "wholesale": {
+          "units": 4785,
+          "sek": 2459095,
+          "gpPct": 52.4
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -13085,7 +15175,12 @@
       "2026": {
         "units": 2336,
         "sek": 1349630,
-        "gpPct": 60.5
+        "gpPct": 60.5,
+        "wholesale": {
+          "units": 2037,
+          "sek": 1006891,
+          "gpPct": 54.4
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -13174,17 +15269,32 @@
       "2024": {
         "units": 2075,
         "sek": 2003202,
-        "gpPct": 43.2
+        "gpPct": 43.2,
+        "wholesale": {
+          "units": 1004,
+          "sek": 903754,
+          "gpPct": 35.0
+        }
       },
       "2025": {
         "units": 2251,
         "sek": 2075151,
-        "gpPct": 41.5
+        "gpPct": 41.5,
+        "wholesale": {
+          "units": 1271,
+          "sek": 1077756,
+          "gpPct": 36.0
+        }
       },
       "2026": {
         "units": 2770,
         "sek": 2314008,
-        "gpPct": 38.6
+        "gpPct": 38.6,
+        "wholesale": {
+          "units": 2048,
+          "sek": 1519429,
+          "gpPct": 32.9
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -13422,7 +15532,12 @@
       "2026": {
         "units": 3637,
         "sek": 5184847,
-        "gpPct": 56.6
+        "gpPct": 56.6,
+        "wholesale": {
+          "units": 3346,
+          "sek": 4559604,
+          "gpPct": 54.5
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -13432,7 +15547,12 @@
           "2026": {
             "units": 3637,
             "gpPct": 56.6,
-            "sek": 5184847
+            "sek": 5184847,
+            "wholesale": {
+              "units": 3346,
+              "gpPct": 54.5,
+              "sek": 4559604
+            }
           }
         }
       }
@@ -13522,17 +15642,32 @@
       "2024": {
         "units": 14,
         "sek": 16056,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 14,
+          "sek": 16056,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 2782,
         "sek": 4443298,
-        "gpPct": 45.5
+        "gpPct": 45.5,
+        "wholesale": {
+          "units": 2560,
+          "sek": 3824759,
+          "gpPct": 41.8
+        }
       },
       "2026": {
         "units": 3200,
         "sek": 5155112,
-        "gpPct": 45.3
+        "gpPct": 45.3,
+        "wholesale": {
+          "units": 2673,
+          "sek": 3855461,
+          "gpPct": 39.2
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -13596,17 +15731,32 @@
       "2024": {
         "units": 12,
         "sek": 11003,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 12,
+          "sek": 11003,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 1818,
         "sek": 2297305,
-        "gpPct": 51.1
+        "gpPct": 51.1,
+        "wholesale": {
+          "units": 1679,
+          "sek": 1997101,
+          "gpPct": 48.0
+        }
       },
       "2026": {
         "units": 2576,
         "sek": 3371962,
-        "gpPct": 52.7
+        "gpPct": 52.7,
+        "wholesale": {
+          "units": 2160,
+          "sek": 2513074,
+          "gpPct": 46.9
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -13670,17 +15820,32 @@
       "2024": {
         "units": 13581,
         "sek": 22681584,
-        "gpPct": 51.3
+        "gpPct": 51.3,
+        "wholesale": {
+          "units": 12166,
+          "sek": 19406261,
+          "gpPct": 48.7
+        }
       },
       "2025": {
         "units": 16656,
         "sek": 27724192,
-        "gpPct": 45.3
+        "gpPct": 45.3,
+        "wholesale": {
+          "units": 13937,
+          "sek": 21886205,
+          "gpPct": 41.3
+        }
       },
       "2026": {
         "units": 10389,
         "sek": 18034912,
-        "gpPct": 49.0
+        "gpPct": 49.0,
+        "wholesale": {
+          "units": 9375,
+          "sek": 15833128,
+          "gpPct": 47.2
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -13690,17 +15855,32 @@
           "2024": {
             "units": 13581,
             "gpPct": 51.3,
-            "sek": 22681143
+            "sek": 22681143,
+            "wholesale": {
+              "units": 12167,
+              "gpPct": 48.7,
+              "sek": 19407590
+            }
           },
           "2025": {
             "units": 6679,
             "gpPct": 46.3,
-            "sek": 10332424
+            "sek": 10332424,
+            "wholesale": {
+              "units": 4412,
+              "gpPct": 35.3,
+              "sek": 5662952
+            }
           },
           "2026": {
             "units": 988,
             "gpPct": 42.9,
-            "sek": 1300734
+            "sek": 1300734,
+            "wholesale": {
+              "units": 451,
+              "gpPct": 23.7,
+              "sek": 441706
+            }
           }
         }
       },
@@ -13710,17 +15890,32 @@
           "2024": {
             "units": 0,
             "gpPct": null,
-            "sek": 441
+            "sek": 441,
+            "wholesale": {
+              "units": -1,
+              "gpPct": null,
+              "sek": -1329
+            }
           },
           "2025": {
             "units": 9977,
             "gpPct": 44.7,
-            "sek": 17391768
+            "sek": 17391768,
+            "wholesale": {
+              "units": 9525,
+              "gpPct": 43.4,
+              "sek": 16223253
+            }
           },
           "2026": {
             "units": 9401,
             "gpPct": 49.5,
-            "sek": 16734178
+            "sek": 16734178,
+            "wholesale": {
+              "units": 8924,
+              "gpPct": 47.9,
+              "sek": 15391422
+            }
           }
         }
       }
@@ -13792,17 +15987,32 @@
       "2024": {
         "units": 8,
         "sek": 4714,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 8,
+          "sek": 4714,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 10069,
         "sek": 7857767,
-        "gpPct": 49.6
+        "gpPct": 49.6,
+        "wholesale": {
+          "units": 9556,
+          "sek": 7138417,
+          "gpPct": 47.3
+        }
       },
       "2026": {
         "units": 9971,
         "sek": 7608371,
-        "gpPct": 55.2
+        "gpPct": 55.2,
+        "wholesale": {
+          "units": 9101,
+          "sek": 6552571,
+          "gpPct": 52.9
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -13866,17 +16076,32 @@
       "2024": {
         "units": 8325,
         "sek": 9658684,
-        "gpPct": 42.0
+        "gpPct": 42.0,
+        "wholesale": {
+          "units": 7655,
+          "sek": 8592243,
+          "gpPct": 39.9
+        }
       },
       "2025": {
         "units": 14947,
         "sek": 16638255,
-        "gpPct": 35.7
+        "gpPct": 35.7,
+        "wholesale": {
+          "units": 13509,
+          "sek": 14242514,
+          "gpPct": 32.2
+        }
       },
       "2026": {
         "units": 11870,
         "sek": 14387042,
-        "gpPct": 43.8
+        "gpPct": 43.8,
+        "wholesale": {
+          "units": 9637,
+          "sek": 10811712,
+          "gpPct": 39.8
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -13886,17 +16111,32 @@
           "2024": {
             "units": 8319,
             "gpPct": 42.0,
-            "sek": 9653701
+            "sek": 9653701,
+            "wholesale": {
+              "units": 7649,
+              "gpPct": 39.9,
+              "sek": 8587260
+            }
           },
           "2025": {
             "units": 7317,
             "gpPct": 31.8,
-            "sek": 7842288
+            "sek": 7842288,
+            "wholesale": {
+              "units": 6192,
+              "gpPct": 26.2,
+              "sek": 6147405
+            }
           },
           "2026": {
             "units": 988,
             "gpPct": 11.0,
-            "sek": 758875
+            "sek": 758875,
+            "wholesale": {
+              "units": 563,
+              "gpPct": -55.4,
+              "sek": 246534
+            }
           }
         }
       },
@@ -13906,17 +16146,32 @@
           "2024": {
             "units": 6,
             "gpPct": null,
-            "sek": 4983
+            "sek": 4983,
+            "wholesale": {
+              "units": 6,
+              "gpPct": null,
+              "sek": 4983
+            }
           },
           "2025": {
             "units": 7630,
             "gpPct": 39.2,
-            "sek": 8795967
+            "sek": 8795967,
+            "wholesale": {
+              "units": 7317,
+              "gpPct": 36.7,
+              "sek": 8095109
+            }
           },
           "2026": {
             "units": 10882,
             "gpPct": 45.6,
-            "sek": 13628167
+            "sek": 13628167,
+            "wholesale": {
+              "units": 9074,
+              "gpPct": 42.0,
+              "sek": 10565178
+            }
           }
         }
       }
@@ -14058,7 +16313,12 @@
       "2026": {
         "units": 3072,
         "sek": 3159643,
-        "gpPct": 45.2
+        "gpPct": 45.2,
+        "wholesale": {
+          "units": 2555,
+          "sek": 2295979,
+          "gpPct": 37.5
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -14068,7 +16328,12 @@
           "2026": {
             "units": 3072,
             "gpPct": 45.2,
-            "sek": 3159643
+            "sek": 3159643,
+            "wholesale": {
+              "units": 2555,
+              "gpPct": 37.5,
+              "sek": 2295979
+            }
           }
         }
       }
@@ -14158,17 +16423,32 @@
       "2024": {
         "units": 1841,
         "sek": 975949,
-        "gpPct": 56.5
+        "gpPct": 56.5,
+        "wholesale": {
+          "units": 1769,
+          "sek": 907693,
+          "gpPct": 55.0
+        }
       },
       "2025": {
         "units": 4463,
         "sek": 2171433,
-        "gpPct": 52.9
+        "gpPct": 52.9,
+        "wholesale": {
+          "units": 4295,
+          "sek": 2046808,
+          "gpPct": 51.9
+        }
       },
       "2026": {
         "units": 4753,
         "sek": 2351741,
-        "gpPct": 55.8
+        "gpPct": 55.8,
+        "wholesale": {
+          "units": 4515,
+          "sek": 2159090,
+          "gpPct": 54.2
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -14178,17 +16458,32 @@
           "2024": {
             "units": 1842,
             "gpPct": 56.5,
-            "sek": 976568
+            "sek": 976568,
+            "wholesale": {
+              "units": 1770,
+              "gpPct": 55.0,
+              "sek": 908312
+            }
           },
           "2025": {
             "units": 2851,
             "gpPct": 51.9,
-            "sek": 1374748
+            "sek": 1374748,
+            "wholesale": {
+              "units": 2683,
+              "gpPct": 50.3,
+              "sek": 1250123
+            }
           },
           "2026": {
             "units": 170,
             "gpPct": 67.4,
-            "sek": 119411
+            "sek": 119411,
+            "wholesale": {
+              "units": 8,
+              "gpPct": null,
+              "sek": 3590
+            }
           }
         }
       },
@@ -14198,17 +16493,32 @@
           "2024": {
             "units": -1,
             "gpPct": null,
-            "sek": -619
+            "sek": -619,
+            "wholesale": {
+              "units": -1,
+              "gpPct": null,
+              "sek": -619
+            }
           },
           "2025": {
             "units": 1612,
             "gpPct": 54.5,
-            "sek": 796685
+            "sek": 796685,
+            "wholesale": {
+              "units": 1612,
+              "gpPct": 54.5,
+              "sek": 796685
+            }
           },
           "2026": {
             "units": 4583,
             "gpPct": 55.2,
-            "sek": 2232330
+            "sek": 2232330,
+            "wholesale": {
+              "units": 4507,
+              "gpPct": 54.3,
+              "sek": 2155500
+            }
           }
         }
       }
@@ -14286,17 +16596,32 @@
       "2024": {
         "units": 6825,
         "sek": 4983297,
-        "gpPct": 58.7
+        "gpPct": 58.7,
+        "wholesale": {
+          "units": 6310,
+          "sek": 4377001,
+          "gpPct": 56.8
+        }
       },
       "2025": {
         "units": 11002,
         "sek": 7304777,
-        "gpPct": 55.3
+        "gpPct": 55.3,
+        "wholesale": {
+          "units": 10608,
+          "sek": 6841593,
+          "gpPct": 54.2
+        }
       },
       "2026": {
         "units": 9440,
         "sek": 6297736,
-        "gpPct": 58.6
+        "gpPct": 58.6,
+        "wholesale": {
+          "units": 8898,
+          "sek": 5684717,
+          "gpPct": 57.0
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -14476,17 +16801,32 @@
       "2024": {
         "units": 10,
         "sek": 8612,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 10,
+          "sek": 8612,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 6033,
         "sek": 6569514,
-        "gpPct": 46.4
+        "gpPct": 46.4,
+        "wholesale": {
+          "units": 5444,
+          "sek": 5444713,
+          "gpPct": 41.8
+        }
       },
       "2026": {
         "units": 5516,
         "sek": 6200038,
-        "gpPct": 52.3
+        "gpPct": 52.3,
+        "wholesale": {
+          "units": 4347,
+          "sek": 4344864,
+          "gpPct": 47.2
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -14550,17 +16890,32 @@
       "2024": {
         "units": 2,
         "sek": 865,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 2,
+          "sek": 865,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 1629,
         "sek": 1062810,
-        "gpPct": 50.8
+        "gpPct": 50.8,
+        "wholesale": {
+          "units": 1454,
+          "sek": 860165,
+          "gpPct": 45.5
+        }
       },
       "2026": {
         "units": 2637,
         "sek": 1812879,
-        "gpPct": 57.9
+        "gpPct": 57.9,
+        "wholesale": {
+          "units": 2443,
+          "sek": 1566632,
+          "gpPct": 55.2
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -14624,17 +16979,32 @@
       "2024": {
         "units": 4,
         "sek": 5894,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 4,
+          "sek": 5894,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 3946,
         "sek": 7421268,
-        "gpPct": 37.7
+        "gpPct": 37.7,
+        "wholesale": {
+          "units": 3552,
+          "sek": 6183719,
+          "gpPct": 32.6
+        }
       },
       "2026": {
         "units": 3220,
         "sek": 6300053,
-        "gpPct": 43.8
+        "gpPct": 43.8,
+        "wholesale": {
+          "units": 2435,
+          "sek": 4165603,
+          "gpPct": 36.0
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -14698,17 +17068,32 @@
       "2024": {
         "units": 23424,
         "sek": 24828910,
-        "gpPct": 40.9
+        "gpPct": 40.9,
+        "wholesale": {
+          "units": 20113,
+          "sek": 19465670,
+          "gpPct": 34.9
+        }
       },
       "2025": {
         "units": 9900,
         "sek": 13793312,
-        "gpPct": 48.0
+        "gpPct": 48.0,
+        "wholesale": {
+          "units": 3041,
+          "sek": 2978942,
+          "gpPct": 23.5
+        }
       },
       "2026": {
         "units": 6768,
         "sek": 8807308,
-        "gpPct": 44.2
+        "gpPct": 44.2,
+        "wholesale": {
+          "units": 2090,
+          "sek": 1776631,
+          "gpPct": 13.8
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -14718,17 +17103,32 @@
           "2024": {
             "units": 8724,
             "gpPct": 43.1,
-            "sek": 7570693
+            "sek": 7570693,
+            "wholesale": {
+              "units": 6695,
+              "gpPct": 35.1,
+              "sek": 4923836
+            }
           },
           "2025": {
             "units": 744,
             "gpPct": 43.7,
-            "sek": 714659
+            "sek": 714659,
+            "wholesale": {
+              "units": 3,
+              "gpPct": null,
+              "sek": -11488
+            }
           },
           "2026": {
             "units": 190,
             "gpPct": 43.8,
-            "sek": 178433
+            "sek": 178433,
+            "wholesale": {
+              "units": -10,
+              "gpPct": null,
+              "sek": -12830
+            }
           }
         }
       },
@@ -14738,17 +17138,32 @@
           "2024": {
             "units": 14700,
             "gpPct": 39.9,
-            "sek": 17258217
+            "sek": 17258217,
+            "wholesale": {
+              "units": 13418,
+              "gpPct": 34.8,
+              "sek": 14541834
+            }
           },
           "2025": {
             "units": 9156,
             "gpPct": 48.2,
-            "sek": 13078653
+            "sek": 13078653,
+            "wholesale": {
+              "units": 3038,
+              "gpPct": 23.4,
+              "sek": 2990430
+            }
           },
           "2026": {
             "units": 6578,
             "gpPct": 44.2,
-            "sek": 8628875
+            "sek": 8628875,
+            "wholesale": {
+              "units": 2100,
+              "gpPct": 13.7,
+              "sek": 1789461
+            }
           }
         }
       }
@@ -14826,17 +17241,32 @@
       "2024": {
         "units": 6612,
         "sek": 7014837,
-        "gpPct": 33.7
+        "gpPct": 33.7,
+        "wholesale": {
+          "units": 6017,
+          "sek": 5940769,
+          "gpPct": 28.6
+        }
       },
       "2025": {
         "units": 4537,
         "sek": 5344057,
-        "gpPct": 40.3
+        "gpPct": 40.3,
+        "wholesale": {
+          "units": 1465,
+          "sek": 1195778,
+          "gpPct": 10.6
+        }
       },
       "2026": {
         "units": 1675,
         "sek": 2044143,
-        "gpPct": 42.8
+        "gpPct": 42.8,
+        "wholesale": {
+          "units": 309,
+          "sek": 230699,
+          "gpPct": 0.7
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -14846,17 +17276,32 @@
           "2024": {
             "units": 6612,
             "gpPct": 33.7,
-            "sek": 7014837
+            "sek": 7014837,
+            "wholesale": {
+              "units": 6017,
+              "gpPct": 28.6,
+              "sek": 5940769
+            }
           },
           "2025": {
             "units": 4537,
             "gpPct": 40.3,
-            "sek": 5344057
+            "sek": 5344057,
+            "wholesale": {
+              "units": 1465,
+              "gpPct": 10.6,
+              "sek": 1195778
+            }
           },
           "2026": {
             "units": 1675,
             "gpPct": 42.8,
-            "sek": 2044143
+            "sek": 2044143,
+            "wholesale": {
+              "units": 309,
+              "gpPct": 0.7,
+              "sek": 230699
+            }
           }
         }
       }
@@ -15050,17 +17495,32 @@
       "2024": {
         "units": 2730,
         "sek": 5694893,
-        "gpPct": 40.6
+        "gpPct": 40.6,
+        "wholesale": {
+          "units": 2511,
+          "sek": 4920911,
+          "gpPct": 37.2
+        }
       },
       "2025": {
         "units": 3551,
         "sek": 7774561,
-        "gpPct": 43.1
+        "gpPct": 43.1,
+        "wholesale": {
+          "units": 2743,
+          "sek": 5239368,
+          "gpPct": 35.4
+        }
       },
       "2026": {
         "units": 3380,
         "sek": 7034700,
-        "gpPct": 41.6
+        "gpPct": 41.6,
+        "wholesale": {
+          "units": 2830,
+          "sek": 5312108,
+          "gpPct": 35.5
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -15070,17 +17530,32 @@
           "2024": {
             "units": 2730,
             "gpPct": 40.6,
-            "sek": 5694893
+            "sek": 5694893,
+            "wholesale": {
+              "units": 2511,
+              "gpPct": 37.2,
+              "sek": 4920911
+            }
           },
           "2025": {
             "units": 3551,
             "gpPct": 43.1,
-            "sek": 7774561
+            "sek": 7774561,
+            "wholesale": {
+              "units": 2743,
+              "gpPct": 35.4,
+              "sek": 5239368
+            }
           },
           "2026": {
             "units": 3380,
             "gpPct": 41.6,
-            "sek": 7034700
+            "sek": 7034700,
+            "wholesale": {
+              "units": 2830,
+              "gpPct": 35.5,
+              "sek": 5312108
+            }
           }
         }
       }
@@ -15158,17 +17633,32 @@
       "2024": {
         "units": 1874,
         "sek": 3399473,
-        "gpPct": 48.4
+        "gpPct": 48.4,
+        "wholesale": {
+          "units": 1744,
+          "sek": 2995065,
+          "gpPct": 45.7
+        }
       },
       "2025": {
         "units": 2399,
         "sek": 4445888,
-        "gpPct": 49.7
+        "gpPct": 49.7,
+        "wholesale": {
+          "units": 1990,
+          "sek": 3289782,
+          "gpPct": 44.3
+        }
       },
       "2026": {
         "units": 2607,
         "sek": 4787804,
-        "gpPct": 50.8
+        "gpPct": 50.8,
+        "wholesale": {
+          "units": 2165,
+          "sek": 3577883,
+          "gpPct": 45.9
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -15178,17 +17668,32 @@
           "2024": {
             "units": 1874,
             "gpPct": 48.4,
-            "sek": 3399473
+            "sek": 3399473,
+            "wholesale": {
+              "units": 1744,
+              "gpPct": 45.7,
+              "sek": 2995065
+            }
           },
           "2025": {
             "units": 2399,
             "gpPct": 49.7,
-            "sek": 4445888
+            "sek": 4445888,
+            "wholesale": {
+              "units": 1990,
+              "gpPct": 44.3,
+              "sek": 3289782
+            }
           },
           "2026": {
             "units": 2607,
             "gpPct": 50.8,
-            "sek": 4787804
+            "sek": 4787804,
+            "wholesale": {
+              "units": 2165,
+              "gpPct": 45.9,
+              "sek": 3577883
+            }
           }
         }
       }
@@ -15324,7 +17829,12 @@
       "2026": {
         "units": 744,
         "sek": 1912884,
-        "gpPct": 43.7
+        "gpPct": 43.7,
+        "wholesale": {
+          "units": 717,
+          "sek": 1778487,
+          "gpPct": 41.7
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -15388,7 +17898,12 @@
       "2026": {
         "units": 672,
         "sek": 1477105,
-        "gpPct": 43.6
+        "gpPct": 43.6,
+        "wholesale": {
+          "units": 657,
+          "sek": 1412408,
+          "gpPct": 42.4
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -15510,12 +18025,22 @@
       "2025": {
         "units": 220,
         "sek": 197121,
-        "gpPct": 46.9
+        "gpPct": 46.9,
+        "wholesale": {
+          "units": 220,
+          "sek": 197121,
+          "gpPct": 46.9
+        }
       },
       "2026": {
         "units": 4651,
         "sek": 5544468,
-        "gpPct": 58.2
+        "gpPct": 58.2,
+        "wholesale": {
+          "units": 3865,
+          "sek": 4250354,
+          "gpPct": 55.0
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -15604,7 +18129,12 @@
       "2026": {
         "units": 646,
         "sek": 559526,
-        "gpPct": 57.6
+        "gpPct": 57.6,
+        "wholesale": {
+          "units": 598,
+          "sek": 484462,
+          "gpPct": 54.8
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -15693,12 +18223,22 @@
       "2025": {
         "units": 140,
         "sek": 214962,
-        "gpPct": 33.9
+        "gpPct": 33.9,
+        "wholesale": {
+          "units": 140,
+          "sek": 214962,
+          "gpPct": 33.9
+        }
       },
       "2026": {
         "units": 2420,
         "sek": 4436067,
-        "gpPct": 41.1
+        "gpPct": 41.1,
+        "wholesale": {
+          "units": 2228,
+          "sek": 3784587,
+          "gpPct": 36.3
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -16052,17 +18592,32 @@
       "2024": {
         "units": 7,
         "sek": 14869,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 7,
+          "sek": 14869,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 1029,
         "sek": 2774729,
-        "gpPct": 31.7
+        "gpPct": 31.7,
+        "wholesale": {
+          "units": 964,
+          "sek": 2493067,
+          "gpPct": 29.0
+        }
       },
       "2026": {
         "units": 1589,
         "sek": 4194340,
-        "gpPct": 34.0
+        "gpPct": 34.0,
+        "wholesale": {
+          "units": 1398,
+          "sek": 3411854,
+          "gpPct": 29.1
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -16072,17 +18627,32 @@
           "2024": {
             "units": 7,
             "gpPct": null,
-            "sek": 14869
+            "sek": 14869,
+            "wholesale": {
+              "units": 7,
+              "gpPct": null,
+              "sek": 14869
+            }
           },
           "2025": {
             "units": 1029,
             "gpPct": 31.7,
-            "sek": 2774729
+            "sek": 2774729,
+            "wholesale": {
+              "units": 964,
+              "gpPct": 29.0,
+              "sek": 2493067
+            }
           },
           "2026": {
             "units": 1589,
             "gpPct": 34.0,
-            "sek": 4194340
+            "sek": 4194340,
+            "wholesale": {
+              "units": 1398,
+              "gpPct": 29.1,
+              "sek": 3411854
+            }
           }
         }
       }
@@ -16276,7 +18846,12 @@
       "2026": {
         "units": 105,
         "sek": 260825,
-        "gpPct": 42.2
+        "gpPct": 42.2,
+        "wholesale": {
+          "units": 105,
+          "sek": 260825,
+          "gpPct": 42.2
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -16340,17 +18915,32 @@
       "2024": {
         "units": 2182,
         "sek": 6239298,
-        "gpPct": 33.1
+        "gpPct": 33.1,
+        "wholesale": {
+          "units": 1418,
+          "sek": 3507972,
+          "gpPct": 25.9
+        }
       },
       "2025": {
         "units": 2026,
         "sek": 5642609,
-        "gpPct": 36.4
+        "gpPct": 36.4,
+        "wholesale": {
+          "units": 1210,
+          "sek": 2955029,
+          "gpPct": 32.9
+        }
       },
       "2026": {
         "units": 1619,
         "sek": 4427564,
-        "gpPct": 37.7
+        "gpPct": 37.7,
+        "wholesale": {
+          "units": 1105,
+          "sek": 2676636,
+          "gpPct": 36.2
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -16360,17 +18950,32 @@
           "2024": {
             "units": 2174,
             "gpPct": 33.2,
-            "sek": 6223385
+            "sek": 6223385,
+            "wholesale": {
+              "units": 1411,
+              "gpPct": 26.0,
+              "sek": 3493659
+            }
           },
           "2025": {
             "units": 748,
             "gpPct": 33.1,
-            "sek": 2305666
+            "sek": 2305666,
+            "wholesale": {
+              "units": 47,
+              "gpPct": -21.1,
+              "sek": 110017
+            }
           },
           "2026": {
             "units": 121,
             "gpPct": -2.6,
-            "sek": 327123
+            "sek": 327123,
+            "wholesale": {
+              "units": -60,
+              "gpPct": null,
+              "sek": -143565
+            }
           }
         }
       },
@@ -16380,17 +18985,32 @@
           "2024": {
             "units": 8,
             "gpPct": null,
-            "sek": 15913
+            "sek": 15913,
+            "wholesale": {
+              "units": 7,
+              "gpPct": null,
+              "sek": 14313
+            }
           },
           "2025": {
             "units": 1278,
             "gpPct": 38.6,
-            "sek": 3336943
+            "sek": 3336943,
+            "wholesale": {
+              "units": 1163,
+              "gpPct": 35.0,
+              "sek": 2845012
+            }
           },
           "2026": {
             "units": 1498,
             "gpPct": 40.9,
-            "sek": 4100441
+            "sek": 4100441,
+            "wholesale": {
+              "units": 1165,
+              "gpPct": 34.4,
+              "sek": 2820201
+            }
           }
         }
       }
@@ -16474,17 +19094,32 @@
       "2024": {
         "units": 1603,
         "sek": 3921245,
-        "gpPct": 43.6
+        "gpPct": 43.6,
+        "wholesale": {
+          "units": 1203,
+          "sek": 2645223,
+          "gpPct": 38.9
+        }
       },
       "2025": {
         "units": 1812,
         "sek": 4444098,
-        "gpPct": 45.8
+        "gpPct": 45.8,
+        "wholesale": {
+          "units": 1084,
+          "sek": 2309879,
+          "gpPct": 42.0
+        }
       },
       "2026": {
         "units": 1472,
         "sek": 3586124,
-        "gpPct": 43.9
+        "gpPct": 43.9,
+        "wholesale": {
+          "units": 715,
+          "sek": 1529432,
+          "gpPct": 46.7
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -16494,17 +19129,32 @@
           "2024": {
             "units": 1599,
             "gpPct": 43.7,
-            "sek": 3913835
+            "sek": 3913835,
+            "wholesale": {
+              "units": 1199,
+              "gpPct": 39.0,
+              "sek": 2637813
+            }
           },
           "2025": {
             "units": 639,
             "gpPct": 45.3,
-            "sek": 1739514
+            "sek": 1739514,
+            "wholesale": {
+              "units": 29,
+              "gpPct": null,
+              "sek": 41993
+            }
           },
           "2026": {
             "units": 400,
             "gpPct": 29.7,
-            "sek": 948805
+            "sek": 948805,
+            "wholesale": {
+              "units": -59,
+              "gpPct": null,
+              "sek": -128488
+            }
           }
         }
       },
@@ -16514,17 +19164,32 @@
           "2024": {
             "units": 4,
             "gpPct": null,
-            "sek": 7410
+            "sek": 7410,
+            "wholesale": {
+              "units": 4,
+              "gpPct": null,
+              "sek": 7410
+            }
           },
           "2025": {
             "units": 1173,
             "gpPct": 46.2,
-            "sek": 2704584
+            "sek": 2704584,
+            "wholesale": {
+              "units": 1055,
+              "gpPct": 42.8,
+              "sek": 2267886
+            }
           },
           "2026": {
             "units": 1072,
             "gpPct": 49.0,
-            "sek": 2637319
+            "sek": 2637319,
+            "wholesale": {
+              "units": 774,
+              "gpPct": 43.1,
+              "sek": 1657920
+            }
           }
         }
       }
@@ -16614,17 +19279,32 @@
       "2024": {
         "units": 1309,
         "sek": 3991748,
-        "gpPct": 40.1
+        "gpPct": 40.1,
+        "wholesale": {
+          "units": 727,
+          "sek": 1959444,
+          "gpPct": 33.3
+        }
       },
       "2025": {
         "units": 1802,
         "sek": 5417819,
-        "gpPct": 42.1
+        "gpPct": 42.1,
+        "wholesale": {
+          "units": 1070,
+          "sek": 2827247,
+          "gpPct": 36.3
+        }
       },
       "2026": {
         "units": 1473,
         "sek": 4208036,
-        "gpPct": 41.2
+        "gpPct": 41.2,
+        "wholesale": {
+          "units": 1105,
+          "sek": 2932654,
+          "gpPct": 38.7
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -16634,17 +19314,32 @@
           "2024": {
             "units": 1307,
             "gpPct": 40.1,
-            "sek": 3987280
+            "sek": 3987280,
+            "wholesale": {
+              "units": 725,
+              "gpPct": 33.4,
+              "sek": 1954976
+            }
           },
           "2025": {
             "units": 576,
             "gpPct": 41.9,
-            "sek": 1842660
+            "sek": 1842660,
+            "wholesale": {
+              "units": 35,
+              "gpPct": 0.2,
+              "sek": 77178
+            }
           },
           "2026": {
             "units": 175,
             "gpPct": 30.8,
-            "sek": 464299
+            "sek": 464299,
+            "wholesale": {
+              "units": 7,
+              "gpPct": null,
+              "sek": 17166
+            }
           }
         }
       },
@@ -16654,17 +19349,32 @@
           "2024": {
             "units": 2,
             "gpPct": null,
-            "sek": 4468
+            "sek": 4468,
+            "wholesale": {
+              "units": 2,
+              "gpPct": null,
+              "sek": 4468
+            }
           },
           "2025": {
             "units": 1226,
             "gpPct": 42.2,
-            "sek": 3575159
+            "sek": 3575159,
+            "wholesale": {
+              "units": 1035,
+              "gpPct": 37.3,
+              "sek": 2750069
+            }
           },
           "2026": {
             "units": 1298,
             "gpPct": 42.5,
-            "sek": 3743737
+            "sek": 3743737,
+            "wholesale": {
+              "units": 1098,
+              "gpPct": 38.9,
+              "sek": 2915488
+            }
           }
         }
       }
@@ -16742,17 +19452,32 @@
       "2024": {
         "units": 1245,
         "sek": 4485341,
-        "gpPct": 44.5
+        "gpPct": 44.5,
+        "wholesale": {
+          "units": 572,
+          "sek": 1978738,
+          "gpPct": 40.9
+        }
       },
       "2025": {
         "units": 1727,
         "sek": 6198371,
-        "gpPct": 42.9
+        "gpPct": 42.9,
+        "wholesale": {
+          "units": 913,
+          "sek": 3081495,
+          "gpPct": 40.5
+        }
       },
       "2026": {
         "units": 1245,
         "sek": 4333293,
-        "gpPct": 42.8
+        "gpPct": 42.8,
+        "wholesale": {
+          "units": 745,
+          "sek": 2501011,
+          "gpPct": 40.6
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -16762,17 +19487,32 @@
           "2024": {
             "units": 1241,
             "gpPct": 44.6,
-            "sek": 4473428
+            "sek": 4473428,
+            "wholesale": {
+              "units": 568,
+              "gpPct": 41.1,
+              "sek": 1966825
+            }
           },
           "2025": {
             "units": 699,
             "gpPct": 42.4,
-            "sek": 2487038
+            "sek": 2487038,
+            "wholesale": {
+              "units": -6,
+              "gpPct": null,
+              "sek": -36291
+            }
           },
           "2026": {
             "units": 393,
             "gpPct": 37.9,
-            "sek": 1248181
+            "sek": 1248181,
+            "wholesale": {
+              "units": 7,
+              "gpPct": null,
+              "sek": 24624
+            }
           }
         }
       },
@@ -16782,17 +19522,32 @@
           "2024": {
             "units": 4,
             "gpPct": null,
-            "sek": 11913
+            "sek": 11913,
+            "wholesale": {
+              "units": 4,
+              "gpPct": null,
+              "sek": 11913
+            }
           },
           "2025": {
             "units": 1028,
             "gpPct": 43.2,
-            "sek": 3711333
+            "sek": 3711333,
+            "wholesale": {
+              "units": 919,
+              "gpPct": 40.0,
+              "sek": 3117786
+            }
           },
           "2026": {
             "units": 852,
             "gpPct": 44.8,
-            "sek": 3085112
+            "sek": 3085112,
+            "wholesale": {
+              "units": 738,
+              "gpPct": 41.0,
+              "sek": 2476387
+            }
           }
         }
       }
@@ -16876,7 +19631,12 @@
       "2026": {
         "units": 1217,
         "sek": 2250955,
-        "gpPct": 53.9
+        "gpPct": 53.9,
+        "wholesale": {
+          "units": 1114,
+          "sek": 1889397,
+          "gpPct": 49.8
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -16940,17 +19700,32 @@
       "2024": {
         "units": 150,
         "sek": 73662,
-        "gpPct": 52.6
+        "gpPct": 52.6,
+        "wholesale": {
+          "units": 144,
+          "sek": 69206,
+          "gpPct": 51.6
+        }
       },
       "2025": {
         "units": 234,
         "sek": 116737,
-        "gpPct": 41.3
+        "gpPct": 41.3,
+        "wholesale": {
+          "units": 227,
+          "sek": 111863,
+          "gpPct": 40.4
+        }
       },
       "2026": {
         "units": 271,
         "sek": 119417,
-        "gpPct": 30.9
+        "gpPct": 30.9,
+        "wholesale": {
+          "units": 254,
+          "sek": 111067,
+          "gpPct": 29.6
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -17014,17 +19789,32 @@
       "2024": {
         "units": 548,
         "sek": 284228,
-        "gpPct": 48.6
+        "gpPct": 48.6,
+        "wholesale": {
+          "units": 541,
+          "sek": 278411,
+          "gpPct": 48.1
+        }
       },
       "2025": {
         "units": 987,
         "sek": 468611,
-        "gpPct": 40.0
+        "gpPct": 40.0,
+        "wholesale": {
+          "units": 981,
+          "sek": 464393,
+          "gpPct": 39.8
+        }
       },
       "2026": {
         "units": 419,
         "sek": 207957,
-        "gpPct": 44.6
+        "gpPct": 44.6,
+        "wholesale": {
+          "units": 413,
+          "sek": 205422,
+          "gpPct": 44.7
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -17088,17 +19878,32 @@
       "2024": {
         "units": 424,
         "sek": 249849,
-        "gpPct": 52.0
+        "gpPct": 52.0,
+        "wholesale": {
+          "units": 418,
+          "sek": 246349,
+          "gpPct": 52.0
+        }
       },
       "2025": {
         "units": 332,
         "sek": 177782,
-        "gpPct": 41.4
+        "gpPct": 41.4,
+        "wholesale": {
+          "units": 331,
+          "sek": 177390,
+          "gpPct": 41.4
+        }
       },
       "2026": {
         "units": 390,
         "sek": 214700,
-        "gpPct": 45.0
+        "gpPct": 45.0,
+        "wholesale": {
+          "units": 388,
+          "sek": 212421,
+          "gpPct": 44.7
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -17162,17 +19967,32 @@
       "2024": {
         "units": 527,
         "sek": 314499,
-        "gpPct": 52.2
+        "gpPct": 52.2,
+        "wholesale": {
+          "units": 510,
+          "sek": 299230,
+          "gpPct": 51.4
+        }
       },
       "2025": {
         "units": 666,
         "sek": 381329,
-        "gpPct": 46.5
+        "gpPct": 46.5,
+        "wholesale": {
+          "units": 648,
+          "sek": 362579,
+          "gpPct": 45.3
+        }
       },
       "2026": {
         "units": 699,
         "sek": 422489,
-        "gpPct": 52.3
+        "gpPct": 52.3,
+        "wholesale": {
+          "units": 686,
+          "sek": 408289,
+          "gpPct": 51.6
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -17236,17 +20056,32 @@
       "2024": {
         "units": 295,
         "sek": 222820,
-        "gpPct": 47.0
+        "gpPct": 47.0,
+        "wholesale": {
+          "units": 286,
+          "sek": 211308,
+          "gpPct": 45.8
+        }
       },
       "2025": {
         "units": 395,
         "sek": 304951,
-        "gpPct": 49.7
+        "gpPct": 49.7,
+        "wholesale": {
+          "units": 363,
+          "sek": 261422,
+          "gpPct": 45.6
+        }
       },
       "2026": {
         "units": 768,
         "sek": 561665,
-        "gpPct": 50.7
+        "gpPct": 50.7,
+        "wholesale": {
+          "units": 751,
+          "sek": 539264,
+          "gpPct": 49.8
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -17310,17 +20145,32 @@
       "2024": {
         "units": 580,
         "sek": 523195,
-        "gpPct": 46.0
+        "gpPct": 46.0,
+        "wholesale": {
+          "units": 551,
+          "sek": 473719,
+          "gpPct": 43.1
+        }
       },
       "2025": {
         "units": 668,
         "sek": 583303,
-        "gpPct": 47.1
+        "gpPct": 47.1,
+        "wholesale": {
+          "units": 625,
+          "sek": 522561,
+          "gpPct": 44.7
+        }
       },
       "2026": {
         "units": 688,
         "sek": 617175,
-        "gpPct": 51.3
+        "gpPct": 51.3,
+        "wholesale": {
+          "units": 659,
+          "sek": 567612,
+          "gpPct": 49.4
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -17384,17 +20234,32 @@
       "2024": {
         "units": 365,
         "sek": 248856,
-        "gpPct": 50.8
+        "gpPct": 50.8,
+        "wholesale": {
+          "units": 349,
+          "sek": 233982,
+          "gpPct": 49.6
+        }
       },
       "2025": {
         "units": 528,
         "sek": 347748,
-        "gpPct": 46.8
+        "gpPct": 46.8,
+        "wholesale": {
+          "units": 514,
+          "sek": 335235,
+          "gpPct": 46.2
+        }
       },
       "2026": {
         "units": 622,
         "sek": 442807,
-        "gpPct": 55.1
+        "gpPct": 55.1,
+        "wholesale": {
+          "units": 528,
+          "sek": 356366,
+          "gpPct": 52.8
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -17458,17 +20323,32 @@
       "2024": {
         "units": 351,
         "sek": 234838,
-        "gpPct": 52.8
+        "gpPct": 52.8,
+        "wholesale": {
+          "units": 331,
+          "sek": 214087,
+          "gpPct": 50.9
+        }
       },
       "2025": {
         "units": 570,
         "sek": 357860,
-        "gpPct": 45.9
+        "gpPct": 45.9,
+        "wholesale": {
+          "units": 544,
+          "sek": 328809,
+          "gpPct": 43.6
+        }
       },
       "2026": {
         "units": 558,
         "sek": 368547,
-        "gpPct": 51.2
+        "gpPct": 51.2,
+        "wholesale": {
+          "units": 545,
+          "sek": 353956,
+          "gpPct": 50.3
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -17532,17 +20412,32 @@
       "2024": {
         "units": 361,
         "sek": 214216,
-        "gpPct": 49.7
+        "gpPct": 49.7,
+        "wholesale": {
+          "units": 346,
+          "sek": 200704,
+          "gpPct": 48.5
+        }
       },
       "2025": {
         "units": 388,
         "sek": 227523,
-        "gpPct": 44.1
+        "gpPct": 44.1,
+        "wholesale": {
+          "units": 364,
+          "sek": 204142,
+          "gpPct": 41.4
+        }
       },
       "2026": {
         "units": 439,
         "sek": 265310,
-        "gpPct": 47.3
+        "gpPct": 47.3,
+        "wholesale": {
+          "units": 417,
+          "sek": 242910,
+          "gpPct": 45.2
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -17606,17 +20501,32 @@
       "2024": {
         "units": 739,
         "sek": 669551,
-        "gpPct": 47.3
+        "gpPct": 47.3,
+        "wholesale": {
+          "units": 682,
+          "sek": 587555,
+          "gpPct": 44.5
+        }
       },
       "2025": {
         "units": 871,
         "sek": 769398,
-        "gpPct": 45.4
+        "gpPct": 45.4,
+        "wholesale": {
+          "units": 806,
+          "sek": 678549,
+          "gpPct": 42.8
+        }
       },
       "2026": {
         "units": 1266,
         "sek": 1116082,
-        "gpPct": 49.0
+        "gpPct": 49.0,
+        "wholesale": {
+          "units": 1238,
+          "sek": 1068556,
+          "gpPct": 48.1
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -17680,17 +20590,32 @@
       "2024": {
         "units": 1119,
         "sek": 860362,
-        "gpPct": 50.2
+        "gpPct": 50.2,
+        "wholesale": {
+          "units": 1084,
+          "sek": 818241,
+          "gpPct": 49.0
+        }
       },
       "2025": {
         "units": 1790,
         "sek": 1348641,
-        "gpPct": 48.1
+        "gpPct": 48.1,
+        "wholesale": {
+          "units": 1743,
+          "sek": 1292252,
+          "gpPct": 47.2
+        }
       },
       "2026": {
         "units": 2341,
         "sek": 1731458,
-        "gpPct": 51.5
+        "gpPct": 51.5,
+        "wholesale": {
+          "units": 2296,
+          "sek": 1671163,
+          "gpPct": 50.8
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -17754,17 +20679,32 @@
       "2024": {
         "units": 276,
         "sek": 129564,
-        "gpPct": 53.2
+        "gpPct": 53.2,
+        "wholesale": {
+          "units": 243,
+          "sek": 103282,
+          "gpPct": 47.8
+        }
       },
       "2025": {
         "units": 488,
         "sek": 240913,
-        "gpPct": 52.4
+        "gpPct": 52.4,
+        "wholesale": {
+          "units": 425,
+          "sek": 186349,
+          "gpPct": 45.9
+        }
       },
       "2026": {
         "units": 691,
         "sek": 352145,
-        "gpPct": 54.6
+        "gpPct": 54.6,
+        "wholesale": {
+          "units": 647,
+          "sek": 311098,
+          "gpPct": 51.8
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -17944,17 +20884,32 @@
       "2024": {
         "units": 1,
         "sek": 978,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 1,
+          "sek": 978,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 360,
         "sek": 440982,
-        "gpPct": 60.5
+        "gpPct": 60.5,
+        "wholesale": {
+          "units": 333,
+          "sek": 379355,
+          "gpPct": 57.6
+        }
       },
       "2026": {
         "units": 574,
         "sek": 684251,
-        "gpPct": 58.4
+        "gpPct": 58.4,
+        "wholesale": {
+          "units": 322,
+          "sek": 269711,
+          "gpPct": 42.6
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -18018,17 +20973,32 @@
       "2024": {
         "units": 1,
         "sek": 847,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 1,
+          "sek": 847,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 423,
         "sek": 401008,
-        "gpPct": 49.2
+        "gpPct": 49.2,
+        "wholesale": {
+          "units": 413,
+          "sek": 383880,
+          "gpPct": 48.2
+        }
       },
       "2026": {
         "units": 428,
         "sek": 467355,
-        "gpPct": 56.0
+        "gpPct": 56.0,
+        "wholesale": {
+          "units": 370,
+          "sek": 360289,
+          "gpPct": 50.6
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -18208,17 +21178,32 @@
       "2024": {
         "units": 5,
         "sek": 3119,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 5,
+          "sek": 3119,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 3840,
         "sek": 2837343,
-        "gpPct": 55.9
+        "gpPct": 55.9,
+        "wholesale": {
+          "units": 3718,
+          "sek": 2657584,
+          "gpPct": 54.4
+        }
       },
       "2026": {
         "units": 3323,
         "sek": 2617678,
-        "gpPct": 59.9
+        "gpPct": 59.9,
+        "wholesale": {
+          "units": 3200,
+          "sek": 2433230,
+          "gpPct": 58.5
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -18282,17 +21267,32 @@
       "2024": {
         "units": 0,
         "sek": 0,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 0,
+          "sek": 0,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 2051,
         "sek": 659389,
-        "gpPct": 53.3
+        "gpPct": 53.3,
+        "wholesale": {
+          "units": 1624,
+          "sek": 454369,
+          "gpPct": 45.6
+        }
       },
       "2026": {
         "units": 5676,
         "sek": 2000055,
-        "gpPct": 57.7
+        "gpPct": 57.7,
+        "wholesale": {
+          "units": 3692,
+          "sek": 1059401,
+          "gpPct": 47.0
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -18356,17 +21356,32 @@
       "2024": {
         "units": 2,
         "sek": 399,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 2,
+          "sek": 399,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 4402,
         "sek": 1136073,
-        "gpPct": 47.5
+        "gpPct": 47.5,
+        "wholesale": {
+          "units": 3637,
+          "sek": 827542,
+          "gpPct": 40.1
+        }
       },
       "2026": {
         "units": 5732,
         "sek": 1489896,
-        "gpPct": 53.3
+        "gpPct": 53.3,
+        "wholesale": {
+          "units": 4814,
+          "sek": 1124236,
+          "gpPct": 48.1
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -18430,17 +21445,32 @@
       "2024": {
         "units": 1,
         "sek": 299,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 1,
+          "sek": 299,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 1323,
         "sek": 525546,
-        "gpPct": 54.4
+        "gpPct": 54.4,
+        "wholesale": {
+          "units": 1053,
+          "sek": 366330,
+          "gpPct": 48.0
+        }
       },
       "2026": {
         "units": 1325,
         "sek": 528596,
-        "gpPct": 58.7
+        "gpPct": 58.7,
+        "wholesale": {
+          "units": 691,
+          "sek": 195543,
+          "gpPct": 43.8
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -18450,17 +21480,32 @@
           "2024": {
             "units": 1,
             "gpPct": null,
-            "sek": 299
+            "sek": 299,
+            "wholesale": {
+              "units": 1,
+              "gpPct": null,
+              "sek": 299
+            }
           },
           "2025": {
             "units": 1323,
             "gpPct": 54.4,
-            "sek": 525546
+            "sek": 525546,
+            "wholesale": {
+              "units": 1053,
+              "gpPct": 48.0,
+              "sek": 366330
+            }
           },
           "2026": {
             "units": 1325,
             "gpPct": 58.7,
-            "sek": 528596
+            "sek": 528596,
+            "wholesale": {
+              "units": 691,
+              "gpPct": 43.8,
+              "sek": 195543
+            }
           }
         }
       }
@@ -18538,17 +21583,32 @@
       "2024": {
         "units": 0,
         "sek": 0,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 0,
+          "sek": 0,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 1027,
         "sek": 366106,
-        "gpPct": 56.7
+        "gpPct": 56.7,
+        "wholesale": {
+          "units": 747,
+          "sek": 230616,
+          "gpPct": 50.2
+        }
       },
       "2026": {
         "units": 1557,
         "sek": 492625,
-        "gpPct": 56.4
+        "gpPct": 56.4,
+        "wholesale": {
+          "units": 1138,
+          "sek": 308743,
+          "gpPct": 49.9
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -18558,17 +21618,32 @@
           "2024": {
             "units": 0,
             "gpPct": null,
-            "sek": 0
+            "sek": 0,
+            "wholesale": {
+              "units": 0,
+              "gpPct": null,
+              "sek": 0
+            }
           },
           "2025": {
             "units": 1027,
             "gpPct": 56.7,
-            "sek": 366106
+            "sek": 366106,
+            "wholesale": {
+              "units": 747,
+              "gpPct": 50.2,
+              "sek": 230616
+            }
           },
           "2026": {
             "units": 1557,
             "gpPct": 56.4,
-            "sek": 492625
+            "sek": 492625,
+            "wholesale": {
+              "units": 1138,
+              "gpPct": 49.9,
+              "sek": 308743
+            }
           }
         }
       }
@@ -18717,12 +21792,22 @@
       "2025": {
         "units": 80,
         "sek": 17923,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 80,
+          "sek": 17923,
+          "gpPct": null
+        }
       },
       "2026": {
         "units": 1698,
         "sek": 464189,
-        "gpPct": 59.2
+        "gpPct": 59.2,
+        "wholesale": {
+          "units": 1401,
+          "sek": 329895,
+          "gpPct": 53.0
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -18786,12 +21871,22 @@
       "2025": {
         "units": 80,
         "sek": 17923,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 80,
+          "sek": 17923,
+          "gpPct": null
+        }
       },
       "2026": {
         "units": 1447,
         "sek": 394992,
-        "gpPct": 53.6
+        "gpPct": 53.6,
+        "wholesale": {
+          "units": 1192,
+          "sek": 277003,
+          "gpPct": 45.5
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -18913,12 +22008,22 @@
       "2025": {
         "units": 70,
         "sek": 9800,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 70,
+          "sek": 9800,
+          "gpPct": null
+        }
       },
       "2026": {
         "units": 1440,
         "sek": 273428,
-        "gpPct": 39.2
+        "gpPct": 39.2,
+        "wholesale": {
+          "units": 974,
+          "sek": 141208,
+          "gpPct": 20.2
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -18982,17 +22087,32 @@
       "2024": {
         "units": 0,
         "sek": 0,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 0,
+          "sek": 0,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 4282,
         "sek": 807588,
-        "gpPct": 43.3
+        "gpPct": 43.3,
+        "wholesale": {
+          "units": 4004,
+          "sek": 720580,
+          "gpPct": 40.7
+        }
       },
       "2026": {
         "units": 7002,
         "sek": 1318067,
-        "gpPct": 43.4
+        "gpPct": 43.4,
+        "wholesale": {
+          "units": 5961,
+          "sek": 997035,
+          "gpPct": 36.4
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -19056,12 +22176,22 @@
       "2025": {
         "units": 125,
         "sek": 59499,
-        "gpPct": 55.5
+        "gpPct": 55.5,
+        "wholesale": {
+          "units": 125,
+          "sek": 59499,
+          "gpPct": 55.5
+        }
       },
       "2026": {
         "units": 2096,
         "sek": 1221565,
-        "gpPct": 62.1
+        "gpPct": 62.1,
+        "wholesale": {
+          "units": 1633,
+          "sek": 788594,
+          "gpPct": 54.8
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -19125,12 +22255,22 @@
       "2025": {
         "units": 7,
         "sek": 642,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 6,
+          "sek": 579,
+          "gpPct": null
+        }
       },
       "2026": {
         "units": 6106,
         "sek": 1036238,
-        "gpPct": 57.3
+        "gpPct": 57.3,
+        "wholesale": {
+          "units": 5133,
+          "sek": 768495,
+          "gpPct": 51.9
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -19194,17 +22334,32 @@
       "2024": {
         "units": 16,
         "sek": 1836,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 16,
+          "sek": 1836,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 10690,
         "sek": 1517768,
-        "gpPct": 52.2
+        "gpPct": 52.2,
+        "wholesale": {
+          "units": 9899,
+          "sek": 1347524,
+          "gpPct": 49.3
+        }
       },
       "2026": {
         "units": 6967,
         "sek": 1101093,
-        "gpPct": 57.8
+        "gpPct": 57.8,
+        "wholesale": {
+          "units": 5811,
+          "sek": 832610,
+          "gpPct": 52.4
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -19268,17 +22423,32 @@
       "2024": {
         "units": 3143,
         "sek": 774375,
-        "gpPct": 62.3
+        "gpPct": 62.3,
+        "wholesale": {
+          "units": 2660,
+          "sek": 618313,
+          "gpPct": 60.1
+        }
       },
       "2025": {
         "units": 3936,
         "sek": 795871,
-        "gpPct": 52.2
+        "gpPct": 52.2,
+        "wholesale": {
+          "units": 3491,
+          "sek": 649181,
+          "gpPct": 48.1
+        }
       },
       "2026": {
         "units": 2537,
         "sek": 535371,
-        "gpPct": 58.2
+        "gpPct": 58.2,
+        "wholesale": {
+          "units": 2096,
+          "sek": 406719,
+          "gpPct": 55.2
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -19342,17 +22512,32 @@
       "2024": {
         "units": 29,
         "sek": 7921,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 3,
+          "sek": 328,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 60,
         "sek": 7212,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 4,
+          "sek": 611,
+          "gpPct": null
+        }
       },
       "2026": {
         "units": 30,
         "sek": 7362,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 0,
+          "sek": -84,
+          "gpPct": null
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -19362,17 +22547,32 @@
           "2024": {
             "units": 29,
             "gpPct": null,
-            "sek": 7921
+            "sek": 7921,
+            "wholesale": {
+              "units": 3,
+              "gpPct": null,
+              "sek": 328
+            }
           },
           "2025": {
             "units": 60,
             "gpPct": null,
-            "sek": 7212
+            "sek": 7212,
+            "wholesale": {
+              "units": 4,
+              "gpPct": null,
+              "sek": 611
+            }
           },
           "2026": {
             "units": 30,
             "gpPct": null,
-            "sek": 7362
+            "sek": 7362,
+            "wholesale": {
+              "units": 0,
+              "gpPct": null,
+              "sek": -84
+            }
           }
         }
       }
@@ -19437,17 +22637,32 @@
       "2024": {
         "units": 4418,
         "sek": 1102643,
-        "gpPct": 56.4
+        "gpPct": 56.4,
+        "wholesale": {
+          "units": 3888,
+          "sek": 908931,
+          "gpPct": 53.7
+        }
       },
       "2025": {
         "units": 3743,
         "sek": 853214,
-        "gpPct": 50.1
+        "gpPct": 50.1,
+        "wholesale": {
+          "units": 3097,
+          "sek": 615452,
+          "gpPct": 42.9
+        }
       },
       "2026": {
         "units": 3245,
         "sek": 748295,
-        "gpPct": 57.2
+        "gpPct": 57.2,
+        "wholesale": {
+          "units": 2796,
+          "sek": 587485,
+          "gpPct": 53.7
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -19457,17 +22672,32 @@
           "2024": {
             "units": 4418,
             "gpPct": 56.4,
-            "sek": 1102643
+            "sek": 1102643,
+            "wholesale": {
+              "units": 3888,
+              "gpPct": 53.7,
+              "sek": 908931
+            }
           },
           "2025": {
             "units": 3743,
             "gpPct": 50.1,
-            "sek": 853214
+            "sek": 853214,
+            "wholesale": {
+              "units": 3097,
+              "gpPct": 42.9,
+              "sek": 615452
+            }
           },
           "2026": {
             "units": 3245,
             "gpPct": 57.2,
-            "sek": 748295
+            "sek": 748295,
+            "wholesale": {
+              "units": 2796,
+              "gpPct": 53.7,
+              "sek": 587485
+            }
           }
         }
       }
@@ -19539,12 +22769,22 @@
       "2025": {
         "units": 120,
         "sek": 43442,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 120,
+          "sek": 43442,
+          "gpPct": null
+        }
       },
       "2026": {
         "units": 1387,
         "sek": 679269,
-        "gpPct": 59.3
+        "gpPct": 59.3,
+        "wholesale": {
+          "units": 1122,
+          "sek": 489356,
+          "gpPct": 54.3
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -19608,12 +22848,22 @@
       "2025": {
         "units": 877,
         "sek": 268268,
-        "gpPct": 48.1
+        "gpPct": 48.1,
+        "wholesale": {
+          "units": 877,
+          "sek": 268268,
+          "gpPct": 48.1
+        }
       },
       "2026": {
         "units": 2094,
         "sek": 815472,
-        "gpPct": 56.9
+        "gpPct": 56.9,
+        "wholesale": {
+          "units": 1780,
+          "sek": 610596,
+          "gpPct": 51.1
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -19690,12 +22940,22 @@
       "2025": {
         "units": 480,
         "sek": 133456,
-        "gpPct": 47.6
+        "gpPct": 47.6,
+        "wholesale": {
+          "units": 480,
+          "sek": 133456,
+          "gpPct": 47.6
+        }
       },
       "2026": {
         "units": 831,
         "sek": 283135,
-        "gpPct": 54.8
+        "gpPct": 54.8,
+        "wholesale": {
+          "units": 750,
+          "sek": 230655,
+          "gpPct": 50.0
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -19958,17 +23218,32 @@
       "2024": {
         "units": 2166,
         "sek": 451623,
-        "gpPct": 49.8
+        "gpPct": 49.8,
+        "wholesale": {
+          "units": 2057,
+          "sek": 418985,
+          "gpPct": 49.2
+        }
       },
       "2025": {
         "units": 2632,
         "sek": 529574,
-        "gpPct": 53.3
+        "gpPct": 53.3,
+        "wholesale": {
+          "units": 2548,
+          "sek": 504602,
+          "gpPct": 53.0
+        }
       },
       "2026": {
         "units": 1762,
         "sek": 380382,
-        "gpPct": 58.9
+        "gpPct": 58.9,
+        "wholesale": {
+          "units": 1734,
+          "sek": 372186,
+          "gpPct": 58.7
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -19978,17 +23253,32 @@
           "2024": {
             "units": 2166,
             "gpPct": 49.8,
-            "sek": 451623
+            "sek": 451623,
+            "wholesale": {
+              "units": 2057,
+              "gpPct": 49.2,
+              "sek": 418985
+            }
           },
           "2025": {
             "units": 2632,
             "gpPct": 53.3,
-            "sek": 529574
+            "sek": 529574,
+            "wholesale": {
+              "units": 2548,
+              "gpPct": 53.0,
+              "sek": 504602
+            }
           },
           "2026": {
             "units": 1762,
             "gpPct": 58.9,
-            "sek": 380382
+            "sek": 380382,
+            "wholesale": {
+              "units": 1734,
+              "gpPct": 58.7,
+              "sek": 372186
+            }
           }
         }
       }
@@ -20066,17 +23356,32 @@
       "2024": {
         "units": 4115,
         "sek": 697800,
-        "gpPct": 49.5
+        "gpPct": 49.5,
+        "wholesale": {
+          "units": 3598,
+          "sek": 582112,
+          "gpPct": 47.3
+        }
       },
       "2025": {
         "units": 4599,
         "sek": 689052,
-        "gpPct": 44.8
+        "gpPct": 44.8,
+        "wholesale": {
+          "units": 4506,
+          "sek": 670337,
+          "gpPct": 44.5
+        }
       },
       "2026": {
         "units": 5583,
         "sek": 956342,
-        "gpPct": 58.0
+        "gpPct": 58.0,
+        "wholesale": {
+          "units": 5227,
+          "sek": 822473,
+          "gpPct": 54.3
+        }
       }
     },
     "historicalSalesByGeneration": [
@@ -20086,17 +23391,32 @@
           "2024": {
             "units": 4115,
             "gpPct": 49.5,
-            "sek": 697800
+            "sek": 697800,
+            "wholesale": {
+              "units": 3598,
+              "gpPct": 47.3,
+              "sek": 582112
+            }
           },
           "2025": {
             "units": 4599,
             "gpPct": 44.8,
-            "sek": 689052
+            "sek": 689052,
+            "wholesale": {
+              "units": 4506,
+              "gpPct": 44.5,
+              "sek": 670337
+            }
           },
           "2026": {
             "units": 5583,
             "gpPct": 58.0,
-            "sek": 956342
+            "sek": 956342,
+            "wholesale": {
+              "units": 5227,
+              "gpPct": 54.3,
+              "sek": 822473
+            }
           }
         }
       }
@@ -20174,7 +23494,12 @@
       "2026": {
         "units": 3718,
         "sek": 2876144,
-        "gpPct": 35.9
+        "gpPct": 35.9,
+        "wholesale": {
+          "units": 3494,
+          "sek": 2534241,
+          "gpPct": 31.7
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -20296,12 +23621,22 @@
       "2025": {
         "units": 504,
         "sek": 282249,
-        "gpPct": 37.4
+        "gpPct": 37.4,
+        "wholesale": {
+          "units": 504,
+          "sek": 282249,
+          "gpPct": 37.4
+        }
       },
       "2026": {
         "units": 3091,
         "sek": 2025991,
-        "gpPct": 40.1
+        "gpPct": 40.1,
+        "wholesale": {
+          "units": 2883,
+          "sek": 1775318,
+          "gpPct": 36.4
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -20539,12 +23874,22 @@
       "2025": {
         "units": 1,
         "sek": 1043,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 1,
+          "sek": 1043,
+          "gpPct": null
+        }
       },
       "2026": {
         "units": 290,
         "sek": 328574,
-        "gpPct": 38.6
+        "gpPct": 38.6,
+        "wholesale": {
+          "units": 202,
+          "sek": 197252,
+          "gpPct": 28.5
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -20608,12 +23953,22 @@
       "2025": {
         "units": 1,
         "sek": 1200,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 0,
+          "sek": 0,
+          "gpPct": null
+        }
       },
       "2026": {
         "units": 359,
         "sek": 472328,
-        "gpPct": 43.4
+        "gpPct": 43.4,
+        "wholesale": {
+          "units": 249,
+          "sek": 276636,
+          "gpPct": 32.6
+        }
       }
     },
     "historicalSalesByGeneration": [],
@@ -20793,17 +24148,32 @@
       "2024": {
         "units": 0,
         "sek": 0,
-        "gpPct": null
+        "gpPct": null,
+        "wholesale": {
+          "units": 0,
+          "sek": 0,
+          "gpPct": null
+        }
       },
       "2025": {
         "units": 524,
         "sek": 579087,
-        "gpPct": 35.4
+        "gpPct": 35.4,
+        "wholesale": {
+          "units": 470,
+          "sek": 481662,
+          "gpPct": 29.6
+        }
       },
       "2026": {
         "units": 441,
         "sek": 525861,
-        "gpPct": 43.5
+        "gpPct": 43.5,
+        "wholesale": {
+          "units": 189,
+          "sek": 198757,
+          "gpPct": 35.3
+        }
       }
     },
     "historicalSalesByGeneration": [],

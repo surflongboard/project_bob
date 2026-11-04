@@ -121,30 +121,39 @@ def load_2024_from_old_file() -> dict[tuple[str, str], dict]:
     ws = wb["2024"]
     rows = ws.iter_rows(values_only=True)
     next(rows)  # header
-    agg: dict[tuple[str, str], list[float]] = defaultdict(lambda: [0.0, 0.0, 0.0])  # sek, units, margin
+    # [sek, units, margin, wh_sek, wh_units, wh_margin] -- RR-055 adds a parallel Wholesale-only
+    # running total alongside the existing all-channel one, in the same pass over the rows
+    # rather than a second read of the file.
+    agg: dict[tuple[str, str], list[float]] = defaultdict(lambda: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
     for r in rows:
-        article, customer_group = r[5], r[3]
+        article, channel, customer_group = r[5], r[1], r[3]
         if not article or article == "Total":
             continue
         if not lib.is_core_customer_group(customer_group):
             continue
         key = (base_of(article), gen_of(article))
         a = agg[key]
-        a[0] += r[7] or 0   # Garp SEK Sales
-        a[1] += r[9] or 0   # Units Sold
-        a[2] += r[15] or 0  # Garp SEK Margin
-    return {k: {"sek": v[0], "units": v[1], "margin": v[2]} for k, v in agg.items()}
+        sek, units, margin = r[7] or 0, r[9] or 0, r[15] or 0  # Garp SEK Sales / Units Sold / Garp SEK Margin
+        a[0] += sek
+        a[1] += units
+        a[2] += margin
+        if channel == "Wholesale":
+            a[3] += sek
+            a[4] += units
+            a[5] += margin
+    return {k: {"sek": v[0], "units": v[1], "margin": v[2],
+                "wh_sek": v[3], "wh_units": v[4], "wh_margin": v[5]} for k, v in agg.items()}
 
 
 def load_year_from_new_csvs(filenames: list[str]) -> dict[tuple[str, str], dict]:
-    agg: dict[tuple[str, str], list[float]] = defaultdict(lambda: [0.0, 0.0, 0.0])
+    agg: dict[tuple[str, str], list[float]] = defaultdict(lambda: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
     for fn in filenames:
         path = SALES_DIR / fn
         with open(path, newline="", encoding="utf-8-sig") as f:
             reader = csv.reader(f)
             next(reader)  # header
             for row in reader:
-                article, market = row[2], row[10]
+                article, channel, market = row[2], row[9], row[10]
                 if not article:
                     continue
                 if not lib.is_core_market(market):
@@ -152,22 +161,40 @@ def load_year_from_new_csvs(filenames: list[str]) -> dict[tuple[str, str], dict]
                 key = (base_of(article), gen_of(article))
                 a = agg[key]
                 try:
-                    a[0] += float(row[11]) if row[11] else 0.0  # Garp SEK Sales
+                    sek = float(row[11]) if row[11] else 0.0  # Garp SEK Sales
                 except ValueError:
-                    pass
+                    sek = 0.0
                 try:
-                    a[1] += float(row[12]) if row[12] else 0.0  # Units Sold
+                    units = float(row[12]) if row[12] else 0.0  # Units Sold
                 except ValueError:
-                    pass
+                    units = 0.0
                 try:
-                    a[2] += float(row[13]) if row[13] else 0.0  # Garp SEK Margin
+                    margin = float(row[13]) if row[13] else 0.0  # Garp SEK Margin
                 except ValueError:
-                    pass
-    return {k: {"sek": v[0], "units": v[1], "margin": v[2]} for k, v in agg.items()}
+                    margin = 0.0
+                a[0] += sek
+                a[1] += units
+                a[2] += margin
+                if channel == "Wholesale":
+                    a[3] += sek
+                    a[4] += units
+                    a[5] += margin
+    return {k: {"sek": v[0], "units": v[1], "margin": v[2],
+                "wh_sek": v[3], "wh_units": v[4], "wh_margin": v[5]} for k, v in agg.items()}
+
+
+def _gp_pct(sek: float, margin: float) -> float | None:
+    gp_pct = (margin / sek * 100) if sek else None
+    if gp_pct is not None and sek < lib.MIN_RELIABLE:
+        gp_pct = None  # small-denominator convention -- blank, not a misleading number
+    return round(gp_pct, 1) if gp_pct is not None else None
 
 
 def load_all_years_by_base_and_gen() -> dict[tuple[str, str], dict]:
-    """(base, generation) -> {2024: {...}, 2025: {...}, 2026: {...}}, each with units/gpPct/sek."""
+    """(base, generation) -> {2024: {...}, 2025: {...}, 2026: {...}}, each with units/gpPct/sek
+    plus a nested "wholesale" dict with the same three fields, Wholesale-channel-only (RR-055 --
+    "please show Wholesale only sales and margin too"), same MIN_RELIABLE blanking applied
+    independently against the wholesale slice's own SEK total, not the all-channel one."""
     by_year = {
         2024: load_2024_from_old_file(),
         2025: load_year_from_new_csvs(NEW_CSV_YEARS[2025]),
@@ -176,13 +203,15 @@ def load_all_years_by_base_and_gen() -> dict[tuple[str, str], dict]:
     out: dict[tuple[str, str], dict] = defaultdict(dict)
     for year, data in by_year.items():
         for key, v in data.items():
-            gp_pct = (v["margin"] / v["sek"] * 100) if v["sek"] else None
-            if gp_pct is not None and v["sek"] < lib.MIN_RELIABLE:
-                gp_pct = None  # small-denominator convention -- blank, not a misleading number
             out[key][year] = {
                 "units": round(v["units"]) if v["units"] else 0,
-                "gpPct": round(gp_pct, 1) if gp_pct is not None else None,
+                "gpPct": _gp_pct(v["sek"], v["margin"]),
                 "sek": round(v["sek"]),
+                "wholesale": {
+                    "units": round(v["wh_units"]) if v["wh_units"] else 0,
+                    "gpPct": _gp_pct(v["wh_sek"], v["wh_margin"]),
+                    "sek": round(v["wh_sek"]),
+                },
             }
     return dict(out)
 
@@ -196,22 +225,27 @@ def build_by_base(by_base_gen: dict[tuple[str, str], dict] | None = None) -> dic
     was slow enough to cause a transient resource hiccup when both were called independently)."""
     if by_base_gen is None:
         by_base_gen = load_all_years_by_base_and_gen()
-    out: dict[str, dict] = defaultdict(lambda: defaultdict(lambda: {"units": 0, "sek": 0, "_margin": 0.0}))
+    out: dict[str, dict] = defaultdict(lambda: defaultdict(lambda: {
+        "units": 0, "sek": 0, "_margin": 0.0, "wh_units": 0, "wh_sek": 0, "_wh_margin": 0.0}))
     for (base, _gen), years in by_base_gen.items():
         for year, v in years.items():
             o = out[base][year]
             o["units"] += v["units"]
             o["sek"] += v["sek"]
             o["_margin"] += (v["sek"] * (v["gpPct"] / 100)) if v["gpPct"] is not None else 0.0
+            wh = v["wholesale"]
+            o["wh_units"] += wh["units"]
+            o["wh_sek"] += wh["sek"]
+            o["_wh_margin"] += (wh["sek"] * (wh["gpPct"] / 100)) if wh["gpPct"] is not None else 0.0
     result: dict[str, dict] = {}
     for base, years in out.items():
         result[base] = {}
         for year, v in years.items():
-            gp_pct = (v["_margin"] / v["sek"] * 100) if v["sek"] else None
-            if gp_pct is not None and v["sek"] < lib.MIN_RELIABLE:
-                gp_pct = None
-            result[base][year] = {"units": v["units"], "sek": v["sek"],
-                                   "gpPct": round(gp_pct, 1) if gp_pct is not None else None}
+            gp_pct = _gp_pct(v["sek"], v["_margin"])
+            wh_gp_pct = _gp_pct(v["wh_sek"], v["_wh_margin"])
+            result[base][year] = {"units": v["units"], "sek": v["sek"], "gpPct": gp_pct,
+                                   "wholesale": {"units": v["wh_units"], "sek": v["wh_sek"],
+                                                 "gpPct": wh_gp_pct}}
     return result
 
 
@@ -249,23 +283,32 @@ def write_workbook(by_base: dict[str, dict], by_base_gen: dict[str, dict], path:
         ws.freeze_panes = "A2"
         ws.auto_filter.ref = ws.dimensions
 
-    headers = ["Franchise (base)", "2024 Units", "2024 GP%", "2024 SEK",
-               "2025 Units", "2025 GP%", "2025 SEK",
-               "2026 YTD Units", "2026 YTD GP%", "2026 YTD SEK"]
+    # RR-055 -- "All channels" and "Wholesale only" columns side by side per year, so the
+    # Wholesale-specific business (CLAUDE.md's channel split) can be read directly off this
+    # sheet without a separate pull.
+    headers = ["Franchise (base)",
+               "2024 Units", "2024 GP%", "2024 SEK", "2024 WH Units", "2024 WH GP%", "2024 WH SEK",
+               "2025 Units", "2025 GP%", "2025 SEK", "2025 WH Units", "2025 WH GP%", "2025 WH SEK",
+               "2026 YTD Units", "2026 YTD GP%", "2026 YTD SEK",
+               "2026 YTD WH Units", "2026 YTD WH GP%", "2026 YTD WH SEK"]
     rows = []
     for base in sorted(by_base):
         row = [base]
         for year in (2024, 2025, 2026):
             v = by_base[base].get(year, {})
-            row += [v.get("units", ""), v.get("gpPct", ""), v.get("sek", "")]
+            wh = v.get("wholesale", {})
+            row += [v.get("units", ""), v.get("gpPct", ""), v.get("sek", ""),
+                    wh.get("units", ""), wh.get("gpPct", ""), wh.get("sek", "")]
         rows.append(row)
     write_sheet("Historical Sales By Franchise", headers, rows)
 
     # RR-039 -- same data, NOT blended across generations, so a multi-generation franchise's
     # history can be read generation by generation (e.g. Gen 1's declining sales alongside a
     # new "II"/"III" generation just starting to ramp up), not just as one combined number.
-    gen_headers = ["Franchise (base)", "Generation", "2024 Units", "2024 GP%",
-                   "2025 Units", "2025 GP%", "2026 YTD Units", "2026 YTD GP%"]
+    gen_headers = ["Franchise (base)", "Generation",
+                   "2024 Units", "2024 GP%", "2024 WH Units", "2024 WH GP%",
+                   "2025 Units", "2025 GP%", "2025 WH Units", "2025 WH GP%",
+                   "2026 YTD Units", "2026 YTD GP%", "2026 YTD WH Units", "2026 YTD WH GP%"]
     gen_rows = []
     rank = {"": 0, "2.0": 1, "II": 1, "III": 2, "IV": 3}
     for base in sorted(by_base_gen):
@@ -276,7 +319,8 @@ def write_workbook(by_base: dict[str, dict], by_base_gen: dict[str, dict], path:
             row = [base, label]
             for year in (2024, 2025, 2026):
                 v = gens[gen].get(year, {})
-                row += [v.get("units", ""), v.get("gpPct", "")]
+                wh = v.get("wholesale", {})
+                row += [v.get("units", ""), v.get("gpPct", ""), wh.get("units", ""), wh.get("gpPct", "")]
             gen_rows.append(row)
     write_sheet("Historical Sales By Generation", gen_headers, gen_rows)
 
@@ -326,7 +370,16 @@ def write_workbook(by_base: dict[str, dict], by_base_gen: dict[str, dict], path:
                                                                        "not an oversight."])
     notes.append(["GP% blanking", f"Blank (not 0%) when that franchise-year's SEK sales are "
                                     f"under {lib.MIN_RELIABLE:,} SEK -- the shared small-"
-                                    f"denominator convention. Units Sold is never blanked."])
+                                    f"denominator convention. Units Sold is never blanked. "
+                                    f"Applied independently to the WH (Wholesale-only) columns "
+                                    f"against their own SEK total, not the all-channel one."])
+    notes.append(["WH columns (RR-055)", "Wholesale-channel-only Units/GP%/SEK, computed in the "
+                                           "same pass as the all-channel total above (Sales "
+                                           "Channel == \"Wholesale\" exactly, confirmed identical "
+                                           "spelling in both the old 2024 file and the new "
+                                           "2025/2026 CSVs). Not a separate pull or a different "
+                                           "core-account exclusion -- same rows, same filters, "
+                                           "just also bucketed by channel."])
     notes.append(["By Generation sheet (RR-039)", "Same underlying data as the main sheet, "
                                                      "NOT blended across generations -- one row "
                                                      "per (franchise, generation) so a franchise "

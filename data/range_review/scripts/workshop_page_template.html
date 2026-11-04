@@ -450,6 +450,7 @@ a { color: var(--accent); }
 .hist-year { font-size: 10px; color: var(--fg-muted); font-weight: 600; }
 .hist-units { font-size: 13px; font-weight: 600; }
 .hist-gp { font-size: 11px; color: var(--fg-muted); }
+.hist-wh { font-size: 10px; color: var(--fg-muted); font-style: italic; margin-top: 2px; }
 
 .alert { border-radius: 8px; padding: 8px 10px; font-size: 12px; line-height: 1.4; border: 1px solid; }
 .alert.moq { background: var(--warn-bg); color: var(--warn-fg); border-color: var(--warn-border); }
@@ -949,12 +950,24 @@ textarea.action-note {
   // export's Wholesale channel is badly undercounted for 2024 specifically, confirmed against
   // the user's own unsplit master file too -- not used here). 2025/2026 are the new per-year
   // CSVs; 2026 is YTD through October only. GP% is blank (not 0%) under MIN_RELIABLE SEK.
+  // RR-055 -- each year now also shows SEK (was units/GP% only) plus a Wholesale-only line
+  // (units/SEK/GP%, same MIN_RELIABLE blanking applied independently to the wholesale slice's
+  // own SEK total) -- the Wholesale line only renders when the year itself has real data, same
+  // "blank not zero" convention as everywhere else on this board.
   function histCols(years) {
     return [["2024", years["2024"]], ["2025", years["2025"]], ["2026 YTD", years["2026"]]].map(function (pair) {
-      var label = pair[0], v = pair[1] || {};
+      var label = pair[0], raw = pair[1];
+      var hasYear = !!raw;
+      var v = raw || {};
+      var wh = v.wholesale || {};
       return '<div class="hist-col"><div class="hist-year">' + label + '</div>' +
-        '<div class="hist-units">' + fmtQty(v.units) + ' units</div>' +
-        '<div class="hist-gp">' + fmtPct(v.gpPct) + ' GP</div></div>';
+        '<div class="hist-units">' + fmtQty(v.units) + ' units · ' + fmtSEK(v.sek) + '</div>' +
+        '<div class="hist-gp">' + fmtPct(v.gpPct) + ' GP</div>' +
+        (hasYear
+          ? '<div class="hist-wh">Wholesale: ' + fmtQty(wh.units) + ' units · ' + fmtSEK(wh.sek) +
+            ' · ' + fmtPct(wh.gpPct) + ' GP</div>'
+          : "") +
+        "</div>";
     }).join("");
   }
 
