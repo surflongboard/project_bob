@@ -569,6 +569,10 @@ textarea.action-note {
   font-size: 12.5px;
   color: var(--fg-muted);
 }
+/* RR-060 -- a save failure gets its own visible, distinct styling (reusing the existing
+   tail/overstock warning palette) so it reads as "something's wrong," not just routine status
+   text -- a save that silently reverted with no visible explanation was the whole bug. */
+.homework-bar.error { background: var(--tail-bg); border-color: var(--tail-fg); color: var(--tail-fg); }
 .reveal-btn {
   border: 1px solid var(--accent);
   background: var(--accent);
@@ -877,6 +881,9 @@ textarea.homework-note {
   function maybeInitMyHomeworkDraft() {
     if (!dbModule || !myUserId || myDraftDoc) return;
     myDraftDoc = dbModule.doc("data/users/" + myUserId + "/homework");
+    // RR-060 -- connectivity just became ready; clear a stale "not_ready" error so the banner
+    // doesn't keep showing it after the thing it was complaining about has resolved itself.
+    if (homeworkSaveError === "not_ready") { homeworkSaveError = null; updateHomeworkBar(); }
     myDraftDoc.onSnapshot(function (doc) {
       var data = doc && doc.exists ? doc.data() : null;
       myHomeworkDraft = (data && data.responses) || {};
@@ -900,13 +907,28 @@ textarea.homework-note {
   }
 
   var pendingDraftWrite = null;
+  // RR-060 -- a pick/note made in the brief window right after page load, before `db`/`user`
+  // resolve, used to silently no-op here forever: myDraftDoc stayed null, nothing ever retried
+  // creating it, and the dropdown LOOKED like it saved (its own DOM state) while
+  // myHomeworkDraft never got the entry -- found from a real user report where picks reverted
+  // to "0 private picks saved" even though they'd definitely picked something. `homeworkSaveError`
+  // separately surfaces the OTHER failure mode: a write the platform itself rejects (e.g. a
+  // Viewer/Commenter-level visitor, per db.d.ts -- "a view-only or comment-only member has an
+  // id yet cannot write there either") previously reverted silently once the live subscription
+  // re-synced to the true (unwritten) server state, with nothing ever telling the user why.
+  var homeworkSaveError = null;
   // RR-059 -- homework now carries a private note alongside the tier pick ("own submission
   // and own notes before the meeting," per the user). Both are written together so one save
   // covers whichever field just changed; the entry is dropped only once NEITHER has anything
   // left in it (a note with no tier yet, or a tier with no note, both still count as "has
   // homework" for this franchise).
   function saveHomeworkPick(base, tier, note) {
-    if (!myDraftDoc) return;
+    if (!myDraftDoc) maybeInitMyHomeworkDraft(); // RR-060 -- lazy retry, see note above
+    if (!myDraftDoc) {
+      homeworkSaveError = "not_ready";
+      updateHomeworkBar();
+      return;
+    }
     var s = slug(base);
     tier = tier || "";
     note = note || "";
@@ -916,7 +938,14 @@ textarea.homework-note {
     clearTimeout(pendingDraftWrite);
     pendingDraftWrite = setTimeout(function () {
       myDraftDoc.set({ responses: myHomeworkDraft, updatedAt: Date.now() })
-        .catch(function (err) { console.warn("homework draft save failed", err); });
+        .then(function () {
+          if (homeworkSaveError) { homeworkSaveError = null; updateHomeworkBar(); }
+        })
+        .catch(function (err) {
+          console.warn("homework draft save failed", err);
+          homeworkSaveError = (err && err.code) || "unknown";
+          updateHomeworkBar();
+        });
     }, 400);
   }
 
@@ -952,10 +981,26 @@ textarea.homework-note {
     var btn = document.getElementById("revealBtn");
     if (!bar || !text || !btn) return;
     bar.hidden = !state.homeworkMode;
+    bar.classList.toggle("error", !!homeworkSaveError);
     if (!state.homeworkMode) return;
     var n = Object.keys(myHomeworkDraft).length;
     var revealed = myUserId && homeworkResponses[myUserId];
-    if (!myUserId) {
+    // RR-060 -- surfaces a save failure directly in the banner, rather than reverting silently
+    // once the live subscription re-syncs to the true (unwritten) server state. "not_ready"
+    // (couldn't even start the write) and "invalid_argument" (the platform's own db capability
+    // rejects it -- most likely a Viewer/Commenter-level visitor, per db.d.ts: "a view-only or
+    // comment-only member has an id yet cannot write there either") get their own wording;
+    // anything else falls back to a generic retry message with the raw code for diagnosis.
+    if (homeworkSaveError) {
+      if (homeworkSaveError === "not_ready") {
+        text.textContent = "Couldn't save that pick yet — still connecting. Try again in a moment.";
+      } else if (homeworkSaveError === "invalid_argument") {
+        text.textContent = "Your pick didn't save — you may only have Viewer/Commenter access on this " +
+          "Board. Homework needs at least Contributor access; ask the Board owner to raise it.";
+      } else {
+        text.textContent = "Your pick didn't save (" + homeworkSaveError + ") — try again, or reload the page.";
+      }
+    } else if (!myUserId) {
       text.textContent = "Sign in to save your own homework picks privately.";
     } else if (revealed) {
       var revealedCount = Object.keys(homeworkResponses[myUserId].responses || {}).length;
