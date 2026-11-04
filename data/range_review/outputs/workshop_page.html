@@ -160,6 +160,7 @@ a { color: var(--accent); }
 .summary-btn.active { background: var(--accent); color: var(--accent-fg); }
 .area-group { display: flex; gap: 4px; align-items: center; flex-shrink: 0; }
 .area-group + .area-group { margin-left: 10px; padding-left: 10px; border-left: 1px solid var(--border); }
+.all-layers-chip + .area-group { margin-left: 10px; padding-left: 10px; border-left: 1px solid var(--border); }
 .layer-chip {
   flex-shrink: 0;
   border: 1px solid var(--border);
@@ -655,7 +656,7 @@ textarea.action-note {
 </div>
 
 <div class="board" id="board"></div>
-<div class="empty-state" id="emptyState" hidden>No franchises match this filter in this layer.</div>
+<div class="empty-state" id="emptyState" hidden>No franchises match this filter in the selected layer(s).</div>
 
 <div class="summary-view" id="summaryView" hidden></div>
 
@@ -744,7 +745,11 @@ textarea.action-note {
   }
 
   // ---------- state ----------
-  var state = { layerKey: LAYERS.length ? LAYERS[0].key : null, search: "", sort: "priority",
+  // RR-056 -- layerKeys is a Set, not a single key: the layer-nav chips are now multi-select
+  // (plain click toggles a chip in/out of the active set, several can be on at once), plus a
+  // separate "All layers" chip that selects every one -- per the user's own choice between a
+  // modifier-click and a toggle-mode button, "plain click toggles each chip."
+  var state = { layerKeys: new Set(LAYERS.length ? [LAYERS[0].key] : []), search: "", sort: "priority",
     flagGenerationAge: false, flagNewFranchise: false, minSales2026: null, minGp2026: null,
     tierFilter: new Set(), season: "all", view: "board", homeworkMode: false };
   var decisions = {}; // slug -> {tier, action, updatedAt}
@@ -909,6 +914,24 @@ textarea.action-note {
 
   function renderNav() {
     layerNav.innerHTML = "";
+
+    // RR-056 -- "All layers" chip, selects every layer key at once; active whenever every
+    // layer happens to be selected already (whether reached via this chip or by toggling each
+    // one on individually -- same end state).
+    var allSelected = LAYERS.length > 0 && state.layerKeys.size === LAYERS.length;
+    var allBtn = document.createElement("button");
+    allBtn.type = "button";
+    allBtn.className = "layer-chip all-layers-chip" + (state.view === "board" && allSelected ? " active" : "");
+    allBtn.textContent = "All layers";
+    allBtn.addEventListener("click", function () {
+      state.layerKeys = new Set(LAYERS.map(function (l) { return l.key; }));
+      setView("board");
+      renderNav();
+      renderBoard();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    layerNav.appendChild(allBtn);
+
     var byArea = {};
     LAYERS.forEach(function (l) { (byArea[l.area] = byArea[l.area] || []).push(l); });
     Object.keys(byArea).forEach(function (area) {
@@ -917,15 +940,22 @@ textarea.action-note {
       byArea[area].forEach(function (l) {
         var seasonItems = l.items.filter(function (d) { return matchesSeason(d, state.season); });
         var flagged = seasonItems.some(needsDecision);
+        var selected = state.layerKeys.has(l.key);
         var btn = document.createElement("button");
         btn.type = "button";
-        btn.className = "layer-chip" + (state.view === "board" && l.key === state.layerKey ? " active" : "");
+        btn.className = "layer-chip" + (state.view === "board" && selected ? " active" : "");
         btn.innerHTML = (flagged ? '<span class="chip-flag"></span>' : "") +
           escapeHtml(l.layer) + ' <span class="chip-count">' + seasonItems.length + "</span>";
+        // RR-056 -- plain click toggles this layer in/out of the active set (several layers
+        // can be on at once); refuses to deselect the last remaining one, so the board is
+        // never left showing zero layers.
         btn.addEventListener("click", function () {
-          state.layerKey = l.key;
+          if (selected) {
+            if (state.layerKeys.size > 1) state.layerKeys.delete(l.key);
+          } else {
+            state.layerKeys.add(l.key);
+          }
           setView("board");
-          location.hash = slug(l.layer);
           renderNav();
           renderBoard();
           window.scrollTo({ top: 0, behavior: "smooth" });
@@ -1186,12 +1216,24 @@ textarea.action-note {
   }
 
   function renderBoard() {
-    var current = LAYERS.find(function (l) { return l.key === state.layerKey; });
-    if (!current) { board.innerHTML = ""; layerTitle.textContent = "—"; layerCount.textContent = ""; return; }
+    // RR-056 -- one or more layers selected at once (state.layerKeys is a Set), not a single
+    // current layer. Title reads the single layer's own "Area · Layer" when exactly one is
+    // selected (unchanged from before), "All layers" when every one is, and otherwise a short
+    // "+"-joined list of just the layer names (not area-qualified -- a combined view can span
+    // areas) so it doesn't run on forever when several are picked.
+    var selectedLayers = LAYERS.filter(function (l) { return state.layerKeys.has(l.key); });
+    if (!selectedLayers.length) { board.innerHTML = ""; layerTitle.textContent = "—"; layerCount.textContent = ""; return; }
 
-    layerTitle.textContent = current.area + " · " + current.layer;
+    if (selectedLayers.length === LAYERS.length) {
+      layerTitle.textContent = "All layers";
+    } else if (selectedLayers.length === 1) {
+      layerTitle.textContent = selectedLayers[0].area + " · " + selectedLayers[0].layer;
+    } else {
+      layerTitle.textContent = selectedLayers.map(function (l) { return l.layer; }).join(" + ");
+    }
 
-    var items = current.items.filter(function (d) {
+    var totalInSelection = selectedLayers.reduce(function (n, l) { return n + l.items.length; }, 0);
+    var items = selectedLayers.reduce(function (acc, l) { return acc.concat(l.items); }, []).filter(function (d) {
       if (!matchesSeason(d, state.season)) return false;
       if (state.flagGenerationAge || state.flagNewFranchise) {
         var matchesFlag = (state.flagGenerationAge && d.generationAgeFlag) ||
@@ -1205,7 +1247,7 @@ textarea.action-note {
     });
     items = sortItems(items);
 
-    layerCount.textContent = items.length + " of " + current.items.length + " franchise" + (current.items.length === 1 ? "" : "s");
+    layerCount.textContent = items.length + " of " + totalInSelection + " franchise" + (totalInSelection === 1 ? "" : "s");
     emptyState.hidden = items.length > 0;
     board.innerHTML = items.map(cardHtml).join("");
 
@@ -1253,9 +1295,11 @@ textarea.action-note {
   }
 
   function jumpToFranchise(d) {
-    state.layerKey = LAYERS.find(function (l) {
+    // RR-056 -- narrows the multi-select down to exactly this franchise's own layer, same as
+    // picking a single layer chip would.
+    state.layerKeys = new Set([LAYERS.find(function (l) {
       return l.area === d.businessArea && l.layer === d.layer;
-    }).key;
+    }).key]);
     state.search = d.franchise.toLowerCase();
     searchBox.value = d.franchise;
     setView("board");
@@ -1455,7 +1499,7 @@ textarea.action-note {
     var h = (location.hash || "").slice(1);
     if (!h) return;
     var found = LAYERS.find(function (l) { return slug(l.layer) === h; });
-    if (found) state.layerKey = found.key;
+    if (found) state.layerKeys = new Set([found.key]);
   }
   applyHash();
   window.addEventListener("hashchange", applyHash);
