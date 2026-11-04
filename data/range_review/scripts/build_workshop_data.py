@@ -91,7 +91,15 @@ def compute_suggested_tier(d: dict) -> tuple[str | None, str]:
     trend are no longer part of this logic at all, by user direction: "let me revise"). This
     function is that guidance's one implementation, not a separate copy of it. Precedence
     (first match wins):
-      1. New in FW27/SS28/FW28 (`isNewInSeason`) -> Emerging, unconditionally.
+      1. New FRANCHISE in FW27/SS28/FW28 (`isNewInSeason` and `newKind == "franchise"`) ->
+         Emerging, unconditionally. RR-054 -- deliberately does NOT fire for a new GENERATION
+         of an already-established franchise (`newKind == "generation"`, e.g. "Alert GTX II
+         Jacket"): that franchise has real sales history (RR-037's blended-by-base historical
+         figure rolls up the predecessor generation's sales on purpose), so calling it
+         "Emerging" -- implying unproven, no track record -- misrepresents it. A generation
+         transition falls through to the same sales-based rules below as any other franchise;
+         its historicalSales/2026 figures already reflect the franchise's real, continuing
+         business under the blended-by-base methodology, predecessor generation included.
       2. "New in 2026" -- no recorded sales in 2024 or 2025 (both genuinely absent, not zero)
          but has 2026 sales -- a SALES-based newness signal, independent of rule 1 (catches a
          generation the Product master doesn't clearly date, or a franchise rule 1 doesn't
@@ -107,7 +115,7 @@ def compute_suggested_tier(d: dict) -> tuple[str | None, str]:
          not emerging", the user's own phrasing) -> Exit.
       6. Everything else -> no suggestion (None) -- most franchises will land here under these
          tighter, sales-only thresholds; that's expected, not a bug (see TIERING_GUIDANCE.md)."""
-    if d["isNewInSeason"]:
+    if d["isNewInSeason"] and d.get("newKind") != "generation":
         return "Emerging", f"New in {d['newSeasonLabel']}"
 
     hs = d["historicalSales"] or {}

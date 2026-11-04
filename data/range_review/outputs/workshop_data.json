@@ -156,8 +156,8 @@
     "isNewInSeason": true,
     "newKind": "generation",
     "newSeasonLabel": "FW27",
-    "suggestedTier": "Emerging",
-    "suggestedTierReason": "New in FW27"
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Brand Five Panel Cap",
@@ -1057,8 +1057,8 @@
     "isNewInSeason": true,
     "newKind": "generation",
     "newSeasonLabel": "FW27",
-    "suggestedTier": "Emerging",
-    "suggestedTierReason": "New in FW27"
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Ski Glove",
@@ -1933,8 +1933,8 @@
     "isNewInSeason": true,
     "newKind": "generation",
     "newSeasonLabel": "SS28",
-    "suggestedTier": "Emerging",
-    "suggestedTierReason": "New in SS28"
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Fram 1L",
@@ -8048,8 +8048,8 @@
     "isNewInSeason": true,
     "newKind": "generation",
     "newSeasonLabel": "FW27",
-    "suggestedTier": "Emerging",
-    "suggestedTierReason": "New in FW27"
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Mimic Alert Jacket",
@@ -8181,8 +8181,8 @@
     "isNewInSeason": true,
     "newKind": "generation",
     "newSeasonLabel": "FW27",
-    "suggestedTier": "Emerging",
-    "suggestedTierReason": "New in FW27"
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Mimic Alert 3/4 Pant",
@@ -9690,8 +9690,8 @@
     "isNewInSeason": true,
     "newKind": "generation",
     "newSeasonLabel": "FW27",
-    "suggestedTier": "Emerging",
-    "suggestedTierReason": "New in FW27"
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Hede Shorts",
@@ -9788,8 +9788,8 @@
     "isNewInSeason": true,
     "newKind": "generation",
     "newSeasonLabel": "SS28",
-    "suggestedTier": "Emerging",
-    "suggestedTierReason": "New in SS28"
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Hiking Tights",
@@ -10750,8 +10750,8 @@
     "isNewInSeason": true,
     "newKind": "generation",
     "newSeasonLabel": "SS28",
-    "suggestedTier": "Emerging",
-    "suggestedTierReason": "New in SS28"
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "2026 sales 5,567 units > 5,000, GP% 49% > 45%"
   },
   {
     "base": "Mid Standard Shorts",
@@ -10981,8 +10981,8 @@
     "isNewInSeason": true,
     "newKind": "generation",
     "newSeasonLabel": "FW27",
-    "suggestedTier": "Emerging",
-    "suggestedTierReason": "New in FW27"
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "ROC Lite Slim Pant",
@@ -12551,8 +12551,8 @@
     "isNewInSeason": true,
     "newKind": "generation",
     "newSeasonLabel": "FW27",
-    "suggestedTier": "Emerging",
-    "suggestedTierReason": "New in FW27"
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Rosson Mid Hood",
@@ -13480,7 +13480,7 @@
     "newKind": "generation",
     "newSeasonLabel": "SS28",
     "suggestedTier": "Emerging",
-    "suggestedTierReason": "New in SS28"
+    "suggestedTierReason": "New in 2026 (no 2024/2025 sales recorded)"
   },
   {
     "base": "Alper Proof Jacket",
@@ -14015,8 +14015,8 @@
     "isNewInSeason": true,
     "newKind": "generation",
     "newSeasonLabel": "SS28",
-    "suggestedTier": "Emerging",
-    "suggestedTierReason": "New in SS28"
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Klyva GTX Jacket",
@@ -14116,7 +14116,7 @@
     "newKind": "generation",
     "newSeasonLabel": "SS28",
     "suggestedTier": "Emerging",
-    "suggestedTierReason": "New in SS28"
+    "suggestedTierReason": "New in 2026 (no 2024/2025 sales recorded)"
   },
   {
     "base": "Korp Proof Pant",
@@ -14507,8 +14507,8 @@
     "isNewInSeason": true,
     "newKind": "generation",
     "newSeasonLabel": "SS28",
-    "suggestedTier": "Emerging",
-    "suggestedTierReason": "New in SS28"
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "2026 sales 5,516 units > 5,000, GP% 52% > 45%"
   },
   {
     "base": "L.I.M Airak 2,5L Proof Pant",
@@ -14581,8 +14581,8 @@
     "isNewInSeason": true,
     "newKind": "generation",
     "newSeasonLabel": "SS28",
-    "suggestedTier": "Emerging",
-    "suggestedTierReason": "New in SS28"
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "L.I.M Airak GTX Jacket",
@@ -14891,8 +14891,8 @@
     "isNewInSeason": true,
     "newKind": "generation",
     "newSeasonLabel": "SS28",
-    "suggestedTier": "Emerging",
-    "suggestedTierReason": "New in SS28"
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "L.I.M Light Proof Jacket",
@@ -15115,8 +15115,8 @@
     "isNewInSeason": true,
     "newKind": "generation",
     "newSeasonLabel": "FW27",
-    "suggestedTier": "Emerging",
-    "suggestedTierReason": "New in FW27"
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Latnja GTX Insulated Pant",
@@ -15223,8 +15223,8 @@
     "isNewInSeason": true,
     "newKind": "generation",
     "newSeasonLabel": "FW27",
-    "suggestedTier": "Emerging",
-    "suggestedTierReason": "New in FW27"
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Ljusna Proof Parka",
@@ -18495,8 +18495,8 @@
     "isNewInSeason": true,
     "newKind": "generation",
     "newSeasonLabel": "SS28",
-    "suggestedTier": "Emerging",
-    "suggestedTierReason": "New in SS28"
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Kaise Wool Tee",
@@ -18603,8 +18603,8 @@
     "isNewInSeason": true,
     "newKind": "generation",
     "newSeasonLabel": "SS28",
-    "suggestedTier": "Emerging",
-    "suggestedTierReason": "New in SS28"
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Kaise Wool Tank Top",
@@ -19394,8 +19394,8 @@
     "isNewInSeason": true,
     "newKind": "generation",
     "newSeasonLabel": "SS28",
-    "suggestedTier": "Emerging",
-    "suggestedTierReason": "New in SS28"
+    "suggestedTier": "Exit",
+    "suggestedTierReason": "2026 sales 30 units < 500"
   },
   {
     "base": "Ridge Tee",
@@ -19496,8 +19496,8 @@
     "isNewInSeason": true,
     "newKind": "generation",
     "newSeasonLabel": "SS28",
-    "suggestedTier": "Emerging",
-    "suggestedTierReason": "New in SS28"
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Salo Dress",
@@ -20023,8 +20023,8 @@
     "isNewInSeason": true,
     "newKind": "generation",
     "newSeasonLabel": "SS28",
-    "suggestedTier": "Emerging",
-    "suggestedTierReason": "New in SS28"
+    "suggestedTier": null,
+    "suggestedTierReason": ""
   },
   {
     "base": "Trekk Tech Tee",
@@ -20131,8 +20131,8 @@
     "isNewInSeason": true,
     "newKind": "generation",
     "newSeasonLabel": "SS28",
-    "suggestedTier": "Emerging",
-    "suggestedTierReason": "New in SS28"
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "2026 sales 5,583 units > 5,000, GP% 58% > 45%"
   },
   {
     "base": "Haglöfs L.I.M Horizon GTX Low",
