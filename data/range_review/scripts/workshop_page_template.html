@@ -591,13 +591,21 @@ textarea.action-note {
   border-radius: 8px;
   padding: 8px 10px;
 }
-.homework-pick-row label {
+/* RR-062 -- scoped to .homework-pick-label specifically, not a bare "label" selector: the
+   row now also contains the Consolidate checkbox's own <label class="consolidate-row">, which
+   must keep ITS OWN flex layout, not inherit this heading's block/uppercase styling. */
+.homework-pick-label {
   display: block;
   font-size: 10px;
   color: var(--fg-muted);
   text-transform: uppercase;
   letter-spacing: 0.03em;
   margin-bottom: 4px;
+}
+.homework-pick-row select { width: 100%; }
+.homework-pick-row select + select,
+.homework-pick-row select + .consolidate-row {
+  margin-top: 6px;
 }
 textarea.homework-note {
   width: 100%;
@@ -692,7 +700,7 @@ textarea.homework-note {
 
 <div class="homework-bar" id="homeworkBar" hidden>
   <span id="homeworkBarText"></span>
-  <button class="reveal-btn" id="revealBtn" type="button">Reveal my homework to the team</button>
+  <button class="reveal-btn" id="revealBtn" type="button">Submit my homework to the team</button>
 </div>
 
 <div class="layer-heading">
@@ -910,22 +918,26 @@ textarea.homework-note {
   }
 
   var pendingDraftWrite = null;
-  // RR-060 -- a pick/note made in the brief window right after page load, before `db`/`user`
+  // RR-060 -- a pick made in the brief window right after page load, before `db`/`user`
   // resolve, used to silently no-op here forever: myDraftDoc stayed null, nothing ever retried
-  // creating it, and the dropdown LOOKED like it saved (its own DOM state) while
-  // myHomeworkDraft never got the entry -- found from a real user report where picks reverted
-  // to "0 private picks saved" even though they'd definitely picked something. `homeworkSaveError`
-  // separately surfaces the OTHER failure mode: a write the platform itself rejects (e.g. a
-  // Viewer/Commenter-level visitor, per db.d.ts -- "a view-only or comment-only member has an
-  // id yet cannot write there either") previously reverted silently once the live subscription
-  // re-synced to the true (unwritten) server state, with nothing ever telling the user why.
+  // creating it, and the control LOOKED like it saved (its own DOM state) while
+  // myHomeworkDraft never got the entry. `homeworkSaveError` separately surfaces the OTHER
+  // failure mode: a write the platform itself rejects (e.g. a Viewer/Commenter-level visitor,
+  // per db.d.ts -- "a view-only or comment-only member has an id yet cannot write there
+  // either") previously reverted silently once the live subscription re-synced to the true
+  // (unwritten) server state, with nothing ever telling the user why.
   var homeworkSaveError = null;
-  // RR-059 -- homework now carries a private note alongside the tier pick ("own submission
-  // and own notes before the meeting," per the user). Both are written together so one save
-  // covers whichever field just changed; the entry is dropped only once NEITHER has anything
-  // left in it (a note with no tier yet, or a tier with no note, both still count as "has
-  // homework" for this franchise).
-  function saveHomeworkPick(base, tier, note) {
+  // RR-062 -- homework now mirrors the FULL official decision set (Tier, Last season to sell,
+  // Consolidate, Notes), not just Tier + a note -- per the user, after testing surfaced that
+  // "reveal" being a one-time snapshot (not a live sync) didn't match how they expected this to
+  // work ("I want people to be able to play with it until they submit"). Re-confirmed the
+  // underlying private-draft-then-submit mechanism is what they actually want -- it was the
+  // terminology and the lack of an "unsaved changes" indicator that caused the confusion, not
+  // the mechanism itself, so the architecture (data/users/<id>/ private, submit copies to the
+  // shared homework_responses/{self}) is unchanged; "reveal" is renamed "submit" throughout to
+  // match the user's own vocabulary, and homeworkDraftDiffersFromSubmitted() (below) flags
+  // exactly the gap the user hit -- picking more after an earlier submit, without resubmitting.
+  function saveHomeworkPick(base, tier, lastSeasonToSell, consolidate, action) {
     if (!myDraftDoc) maybeInitMyHomeworkDraft(); // RR-060 -- lazy retry, see note above
     if (!myDraftDoc) {
       homeworkSaveError = "not_ready";
@@ -934,15 +946,22 @@ textarea.homework-note {
     }
     var s = slug(base);
     tier = tier || "";
-    note = note || "";
-    if (tier || note) myHomeworkDraft[s] = { tier: tier, note: note, updatedAt: Date.now() };
-    else delete myHomeworkDraft[s];
+    lastSeasonToSell = lastSeasonToSell || "";
+    action = action || "";
+    consolidate = !!consolidate;
+    if (tier || lastSeasonToSell || consolidate || action) {
+      myHomeworkDraft[s] = { tier: tier, lastSeasonToSell: lastSeasonToSell,
+        consolidate: consolidate, action: action, updatedAt: Date.now() };
+    } else {
+      delete myHomeworkDraft[s];
+    }
     renderBoard(); // optimistic local update
     clearTimeout(pendingDraftWrite);
     pendingDraftWrite = setTimeout(function () {
       myDraftDoc.set({ responses: myHomeworkDraft, updatedAt: Date.now() })
         .then(function () {
-          if (homeworkSaveError) { homeworkSaveError = null; updateHomeworkBar(); }
+          if (homeworkSaveError) { homeworkSaveError = null; }
+          updateHomeworkBar();
         })
         .catch(function (err) {
           console.warn("homework draft save failed", err);
@@ -952,28 +971,41 @@ textarea.homework-note {
     }, 400);
   }
 
-  function revealMyHomework() {
+  function submitMyHomework() {
     if (!myUserId || !sharedHomeworkCol) return;
     sharedHomeworkCol.doc(myUserId).set({ responses: myHomeworkDraft, submittedAt: Date.now() })
       .then(function () { render(); })
       .catch(function (err) {
-        console.warn("reveal failed", err);
-        alert("Reveal failed — see console.");
+        console.warn("submit failed", err);
+        alert("Submit failed — see console.");
       });
   }
 
-  // RR-059 -- per-person entries (not an anonymous tally) across everyone who has revealed
-  // so far (homeworkResponses is openly readable once a person reveals -- see the db-wiring
-  // note above), by user direction: the team wants to see WHOSE pick/note is whose at the
-  // meeting, not just a blind count. [] when nobody has revealed anything for this franchise.
+  // RR-062 -- true once this viewer's current draft has anything a prior submission doesn't
+  // (new picks, or edits to existing ones) -- surfaced in the banner so "I picked more after
+  // submitting" is never silently invisible again (the exact gap the user hit in testing).
+  // A plain string-equality check is enough here: both sides are built by this same code with
+  // a fixed field order, so it never produces a false positive/negative between them.
+  function homeworkDraftDiffersFromSubmitted() {
+    if (!myUserId) return false;
+    var submitted = JSON.stringify((homeworkResponses[myUserId] && homeworkResponses[myUserId].responses) || {});
+    var current = JSON.stringify(myHomeworkDraft || {});
+    return submitted !== current;
+  }
+
+  // RR-059/RR-062 -- per-person entries (not an anonymous tally) across everyone who has
+  // submitted so far (homeworkResponses is openly readable once a person submits -- see the
+  // db-wiring note above): the team wants to see WHOSE pick/note is whose at the meeting, not
+  // just a blind count. [] when nobody has submitted anything for this franchise.
   function homeworkEntriesFor(base) {
     var s = slug(base);
     var entries = [];
     Object.keys(homeworkResponses).forEach(function (uid) {
       var r = homeworkResponses[uid] && homeworkResponses[uid].responses;
       var entry = r && r[s];
-      if (!entry || (!entry.tier && !entry.note)) return;
-      entries.push({ uid: uid, tier: entry.tier || "", note: entry.note || "" });
+      if (!entry || (!entry.tier && !entry.lastSeasonToSell && !entry.consolidate && !entry.action)) return;
+      entries.push({ uid: uid, tier: entry.tier || "", lastSeasonToSell: entry.lastSeasonToSell || "",
+        consolidate: !!entry.consolidate, action: entry.action || "" });
     });
     return entries;
   }
@@ -987,7 +1019,8 @@ textarea.homework-note {
     bar.classList.toggle("error", !!homeworkSaveError);
     if (!state.homeworkMode) return;
     var n = Object.keys(myHomeworkDraft).length;
-    var revealed = myUserId && homeworkResponses[myUserId];
+    var submitted = myUserId && homeworkResponses[myUserId];
+    var hasUnsubmittedChanges = homeworkDraftDiffersFromSubmitted();
     // RR-060 -- surfaces a save failure directly in the banner, rather than reverting silently
     // once the live subscription re-syncs to the true (unwritten) server state. "not_ready"
     // (couldn't even start the write) and "invalid_argument" (the platform's own db capability
@@ -996,23 +1029,29 @@ textarea.homework-note {
     // anything else falls back to a generic retry message with the raw code for diagnosis.
     if (homeworkSaveError) {
       if (homeworkSaveError === "not_ready") {
-        text.textContent = "Couldn't save that pick yet — still connecting. Try again in a moment.";
+        text.textContent = "Couldn't save that yet — still connecting. Try again in a moment.";
       } else if (homeworkSaveError === "invalid_argument") {
-        text.textContent = "Your pick didn't save — you may only have Viewer/Commenter access on this " +
+        text.textContent = "Your entry didn't save — you may only have Viewer/Commenter access on this " +
           "Board. Homework needs at least Contributor access; ask the Board owner to raise it.";
       } else {
-        text.textContent = "Your pick didn't save (" + homeworkSaveError + ") — try again, or reload the page.";
+        text.textContent = "Your entry didn't save (" + homeworkSaveError + ") — try again, or reload the page.";
       }
     } else if (!myUserId) {
-      text.textContent = "Sign in to save your own homework picks privately.";
-    } else if (revealed) {
-      var revealedCount = Object.keys(homeworkResponses[myUserId].responses || {}).length;
-      text.textContent = "You've revealed " + revealedCount + " pick" + (revealedCount === 1 ? "" : "s") +
-        " to the team. Pick more, then reveal again to update.";
+      text.textContent = "Sign in to save your own homework entries privately.";
+    } else if (submitted && hasUnsubmittedChanges) {
+      // RR-062 -- the exact state the user hit: already submitted once, then kept picking,
+      // without realizing the team still only sees the OLDER submission.
+      text.textContent = "You've changed entries since your last submission — the team still only " +
+        "sees what you submitted before. Submit again to update it.";
+    } else if (submitted) {
+      var submittedCount = Object.keys(homeworkResponses[myUserId].responses || {}).length;
+      text.textContent = "You've submitted " + submittedCount + " entr" + (submittedCount === 1 ? "y" : "ies") +
+        " to the team — up to date.";
     } else {
-      text.textContent = n + " private pick" + (n === 1 ? "" : "s") +
-        " saved so far — nobody else can see these, not even the Board owner, until you reveal.";
+      text.textContent = n + " franchise" + (n === 1 ? "" : "s") +
+        " filled in so far — nobody else can see these, not even the Board owner, until you submit.";
     }
+    btn.textContent = submitted && hasUnsubmittedChanges ? "Submit updated homework to the team" : "Submit my homework to the team";
     btn.disabled = !myUserId || n === 0;
   }
 
@@ -1137,8 +1176,11 @@ textarea.homework-note {
     var tier = dec.tier || "";
     var lastSeason = dec.lastSeasonToSell || "";
     var consolidate = !!dec.consolidate;
-    var myPick = (myHomeworkDraft[id] && myHomeworkDraft[id].tier) || "";
-    var myHomeworkNote = (myHomeworkDraft[id] && myHomeworkDraft[id].note) || "";
+    var myHw = myHomeworkDraft[id] || {};
+    var myPick = myHw.tier || "";
+    var myHwLastSeason = myHw.lastSeasonToSell || "";
+    var myHwConsolidate = !!myHw.consolidate;
+    var myHomeworkNote = myHw.action || "";
     var hwEntries = homeworkEntriesFor(d.base);
     var seasons = [];
     if (d.activeFW27) seasons.push("FW27");
@@ -1227,33 +1269,45 @@ textarea.homework-note {
           alerts +
           activity +
           '<div class="decision">' +
-            // RR-059 -- team homework now shows WHO picked/wrote what, not an anonymous tally
-            // (per user direction: "see WHO submitted each pick/note"), shown whenever anyone
-            // has revealed for this franchise, independent of Homework mode being on -- same
-            // spirit as the rule-based "Suggested" hint. Resolving uid -> name needs the
-            // `profiles()` lookup to have come back already (profileNames, refreshed on every
-            // homeworkResponses change) -- falls back to "Someone" for an id not yet resolved,
-            // same as the user capability's own documented fallback.
+            // RR-059/RR-062 -- team homework shows WHO submitted what, across the FULL decision
+            // set (Tier, Last season to sell, Consolidate, Notes), not an anonymous tally and
+            // not Tier-only. Shown whenever anyone has submitted for this franchise, independent
+            // of Homework mode being on -- same spirit as the rule-based "Suggested" hint.
+            // Resolving uid -> name needs the `profiles()` lookup to have come back already
+            // (profileNames, refreshed on every homeworkResponses change) -- falls back to
+            // "Someone" for an id not yet resolved, same as the user capability's own
+            // documented fallback.
             (hwEntries.length
               ? '<div class="hint-row homework-tally">Team homework (' + hwEntries.length + '):<br>' +
                 hwEntries.map(function (e) {
                   var name = (profileNames[e.uid] && profileNames[e.uid].name) || "Someone";
+                  var parts = [];
+                  parts.push(e.tier ? escapeHtml(e.tier) : '<span class="muted">no tier yet</span>');
+                  if (e.lastSeasonToSell) parts.push("Last season: " + escapeHtml(e.lastSeasonToSell));
+                  if (e.consolidate) parts.push("Consolidate");
                   return '<span class="homework-entry"><strong>' + escapeHtml(name) + ':</strong> ' +
-                    (e.tier ? escapeHtml(e.tier) : '<span class="muted">no pick yet</span>') +
-                    (e.note ? " — " + escapeHtml(e.note) : "") + "</span>";
+                    parts.join(" · ") + (e.action ? " — " + escapeHtml(e.action) : "") + "</span>";
                 }).join("<br>") +
                 "</div>"
               : "") +
-            // RR-053/RR-059 -- this viewer's own private pick + note, visible only in Homework
-            // mode. Writes to data/users/<id>/homework, sealed from everyone else until this
-            // person reveals.
+            // RR-053/RR-062 -- this viewer's own private submission, the FULL decision set
+            // (Tier, Last season to sell, Consolidate, Notes), visible only in Homework mode.
+            // Writes to data/users/<id>/homework, sealed from everyone else until this person
+            // submits.
             (state.homeworkMode
-              ? '<div class="homework-pick-row"><label>Your pick (private until you reveal)</label>' +
+              ? '<div class="homework-pick-row"><label class="homework-pick-label">Your submission (private until you submit)</label>' +
                 '<select class="tier-select homework-select" data-tier="' + myPick + '">' +
                   ["", "Hero", "Harvest", "Emerging", "Exit"].map(function (t) {
-                    return '<option value="' + t + '"' + (t === myPick ? " selected" : "") + ">" + (t || "No pick yet…") + "</option>";
+                    return '<option value="' + t + '"' + (t === myPick ? " selected" : "") + ">" + (t || "No tier yet…") + "</option>";
                   }).join("") +
                 "</select>" +
+                '<select class="season-select homework-season-select" data-last-season="' + myHwLastSeason + '">' +
+                  LAST_SEASON_OPTIONS.map(function (s) {
+                    return '<option value="' + s + '"' + (s === myHwLastSeason ? " selected" : "") + ">" + (s || "Last season to sell…") + "</option>";
+                  }).join("") +
+                "</select>" +
+                '<label class="consolidate-row"><input type="checkbox" class="homework-consolidate-check"' +
+                  (myHwConsolidate ? " checked" : "") + '> Consolidate with other models</label>' +
                 '<textarea class="homework-note" placeholder="Your notes (private)…">' + escapeHtml(myHomeworkNote) + "</textarea>" +
                 "</div>"
               : "") +
@@ -1378,29 +1432,46 @@ textarea.homework-note {
     board.querySelectorAll(".card").forEach(function (card) {
       var base = card.getAttribute("data-base");
       var franchise = card.querySelector(".card-title").textContent;
-      // RR-059 -- scoped to ".decision-row .tier-select": a plain ".tier-select" query also
-      // matches the homework pick's own select (it reuses the same class for its data-tier
-      // colour styling, RR-053), which sits EARLIER in the card's markup than the official
+      // RR-059/RR-062 -- scoped to ".decision-row ...": an unscoped ".tier-select"/".season-
+      // select" query also matches the homework submission's own controls (they reuse the same
+      // classes for shared styling), which sit EARLIER in the card's markup than the official
       // decision-row -- in Homework mode, an unscoped query here was silently grabbing the
-      // homework select instead of the official one, breaking the official Tier dropdown's
-      // own save wiring. Pre-existing since RR-053, found while adding the notes field below.
+      // homework control instead of the official one, breaking the official field's own save
+      // wiring. Pre-existing since RR-053 for the tier select; the season select gained the
+      // same risk once homework grew its own season select (RR-062) and is scoped the same way.
       var select = card.querySelector(".decision-row .tier-select");
-      var seasonSelect = card.querySelector(".season-select");
+      var seasonSelect = card.querySelector(".decision-row .season-select");
+      // .consolidate-check/.action-note already have unique class names (homework's own
+      // controls are .homework-consolidate-check/.homework-note) -- no scoping needed here.
       var consolidateCheck = card.querySelector(".consolidate-check");
       var textarea = card.querySelector(".action-note");
       var homeworkSelect = card.querySelector(".homework-select");
+      var homeworkSeasonSelect = card.querySelector(".homework-season-select");
+      var homeworkConsolidateCheck = card.querySelector(".homework-consolidate-check");
       var homeworkNote = card.querySelector(".homework-note");
+      // RR-062 -- homework now saves the full decision set together, same "whichever field
+      // changed, save all four" pattern as the official decision fields below.
+      function saveHomework() {
+        saveHomeworkPick(base,
+          homeworkSelect ? homeworkSelect.value : "",
+          homeworkSeasonSelect ? homeworkSeasonSelect.value : "",
+          homeworkConsolidateCheck ? homeworkConsolidateCheck.checked : false,
+          homeworkNote ? homeworkNote.value : "");
+      }
       if (homeworkSelect) {
         homeworkSelect.addEventListener("change", function () {
           homeworkSelect.setAttribute("data-tier", homeworkSelect.value);
-          saveHomeworkPick(base, homeworkSelect.value, homeworkNote ? homeworkNote.value : "");
+          saveHomework();
         });
       }
-      if (homeworkNote) {
-        homeworkNote.addEventListener("input", function () {
-          saveHomeworkPick(base, homeworkSelect ? homeworkSelect.value : "", homeworkNote.value);
+      if (homeworkSeasonSelect) {
+        homeworkSeasonSelect.addEventListener("change", function () {
+          homeworkSeasonSelect.setAttribute("data-last-season", homeworkSeasonSelect.value);
+          saveHomework();
         });
       }
+      if (homeworkConsolidateCheck) homeworkConsolidateCheck.addEventListener("change", saveHomework);
+      if (homeworkNote) homeworkNote.addEventListener("input", saveHomework);
       select.addEventListener("change", function () {
         select.setAttribute("data-tier", select.value);
         saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value, consolidateCheck.checked);
@@ -1595,7 +1666,7 @@ textarea.homework-note {
     renderBoard();
   });
   document.getElementById("revealBtn").addEventListener("click", function () {
-    revealMyHomework();
+    submitMyHomework();
   });
   document.getElementById("minSales2026").addEventListener("input", function (e) {
     state.minSales2026 = e.target.value === "" ? null : Number(e.target.value);
