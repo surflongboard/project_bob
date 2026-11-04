@@ -72,7 +72,7 @@ GENERATION_AGE_FLAG_SEASONS = 4  # RR-029/IP-011/RR-030 -- no confirmed renewal 
                                   # call for both the card alert and the "Generation age" toggle,
                                   # not a business rule -- adjust freely.
 
-TIER_HERO_MIN_UNITS = 10_000  # RR-049 -- user-set 3-Nov-2026 (replaced RR-048's Core/GP% rules)
+TIER_HERO_MIN_UNITS = 7_000  # RR-082 -- lowered from 10,000, user-set 4-Nov-2026
 TIER_HERO_MIN_GP_PCT = 50.0  # RR-051 -- lowered from 55.0, user-set 3-Nov-2026
 TIER_HARVEST_MIN_UNITS = 3_000  # RR-080 -- lowered from 5,000, user-set 4-Nov-2026
 TIER_HARVEST_MIN_GP_PCT = 45.0
@@ -111,8 +111,8 @@ def compute_suggested_tier(d: dict) -> tuple[str | None, str]:
          settled the way the other three are.
       4. 2026 units > TIER_HARVEST_MIN_UNITS AND 2026 GP% > TIER_HARVEST_MIN_GP_PCT -> Harvest.
          Checked after Hero (not before) so a franchise clearing BOTH bars gets the stronger
-         Hero call, not Harvest -- Harvest's bar is strictly looser (3k/45% vs Hero's 10k/50%,
-         RR-080 -- lowered from 5k).
+         Hero call, not Harvest -- Harvest's bar is strictly looser (3k/45% vs Hero's 7k/50%,
+         RR-080 -- lowered from 5k; RR-082 lowered Hero's own units bar 10k->7k).
       5. 2026 units < TIER_EXIT_MAX_UNITS OR 2026 GP% < TIER_EXIT_MAX_GP_PCT (and not already
          Emerging via rule 1 or 2 -- "that are not emerging", the user's own phrasing) -> Exit.
          RR-080 -- added the GP% leg (user: "Exit sales under 500 unit or GP percentage under

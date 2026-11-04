@@ -10180,8 +10180,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": "Harvest",
-    "suggestedTierReason": "2026 sales 7,765 units > 3,000, GP% 53% > 45%"
+    "suggestedTier": "Hero",
+    "suggestedTierReason": "2026 sales 7,765 units > 7,000, GP% 53% > 50% -- confirm with team"
   },
   {
     "base": "ROC Flash Down Jacket",
@@ -10970,7 +10970,7 @@
     "newKind": null,
     "newSeasonLabel": null,
     "suggestedTier": "Hero",
-    "suggestedTierReason": "2026 sales 21,742 units > 10,000, GP% 60% > 50% -- confirm with team"
+    "suggestedTierReason": "2026 sales 21,742 units > 7,000, GP% 60% > 50% -- confirm with team"
   },
   {
     "base": "Särna Mimic Vest",
@@ -11125,7 +11125,7 @@
     "newKind": null,
     "newSeasonLabel": null,
     "suggestedTier": "Hero",
-    "suggestedTierReason": "2026 sales 14,683 units > 10,000, GP% 55% > 50% -- confirm with team"
+    "suggestedTierReason": "2026 sales 14,683 units > 7,000, GP% 55% > 50% -- confirm with team"
   },
   {
     "base": "Alert Mid Shorts",
@@ -13914,7 +13914,7 @@
     "newKind": null,
     "newSeasonLabel": null,
     "suggestedTier": "Hero",
-    "suggestedTierReason": "2026 sales 37,271 units > 10,000, GP% 59% > 50% -- confirm with team"
+    "suggestedTierReason": "2026 sales 37,271 units > 7,000, GP% 59% > 50% -- confirm with team"
   },
   {
     "base": "Funäs Pile Hood",
@@ -14290,8 +14290,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": "Harvest",
-    "suggestedTierReason": "2026 sales 7,905 units > 3,000, GP% 56% > 45%"
+    "suggestedTier": "Hero",
+    "suggestedTierReason": "2026 sales 7,905 units > 7,000, GP% 56% > 50% -- confirm with team"
   },
   {
     "base": "Korp Mid Jacket",
@@ -15444,8 +15444,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": "Harvest",
-    "suggestedTierReason": "2026 sales 7,309 units > 3,000, GP% 56% > 45%"
+    "suggestedTier": "Hero",
+    "suggestedTierReason": "2026 sales 7,309 units > 7,000, GP% 56% > 50% -- confirm with team"
   },
   {
     "base": "Swook Mid Hood",
@@ -16688,8 +16688,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": "Harvest",
-    "suggestedTierReason": "2026 sales 9,971 units > 3,000, GP% 55% > 45%"
+    "suggestedTier": "Hero",
+    "suggestedTierReason": "2026 sales 9,971 units > 7,000, GP% 55% > 50% -- confirm with team"
   },
   {
     "base": "Front Proof Jacket",
@@ -17321,8 +17321,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": "Harvest",
-    "suggestedTierReason": "2026 sales 9,440 units > 3,000, GP% 59% > 45%"
+    "suggestedTier": "Hero",
+    "suggestedTierReason": "2026 sales 9,440 units > 7,000, GP% 59% > 50% -- confirm with team"
   },
   {
     "base": "L.I.M Airak 2,5L Jacket",
