@@ -779,6 +779,19 @@ textarea.homework-note {
     return base.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 120) || "franchise";
   }
 
+  // RR-065 -- plain-data deep clone (no functions/dates in anything this is used on, so
+  // JSON round-trip is safe and simple). Used at every db read/write boundary for homework
+  // state to guarantee no two of {myHomeworkDraft, a db write body, a snapshot's delivered
+  // data} ever alias the SAME mutable object -- found via a live reproduction (see RR-065's
+  // register entry) that myHomeworkDraft was being passed BY REFERENCE into db.set() calls
+  // and reassigned by reference from onSnapshot callbacks, so a LATER mutation to
+  // myHomeworkDraft (a new pick) silently mutated what had already been submitted too,
+  // through the shared object -- which is exactly why the "submitted vs. current draft"
+  // diff never detected a real difference: both sides ended up pointing at the same object.
+  function deepClone(obj) {
+    return JSON.parse(JSON.stringify(obj));
+  }
+
   function needsDecision(d) {
     // availableStockTail dropped 3-Nov-2026 (RR-031, overstock moved to Inventory Planning).
     // hasForecastDiscrepancy dropped same day (RR-033, being resolved separately) -- no
@@ -900,7 +913,7 @@ textarea.homework-note {
         var next = {};
         snap.docs.forEach(function (doc) {
           var data = doc.data();
-          if (data) next[doc.id] = data;
+          if (data) next[doc.id] = deepClone(data); // RR-065 -- never alias a delivered snapshot
         });
         homeworkResponses = next;
         refreshHomeworkProfiles();
@@ -945,7 +958,7 @@ textarea.homework-note {
     if (homeworkSaveError === "not_ready") { homeworkSaveError = null; updateHomeworkBar(); }
     myDraftDoc.onSnapshot(function (doc) {
       var data = doc && doc.exists ? doc.data() : null;
-      myHomeworkDraft = (data && data.responses) || {};
+      myHomeworkDraft = deepClone((data && data.responses) || {}); // RR-065 -- never alias a delivered snapshot
       requestRender(); // RR-063 -- don't clobber an in-progress edit elsewhere on the board
     }, function (err) {
       console.warn("homework draft subscription error", err);
@@ -1018,7 +1031,9 @@ textarea.homework-note {
     updateHomeworkBar();
     clearTimeout(pendingDraftWrite);
     pendingDraftWrite = setTimeout(function () {
-      myDraftDoc.set({ responses: myHomeworkDraft, updatedAt: Date.now() })
+      // RR-065 -- deepClone: myHomeworkDraft keeps getting mutated by later picks, so the
+      // write body must be a snapshot taken NOW, not a live reference to the same object.
+      myDraftDoc.set({ responses: deepClone(myHomeworkDraft), updatedAt: Date.now() })
         .then(function () {
           if (homeworkSaveError) { homeworkSaveError = null; }
           updateHomeworkBar();
@@ -1033,7 +1048,13 @@ textarea.homework-note {
 
   function submitMyHomework() {
     if (!myUserId || !sharedHomeworkCol) return;
-    sharedHomeworkCol.doc(myUserId).set({ responses: myHomeworkDraft, submittedAt: Date.now() })
+    // RR-065 -- THE actual bug behind the submit/"up to date" confusion: this used to pass
+    // myHomeworkDraft BY REFERENCE, so a pick made minutes later (mutating the same object)
+    // silently changed what looked like the already-submitted data too -- the "has this
+    // changed since I last submitted" check compared the SAME object to itself and always
+    // found no difference, no matter how much was actually picked afterward. Confirmed with
+    // a live reproduction (mock db + Playwright) before writing this fix.
+    sharedHomeworkCol.doc(myUserId).set({ responses: deepClone(myHomeworkDraft), submittedAt: Date.now() })
       .then(function () { render(); })
       .catch(function (err) {
         console.warn("submit failed", err);
