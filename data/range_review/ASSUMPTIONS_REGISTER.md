@@ -168,6 +168,8 @@ each card — `build_workshop_data.py` imports it cross-workstream.
 
 | RR-076 | Portfolio Analysis | "Suggested tier" definition box (RR-074) moved from top-right of `.page-header-top` to its own block below the description paragraph | **Confirmed** (user-directed, 4-Nov-2026 — "Layout looks bad. Can you just put it below the general description 'FW27/SS28'") | RR-074's box, squeezed into the H1/Homework-mode-toggle flex row via `margin-left: auto`, read poorly there per the user. Moved it to a plain block directly under the `<p>` description, matching that paragraph's own `max-width: 70ch` instead of a narrow floated box pinned to the corner — no change to its content, colors, or the underlying tiering logic it describes. | Changed 4-Nov-2026. Template-only. Published as Board version 73. |
 
+| RR-077 | Portfolio Analysis | Page description paragraph's "(its SKU-level figures don't match Buying's FC1 MOQ check below — RR-023, Open)" aside removed | **Confirmed** (user-directed, 4-Nov-2026 — "Take out: (it's SKU-level…)") | Dropped the parenthetical aside from the Forecast Units/GP% clause of the page-header `<p>`; the sentence now reads "...Forecast Units/GP% from the FW27 FC3 forecast and the SS28 FC1 forecast file; MOQ shortfalls from..." with no other wording changed. RR-023 itself (the underlying SKU-level vs. MOQ-check figure mismatch) is untouched — this is a display-text trim only, not a resolution of that Open item; still tracked wherever RR-023 is otherwise referenced. | Changed 4-Nov-2026. Template-only. Published as Board version 74. |
+
 ---
 
 ## Next steps (as of 29 Oct 2026)
