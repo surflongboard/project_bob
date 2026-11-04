@@ -586,6 +586,24 @@ textarea.action-note {
   white-space: nowrap;
 }
 .reveal-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.homework-bar-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+/* RR-064 -- per-account CSV export, a robust fallback alongside the live "submit to team"
+   sync: reads this viewer's own already-working private draft and downloads it directly, no
+   shared-collection round trip involved at all. */
+.export-btn {
+  border: 1px solid var(--border);
+  background: var(--bg-raised);
+  color: var(--fg);
+  border-radius: 8px;
+  padding: 7px 14px;
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.export-btn:hover { border-color: var(--accent); color: var(--accent); }
+.export-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 .homework-pick-row {
   border: 1px dashed var(--accent);
   border-radius: 8px;
@@ -700,7 +718,10 @@ textarea.homework-note {
 
 <div class="homework-bar" id="homeworkBar" hidden>
   <span id="homeworkBarText"></span>
-  <button class="reveal-btn" id="revealBtn" type="button">Submit my homework to the team</button>
+  <span class="homework-bar-actions">
+    <button class="export-btn" id="exportHomeworkBtn" type="button">Export my homework (CSV)</button>
+    <button class="reveal-btn" id="revealBtn" type="button">Submit my homework to the team</button>
+  </span>
 </div>
 
 <div class="layer-heading">
@@ -907,6 +928,15 @@ textarea.homework-note {
     }
   })();
 
+  var downloadsModule = null;
+  (async function initDownloads() {
+    try {
+      downloadsModule = await claude.use("downloads"); // RR-064 -- used by exportMyHomeworkCsv()
+    } catch (e) {
+      console.warn("downloads capability unavailable", e);
+    }
+  })();
+
   function maybeInitMyHomeworkDraft() {
     if (!dbModule || !myUserId || myDraftDoc) return;
     myDraftDoc = dbModule.doc("data/users/" + myUserId + "/homework");
@@ -1011,6 +1041,44 @@ textarea.homework-note {
       });
   }
 
+  // RR-064 -- a robust fallback alongside "Submit to the team": reads THIS viewer's own
+  // private draft (myHomeworkDraft -- already proven to fill in correctly, independent of the
+  // separate shared-submit sync that testing found unreliable) and downloads it directly as a
+  // CSV, no shared-collection round trip at all. Each person can bring/send their own file.
+  function csvField(v) {
+    var s = String(v == null ? "" : v);
+    if (/[",\r\n]/.test(s)) s = '"' + s.replace(/"/g, '""') + '"';
+    return s;
+  }
+  function exportMyHomeworkCsv() {
+    if (!downloadsModule) {
+      alert("Export isn't available in this view.");
+      return;
+    }
+    var bySlug = {};
+    DATA.forEach(function (d) { bySlug[slug(d.base)] = d; });
+    var rows = [["Franchise", "Business Area", "Layer", "Tier", "Last season to sell", "Consolidate", "Notes"]];
+    Object.keys(myHomeworkDraft).sort().forEach(function (s) {
+      var entry = myHomeworkDraft[s];
+      var d = bySlug[s];
+      rows.push([
+        d ? d.franchise : s,
+        d ? d.businessArea : "",
+        d ? d.layer : "",
+        entry.tier || "",
+        entry.lastSeasonToSell || "",
+        entry.consolidate ? "Yes" : "No",
+        entry.action || "",
+      ]);
+    });
+    var csv = rows.map(function (r) { return r.map(csvField).join(","); }).join("\r\n");
+    var filename = "my_homework_" + new Date().toISOString().slice(0, 10) + ".csv";
+    downloadsModule.save({ filename: filename, data: csv }).catch(function (err) {
+      console.warn("export failed", err);
+      if (err && err.code !== "declined") alert("Export failed — see console.");
+    });
+  }
+
   // RR-062 -- true once this viewer's current draft has anything a prior submission doesn't
   // (new picks, or edits to existing ones) -- surfaced in the banner so "I picked more after
   // submitting" is never silently invisible again (the exact gap the user hit in testing).
@@ -1083,6 +1151,8 @@ textarea.homework-note {
     }
     btn.textContent = submitted && hasUnsubmittedChanges ? "Submit updated homework to the team" : "Submit my homework to the team";
     btn.disabled = !myUserId || n === 0;
+    var exportBtn = document.getElementById("exportHomeworkBtn");
+    if (exportBtn) exportBtn.disabled = n === 0;
   }
 
   // ---------- rendering ----------
@@ -1712,6 +1782,9 @@ textarea.homework-note {
   });
   document.getElementById("revealBtn").addEventListener("click", function () {
     submitMyHomework();
+  });
+  document.getElementById("exportHomeworkBtn").addEventListener("click", function () {
+    exportMyHomeworkCsv();
   });
   document.getElementById("minSales2026").addEventListener("input", function (e) {
     state.minSales2026 = e.target.value === "" ? null : Number(e.target.value);
