@@ -118,6 +118,11 @@ a { color: var(--accent); }
 }
 .page-header h1 { font-size: 26px; font-weight: 700; letter-spacing: -0.01em; }
 .page-header p { color: var(--fg-muted); margin: 6px 0 0; font-size: 13.5px; max-width: 70ch; }
+/* RR-066 -- "Homework mode" moved next to the title for visibility, per the user: it's a mode
+   switch for the whole page, not just another board filter, so it reads better beside the H1
+   than buried among the toolbar's per-card filter toggles (where it still functioned fine, just
+   wasn't prominent). */
+.page-header-top { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 .source-note { color: var(--fg-muted); font-size: 12px; margin-top: 10px; }
 
 /* ---- sticky layer nav ---- */
@@ -664,13 +669,24 @@ textarea.homework-note {
 </div>
 
 <div class="page-header">
-  <h1>Range Review Board</h1>
+  <div class="page-header-top">
+    <h1>Range Review Board</h1>
+    <button class="toggle-btn" id="homeworkModeToggle" type="button">Homework mode</button>
+  </div>
   <p>FW27/SS28 franchises by layer, for the Nov 12 Range Review Workshop. Each card pulls together: price and
     margin target from the FW27/SS28 range files; Forecast Qty/GP% from the FW27 FC3 forecast and the SS28 FC1
     forecast file (its SKU-level figures don't match Buying's FC1 MOQ check below — RR-023, Open); MOQ
     shortfalls from Buying's SS28 FC1 check; and leftover-stock flags from the Inventory Manager's SS27 stock
     position. Tier, Last season to sell, Consolidate and Action notes are captured live here and shared with
     everyone viewing this page.</p>
+</div>
+
+<div class="homework-bar" id="homeworkBar" hidden>
+  <span id="homeworkBarText"></span>
+  <span class="homework-bar-actions">
+    <button class="export-btn" id="exportHomeworkBtn" type="button">Export my homework (CSV)</button>
+    <button class="reveal-btn" id="revealBtn" type="button">Submit my homework to the team</button>
+  </span>
 </div>
 
 <div class="toolbar">
@@ -694,7 +710,6 @@ textarea.homework-note {
     <button class="toggle-btn" id="newFranchiseToggle" type="button">New franchise</button>
     <button class="toggle-btn" id="absToggle" type="button">ABS</button>
     <button class="toggle-btn" id="asiaFitToggle" type="button">Asia Fit</button>
-    <button class="toggle-btn" id="homeworkModeToggle" type="button">Homework mode</button>
     <div class="threshold-group">
       <label for="minSales2026">2026 Sales ≥</label>
       <input type="number" id="minSales2026" class="threshold-input" placeholder="e.g. 10000" min="0" step="100">
@@ -714,14 +729,6 @@ textarea.homework-note {
       </div>
     </div>
   </div>
-</div>
-
-<div class="homework-bar" id="homeworkBar" hidden>
-  <span id="homeworkBarText"></span>
-  <span class="homework-bar-actions">
-    <button class="export-btn" id="exportHomeworkBtn" type="button">Export my homework (CSV)</button>
-    <button class="reveal-btn" id="revealBtn" type="button">Submit my homework to the team</button>
-  </span>
 </div>
 
 <div class="layer-heading">
