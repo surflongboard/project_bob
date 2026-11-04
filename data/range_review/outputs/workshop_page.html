@@ -148,6 +148,11 @@ a { color: var(--accent); }
 .tier-definition-box .tdb-tier-harvest { color: var(--tier-harvest); font-weight: 600; }
 .tier-definition-box .tdb-tier-emerging { color: var(--tier-emerging); font-weight: 600; }
 .tier-definition-box .tdb-tier-exit { color: var(--tier-exit); font-weight: 600; }
+.tier-definition-box .tdb-tier-none { font-weight: 600; }
+/* RR-079 -- per-tier franchise count, computed from the full dataset at load (same as the
+   footer-note counts below) and injected as "(N)" next to each tier's name -- a live outcome
+   next to the rule that produces it, not just the rule's description on its own. */
+.tier-definition-box .tdb-count { font-family: "IBM Plex Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; }
 .tier-definition-box .tdb-foot { display: block; margin-top: 4px; font-style: italic; }
 
 /* ---- sticky layer nav ---- */
@@ -747,12 +752,13 @@ textarea.homework-note {
   <div class="tier-definition-box">
     <span class="tdb-title">Suggested tier — how it's computed</span>
     <ul>
-      <li><span class="tdb-tier-emerging">Emerging</span> — new franchise this season, or no 2024/2025 sales but 2026 sales exist</li>
-      <li><span class="tdb-tier-hero">Hero</span> — 2026 sales &gt;10,000 units and GP% &gt;50% (confirm with team)</li>
-      <li><span class="tdb-tier-harvest">Harvest</span> — 2026 sales &gt;5,000 units and GP% &gt;45%</li>
-      <li><span class="tdb-tier-exit">Exit</span> — 2026 sales &lt;500 units</li>
+      <li><span class="tdb-tier-emerging">Emerging</span> <span class="tdb-count" id="tdbCountEmerging"></span> — new franchise this season, or no 2024/2025 sales but 2026 sales exist</li>
+      <li><span class="tdb-tier-hero">Hero</span> <span class="tdb-count" id="tdbCountHero"></span> — 2026 sales &gt;10,000 units and GP% &gt;50% (confirm with team)</li>
+      <li><span class="tdb-tier-harvest">Harvest</span> <span class="tdb-count" id="tdbCountHarvest"></span> — 2026 sales &gt;5,000 units and GP% &gt;45%</li>
+      <li><span class="tdb-tier-exit">Exit</span> <span class="tdb-count" id="tdbCountExit"></span> — 2026 sales &lt;500 units</li>
+      <li><span class="tdb-tier-none">No suggestion</span> <span class="tdb-count" id="tdbCountNone"></span> — none of these rules match</li>
     </ul>
-    <span class="tdb-foot">Blank = none of these rules match. This is a hint only — Tier is always your own call.</span>
+    <span class="tdb-foot">This is a hint only — Tier is always your own call.</span>
   </div>
 </div>
 
@@ -2171,6 +2177,20 @@ textarea.homework-note {
     DATA.filter(function (d) { return d.generationAgeFlag; }).length + " with an aging current generation (IP-011) · " +
     DATA.filter(function (d) { return d.isNewInSeason; }).length + " new in FW27/SS28/FW28 · " +
     "data as of 29 Oct 2026";
+
+  // RR-079 -- "Suggested tier" definition box: show each rule's actual outcome (how many
+  // franchises land there today) next to its description, not just the rule on its own.
+  // Computed once across the FULL dataset (same as the footer-note counts above), not scoped
+  // to the current season/layer filter -- this box is a general reference for the rule, same
+  // spirit as the footer note just above it.
+  (function () {
+    var tdbCounts = { Hero: 0, Harvest: 0, Emerging: 0, Exit: 0, "": 0 };
+    DATA.forEach(function (d) { tdbCounts[d.suggestedTier || ""]++; });
+    ["Hero", "Harvest", "Emerging", "Exit"].forEach(function (t) {
+      document.getElementById("tdbCount" + t).textContent = "(" + tdbCounts[t] + ")";
+    });
+    document.getElementById("tdbCountNone").textContent = "(" + tdbCounts[""] + ")";
+  })();
 
   renderNav();
   renderBoard();
