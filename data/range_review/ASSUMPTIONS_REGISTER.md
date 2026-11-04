@@ -205,6 +205,27 @@ each card — `build_workshop_data.py` imports it cross-workstream.
     and a "New in SS28/FW28" chip with a Tier-dropdown hint. The
     last-season signal itself (RR-029) is still back-end only, not yet
     surfaced on the Board.
+14. **Marcus (Wholesale)'s follow-up input, 4-Nov-2026 — logged as a
+    note, no action taken yet** (explicitly "just a note to follow up,
+    no action needed"): (a) wants a MORE CONSOLIDATED activity grouping
+    where the current one lumps together products with a significant
+    feature difference (his example: Ski vs. Hiking) — i.e. today's
+    Layer/Business Area grouping on the Board may be too coarse for his
+    review; (b) **ABS for Intersport should be set aside from
+    tiering/consolidation** entirely — it's a volume driver, not a
+    candidate for the Hero/Harvest/Emerging/Exit framing (ABS is
+    already excluded from this workstream's main-range scope, RR-002/
+    RR-006 — worth confirming this is the SAME ABS exclusion he means,
+    or a distinct Intersport-specific carve-out, before acting); (c) a
+    candidate **consolidation/exit threshold of < 3,000 units/season**
+    — distinct from the Board's existing tiering thresholds (RR-049/
+    RR-051/RR-054's Hero/Harvest/Exit rules use 2026 FULL-YEAR units,
+    not per-season; Marcus's figure is per-season, so it isn't a
+    straight swap-in for any existing constant without first deciding
+    how "per season" maps onto this workstream's calendar-year sales
+    data). Nothing here has been implemented — flagged for whenever the
+    user wants to act on it, not silently folded into the existing
+    tiering logic.
 
 ---
 
