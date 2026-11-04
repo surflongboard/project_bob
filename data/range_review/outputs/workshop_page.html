@@ -400,6 +400,30 @@ a { color: var(--accent); }
 .summary-undecided-list button:hover { border-color: var(--accent); color: var(--accent); }
 .summary-section h3 { font-size: 14px; margin-bottom: 10px; }
 
+/* RR-058 -- Action/notes table: free text, not the numeric tables above, so left-aligned,
+   wrapping, regular (non-monospace) type -- added alongside .summary-table rather than
+   overriding it, since the numeric summary tables still want their own defaults. */
+.summary-notes-table td, .summary-notes-table th {
+  text-align: left;
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  font-weight: 400;
+  white-space: normal;
+  vertical-align: top;
+}
+.summary-link-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: var(--accent);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  text-align: left;
+}
+.summary-link-btn:hover { opacity: 0.8; }
+
 /* ---- card ---- */
 .card {
   background: var(--bg-raised);
@@ -1293,6 +1317,11 @@ textarea.action-note {
     return (dec && dec.lastSeasonToSell) || "";
   }
 
+  function actionNoteOf(d) {
+    var dec = decisions[slug(d.base)];
+    return (dec && dec.action) || "";
+  }
+
   function jumpToFranchise(d) {
     // RR-056 -- narrows the multi-select down to exactly this franchise's own layer, same as
     // picking a single layer chip would.
@@ -1362,6 +1391,20 @@ textarea.action-note {
         }).join("")
       : '<span style="color:var(--fg-muted);font-size:12.5px">None — every flagged franchise has a tier.</span>';
 
+    // RR-058 -- "Action / notes" weren't surfaced anywhere off the card itself, so the team
+    // had no way to review them together without opening every franchise one by one. Lists
+    // every franchise with a non-empty note, same season filter as the rest of this panel.
+    var withNotes = items.filter(function (d) { return actionNoteOf(d).trim() !== ""; });
+    var notesRows = withNotes.map(function (d) {
+      return '<tr>' +
+        '<td><button type="button" class="summary-link-btn summary-note-jump" data-base="' +
+          escapeHtml(d.base) + '">' + escapeHtml(d.franchise) + "</button></td>" +
+        "<td>" + escapeHtml(d.businessArea + " · " + d.layer) + "</td>" +
+        "<td>" + escapeHtml(tierOf(d) || "—") + "</td>" +
+        "<td>" + escapeHtml(actionNoteOf(d)) + "</td>" +
+      "</tr>";
+    }).join("");
+
     summaryViewEl.innerHTML =
       '<div class="summary-section"><h3>Tier breakdown' + (state.season !== "all" ? " — " + state.season : "") + "</h3>" +
         '<div class="summary-tiles">' + tiles + "</div>" +
@@ -1380,9 +1423,16 @@ textarea.action-note {
       "</div>" +
       '<div class="summary-section"><h3>Flagged but still undecided (' + undecidedFlagged.length + ")</h3>" +
         '<div class="summary-undecided-list">' + undecidedList + "</div>" +
+      "</div>" +
+      '<div class="summary-section"><h3>Action / notes (' + withNotes.length + ")</h3>" +
+        (withNotes.length
+          ? '<div class="summary-table-wrap"><table class="summary-table summary-notes-table"><thead><tr>' +
+              "<th>Franchise</th><th>Layer</th><th>Tier</th><th>Note</th>" +
+            "</tr></thead><tbody>" + notesRows + "</tbody></table></div>"
+          : '<span style="color:var(--fg-muted);font-size:12.5px">None yet — notes typed into a card\'s "Action / notes" field will show up here.</span>') +
       "</div>";
 
-    summaryViewEl.querySelectorAll(".summary-undecided-list button").forEach(function (btn) {
+    summaryViewEl.querySelectorAll(".summary-undecided-list button, .summary-note-jump").forEach(function (btn) {
       btn.addEventListener("click", function () {
         var base = btn.getAttribute("data-base");
         var d = DATA.find(function (x) { return x.base === base; });
