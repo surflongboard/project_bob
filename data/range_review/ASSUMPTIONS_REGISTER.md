@@ -166,6 +166,8 @@ each card — `build_workshop_data.py` imports it cross-workstream.
 
 | RR-075 | Portfolio Analysis | `fmtSEKCompact()`'s "K SEK" suffix changed to lowercase "k SEK" (e.g. "9733k SEK") | **Confirmed** (user-directed, 4-Nov-2026 — asked which was more readable, lowercase `k` vs capital `K` vs a `SEK (K)`-style header convention; agreed with Claude's recommendation to keep it inline per-value, since these are card stats with no shared column header, and use lowercase `k`, the more common financial-abbreviation convention and lighter-weight next to digits than a capital letter) | One-character change in `fmtSEKCompact()` (RR-072) — `Math.round(n/1000) + "k SEK"` instead of `"K SEK"`. No other behavior change: still applied only to Historical Sales' two SEK figures (year total, Wholesale-only line), still not applied to `fmtSEK()`/Target RRP. | Changed 4-Nov-2026. Template-only. Published as Board version 72. |
 
+| RR-076 | Portfolio Analysis | "Suggested tier" definition box (RR-074) moved from top-right of `.page-header-top` to its own block below the description paragraph | **Confirmed** (user-directed, 4-Nov-2026 — "Layout looks bad. Can you just put it below the general description 'FW27/SS28'") | RR-074's box, squeezed into the H1/Homework-mode-toggle flex row via `margin-left: auto`, read poorly there per the user. Moved it to a plain block directly under the `<p>` description, matching that paragraph's own `max-width: 70ch` instead of a narrow floated box pinned to the corner — no change to its content, colors, or the underlying tiering logic it describes. | Changed 4-Nov-2026. Template-only. Published as Board version 73. |
+
 ---
 
 ## Next steps (as of 29 Oct 2026)
