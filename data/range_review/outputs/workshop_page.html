@@ -666,6 +666,8 @@ textarea.homework-note {
     </select>
     <button class="toggle-btn" id="generationAgeToggle" type="button">Generation age</button>
     <button class="toggle-btn" id="newFranchiseToggle" type="button">New franchise</button>
+    <button class="toggle-btn" id="absToggle" type="button">ABS</button>
+    <button class="toggle-btn" id="asiaFitToggle" type="button">Asia Fit</button>
     <button class="toggle-btn" id="homeworkModeToggle" type="button">Homework mode</button>
     <div class="threshold-group">
       <label for="minSales2026">2026 Sales ≥</label>
@@ -793,7 +795,8 @@ textarea.homework-note {
   // separate "All layers" chip that selects every one -- per the user's own choice between a
   // modifier-click and a toggle-mode button, "plain click toggles each chip."
   var state = { layerKeys: new Set(LAYERS.length ? [LAYERS[0].key] : []), search: "", sort: "priority",
-    flagGenerationAge: false, flagNewFranchise: false, minSales2026: null, minGp2026: null,
+    flagGenerationAge: false, flagNewFranchise: false, flagAbs: false, flagAsiaFit: false,
+    minSales2026: null, minGp2026: null,
     tierFilter: new Set(), season: "all", view: "board", homeworkMode: false };
   var decisions = {}; // slug -> {tier, action, updatedAt}
 
@@ -1354,9 +1357,11 @@ textarea.homework-note {
     var totalInSelection = selectedLayers.reduce(function (n, l) { return n + l.items.length; }, 0);
     var items = selectedLayers.reduce(function (acc, l) { return acc.concat(l.items); }, []).filter(function (d) {
       if (!matchesSeason(d, state.season)) return false;
-      if (state.flagGenerationAge || state.flagNewFranchise) {
+      if (state.flagGenerationAge || state.flagNewFranchise || state.flagAbs || state.flagAsiaFit) {
         var matchesFlag = (state.flagGenerationAge && d.generationAgeFlag) ||
-          (state.flagNewFranchise && d.newKind === "franchise");
+          (state.flagNewFranchise && d.newKind === "franchise") ||
+          (state.flagAbs && d.abs) ||
+          (state.flagAsiaFit && d.asiaFit);
         if (!matchesFlag) return false;
       }
       if (!matchesThresholds(d)) return false;
@@ -1568,6 +1573,18 @@ textarea.homework-note {
   newFranchiseToggle.addEventListener("click", function () {
     state.flagNewFranchise = !state.flagNewFranchise;
     newFranchiseToggle.classList.toggle("active", state.flagNewFranchise);
+    renderBoard();
+  });
+  var absToggle = document.getElementById("absToggle");
+  absToggle.addEventListener("click", function () {
+    state.flagAbs = !state.flagAbs;
+    absToggle.classList.toggle("active", state.flagAbs);
+    renderBoard();
+  });
+  var asiaFitToggle = document.getElementById("asiaFitToggle");
+  asiaFitToggle.addEventListener("click", function () {
+    state.flagAsiaFit = !state.flagAsiaFit;
+    asiaFitToggle.classList.toggle("active", state.flagAsiaFit);
     renderBoard();
   });
   var homeworkModeToggle = document.getElementById("homeworkModeToggle");
