@@ -354,6 +354,7 @@ def build() -> list[dict]:
         out.append({
             "base": base,
             "franchise": r["Franchise"],
+            "styleCodes": r["_style_codes"],  # RR-067 -- shown below the franchise name on the Board
             "layer": r["Layer"],
             "businessArea": r["Business Area"],
             "gender": r["Gender"],

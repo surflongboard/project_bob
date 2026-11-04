@@ -317,6 +317,13 @@ def build_rows() -> list[dict]:
     out_rows = []
     for base, items in franchises.items():
         best = max(items, key=lambda r: (r["version_rank"], SEASON_RANK.get(r["season_label"], 0)))
+        # RR-067 -- style codes rolled up under this franchise, surfaced on the Board under the
+        # franchise/style name per the user ("confusing naming conventions, so the style code
+        # will clarify"). Every code this base rolls up (not just the representative style's),
+        # since a franchise with multiple styles (RR-003's "# styles rolled up") can span
+        # several -- same "; "-joined convention as Layer/Gender/etc. above when there's more
+        # than one.
+        style_codes = sorted({str(r["code"]) for r in items if r["code"] is not None})
         layers = sorted({r["layer"] for r in items if r["layer"]})
         areas = sorted({r["business_area"] for r in items if r["business_area"]})
         genders = sorted({r["gender"] for r in items if r["gender"]})
@@ -383,12 +390,14 @@ def build_rows() -> list[dict]:
 
         out_rows.append({
             "_base": base,  # internal join key (version-stripped) for downstream scripts
+            "_style_codes": style_codes,  # internal: list, for downstream scripts (RR-067)
             "_image_file": image_file,  # internal: filename in outputs/product_images/, for downstream scripts
             "_forecast_fw27_qty": fw27_qty,  # internal: season-specific forecast, for the workshop page's toggle
             "_forecast_fw27_gp": fw27_gp,
             "_forecast_ss28_qty": ss28_qty,
             "_forecast_ss28_gp": ss28_gp,
             "Franchise": best["display_name"],
+            "Style Code(s)": "; ".join(style_codes),  # RR-067
             "Layer": "; ".join(layers),
             "Business Area": "; ".join(areas),
             "Gender": "; ".join(genders),

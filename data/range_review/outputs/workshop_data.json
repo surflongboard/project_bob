@@ -2,6 +2,9 @@
   {
     "base": "Aresk Beanie",
     "franchise": "Aresk Beanie",
+    "styleCodes": [
+      "608690"
+    ],
     "layer": "Accessories",
     "businessArea": "Apparel",
     "gender": "Unisex",
@@ -60,6 +63,9 @@
   {
     "base": "Aze Beanie",
     "franchise": "Aze II Beanie",
+    "styleCodes": [
+      "608688"
+    ],
     "layer": "Accessories",
     "businessArea": "Apparel",
     "gender": "Unisex",
@@ -192,6 +198,9 @@
   {
     "base": "Brand Five Panel Cap",
     "franchise": "Brand Five Panel Cap",
+    "styleCodes": [
+      "608587"
+    ],
     "layer": "Accessories",
     "businessArea": "Apparel",
     "gender": "Unisex",
@@ -288,6 +297,10 @@
   {
     "base": "Haglöfs Bandana",
     "franchise": "Haglöfs Bandana",
+    "styleCodes": [
+      "608204",
+      "609152"
+    ],
     "layer": "Accessories",
     "businessArea": "Apparel",
     "gender": "Unisex",
@@ -357,6 +370,9 @@
   {
     "base": "Haglöfs Cap",
     "franchise": "Haglöfs Cap",
+    "styleCodes": [
+      "607656"
+    ],
     "layer": "Accessories",
     "businessArea": "Apparel",
     "gender": "Unisex",
@@ -446,6 +462,9 @@
   {
     "base": "Haglöfs LX Hat",
     "franchise": "Haglöfs LX Hat",
+    "styleCodes": [
+      "607868"
+    ],
     "layer": "Accessories",
     "businessArea": "Apparel",
     "gender": "Unisex",
@@ -535,6 +554,9 @@
   {
     "base": "Haglöfs Neck Tube",
     "franchise": "Haglöfs Neck Tube",
+    "styleCodes": [
+      "608876"
+    ],
     "layer": "Accessories",
     "businessArea": "Apparel",
     "gender": "Unisex",
@@ -593,6 +615,9 @@
   {
     "base": "Haglöfs Trucker Cap",
     "franchise": "Haglöfs Trucker Cap",
+    "styleCodes": [
+      "607867"
+    ],
     "layer": "Accessories",
     "businessArea": "Apparel",
     "gender": "Unisex",
@@ -682,6 +707,9 @@
   {
     "base": "Hiking Sock",
     "franchise": "Hiking Sock",
+    "styleCodes": [
+      "609051"
+    ],
     "layer": "Accessories",
     "businessArea": "Apparel",
     "gender": "Unisex",
@@ -740,6 +768,10 @@
   {
     "base": "L.I.M Pace Cap",
     "franchise": "L.I.M Pace Cap",
+    "styleCodes": [
+      "608202",
+      "609155"
+    ],
     "layer": "Accessories",
     "businessArea": "Apparel",
     "gender": "Unisex",
@@ -819,6 +851,9 @@
   {
     "base": "Mountain Cap",
     "franchise": "Mountain II Cap",
+    "styleCodes": [
+      "607814"
+    ],
     "layer": "Accessories",
     "businessArea": "Apparel",
     "gender": "Unisex",
@@ -979,6 +1014,9 @@
   {
     "base": "Outsiders Beanie",
     "franchise": "Outsiders Beanie",
+    "styleCodes": [
+      "607788"
+    ],
     "layer": "Accessories",
     "businessArea": "Apparel",
     "gender": "Unisex",
@@ -1068,6 +1106,9 @@
   {
     "base": "Rosson Beanie",
     "franchise": "Rosson Beanie",
+    "styleCodes": [
+      "608720"
+    ],
     "layer": "Accessories",
     "businessArea": "Apparel",
     "gender": "Unisex",
@@ -1126,6 +1167,9 @@
   {
     "base": "Rosson Balaclava",
     "franchise": "Rosson II Balaclava",
+    "styleCodes": [
+      "608689"
+    ],
     "layer": "Accessories",
     "businessArea": "Apparel",
     "gender": "Unisex",
@@ -1258,6 +1302,9 @@
   {
     "base": "Ski Glove",
     "franchise": "Ski Glove",
+    "styleCodes": [
+      "609063"
+    ],
     "layer": "Accessories",
     "businessArea": "Apparel",
     "gender": "Unisex",
@@ -1316,6 +1363,9 @@
   {
     "base": "Ski Mitten",
     "franchise": "Ski Mitten",
+    "styleCodes": [
+      "609064"
+    ],
     "layer": "Accessories",
     "businessArea": "Apparel",
     "gender": "Unisex",
@@ -1374,6 +1424,9 @@
   {
     "base": "Ski Sock",
     "franchise": "Ski Sock",
+    "styleCodes": [
+      "609062"
+    ],
     "layer": "Accessories",
     "businessArea": "Apparel",
     "gender": "Unisex",
@@ -1432,6 +1485,9 @@
   {
     "base": "Solis Hat",
     "franchise": "Solis Hat",
+    "styleCodes": [
+      "608201"
+    ],
     "layer": "Accessories",
     "businessArea": "Apparel",
     "gender": "Unisex",
@@ -1511,6 +1567,9 @@
   {
     "base": "Stretch Webbing Belt",
     "franchise": "Stretch Webbing Belt",
+    "styleCodes": [
+      "603989"
+    ],
     "layer": "Accessories",
     "businessArea": "Apparel",
     "gender": "Unisex",
@@ -1600,6 +1659,9 @@
   {
     "base": "Sun Capsule Multi Cover",
     "franchise": "Sun Capsule Multi Cover",
+    "styleCodes": [
+      "608828"
+    ],
     "layer": "Accessories",
     "businessArea": "Apparel",
     "gender": "Unisex",
@@ -1658,6 +1720,9 @@
   {
     "base": "Tech Headwear",
     "franchise": "Tech Headwear",
+    "styleCodes": [
+      "609080"
+    ],
     "layer": "Accessories",
     "businessArea": "Apparel",
     "gender": "Unisex",
@@ -1716,6 +1781,9 @@
   {
     "base": "Thermal Beanie",
     "franchise": "Thermal Beanie",
+    "styleCodes": [
+      "608751"
+    ],
     "layer": "Accessories",
     "businessArea": "Apparel",
     "gender": "Unisex",
@@ -1812,6 +1880,9 @@
   {
     "base": "Tova Wool Beanie",
     "franchise": "Tova Wool Beanie",
+    "styleCodes": [
+      "608691"
+    ],
     "layer": "Accessories",
     "businessArea": "Apparel",
     "gender": "Unisex",
@@ -1870,6 +1941,9 @@
   {
     "base": "Vara Alpha Cap",
     "franchise": "Vara Alpha Cap",
+    "styleCodes": [
+      "608483"
+    ],
     "layer": "Accessories",
     "businessArea": "Apparel",
     "gender": "Unisex",
@@ -1939,6 +2013,9 @@
   {
     "base": "Vassi Beanie",
     "franchise": "Vassi Beanie",
+    "styleCodes": [
+      "608750"
+    ],
     "layer": "Accessories",
     "businessArea": "Apparel",
     "gender": "Unisex",
@@ -2035,6 +2112,9 @@
   {
     "base": "Vassi Headband",
     "franchise": "Vassi Headband",
+    "styleCodes": [
+      "607790"
+    ],
     "layer": "Accessories",
     "businessArea": "Apparel",
     "gender": "Unisex",
@@ -2124,6 +2204,10 @@
   {
     "base": "Flat accessory bag",
     "franchise": "Flat accessory bag II",
+    "styleCodes": [
+      "608419",
+      "608817"
+    ],
     "layer": "Accessories",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -2229,6 +2313,9 @@
   {
     "base": "Fram 1L",
     "franchise": "Fram 1L",
+    "styleCodes": [
+      "608443"
+    ],
     "layer": "Accessories",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -2298,6 +2385,9 @@
   {
     "base": "Keywallet",
     "franchise": "Keywallet",
+    "styleCodes": [
+      "608818"
+    ],
     "layer": "Accessories",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -2356,6 +2446,9 @@
   {
     "base": "Lava travel tube",
     "franchise": "Lava travel tube",
+    "styleCodes": [
+      "608442"
+    ],
     "layer": "Accessories",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -2425,6 +2518,9 @@
   {
     "base": "Magma Waist pack 3,5L",
     "franchise": "Magma Waist pack 3,5L",
+    "styleCodes": [
+      "608564"
+    ],
     "layer": "Accessories",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -2483,6 +2579,9 @@
   {
     "base": "Packing cube 12L",
     "franchise": "Packing cube 12L",
+    "styleCodes": [
+      "608444"
+    ],
     "layer": "Accessories",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -2552,6 +2651,9 @@
   {
     "base": "Packing cube 8L",
     "franchise": "Packing cube 8L",
+    "styleCodes": [
+      "608445"
+    ],
     "layer": "Accessories",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -2621,6 +2723,9 @@
   {
     "base": "Raincover 15-30L",
     "franchise": "Raincover 15-30L",
+    "styleCodes": [
+      "608013"
+    ],
     "layer": "Accessories",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -2710,6 +2815,9 @@
   {
     "base": "Raincover 25-40L",
     "franchise": "Raincover 25-40L",
+    "styleCodes": [
+      "608012"
+    ],
     "layer": "Accessories",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -2799,6 +2907,9 @@
   {
     "base": "Raincover 40-60L",
     "franchise": "Raincover 40-60L",
+    "styleCodes": [
+      "608014"
+    ],
     "layer": "Accessories",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -2888,6 +2999,9 @@
   {
     "base": "Raincover 60-80L",
     "franchise": "Raincover 60-80L",
+    "styleCodes": [
+      "608011"
+    ],
     "layer": "Accessories",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -2977,6 +3091,9 @@
   {
     "base": "Shoulder pocket",
     "franchise": "Shoulder pocket",
+    "styleCodes": [
+      "608542"
+    ],
     "layer": "Accessories",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -3046,6 +3163,9 @@
   {
     "base": "Shoulder pouch",
     "franchise": "Shoulder pouch",
+    "styleCodes": [
+      "608543"
+    ],
     "layer": "Accessories",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -3115,6 +3235,9 @@
   {
     "base": "Sling pouch 2L",
     "franchise": "Sling pouch 2L",
+    "styleCodes": [
+      "608700"
+    ],
     "layer": "Accessories",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -3173,6 +3296,10 @@
   {
     "base": "Tight Pocket bag",
     "franchise": "Tight Pocket bag",
+    "styleCodes": [
+      "607757",
+      "609159"
+    ],
     "layer": "Accessories",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -3262,6 +3389,9 @@
   {
     "base": "Tight hip pack 1",
     "franchise": "Tight hip pack 1",
+    "styleCodes": [
+      "607755"
+    ],
     "layer": "Accessories",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -3351,6 +3481,9 @@
   {
     "base": "Tight hip pack 3,5",
     "franchise": "Tight hip pack 3,5",
+    "styleCodes": [
+      "608063"
+    ],
     "layer": "Accessories",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -3440,6 +3573,9 @@
   {
     "base": "Utility pouch 3L",
     "franchise": "Utility pouch 3L",
+    "styleCodes": [
+      "608446"
+    ],
     "layer": "Accessories",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -3509,6 +3645,9 @@
   {
     "base": "Courier Messenger Bag",
     "franchise": "Courier Messenger Bag",
+    "styleCodes": [
+      "608701"
+    ],
     "layer": "Bags",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -3567,6 +3706,9 @@
   {
     "base": "Fjatla 40",
     "franchise": "Fjatla 40",
+    "styleCodes": [
+      "608501"
+    ],
     "layer": "Bags",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -3663,6 +3805,9 @@
   {
     "base": "Fjatla 60",
     "franchise": "Fjatla 60",
+    "styleCodes": [
+      "608500"
+    ],
     "layer": "Bags",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -3759,6 +3904,9 @@
   {
     "base": "Lava 110",
     "franchise": "Lava 110",
+    "styleCodes": [
+      "608315"
+    ],
     "layer": "Bags",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -3848,6 +3996,9 @@
   {
     "base": "Lava 30",
     "franchise": "Lava 30",
+    "styleCodes": [
+      "607688"
+    ],
     "layer": "Bags",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -3937,6 +4088,9 @@
   {
     "base": "Lava 50",
     "franchise": "Lava 50",
+    "styleCodes": [
+      "607687"
+    ],
     "layer": "Bags",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -4026,6 +4180,9 @@
   {
     "base": "Lava 70",
     "franchise": "Lava 70",
+    "styleCodes": [
+      "607690"
+    ],
     "layer": "Bags",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -4115,6 +4272,9 @@
   {
     "base": "Lava 90",
     "franchise": "Lava 90",
+    "styleCodes": [
+      "607689"
+    ],
     "layer": "Bags",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -4204,6 +4364,9 @@
   {
     "base": "Magma 42L",
     "franchise": "Magma 42L",
+    "styleCodes": [
+      "608221"
+    ],
     "layer": "Bags",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -4273,6 +4436,9 @@
   {
     "base": "Magma 65L",
     "franchise": "Magma 65L",
+    "styleCodes": [
+      "608222"
+    ],
     "layer": "Bags",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -4342,6 +4508,9 @@
   {
     "base": "Tight duffle 50",
     "franchise": "Tight duffle 50",
+    "styleCodes": [
+      "607752"
+    ],
     "layer": "Bags",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -4400,6 +4569,10 @@
   {
     "base": "Baselayer 3/4 Tights",
     "franchise": "Baselayer 3/4 Tights",
+    "styleCodes": [
+      "609061",
+      "609069"
+    ],
     "layer": "Baselayer",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -4458,6 +4631,10 @@
   {
     "base": "Baselayer Crewneck",
     "franchise": "Baselayer Crewneck",
+    "styleCodes": [
+      "609059",
+      "609070"
+    ],
     "layer": "Baselayer",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -4516,6 +4693,10 @@
   {
     "base": "Baselayer Tights",
     "franchise": "Baselayer Tights",
+    "styleCodes": [
+      "609060",
+      "609071"
+    ],
     "layer": "Baselayer",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -4574,6 +4755,10 @@
   {
     "base": "Latnja Wool 3/4 Pant",
     "franchise": "Latnja Wool 3/4 Pant",
+    "styleCodes": [
+      "607538",
+      "607539"
+    ],
     "layer": "Baselayer",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -4663,6 +4848,10 @@
   {
     "base": "Latnja Wool Crew Neck",
     "franchise": "Latnja Wool Crew Neck",
+    "styleCodes": [
+      "607476",
+      "607477"
+    ],
     "layer": "Baselayer",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -4752,6 +4941,10 @@
   {
     "base": "Latnja Wool Long John's",
     "franchise": "Latnja Wool Long John's",
+    "styleCodes": [
+      "607475",
+      "607478"
+    ],
     "layer": "Baselayer",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -4841,6 +5034,10 @@
   {
     "base": "Kobbe Sandal Low",
     "franchise": "Kobbe Sandal Low",
+    "styleCodes": [
+      "608649",
+      "608651"
+    ],
     "layer": "Casual Shoes",
     "businessArea": "Footwear",
     "gender": "Men; Women",
@@ -4910,6 +5107,9 @@
   {
     "base": "Backup",
     "franchise": "Backup",
+    "styleCodes": [
+      "338156"
+    ],
     "layer": "Daypacks",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -4999,6 +5199,9 @@
   {
     "base": "Corker Large",
     "franchise": "Corker Large",
+    "styleCodes": [
+      "607562"
+    ],
     "layer": "Daypacks",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -5088,6 +5291,9 @@
   {
     "base": "Corker Medium",
     "franchise": "Corker Medium",
+    "styleCodes": [
+      "607561"
+    ],
     "layer": "Daypacks",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -5177,6 +5383,9 @@
   {
     "base": "Jarve Multi 22",
     "franchise": "Jarve Multi 22",
+    "styleCodes": [
+      "608706"
+    ],
     "layer": "Daypacks",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -5273,6 +5482,9 @@
   {
     "base": "Jarve Multi 28",
     "franchise": "Jarve Multi 28",
+    "styleCodes": [
+      "608707"
+    ],
     "layer": "Daypacks",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -5369,6 +5581,9 @@
   {
     "base": "Skuta 15",
     "franchise": "Skuta 15",
+    "styleCodes": [
+      "608223"
+    ],
     "layer": "Daypacks",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -5438,6 +5653,9 @@
   {
     "base": "Tight 15",
     "franchise": "Tight 15",
+    "styleCodes": [
+      "608304"
+    ],
     "layer": "Daypacks",
     "businessArea": "Hardware",
     "gender": "Junior",
@@ -5534,6 +5752,9 @@
   {
     "base": "Tight 8",
     "franchise": "Tight 8",
+    "styleCodes": [
+      "608303"
+    ],
     "layer": "Daypacks",
     "businessArea": "Hardware",
     "gender": "Junior",
@@ -5630,6 +5851,9 @@
   {
     "base": "Tight Large",
     "franchise": "Tight Large",
+    "styleCodes": [
+      "608311"
+    ],
     "layer": "Daypacks",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -5726,6 +5950,10 @@
   {
     "base": "Tight Medium",
     "franchise": "Tight Medium",
+    "styleCodes": [
+      "608310",
+      "609158"
+    ],
     "layer": "Daypacks",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -5822,6 +6050,9 @@
   {
     "base": "Tight Pro Large",
     "franchise": "Tight Pro Large",
+    "styleCodes": [
+      "608309"
+    ],
     "layer": "Daypacks",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -5911,6 +6142,9 @@
   {
     "base": "Tight Pro Medium",
     "franchise": "Tight Pro Medium",
+    "styleCodes": [
+      "608308"
+    ],
     "layer": "Daypacks",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -6000,6 +6234,9 @@
   {
     "base": "Tight Small",
     "franchise": "Tight Small",
+    "styleCodes": [
+      "608307"
+    ],
     "layer": "Daypacks",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -6096,6 +6333,9 @@
   {
     "base": "Tight Tote 25",
     "franchise": "Tight Tote 25",
+    "styleCodes": [
+      "607756"
+    ],
     "layer": "Daypacks",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -6185,6 +6425,9 @@
   {
     "base": "Tight X-Small",
     "franchise": "Tight X-Small",
+    "styleCodes": [
+      "608306"
+    ],
     "layer": "Daypacks",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -6274,6 +6517,9 @@
   {
     "base": "Vara 20L",
     "franchise": "Vara 20L",
+    "styleCodes": [
+      "608441"
+    ],
     "layer": "Daypacks",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -6343,6 +6589,9 @@
   {
     "base": "L.I.M Mountain Trail 25",
     "franchise": "L.I.M Mountain Trail 25",
+    "styleCodes": [
+      "607555"
+    ],
     "layer": "Hiking Packs",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -6432,6 +6681,9 @@
   {
     "base": "L.I.M Trail 15",
     "franchise": "L.I.M Trail 15",
+    "styleCodes": [
+      "607554"
+    ],
     "layer": "Hiking Packs",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -6521,6 +6773,9 @@
   {
     "base": "Magma 30",
     "franchise": "Magma 30",
+    "styleCodes": [
+      "608563"
+    ],
     "layer": "Hiking Packs",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -6579,6 +6834,9 @@
   {
     "base": "Magma 50L",
     "franchise": "Magma 50L",
+    "styleCodes": [
+      "608439"
+    ],
     "layer": "Hiking Packs",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -6658,6 +6916,9 @@
   {
     "base": "Magma 60L",
     "franchise": "Magma 60L",
+    "styleCodes": [
+      "608438"
+    ],
     "layer": "Hiking Packs",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -6727,6 +6988,9 @@
   {
     "base": "Magma Roll-top 40 WR",
     "franchise": "Magma Roll-top 40 WR",
+    "styleCodes": [
+      "608224"
+    ],
     "layer": "Hiking Packs",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -6806,6 +7070,9 @@
   {
     "base": "Vide 20",
     "franchise": "Vide 20",
+    "styleCodes": [
+      "608608"
+    ],
     "layer": "Hiking Packs",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -6902,6 +7169,9 @@
   {
     "base": "Vide 30",
     "franchise": "Vide 30",
+    "styleCodes": [
+      "608607"
+    ],
     "layer": "Hiking Packs",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -6960,6 +7230,10 @@
   {
     "base": "Fast Hike Low",
     "franchise": "Fast Hike Low",
+    "styleCodes": [
+      "608565",
+      "608567"
+    ],
     "layer": "Hiking Shoes",
     "businessArea": "Footwear",
     "gender": "Men; Women",
@@ -7018,6 +7292,10 @@
   {
     "base": "Haglöfs Fast Hike PROOF Low",
     "franchise": "Haglöfs Fast Hike PROOF Low",
+    "styleCodes": [
+      "608779",
+      "608780"
+    ],
     "layer": "Hiking Shoes",
     "businessArea": "Footwear",
     "gender": "Men; Women",
@@ -7076,6 +7354,10 @@
   {
     "base": "Haglöfs Horizon Hike GTX WL Mid",
     "franchise": "Haglöfs Horizon Hike GTX WL Mid",
+    "styleCodes": [
+      "608538",
+      "608541"
+    ],
     "layer": "Hiking Shoes",
     "businessArea": "Footwear",
     "gender": "Men; Women",
@@ -7145,6 +7427,10 @@
   {
     "base": "Haglöfs L.I.M Horizon Hike GTX Low",
     "franchise": "Haglöfs L.I.M Horizon Hike GTX Low",
+    "styleCodes": [
+      "608290",
+      "608292"
+    ],
     "layer": "Hiking Shoes",
     "businessArea": "Footwear",
     "gender": "Men; Women",
@@ -7203,6 +7489,10 @@
   {
     "base": "Haglöfs L.I.M Horizon Hike GTX Mid",
     "franchise": "Haglöfs L.I.M Horizon Hike GTX Mid",
+    "styleCodes": [
+      "608289",
+      "608293"
+    ],
     "layer": "Hiking Shoes",
     "businessArea": "Footwear",
     "gender": "Men; Women",
@@ -7261,6 +7551,10 @@
   {
     "base": "Haglöfs L.I.M Horizon Hike Light Mid",
     "franchise": "Haglöfs L.I.M Horizon Hike Light Mid",
+    "styleCodes": [
+      "608291",
+      "608294"
+    ],
     "layer": "Hiking Shoes",
     "businessArea": "Footwear",
     "gender": "Men; Women",
@@ -7330,6 +7624,10 @@
   {
     "base": "Haglöfs Ridge GTX Low",
     "franchise": "Haglöfs Ridge GTX II Low",
+    "styleCodes": [
+      "608279",
+      "608285"
+    ],
     "layer": "Hiking Shoes",
     "businessArea": "Footwear",
     "gender": "Men; Women",
@@ -7470,6 +7768,10 @@
   {
     "base": "Haglöfs Ridge GTX Mid",
     "franchise": "Haglöfs Ridge GTX II Mid",
+    "styleCodes": [
+      "608280",
+      "608286"
+    ],
     "layer": "Hiking Shoes",
     "businessArea": "Footwear",
     "gender": "Men; Women",
@@ -7617,6 +7919,10 @@
   {
     "base": "Haglöfs Rosson FG Proof Mid",
     "franchise": "Haglöfs Rosson FG Proof Mid",
+    "styleCodes": [
+      "608391",
+      "608392"
+    ],
     "layer": "Hiking Shoes",
     "businessArea": "Footwear",
     "gender": "Men; Women",
@@ -7686,6 +7992,10 @@
   {
     "base": "Haglöfs Rosson Proof Mid",
     "franchise": "Haglöfs Rosson Proof Mid",
+    "styleCodes": [
+      "608282",
+      "608288"
+    ],
     "layer": "Hiking Shoes",
     "businessArea": "Footwear",
     "gender": "Men; Women",
@@ -7755,6 +8065,10 @@
   {
     "base": "Haglöfs Vertigo QL PROOF Low",
     "franchise": "Haglöfs Vertigo QL PROOF Low",
+    "styleCodes": [
+      "608702",
+      "608704"
+    ],
     "layer": "Hiking Shoes",
     "businessArea": "Footwear",
     "gender": "Men; Women",
@@ -7813,6 +8127,10 @@
   {
     "base": "Vertigo Proof Low",
     "franchise": "Vertigo Proof Low",
+    "styleCodes": [
+      "608566",
+      "608568"
+    ],
     "layer": "Hiking Shoes",
     "businessArea": "Footwear",
     "gender": "Men; Women",
@@ -7871,6 +8189,9 @@
   {
     "base": "Brandheat Insulation",
     "franchise": "Brandheat Insulation",
+    "styleCodes": [
+      "609081"
+    ],
     "layer": "Insulation",
     "businessArea": "Apparel",
     "gender": "Women",
@@ -7929,6 +8250,10 @@
   {
     "base": "Breeze Mimic Hood",
     "franchise": "Breeze Mimic Hood",
+    "styleCodes": [
+      "607824",
+      "607825"
+    ],
     "layer": "Insulation",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -8018,6 +8343,10 @@
   {
     "base": "Fram Mimic Jacket",
     "franchise": "Fram Mimic Jacket",
+    "styleCodes": [
+      "608481",
+      "608482"
+    ],
     "layer": "Insulation",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -8087,6 +8416,9 @@
   {
     "base": "Hede Down Coat",
     "franchise": "Hede Down Coat",
+    "styleCodes": [
+      "608102"
+    ],
     "layer": "Insulation",
     "businessArea": "Apparel",
     "gender": "Women",
@@ -8176,6 +8508,10 @@
   {
     "base": "Hede Down Hood",
     "franchise": "Hede Down Hood",
+    "styleCodes": [
+      "608097",
+      "608098"
+    ],
     "layer": "Insulation",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -8265,6 +8601,10 @@
   {
     "base": "Hede Down Vest",
     "franchise": "Hede Down Vest",
+    "styleCodes": [
+      "608100",
+      "608101"
+    ],
     "layer": "Insulation",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -8354,6 +8694,10 @@
   {
     "base": "L.I.M Down Hood Jacket",
     "franchise": "L.I.M Down Hood Jacket",
+    "styleCodes": [
+      "608807",
+      "608808"
+    ],
     "layer": "Insulation",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -8412,6 +8756,10 @@
   {
     "base": "L.I.M Down Hood",
     "franchise": "L.I.M Down II Hood",
+    "styleCodes": [
+      "607795",
+      "607802"
+    ],
     "layer": "Insulation",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -8579,6 +8927,12 @@
   {
     "base": "L.I.M Mimic Barrier Hood",
     "franchise": "L.I.M Mimic Barrier Hood",
+    "styleCodes": [
+      "607964",
+      "607967",
+      "609153",
+      "609154"
+    ],
     "layer": "Insulation",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -8637,6 +8991,10 @@
   {
     "base": "L.I.M Mimic Barrier Vest",
     "franchise": "L.I.M Mimic Barrier Vest",
+    "styleCodes": [
+      "607966",
+      "607969"
+    ],
     "layer": "Insulation",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -8695,6 +9053,9 @@
   {
     "base": "Long Down Parka",
     "franchise": "Long Down II Parka",
+    "styleCodes": [
+      "607775"
+    ],
     "layer": "Insulation",
     "businessArea": "Apparel",
     "gender": "Women",
@@ -8845,6 +9206,9 @@
   {
     "base": "Long Mimic Parka",
     "franchise": "Long Mimic III Parka",
+    "styleCodes": [
+      "608537"
+    ],
     "layer": "Insulation",
     "businessArea": "Apparel",
     "gender": "Women",
@@ -9030,6 +9394,10 @@
   {
     "base": "Lugna Softshell Overshirt",
     "franchise": "Lugna Softshell Overshirt",
+    "styleCodes": [
+      "608694",
+      "608695"
+    ],
     "layer": "Insulation",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -9113,6 +9481,10 @@
   {
     "base": "Mimic Alert Hood",
     "franchise": "Mimic Alert 2.0 Hood",
+    "styleCodes": [
+      "608678",
+      "608680"
+    ],
     "layer": "Insulation",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -9264,6 +9636,10 @@
   {
     "base": "Mimic Alert Jacket",
     "franchise": "Mimic Alert 2.0 Jacket",
+    "styleCodes": [
+      "608679",
+      "608681"
+    ],
     "layer": "Insulation",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -9427,6 +9803,10 @@
   {
     "base": "Mimic Alert 3/4 Pant",
     "franchise": "Mimic Alert 3/4 Pant",
+    "styleCodes": [
+      "609058",
+      "609067"
+    ],
     "layer": "Insulation",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -9485,6 +9865,10 @@
   {
     "base": "Mimic Alert Pant",
     "franchise": "Mimic Alert Pant",
+    "styleCodes": [
+      "609057",
+      "609068"
+    ],
     "layer": "Insulation",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -9543,6 +9927,10 @@
   {
     "base": "Mojo Down Hood",
     "franchise": "Mojo Down Hood",
+    "styleCodes": [
+      "608533",
+      "608534"
+    ],
     "layer": "Insulation",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -9632,6 +10020,10 @@
   {
     "base": "Nallo Touring Down Hood",
     "franchise": "Nallo Touring Down Hood",
+    "styleCodes": [
+      "608341",
+      "608342"
+    ],
     "layer": "Insulation",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -9701,6 +10093,10 @@
   {
     "base": "ROC Flash Down Hood",
     "franchise": "ROC Flash Down Hood",
+    "styleCodes": [
+      "607463",
+      "607466"
+    ],
     "layer": "Insulation",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -9790,6 +10186,10 @@
   {
     "base": "ROC Flash Down Jacket",
     "franchise": "ROC Flash Down Jacket",
+    "styleCodes": [
+      "607462",
+      "607465"
+    ],
     "layer": "Insulation",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -9879,6 +10279,10 @@
   {
     "base": "ROC Flash Down Vest",
     "franchise": "ROC Flash Down Vest",
+    "styleCodes": [
+      "607461",
+      "607464"
+    ],
     "layer": "Insulation",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -9968,6 +10372,10 @@
   {
     "base": "Rosson Down Hood",
     "franchise": "Rosson Down Hood",
+    "styleCodes": [
+      "607460",
+      "607468"
+    ],
     "layer": "Insulation",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -10057,6 +10465,10 @@
   {
     "base": "Rosson Down Parka",
     "franchise": "Rosson Down Parka",
+    "styleCodes": [
+      "608124",
+      "608125"
+    ],
     "layer": "Insulation",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -10146,6 +10558,10 @@
   {
     "base": "Salix Proof Mimic Parka",
     "franchise": "Salix Proof Mimic II Parka",
+    "styleCodes": [
+      "608241",
+      "608242"
+    ],
     "layer": "Insulation",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -10296,6 +10712,10 @@
   {
     "base": "Spitz Down Hood",
     "franchise": "Spitz Down Hood",
+    "styleCodes": [
+      "607459",
+      "607467"
+    ],
     "layer": "Insulation",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -10385,6 +10805,10 @@
   {
     "base": "Särna Mimic Hood",
     "franchise": "Särna Mimic II Hood",
+    "styleCodes": [
+      "608366",
+      "608367"
+    ],
     "layer": "Insulation",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -10551,6 +10975,10 @@
   {
     "base": "Särna Mimic Vest",
     "franchise": "Särna Mimic Vest",
+    "styleCodes": [
+      "609065",
+      "609066"
+    ],
     "layer": "Insulation",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -10609,6 +11037,10 @@
   {
     "base": "Alert Mid Pant",
     "franchise": "Alert Mid Pant",
+    "styleCodes": [
+      "607645",
+      "607649"
+    ],
     "layer": "Legwear",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -10698,6 +11130,10 @@
   {
     "base": "Alert Mid Shorts",
     "franchise": "Alert Mid Shorts",
+    "styleCodes": [
+      "608158",
+      "608178"
+    ],
     "layer": "Legwear",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -10790,6 +11226,9 @@
   {
     "base": "Essential Tights",
     "franchise": "Essential Tights",
+    "styleCodes": [
+      "608860"
+    ],
     "layer": "Legwear",
     "businessArea": "Apparel",
     "gender": "Women",
@@ -10848,6 +11287,10 @@
   {
     "base": "Front Flex Pant",
     "franchise": "Front Flex Pant",
+    "styleCodes": [
+      "607646",
+      "607650"
+    ],
     "layer": "Legwear",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -10937,6 +11380,10 @@
   {
     "base": "Fuse Pant",
     "franchise": "Fuse Pant",
+    "styleCodes": [
+      "608810",
+      "608813"
+    ],
     "layer": "Legwear",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -10995,6 +11442,10 @@
   {
     "base": "Fuse Short",
     "franchise": "Fuse Short",
+    "styleCodes": [
+      "608811",
+      "608812"
+    ],
     "layer": "Legwear",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -11053,6 +11504,10 @@
   {
     "base": "Hede Cargo Pant",
     "franchise": "Hede Cargo II Pant",
+    "styleCodes": [
+      "608974",
+      "608975"
+    ],
     "layer": "Legwear",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -11191,6 +11646,10 @@
   {
     "base": "Hede Shorts",
     "franchise": "Hede II Shorts",
+    "styleCodes": [
+      "609006",
+      "609007"
+    ],
     "layer": "Legwear",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -11309,6 +11768,9 @@
   {
     "base": "Hiking Tights",
     "franchise": "Hiking Tights",
+    "styleCodes": [
+      "608815"
+    ],
     "layer": "Legwear",
     "businessArea": "Apparel",
     "gender": "Women",
@@ -11367,6 +11829,10 @@
   {
     "base": "Korp Lite Pant",
     "franchise": "Korp Lite Pant",
+    "styleCodes": [
+      "607759",
+      "607760"
+    ],
     "layer": "Legwear",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -11456,6 +11922,10 @@
   {
     "base": "Korp Lite Shorts",
     "franchise": "Korp Lite Shorts",
+    "styleCodes": [
+      "607876",
+      "607877"
+    ],
     "layer": "Legwear",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -11545,6 +12015,10 @@
   {
     "base": "L.I.M Pace Shorts",
     "franchise": "L.I.M Pace Shorts",
+    "styleCodes": [
+      "608159",
+      "608179"
+    ],
     "layer": "Legwear",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -11637,6 +12111,10 @@
   {
     "base": "L.I.M Windpace Hybrid Pant",
     "franchise": "L.I.M Windpace Hybrid Pant",
+    "styleCodes": [
+      "608809",
+      "608814"
+    ],
     "layer": "Legwear",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -11695,6 +12173,10 @@
   {
     "base": "Levante Pant",
     "franchise": "Levante Pant",
+    "styleCodes": [
+      "608160",
+      "608176"
+    ],
     "layer": "Legwear",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -11774,6 +12256,10 @@
   {
     "base": "Levante Shorts",
     "franchise": "Levante Shorts",
+    "styleCodes": [
+      "608161",
+      "608180"
+    ],
     "layer": "Legwear",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -11853,6 +12339,10 @@
   {
     "base": "Lite Standard Zip-Off Pant",
     "franchise": "Lite Standard Zip-Off II Pant",
+    "styleCodes": [
+      "608458",
+      "608459"
+    ],
     "layer": "Legwear",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -12016,6 +12506,10 @@
   {
     "base": "Lizard Softshell Shorts",
     "franchise": "Lizard Softshell II Shorts",
+    "styleCodes": [
+      "608637",
+      "608638"
+    ],
     "layer": "Legwear",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -12148,6 +12642,10 @@
   {
     "base": "Magma Rugged Pant",
     "franchise": "Magma Rugged Pant",
+    "styleCodes": [
+      "607707",
+      "607708"
+    ],
     "layer": "Legwear",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -12250,6 +12748,11 @@
   {
     "base": "Magma Rugged Wide Pant",
     "franchise": "Magma Rugged Wide Pant",
+    "styleCodes": [
+      "608982",
+      "608983",
+      "609091"
+    ],
     "layer": "Legwear",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -12308,6 +12811,10 @@
   {
     "base": "Mid Standard Pant",
     "franchise": "Mid Standard II Pant",
+    "styleCodes": [
+      "609084",
+      "609085"
+    ],
     "layer": "Legwear",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -12446,6 +12953,10 @@
   {
     "base": "Mid Standard Shorts",
     "franchise": "Mid Standard II Shorts",
+    "styleCodes": [
+      "609087",
+      "609088"
+    ],
     "layer": "Legwear",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -12609,6 +13120,10 @@
   {
     "base": "Mimic Silver Pant",
     "franchise": "Mimic Silver II Pant",
+    "styleCodes": [
+      "608830",
+      "608831"
+    ],
     "layer": "Legwear",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -12747,6 +13262,10 @@
   {
     "base": "ROC Lite Slim Pant",
     "franchise": "ROC Lite Slim II Pant",
+    "styleCodes": [
+      "608265",
+      "608266"
+    ],
     "layer": "Legwear",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -12900,6 +13419,10 @@
   {
     "base": "Solis Zip Off Pant",
     "franchise": "Solis Zip Off Pant",
+    "styleCodes": [
+      "608156",
+      "608175"
+    ],
     "layer": "Legwear",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -12992,6 +13515,10 @@
   {
     "base": "Solvik Seersucker Shorts",
     "franchise": "Solvik Seersucker Shorts",
+    "styleCodes": [
+      "608609",
+      "608610"
+    ],
     "layer": "Legwear",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -13050,6 +13577,9 @@
   {
     "base": "Sun Capsule Pant",
     "franchise": "Sun Capsule Pant",
+    "styleCodes": [
+      "608834"
+    ],
     "layer": "Legwear",
     "businessArea": "Apparel",
     "gender": "Unisex",
@@ -13108,6 +13638,10 @@
   {
     "base": "Brisen Tech Mid",
     "franchise": "Brisen Tech Mid",
+    "styleCodes": [
+      "609048",
+      "609072"
+    ],
     "layer": "Midlayer",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -13166,6 +13700,10 @@
   {
     "base": "Brisen Tech Mid Hood",
     "franchise": "Brisen Tech Mid Hood",
+    "styleCodes": [
+      "608683",
+      "608684"
+    ],
     "layer": "Midlayer",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -13224,6 +13762,10 @@
   {
     "base": "Buteo Mid Jacket",
     "franchise": "Buteo Mid II Jacket",
+    "styleCodes": [
+      "608351",
+      "608352"
+    ],
     "layer": "Midlayer",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -13377,6 +13919,10 @@
   {
     "base": "Funäs Pile Hood",
     "franchise": "Funäs Pile Hood",
+    "styleCodes": [
+      "607817",
+      "607818"
+    ],
     "layer": "Midlayer",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -13466,6 +14012,10 @@
   {
     "base": "Haglöfs Hoodie",
     "franchise": "Haglöfs Hoodie",
+    "styleCodes": [
+      "608164",
+      "608184"
+    ],
     "layer": "Midlayer",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -13535,6 +14085,10 @@
   {
     "base": "Korp Mid Halfzip",
     "franchise": "Korp Mid Halfzip",
+    "styleCodes": [
+      "607779",
+      "607782"
+    ],
     "layer": "Midlayer",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -13649,6 +14203,10 @@
   {
     "base": "Korp Mid Hood",
     "franchise": "Korp Mid Hood",
+    "styleCodes": [
+      "607777",
+      "607780"
+    ],
     "layer": "Midlayer",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -13738,6 +14296,10 @@
   {
     "base": "Korp Mid Jacket",
     "franchise": "Korp Mid Jacket",
+    "styleCodes": [
+      "607778",
+      "607781"
+    ],
     "layer": "Midlayer",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -13827,6 +14389,10 @@
   {
     "base": "L.I.M Mid Hybrid",
     "franchise": "L.I.M Mid Hybrid",
+    "styleCodes": [
+      "608984",
+      "608985"
+    ],
     "layer": "Midlayer",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -13885,6 +14451,10 @@
   {
     "base": "L.I.M Mid Multi Hood",
     "franchise": "L.I.M Mid Multi II Hood",
+    "styleCodes": [
+      "607631",
+      "607634"
+    ],
     "layer": "Midlayer",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -14045,6 +14615,10 @@
   {
     "base": "L.I.M Mid Multi Jacket",
     "franchise": "L.I.M Mid Multi Jacket",
+    "styleCodes": [
+      "608417",
+      "608418"
+    ],
     "layer": "Midlayer",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -14124,6 +14698,10 @@
   {
     "base": "L.I.M Mid Reversible Crew",
     "franchise": "L.I.M Mid Reversible Crew",
+    "styleCodes": [
+      "609000",
+      "609001"
+    ],
     "layer": "Midlayer",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -14182,6 +14760,10 @@
   {
     "base": "Nallo Touring Hybrid Mid",
     "franchise": "Nallo Touring Hybrid Mid",
+    "styleCodes": [
+      "608345",
+      "608346"
+    ],
     "layer": "Midlayer",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -14276,6 +14858,10 @@
   {
     "base": "Pile Jacket",
     "franchise": "Pile Jacket",
+    "styleCodes": [
+      "609049",
+      "609073"
+    ],
     "layer": "Midlayer",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -14345,6 +14931,10 @@
   {
     "base": "Pile Vest",
     "franchise": "Pile Vest",
+    "styleCodes": [
+      "609050",
+      "609074"
+    ],
     "layer": "Midlayer",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -14434,6 +15024,10 @@
   {
     "base": "Rosson Tights",
     "franchise": "Rosson II Tights",
+    "styleCodes": [
+      "608832",
+      "608833"
+    ],
     "layer": "Midlayer",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -14572,6 +15166,10 @@
   {
     "base": "Rosson Mid Hood",
     "franchise": "Rosson Mid II Hood",
+    "styleCodes": [
+      "608556",
+      "608558"
+    ],
     "layer": "Midlayer",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -14710,6 +15308,10 @@
   {
     "base": "Rosson Mid Jacket",
     "franchise": "Rosson Mid II Jacket",
+    "styleCodes": [
+      "608557",
+      "608559"
+    ],
     "layer": "Midlayer",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -14848,6 +15450,10 @@
   {
     "base": "Swook Mid Hood",
     "franchise": "Swook II Mid Hood",
+    "styleCodes": [
+      "608165",
+      "608185"
+    ],
     "layer": "Midlayer",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -14927,6 +15533,10 @@
   {
     "base": "Swook Mid Jacket",
     "franchise": "Swook II Mid Jacket",
+    "styleCodes": [
+      "608166",
+      "608186"
+    ],
     "layer": "Midlayer",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -14996,6 +15606,9 @@
   {
     "base": "Swook Mid Halfzip W",
     "franchise": "Swook Mid Halfzip W",
+    "styleCodes": [
+      "608686"
+    ],
     "layer": "Midlayer",
     "businessArea": "Apparel",
     "gender": "Women",
@@ -15067,6 +15680,9 @@
   {
     "base": "Swook Mid Sweater M",
     "franchise": "Swook Mid Sweater M",
+    "styleCodes": [
+      "608687"
+    ],
     "layer": "Midlayer",
     "businessArea": "Apparel",
     "gender": "Men",
@@ -15138,6 +15754,10 @@
   {
     "base": "Vara Alpha Sweater",
     "franchise": "Vara Alpha Sweater",
+    "styleCodes": [
+      "608477",
+      "608478"
+    ],
     "layer": "Midlayer",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -15232,6 +15852,10 @@
   {
     "base": "Vassi Mid Hood",
     "franchise": "Vassi Mid Hood",
+    "styleCodes": [
+      "606826",
+      "606844"
+    ],
     "layer": "Midlayer",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -15321,6 +15945,9 @@
   {
     "base": "Latnja 18L",
     "franchise": "Latnja 18L",
+    "styleCodes": [
+      "608710"
+    ],
     "layer": "Mountain Packs",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -15379,6 +16006,9 @@
   {
     "base": "Nallo Pro 40L",
     "franchise": "Nallo Pro 40L",
+    "styleCodes": [
+      "608709"
+    ],
     "layer": "Mountain Packs",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -15437,6 +16067,9 @@
   {
     "base": "Vassi Pro 32L",
     "franchise": "Vassi Pro 32L",
+    "styleCodes": [
+      "608711"
+    ],
     "layer": "Mountain Packs",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -15495,6 +16128,12 @@
   {
     "base": "Alert GTX Jacket",
     "franchise": "Alert GTX II Jacket",
+    "styleCodes": [
+      "608172",
+      "608192",
+      "609012",
+      "609013"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -15605,6 +16244,10 @@
   {
     "base": "Alper Proof Jacket",
     "franchise": "Alper Proof Jacket",
+    "styleCodes": [
+      "607936",
+      "607937"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -15694,6 +16337,10 @@
   {
     "base": "Alper Proof Pant",
     "franchise": "Alper Proof Pant",
+    "styleCodes": [
+      "607938",
+      "607939"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -15783,6 +16430,10 @@
   {
     "base": "Astral GTX Jacket",
     "franchise": "Astral GTX II Jacket",
+    "styleCodes": [
+      "607563",
+      "607593"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -15950,6 +16601,10 @@
   {
     "base": "Breeze Proof Jacket",
     "franchise": "Breeze Proof Jacket",
+    "styleCodes": [
+      "607680",
+      "607681"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -16039,6 +16694,10 @@
   {
     "base": "Front Proof Jacket",
     "franchise": "Front Proof II Jacket",
+    "styleCodes": [
+      "607821",
+      "607823"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -16218,6 +16877,12 @@
   {
     "base": "Holm GTX Pant",
     "franchise": "Holm GTX II Pant",
+    "styleCodes": [
+      "608545",
+      "608548",
+      "609016",
+      "609017"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -16276,6 +16941,12 @@
   {
     "base": "Klyva GTX Jacket",
     "franchise": "Klyva GTX II Jacket",
+    "styleCodes": [
+      "608531",
+      "608532",
+      "609018",
+      "609019"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -16386,6 +17057,10 @@
   {
     "base": "Korp Proof Pant",
     "franchise": "Korp Proof II Pant",
+    "styleCodes": [
+      "608095",
+      "608096"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -16559,6 +17234,10 @@
   {
     "base": "Korp Proof Jacket",
     "franchise": "Korp Proof Jacket",
+    "styleCodes": [
+      "607958",
+      "607962"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -16648,6 +17327,10 @@
   {
     "base": "L.I.M Airak 2,5L Jacket",
     "franchise": "L.I.M Airak 2,5L Jacket",
+    "styleCodes": [
+      "607610",
+      "607615"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -16706,6 +17389,10 @@
   {
     "base": "L.I.M Airak 2,5L Pant",
     "franchise": "L.I.M Airak 2,5L Pant",
+    "styleCodes": [
+      "607613",
+      "607618"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -16764,6 +17451,10 @@
   {
     "base": "L.I.M Airak 2,5L Proof Jacket",
     "franchise": "L.I.M Airak 2,5L Proof II Jacket",
+    "styleCodes": [
+      "608786",
+      "608789"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -16853,6 +17544,10 @@
   {
     "base": "L.I.M Airak 2,5L Proof Pant",
     "franchise": "L.I.M Airak 2,5L Proof II Pant",
+    "styleCodes": [
+      "608787",
+      "608788"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -16942,6 +17637,10 @@
   {
     "base": "L.I.M Airak GTX Jacket",
     "franchise": "L.I.M Airak GTX Jacket",
+    "styleCodes": [
+      "607609",
+      "607614"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -17031,6 +17730,10 @@
   {
     "base": "L.I.M GTX Jacket",
     "franchise": "L.I.M GTX III Jacket",
+    "styleCodes": [
+      "608972",
+      "608973"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -17204,6 +17907,10 @@
   {
     "base": "L.I.M GTX Pant",
     "franchise": "L.I.M GTX III Pant",
+    "styleCodes": [
+      "609082",
+      "609083"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -17342,6 +18049,10 @@
   {
     "base": "L.I.M Light Proof Jacket",
     "franchise": "L.I.M Light Proof Jacket",
+    "styleCodes": [
+      "608783",
+      "608792"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -17400,6 +18111,10 @@
   {
     "base": "L.I.M Windpack Hood Jacket",
     "franchise": "L.I.M Windpack Hood Jacket",
+    "styleCodes": [
+      "608784",
+      "608791"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -17458,6 +18173,10 @@
   {
     "base": "Latnja GTX Insulated Jacket",
     "franchise": "Latnja GTX Insulated II Jacket",
+    "styleCodes": [
+      "609002",
+      "609004"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -17596,6 +18315,10 @@
   {
     "base": "Latnja GTX Insulated Pant",
     "franchise": "Latnja GTX Insulated II Pant",
+    "styleCodes": [
+      "609003",
+      "609005"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -17734,6 +18457,10 @@
   {
     "base": "Ljusna Proof Parka",
     "franchise": "Ljusna Proof Parka",
+    "styleCodes": [
+      "608560",
+      "608561"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -17792,6 +18519,10 @@
   {
     "base": "Nallo Touring GTX Jacket",
     "franchise": "Nallo Touring GTX Jacket",
+    "styleCodes": [
+      "608333",
+      "608334"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -17861,6 +18592,10 @@
   {
     "base": "Nallo Touring GTX Pant",
     "franchise": "Nallo Touring GTX Pant",
+    "styleCodes": [
+      "608335",
+      "608336"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -17930,6 +18665,10 @@
   {
     "base": "Norrvind Shield Hood",
     "franchise": "Norrvind Shield Hood",
+    "styleCodes": [
+      "608549",
+      "608550"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -17988,6 +18727,10 @@
   {
     "base": "Ozka Proof Jacket",
     "franchise": "Ozka Proof Jacket",
+    "styleCodes": [
+      "608173",
+      "608193"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -18092,6 +18835,10 @@
   {
     "base": "Ozka Proof Pant",
     "franchise": "Ozka Proof Pant",
+    "styleCodes": [
+      "608208",
+      "608209"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -18186,6 +18933,10 @@
   {
     "base": "ROC Sight GTX Jacket",
     "franchise": "ROC Sight GTX Jacket",
+    "styleCodes": [
+      "608447",
+      "608448"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -18265,6 +19016,10 @@
   {
     "base": "Saulo Proof Jacket",
     "franchise": "Saulo Proof Jacket",
+    "styleCodes": [
+      "608671",
+      "608676"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -18323,6 +19078,10 @@
   {
     "base": "Saulo Proof Pant",
     "franchise": "Saulo Proof Pant",
+    "styleCodes": [
+      "608672",
+      "608677"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -18381,6 +19140,10 @@
   {
     "base": "Skalvik Softshell Parka",
     "franchise": "Skalvik Softshell Parka",
+    "styleCodes": [
+      "608692",
+      "608693"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -18439,6 +19202,10 @@
   {
     "base": "Spitz GTX Jacket",
     "franchise": "Spitz GTX Jacket",
+    "styleCodes": [
+      "609053",
+      "609075"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -18497,6 +19264,10 @@
   {
     "base": "Spitz GTX Pant",
     "franchise": "Spitz GTX Pant",
+    "styleCodes": [
+      "609054",
+      "609076"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -18555,6 +19326,12 @@
   {
     "base": "Spitz GTX Pro Jacket",
     "franchise": "Spitz GTX Pro II Jacket",
+    "styleCodes": [
+      "608570",
+      "608571",
+      "609052",
+      "609077"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -18693,6 +19470,10 @@
   {
     "base": "Tarre Proof Insulated Jacket",
     "franchise": "Tarre Proof Insulated Jacket",
+    "styleCodes": [
+      "608670",
+      "608674"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -18751,6 +19532,10 @@
   {
     "base": "Tarre Proof Insulated Pant",
     "franchise": "Tarre Proof Insulated Pant",
+    "styleCodes": [
+      "608673",
+      "608675"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -18809,6 +19594,10 @@
   {
     "base": "Vara Down GTX Parka",
     "franchise": "Vara Down GTX Parka",
+    "styleCodes": [
+      "608375",
+      "608376"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -18878,6 +19667,10 @@
   {
     "base": "Vassi GTX Jacket",
     "franchise": "Vassi GTX II Jacket",
+    "styleCodes": [
+      "608574",
+      "608578"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -19057,6 +19850,10 @@
   {
     "base": "Vassi GTX Pant",
     "franchise": "Vassi GTX II Pant",
+    "styleCodes": [
+      "608575",
+      "608580"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -19242,6 +20039,10 @@
   {
     "base": "Vassi GTX Pro Bib",
     "franchise": "Vassi GTX Pro II Bib",
+    "styleCodes": [
+      "608576",
+      "608581"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -19415,6 +20216,10 @@
   {
     "base": "Vassi GTX Pro Jacket",
     "franchise": "Vassi GTX Pro II Jacket",
+    "styleCodes": [
+      "608577",
+      "608582"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -19594,6 +20399,10 @@
   {
     "base": "Yra Mimic Proof Parka",
     "franchise": "Yra Mimic Proof Parka",
+    "styleCodes": [
+      "608377",
+      "608378"
+    ],
     "layer": "Shell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -19663,6 +20472,9 @@
   {
     "base": "Moonlite",
     "franchise": "Moonlite",
+    "styleCodes": [
+      "416330"
+    ],
     "layer": "Sleeping Bags",
     "businessArea": "Hardware",
     "gender": "Junior",
@@ -19752,6 +20564,9 @@
   {
     "base": "Moonlite +7",
     "franchise": "Moonlite +7",
+    "styleCodes": [
+      "416240"
+    ],
     "layer": "Sleeping Bags",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -19841,6 +20656,9 @@
   {
     "base": "Moonlite -1",
     "franchise": "Moonlite -1",
+    "styleCodes": [
+      "416230"
+    ],
     "layer": "Sleeping Bags",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -19930,6 +20748,9 @@
   {
     "base": "Musca -1",
     "franchise": "Musca -1",
+    "styleCodes": [
+      "416220"
+    ],
     "layer": "Sleeping Bags",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -20019,6 +20840,9 @@
   {
     "base": "Musca -13",
     "franchise": "Musca -13",
+    "styleCodes": [
+      "416190"
+    ],
     "layer": "Sleeping Bags",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -20108,6 +20932,9 @@
   {
     "base": "Musca -26",
     "franchise": "Musca -26",
+    "styleCodes": [
+      "416180"
+    ],
     "layer": "Sleeping Bags",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -20197,6 +21024,9 @@
   {
     "base": "Musca -5",
     "franchise": "Musca -5",
+    "styleCodes": [
+      "416210"
+    ],
     "layer": "Sleeping Bags",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -20286,6 +21116,9 @@
   {
     "base": "Tarius +1",
     "franchise": "Tarius +1",
+    "styleCodes": [
+      "416160"
+    ],
     "layer": "Sleeping Bags",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -20375,6 +21208,9 @@
   {
     "base": "Tarius +6",
     "franchise": "Tarius +6",
+    "styleCodes": [
+      "416170"
+    ],
     "layer": "Sleeping Bags",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -20464,6 +21300,9 @@
   {
     "base": "Tarius -18",
     "franchise": "Tarius -18",
+    "styleCodes": [
+      "416140"
+    ],
     "layer": "Sleeping Bags",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -20553,6 +21392,9 @@
   {
     "base": "Tarius -5",
     "franchise": "Tarius -5",
+    "styleCodes": [
+      "416150"
+    ],
     "layer": "Sleeping Bags",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -20642,6 +21484,9 @@
   {
     "base": "Tarius Lite +8",
     "franchise": "Tarius Lite +8",
+    "styleCodes": [
+      "416260"
+    ],
     "layer": "Sleeping Bags",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -20731,6 +21576,10 @@
   {
     "base": "Korp Softshell Hood",
     "franchise": "Korp Softshell Hood",
+    "styleCodes": [
+      "608552",
+      "608553"
+    ],
     "layer": "Softshell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -20789,6 +21638,10 @@
   {
     "base": "Korp Softshell Pant",
     "franchise": "Korp Softshell Pant",
+    "styleCodes": [
+      "608554",
+      "608555"
+    ],
     "layer": "Softshell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -20847,6 +21700,10 @@
   {
     "base": "ROC Sight Softshell Jacket",
     "franchise": "ROC Sight Softshell II Jacket",
+    "styleCodes": [
+      "607806",
+      "607808"
+    ],
     "layer": "Softshell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -20936,6 +21793,10 @@
   {
     "base": "ROC Sight Softshell Pant",
     "franchise": "ROC Sight Softshell II Pant",
+    "styleCodes": [
+      "607807",
+      "607809"
+    ],
     "layer": "Softshell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -21025,6 +21886,10 @@
   {
     "base": "Spitz Softshell Jacket",
     "franchise": "Spitz Softshell Jacket",
+    "styleCodes": [
+      "609055",
+      "609078"
+    ],
     "layer": "Softshell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -21083,6 +21948,10 @@
   {
     "base": "Spitz Softshell Pant",
     "franchise": "Spitz Softshell Pant",
+    "styleCodes": [
+      "609056",
+      "609079"
+    ],
     "layer": "Softshell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -21141,6 +22010,10 @@
   {
     "base": "Warm Flex Pant",
     "franchise": "Warm Flex Pant",
+    "styleCodes": [
+      "607819",
+      "607820"
+    ],
     "layer": "Softshell",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -21230,6 +22103,10 @@
   {
     "base": "Haglöfs LS Tee",
     "franchise": "Haglöfs LS Tee",
+    "styleCodes": [
+      "607660",
+      "607663"
+    ],
     "layer": "Tops",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -21319,6 +22196,10 @@
   {
     "base": "Haglöfs Tee",
     "franchise": "Haglöfs Tee",
+    "styleCodes": [
+      "607658",
+      "607665"
+    ],
     "layer": "Tops",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -21408,6 +22289,10 @@
   {
     "base": "Kaise Wool LS Tee",
     "franchise": "Kaise Wool II LS Tee",
+    "styleCodes": [
+      "608796",
+      "608803"
+    ],
     "layer": "Tops",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -21546,6 +22431,10 @@
   {
     "base": "Kaise Wool Tee",
     "franchise": "Kaise Wool II Tee",
+    "styleCodes": [
+      "608795",
+      "608804"
+    ],
     "layer": "Tops",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -21684,6 +22573,9 @@
   {
     "base": "Kaise Wool Tank Top",
     "franchise": "Kaise Wool Tank Top",
+    "styleCodes": [
+      "608816"
+    ],
     "layer": "Tops",
     "businessArea": "Apparel",
     "gender": "Women",
@@ -21755,6 +22647,9 @@
   {
     "base": "L.I.M Delta Crop Tee",
     "franchise": "L.I.M Delta Crop Tee",
+    "styleCodes": [
+      "608216"
+    ],
     "layer": "Tops",
     "businessArea": "Apparel",
     "gender": "Women",
@@ -21834,6 +22729,9 @@
   {
     "base": "L.I.M Delta Tee",
     "franchise": "L.I.M Delta Tee",
+    "styleCodes": [
+      "608215"
+    ],
     "layer": "Tops",
     "businessArea": "Apparel",
     "gender": "Men",
@@ -21913,6 +22811,10 @@
   {
     "base": "L.I.M Light T-Shirt",
     "franchise": "L.I.M Light T-Shirt",
+    "styleCodes": [
+      "608799",
+      "608800"
+    ],
     "layer": "Tops",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -21971,6 +22873,10 @@
   {
     "base": "L.I.M Ridge Tank",
     "franchise": "L.I.M Ridge Tank",
+    "styleCodes": [
+      "608420",
+      "609156"
+    ],
     "layer": "Tops",
     "businessArea": "Apparel",
     "gender": "Women",
@@ -22050,6 +22956,11 @@
   {
     "base": "L.I.M Ridge Tee",
     "franchise": "L.I.M Ridge Tee",
+    "styleCodes": [
+      "607685",
+      "607686",
+      "609157"
+    ],
     "layer": "Tops",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -22139,6 +23050,10 @@
   {
     "base": "L.I.M Sunpack Hoodie",
     "franchise": "L.I.M Sunpack Hoodie",
+    "styleCodes": [
+      "608170",
+      "608190"
+    ],
     "layer": "Tops",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -22218,6 +23133,10 @@
   {
     "base": "Outsiders Graphic Tee",
     "franchise": "Outsiders Graphic Tee",
+    "styleCodes": [
+      "608151",
+      "608194"
+    ],
     "layer": "Tops",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -22297,6 +23216,10 @@
   {
     "base": "Outsiders Tee",
     "franchise": "Outsiders Tee",
+    "styleCodes": [
+      "607659",
+      "607664"
+    ],
     "layer": "Tops",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -22386,6 +23309,9 @@
   {
     "base": "Ridge Hike Tee",
     "franchise": "Ridge Hike Tee",
+    "styleCodes": [
+      "606595"
+    ],
     "layer": "Tops",
     "businessArea": "Apparel",
     "gender": "Women",
@@ -22475,6 +23401,10 @@
   {
     "base": "Ridge LS Tee",
     "franchise": "Ridge II LS Tee",
+    "styleCodes": [
+      "608794",
+      "608805"
+    ],
     "layer": "Tops",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -22600,6 +23530,10 @@
   {
     "base": "Ridge Tee",
     "franchise": "Ridge II Tee",
+    "styleCodes": [
+      "608793",
+      "608806"
+    ],
     "layer": "Tops",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -22732,6 +23666,9 @@
   {
     "base": "Salo Dress",
     "franchise": "Salo Dress",
+    "styleCodes": [
+      "608325"
+    ],
     "layer": "Tops",
     "businessArea": "Apparel",
     "gender": "Women",
@@ -22811,6 +23748,10 @@
   {
     "base": "Salo Shirt",
     "franchise": "Salo Shirt II",
+    "styleCodes": [
+      "608155",
+      "608198"
+    ],
     "layer": "Tops",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -22903,6 +23844,9 @@
   {
     "base": "Salo Shirt SS",
     "franchise": "Salo Shirt SS II",
+    "styleCodes": [
+      "608407"
+    ],
     "layer": "Tops",
     "businessArea": "Apparel",
     "gender": "Men",
@@ -22982,6 +23926,10 @@
   {
     "base": "Selme LS Crewneck",
     "franchise": "Selme LS Crewneck",
+    "styleCodes": [
+      "608696",
+      "608697"
+    ],
     "layer": "Tops",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -23065,6 +24013,10 @@
   {
     "base": "Solvik Seersucker SS Shirt",
     "franchise": "Solvik Seersucker SS Shirt",
+    "styleCodes": [
+      "608611",
+      "608612"
+    ],
     "layer": "Tops",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -23123,6 +24075,9 @@
   {
     "base": "Sun Capsule Halfzip",
     "franchise": "Sun Capsule Halfzip",
+    "styleCodes": [
+      "608835"
+    ],
     "layer": "Tops",
     "businessArea": "Apparel",
     "gender": "Unisex",
@@ -23181,6 +24136,10 @@
   {
     "base": "Trekk Tech LS Tee",
     "franchise": "Trekk Tech II LS Tee",
+    "styleCodes": [
+      "608798",
+      "608801"
+    ],
     "layer": "Tops",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -23319,6 +24278,10 @@
   {
     "base": "Trekk Tech Tee",
     "franchise": "Trekk Tech II Tee",
+    "styleCodes": [
+      "608797",
+      "608802"
+    ],
     "layer": "Tops",
     "businessArea": "Apparel",
     "gender": "Men; Women",
@@ -23457,6 +24420,10 @@
   {
     "base": "Haglöfs L.I.M Horizon GTX Low",
     "franchise": "Haglöfs L.I.M Horizon GTX Low",
+    "styleCodes": [
+      "608295",
+      "608296"
+    ],
     "layer": "Trail Shoes",
     "businessArea": "Footwear",
     "gender": "Men; Women",
@@ -23526,6 +24493,10 @@
   {
     "base": "Haglöfs L.I.M Horizon GTX Mid",
     "franchise": "Haglöfs L.I.M Horizon GTX Mid",
+    "styleCodes": [
+      "608703",
+      "608705"
+    ],
     "layer": "Trail Shoes",
     "businessArea": "Footwear",
     "gender": "Men; Women",
@@ -23584,6 +24555,10 @@
   {
     "base": "Haglöfs L.I.M Horizon Low",
     "franchise": "Haglöfs L.I.M Horizon Low",
+    "styleCodes": [
+      "608388",
+      "608389"
+    ],
     "layer": "Trail Shoes",
     "businessArea": "Footwear",
     "gender": "Men; Women",
@@ -23663,6 +24638,10 @@
   {
     "base": "L.I.M Light Low",
     "franchise": "L.I.M Light Low",
+    "styleCodes": [
+      "608890",
+      "608893"
+    ],
     "layer": "Trail Shoes",
     "businessArea": "Footwear",
     "gender": "Men; Women",
@@ -23721,6 +24700,10 @@
   {
     "base": "L.I.M Ultralight GTX Low",
     "franchise": "L.I.M Ultralight GTX Low",
+    "styleCodes": [
+      "608889",
+      "608892"
+    ],
     "layer": "Trail Shoes",
     "businessArea": "Footwear",
     "gender": "Men; Women",
@@ -23779,6 +24762,10 @@
   {
     "base": "L.I.M Ultralight Low",
     "franchise": "L.I.M Ultralight Low",
+    "styleCodes": [
+      "608888",
+      "608891"
+    ],
     "layer": "Trail Shoes",
     "businessArea": "Footwear",
     "gender": "Men; Women",
@@ -23837,6 +24824,9 @@
   {
     "base": "Oxo 60 W",
     "franchise": "Oxo 60 W",
+    "styleCodes": [
+      "607129"
+    ],
     "layer": "Trekking Packs",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -23916,6 +24906,9 @@
   {
     "base": "Oxo 80",
     "franchise": "Oxo 80",
+    "styleCodes": [
+      "607122"
+    ],
     "layer": "Trekking Packs",
     "businessArea": "Hardware",
     "gender": "Unisex",
@@ -23995,6 +24988,9 @@
   {
     "base": "Haglöfs Incline GTX Mid",
     "franchise": "Haglöfs Incline GTX Mid",
+    "styleCodes": [
+      "608093"
+    ],
     "layer": "Trekking Shoes",
     "businessArea": "Footwear",
     "gender": "Unisex",
@@ -24053,6 +25049,9 @@
   {
     "base": "Haglöfs Incline Pro GTX High",
     "franchise": "Haglöfs Incline Pro GTX High",
+    "styleCodes": [
+      "607514"
+    ],
     "layer": "Trekking Shoes",
     "businessArea": "Footwear",
     "gender": "Unisex",
@@ -24111,6 +25110,9 @@
   {
     "base": "Haglöfs Scand GTX Mid",
     "franchise": "Haglöfs Scand GTX Mid",
+    "styleCodes": [
+      "608069"
+    ],
     "layer": "Trekking Shoes",
     "businessArea": "Footwear",
     "gender": "Unisex",
@@ -24200,6 +25202,9 @@
   {
     "base": "Haglöfs Solid Pro 2 GTX Mid",
     "franchise": "Haglöfs Solid Pro 2 GTX Mid",
+    "styleCodes": [
+      "608071"
+    ],
     "layer": "Trekking Shoes",
     "businessArea": "Footwear",
     "gender": "Unisex",
@@ -24258,6 +25263,9 @@
   {
     "base": "Haglöfs Solid Pro 2 WL GTX Mid",
     "franchise": "Haglöfs Solid Pro 2 WL GTX Mid",
+    "styleCodes": [
+      "608540"
+    ],
     "layer": "Trekking Shoes",
     "businessArea": "Footwear",
     "gender": "Unisex",
