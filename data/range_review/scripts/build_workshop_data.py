@@ -74,9 +74,10 @@ GENERATION_AGE_FLAG_SEASONS = 4  # RR-029/IP-011/RR-030 -- no confirmed renewal 
 
 TIER_HERO_MIN_UNITS = 10_000  # RR-049 -- user-set 3-Nov-2026 (replaced RR-048's Core/GP% rules)
 TIER_HERO_MIN_GP_PCT = 50.0  # RR-051 -- lowered from 55.0, user-set 3-Nov-2026
-TIER_HARVEST_MIN_UNITS = 5_000
+TIER_HARVEST_MIN_UNITS = 3_000  # RR-080 -- lowered from 5,000, user-set 4-Nov-2026
 TIER_HARVEST_MIN_GP_PCT = 45.0
 TIER_EXIT_MAX_UNITS = 500  # RR-051 -- raised from 200, user-set 3-Nov-2026
+TIER_EXIT_MAX_GP_PCT = 30.0  # RR-080 -- new, user-set 4-Nov-2026 -- Exit is now units OR GP%
 
 OUTPUTS_DIR = RR_DIR / "outputs"
 MOQ_PATH = OUTPUTS_DIR / "SS28_MOQ_Exceptions.xlsx"
@@ -110,9 +111,17 @@ def compute_suggested_tier(d: dict) -> tuple[str | None, str]:
          settled the way the other three are.
       4. 2026 units > TIER_HARVEST_MIN_UNITS AND 2026 GP% > TIER_HARVEST_MIN_GP_PCT -> Harvest.
          Checked after Hero (not before) so a franchise clearing BOTH bars gets the stronger
-         Hero call, not Harvest -- Harvest's bar is strictly looser (5k/45% vs Hero's 10k/50%).
-      5. 2026 units < TIER_EXIT_MAX_UNITS (and not already Emerging via rule 1 or 2 -- "that are
-         not emerging", the user's own phrasing) -> Exit.
+         Hero call, not Harvest -- Harvest's bar is strictly looser (3k/45% vs Hero's 10k/50%,
+         RR-080 -- lowered from 5k).
+      5. 2026 units < TIER_EXIT_MAX_UNITS OR 2026 GP% < TIER_EXIT_MAX_GP_PCT (and not already
+         Emerging via rule 1 or 2 -- "that are not emerging", the user's own phrasing) -> Exit.
+         RR-080 -- added the GP% leg (user: "Exit sales under 500 unit or GP percentage under
+         30%"): an OR, not an AND -- a franchise can be flagged Exit on volume alone, margin
+         alone, or both, each checked independently ("blank not zero": a missing units or GP%
+         figure never counts as failing its own leg, same convention as every other threshold
+         on this Board). This can fire even for a high-volume franchise if its GP% is bad
+         enough, since this rule doesn't require clearing Hero/Harvest's GP% floor first --
+         deliberate, per the user's literal framing of the rule.
       6. Everything else -> no suggestion (None) -- most franchises will land here under these
          tighter, sales-only thresholds; that's expected, not a bug (see TIERING_GUIDANCE.md)."""
     if d["isNewInSeason"] and d.get("newKind") != "generation":
@@ -139,8 +148,15 @@ def compute_suggested_tier(d: dict) -> tuple[str | None, str]:
             return "Harvest", (f"2026 sales {y2026:,} units > {TIER_HARVEST_MIN_UNITS:,}, GP% "
                                 f"{y2026_gp:.0f}% > {TIER_HARVEST_MIN_GP_PCT:.0f}%")
 
-    if y2026 is not None and y2026 < TIER_EXIT_MAX_UNITS:
-        return "Exit", f"2026 sales {y2026:,} units < {TIER_EXIT_MAX_UNITS:,}"
+    exit_on_units = y2026 is not None and y2026 < TIER_EXIT_MAX_UNITS
+    exit_on_gp = y2026_gp is not None and y2026_gp < TIER_EXIT_MAX_GP_PCT
+    if exit_on_units or exit_on_gp:
+        reasons = []
+        if exit_on_units:
+            reasons.append(f"2026 sales {y2026:,} units < {TIER_EXIT_MAX_UNITS:,}")
+        if exit_on_gp:
+            reasons.append(f"2026 GP% {y2026_gp:.0f}% < {TIER_EXIT_MAX_GP_PCT:.0f}%")
+        return "Exit", " and ".join(reasons)
 
     return None, ""
 

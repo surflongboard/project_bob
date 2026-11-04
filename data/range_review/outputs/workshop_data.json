@@ -192,8 +192,8 @@
     "isNewInSeason": true,
     "newKind": "generation",
     "newSeasonLabel": "FW27",
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "2026 sales 3,624 units > 3,000, GP% 53% > 45%"
   },
   {
     "base": "Brand Five Panel Cap",
@@ -291,8 +291,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "2026 sales 3,828 units > 3,000, GP% 65% > 45%"
   },
   {
     "base": "Haglöfs Bandana",
@@ -1008,8 +1008,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "2026 sales 3,212 units > 3,000, GP% 53% > 45%"
   },
   {
     "base": "Outsiders Beanie",
@@ -1100,8 +1100,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "2026 sales 4,497 units > 3,000, GP% 62% > 45%"
   },
   {
     "base": "Rosson Beanie",
@@ -3383,8 +3383,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "2026 sales 4,086 units > 3,000, GP% 49% > 45%"
   },
   {
     "base": "Tight hip pack 1",
@@ -4175,7 +4175,7 @@
     "newKind": null,
     "newSeasonLabel": null,
     "suggestedTier": "Harvest",
-    "suggestedTierReason": "2026 sales 5,281 units > 5,000, GP% 48% > 45%"
+    "suggestedTierReason": "2026 sales 5,281 units > 3,000, GP% 48% > 45%"
   },
   {
     "base": "Lava 70",
@@ -5377,8 +5377,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "2026 sales 3,582 units > 3,000, GP% 47% > 45%"
   },
   {
     "base": "Jarve Multi 22",
@@ -5945,7 +5945,7 @@
     "newKind": null,
     "newSeasonLabel": null,
     "suggestedTier": "Harvest",
-    "suggestedTierReason": "2026 sales 9,039 units > 5,000, GP% 48% > 45%"
+    "suggestedTierReason": "2026 sales 9,039 units > 3,000, GP% 48% > 45%"
   },
   {
     "base": "Tight Medium",
@@ -6045,7 +6045,7 @@
     "newKind": null,
     "newSeasonLabel": null,
     "suggestedTier": "Harvest",
-    "suggestedTierReason": "2026 sales 9,868 units > 5,000, GP% 46% > 45%"
+    "suggestedTierReason": "2026 sales 9,868 units > 3,000, GP% 46% > 45%"
   },
   {
     "base": "Tight Pro Large",
@@ -6328,7 +6328,7 @@
     "newKind": null,
     "newSeasonLabel": null,
     "suggestedTier": "Harvest",
-    "suggestedTierReason": "2026 sales 5,078 units > 5,000, GP% 46% > 45%"
+    "suggestedTierReason": "2026 sales 5,078 units > 3,000, GP% 46% > 45%"
   },
   {
     "base": "Tight Tote 25",
@@ -7763,7 +7763,7 @@
     "newKind": null,
     "newSeasonLabel": null,
     "suggestedTier": "Harvest",
-    "suggestedTierReason": "2026 sales 9,739 units > 5,000, GP% 49% > 45%"
+    "suggestedTierReason": "2026 sales 9,739 units > 3,000, GP% 49% > 45%"
   },
   {
     "base": "Haglöfs Ridge GTX Mid",
@@ -7913,8 +7913,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "2026 sales 4,392 units > 3,000, GP% 45% > 45%"
   },
   {
     "base": "Haglöfs Rosson FG Proof Mid",
@@ -8595,8 +8595,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "2026 sales 3,064 units > 3,000, GP% 59% > 45%"
   },
   {
     "base": "Hede Down Vest",
@@ -9200,8 +9200,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "2026 sales 3,047 units > 3,000, GP% 56% > 45%"
   },
   {
     "base": "Long Mimic Parka",
@@ -9630,8 +9630,8 @@
     "isNewInSeason": true,
     "newKind": "generation",
     "newSeasonLabel": "FW27",
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "2026 sales 3,767 units > 3,000, GP% 51% > 45%"
   },
   {
     "base": "Mimic Alert Jacket",
@@ -10181,7 +10181,7 @@
     "newKind": null,
     "newSeasonLabel": null,
     "suggestedTier": "Harvest",
-    "suggestedTierReason": "2026 sales 7,765 units > 5,000, GP% 53% > 45%"
+    "suggestedTierReason": "2026 sales 7,765 units > 3,000, GP% 53% > 45%"
   },
   {
     "base": "ROC Flash Down Jacket",
@@ -10459,8 +10459,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "2026 sales 4,387 units > 3,000, GP% 56% > 45%"
   },
   {
     "base": "Rosson Down Parka",
@@ -10706,8 +10706,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "2026 sales 3,302 units > 3,000, GP% 56% > 45%"
   },
   {
     "base": "Spitz Down Hood",
@@ -11221,7 +11221,7 @@
     "newKind": null,
     "newSeasonLabel": null,
     "suggestedTier": "Harvest",
-    "suggestedTierReason": "2026 sales 5,082 units > 5,000, GP% 53% > 45%"
+    "suggestedTierReason": "2026 sales 5,082 units > 3,000, GP% 53% > 45%"
   },
   {
     "base": "Essential Tights",
@@ -11762,8 +11762,8 @@
     "isNewInSeason": true,
     "newKind": "generation",
     "newSeasonLabel": "SS28",
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "2026 sales 3,378 units > 3,000, GP% 61% > 45%"
   },
   {
     "base": "Hiking Tights",
@@ -11916,8 +11916,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "2026 sales 3,978 units > 3,000, GP% 58% > 45%"
   },
   {
     "base": "Korp Lite Shorts",
@@ -12009,8 +12009,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "2026 sales 4,579 units > 3,000, GP% 57% > 45%"
   },
   {
     "base": "L.I.M Pace Shorts",
@@ -12501,7 +12501,7 @@
     "newKind": null,
     "newSeasonLabel": null,
     "suggestedTier": "Harvest",
-    "suggestedTierReason": "2026 sales 5,391 units > 5,000, GP% 58% > 45%"
+    "suggestedTierReason": "2026 sales 5,391 units > 3,000, GP% 58% > 45%"
   },
   {
     "base": "Lizard Softshell Shorts",
@@ -12743,7 +12743,7 @@
     "newKind": null,
     "newSeasonLabel": null,
     "suggestedTier": "Harvest",
-    "suggestedTierReason": "2026 sales 5,204 units > 5,000, GP% 59% > 45%"
+    "suggestedTierReason": "2026 sales 5,204 units > 3,000, GP% 59% > 45%"
   },
   {
     "base": "Magma Rugged Wide Pant",
@@ -12948,7 +12948,7 @@
     "newKind": "generation",
     "newSeasonLabel": "SS28",
     "suggestedTier": "Harvest",
-    "suggestedTierReason": "2026 sales 5,567 units > 5,000, GP% 49% > 45%"
+    "suggestedTierReason": "2026 sales 5,567 units > 3,000, GP% 49% > 45%"
   },
   {
     "base": "Mid Standard Shorts",
@@ -14006,8 +14006,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "2026 sales 4,053 units > 3,000, GP% 57% > 45%"
   },
   {
     "base": "Haglöfs Hoodie",
@@ -14291,7 +14291,7 @@
     "newKind": null,
     "newSeasonLabel": null,
     "suggestedTier": "Harvest",
-    "suggestedTierReason": "2026 sales 7,905 units > 5,000, GP% 56% > 45%"
+    "suggestedTierReason": "2026 sales 7,905 units > 3,000, GP% 56% > 45%"
   },
   {
     "base": "Korp Mid Jacket",
@@ -14384,7 +14384,7 @@
     "newKind": null,
     "newSeasonLabel": null,
     "suggestedTier": "Harvest",
-    "suggestedTierReason": "2026 sales 6,760 units > 5,000, GP% 51% > 45%"
+    "suggestedTierReason": "2026 sales 6,760 units > 3,000, GP% 51% > 45%"
   },
   {
     "base": "L.I.M Mid Hybrid",
@@ -14610,7 +14610,7 @@
     "newKind": null,
     "newSeasonLabel": null,
     "suggestedTier": "Harvest",
-    "suggestedTierReason": "2026 sales 5,069 units > 5,000, GP% 54% > 45%"
+    "suggestedTierReason": "2026 sales 5,069 units > 3,000, GP% 54% > 45%"
   },
   {
     "base": "L.I.M Mid Multi Jacket",
@@ -15303,7 +15303,7 @@
     "newKind": null,
     "newSeasonLabel": null,
     "suggestedTier": "Harvest",
-    "suggestedTierReason": "2026 sales 5,823 units > 5,000, GP% 56% > 45%"
+    "suggestedTierReason": "2026 sales 5,823 units > 3,000, GP% 56% > 45%"
   },
   {
     "base": "Rosson Mid Jacket",
@@ -15445,7 +15445,7 @@
     "newKind": null,
     "newSeasonLabel": null,
     "suggestedTier": "Harvest",
-    "suggestedTierReason": "2026 sales 7,309 units > 5,000, GP% 56% > 45%"
+    "suggestedTierReason": "2026 sales 7,309 units > 3,000, GP% 56% > 45%"
   },
   {
     "base": "Swook Mid Hood",
@@ -16331,8 +16331,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "2026 sales 3,200 units > 3,000, GP% 45% > 45%"
   },
   {
     "base": "Alper Proof Pant",
@@ -16596,7 +16596,7 @@
     "newKind": null,
     "newSeasonLabel": null,
     "suggestedTier": "Harvest",
-    "suggestedTierReason": "2026 sales 10,389 units > 5,000, GP% 49% > 45%"
+    "suggestedTierReason": "2026 sales 10,389 units > 3,000, GP% 49% > 45%"
   },
   {
     "base": "Breeze Proof Jacket",
@@ -16689,7 +16689,7 @@
     "newKind": null,
     "newSeasonLabel": null,
     "suggestedTier": "Harvest",
-    "suggestedTierReason": "2026 sales 9,971 units > 5,000, GP% 55% > 45%"
+    "suggestedTierReason": "2026 sales 9,971 units > 3,000, GP% 55% > 45%"
   },
   {
     "base": "Front Proof Jacket",
@@ -17228,8 +17228,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "2026 sales 4,753 units > 3,000, GP% 56% > 45%"
   },
   {
     "base": "Korp Proof Jacket",
@@ -17322,7 +17322,7 @@
     "newKind": null,
     "newSeasonLabel": null,
     "suggestedTier": "Harvest",
-    "suggestedTierReason": "2026 sales 9,440 units > 5,000, GP% 59% > 45%"
+    "suggestedTierReason": "2026 sales 9,440 units > 3,000, GP% 59% > 45%"
   },
   {
     "base": "L.I.M Airak 2,5L Jacket",
@@ -17539,7 +17539,7 @@
     "newKind": "generation",
     "newSeasonLabel": "SS28",
     "suggestedTier": "Harvest",
-    "suggestedTierReason": "2026 sales 5,516 units > 5,000, GP% 52% > 45%"
+    "suggestedTierReason": "2026 sales 5,516 units > 3,000, GP% 52% > 45%"
   },
   {
     "base": "L.I.M Airak 2,5L Proof Pant",
@@ -18829,8 +18829,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "2026 sales 4,651 units > 3,000, GP% 58% > 45%"
   },
   {
     "base": "Ozka Proof Pant",
@@ -22097,8 +22097,8 @@
     "isNewInSeason": false,
     "newKind": null,
     "newSeasonLabel": null,
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "2026 sales 3,323 units > 3,000, GP% 60% > 45%"
   },
   {
     "base": "Haglöfs LS Tee",
@@ -22191,7 +22191,7 @@
     "newKind": null,
     "newSeasonLabel": null,
     "suggestedTier": "Harvest",
-    "suggestedTierReason": "2026 sales 5,676 units > 5,000, GP% 58% > 45%"
+    "suggestedTierReason": "2026 sales 5,676 units > 3,000, GP% 58% > 45%"
   },
   {
     "base": "Haglöfs Tee",
@@ -22284,7 +22284,7 @@
     "newKind": null,
     "newSeasonLabel": null,
     "suggestedTier": "Harvest",
-    "suggestedTierReason": "2026 sales 5,732 units > 5,000, GP% 53% > 45%"
+    "suggestedTierReason": "2026 sales 5,732 units > 3,000, GP% 53% > 45%"
   },
   {
     "base": "Kaise Wool LS Tee",
@@ -23211,7 +23211,7 @@
     "newKind": null,
     "newSeasonLabel": null,
     "suggestedTier": "Harvest",
-    "suggestedTierReason": "2026 sales 6,106 units > 5,000, GP% 57% > 45%"
+    "suggestedTierReason": "2026 sales 6,106 units > 3,000, GP% 57% > 45%"
   },
   {
     "base": "Outsiders Tee",
@@ -23304,7 +23304,7 @@
     "newKind": null,
     "newSeasonLabel": null,
     "suggestedTier": "Harvest",
-    "suggestedTierReason": "2026 sales 6,967 units > 5,000, GP% 58% > 45%"
+    "suggestedTierReason": "2026 sales 6,967 units > 3,000, GP% 58% > 45%"
   },
   {
     "base": "Ridge Hike Tee",
@@ -23660,8 +23660,8 @@
     "isNewInSeason": true,
     "newKind": "generation",
     "newSeasonLabel": "SS28",
-    "suggestedTier": null,
-    "suggestedTierReason": ""
+    "suggestedTier": "Harvest",
+    "suggestedTierReason": "2026 sales 3,245 units > 3,000, GP% 57% > 45%"
   },
   {
     "base": "Salo Dress",
@@ -24415,7 +24415,7 @@
     "newKind": "generation",
     "newSeasonLabel": "SS28",
     "suggestedTier": "Harvest",
-    "suggestedTierReason": "2026 sales 5,583 units > 5,000, GP% 58% > 45%"
+    "suggestedTierReason": "2026 sales 5,583 units > 3,000, GP% 58% > 45%"
   },
   {
     "base": "Haglöfs L.I.M Horizon GTX Low",
