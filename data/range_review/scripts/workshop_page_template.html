@@ -421,6 +421,9 @@ a { color: var(--accent); }
   white-space: nowrap;
 }
 .summary-clear-all-btn:hover { border-color: var(--tail-fg); color: var(--tail-fg); }
+/* RR-071 -- click-twice-to-confirm state, replacing a blocked window.confirm(): the button
+   itself becomes the prompt, so it needs to visibly stand out as "waiting for a second click." */
+.confirm-pending { background: var(--tail-bg) !important; border-color: var(--tail-fg) !important; color: var(--tail-fg) !important; }
 
 /* RR-058 -- Action/notes table: free text, not the numeric tables above, so left-aligned,
    wrapping, regular (non-monospace) type -- added alongside .summary-table rather than
@@ -1037,6 +1040,17 @@ textarea.homework-note {
   // either") previously reverted silently once the live subscription re-synced to the true
   // (unwritten) server state, with nothing ever telling the user why.
   var homeworkSaveError = null;
+  // RR-071 -- a one-off notice (submit/export failed) should clear itself rather than sit in
+  // the banner forever; a persistent problem (not_ready, invalid_argument) does NOT use this --
+  // those stay until an actual successful write clears them (see saveHomeworkPick()).
+  var homeworkSaveErrorClearTimeout = null;
+  function clearHomeworkSaveErrorSoon() {
+    clearTimeout(homeworkSaveErrorClearTimeout);
+    homeworkSaveErrorClearTimeout = setTimeout(function () {
+      homeworkSaveError = null;
+      updateHomeworkBar();
+    }, 4000);
+  }
   // RR-062 -- homework now mirrors the FULL official decision set (Tier, Last season to sell,
   // Consolidate, Notes), not just Tier + a note -- per the user, after testing surfaced that
   // "reveal" being a one-time snapshot (not a live sync) didn't match how they expected this to
@@ -1095,6 +1109,15 @@ textarea.homework-note {
     }, 400);
   }
 
+  // RR-071 -- Artifacts run in a sandboxed iframe where window.confirm()/alert() silently
+  // return false / do nothing at all -- no dialog, no exception, nothing -- rather than reject
+  // or throw. Confirmed by reproducing it directly (a sandboxed test iframe without
+  // "allow-modals": confirm() returned false immediately, no dialog event ever fired). Every
+  // confirm()/alert() call below SILENTLY NO-OPPED because of this -- "Reset my homework"
+  // looked broken but was actually just always hitting its own "cancelled" branch. Replaced
+  // every one with in-page UI: a click-twice-to-confirm pattern for destructive actions (the
+  // button itself becomes the prompt, no native dialog involved), and the existing
+  // homeworkSaveError-driven banner for failure/success notices.
   function submitMyHomework() {
     if (!myUserId || !sharedHomeworkCol) return;
     // RR-065 -- THE actual bug behind the submit/"up to date" confusion: this used to pass
@@ -1107,7 +1130,8 @@ textarea.homework-note {
       .then(function () { render(); })
       .catch(function (err) {
         console.warn("submit failed", err);
-        alert("Submit failed — see console.");
+        homeworkSaveError = "submit_failed";
+        updateHomeworkBar();
       });
   }
 
@@ -1122,7 +1146,8 @@ textarea.homework-note {
   }
   function exportMyHomeworkCsv() {
     if (!downloadsModule) {
-      alert("Export isn't available in this view.");
+      homeworkSaveError = "export_unavailable";
+      updateHomeworkBar();
       return;
     }
     var bySlug = {};
@@ -1145,18 +1170,35 @@ textarea.homework-note {
     var filename = "my_homework_" + new Date().toISOString().slice(0, 10) + ".csv";
     downloadsModule.save({ filename: filename, data: csv }).catch(function (err) {
       console.warn("export failed", err);
-      if (err && err.code !== "declined") alert("Export failed — see console.");
+      if (err && err.code !== "declined") {
+        homeworkSaveError = "export_failed";
+        updateHomeworkBar();
+      }
     });
   }
 
-  // RR-069 -- lets anyone clear THEIR OWN homework (private draft + their own submission, if
-  // any) directly from the Board, rather than needing it done for them. Confirms first since
-  // it's destructive. Deletes are idempotent (db.d.ts), so this is safe to call even when
-  // there's nothing to delete on one side (e.g. a draft but no submission yet).
+  // RR-069/RR-071 -- lets anyone clear THEIR OWN homework (private draft + their own
+  // submission, if any) directly from the Board. Click-twice-to-confirm (see RR-071 note
+  // above): the button itself becomes "Click again to confirm reset" for 4s, reverting if
+  // not clicked again. Deletes are idempotent (db.d.ts), safe even with nothing on one side.
+  var resetConfirmPending = false;
+  var resetConfirmTimeout = null;
   function resetMyHomework() {
     if (!myUserId) return;
-    if (!confirm("Clear all your homework picks? This removes your private draft and your " +
-      "submission to the team (if any), and can't be undone.")) return;
+    var btn = document.getElementById("resetHomeworkBtn");
+    if (!resetConfirmPending) {
+      resetConfirmPending = true;
+      if (btn) { btn.textContent = "Click again to confirm reset"; btn.classList.add("confirm-pending"); }
+      clearTimeout(resetConfirmTimeout);
+      resetConfirmTimeout = setTimeout(function () {
+        resetConfirmPending = false;
+        if (btn) { btn.textContent = "Reset my homework"; btn.classList.remove("confirm-pending"); }
+      }, 4000);
+      return;
+    }
+    resetConfirmPending = false;
+    clearTimeout(resetConfirmTimeout);
+    if (btn) { btn.textContent = "Reset my homework"; btn.classList.remove("confirm-pending"); }
     myHomeworkDraft = {};
     updateHomeworkBar();
     var tasks = [];
@@ -1169,22 +1211,41 @@ textarea.homework-note {
     Promise.all(tasks).then(function () { render(); });
   }
 
-  // RR-069 -- owner-only bulk clear for the whole team's revealed submissions (never touches
-  // anyone's private draft -- data/users/<id>/ can't be reached from here even by the owner).
-  // Gated on isOwnerUser in the UI, and the db capability's own `write: "owner"` rule on the
-  // homework_responses prefix (RR-053) enforces the same floor independently either way.
+  // RR-069/RR-071 -- owner-only bulk clear for the whole team's revealed submissions (never
+  // touches anyone's private draft -- data/users/<id>/ can't be reached from here even by the
+  // owner). Gated on isOwnerUser in the UI, and the db capability's own `write: "owner"` rule
+  // on the homework_responses prefix (RR-053) enforces the same floor independently either
+  // way. Same click-twice-to-confirm pattern as resetMyHomework(), no native dialog.
+  var clearAllConfirmPending = false;
+  var clearAllConfirmTimeout = null;
   function clearAllHomeworkSubmissions() {
     if (!dbModule) return;
-    if (!confirm("Clear ALL team homework submissions? This removes everyone's revealed picks " +
-      "(not their private drafts) and can't be undone.")) return;
+    var btn = document.getElementById("clearAllHomeworkBtn");
+    if (!clearAllConfirmPending) {
+      clearAllConfirmPending = true;
+      if (btn) { btn.textContent = "Click again to confirm — clears everyone's"; btn.classList.add("confirm-pending"); }
+      clearTimeout(clearAllConfirmTimeout);
+      clearAllConfirmTimeout = setTimeout(function () {
+        clearAllConfirmPending = false;
+        if (btn) { btn.textContent = "Clear all submissions"; btn.classList.remove("confirm-pending"); }
+      }, 4000);
+      return;
+    }
+    clearAllConfirmPending = false;
+    clearTimeout(clearAllConfirmTimeout);
+    if (btn) { btn.textContent = "Clearing…"; btn.disabled = true; }
     var col = dbModule.collection("homework_responses");
     col.get().then(function (snap) {
       return Promise.all(snap.docs.map(function (doc) { return col.doc(doc.id).delete(); }));
     }).then(function () {
-      alert("Cleared all submissions.");
+      render(); // rebuilds the Summary panel, including this button, fresh
     }).catch(function (err) {
       console.warn("clear all submissions failed", err);
-      alert("Clear failed — see console. You may need to be the Board's actual owner, not just an Editor.");
+      if (btn) {
+        btn.textContent = "Clear failed — see console";
+        btn.disabled = false;
+        setTimeout(function () { if (btn) btn.textContent = "Clear all submissions"; }, 3000);
+      }
     });
   }
 
@@ -1240,6 +1301,17 @@ textarea.homework-note {
       } else if (homeworkSaveError === "invalid_argument") {
         text.textContent = "Your entry didn't save — you may only have Viewer/Commenter access on this " +
           "Board. Homework needs at least Contributor access; ask the Board owner to raise it.";
+      } else if (homeworkSaveError === "submit_failed") {
+        // RR-071 -- was an alert(), silently blocked in the sandboxed artifact iframe (see note
+        // above resetMyHomework()); self-clears so it doesn't stick around as a stale notice.
+        text.textContent = "Submit failed — try again.";
+        clearHomeworkSaveErrorSoon();
+      } else if (homeworkSaveError === "export_unavailable") {
+        text.textContent = "Export isn't available in this view.";
+        clearHomeworkSaveErrorSoon();
+      } else if (homeworkSaveError === "export_failed") {
+        text.textContent = "Export failed — try again.";
+        clearHomeworkSaveErrorSoon();
       } else {
         text.textContent = "Your entry didn't save (" + homeworkSaveError + ") — try again, or reload the page.";
       }
