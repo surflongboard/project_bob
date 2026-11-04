@@ -946,16 +946,15 @@ textarea.action-note {
         btn.className = "layer-chip" + (state.view === "board" && selected ? " active" : "");
         btn.innerHTML = (flagged ? '<span class="chip-flag"></span>' : "") +
           escapeHtml(l.layer) + ' <span class="chip-count">' + seasonItems.length + "</span>";
-        // RR-056 -- plain click toggles this layer in/out of the active set (several layers
-        // can be on at once); refuses to deselect the last remaining one, so the board is
-        // never left showing zero layers.
+        // RR-057 -- back to single-select per chip (RR-056's toggle-in/out model was confusing
+        // once "All layers" was active -- every chip read as already-selected, so clicking one
+        // to focus on it instead removed it, the opposite of what clicking a layer chip has
+        // always meant). A plain click on a specific layer now simply shows that layer alone,
+        // same as before RR-056; "All layers" remains as an extra, separate option.
         btn.addEventListener("click", function () {
-          if (selected) {
-            if (state.layerKeys.size > 1) state.layerKeys.delete(l.key);
-          } else {
-            state.layerKeys.add(l.key);
-          }
+          state.layerKeys = new Set([l.key]);
           setView("board");
+          location.hash = slug(l.layer);
           renderNav();
           renderBoard();
           window.scrollTo({ top: 0, behavior: "smooth" });
