@@ -1740,6 +1740,30 @@ textarea.homework-note {
       "</tr>";
     }).join("");
 
+    // RR-068 -- "Homework submissions" aggregates every revealed/submitted homework entry
+    // across every franchise and person in one place -- previously the only way to see them
+    // was scrolling to each franchise's own card, same gap the Action/notes section (RR-058)
+    // closed for official decisions. Same season filter as the rest of this panel.
+    var homeworkRows = [];
+    items.forEach(function (d) {
+      homeworkEntriesFor(d.base).forEach(function (e) { homeworkRows.push({ d: d, e: e }); });
+    });
+    homeworkRows.sort(function (a, b) { return a.d.franchise.localeCompare(b.d.franchise); });
+    var homeworkSummaryRows = homeworkRows.map(function (row) {
+      var d = row.d, e = row.e;
+      var name = (profileNames[e.uid] && profileNames[e.uid].name) || "Someone";
+      return '<tr>' +
+        '<td><button type="button" class="summary-link-btn summary-note-jump" data-base="' +
+          escapeHtml(d.base) + '">' + escapeHtml(d.franchise) + "</button></td>" +
+        "<td>" + escapeHtml(d.businessArea + " · " + d.layer) + "</td>" +
+        "<td>" + escapeHtml(name) + "</td>" +
+        "<td>" + escapeHtml(e.tier || "—") + "</td>" +
+        "<td>" + escapeHtml(e.lastSeasonToSell || "—") + "</td>" +
+        "<td>" + (e.consolidate ? "Yes" : "No") + "</td>" +
+        "<td>" + escapeHtml(e.action || "") + "</td>" +
+      "</tr>";
+    }).join("");
+
     summaryViewEl.innerHTML =
       '<div class="summary-section"><h3>Tier breakdown' + (state.season !== "all" ? " — " + state.season : "") + "</h3>" +
         '<div class="summary-tiles">' + tiles + "</div>" +
@@ -1765,6 +1789,13 @@ textarea.homework-note {
               "<th>Franchise</th><th>Layer</th><th>Tier</th><th>Note</th>" +
             "</tr></thead><tbody>" + notesRows + "</tbody></table></div>"
           : '<span style="color:var(--fg-muted);font-size:12.5px">None yet — notes typed into a card\'s "Action / notes" field will show up here.</span>') +
+      "</div>" +
+      '<div class="summary-section"><h3>Homework submissions (' + homeworkRows.length + ")</h3>" +
+        (homeworkRows.length
+          ? '<div class="summary-table-wrap"><table class="summary-table summary-notes-table"><thead><tr>' +
+              "<th>Franchise</th><th>Layer</th><th>Submitted by</th><th>Tier</th><th>Last season</th><th>Consolidate</th><th>Note</th>" +
+            "</tr></thead><tbody>" + homeworkSummaryRows + "</tbody></table></div>"
+          : '<span style="color:var(--fg-muted);font-size:12.5px">None yet — picks made in Homework mode show up here once someone submits.</span>') +
       "</div>";
 
     summaryViewEl.querySelectorAll(".summary-undecided-list button, .summary-note-jump").forEach(function (btn) {
