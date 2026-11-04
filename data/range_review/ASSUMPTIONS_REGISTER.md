@@ -170,6 +170,8 @@ each card — `build_workshop_data.py` imports it cross-workstream.
 
 | RR-077 | Portfolio Analysis | Page description paragraph's "(its SKU-level figures don't match Buying's FC1 MOQ check below — RR-023, Open)" aside removed | **Confirmed** (user-directed, 4-Nov-2026 — "Take out: (it's SKU-level…)") | Dropped the parenthetical aside from the Forecast Units/GP% clause of the page-header `<p>`; the sentence now reads "...Forecast Units/GP% from the FW27 FC3 forecast and the SS28 FC1 forecast file; MOQ shortfalls from..." with no other wording changed. RR-023 itself (the underlying SKU-level vs. MOQ-check figure mismatch) is untouched — this is a display-text trim only, not a resolution of that Open item; still tracked wherever RR-023 is otherwise referenced. | Changed 4-Nov-2026. Template-only. Published as Board version 74. |
 
+| RR-078 | Portfolio Analysis | Page description paragraph's "MOQ shortfalls from Buying's SS28 FC1 check; and leftover-stock flags from the Inventory Manager's SS27 stock position" clause removed | **Confirmed** (user-directed, 4-Nov-2026 — "'MOQ…stock position' also to take out.") | Dropped the second clause from the same sentence RR-077 trimmed; the paragraph now reads "...Forecast Units/GP% from the FW27 FC3 forecast and the SS28 FC1 forecast file. Tier, Last season to sell, Consolidate and Action notes are captured live here..." Display-text only — the underlying MOQ-exceptions and leftover-stock-flag data/card alerts themselves are untouched, this just removes their mention from the summary blurb. | Changed 4-Nov-2026. Template-only. Published as Board version 75. |
+
 ---
 
 ## Next steps (as of 29 Oct 2026)
