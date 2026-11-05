@@ -744,7 +744,7 @@ textarea.homework-note {
 <div class="page-header">
   <div class="page-header-top">
     <h1>Range Review Board</h1>
-    <button class="toggle-btn" id="homeworkModeToggle" type="button">Homework mode</button>
+    <button class="toggle-btn" id="homeworkModeToggle" type="button">Submission mode</button>
   </div>
   <p>FW27/SS28 franchises by layer, for the Nov 12 Range Review Workshop. Each card pulls together: price and
     margin target from the FW27/SS28 range files; Forecast Units/GP% from the FW27 FC3 forecast and the SS28 FC1
@@ -766,9 +766,9 @@ textarea.homework-note {
 <div class="homework-bar" id="homeworkBar" hidden>
   <span id="homeworkBarText"></span>
   <span class="homework-bar-actions">
-    <button class="export-btn" id="exportHomeworkBtn" type="button">Export my homework (CSV)</button>
-    <button class="reveal-btn" id="revealBtn" type="button">Submit my homework to the team</button>
-    <button class="reset-btn" id="resetHomeworkBtn" type="button">Reset my homework</button>
+    <button class="export-btn" id="exportHomeworkBtn" type="button">Export my submission (CSV)</button>
+    <button class="reveal-btn" id="revealBtn" type="button">Submit my submission to the team</button>
+    <button class="reset-btn" id="resetHomeworkBtn" type="button">Reset my submission</button>
   </span>
 </div>
 
@@ -1011,6 +1011,19 @@ textarea.homework-note {
   var SYNTHETIC_HOMEWORK_NAMES = { "isabelle": "Isabelle" };
   function resolveHomeworkName(uid) {
     return SYNTHETIC_HOMEWORK_NAMES[uid] || (profileNames[uid] && profileNames[uid].name) || "Someone";
+  }
+  // RR-087 -- per the user, the per-card tally shows initials instead of a full name, to stay
+  // compact as more contributors submit. Computed from the resolved display name (first +
+  // last word's first letter) for real platform users. Synthetic contributors get an
+  // explicit override here instead of a derived one -- SYNTHETIC_HOMEWORK_NAMES may only hold
+  // a first name, from which the real initials can't be derived.
+  var SYNTHETIC_HOMEWORK_INITIALS = { "isabelle": "IW" };
+  function initialsOf(uid) {
+    if (SYNTHETIC_HOMEWORK_INITIALS[uid]) return SYNTHETIC_HOMEWORK_INITIALS[uid];
+    var parts = String(resolveHomeworkName(uid) || "").trim().split(/\s+/).filter(Boolean);
+    if (!parts.length) return "?";
+    if (parts.length === 1) return parts[0].slice(0, 1).toUpperCase();
+    return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
   }
   function refreshHomeworkProfiles() {
     if (!userModule) return;
@@ -1294,7 +1307,7 @@ textarea.homework-note {
       ]);
     });
     var csv = rows.map(function (r) { return r.map(csvField).join(","); }).join("\r\n");
-    var filename = "my_homework_" + new Date().toISOString().slice(0, 10) + ".csv";
+    var filename = "my_submission_" + new Date().toISOString().slice(0, 10) + ".csv";
     downloadsModule.save({ filename: filename, data: csv }).catch(function (err) {
       console.warn("export failed", err);
       if (err && err.code !== "declined") {
@@ -1319,13 +1332,13 @@ textarea.homework-note {
       clearTimeout(resetConfirmTimeout);
       resetConfirmTimeout = setTimeout(function () {
         resetConfirmPending = false;
-        if (btn) { btn.textContent = "Reset my homework"; btn.classList.remove("confirm-pending"); }
+        if (btn) { btn.textContent = "Reset my submission"; btn.classList.remove("confirm-pending"); }
       }, 4000);
       return;
     }
     resetConfirmPending = false;
     clearTimeout(resetConfirmTimeout);
-    if (btn) { btn.textContent = "Reset my homework"; btn.classList.remove("confirm-pending"); }
+    if (btn) { btn.textContent = "Reset my submission"; btn.classList.remove("confirm-pending"); }
     myHomeworkDraft = {};
     updateHomeworkBar();
     var tasks = [];
@@ -1427,7 +1440,7 @@ textarea.homework-note {
         text.textContent = "Couldn't save that yet — still connecting. Try again in a moment.";
       } else if (homeworkSaveError === "invalid_argument") {
         text.textContent = "Your entry didn't save — you may only have Viewer/Commenter access on this " +
-          "Board. Homework needs at least Contributor access; ask the Board owner to raise it.";
+          "Board. Submitting needs at least Contributor access; ask the Board owner to raise it.";
       } else if (homeworkSaveError === "submit_failed") {
         // RR-071 -- was an alert(), silently blocked in the sandboxed artifact iframe (see note
         // above resetMyHomework()); self-clears so it doesn't stick around as a stale notice.
@@ -1443,7 +1456,7 @@ textarea.homework-note {
         text.textContent = "Your entry didn't save (" + homeworkSaveError + ") — try again, or reload the page.";
       }
     } else if (!myUserId) {
-      text.textContent = "Sign in to save your own homework entries privately.";
+      text.textContent = "Sign in to save your own submission entries privately.";
     } else if (submitted && hasUnsubmittedChanges) {
       // RR-062 -- the exact state the user hit: already submitted once, then kept picking,
       // without realizing the team still only sees the OLDER submission.
@@ -1457,7 +1470,7 @@ textarea.homework-note {
       text.textContent = n + " franchise" + (n === 1 ? "" : "s") +
         " filled in so far — nobody else can see these, not even the Board owner, until you submit.";
     }
-    btn.textContent = submitted && hasUnsubmittedChanges ? "Submit updated homework to the team" : "Submit my homework to the team";
+    btn.textContent = submitted && hasUnsubmittedChanges ? "Submit updated submission to the team" : "Submit my submission to the team";
     btn.disabled = !myUserId || n === 0;
     var exportBtn = document.getElementById("exportHomeworkBtn");
     if (exportBtn) exportBtn.disabled = n === 0;
@@ -1720,25 +1733,23 @@ textarea.homework-note {
           alerts +
           activity +
           '<div class="decision">' +
-            // RR-059/RR-062 -- team homework shows WHO submitted what, across the FULL decision
-            // set (Tier, Last season to sell, Consolidate, Notes), not an anonymous tally and
-            // not Tier-only. Shown whenever anyone has submitted for this franchise, independent
-            // of Homework mode being on -- same spirit as the rule-based "Suggested" hint.
-            // Resolving uid -> name needs the `profiles()` lookup to have come back already
-            // (profileNames, refreshed on every homeworkResponses change) -- falls back to
-            // "Someone" for an id not yet resolved, same as the user capability's own
-            // documented fallback.
+            // RR-059/RR-062/RR-087 -- team submission shows WHO submitted what. Shown whenever
+            // anyone has submitted for this franchise, independent of Submission mode being on
+            // -- same spirit as the rule-based "Suggested" hint. Per the user, kept to Tier +
+            // initials only (RR-087) rather than the full Name/Last season/Consolidate/note
+            // detail this used to carry -- that fuller breakdown is still available per person
+            // in the Summary's Submissions table. Resolving uid -> initials needs the
+            // `profiles()` lookup to have come back already for a real platform user
+            // (profileNames, refreshed on every homeworkResponses change) -- initialsOf() falls
+            // back to "?" for an id not yet resolved.
             (hwEntries.length
-              ? '<div class="hint-row homework-tally">Team homework (' + hwEntries.length + '):<br>' +
+              ? '<div class="hint-row homework-tally">Team submission (' + hwEntries.length + '): ' +
                 hwEntries.map(function (e) {
-                  var name = resolveHomeworkName(e.uid);
-                  var parts = [];
-                  parts.push(e.tier ? escapeHtml(e.tier) : '<span class="muted">no tier yet</span>');
-                  if (e.lastSeasonToSell) parts.push("Last season: " + escapeHtml(e.lastSeasonToSell));
-                  if (e.consolidate) parts.push("Consolidate");
-                  return '<span class="homework-entry"><strong>' + escapeHtml(name) + ':</strong> ' +
-                    parts.join(" · ") + (e.action ? " — " + escapeHtml(e.action) : "") + "</span>";
-                }).join("<br>") +
+                  return '<span class="homework-entry">' +
+                    (e.tier ? escapeHtml(e.tier) : '<span class="muted">No tier yet</span>') +
+                    ' (' + escapeHtml(initialsOf(e.uid)) + ')' +
+                    "</span>";
+                }).join(" · ") +
                 "</div>"
               : "") +
             // RR-053/RR-062 -- this viewer's own private submission, the FULL decision set
@@ -2093,7 +2104,7 @@ textarea.homework-note {
           : '<span style="color:var(--fg-muted);font-size:12.5px">None yet — notes typed into a card\'s "Action / notes" field will show up here.</span>') +
       "</div>" +
       '<div class="summary-section">' +
-        '<div class="summary-section-head"><h3>Homework submissions (' + homeworkRows.length + ")</h3>" +
+        '<div class="summary-section-head"><h3>Submissions (' + homeworkRows.length + ")</h3>" +
           (isOwnerUser
             ? '<button type="button" class="summary-clear-all-btn" id="clearAllHomeworkBtn">Clear all submissions</button>'
             : "") +
@@ -2102,7 +2113,7 @@ textarea.homework-note {
           ? '<div class="summary-table-wrap"><table class="summary-table summary-notes-table"><thead><tr>' +
               "<th>Franchise</th><th>Layer</th><th>Submitted by</th><th>Tier</th><th>Last season</th><th>Consolidate</th><th>Note</th>" +
             "</tr></thead><tbody>" + homeworkSummaryRows + "</tbody></table></div>"
-          : '<span style="color:var(--fg-muted);font-size:12.5px">None yet — picks made in Homework mode show up here once someone submits.</span>') +
+          : '<span style="color:var(--fg-muted);font-size:12.5px">None yet — picks made in Submission mode show up here once someone submits.</span>') +
       "</div>";
 
     summaryViewEl.querySelectorAll(".summary-undecided-list button, .summary-note-jump").forEach(function (btn) {
