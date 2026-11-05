@@ -611,6 +611,7 @@ textarea.action-note {
   color: var(--fg);
 }
 .decision-meta { font-size: 10.5px; color: var(--fg-muted); min-height: 13px; }
+.decision-meta.warn { color: var(--warn-fg); font-weight: 600; }
 
 /* RR-053 -- homework mode: each viewer's own private tier pick (data/users/<id>/,
    sealed until THEY reveal it -- see db capability's "Hidden-until-reveal" pattern)
@@ -948,6 +949,15 @@ textarea.homework-note {
     minSales2026: null, maxSales2026: null, minGp2026: null, maxGp2026: null,
     tierFilter: new Set(), season: "all", view: "board", homeworkMode: false };
   var decisions = {}; // slug -> {tier, action, updatedAt}
+  // RR-up-next -- id -> body, for any decision saved locally (optimistic) but NOT YET confirmed
+  // written to the shared db -- either because dbCol wasn't ready yet when saveDecision() was
+  // first called (the actual bug behind a real user report: "it seems to save while you
+  // navigate between different categories, but if the page gets reloaded the comments and
+  // tiering is lost" -- decisions[id] was updated optimistically and looked saved for the rest
+  // of that page session, but the write to the db itself had silently never happened, so a
+  // fresh page load read back nothing), or because a later write attempt failed outright.
+  // Flushed as soon as dbCol becomes available (initDb()) and on every save attempt.
+  var unsavedDecisions = {};
 
   function render() {
     updateHomeworkBar();
@@ -1015,6 +1025,9 @@ textarea.homework-note {
       }, function (err) {
         console.warn("decisions subscription error", err);
       });
+      // RR-up-next -- dbCol just became available; flush anything saveDecision() queued while
+      // it was still null, rather than leaving it stranded as a local-only optimistic update.
+      Object.keys(unsavedDecisions).forEach(function (id) { flushDecisionWrite(id, unsavedDecisions[id]); });
       sharedHomeworkCol = dbModule.collection("homework_responses");
       sharedHomeworkCol.onSnapshot(function (snap) {
         var next = {};
@@ -1074,17 +1087,63 @@ textarea.homework-note {
     });
   }
 
+  // RR-up-next -- sets a card's own "Updated .../Not saved yet" line directly (no full
+  // re-render -- same discipline as updateHomeworkBar(), see RR-063's note on why saveDecision
+  // never calls renderBoard()). Looks the card up by its own data-base attribute rather than
+  // requiring every call site to thread a DOM reference through, since flushDecisionWrite() (the
+  // retry path, firing once dbCol becomes ready) has no element handy at all -- only an id.
+  function updateDecisionMeta(id) {
+    var cardEl = null;
+    board.querySelectorAll(".card").forEach(function (c) {
+      if (slug(c.getAttribute("data-base")) === id) cardEl = c;
+    });
+    if (!cardEl) return; // not currently rendered (filtered out, different layer) -- fine, data itself is still correct
+    var metaEl = cardEl.querySelector(".decision-meta");
+    if (!metaEl) return;
+    if (unsavedDecisions[id]) {
+      metaEl.textContent = "Not saved yet — retrying…";
+      metaEl.classList.add("warn");
+    } else {
+      var dec = decisions[id];
+      metaEl.textContent = dec && dec.updatedAt ? "Updated " + new Date(dec.updatedAt).toLocaleString() : "";
+      metaEl.classList.remove("warn");
+    }
+  }
+
   var pendingWrites = {};
+  function flushDecisionWrite(id, body) {
+    clearTimeout(pendingWrites[id]);
+    pendingWrites[id] = setTimeout(function () {
+      dbCol.doc(id).set(body).then(function () {
+        delete unsavedDecisions[id];
+        updateDecisionMeta(id);
+      }).catch(function (err) {
+        console.warn("save failed", err);
+        unsavedDecisions[id] = body; // RR-up-next -- keep it queued; flushed again once dbCol next becomes ready
+        updateDecisionMeta(id);
+      });
+    }, 400);
+  }
+
   function saveDecision(base, franchise, tier, action, lastSeasonToSell, consolidate) {
     var id = slug(base);
     var body = { base: base, franchise: franchise, tier: tier || "", action: action || "",
       lastSeasonToSell: lastSeasonToSell || "", consolidate: !!consolidate, updatedAt: Date.now() };
     decisions[id] = body; // optimistic local update
-    if (!dbCol) return;
-    clearTimeout(pendingWrites[id]);
-    pendingWrites[id] = setTimeout(function () {
-      dbCol.doc(id).set(body).catch(function (err) { console.warn("save failed", err); });
-    }, 400);
+    if (!dbCol) {
+      // RR-up-next -- THE actual bug behind a real user report ("it seems to save while you
+      // navigate between different categories, but if the page gets reloaded the comments and
+      // tiering is lost"): dbCol can still be null this early (claude.use("db") hasn't resolved
+      // yet), and this used to just `return` here -- decisions[id] above looked saved for the
+      // rest of that page session (every other part of the UI reads from it), but the write to
+      // the actual db had silently never happened at all, so a fresh page load read back
+      // nothing. Now queued and flushed the moment dbCol becomes available (see initDb()), with
+      // a visible "Not saved yet" line on the card itself in the meantime.
+      unsavedDecisions[id] = body;
+      updateDecisionMeta(id);
+      return;
+    }
+    flushDecisionWrite(id, body);
   }
 
   var pendingDraftWrite = null;
@@ -1725,7 +1784,9 @@ textarea.homework-note {
             "</div>" +
             '<label class="consolidate-row"><input type="checkbox" class="consolidate-check"' + (consolidate ? " checked" : "") + '> Consolidate with other models</label>' +
             '<textarea class="action-note" placeholder="Action / notes…">' + escapeHtml(dec.action || "") + "</textarea>" +
-            '<div class="decision-meta">' + (dec.updatedAt ? "Updated " + new Date(dec.updatedAt).toLocaleString() : "") + "</div>" +
+            (unsavedDecisions[id]
+              ? '<div class="decision-meta warn">Not saved yet — retrying…</div>'
+              : '<div class="decision-meta">' + (dec.updatedAt ? "Updated " + new Date(dec.updatedAt).toLocaleString() : "") + "</div>") +
           "</div>" +
         "</div>" +
       "</div>"
