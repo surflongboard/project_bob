@@ -1001,6 +1001,17 @@ textarea.homework-note {
   // written to db or kept across reloads (names are viewer-relative and can go stale -- only
   // the id itself is persisted).
   var profileNames = {};
+  // RR-086 -- homework entries written on behalf of someone who isn't a Board account (a
+  // Merchandising/Product Controlling contact whose suggestions got entered as a submission,
+  // not typed in live) use a fixed synthetic uid instead of a real platform id, so
+  // userModule.profiles() has nothing to resolve for them -- it only knows real platform
+  // users. Those ids and their display names are hardcoded here rather than left to fall
+  // back to "Someone"; resolveHomeworkName() checks this map first, same fallback order
+  // at both render sites that show a homework submitter's name.
+  var SYNTHETIC_HOMEWORK_NAMES = { "isabelle": "Isabelle" };
+  function resolveHomeworkName(uid) {
+    return SYNTHETIC_HOMEWORK_NAMES[uid] || (profileNames[uid] && profileNames[uid].name) || "Someone";
+  }
   function refreshHomeworkProfiles() {
     if (!userModule) return;
     var ids = Object.keys(homeworkResponses);
@@ -1720,7 +1731,7 @@ textarea.homework-note {
             (hwEntries.length
               ? '<div class="hint-row homework-tally">Team homework (' + hwEntries.length + '):<br>' +
                 hwEntries.map(function (e) {
-                  var name = (profileNames[e.uid] && profileNames[e.uid].name) || "Someone";
+                  var name = resolveHomeworkName(e.uid);
                   var parts = [];
                   parts.push(e.tier ? escapeHtml(e.tier) : '<span class="muted">no tier yet</span>');
                   if (e.lastSeasonToSell) parts.push("Last season: " + escapeHtml(e.lastSeasonToSell));
@@ -2042,7 +2053,7 @@ textarea.homework-note {
     homeworkRows.sort(function (a, b) { return a.d.franchise.localeCompare(b.d.franchise); });
     var homeworkSummaryRows = homeworkRows.map(function (row) {
       var d = row.d, e = row.e;
-      var name = (profileNames[e.uid] && profileNames[e.uid].name) || "Someone";
+      var name = resolveHomeworkName(e.uid);
       return '<tr>' +
         '<td><button type="button" class="summary-link-btn summary-note-jump" data-base="' +
           escapeHtml(d.base) + '">' + escapeHtml(d.franchise) + "</button></td>" +
