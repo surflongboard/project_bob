@@ -384,7 +384,9 @@ def build() -> list[dict]:
             "marginTarget": r["Target GM0%"] or None,
             "specialEditionNote": r["Special edition / fit note"],
             "numStyles": r["# styles rolled up"],
-            "numColors": r["# active colors"],
+            "numColorsFW27": r["# active colors FW27"] if r["# active colors FW27"] != "" else None,
+            "numColorsSS28": r["# active colors SS28"] if r["# active colors SS28"] != "" else None,
+            "numColorsFW28": r["# active colors FW28"] if r["# active colors FW28"] != "" else None,
             "coreAssortmentFW27": r["Core Assortment FW27"] == "Yes",
             "coreAssortmentSS28": r["Core Assortment SS28"],
             "fc1TopdownDemandSS28": r["SS28 FC1 Demand (Top-Down Comparison)"] or None,  # RR-028 -- kept for audit; no longer its own card stat (RR-038, folded into forecastQtySS28 below)

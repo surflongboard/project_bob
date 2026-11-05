@@ -40,12 +40,16 @@ folded into their base franchise rather than listed as separate franchises
 (RR-005/RR-007) -- flagged via the "Special edition / fit note" column
 instead.
 
-Adds a plain "Core Assortment FW27" Yes/No column, sourced from the flag
-already in the SS26 tiering workbook (Sheet 2), rolled up from Base+Gender
-to Base grain (Yes if either gender was Yes). Not framed as a historic-
-sales cross-check here -- that comparison is a later step, once updated
-sales data is in. "Core Assortment SS28" (received 3-Nov-2026, RR-028) now
-has a real source too -- the "Comparison FC1 Top-Down vs. Bottom-Up SS28"
+Adds a plain "Core Assortment FW27" Yes/No column, sourced (as of 5-Nov-2026)
+from the dedicated "FW27 CORE & KEY STYLES Assortment" workbook's CORE
+sheet, Code-grain, rolled up to franchise level (Yes if any of its FW27
+codes is flagged Core there, honoring that sheet's own "Drop" column --
+see load_core_assortment_fw27_by_code()). Replaces the original proxy
+source (a flag already in the SS26 tiering workbook, Base+Gender grain,
+not actually about this FW27 drop at all). Not framed as a historic-sales
+cross-check here -- that comparison is a later step, once updated sales
+data is in. "Core Assortment SS28" (received 3-Nov-2026, RR-028) has its
+own real source too -- the "Comparison FC1 Top-Down vs. Bottom-Up SS28"
 workbook's CORE-HEAT tab, column P, Code-grain -- "To confirm" only for
 the handful of franchises whose SS28 codes aren't covered by that file.
 That same workbook's FC1 tab (column AM) also adds a THIRD, separately-
@@ -54,9 +58,10 @@ deliberately not merged into or overwriting the existing Forecast Qty
 (SS28), since RR-023 already found two other "FC1" SS28 sources don't
 reconcile with each other.
 
-Also adds "# active colors" (sum of colorway-level Active flags across
-every style rolled into the franchise -- see RR-010 for a caveat on rows
-with zero colorway sub-rows), and "ABS"/"Asia Fit" Yes/No flags so a
+Also adds "# active colors FW27/SS28/FW28" (sum of colorway-level Active
+flags across every style rolled into the franchise, per season -- see
+RR-010 for a caveat on rows with zero colorway sub-rows), and "ABS"/
+"Asia Fit" Yes/No flags so a
 reviewer knows an ABS/ABS Exclusive or AF/Asian-Fit variant exists
 somewhere for this franchise even though RR-006/RR-007 keep those rows
 out of the main-range count.
@@ -106,6 +111,7 @@ FW27_PATH = INPUTS_DIR / "FW27_28_Oct_2026.xlsx"
 SS28_PATH = INPUTS_DIR / "SS28_28_Oct_2026.xlsx"
 FW28_PATH = INPUTS_DIR / "FW28_2_Nov_2026.xlsx"
 GM_BY_CODE_PATH = OUTPUTS_DIR / "gm_by_code.json"
+FW27_CORE_KEY_STYLES_PATH = INPUTS_DIR / "FW27_CORE-_KEY_STYLES_Assortment.xlsx"
 
 # Season recency for picking which style represents a franchise when version
 # tokens tie (RR-003's "latest active generation") -- extended for FW28
@@ -142,25 +148,46 @@ def strip_special_edition(style: str) -> tuple[str, str | None]:
     return s, None
 
 
-TIERING_SHEET = "2. Full Portfolio (1860)"
+def load_core_assortment_fw27_by_code() -> dict[str, str]:
+    """Code -> 'Yes'/'No', from the dedicated "FW27 CORE & KEY STYLES Assortment"
+    workbook (received 5-Nov-2026) -- the first real, code-grain source for FW27
+    Core Assortment, replacing the earlier proxy (the SS26 tiering workbook's own
+    Core Assortment FW27 flag, itself Base+Gender grain and not actually about
+    this FW27 drop). Rolled up to franchise level in build_rows() the same way
+    Core Assortment SS28 already is (RR-028) -- Yes if any of the franchise's
+    FW27 codes is Yes here.
 
+    Source is the CORE sheet only. Two other sheets in the same workbook are
+    deliberately NOT merged in: "KEY STYLES" is a separate, cross-business-area
+    "hero style" designation (spans Apparel/Hardware/Footwear, overlaps only
+    partially with CORE -- a different merchandising concept, not Core
+    Assortment), and "NEWS Highlights" is a distinct newness-highlight list (10
+    codes, zero overlap with CORE). Open: if the team wants either surfaced as
+    its own column later, that's a separate addition, not a silent merge here.
 
-def load_core_assortment_fw27() -> dict[str, str]:
-    """Base -> 'Yes'/'No', from the SS26 tiering workbook's Core Assortment FW27 flag.
-
-    Base+Gender grain in the source, rolled up to Base (Yes if either
-    gender was Yes). A base not found here isn't marked at all -- treated
-    the same as 'No' rather than a separate bucket.
-    """
-    wb = openpyxl.load_workbook(lib.WORKBOOK_PATH, read_only=True, data_only=True)
-    ws = wb[TIERING_SHEET]
-    by_base: dict[str, set[str]] = defaultdict(set)
-    for r in ws.iter_rows(min_row=lib.FIRST_DATA_ROW, values_only=True):
-        base = r[0]
-        if base is None:
+    A row's own "Drop" column (value 'x') marks a style that's being DROPPED
+    from Core for FW27 -- confirmed against the raw FW27 range file that most
+    of these 'x' rows are still active styles this season (28 of 29), so
+    honoring Drop is not optional: without it, 28 franchises would be wrongly
+    marked Core='Yes'. Every dropped row also has a blank Tiering, so the two
+    signals agree; this reads whichever is present, deliberately not just
+    "non-blank Tiering" alone, as a human-auditable check in case the column
+    conventions change (e.g. a code with a tier assigned FW27 AND marked 'x').
+    A handful of CORE-listed codes don't match the current FW27 main range at
+    all (an earlier/superseded generation, or itself inactive this season) --
+    they simply never match any franchise's own codes in build_rows(), same
+    "unmatched" handling as the SS28 Core source's own known gap (RR-028)."""
+    wb = openpyxl.load_workbook(FW27_CORE_KEY_STYLES_PATH, read_only=True, data_only=True)
+    ws = wb["CORE"]
+    by_code: dict[str, str] = {}
+    for r in ws.iter_rows(min_row=2, values_only=True):
+        code = r[0]
+        if code is None:
             continue
-        by_base[base].add(r[16])  # "Core Assortment FW27" column
-    return {base: ("Yes" if "Yes" in flags else "No") for base, flags in by_base.items()}
+        dropped = r[2] == "x"
+        tiered = r[3] is not None
+        by_code[str(code)] = "No" if dropped else ("Yes" if tiered else "No")
+    return by_code
 
 
 FC1_TOPDOWN_PATH = INPUTS_DIR / "forecast" / "Comparison_FC1_Top-Down_vs_Bottom-Up_SS28.xlsx"
@@ -294,7 +321,7 @@ def load_forecast_by_key() -> dict[tuple[str, str], list[dict]]:
 
 
 def build_rows() -> list[dict]:
-    core_fw27 = load_core_assortment_fw27()
+    core_fw27_by_code = load_core_assortment_fw27_by_code()
     core_ss28_by_code = load_core_assortment_ss28_by_code()
     fc1_topdown_by_code = load_fc1_topdown_demand_by_code()
     forecast_by_key = load_forecast_by_key()
@@ -340,7 +367,20 @@ def build_rows() -> list[dict]:
             gender_note = f"{genders[0]} only"
 
         rrp_display = rrps[0] if len(rrps) <= 1 else f"{min(rrps)}-{max(rrps)}"
-        total_colors = sum(r["active_colors"] for r in items)
+
+        # RR-up-next -- per the user, "# active colors" split per season rather than summed
+        # across FW27+SS28+FW28 (a combined total conflated a franchise's separate FW27 and
+        # SS28 color counts into one number, which read as if it were one season's count).
+        # None (blank), not 0, when the franchise has no rows at all for that season -- same
+        # "blank not zero" convention as every other season-specific field here (Active in
+        # FW27, Status FW27, the FW27/SS28/FW28 forecast figures).
+        def colors_for_season(season_label: str) -> int | None:
+            season_items = [r for r in items if r["season_label"] == season_label]
+            return sum(r["active_colors"] for r in season_items) if season_items else None
+
+        colors_fw27 = colors_for_season("FW27")
+        colors_ss28 = colors_for_season("SS28")
+        colors_fw28 = colors_for_season("FW28")
 
         gm_entry = gm_by_code.get(str(best["code"]))
         if gm_entry is None:  # fall back to any other item's code with a Pic Centric match
@@ -364,6 +404,15 @@ def build_rows() -> list[dict]:
 
         fw27_qty, fw27_gp = forecast_for_season("FW27")
         ss28_qty, ss28_gp = forecast_for_season("SS28")
+
+        # RR-up-next: Core Assortment FW27, Yes if any of the franchise's FW27
+        # codes is flagged Core in the dedicated FW27 CORE sheet; No otherwise
+        # (including "not found at all" -- unlike SS28 below, this source reads
+        # as a complete "who is Core" list, not a partial-coverage one, so there
+        # is no "To confirm" state here).
+        fw27_core_matches = {core_fw27_by_code[str(r["code"])] for r in items
+                              if r["season_label"] == "FW27" and str(r["code"]) in core_fw27_by_code}
+        core_fw27 = "Yes" if "Yes" in fw27_core_matches else "No"
 
         # RR-028: Core Assortment SS28, Yes if any of the franchise's SS28 codes
         # is flagged Core; No if matched but not flagged; "To confirm" if none of
@@ -411,8 +460,10 @@ def build_rows() -> list[dict]:
             "Target GM0%": margin_target,  # RR-008 -- from FW27+SS28 Pic Centric; a pricing/costing goal, not a forecast
             "Special edition / fit note": "; ".join(special_flags),
             "# styles rolled up": len(items),
-            "# active colors": total_colors,
-            "Core Assortment FW27": core_fw27.get(base, "No"),
+            "# active colors FW27": colors_fw27 if colors_fw27 is not None else "",
+            "# active colors SS28": colors_ss28 if colors_ss28 is not None else "",
+            "# active colors FW28": colors_fw28 if colors_fw28 is not None else "",
+            "Core Assortment FW27": core_fw27,
             "Core Assortment SS28": core_ss28,
             "ABS": "Yes" if base in abs_bases else "No",
             "Asia Fit": "Yes" if base in af_bases else "No",
@@ -485,9 +536,13 @@ def write_workbook(rows: list[dict], path: Path) -> None:
                                         "intent' category framing (Trail/Hike+Essentials etc.) "
                                         "this might relate to is NOT used as this list's "
                                         "structure."])
-    notes.append(["Core Assortment FW27", "Yes/No, from the flag already in the SS26 tiering "
-                                           "workbook (57/1,860 Base+Gender rows = 'Yes'), rolled "
-                                           "up to Base grain (Yes if either gender was Yes)."])
+    notes.append(["Core Assortment FW27", "Yes/No from the dedicated 'FW27 CORE & KEY STYLES "
+                                           "Assortment' workbook's CORE sheet (received "
+                                           "5-Nov-2026), replacing the earlier SS26-tiering-"
+                                           "workbook proxy. Code-grain, rolled up Yes if any of "
+                                           "the franchise's FW27 codes is flagged Core (and not "
+                                           "marked dropped -- see load_core_assortment_fw27_by_"
+                                           "code()'s own docstring)."])
     notes.append(["Core Assortment SS28", "Yes/No from the 'Comparison FC1 Top-Down vs. "
                                            "Bottom-Up SS28' workbook's CORE-HEAT tab, column P "
                                            "(RR-028, received 3-Nov-2026) -- 'CORE' and 'CORE "
@@ -505,16 +560,21 @@ def write_workbook(rows: list[dict], path: Path) -> None:
                                            "third one gets its own column pending the team's "
                                            "reconciliation, not another silent assumption. Blank "
                                            "when none of the franchise's SS28 codes are covered."])
-    notes.append(["# active colors", "Sum of active colorways (the colorway-level Active flag, "
-                                      "not just a row listed in the sheet) across every style "
-                                      "rolled into this franchise -- both genders, both seasons. "
-                                      "A colorway still in the file but not Active this season "
-                                      "(e.g. a discontinued or carried-forward-for-reference "
-                                      "color) is not counted. CAVEAT: 88/616 main-range style "
-                                      "rows (incl. 18 Shell styles) have NO colorway sub-rows at "
-                                      "all in this export -- showing 0 here, which may be a real "
-                                      "single-color item or a data gap in the export. Worth "
-                                      "confirming with Tobias before treating 0 as fact."])
+    notes.append(["# active colors FW27 / SS28 / FW28", "Sum of active colorways (the "
+                                      "colorway-level Active flag, not just a row listed in the "
+                                      "sheet) across every style rolled into this franchise for "
+                                      "THAT season -- both genders, but no longer summed across "
+                                      "seasons (RR-up-next, split per season per the user: a "
+                                      "combined FW27+SS28+FW28 total read as if it were one "
+                                      "season's count). Blank, not 0, when the franchise has no "
+                                      "rows at all for that season. A colorway still in the file "
+                                      "but not Active this season (e.g. a discontinued or "
+                                      "carried-forward-for-reference color) is not counted. "
+                                      "CAVEAT: 88/616 main-range style rows (incl. 18 Shell "
+                                      "styles) have NO colorway sub-rows at all in this export -- "
+                                      "showing 0 here, which may be a real single-color item or a "
+                                      "data gap in the export. Worth confirming with Tobias "
+                                      "before treating 0 as fact."])
     notes.append(["ABS", "Yes if an ABS or ABS Exclusive variant of this franchise exists "
                           "anywhere in FW27/SS28 (even though RR-006 keeps those styles out "
                           "of the main range count above) -- so a reviewer knows one exists "

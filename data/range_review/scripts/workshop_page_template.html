@@ -1477,6 +1477,18 @@ textarea.homework-note {
   }
 
   function fmtQty(n) { return n == null ? "—" : Number(n).toLocaleString("en-US"); }
+
+  // RR-up-next -- "# Colors" split per season (FW27/SS28/FW28) rather than one combined
+  // total, per the user: a single summed figure read as if it were one season's count.
+  // Compact "FW27 6 · SS28 4" line, omitting any season the franchise has no rows for at
+  // all (blank not zero) rather than printing "FW27 6 · SS28 0".
+  function fmtColors(d) {
+    var parts = [];
+    if (d.numColorsFW27 != null) parts.push("FW27 " + d.numColorsFW27);
+    if (d.numColorsSS28 != null) parts.push("SS28 " + d.numColorsSS28);
+    if (d.numColorsFW28 != null) parts.push("FW28 " + d.numColorsFW28);
+    return parts.length ? parts.join(" · ") : "—";
+  }
   function fmtPct(n) { return n == null ? "—" : n.toFixed(1) + "%"; }
   function fmtSEK(n) { return n == null ? "—" : Number(n).toLocaleString("en-US") + " SEK"; }
   // RR-072 -- "use K for 1000, e.g 1000K to save space," for the Historical Sales section
@@ -1632,7 +1644,7 @@ textarea.homework-note {
             '<div class="stat"><div class="label">FW28 Units</div><div class="value num muted">' + fmtQty(d.forecastQtyFW28) + "</div></div>" +
             '<div class="stat"><div class="label">Target GM0%</div><div class="value num muted">' + fmtPct(d.marginTarget) + "</div></div>" +
             '<div class="stat"><div class="label">Target RRP</div><div class="value num muted">' + fmtSEK(d.targetRRP) + "</div></div>" +
-            '<div class="stat"><div class="label"># Colors</div><div class="value num muted">' + fmtQty(d.numColors) + "</div></div>" +
+            '<div class="stat"><div class="label"># Colors</div><div class="value num muted">' + fmtColors(d) + "</div></div>" +
           "</div>" +
           historicalSalesHtml(d) +
           alerts +
