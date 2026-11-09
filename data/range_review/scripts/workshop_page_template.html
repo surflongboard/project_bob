@@ -572,25 +572,6 @@ a { color: var(--accent); }
 .tier-select[data-tier="Harvest"] { color: var(--tier-harvest); border-color: var(--tier-harvest); }
 .tier-select[data-tier="Emerging"] { color: var(--tier-emerging); border-color: var(--tier-emerging); }
 .tier-select[data-tier="Exit"] { color: var(--tier-exit); border-color: var(--tier-exit); }
-/* RR-089 -- Brand heat x Commercial impact: per the 12-Nov workshop agenda, "Hero" is Fabio's
-   two-axis call (brand heat, decided live by the room) x the Board's existing commercial Tier
-   rule, not Tier alone -- a real second axis, not a copy of Tier's own four values. Reuses the
-   existing warn/new palette (no new CSS tokens) rather than inventing Tier-specific colors for
-   a different scale: High reads as the same green as a "new" chip, Low as plain muted text. */
-.brand-heat-select {
-  flex: 1;
-  border: 1px solid var(--border);
-  border-radius: 7px;
-  padding: 6px 8px;
-  font: inherit;
-  font-weight: 600;
-  font-size: 12.5px;
-  background: var(--bg-sunken);
-  color: var(--fg);
-}
-.brand-heat-select[data-brand-heat="High"] { color: var(--new-fg); border-color: var(--new-border); }
-.brand-heat-select[data-brand-heat="Medium"] { color: var(--warn-fg); border-color: var(--warn-border); }
-.brand-heat-select[data-brand-heat="Low"] { color: var(--fg-muted); }
 .season-select {
   flex: 1;
   border: 1px solid var(--border);
@@ -767,8 +748,8 @@ textarea.homework-note {
   </div>
   <p>FW27/SS28 franchises by layer, for the Nov 12 Range Review Workshop. Each card pulls together: price and
     margin target from the FW27/SS28 range files; Forecast Units/GP% from the FW27 FC3 forecast and the SS28 FC1
-    forecast file. Brand heat, Tier, Last season to sell, Consolidate and Action notes are captured live here and
-    shared with everyone viewing this page.</p>
+    forecast file. Tier, Last season to sell, Consolidate and Action notes are captured live here and shared with
+    everyone viewing this page.</p>
   <div class="tier-definition-box">
     <span class="tdb-title">Suggested tier — how it's computed (confirm with the team)</span>
     <ul>
@@ -778,7 +759,7 @@ textarea.homework-note {
       <li><span class="tdb-tier-exit">Exit</span> <span class="tdb-count" id="tdbCountExit"></span> — 2026 sales &lt;500 units OR GP% &lt;30%</li>
       <li><span class="tdb-tier-none">No suggestion</span> <span class="tdb-count" id="tdbCountNone"></span> — none of these rules match</li>
     </ul>
-    <span class="tdb-foot">This is a hint only — Tier is always your own call. It's a commercial-only rule (sales/GP%) — per the 12-Nov agenda, the workshop's real "Hero" is this Tier combined with the separate Brand heat call below, not Tier alone.</span>
+    <span class="tdb-foot">This is a hint only — Tier is always your own call.</span>
   </div>
 </div>
 
@@ -1168,11 +1149,10 @@ textarea.homework-note {
     }, 400);
   }
 
-  function saveDecision(base, franchise, tier, action, lastSeasonToSell, consolidate, brandHeat) {
+  function saveDecision(base, franchise, tier, action, lastSeasonToSell, consolidate) {
     var id = slug(base);
     var body = { base: base, franchise: franchise, tier: tier || "", action: action || "",
-      lastSeasonToSell: lastSeasonToSell || "", consolidate: !!consolidate,
-      brandHeat: brandHeat || "", updatedAt: Date.now() };
+      lastSeasonToSell: lastSeasonToSell || "", consolidate: !!consolidate, updatedAt: Date.now() };
     decisions[id] = body; // optimistic local update
     if (!dbCol) {
       // RR-up-next -- THE actual bug behind a real user report ("it seems to save while you
@@ -1655,7 +1635,6 @@ textarea.homework-note {
     var id = slug(d.base);
     var dec = decisions[id] || {};
     var tier = dec.tier || "";
-    var brandHeat = dec.brandHeat || "";
     var lastSeason = dec.lastSeasonToSell || "";
     var consolidate = !!dec.consolidate;
     var myHw = myHomeworkDraft[id] || {};
@@ -1811,20 +1790,7 @@ textarea.homework-note {
                   : escapeHtml(d.suggestedTierReason)) +
                 "</div>"
               : "") +
-            // RR-089 -- Brand heat (High/Medium/Low) sits beside Tier in the same row, per the
-            // 12-Nov agenda's "Hero = Brand heat x Commercial impact": a second, independent
-            // axis decided live by the room, not derived from Tier or any existing data (none
-            // exists for this). Scope deliberately stops at this one shared field -- not added
-            // to Homework/Submission mode's private pre-workshop draft, since the user's own
-            // framing was "filled in live by the room on Thursday," a shared same-moment call,
-            // not something to prep privately beforehand the way Tier/Last season/Consolidate
-            // already are.
             '<div class="decision-row">' +
-              '<select class="brand-heat-select" data-brand-heat="' + brandHeat + '">' +
-                ["", "High", "Medium", "Low"].map(function (b) {
-                  return '<option value="' + b + '"' + (b === brandHeat ? " selected" : "") + ">" + (b ? "Brand heat: " + b : "Brand heat…") + "</option>";
-                }).join("") +
-              "</select>" +
               '<select class="tier-select" data-tier="' + tier + '">' +
                 ["", "Hero", "Harvest", "Emerging", "Exit"].map(function (t) {
                   return '<option value="' + t + '"' + (t === tier ? " selected" : "") + ">" + (t || "Tier…") + "</option>";
@@ -1938,7 +1904,6 @@ textarea.homework-note {
       // wiring. Pre-existing since RR-053 for the tier select; the season select gained the
       // same risk once homework grew its own season select (RR-062) and is scoped the same way.
       var select = card.querySelector(".decision-row .tier-select");
-      var brandHeatSelect = card.querySelector(".decision-row .brand-heat-select");
       var seasonSelect = card.querySelector(".decision-row .season-select");
       // .consolidate-check/.action-note already have unique class names (homework's own
       // controls are .homework-consolidate-check/.homework-note) -- no scoping needed here.
@@ -1973,21 +1938,17 @@ textarea.homework-note {
       if (homeworkNote) homeworkNote.addEventListener("input", saveHomework);
       select.addEventListener("change", function () {
         select.setAttribute("data-tier", select.value);
-        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value, consolidateCheck.checked, brandHeatSelect.value);
-      });
-      brandHeatSelect.addEventListener("change", function () {
-        brandHeatSelect.setAttribute("data-brand-heat", brandHeatSelect.value);
-        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value, consolidateCheck.checked, brandHeatSelect.value);
+        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value, consolidateCheck.checked);
       });
       seasonSelect.addEventListener("change", function () {
         seasonSelect.setAttribute("data-last-season", seasonSelect.value);
-        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value, consolidateCheck.checked, brandHeatSelect.value);
+        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value, consolidateCheck.checked);
       });
       consolidateCheck.addEventListener("change", function () {
-        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value, consolidateCheck.checked, brandHeatSelect.value);
+        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value, consolidateCheck.checked);
       });
       textarea.addEventListener("input", function () {
-        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value, consolidateCheck.checked, brandHeatSelect.value);
+        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value, consolidateCheck.checked);
       });
     });
   }

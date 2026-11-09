@@ -1,8 +1,7 @@
 """
-Exports the Range Review Board's live workshop decisions (Brand heat /
-Tier / Last season to sell / Consolidate / Action notes, captured in the
-artifact's own `decisions` database, RR-022/RR-089) into an Excel
-sign-off sheet.
+Exports the Range Review Board's live workshop decisions (Tier / Last
+season to sell / Consolidate / Action notes, captured in the artifact's
+own `decisions` database, RR-022) into an Excel sign-off sheet.
 
 **Not a fully automated script** -- there is no standing credential for
 a local script to query the artifact's live database directly. The
@@ -57,7 +56,6 @@ def build_rows(decisions_pull_path: Path) -> list[dict]:
             "Layer": f["layer"],
             "Business Area": f["businessArea"],
             "Franchise": f["franchise"],
-            "Brand heat": dec.get("brandHeat") or "Undecided",  # RR-089
             "Tier": dec.get("tier") or "Undecided",
             "Last season to sell": dec.get("lastSeasonToSell") or "Undecided",
             "Consolidate with other models": "Yes" if dec.get("consolidate") else "",
