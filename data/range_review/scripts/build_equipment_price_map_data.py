@@ -209,12 +209,21 @@ def build_group(franchises, code_lookup, name_lookup, pt_lookup):
     return out
 
 
+# RR-092 follow-up: a focused sub-view of Accessories for its head-worn items only,
+# per the user's "create Accessories (Headwear)" request -- defined by Product Type
+# (the range files' own field) rather than Linden's coarser Silhouette tag ("Headwear"),
+# since Product Type also catches 5 franchises Linden's attribution export never
+# covered at all (no Activity/Silhouette match) but which still have a real Product Type.
+HEADWEAR_PRODUCT_TYPES = {"Beanie", "Cap", "Hat", "Headband"}
+
+
 def main() -> None:
     workshop_data = json.loads(WORKSHOP_DATA.read_text())
     code_lookup, name_lookup = load_attribution()
     pt_lookup = load_product_type_by_code()
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
+    accessories_out = None
     for group, layers in GROUPS.items():
         franchises = [d for d in workshop_data if d.get("layer") in layers]
         out = build_group(franchises, code_lookup, name_lookup, pt_lookup)
@@ -226,6 +235,13 @@ def main() -> None:
             f"{group}: {len(out)} franchises, {no_rrp} no RRP, {no_activity} no activity "
             f"-> {outfile.relative_to(REPO_ROOT)}"
         )
+        if group == "accessories":
+            accessories_out = out
+
+    headwear = [o for o in accessories_out if o["productType"] in HEADWEAR_PRODUCT_TYPES]
+    headwear_file = OUT_DIR / "accessories_headwear.json"
+    headwear_file.write_text(json.dumps(headwear, ensure_ascii=False, indent=None))
+    print(f"accessories_headwear: {len(headwear)} franchises -> {headwear_file.relative_to(REPO_ROOT)}")
 
 
 if __name__ == "__main__":
