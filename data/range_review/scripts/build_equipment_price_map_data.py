@@ -25,6 +25,14 @@ Grouping (RR-092, user-directed 10-Nov-2026):
 - Sleeping Bags: standalone
 - Accessories: standalone
 
+Packs also gets a **franchise family** field (RR-094, user-directed
+10-Nov-2026: "Packs to add sub group by franchise derived from the name
+like Tight, Vara etc") -- the name's first word (e.g. "Tight 15"/"Tight
+Pro Large" -> "Tight"), except "L.I.M" (a product-line prefix used across
+many categories, not a franchise name itself) keeps its second word too,
+so e.g. "L.I.M Mountain Trail 25" and "L.I.M Trail 15" stay distinct
+families instead of merging under a meaningless "L.I.M" bucket.
+
 Run: python3 build_equipment_price_map_data.py
 Output: ../outputs/price_map_data/<group>.json
 """
@@ -151,6 +159,13 @@ def resolve_product_type(franchise, pt_lookup) -> str | None:
     return None
 
 
+def family_of(name: str) -> str:
+    words = name.split()
+    if words and words[0] == "L.I.M" and len(words) > 1:
+        return words[0] + " " + words[1]
+    return words[0] if words else "Unclassified"
+
+
 _RANGE_RE = re.compile(r"^\s*(\d+)\s*-\s*(\d+)\s*$")
 
 
@@ -204,6 +219,7 @@ def build_group(franchises, code_lookup, name_lookup, pt_lookup):
                 "activity": activity,
                 "silhouette": silhouette,
                 "productType": product_type,
+                "family": family_of(d["franchise"]),
             }
         )
     return out
