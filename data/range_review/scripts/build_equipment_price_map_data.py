@@ -259,6 +259,14 @@ def main() -> None:
     headwear_file.write_text(json.dumps(headwear, ensure_ascii=False, indent=None))
     print(f"accessories_headwear: {len(headwear)} franchises -> {headwear_file.relative_to(REPO_ROOT)}")
 
+    # RR-096 -- per the user: Headwear is carved out into its own map (above), so the main
+    # Accessories map is renamed "Non-Headwear" and drops those same franchises rather than
+    # showing them in both places.
+    non_headwear = [o for o in accessories_out if o["productType"] not in HEADWEAR_PRODUCT_TYPES]
+    non_headwear_file = OUT_DIR / "accessories_nonheadwear.json"
+    non_headwear_file.write_text(json.dumps(non_headwear, ensure_ascii=False, indent=None))
+    print(f"accessories_nonheadwear: {len(non_headwear)} franchises -> {non_headwear_file.relative_to(REPO_ROOT)}")
+
 
 if __name__ == "__main__":
     main()
