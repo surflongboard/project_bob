@@ -1,6 +1,6 @@
 """
 Exports the Range Review Board's live workshop decisions (Tier / Last
-season to sell / Consolidate / Nordic ABS / QMT candidate / Action notes,
+season to sell / Consolidate / Nordic ABS / QTM candidate / Action notes,
 captured in the artifact's own `decisions` database, RR-022/RR-097/
 RR-098) into an Excel sign-off sheet.
 
@@ -61,7 +61,7 @@ def build_rows(decisions_pull_path: Path) -> list[dict]:
             "Last season to sell": dec.get("lastSeasonToSell") or "Undecided",
             "Consolidate with other models": "Yes" if dec.get("consolidate") else "",
             "Nordic ABS": "Yes" if dec.get("nordicAbs") else "",
-            "QMT candidate": "Yes" if dec.get("qmtCandidate") else "",
+            "QTM candidate": "Yes" if dec.get("qtmCandidate") else "",
             "Action / notes": dec.get("action") or "",
             "Decision updated": fmt_updated(dec.get("updatedAt")),
         })
