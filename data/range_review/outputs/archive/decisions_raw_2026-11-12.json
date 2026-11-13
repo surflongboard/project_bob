@@ -1,0 +1,3759 @@
+[
+  {
+    "id": "alert-gtx-jacket",
+    "data": {
+      "action": "Old stocks issue. Nordic ABS or Exit.",
+      "base": "Alert GTX Jacket",
+      "consolidate": false,
+      "franchise": "Alert GTX II Jacket",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": true,
+      "tier": "Harvest",
+      "updatedAt": 1794476115071
+    }
+  },
+  {
+    "id": "alert-mid-pant",
+    "data": {
+      "action": "TBD on update SS29 with the right features",
+      "base": "Alert Mid Pant",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Alert Mid Pant",
+      "lastSeasonToSell": "FW28",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "",
+      "updatedAt": 1794488919388
+    }
+  },
+  {
+    "id": "alert-mid-shorts",
+    "data": {
+      "action": "",
+      "base": "Alert Mid Shorts",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Alert Mid Shorts",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794489116745
+    }
+  },
+  {
+    "id": "alper-proof-jacket",
+    "data": {
+      "action": "Women. Global",
+      "base": "Alper Proof Jacket",
+      "consolidate": false,
+      "franchise": "Alper Proof Jacket",
+      "lastSeasonToSell": "FW29",
+      "nordicAbs": false,
+      "tier": "",
+      "updatedAt": 1794476456859
+    }
+  },
+  {
+    "id": "alper-proof-pant",
+    "data": {
+      "action": "match jkts",
+      "base": "Alper Proof Pant",
+      "consolidate": false,
+      "franchise": "Alper Proof Pant",
+      "lastSeasonToSell": "",
+      "nordicAbs": false,
+      "tier": "",
+      "updatedAt": 1794476557002
+    }
+  },
+  {
+    "id": "aresk-beanie",
+    "data": {
+      "action": "",
+      "base": "Aresk Beanie",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Aresk Beanie",
+      "lastSeasonToSell": "",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794494424928
+    }
+  },
+  {
+    "id": "astral-gtx-jacket",
+    "data": {
+      "action": "Nordic Core. (80% Nordic). Deprioritize from then update. Limited investment. ",
+      "base": "Astral GTX Jacket",
+      "consolidate": false,
+      "franchise": "Astral GTX II Jacket",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": true,
+      "tier": "Harvest",
+      "updatedAt": 1794478215449
+    }
+  },
+  {
+    "id": "aze-beanie",
+    "data": {
+      "action": "",
+      "base": "Aze Beanie",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Aze II Beanie",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794494443477
+    }
+  },
+  {
+    "id": "backup",
+    "data": {
+      "action": "",
+      "base": "Backup",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Backup",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": true,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794492012706
+    }
+  },
+  {
+    "id": "baselayer-3-4-tights",
+    "data": {
+      "action": "To review what's USP? Costing etc. Can DTC support the volume? ",
+      "base": "Baselayer 3/4 Tights",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Baselayer 3/4 Tights",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794487956626
+    }
+  },
+  {
+    "id": "baselayer-crewneck",
+    "data": {
+      "action": "To review what's USP?",
+      "base": "Baselayer Crewneck",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Baselayer Crewneck",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794487895288
+    }
+  },
+  {
+    "id": "baselayer-tights",
+    "data": {
+      "action": "To review what's USP?",
+      "base": "Baselayer Tights",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Baselayer Tights",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794487897779
+    }
+  },
+  {
+    "id": "brand-five-panel-cap",
+    "data": {
+      "action": "no core. potentially kill",
+      "base": "Brand Five Panel Cap",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Brand Five Panel Cap",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794494510379
+    }
+  },
+  {
+    "id": "brandheat-insulation",
+    "data": {
+      "action": "Women specific, a real thing",
+      "base": "Brandheat Insulation",
+      "consolidate": false,
+      "franchise": "Brandheat Insulation",
+      "lastSeasonToSell": "FW28",
+      "nordicAbs": false,
+      "tier": "Emerging",
+      "updatedAt": 1794480147837
+    }
+  },
+  {
+    "id": "breeze-mimic-hood",
+    "data": {
+      "action": "",
+      "base": "Breeze Mimic Hood",
+      "consolidate": false,
+      "franchise": "Breeze Mimic Hood",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": true,
+      "tier": "Harvest",
+      "updatedAt": 1794479663762
+    }
+  },
+  {
+    "id": "breeze-proof-jacket",
+    "data": {
+      "action": "Global offering. Declining volume. Wholesales driven in the future.",
+      "base": "Breeze Proof Jacket",
+      "consolidate": false,
+      "franchise": "Breeze Proof Jacket",
+      "lastSeasonToSell": "carry over w/o update",
+      "tier": "Harvest",
+      "updatedAt": 1794474608427
+    }
+  },
+  {
+    "id": "brisen-tech-mid-hood",
+    "data": {
+      "action": "",
+      "base": "Brisen Tech Mid Hood",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Brisen Tech Mid Hood",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794485568890
+    }
+  },
+  {
+    "id": "brisen-tech-mid",
+    "data": {
+      "action": "",
+      "base": "Brisen Tech Mid",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Brisen Tech Mid",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794485560674
+    }
+  },
+  {
+    "id": "buteo-mid-jacket",
+    "data": {
+      "action": "Color to make the logo more visible (Wholesale) vs. DTC?. Buteo Franchise to review. Buteo Vest is on the way. QTM Half-zip to discuss? end date TBD",
+      "base": "Buteo Mid Jacket",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Buteo Mid II Jacket",
+      "lastSeasonToSell": "FW28",
+      "nordicAbs": false,
+      "qtmCandidate": true,
+      "tier": "",
+      "updatedAt": 1794484091907
+    }
+  },
+  {
+    "id": "corker-large",
+    "data": {
+      "action": "Not Core.",
+      "base": "Corker Large",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Corker Large",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794492041001
+    }
+  },
+  {
+    "id": "corker-medium",
+    "data": {
+      "action": "Not Core.",
+      "base": "Corker Medium",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Corker Medium",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794492052656
+    }
+  },
+  {
+    "id": "courier-messenger-bag",
+    "data": {
+      "action": "",
+      "base": "Courier Messenger Bag",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Courier Messenger Bag",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794493212348
+    }
+  },
+  {
+    "id": "essential-tights",
+    "data": {
+      "action": "To kill",
+      "base": "Essential Tights",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Essential Tights",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794489706011
+    }
+  },
+  {
+    "id": "fast-hike-low",
+    "data": {
+      "action": "SS29 Reset.",
+      "base": "Fast Hike Low",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Fast Hike Low",
+      "lastSeasonToSell": "FW28",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794490926472
+    }
+  },
+  {
+    "id": "fjatla-40",
+    "data": {
+      "action": "",
+      "base": "Fjatla 40",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Fjatla 40",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": true,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794493240335
+    }
+  },
+  {
+    "id": "fjatla-60",
+    "data": {
+      "action": "",
+      "base": "Fjatla 60",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Fjatla 60",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": true,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794493241585
+    }
+  },
+  {
+    "id": "flat-accessory-bag",
+    "data": {
+      "action": "",
+      "base": "Flat accessory bag",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Flat accessory bag II",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794493750531
+    }
+  },
+  {
+    "id": "fram-1l",
+    "data": {
+      "action": "",
+      "base": "Fram 1L",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Fram 1L",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794493774586
+    }
+  },
+  {
+    "id": "fram-mimic-jacket",
+    "data": {
+      "action": "QTM target. ",
+      "base": "Fram Mimic Jacket",
+      "consolidate": false,
+      "franchise": "Fram Mimic Jacket",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": true,
+      "tier": "Exit",
+      "updatedAt": 1794481560072
+    }
+  },
+  {
+    "id": "front-flex-pant",
+    "data": {
+      "action": "Asia ",
+      "base": "Front Flex Pant",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Front Flex Pant",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794489268649
+    }
+  },
+  {
+    "id": "front-proof-jacket",
+    "data": {
+      "action": "Global Core. SS29 Update investigate. How to increase the volume (color?). TBD ",
+      "base": "Front Proof Jacket",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Front Proof II Jacket",
+      "lastSeasonToSell": "",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "",
+      "updatedAt": 1794481750095
+    }
+  },
+  {
+    "id": "fun-s-pile-hood",
+    "data": {
+      "action": "New one coming in SS26 (Pile).",
+      "base": "Funäs Pile Hood",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Funäs Pile Hood",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794484671260
+    }
+  },
+  {
+    "id": "fuse-pant",
+    "data": {
+      "action": "",
+      "base": "Fuse Pant",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Fuse Pant",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794489576251
+    }
+  },
+  {
+    "id": "fuse-short",
+    "data": {
+      "action": "",
+      "base": "Fuse Short",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Fuse Short",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794489585766
+    }
+  },
+  {
+    "id": "hagl-fs-bandana",
+    "data": {
+      "action": "",
+      "base": "Haglöfs Bandana",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Haglöfs Bandana",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794494537382
+    }
+  },
+  {
+    "id": "hagl-fs-cap",
+    "data": {
+      "action": "rethink the cap strategy",
+      "base": "Haglöfs Cap",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Haglöfs Cap",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794494616507
+    }
+  },
+  {
+    "id": "hagl-fs-fast-hike-proof-low",
+    "data": {
+      "action": "SS29 Reset.",
+      "base": "Haglöfs Fast Hike PROOF Low",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Haglöfs Fast Hike PROOF Low",
+      "lastSeasonToSell": "FW28",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794490949958
+    }
+  },
+  {
+    "id": "hagl-fs-hoodie",
+    "data": {
+      "action": "To create a new exciting hoodie!!!! Review together with Graphic ",
+      "base": "Haglöfs Hoodie",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Haglöfs Hoodie",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794485514961
+    }
+  },
+  {
+    "id": "hagl-fs-horizon-hike-gtx-wl-mid",
+    "data": {
+      "action": "SS29 Reset.",
+      "base": "Haglöfs Horizon Hike GTX WL Mid",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Haglöfs Horizon Hike GTX WL Mid",
+      "lastSeasonToSell": "FW28",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794491006092
+    }
+  },
+  {
+    "id": "hagl-fs-incline-gtx-mid",
+    "data": {
+      "action": "Immediately",
+      "base": "Haglöfs Incline GTX Mid",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Haglöfs Incline GTX Mid",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794491591260
+    }
+  },
+  {
+    "id": "hagl-fs-incline-pro-gtx-high",
+    "data": {
+      "action": "Immediate",
+      "base": "Haglöfs Incline Pro GTX High",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Haglöfs Incline Pro GTX High",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794491607300
+    }
+  },
+  {
+    "id": "hagl-fs-l-i-m-horizon-gtx-low",
+    "data": {
+      "action": "To review the sample GTM2. TBD",
+      "base": "Haglöfs L.I.M Horizon GTX Low",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Haglöfs L.I.M Horizon GTX Low",
+      "lastSeasonToSell": "FW28",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794491299843
+    }
+  },
+  {
+    "id": "hagl-fs-l-i-m-horizon-gtx-mid",
+    "data": {
+      "action": "No color investment",
+      "base": "Haglöfs L.I.M Horizon GTX Mid",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Haglöfs L.I.M Horizon GTX Mid",
+      "lastSeasonToSell": "FW28",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794491295316
+    }
+  },
+  {
+    "id": "hagl-fs-l-i-m-horizon-hike-gtx-low",
+    "data": {
+      "action": "SS29 Reset.",
+      "base": "Haglöfs L.I.M Horizon Hike GTX Low",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Haglöfs L.I.M Horizon Hike GTX Low",
+      "lastSeasonToSell": "FW28",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794491035015
+    }
+  },
+  {
+    "id": "hagl-fs-l-i-m-horizon-hike-gtx-mid",
+    "data": {
+      "action": "SS29 Reset.",
+      "base": "Haglöfs L.I.M Horizon Hike GTX Mid",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Haglöfs L.I.M Horizon Hike GTX Mid",
+      "lastSeasonToSell": "FW28",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794491064609
+    }
+  },
+  {
+    "id": "hagl-fs-l-i-m-horizon-hike-light-mid",
+    "data": {
+      "action": "Exit already",
+      "base": "Haglöfs L.I.M Horizon Hike Light Mid",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Haglöfs L.I.M Horizon Hike Light Mid",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794491085704
+    }
+  },
+  {
+    "id": "hagl-fs-l-i-m-horizon-low",
+    "data": {
+      "action": "",
+      "base": "Haglöfs L.I.M Horizon Low",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Haglöfs L.I.M Horizon Low",
+      "lastSeasonToSell": "FW28",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794491305464
+    }
+  },
+  {
+    "id": "hagl-fs-ls-tee",
+    "data": {
+      "action": "",
+      "base": "Haglöfs LS Tee",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Haglöfs LS Tee",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794486282511
+    }
+  },
+  {
+    "id": "hagl-fs-lx-hat",
+    "data": {
+      "action": "",
+      "base": "Haglöfs LX Hat",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Haglöfs LX Hat",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794494629400
+    }
+  },
+  {
+    "id": "hagl-fs-neck-tube",
+    "data": {
+      "action": "DTC ask? Wholesale no demand. DTC only margin",
+      "base": "Haglöfs Neck Tube",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Haglöfs Neck Tube",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794494705402
+    }
+  },
+  {
+    "id": "hagl-fs-ridge-gtx-low",
+    "data": {
+      "action": "Core. Scandinavian Core? ",
+      "base": "Haglöfs Ridge GTX Low",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Haglöfs Ridge GTX II Low",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "",
+      "updatedAt": 1794490235667
+    }
+  },
+  {
+    "id": "hagl-fs-ridge-gtx-mid",
+    "data": {
+      "action": "to discuss how to sell. other exciting mid models. Color productivity to review  / color in the forecast ",
+      "base": "Haglöfs Ridge GTX Mid",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Haglöfs Ridge GTX II Mid",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794490480317
+    }
+  },
+  {
+    "id": "hagl-fs-rosson-fg-proof-mid",
+    "data": {
+      "action": "",
+      "base": "Haglöfs Rosson FG Proof Mid",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Haglöfs Rosson FG Proof Mid",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794490628911
+    }
+  },
+  {
+    "id": "hagl-fs-rosson-proof-mid",
+    "data": {
+      "action": "",
+      "base": "Haglöfs Rosson Proof Mid",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Haglöfs Rosson Proof Mid",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794490534785
+    }
+  },
+  {
+    "id": "hagl-fs-scand-gtx-mid",
+    "data": {
+      "action": "already exit",
+      "base": "Haglöfs Scand GTX Mid",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Haglöfs Scand GTX Mid",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794491602906
+    }
+  },
+  {
+    "id": "hagl-fs-solid-pro-2-gtx-mid",
+    "data": {
+      "action": "Old XXL volume driver - TBD. Sell it from the stock. no purchasing. Marcus to review distribution",
+      "base": "Haglöfs Solid Pro 2 GTX Mid",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Haglöfs Solid Pro 2 GTX Mid",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": true,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794491811961
+    }
+  },
+  {
+    "id": "hagl-fs-solid-pro-2-wl-gtx-mid",
+    "data": {
+      "action": "Old XXL volume driver - TBD. Sell it from the stock. no purchasing. Marcus to review distribution",
+      "base": "Haglöfs Solid Pro 2 WL GTX Mid",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Haglöfs Solid Pro 2 WL GTX Mid",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": true,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794491803978
+    }
+  },
+  {
+    "id": "hagl-fs-tee",
+    "data": {
+      "action": "Sourcing origin may change",
+      "base": "Haglöfs Tee",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Haglöfs Tee",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794486254649
+    }
+  },
+  {
+    "id": "hagl-fs-trucker-cap",
+    "data": {
+      "action": "",
+      "base": "Haglöfs Trucker Cap",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Haglöfs Trucker Cap",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794494657413
+    }
+  },
+  {
+    "id": "hagl-fs-vertigo-ql-proof-low",
+    "data": {
+      "action": "Potentially brand heat. Naming to check ",
+      "base": "Haglöfs Vertigo QL PROOF Low",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Haglöfs Vertigo QL PROOF Low",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794490831568
+    }
+  },
+  {
+    "id": "hede-cargo-pant",
+    "data": {
+      "action": "not core",
+      "base": "Hede Cargo Pant",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Hede Cargo II Pant",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794489357065
+    }
+  },
+  {
+    "id": "hede-down-coat",
+    "data": {
+      "action": "",
+      "base": "Hede Down Coat",
+      "consolidate": false,
+      "franchise": "Hede Down Coat",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "tier": "Exit",
+      "updatedAt": 1794479955596
+    }
+  },
+  {
+    "id": "hede-down-hood",
+    "data": {
+      "action": "new version (ROC Flash Hede) will replace ",
+      "base": "Hede Down Hood",
+      "consolidate": false,
+      "franchise": "Hede Down Hood",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "tier": "Exit",
+      "updatedAt": 1794479422250
+    }
+  },
+  {
+    "id": "hede-down-vest",
+    "data": {
+      "action": "New decision: new down jacket etc",
+      "base": "Hede Down Vest",
+      "consolidate": false,
+      "franchise": "Hede Down Vest",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "tier": "",
+      "updatedAt": 1794479924668
+    }
+  },
+  {
+    "id": "hede-shorts",
+    "data": {
+      "action": "",
+      "base": "Hede Shorts",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Hede II Shorts",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794489160714
+    }
+  },
+  {
+    "id": "hiking-sock",
+    "data": {
+      "action": "",
+      "base": "Hiking Sock",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Hiking Sock",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794494732517
+    }
+  },
+  {
+    "id": "hiking-tights",
+    "data": {
+      "action": "Color to check / volume vs. MOQ / MCQ?  DTC only.",
+      "base": "Hiking Tights",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Hiking Tights",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794489726359
+    }
+  },
+  {
+    "id": "holm-gtx-pant",
+    "data": {
+      "action": "intent: cross merchandisable item. To check how well it works.",
+      "base": "Holm GTX Pant",
+      "consolidate": false,
+      "franchise": "Holm GTX II Pant",
+      "lastSeasonToSell": "",
+      "nordicAbs": false,
+      "tier": "Harvest",
+      "updatedAt": 1794477655573
+    }
+  },
+  {
+    "id": "jarve-multi-22",
+    "data": {
+      "action": "",
+      "base": "Jarve Multi 22",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Jarve Multi 22",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794492096259
+    }
+  },
+  {
+    "id": "jarve-multi-28",
+    "data": {
+      "action": "",
+      "base": "Jarve Multi 28",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Jarve Multi 28",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794492093048
+    }
+  },
+  {
+    "id": "kaise-wool-ls-tee",
+    "data": {
+      "action": "",
+      "base": "Kaise Wool LS Tee",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Kaise Wool II LS Tee",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794487461852
+    }
+  },
+  {
+    "id": "kaise-wool-tank-top",
+    "data": {
+      "action": "",
+      "base": "Kaise Wool Tank Top",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Kaise Wool Tank Top",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794487528307
+    }
+  },
+  {
+    "id": "kaise-wool-tee",
+    "data": {
+      "action": "New factory as of SS28?? To check with Amy on purchasing volume. ",
+      "base": "Kaise Wool Tee",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Kaise Wool II Tee",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794486819649
+    }
+  },
+  {
+    "id": "keywallet",
+    "data": {
+      "action": "",
+      "base": "Keywallet",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Keywallet",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794493786239
+    }
+  },
+  {
+    "id": "klyva-gtx-jacket",
+    "data": {
+      "action": "",
+      "base": "Klyva GTX Jacket",
+      "consolidate": false,
+      "franchise": "Klyva GTX II Jacket",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": true,
+      "tier": "Harvest",
+      "updatedAt": 1794476498757
+    }
+  },
+  {
+    "id": "kobbe-sandal-low",
+    "data": {
+      "action": "Asia demand to check. FW expansion (just to sell)",
+      "base": "Kobbe Sandal Low",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Kobbe Sandal Low",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794491926048
+    }
+  },
+  {
+    "id": "korp-lite-pant",
+    "data": {
+      "action": "",
+      "base": "Korp Lite Pant",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Korp Lite Pant",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794489132745
+    }
+  },
+  {
+    "id": "korp-lite-shorts",
+    "data": {
+      "action": "",
+      "base": "Korp Lite Shorts",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Korp Lite Shorts",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794489125514
+    }
+  },
+  {
+    "id": "korp-mid-halfzip",
+    "data": {
+      "action": "",
+      "base": "Korp Mid Halfzip",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Korp Mid Halfzip",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794484870705
+    }
+  },
+  {
+    "id": "korp-mid-hood",
+    "data": {
+      "action": "",
+      "base": "Korp Mid Hood",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Korp Mid Hood",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": true,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794484124165
+    }
+  },
+  {
+    "id": "korp-mid-jacket",
+    "data": {
+      "action": "",
+      "base": "Korp Mid Jacket",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Korp Mid Jacket",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": true,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794484316016
+    }
+  },
+  {
+    "id": "korp-proof-jacket",
+    "data": {
+      "action": "Nordic ABS. Sold as a set with Pants. Campaign piece. Aska is ABS for Intersport. In the future, to forecast together with Aska. Wholesale focused. ",
+      "base": "Korp Proof Jacket",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Korp Proof Jacket",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": true,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794481758693
+    }
+  },
+  {
+    "id": "korp-proof-pant",
+    "data": {
+      "action": "",
+      "base": "Korp Proof Pant",
+      "consolidate": false,
+      "franchise": "Korp Proof II Pant",
+      "lastSeasonToSell": "",
+      "tier": "",
+      "updatedAt": 1794475737928
+    }
+  },
+  {
+    "id": "korp-softshell-hood",
+    "data": {
+      "action": "",
+      "base": "Korp Softshell Hood",
+      "consolidate": false,
+      "franchise": "Korp Softshell Hood",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qmtCandidate": false,
+      "tier": "",
+      "updatedAt": 1794480592582
+    }
+  },
+  {
+    "id": "korp-softshell-pant",
+    "data": {
+      "action": "",
+      "base": "Korp Softshell Pant",
+      "consolidate": false,
+      "franchise": "Korp Softshell Pant",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qmtCandidate": false,
+      "tier": "",
+      "updatedAt": 1794480697074
+    }
+  },
+  {
+    "id": "l-i-m-airak-2-5l-jacket",
+    "data": {
+      "action": "",
+      "base": "L.I.M Airak 2,5L Jacket",
+      "consolidate": false,
+      "franchise": "L.I.M Airak 2,5L Jacket",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "tier": "Exit",
+      "updatedAt": 1794477508452
+    }
+  },
+  {
+    "id": "l-i-m-airak-2-5l-proof-jacket",
+    "data": {
+      "action": "To kill the old version (LIM Airak 2.5L). For SS28 to take out the pit zip.",
+      "base": "L.I.M Airak 2,5L Proof Jacket",
+      "consolidate": false,
+      "franchise": "L.I.M Airak 2,5L Proof II Jacket",
+      "lastSeasonToSell": "undefined",
+      "tier": "Emerging",
+      "updatedAt": 1794475457028
+    }
+  },
+  {
+    "id": "l-i-m-airak-2-5l-proof-pant",
+    "data": {
+      "action": "match jkts",
+      "base": "L.I.M Airak 2,5L Proof Pant",
+      "consolidate": false,
+      "franchise": "L.I.M Airak 2,5L Proof II Pant",
+      "lastSeasonToSell": "",
+      "nordicAbs": false,
+      "tier": "",
+      "updatedAt": 1794476549735
+    }
+  },
+  {
+    "id": "l-i-m-airak-gtx-jacket",
+    "data": {
+      "action": "",
+      "base": "L.I.M Airak GTX Jacket",
+      "consolidate": false,
+      "franchise": "L.I.M Airak GTX Jacket",
+      "lastSeasonToSell": "",
+      "nordicAbs": false,
+      "tier": "Exit",
+      "updatedAt": 1794476377675
+    }
+  },
+  {
+    "id": "l-i-m-delta-crop-tee",
+    "data": {
+      "action": "Style to review. Family review . ",
+      "base": "L.I.M Delta Crop Tee",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "L.I.M Delta Crop Tee",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794486752226
+    }
+  },
+  {
+    "id": "l-i-m-delta-tee",
+    "data": {
+      "action": "Exit or Harvest? To be replaced by Ridge.",
+      "base": "L.I.M Delta Tee",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "L.I.M Delta Tee",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794487344732
+    }
+  },
+  {
+    "id": "l-i-m-down-hood-jacket",
+    "data": {
+      "action": "",
+      "base": "L.I.M Down Hood Jacket",
+      "consolidate": false,
+      "franchise": "L.I.M Down Hood Jacket",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "tier": "Emerging",
+      "updatedAt": 1794480165409
+    }
+  },
+  {
+    "id": "l-i-m-down-hood",
+    "data": {
+      "action": "",
+      "base": "L.I.M Down Hood",
+      "consolidate": false,
+      "franchise": "L.I.M Down II Hood",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "tier": "Exit",
+      "updatedAt": 1794479613069
+    }
+  },
+  {
+    "id": "l-i-m-gtx-jacket",
+    "data": {
+      "action": "Old stocks issue now, but future workhorse. FW29 for the last season to review given the material offering. ",
+      "base": "L.I.M GTX Jacket",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "L.I.M GTX III Jacket",
+      "lastSeasonToSell": "FW29",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794481772278
+    }
+  },
+  {
+    "id": "l-i-m-gtx-pant",
+    "data": {
+      "action": "",
+      "base": "L.I.M GTX Pant",
+      "consolidate": false,
+      "franchise": "L.I.M GTX III Pant",
+      "lastSeasonToSell": "",
+      "nordicAbs": false,
+      "tier": "",
+      "updatedAt": 1794476719680
+    }
+  },
+  {
+    "id": "l-i-m-light-low",
+    "data": {
+      "action": "",
+      "base": "L.I.M Light Low",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "L.I.M Light Low",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794491318921
+    }
+  },
+  {
+    "id": "l-i-m-light-proof-jacket",
+    "data": {
+      "action": "Potential Icon.",
+      "base": "L.I.M Light Proof Jacket",
+      "consolidate": false,
+      "franchise": "L.I.M Light Proof Jacket",
+      "lastSeasonToSell": "",
+      "nordicAbs": false,
+      "tier": "Emerging",
+      "updatedAt": 1794477692635
+    }
+  },
+  {
+    "id": "l-i-m-light-t-shirt",
+    "data": {
+      "action": "",
+      "base": "L.I.M Light T-Shirt",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "L.I.M Light T-Shirt",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794487542655
+    }
+  },
+  {
+    "id": "l-i-m-mid-hybrid",
+    "data": {
+      "action": "Seasonal brand heat!! Variations",
+      "base": "L.I.M Mid Hybrid",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "L.I.M Mid Hybrid",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": true,
+      "tier": "Emerging",
+      "updatedAt": 1794485622231
+    }
+  },
+  {
+    "id": "l-i-m-mid-multi-hood",
+    "data": {
+      "action": "",
+      "base": "L.I.M Mid Multi Hood",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "L.I.M Mid Multi II Hood",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794484499839
+    }
+  },
+  {
+    "id": "l-i-m-mid-multi-jacket",
+    "data": {
+      "action": "SS28 Forecast to take down",
+      "base": "L.I.M Mid Multi Jacket",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "L.I.M Mid Multi Jacket",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794485319442
+    }
+  },
+  {
+    "id": "l-i-m-mid-reversible-crew",
+    "data": {
+      "action": "",
+      "base": "L.I.M Mid Reversible Crew",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "L.I.M Mid Reversible Crew",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794485631746
+    }
+  },
+  {
+    "id": "l-i-m-mimic-barrier-hood",
+    "data": {
+      "action": "QTM jacket style ",
+      "base": "L.I.M Mimic Barrier Hood",
+      "consolidate": false,
+      "franchise": "L.I.M Mimic Barrier Hood",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": true,
+      "tier": "Emerging",
+      "updatedAt": 1794481568813
+    }
+  },
+  {
+    "id": "l-i-m-mimic-barrier-vest",
+    "data": {
+      "action": "QTM?",
+      "base": "L.I.M Mimic Barrier Vest",
+      "consolidate": false,
+      "franchise": "L.I.M Mimic Barrier Vest",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": true,
+      "tier": "Emerging",
+      "updatedAt": 1794481570058
+    }
+  },
+  {
+    "id": "l-i-m-mountain-trail-25",
+    "data": {
+      "action": "SS29 new coming",
+      "base": "L.I.M Mountain Trail 25",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "L.I.M Mountain Trail 25",
+      "lastSeasonToSell": "FW28",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794492535680
+    }
+  },
+  {
+    "id": "l-i-m-pace-cap",
+    "data": {
+      "action": "",
+      "base": "L.I.M Pace Cap",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "L.I.M Pace Cap",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794494762247
+    }
+  },
+  {
+    "id": "l-i-m-pace-shorts",
+    "data": {
+      "action": "SS29 update",
+      "base": "L.I.M Pace Shorts",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "L.I.M Pace Shorts",
+      "lastSeasonToSell": "SS28",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794489391679
+    }
+  },
+  {
+    "id": "l-i-m-ridge-tank",
+    "data": {
+      "action": "",
+      "base": "L.I.M Ridge Tank",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "L.I.M Ridge Tank",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794486916151
+    }
+  },
+  {
+    "id": "l-i-m-ridge-tee",
+    "data": {
+      "action": "One Ridge shirt moving forward. ",
+      "base": "L.I.M Ridge Tee",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "L.I.M Ridge Tee",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794486088053
+    }
+  },
+  {
+    "id": "l-i-m-sunpack-hoodie",
+    "data": {
+      "action": "SS29 review for sun protection program",
+      "base": "L.I.M Sunpack Hoodie",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "L.I.M Sunpack Hoodie",
+      "lastSeasonToSell": "FW28",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794486541602
+    }
+  },
+  {
+    "id": "l-i-m-trail-15",
+    "data": {
+      "action": "L.I.M Mountain Trail 25",
+      "base": "L.I.M Trail 15",
+      "consolidate": true,
+      "deepReview": false,
+      "franchise": "L.I.M Trail 15",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794492508993
+    }
+  },
+  {
+    "id": "l-i-m-ultralight-gtx-low",
+    "data": {
+      "action": "Potential Brand heat. Do we have wholesale volume (Forecast 2 to review)? Believe in the program? Marketing support needed?",
+      "base": "L.I.M Ultralight GTX Low",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "L.I.M Ultralight GTX Low",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794491502009
+    }
+  },
+  {
+    "id": "l-i-m-ultralight-low",
+    "data": {
+      "action": "",
+      "base": "L.I.M Ultralight Low",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "L.I.M Ultralight Low",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794491389912
+    }
+  },
+  {
+    "id": "l-i-m-windpace-hybrid-pant",
+    "data": {
+      "action": "Brand heat ",
+      "base": "L.I.M Windpace Hybrid Pant",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "L.I.M Windpace Hybrid Pant",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794489759707
+    }
+  },
+  {
+    "id": "l-i-m-windpack-hood-jacket",
+    "data": {
+      "action": "A potential Icon",
+      "base": "L.I.M Windpack Hood Jacket",
+      "consolidate": false,
+      "franchise": "L.I.M Windpack Hood Jacket",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "tier": "Emerging",
+      "updatedAt": 1794477957444
+    }
+  },
+  {
+    "id": "latnja-18l",
+    "data": {
+      "action": "",
+      "base": "Latnja 18L",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Latnja 18L",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794493114465
+    }
+  },
+  {
+    "id": "latnja-gtx-insulated-jacket",
+    "data": {
+      "action": "To check if it is in Core (FW27). To check the item no. How to support color etc. Best selling DTC ",
+      "base": "Latnja GTX Insulated Jacket",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Latnja GTX Insulated II Jacket",
+      "lastSeasonToSell": "FW29",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "",
+      "updatedAt": 1794481778995
+    }
+  },
+  {
+    "id": "latnja-gtx-insulated-pant",
+    "data": {
+      "action": "match jkts",
+      "base": "Latnja GTX Insulated Pant",
+      "consolidate": false,
+      "franchise": "Latnja GTX Insulated II Pant",
+      "lastSeasonToSell": "",
+      "nordicAbs": false,
+      "tier": "",
+      "updatedAt": 1794476553466
+    }
+  },
+  {
+    "id": "latnja-wool-3-4-pant",
+    "data": {
+      "action": "",
+      "base": "Latnja Wool 3/4 Pant",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Latnja Wool 3/4 Pant",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794487874867
+    }
+  },
+  {
+    "id": "latnja-wool-crew-neck",
+    "data": {
+      "action": "",
+      "base": "Latnja Wool Crew Neck",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Latnja Wool Crew Neck",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794487866917
+    }
+  },
+  {
+    "id": "latnja-wool-long-john-s",
+    "data": {
+      "action": "",
+      "base": "Latnja Wool Long John's",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Latnja Wool Long John's",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794487869316
+    }
+  },
+  {
+    "id": "lava-110",
+    "data": {
+      "action": "No POs. Sell from the stocks",
+      "base": "Lava 110",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Lava 110",
+      "lastSeasonToSell": "FW28",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794493513803
+    }
+  },
+  {
+    "id": "lava-30",
+    "data": {
+      "action": "",
+      "base": "Lava 30",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Lava 30",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794493363485
+    }
+  },
+  {
+    "id": "lava-50",
+    "data": {
+      "action": "Core?",
+      "base": "Lava 50",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Lava 50",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794493402318
+    }
+  },
+  {
+    "id": "lava-70",
+    "data": {
+      "action": "",
+      "base": "Lava 70",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Lava 70",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794493567226
+    }
+  },
+  {
+    "id": "lava-90",
+    "data": {
+      "action": "No POs. Sell from the stocks",
+      "base": "Lava 90",
+      "consolidate": true,
+      "deepReview": true,
+      "franchise": "Lava 90",
+      "lastSeasonToSell": "FW28",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794493557123
+    }
+  },
+  {
+    "id": "lava-travel-tube",
+    "data": {
+      "action": "",
+      "base": "Lava travel tube",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Lava travel tube",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794493795520
+    }
+  },
+  {
+    "id": "levante-pant",
+    "data": {
+      "action": "",
+      "base": "Levante Pant",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Levante Pant",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794489477343
+    }
+  },
+  {
+    "id": "levante-shorts",
+    "data": {
+      "action": "",
+      "base": "Levante Shorts",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Levante Shorts",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794489542438
+    }
+  },
+  {
+    "id": "lite-standard-zip-off-pant",
+    "data": {
+      "action": "To extend to FW too. ",
+      "base": "Lite Standard Zip-Off Pant",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Lite Standard Zip-Off II Pant",
+      "lastSeasonToSell": "FW28",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794489000890
+    }
+  },
+  {
+    "id": "lizard-softshell-shorts",
+    "data": {
+      "action": "Outlet DTC",
+      "base": "Lizard Softshell Shorts",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Lizard Softshell II Shorts",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": true,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794489455448
+    }
+  },
+  {
+    "id": "ljusna-proof-parka",
+    "data": {
+      "action": "to review whether to sell full season (+SS). To check the performance",
+      "base": "Ljusna Proof Parka",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Ljusna Proof Parka",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794481786311
+    }
+  },
+  {
+    "id": "long-down-parka",
+    "data": {
+      "action": "",
+      "base": "Long Down Parka",
+      "consolidate": false,
+      "franchise": "Long Down II Parka",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "tier": "Harvest",
+      "updatedAt": 1794479438078
+    }
+  },
+  {
+    "id": "long-mimic-parka",
+    "data": {
+      "action": "",
+      "base": "Long Mimic Parka",
+      "consolidate": false,
+      "franchise": "Long Mimic III Parka",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "tier": "Harvest",
+      "updatedAt": 1794479056555
+    }
+  },
+  {
+    "id": "lugna-softshell-overshirt",
+    "data": {
+      "action": "",
+      "base": "Lugna Softshell Overshirt",
+      "consolidate": false,
+      "franchise": "Lugna Softshell Overshirt",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "tier": "Emerging",
+      "updatedAt": 1794480317671
+    }
+  },
+  {
+    "id": "magma-30",
+    "data": {
+      "action": "FC2 to check. To check SS27 sales Magma ",
+      "base": "Magma 30",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Magma 30",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794492709248
+    }
+  },
+  {
+    "id": "magma-42l",
+    "data": {
+      "action": "",
+      "base": "Magma 42L",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Magma 42L",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794493615830
+    }
+  },
+  {
+    "id": "magma-50l",
+    "data": {
+      "action": "No POs. To sell from the stock. ",
+      "base": "Magma 50L",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Magma 50L",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": true,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794492830315
+    }
+  },
+  {
+    "id": "magma-60l",
+    "data": {
+      "action": "To review with 30 / 50 / 60 to move the volume",
+      "base": "Magma 60L",
+      "consolidate": true,
+      "deepReview": true,
+      "franchise": "Magma 60L",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794492928336
+    }
+  },
+  {
+    "id": "magma-65l",
+    "data": {
+      "action": "No POs. Sell from the stocks",
+      "base": "Magma 65L",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Magma 65L",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794493618990
+    }
+  },
+  {
+    "id": "magma-roll-top-40-wr",
+    "data": {
+      "action": "To check the sell through. why not moving",
+      "base": "Magma Roll-top 40 WR",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Magma Roll-top 40 WR",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794492971019
+    }
+  },
+  {
+    "id": "magma-rugged-pant",
+    "data": {
+      "action": "To take out from 'Core'. Naming to check (Tobias knows the truth!)",
+      "base": "Magma Rugged Pant",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Magma Rugged Pant",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794489081234
+    }
+  },
+  {
+    "id": "magma-rugged-wide-pant",
+    "data": {
+      "action": "After Kayo. Confusion on the name (Tobias knows! Legal implication etc)",
+      "base": "Magma Rugged Wide Pant",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Magma Rugged Wide Pant",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794489802549
+    }
+  },
+  {
+    "id": "magma-waist-pack-3-5l",
+    "data": {
+      "action": "",
+      "base": "Magma Waist pack 3,5L",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Magma Waist pack 3,5L",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794493812161
+    }
+  },
+  {
+    "id": "mid-standard-pant",
+    "data": {
+      "action": " It was a quick fix for pockets. Leave it to Nordic ABS and solve the problem with Alert Mid",
+      "base": "Mid Standard Pant",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Mid Standard II Pant",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": true,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794488948599
+    }
+  },
+  {
+    "id": "mid-standard-shorts",
+    "data": {
+      "action": "",
+      "base": "Mid Standard Shorts",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Mid Standard II Shorts",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": true,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794489469440
+    }
+  },
+  {
+    "id": "mimic-alert-3-4-pant",
+    "data": {
+      "action": "'Alert' to review regarding material usage etc",
+      "base": "Mimic Alert 3/4 Pant",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Mimic Alert 3/4 Pant",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794481844163
+    }
+  },
+  {
+    "id": "mimic-alert-hood",
+    "data": {
+      "action": "High hope!!!",
+      "base": "Mimic Alert Hood",
+      "consolidate": false,
+      "franchise": "Mimic Alert 2.0 Hood",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "tier": "Emerging",
+      "updatedAt": 1794479237463
+    }
+  },
+  {
+    "id": "mimic-alert-jacket",
+    "data": {
+      "action": "",
+      "base": "Mimic Alert Jacket",
+      "consolidate": false,
+      "franchise": "Mimic Alert 2.0 Jacket",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "tier": "Emerging",
+      "updatedAt": 1794479591420
+    }
+  },
+  {
+    "id": "mimic-alert-pant",
+    "data": {
+      "action": "",
+      "base": "Mimic Alert Pant",
+      "consolidate": false,
+      "franchise": "Mimic Alert Pant",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "tier": "Emerging",
+      "updatedAt": 1794480342279
+    }
+  },
+  {
+    "id": "mimic-silver-pant",
+    "data": {
+      "action": "",
+      "base": "Mimic Silver Pant",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Mimic Silver II Pant",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794489338208
+    }
+  },
+  {
+    "id": "mojo-down-hood",
+    "data": {
+      "action": "Mojo / Rosson / ROC to review what is what. Dots to connect!",
+      "base": "Mojo Down Hood",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Mojo Down Hood",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794481847507
+    }
+  },
+  {
+    "id": "mountain-cap",
+    "data": {
+      "action": "",
+      "base": "Mountain Cap",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Mountain II Cap",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794494771582
+    }
+  },
+  {
+    "id": "nallo-pro-40l",
+    "data": {
+      "action": "",
+      "base": "Nallo Pro 40L",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Nallo Pro 40L",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794493118666
+    }
+  },
+  {
+    "id": "nallo-touring-down-hood",
+    "data": {
+      "action": "",
+      "base": "Nallo Touring Down Hood",
+      "consolidate": false,
+      "franchise": "Nallo Touring Down Hood",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "tier": "Emerging",
+      "updatedAt": 1794479939038
+    }
+  },
+  {
+    "id": "nallo-touring-gtx-jacket",
+    "data": {
+      "action": "",
+      "base": "Nallo Touring GTX Jacket",
+      "consolidate": false,
+      "franchise": "Nallo Touring GTX Jacket",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "tier": "Emerging",
+      "updatedAt": 1794477443167
+    }
+  },
+  {
+    "id": "nallo-touring-hybrid-mid",
+    "data": {
+      "action": "FW only. To review together with Vassi Mid Hood. ",
+      "base": "Nallo Touring Hybrid Mid",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Nallo Touring Hybrid Mid",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794485233341
+    }
+  },
+  {
+    "id": "norrvind-shield-hood",
+    "data": {
+      "action": "",
+      "base": "Norrvind Shield Hood",
+      "consolidate": false,
+      "franchise": "Norrvind Shield Hood",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "tier": "Emerging",
+      "updatedAt": 1794477973019
+    }
+  },
+  {
+    "id": "outsiders-beanie",
+    "data": {
+      "action": "",
+      "base": "Outsiders Beanie",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Outsiders Beanie",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794494780947
+    }
+  },
+  {
+    "id": "outsiders-graphic-tee",
+    "data": {
+      "action": "New material SS28. Item no. review (w or w/o Graphic) vs. LS Tee comparisoin",
+      "base": "Outsiders Graphic Tee",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Outsiders Graphic Tee",
+      "lastSeasonToSell": "SS28",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794486275919
+    }
+  },
+  {
+    "id": "outsiders-tee",
+    "data": {
+      "action": "New material SS28",
+      "base": "Outsiders Tee",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Outsiders Tee",
+      "lastSeasonToSell": "SS28",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794486125966
+    }
+  },
+  {
+    "id": "oxo-60-w",
+    "data": {
+      "action": "No POs. Sell from the stock",
+      "base": "Oxo 60 W",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Oxo 60 W",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794493156599
+    }
+  },
+  {
+    "id": "oxo-80",
+    "data": {
+      "action": "No POs. Sell from the stock",
+      "base": "Oxo 80",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Oxo 80",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794493160269
+    }
+  },
+  {
+    "id": "ozka-proof-jacket",
+    "data": {
+      "action": "Nordic ABS. To review separately whether to exit or keep it as Nordic ABS. A set with pants. 2L. ",
+      "base": "Ozka Proof Jacket",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Ozka Proof Jacket",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": true,
+      "qtmCandidate": false,
+      "tier": "",
+      "updatedAt": 1794481796540
+    }
+  },
+  {
+    "id": "packing-cube-12l",
+    "data": {
+      "action": "",
+      "base": "Packing cube 12L",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Packing cube 12L",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794493866369
+    }
+  },
+  {
+    "id": "packing-cube-8l",
+    "data": {
+      "action": "",
+      "base": "Packing cube 8L",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Packing cube 8L",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794493868088
+    }
+  },
+  {
+    "id": "pile-jacket",
+    "data": {
+      "action": "",
+      "base": "Pile Jacket",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Pile Jacket",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794485638377
+    }
+  },
+  {
+    "id": "pile-vest",
+    "data": {
+      "action": "",
+      "base": "Pile Vest",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Pile Vest",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794485554049
+    }
+  },
+  {
+    "id": "raincover-15-30l",
+    "data": {
+      "action": "No POs. Sell from the stocks. To review the inventory when to exit ",
+      "base": "Raincover 15-30L",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Raincover 15-30L",
+      "lastSeasonToSell": "FW28",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794494066803
+    }
+  },
+  {
+    "id": "raincover-25-40l",
+    "data": {
+      "action": "No POs. Sell from the stocks",
+      "base": "Raincover 25-40L",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Raincover 25-40L",
+      "lastSeasonToSell": "FW28",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794494076672
+    }
+  },
+  {
+    "id": "raincover-40-60l",
+    "data": {
+      "action": "No POs. Sell from the stocks",
+      "base": "Raincover 40-60L",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Raincover 40-60L",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794494074409
+    }
+  },
+  {
+    "id": "raincover-60-80l",
+    "data": {
+      "action": "No POs. Sell from the stocks",
+      "base": "Raincover 60-80L",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Raincover 60-80L",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794494095851
+    }
+  },
+  {
+    "id": "ridge-hike-tee",
+    "data": {
+      "action": "Even SS27 exit ",
+      "base": "Ridge Hike Tee",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Ridge Hike Tee",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794486502423
+    }
+  },
+  {
+    "id": "ridge-ls-tee",
+    "data": {
+      "action": "",
+      "base": "Ridge LS Tee",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Ridge II LS Tee",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794487492452
+    }
+  },
+  {
+    "id": "ridge-tee",
+    "data": {
+      "action": "LIM Ridge to consolidate to here",
+      "base": "Ridge Tee",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Ridge II Tee",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794486438248
+    }
+  },
+  {
+    "id": "roc-flash-down-hood",
+    "data": {
+      "action": "Every ROC Flash is Nordic ABS. Additional feature to discuss ",
+      "base": "ROC Flash Down Hood",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "ROC Flash Down Hood",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": true,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794481851241
+    }
+  },
+  {
+    "id": "roc-flash-down-jacket",
+    "data": {
+      "action": "Need a discussion how to proceed on a new version (e.g. ABS variations). To rebrand. To exit after SS28...",
+      "base": "ROC Flash Down Jacket",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "ROC Flash Down Jacket",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": true,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794481854545
+    }
+  },
+  {
+    "id": "roc-flash-down-vest",
+    "data": {
+      "action": "",
+      "base": "ROC Flash Down Vest",
+      "consolidate": false,
+      "franchise": "ROC Flash Down Vest",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": true,
+      "tier": "Harvest",
+      "updatedAt": 1794479647712
+    }
+  },
+  {
+    "id": "roc-lite-slim-pant",
+    "data": {
+      "action": "",
+      "base": "ROC Lite Slim Pant",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "ROC Lite Slim II Pant",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794488702849
+    }
+  },
+  {
+    "id": "roc-sight-gtx-jacket",
+    "data": {
+      "action": "Send to Outlet? to check Forecast whether to order or not (probably not). Sell down in FW window.",
+      "base": "ROC Sight GTX Jacket",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "ROC Sight GTX Jacket",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794481799245
+    }
+  },
+  {
+    "id": "roc-sight-softshell-jacket",
+    "data": {
+      "action": "Replace by Spitz soft shell",
+      "base": "ROC Sight Softshell Jacket",
+      "consolidate": false,
+      "franchise": "ROC Sight Softshell II Jacket",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "tier": "Exit",
+      "updatedAt": 1794480523182
+    }
+  },
+  {
+    "id": "roc-sight-softshell-pant",
+    "data": {
+      "action": "",
+      "base": "ROC Sight Softshell Pant",
+      "consolidate": false,
+      "franchise": "ROC Sight Softshell II Pant",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qmtCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794480563687
+    }
+  },
+  {
+    "id": "rosson-balaclava",
+    "data": {
+      "action": "Important",
+      "base": "Rosson Balaclava",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Rosson II Balaclava",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794494818198
+    }
+  },
+  {
+    "id": "rosson-beanie",
+    "data": {
+      "action": "",
+      "base": "Rosson Beanie",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Rosson Beanie",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794494807987
+    }
+  },
+  {
+    "id": "rosson-down-hood",
+    "data": {
+      "action": "Vs. Mojo? (competing style in a shop, taken out from the shore).  check with Mojo on the development",
+      "base": "Rosson Down Hood",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Rosson Down Hood",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": true,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794481856140
+    }
+  },
+  {
+    "id": "rosson-down-parka",
+    "data": {
+      "action": "To consider rename? ROC approach",
+      "base": "Rosson Down Parka",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Rosson Down Parka",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": true,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794481859539
+    }
+  },
+  {
+    "id": "rosson-mid-hood",
+    "data": {
+      "action": "Not Core, Harvest. Outlet, potentially cut in a few seasons.",
+      "base": "Rosson Mid Hood",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Rosson Mid II Hood",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794484361779
+    }
+  },
+  {
+    "id": "rosson-mid-jacket",
+    "data": {
+      "action": "It's not Core. Harvest ",
+      "base": "Rosson Mid Jacket",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Rosson Mid II Jacket",
+      "lastSeasonToSell": "",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794484167274
+    }
+  },
+  {
+    "id": "rosson-tights",
+    "data": {
+      "action": "",
+      "base": "Rosson Tights",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Rosson II Tights",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794485442901
+    }
+  },
+  {
+    "id": "s-rna-mimic-hood",
+    "data": {
+      "action": "To add in Brand store. Non priority for investment. ",
+      "base": "Särna Mimic Hood",
+      "consolidate": false,
+      "franchise": "Särna Mimic II Hood",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "tier": "",
+      "updatedAt": 1794478893360
+    }
+  },
+  {
+    "id": "s-rna-mimic-vest",
+    "data": {
+      "action": "new in FW28",
+      "base": "Särna Mimic Vest",
+      "consolidate": false,
+      "franchise": "Särna Mimic Vest",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "tier": "Emerging",
+      "updatedAt": 1794480383400
+    }
+  },
+  {
+    "id": "salix-proof-mimic-parka",
+    "data": {
+      "action": "",
+      "base": "Salix Proof Mimic Parka",
+      "consolidate": false,
+      "franchise": "Salix Proof Mimic II Parka",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "tier": "Harvest",
+      "updatedAt": 1794479294393
+    }
+  },
+  {
+    "id": "salo-dress",
+    "data": {
+      "action": "",
+      "base": "Salo Dress",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Salo Dress",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794487449239
+    }
+  },
+  {
+    "id": "salo-shirt-ss",
+    "data": {
+      "action": "",
+      "base": "Salo Shirt SS",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Salo Shirt SS II",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794487473700
+    }
+  },
+  {
+    "id": "salo-shirt",
+    "data": {
+      "action": "Too many colors? color productivity to review. Daily essential - need frequent refresh?",
+      "base": "Salo Shirt",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Salo Shirt II",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794486622855
+    }
+  },
+  {
+    "id": "saulo-proof-jacket",
+    "data": {
+      "action": "",
+      "base": "Saulo Proof Jacket",
+      "consolidate": false,
+      "franchise": "Saulo Proof Jacket",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "tier": "Emerging",
+      "updatedAt": 1794477985393
+    }
+  },
+  {
+    "id": "selme-ls-crewneck",
+    "data": {
+      "action": "Midlayer...",
+      "base": "Selme LS Crewneck",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Selme LS Crewneck",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794487558832
+    }
+  },
+  {
+    "id": "shoulder-pocket",
+    "data": {
+      "action": "No POs. Sell from the stocks",
+      "base": "Shoulder pocket",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Shoulder pocket",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794494257903
+    }
+  },
+  {
+    "id": "shoulder-pouch",
+    "data": {
+      "action": "No POs. Sell from the stocks",
+      "base": "Shoulder pouch",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Shoulder pouch",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794494254662
+    }
+  },
+  {
+    "id": "skalvik-softshell-parka",
+    "data": {
+      "action": "",
+      "base": "Skalvik Softshell Parka",
+      "consolidate": false,
+      "franchise": "Skalvik Softshell Parka",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "tier": "Emerging",
+      "updatedAt": 1794478011429
+    }
+  },
+  {
+    "id": "ski-glove",
+    "data": {
+      "action": "",
+      "base": "Ski Glove",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Ski Glove",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794494823606
+    }
+  },
+  {
+    "id": "ski-mitten",
+    "data": {
+      "action": "",
+      "base": "Ski Mitten",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Ski Mitten",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794494828947
+    }
+  },
+  {
+    "id": "ski-sock",
+    "data": {
+      "action": "",
+      "base": "Ski Sock",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Ski Sock",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794494835301
+    }
+  },
+  {
+    "id": "skuta-15",
+    "data": {
+      "action": "No new PO. Sell from the stocks.",
+      "base": "Skuta 15",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Skuta 15",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794492165468
+    }
+  },
+  {
+    "id": "sling-pouch-2l",
+    "data": {
+      "action": "",
+      "base": "Sling pouch 2L",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Sling pouch 2L",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794494198459
+    }
+  },
+  {
+    "id": "solis-hat",
+    "data": {
+      "action": "",
+      "base": "Solis Hat",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Solis Hat",
+      "lastSeasonToSell": "SS28",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794494849812
+    }
+  },
+  {
+    "id": "solis-zip-off-pant",
+    "data": {
+      "action": "Update SS29. Successful in DTC. Wholesale potential?",
+      "base": "Solis Zip Off Pant",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Solis Zip Off Pant",
+      "lastSeasonToSell": "SS28",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794489530768
+    }
+  },
+  {
+    "id": "solvik-seersucker-shorts",
+    "data": {
+      "action": "",
+      "base": "Solvik Seersucker Shorts",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Solvik Seersucker Shorts",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794489813648
+    }
+  },
+  {
+    "id": "solvik-seersucker-ss-shirt",
+    "data": {
+      "action": "",
+      "base": "Solvik Seersucker SS Shirt",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Solvik Seersucker SS Shirt",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794487587417
+    }
+  },
+  {
+    "id": "spitz-down-hood",
+    "data": {
+      "action": "To replace with LIM down, or unitility version of Hede.",
+      "base": "Spitz Down Hood",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Spitz Down Hood",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794481863195
+    }
+  },
+  {
+    "id": "spitz-gtx-jacket",
+    "data": {
+      "action": "To check the naming logics. New version. This is replacing ROC Sight GTX (to check) ",
+      "base": "Spitz GTX Jacket",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Spitz GTX Jacket",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794481804394
+    }
+  },
+  {
+    "id": "spitz-gtx-pro-jacket",
+    "data": {
+      "action": "To updated with Spitz GTX jacket (naming to check). To review the naming logics with the generation. To check the new Spitz GTX Pro Jacket (Icon) to find in the range (",
+      "base": "Spitz GTX Pro Jacket",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Spitz GTX Pro II Jacket",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794481807667
+    }
+  },
+  {
+    "id": "spitz-softshell-jacket",
+    "data": {
+      "action": "",
+      "base": "Spitz Softshell Jacket",
+      "consolidate": false,
+      "franchise": "Spitz Softshell Jacket",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qmtCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794480608416
+    }
+  },
+  {
+    "id": "spitz-softshell-pant",
+    "data": {
+      "action": "",
+      "base": "Spitz Softshell Pant",
+      "consolidate": false,
+      "franchise": "Spitz Softshell Pant",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qmtCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794480618016
+    }
+  },
+  {
+    "id": "stretch-webbing-belt",
+    "data": {
+      "action": "",
+      "base": "Stretch Webbing Belt",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Stretch Webbing Belt",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794494863490
+    }
+  },
+  {
+    "id": "sun-capsule-halfzip",
+    "data": {
+      "action": "",
+      "base": "Sun Capsule Halfzip",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Sun Capsule Halfzip",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794487602363
+    }
+  },
+  {
+    "id": "sun-capsule-multi-cover",
+    "data": {
+      "action": "",
+      "base": "Sun Capsule Multi Cover",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Sun Capsule Multi Cover",
+      "lastSeasonToSell": "SS28",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794494875127
+    }
+  },
+  {
+    "id": "sun-capsule-pant",
+    "data": {
+      "action": "Brand Heat ",
+      "base": "Sun Capsule Pant",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Sun Capsule Pant",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794489887492
+    }
+  },
+  {
+    "id": "swook-mid-halfzip-w",
+    "data": {
+      "action": "Swook family to review. Keep the platform? ",
+      "base": "Swook Mid Halfzip W",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Swook Mid Halfzip W",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794485687966
+    }
+  },
+  {
+    "id": "swook-mid-hood",
+    "data": {
+      "action": "",
+      "base": "Swook Mid Hood",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Swook II Mid Hood",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794484693590
+    }
+  },
+  {
+    "id": "swook-mid-jacket",
+    "data": {
+      "action": "Not performing. To check why...material? ",
+      "base": "Swook Mid Jacket",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Swook II Mid Jacket",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794484588653
+    }
+  },
+  {
+    "id": "swook-mid-sweater-m",
+    "data": {
+      "action": "",
+      "base": "Swook Mid Sweater M",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Swook Mid Sweater M",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794485706859
+    }
+  },
+  {
+    "id": "tarre-proof-insulated-jacket",
+    "data": {
+      "action": "",
+      "base": "Tarre Proof Insulated Jacket",
+      "consolidate": false,
+      "franchise": "Tarre Proof Insulated Jacket",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "tier": "Emerging",
+      "updatedAt": 1794478130917
+    }
+  },
+  {
+    "id": "tech-headwear",
+    "data": {
+      "action": "TBD -  something",
+      "base": "Tech Headwear",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Tech Headwear",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794494944787
+    }
+  },
+  {
+    "id": "thermal-beanie",
+    "data": {
+      "action": "to refresh",
+      "base": "Thermal Beanie",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Thermal Beanie",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794495024521
+    }
+  },
+  {
+    "id": "tight-15",
+    "data": {
+      "action": "No new PO. Sell from the stocks.",
+      "base": "Tight 15",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Tight 15",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794492249009
+    }
+  },
+  {
+    "id": "tight-8",
+    "data": {
+      "action": "No new PO. Sell from the stocks.",
+      "base": "Tight 8",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Tight 8",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794492251550
+    }
+  },
+  {
+    "id": "tight-duffle-50",
+    "data": {
+      "action": "",
+      "base": "Tight duffle 50",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Tight duffle 50",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794493639079
+    }
+  },
+  {
+    "id": "tight-hip-pack-1",
+    "data": {
+      "action": "",
+      "base": "Tight hip pack 1",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Tight hip pack 1",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": true,
+      "tier": "Hero",
+      "updatedAt": 1794494304756
+    }
+  },
+  {
+    "id": "tight-hip-pack-3-5",
+    "data": {
+      "action": "",
+      "base": "Tight hip pack 3,5",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Tight hip pack 3,5",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": true,
+      "tier": "Hero",
+      "updatedAt": 1794494305779
+    }
+  },
+  {
+    "id": "tight-large",
+    "data": {
+      "action": "Core ",
+      "base": "Tight Large",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Tight Large",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Hero",
+      "updatedAt": 1794492283104
+    }
+  },
+  {
+    "id": "tight-medium",
+    "data": {
+      "action": "Core",
+      "base": "Tight Medium",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Tight Medium",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Hero",
+      "updatedAt": 1794492281852
+    }
+  },
+  {
+    "id": "tight-pocket-bag",
+    "data": {
+      "action": "",
+      "base": "Tight Pocket bag",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Tight Pocket bag",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Hero",
+      "updatedAt": 1794494327110
+    }
+  },
+  {
+    "id": "tight-pro-large",
+    "data": {
+      "action": "",
+      "base": "Tight Pro Large",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Tight Pro Large",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": true,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794492320358
+    }
+  },
+  {
+    "id": "tight-pro-medium",
+    "data": {
+      "action": "",
+      "base": "Tight Pro Medium",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Tight Pro Medium",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": true,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794492322613
+    }
+  },
+  {
+    "id": "tight-small",
+    "data": {
+      "action": "Core",
+      "base": "Tight Small",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Tight Small",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Hero",
+      "updatedAt": 1794492347180
+    }
+  },
+  {
+    "id": "tight-tote-25",
+    "data": {
+      "action": "",
+      "base": "Tight Tote 25",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Tight Tote 25",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": true,
+      "tier": "Harvest",
+      "updatedAt": 1794492365620
+    }
+  },
+  {
+    "id": "tight-x-small",
+    "data": {
+      "action": "move the volume to small",
+      "base": "Tight X-Small",
+      "consolidate": true,
+      "deepReview": false,
+      "franchise": "Tight X-Small",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794492394039
+    }
+  },
+  {
+    "id": "tova-wool-beanie",
+    "data": {
+      "action": "",
+      "base": "Tova Wool Beanie",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Tova Wool Beanie",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794495033705
+    }
+  },
+  {
+    "id": "trekk-tech-ls-tee",
+    "data": {
+      "action": "No longer ABS. No brand store either",
+      "base": "Trekk Tech LS Tee",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Trekk Tech II LS Tee",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794486677236
+    }
+  },
+  {
+    "id": "trekk-tech-tee",
+    "data": {
+      "action": "Historically ABS only. To review for Brand store ",
+      "base": "Trekk Tech Tee",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Trekk Tech II Tee",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794486332369
+    }
+  },
+  {
+    "id": "utility-pouch-3l",
+    "data": {
+      "action": "",
+      "base": "Utility pouch 3L",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Utility pouch 3L",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794494370845
+    }
+  },
+  {
+    "id": "vara-20l",
+    "data": {
+      "action": "No new PO. Sell from the stocks.",
+      "base": "Vara 20L",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Vara 20L",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794492446324
+    }
+  },
+  {
+    "id": "vara-alpha-cap",
+    "data": {
+      "action": "",
+      "base": "Vara Alpha Cap",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Vara Alpha Cap",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794494986322
+    }
+  },
+  {
+    "id": "vara-alpha-sweater",
+    "data": {
+      "action": "QTM hood? How long would it be popular? No. of colors to review... To review with Fleece programme etc ",
+      "base": "Vara Alpha Sweater",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Vara Alpha Sweater",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": true,
+      "tier": "Emerging",
+      "updatedAt": 1794485147855
+    }
+  },
+  {
+    "id": "vara-down-gtx-parka",
+    "data": {
+      "action": "",
+      "base": "Vara Down GTX Parka",
+      "consolidate": false,
+      "franchise": "Vara Down GTX Parka",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "tier": "Emerging",
+      "updatedAt": 1794477468053
+    }
+  },
+  {
+    "id": "vassi-beanie",
+    "data": {
+      "action": "To refresh ",
+      "base": "Vassi Beanie",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Vassi Beanie",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794495065521
+    }
+  },
+  {
+    "id": "vassi-gtx-jacket",
+    "data": {
+      "action": "FW29 update. Vassi Pro will be an icon. this is a commercial version.",
+      "base": "Vassi GTX Jacket",
+      "consolidate": false,
+      "franchise": "Vassi GTX II Jacket",
+      "lastSeasonToSell": "FW29",
+      "nordicAbs": false,
+      "tier": "Harvest",
+      "updatedAt": 1794476925348
+    }
+  },
+  {
+    "id": "vassi-gtx-pro-jacket",
+    "data": {
+      "action": "FW29 update to review. Pants to match.",
+      "base": "Vassi GTX Pro Jacket",
+      "consolidate": false,
+      "franchise": "Vassi GTX Pro II Jacket",
+      "lastSeasonToSell": "FW28",
+      "nordicAbs": false,
+      "tier": "Hero",
+      "updatedAt": 1794477227789
+    }
+  },
+  {
+    "id": "vassi-headband",
+    "data": {
+      "action": "",
+      "base": "Vassi Headband",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Vassi Headband",
+      "lastSeasonToSell": "FW27",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794495084435
+    }
+  },
+  {
+    "id": "vassi-mid-hood",
+    "data": {
+      "action": "Full year item? or FW only? To review whether to exit in FW28. It may need a replacement. Is it competing with Nallo Touring Hybrid Mid? Color play etc.",
+      "base": "Vassi Mid Hood",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Vassi Mid Hood",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Exit",
+      "updatedAt": 1794484835121
+    }
+  },
+  {
+    "id": "vassi-pro-32l",
+    "data": {
+      "action": "",
+      "base": "Vassi Pro 32L",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Vassi Pro 32L",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794493122554
+    }
+  },
+  {
+    "id": "vertigo-proof-low",
+    "data": {
+      "action": "",
+      "base": "Vertigo Proof Low",
+      "consolidate": false,
+      "deepReview": false,
+      "franchise": "Vertigo Proof Low",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794490835064
+    }
+  },
+  {
+    "id": "vide-20",
+    "data": {
+      "action": "What's the use case to understand USP. w Corker etc",
+      "base": "Vide 20",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Vide 20",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794493097422
+    }
+  },
+  {
+    "id": "vide-30",
+    "data": {
+      "action": "What's the use case to understand USP. w Corker etc",
+      "base": "Vide 30",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Vide 30",
+      "lastSeasonToSell": "carry over w/o update",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794493102533
+    }
+  },
+  {
+    "id": "warm-flex-pant",
+    "data": {
+      "action": "Renew in FW29",
+      "base": "Warm Flex Pant",
+      "consolidate": false,
+      "franchise": "Warm Flex Pant",
+      "lastSeasonToSell": "SS29",
+      "nordicAbs": true,
+      "qmtCandidate": false,
+      "tier": "Harvest",
+      "updatedAt": 1794480664929
+    }
+  },
+  {
+    "id": "yra-mimic-proof-parka",
+    "data": {
+      "action": "To check wholesale performance. Nordic? Non priority for development investment ",
+      "base": "Yra Mimic Proof Parka",
+      "consolidate": false,
+      "deepReview": true,
+      "franchise": "Yra Mimic Proof Parka",
+      "lastSeasonToSell": "undefined",
+      "nordicAbs": false,
+      "qtmCandidate": false,
+      "tier": "Emerging",
+      "updatedAt": 1794481820395
+    }
+  }
+]
