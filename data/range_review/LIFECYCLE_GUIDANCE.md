@@ -57,6 +57,15 @@ now include SS27, positioned before FW27 in the sequence.
 
 ## Open edges
 
+- **Tier taxonomy change pending.** `TIERING_GUIDANCE.md` (RR-105,
+  16-Nov-2026) proposes replacing Hero with Core as a tier, and
+  introducing Icon as a cross-tier designation instead. Not yet
+  implemented — the rules-by-Tier table above still says "Hero /
+  Harvest" because that's what the Board's Tier field still offers
+  today. When that change lands, this table's row needs the same
+  rename; it should behave identically either way (open-ended
+  production unless the note says otherwise), since the rename
+  doesn't change the lifecycle-date logic itself.
 - **Apparel Exit timing** isn't confirmed the way Hardware's is. The
   "immediate = SS27" rule was stated with Hardware specifically in
   mind; whether the same immediacy applies to Apparel Exit cases is

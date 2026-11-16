@@ -9,6 +9,22 @@ proposal" framing for this workstream. Implemented as
 document and that function are the same guidance, not two independent
 copies; if one changes, so should the other.
 
+> **Pending taxonomy change (16-Nov-2026, RR-105) — not yet
+> implemented.** The user has proposed replacing this tier set with
+> **Core / Harvest / Emerging / Exit** — Hero is dropped as a tier
+> value. In its place, **Icon** becomes a separate, cross-tier
+> designation: a style can be an Icon regardless of which of the four
+> tiers it's in (a Core Icon, a Harvest Icon, even an Exit Icon),
+> rather than Icon/Hero being one of the mutually-exclusive options
+> itself. This formalizes language that was already showing up
+> organically in Action notes during the Nov 12 workshop and the
+> Deep Review pass (e.g. "a potential Icon," "Spitz GTX Pro Jacket
+> (Icon)") rather than introducing a new idea from scratch. Per the
+> user, explicitly **"no need to update yet"** — this note captures
+> the target definition only. Nothing below (the rules, the
+> thresholds, the Board's Tier dropdown, `compute_suggested_tier()`)
+> has been changed. See **Open questions** below before implementing.
+
 **This is a suggestion engine, not a decision engine.** The Range
 Review Board shows a "Suggested: <Tier> — <reason>" hint on any
 undecided card these rules have an opinion on, but never writes to the
@@ -85,6 +101,33 @@ comes in through the rest of the year, and as the remaining
 unmatched-sales gap closes (82 franchises still have no historical
 sales matched at all, RR-037/RR-040).
 
+## Open questions (for the Core/Harvest/Emerging/Exit + Icon change)
+
+- **Naming collision with the existing "Core Assortment" field.**
+  Every franchise already carries a separate `coreAssortmentFW27` /
+  `coreAssortmentSS28` flag (Yes / No / To confirm) — unrelated to
+  Tier, and the thing the Nov 12 Deep Review pass repeatedly flagged
+  franchises as "mislabeled" against (e.g. Brand Five Panel Cap,
+  Hede Cargo II Pant, Magma Rugged Pant — see the Deep Review
+  worklist). If the new **Core** tier is meant to track or replace
+  that existing flag, implementation is straightforward; if the name
+  match is coincidental and the two are meant to stay independent
+  concepts, the Board needs to show both without confusing a viewer
+  into thinking they're the same field. **Left Open** — not decided
+  yet, not assumed either way.
+- **Icon's own rule, if any.** Hero currently has a suggestion-engine
+  rule (2026 units > 10,000 AND GP% > 50%, rule 3 above, "confirm with
+  team"). Once Icon is cross-tier, does that same sales threshold
+  become Icon's rule instead (applied on top of whatever Tier a style
+  already has), or does Icon stay a pure human call with no suggestion
+  at all? Not decided.
+- **Scope of the rename.** Everywhere "Hero" appears today — this
+  document's rules 3/4 and threshold table, `compute_suggested_tier()`,
+  the Board's Tier `<select>` options, the `tier-definition-box` copy,
+  `LIFECYCLE_GUIDANCE.md`'s Tier table, and every existing decision
+  doc already carrying `tier: "Hero"` — needs a coordinated update
+  when this is implemented, not a partial rename.
+
 ## Revision history
 
 - **3-Nov-2026, first pass (RR-048, superseded)**: Core Assortment +
@@ -103,3 +146,7 @@ sales matched at all, RR-037/RR-040).
   new-generation cases moved off Emerging as a result (mostly to "no
   suggestion"; 2 to Harvest, 1 to Exit); 2 remain Emerging via the
   independent rule-2 sales signal, not rule 1.
+- **16-Nov-2026, RR-105 (proposed, not implemented)**: Core/Harvest/
+  Emerging/Exit replaces Hero/Harvest/Emerging/Exit as the tier set;
+  Icon introduced as a cross-tier designation, not a tier value. See
+  the note at the top of this document and **Open questions** above.
