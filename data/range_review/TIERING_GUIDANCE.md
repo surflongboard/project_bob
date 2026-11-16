@@ -101,32 +101,71 @@ comes in through the rest of the year, and as the remaining
 unmatched-sales gap closes (82 franchises still have no historical
 sales matched at all, RR-037/RR-040).
 
-## Open questions (for the Core/Harvest/Emerging/Exit + Icon change)
+## Resolved (16-Nov-2026, RR-106)
 
-- **Naming collision with the existing "Core Assortment" field.**
-  Every franchise already carries a separate `coreAssortmentFW27` /
-  `coreAssortmentSS28` flag (Yes / No / To confirm) — unrelated to
-  Tier, and the thing the Nov 12 Deep Review pass repeatedly flagged
-  franchises as "mislabeled" against (e.g. Brand Five Panel Cap,
-  Hede Cargo II Pant, Magma Rugged Pant — see the Deep Review
-  worklist). If the new **Core** tier is meant to track or replace
-  that existing flag, implementation is straightforward; if the name
-  match is coincidental and the two are meant to stay independent
-  concepts, the Board needs to show both without confusing a viewer
-  into thinking they're the same field. **Left Open** — not decided
-  yet, not assumed either way.
-- **Icon's own rule, if any.** Hero currently has a suggestion-engine
-  rule (2026 units > 10,000 AND GP% > 50%, rule 3 above, "confirm with
-  team"). Once Icon is cross-tier, does that same sales threshold
-  become Icon's rule instead (applied on top of whatever Tier a style
-  already has), or does Icon stay a pure human call with no suggestion
-  at all? Not decided.
+- **"Core" connects to the existing Core Assortment field** — per the
+  user: "to connect to the existing[,] however there were a few cases
+  that were wrongly labeled as Core. Follow the note, but
+  Merchandising to confirm." So the new Core tier is meant to track
+  `coreAssortmentFW27`/`coreAssortmentSS28`, not stay independent of
+  it — but where the Deep Review pass already flagged a franchise as
+  mislabeled (Brand Five Panel Cap, Hede Cargo II Pant, Magma Rugged
+  Pant, and the pre-workshop Niklas-input gaps: Haglöfs L.I.M Horizon
+  GTX Low/Low, Utility pouch 3L, Skuta 15, L.I.M Mountain Trail 25),
+  the Action note's correction wins over the stale flag value. **Status:
+  Provisional** — the connection and the override rule are both
+  decided, but Merchandising still needs to confirm the corrected
+  cases before this is fully Confirmed.
+- **Icon stays a pure human call** — no suggestion-engine rule, unlike
+  Hero's current 2026-units/GP% thresholds. Confirmed.
+- **A "Potential Icon" tag was added to the Board** (not a rename of
+  Tier itself, which still says Hero today) — see RR-106's register
+  entry and the picks inventory below.
+
+## Open questions (for the Core/Harvest/Emerging/Exit rename itself)
+
 - **Scope of the rename.** Everywhere "Hero" appears today — this
   document's rules 3/4 and threshold table, `compute_suggested_tier()`,
   the Board's Tier `<select>` options, the `tier-definition-box` copy,
   `LIFECYCLE_GUIDANCE.md`'s Tier table, and every existing decision
   doc already carrying `tier: "Hero"` — needs a coordinated update
-  when this is implemented, not a partial rename.
+  when this is implemented, not a partial rename. Still **not
+  implemented** — "no need to update yet" per the user.
+
+## Icon picks and candidates (16-Nov-2026, RR-106)
+
+Supplied by the user as a reference inventory, organized by status and
+layer. "On Board?" says whether the franchise exists as a card today —
+only those get the new **Potential Icon** checkbox; a style with no
+card yet has nothing to check.
+
+| Status | Apparel | Footwear | Hardware |
+|---|---|---|---|
+| **Established Icon** | Vassi, Spitz | — | Tight family |
+| **Potential Icon — current range** | Front Proof (II Jacket), L.I.M GTX III **Jacket only** | — | — |
+| **Potential Icon — future season** | FW28 Hede 2.0, L.I.M BirchGrid Fleece, L.I.M Light Jkt, SS29 Pant Platform | Vertigo family, SS28 L.I.M UL GTX Shoe | — |
+
+**Established Icon** (Vassi, Spitz, Tight family) — reference only,
+no tag applied. These are family-level names spanning several SKUs
+each (e.g. "Vassi" matches 8 Board franchises across Shell/Legwear/
+Midlayer/Accessories/Packs); the user asked specifically for a
+**Potential** Icon tag, not an Established one, so the exact per-SKU
+scope within each family was never resolved and isn't needed yet.
+
+**Potential Icon — tagged on the Board** (`potentialIcon: true`,
+confirmed matches only):
+- Front Proof II Jacket
+- L.I.M GTX III Jacket (**not** L.I.M GTX III Pant — confirmed with the
+  user; the Pant was never discussed in Icon terms, the Jacket was)
+- Haglöfs Vertigo QL PROOF Low (Vertigo family)
+- Vertigo Proof Low (Vertigo family)
+- L.I.M Ultralight GTX Low (= "SS28 L.I.M UL GTX Shoe")
+
+**Potential Icon — not yet on the Board** (future/unreleased, nothing
+to tag): FW28 Hede 2.0, L.I.M BirchGrid Fleece, L.I.M Light Jkt
+(confirmed with the user: not the existing L.I.M Light Proof Jacket —
+a genuinely different, unreleased product), SS29 Pant Platform. Revisit
+once these exist as real franchises in `workshop_data.json`.
 
 ## Revision history
 
@@ -150,3 +189,11 @@ sales matched at all, RR-037/RR-040).
   Emerging/Exit replaces Hero/Harvest/Emerging/Exit as the tier set;
   Icon introduced as a cross-tier designation, not a tier value. See
   the note at the top of this document and **Open questions** above.
+- **16-Nov-2026, RR-106**: both RR-105 open questions resolved — Core
+  connects to the existing Core Assortment field (Provisional, pending
+  Merchandising confirmation on the known mislabeled cases); Icon
+  confirmed as a pure human call, no suggestion-engine rule. A
+  **Potential Icon** checkbox added to the Board and applied to 5
+  confirmed franchises; the full Icon picks/candidates inventory
+  recorded above. The Core/Harvest/Emerging/Exit rename itself is
+  still not implemented.

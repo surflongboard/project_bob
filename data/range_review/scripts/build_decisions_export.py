@@ -1,9 +1,9 @@
 """
 Exports the Range Review Board's live workshop decisions (Tier / Last
 season to sell (sales-facing) / No new POs as of (purchasing cutoff) /
-Consolidate / Nordic ABS / QTM candidate / Deep review / Action notes,
-captured in the artifact's own `decisions` database, RR-022/RR-097/
-RR-098/RR-099/RR-103) into an Excel sign-off sheet.
+Consolidate / Nordic ABS / QTM candidate / Deep review / Potential Icon /
+Action notes, captured in the artifact's own `decisions` database,
+RR-022/RR-097/RR-098/RR-099/RR-103/RR-106) into an Excel sign-off sheet.
 
 **Not a fully automated script** -- there is no standing credential for
 a local script to query the artifact's live database directly. The
@@ -65,6 +65,7 @@ def build_rows(decisions_pull_path: Path) -> list[dict]:
             "Nordic ABS": "Yes" if dec.get("nordicAbs") else "",
             "QTM candidate": "Yes" if dec.get("qtmCandidate") else "",
             "Deep review": "Yes" if dec.get("deepReview") else "",
+            "Potential Icon": "Yes" if dec.get("potentialIcon") else "",
             "Action / notes": dec.get("action") or "",
             "Decision updated": fmt_updated(dec.get("updatedAt")),
         })

@@ -748,7 +748,7 @@ textarea.homework-note {
   </div>
   <p>FW27/SS28 franchises by layer, for the Nov 12 Range Review Workshop. Each card pulls together: price and
     margin target from the FW27/SS28 range files; Forecast Units/GP% from the FW27 FC3 forecast and the SS28 FC1
-    forecast file. Tier, Last season to sell (sales-facing), No new POs as of (purchasing cutoff), Consolidate, Nordic ABS, QTM candidate, Deep review and Action notes are captured live here and shared with
+    forecast file. Tier, Last season to sell (sales-facing), No new POs as of (purchasing cutoff), Consolidate, Nordic ABS, QTM candidate, Deep review, Potential Icon and Action notes are captured live here and shared with
     everyone viewing this page.</p>
   <div class="tier-definition-box">
     <span class="tdb-title">Suggested tier — how it's computed (confirm with the team)</span>
@@ -1149,11 +1149,12 @@ textarea.homework-note {
     }, 400);
   }
 
-  function saveDecision(base, franchise, tier, action, lastSeasonToSell, consolidate, nordicAbs, qtmCandidate, deepReview, noNewPOsAsOf) {
+  function saveDecision(base, franchise, tier, action, lastSeasonToSell, consolidate, nordicAbs, qtmCandidate, deepReview, noNewPOsAsOf, potentialIcon) {
     var id = slug(base);
     var body = { base: base, franchise: franchise, tier: tier || "", action: action || "",
       lastSeasonToSell: lastSeasonToSell || "", consolidate: !!consolidate, nordicAbs: !!nordicAbs,
-      qtmCandidate: !!qtmCandidate, deepReview: !!deepReview, noNewPOsAsOf: noNewPOsAsOf || "", updatedAt: Date.now() };
+      qtmCandidate: !!qtmCandidate, deepReview: !!deepReview, noNewPOsAsOf: noNewPOsAsOf || "",
+      potentialIcon: !!potentialIcon, updatedAt: Date.now() };
     decisions[id] = body; // optimistic local update
     if (!dbCol) {
       // RR-up-next -- THE actual bug behind a real user report ("it seems to save while you
@@ -1642,6 +1643,7 @@ textarea.homework-note {
     var nordicAbs = !!dec.nordicAbs;
     var qtmCandidate = !!dec.qtmCandidate;
     var deepReview = !!dec.deepReview;
+    var potentialIcon = !!dec.potentialIcon;
     var myHw = myHomeworkDraft[id] || {};
     var myPick = myHw.tier || "";
     var myHwLastSeason = myHw.lastSeasonToSell || "";
@@ -1820,6 +1822,7 @@ textarea.homework-note {
             '<label class="consolidate-row"><input type="checkbox" class="nordic-abs-check"' + (nordicAbs ? " checked" : "") + '> Nordic ABS</label>' +
             '<label class="consolidate-row"><input type="checkbox" class="qtm-candidate-check"' + (qtmCandidate ? " checked" : "") + '> QTM candidate</label>' +
             '<label class="consolidate-row"><input type="checkbox" class="deep-review-check"' + (deepReview ? " checked" : "") + '> Deep review (complex case)</label>' +
+            '<label class="consolidate-row"><input type="checkbox" class="potential-icon-check"' + (potentialIcon ? " checked" : "") + '> Potential Icon</label>' +
             '<textarea class="action-note" placeholder="Action / notes…">' + escapeHtml(dec.action || "") + "</textarea>" +
             (unsavedDecisions[id]
               ? '<div class="decision-meta warn">Not saved yet — retrying…</div>'
@@ -1928,6 +1931,7 @@ textarea.homework-note {
       var nordicAbsCheck = card.querySelector(".nordic-abs-check");
       var qtmCandidateCheck = card.querySelector(".qtm-candidate-check");
       var deepReviewCheck = card.querySelector(".deep-review-check");
+      var potentialIconCheck = card.querySelector(".potential-icon-check");
       var textarea = card.querySelector(".action-note");
       var homeworkSelect = card.querySelector(".homework-select");
       var homeworkSeasonSelect = card.querySelector(".homework-season-select");
@@ -1958,30 +1962,33 @@ textarea.homework-note {
       if (homeworkNote) homeworkNote.addEventListener("input", saveHomework);
       select.addEventListener("change", function () {
         select.setAttribute("data-tier", select.value);
-        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value, consolidateCheck.checked, nordicAbsCheck.checked, qtmCandidateCheck.checked, deepReviewCheck.checked, noNewPosSelect.value);
+        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value, consolidateCheck.checked, nordicAbsCheck.checked, qtmCandidateCheck.checked, deepReviewCheck.checked, noNewPosSelect.value, potentialIconCheck.checked);
       });
       seasonSelect.addEventListener("change", function () {
         seasonSelect.setAttribute("data-last-season", seasonSelect.value);
-        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value, consolidateCheck.checked, nordicAbsCheck.checked, qtmCandidateCheck.checked, deepReviewCheck.checked, noNewPosSelect.value);
+        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value, consolidateCheck.checked, nordicAbsCheck.checked, qtmCandidateCheck.checked, deepReviewCheck.checked, noNewPosSelect.value, potentialIconCheck.checked);
       });
       noNewPosSelect.addEventListener("change", function () {
         noNewPosSelect.setAttribute("data-no-new-pos", noNewPosSelect.value);
-        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value, consolidateCheck.checked, nordicAbsCheck.checked, qtmCandidateCheck.checked, deepReviewCheck.checked, noNewPosSelect.value);
+        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value, consolidateCheck.checked, nordicAbsCheck.checked, qtmCandidateCheck.checked, deepReviewCheck.checked, noNewPosSelect.value, potentialIconCheck.checked);
       });
       consolidateCheck.addEventListener("change", function () {
-        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value, consolidateCheck.checked, nordicAbsCheck.checked, qtmCandidateCheck.checked, deepReviewCheck.checked, noNewPosSelect.value);
+        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value, consolidateCheck.checked, nordicAbsCheck.checked, qtmCandidateCheck.checked, deepReviewCheck.checked, noNewPosSelect.value, potentialIconCheck.checked);
       });
       nordicAbsCheck.addEventListener("change", function () {
-        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value, consolidateCheck.checked, nordicAbsCheck.checked, qtmCandidateCheck.checked, deepReviewCheck.checked, noNewPosSelect.value);
+        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value, consolidateCheck.checked, nordicAbsCheck.checked, qtmCandidateCheck.checked, deepReviewCheck.checked, noNewPosSelect.value, potentialIconCheck.checked);
       });
       qtmCandidateCheck.addEventListener("change", function () {
-        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value, consolidateCheck.checked, nordicAbsCheck.checked, qtmCandidateCheck.checked, deepReviewCheck.checked, noNewPosSelect.value);
+        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value, consolidateCheck.checked, nordicAbsCheck.checked, qtmCandidateCheck.checked, deepReviewCheck.checked, noNewPosSelect.value, potentialIconCheck.checked);
       });
       deepReviewCheck.addEventListener("change", function () {
-        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value, consolidateCheck.checked, nordicAbsCheck.checked, qtmCandidateCheck.checked, deepReviewCheck.checked, noNewPosSelect.value);
+        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value, consolidateCheck.checked, nordicAbsCheck.checked, qtmCandidateCheck.checked, deepReviewCheck.checked, noNewPosSelect.value, potentialIconCheck.checked);
+      });
+      potentialIconCheck.addEventListener("change", function () {
+        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value, consolidateCheck.checked, nordicAbsCheck.checked, qtmCandidateCheck.checked, deepReviewCheck.checked, noNewPosSelect.value, potentialIconCheck.checked);
       });
       textarea.addEventListener("input", function () {
-        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value, consolidateCheck.checked, nordicAbsCheck.checked, qtmCandidateCheck.checked, deepReviewCheck.checked, noNewPosSelect.value);
+        saveDecision(base, franchise, select.value, textarea.value, seasonSelect.value, consolidateCheck.checked, nordicAbsCheck.checked, qtmCandidateCheck.checked, deepReviewCheck.checked, noNewPosSelect.value, potentialIconCheck.checked);
       });
     });
   }
