@@ -38,7 +38,7 @@ field itself is the mechanism.
 |---|---|---|
 | **Hero / Harvest** | Open-ended by default — keep producing as long as there's a forecast. Only gets a cutoff when the Action note states one (a "sell from stock" case). | Mirrors No new POs as of — no separate cutoff unless the note gives one. |
 | **Emerging** | Not applicable yet — still in its demand-proving phase. | **Undecided** by default. Stays open until the style's performance is confirmed; only gets a value if the note explicitly states an exit point. |
-| **Exit** | **Immediate — SS27.** Not "soon," not "next season": the cutoff is now, as of the season already in progress when this review happened. Applies across the board, with Hardware the clearest/most consistent case so far. | Can run later than the purchasing cutoff, reflecting how long remaining stock is still sold — the Action note's rationale should support whatever season is picked here. |
+| **Exit** | **Immediate — SS27.** Not "soon," not "next season": the cutoff is now, as of the season already in progress when this review happened. Confirmed for every Exit franchise (RR-110, 16-Nov-2026) — no Apparel/Footwear vs. Hardware distinction. | Can run later than the purchasing cutoff, reflecting how long remaining stock is still sold — the Action note's rationale should support whatever season is picked here. |
 
 ## Why SS27, not FW27
 
@@ -66,16 +66,12 @@ now include SS27, positioned before FW27 in the sequence.
   rename; it should behave identically either way (open-ended
   production unless the note says otherwise), since the rename
   doesn't change the lifecycle-date logic itself.
-- **Apparel Exit timing** isn't confirmed the way Hardware's is. The
-  "immediate = SS27" rule was stated with Hardware specifically in
-  mind; whether the same immediacy applies to Apparel Exit cases is
-  still open (6 non-Hardware Exit franchises had a non-FW27/non-SS27
-  last season as of the Nov 12 data: Essential Tights, L.I.M Airak GTX
-  Jacket, L.I.M Delta Crop Tee, Outsiders Graphic Tee, Outsiders Tee,
-  Vassi Mid Hood — not yet revisited against this guidance).
+- ~~**Apparel Exit timing** isn't confirmed the way Hardware's is~~ —
+  **resolved, RR-110**: SS27 applies to every Exit franchise, no
+  Apparel/Footwear vs. Hardware distinction.
 - **Backfill**: `noNewPOsAsOf` exists now but started blank for all 269
-  existing decisions. Filling it in for the Hardware Exit cases (per
-  this guidance, `SS27`) is a separate, explicit pass — not done
+  existing decisions. Filling it in (per this guidance, `SS27` for
+  every Exit franchise) is a separate, explicit pass — not done
   automatically just because the field and the rule now exist.
 
 ## Revision history
@@ -85,3 +81,5 @@ now include SS27, positioned before FW27 in the sequence.
 - **16-Nov-2026 (RR-104)**: this document written; SS27 added to the
   season dropdown; confirmed no separate "sell from stock" checkbox is
   needed (the No new POs as of field already serves that role).
+- **16-Nov-2026 (RR-110)**: SS27 confirmed for every Exit franchise,
+  not just Hardware — the Apparel-timing open edge is resolved.
