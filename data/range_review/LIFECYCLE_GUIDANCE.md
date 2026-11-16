@@ -40,6 +40,25 @@ field itself is the mechanism.
 | **Emerging** | Not applicable yet — still in its demand-proving phase. | **Undecided** by default. Stays open until the style's performance is confirmed; only gets a value if the note explicitly states an exit point. |
 | **Exit** | **Immediate — SS27.** Not "soon," not "next season": the cutoff is now, as of the season already in progress when this review happened. Confirmed for every Exit franchise (RR-110, 16-Nov-2026) — no Apparel/Footwear vs. Hardware distinction. | Can run later than the purchasing cutoff, reflecting how long remaining stock is still sold — the Action note's rationale should support whatever season is picked here. |
 
+## What an explicit Last season to sell means for buying (16-Nov-2026, RR-130)
+
+For a **Harvest** franchise that carries an explicit Last season to
+sell (not "carry over w/o update," an actual season) — per the user:
+*"some of the items have a last season to sell. Those that the one
+will dictate how much you need to buy for the last season."* That
+date is a **purchasing-sizing instruction**, not just a sales-facing
+label: the final purchase order for that franchise should be sized to
+sell through by that season, not produced as if it were still
+open-ended. This is the concrete operational link between the two
+fields for a Harvest item that has one — ordinarily Harvest's "No new
+POs as of" stays open-ended (see the table below) specifically because
+*most* Harvest franchises have no stated end date; where one exists,
+it stops being open-ended in practice even if `noNewPOsAsOf` itself
+is still blank on the Board (the Last season to sell value is doing
+that job directly). As of this entry, 17 of 84 Harvest franchises on
+the Revised sheet carry an explicit Last season to sell rather than
+"carry over w/o update" — those are the ones this applies to.
+
 ## Why SS27, not FW27
 
 "Immediate" for an Exit style means **SS27** — the season already
@@ -83,3 +102,7 @@ now include SS27, positioned before FW27 in the sequence.
   needed (the No new POs as of field already serves that role).
 - **16-Nov-2026 (RR-110)**: SS27 confirmed for every Exit franchise,
   not just Hardware — the Apparel-timing open edge is resolved.
+- **16-Nov-2026 (RR-130)**: added the buying implication of an
+  explicit Last season to sell on a Harvest franchise — it sizes the
+  final purchase order, not just the sales-facing label. See **What
+  an explicit Last season to sell means for buying** above.

@@ -167,6 +167,31 @@ to tag): FW28 Hede 2.0, L.I.M BirchGrid Fleece, L.I.M Light Jkt
 a genuinely different, unreleased product), SS29 Pant Platform. Revisit
 once these exist as real franchises in `workshop_data.json`.
 
+## Harvest tier philosophy (16-Nov-2026, RR-130)
+
+Per the user, in one sentence: **"let it sell, deprioritize from the
+design and development."** Harvest is not a holding pattern waiting
+for a decision — it's a deliberate commercial stance, distinct from
+both Core (actively invested in) and Exit (being wound down):
+
+- **Keep selling.** No lifecycle restriction — this is exactly why
+  Harvest's default `noNewPOsAsOf` stays open-ended (produce as long
+  as there's a forecast, `LIFECYCLE_GUIDANCE.md`'s Rules-by-Tier
+  table) unless a franchise's own note states a cutoff.
+- **Deprioritize new design/development investment.** No new
+  features, no refresh program, no design-team time — the commercial
+  performance doesn't justify it, but it hasn't earned an Exit call
+  either. This is the distinction that separates "still selling, no
+  further R&D spend" (Harvest) from "actively investing" (Core).
+
+This governs how the 27 Deep-review-flagged Harvest notes that
+mention a reset/update/new-feature ask (e.g. "SS29 Reset," "create a
+new exciting hoodie") should be read: a note proposing design work on
+a Harvest-tier franchise is a flag to confirm whether that franchise's
+Tier should actually be Core (or whether the request itself should be
+declined under this philosophy), not a standing green light to invest
+just because the note exists.
+
 ## Revision history
 
 - **3-Nov-2026, first pass (RR-048, superseded)**: Core Assortment +
@@ -197,3 +222,7 @@ once these exist as real franchises in `workshop_data.json`.
   confirmed franchises; the full Icon picks/candidates inventory
   recorded above. The Core/Harvest/Emerging/Exit rename itself is
   still not implemented.
+- **16-Nov-2026, RR-130**: Harvest tier philosophy recorded — "let it
+  sell, deprioritize from the design and development" — as the user
+  moved from closing out Core to starting the Harvest tier review. See
+  **Harvest tier philosophy** above.
