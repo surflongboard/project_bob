@@ -296,6 +296,8 @@ each card — `build_workshop_data.py` imports it cross-workstream.
 
 | RR-140 | Portfolio Analysis | Archive file renamed to Revision 3 | **Confirmed** — user-directed, 16-Nov-2026 ("rename the excel file rev3") | Same reasoning as RR-114/RR-138's renames — the file keeps moving as review continues, so the version number should track it. `Range_Review_Decisions_FINAL_2026-11-12_REV2.xlsx` → `Range_Review_Decisions_FINAL_2026-11-12_REV3.xlsx`. No content change — naming only. | `git mv` on the file itself. Updated the sheet-build script's `ARCHIVE_PATH` constant to the new filename. Still nothing written back to the live Board — review sheet only. |
 
+| RR-141 | Portfolio Analysis | Vassi GTX Pro II Bib copies Last season to sell and Next generation launch season from Vassi GTX Pro II Jacket | **Confirmed** — user-directed, 17-Nov-2026 ("Update Vassi GTX Pro 2 Bib to FW29 to update (match Vassi GTX pro 2 Jacket)") | Same copy pattern as RR-123/RR-126/RR-131's sibling copies. Vassi GTX Pro II Bib was previously "carry over w/o update" (Harvest default, no explicit season, RR-109) and blank on Next generation launch season — it now matches its Jacket sibling exactly: Last season to sell = **FW28**, Next generation launch season = **FW29** (the Jacket's own note reads "FW29 update to review. Pants to match." — this extends that instruction to the Bib as well). | Applied directly to the in-memory row data (both fields on the Bib, plus a "Last season — changed?" note), then the "Revised" sheet rebuilt in place, same file. Re-verified the original "Decisions"/"Notes" sheets' row/column counts and protection untouched. Still nothing written back to the live Board — review sheet only. |
+
 ---
 
 ## Next steps (as of 29 Oct 2026)
