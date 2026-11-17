@@ -294,6 +294,8 @@ each card — `build_workshop_data.py` imports it cross-workstream.
 
 | RR-139 | Portfolio Analysis | "Style no." column added to the Revised sheet | **Confirmed** — user-directed, 16-Nov-2026 ("In the revision 2 excel file, can you add the style no?") | Pulls `styleCodes` directly from `workshop_data.json` (the style/article codes behind each franchise — e.g. "608690" for Aresk Beanie), joined with a comma where a franchise covers more than one style code (158 franchises have 2, 7 have 3-4, 112 have exactly 1). All 277 rows matched — no gaps. Positioned right after "Franchise," before Tier, since it's an identifier field. | Added directly to the in-memory row data (`Style no.` field, joined from `styleCodes`), then the header list in the sheet-build script updated and the "Revised" sheet rebuilt in place, same file (now 16 columns, A1:P278, was A1:O278). Re-verified the original "Decisions"/"Notes" sheets' row/column counts and protection untouched. Still nothing written back to the live Board — review sheet only. |
 
+| RR-140 | Portfolio Analysis | Archive file renamed to Revision 3 | **Confirmed** — user-directed, 16-Nov-2026 ("rename the excel file rev3") | Same reasoning as RR-114/RR-138's renames — the file keeps moving as review continues, so the version number should track it. `Range_Review_Decisions_FINAL_2026-11-12_REV2.xlsx` → `Range_Review_Decisions_FINAL_2026-11-12_REV3.xlsx`. No content change — naming only. | `git mv` on the file itself. Updated the sheet-build script's `ARCHIVE_PATH` constant to the new filename. Still nothing written back to the live Board — review sheet only. |
+
 ---
 
 ## Next steps (as of 29 Oct 2026)
